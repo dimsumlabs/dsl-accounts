@@ -1,0 +1,2 @@
+#!/bin/sh
+cat cash/* | perl -lane '$sum+= $F[0] if $F[0]=~m/^-?\d/;  END {print "Sum $sum"}'
