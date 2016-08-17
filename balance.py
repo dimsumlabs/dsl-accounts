@@ -1,10 +1,11 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # Licensed under GPLv3
 from collections import namedtuple
 from datetime import datetime
 from decimal import Decimal
 import argparse
 import os.path
+import sys
 import csv
 import os
 
@@ -61,6 +62,14 @@ argparser.add_argument('--dir',
 subp = argparser.add_subparsers(help='Subcommand', dest='cmd')
 subp.required = True
 subp.add_parser('sum', help='Sum all transactions')
+csv_parser = subp.add_parser('csv', help='Output transactions as csv')
+csv_parser.add_argument('--out',
+                        action='store',
+                        type=str,
+                        default=None,
+                        dest='csv_out',
+                        help='Output file')
+
 
 if __name__ == '__main__':
     args = argparser.parse_args()
@@ -70,6 +79,21 @@ if __name__ == '__main__':
 
     if args.cmd == 'sum':
         print("Sum:\t{}".format(sum(parse_dir(args.dir))))
+
+    elif args.cmd == 'csv':
+        rows = sorted(parse_dir(args.dir), key=lambda x: x.date)
+
+        with (open(args.csv_out, 'w') if args.csv_out else sys.stdout) as f:
+            writer = csv.writer(f)
+            # Write header
+            writer.writerow([row.capitalize() for row in Row._fields])
+
+            for row in rows:
+                writer.writerow(row)
+
+            writer.writerow('')
+            writer.writerow(('Sum',))
+            writer.writerow((sum(rows),))
 
     else:
         raise ValueError('Unknown command "{}"'.format(args.cmd))
