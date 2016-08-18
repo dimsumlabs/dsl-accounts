@@ -62,6 +62,7 @@ argparser.add_argument('--dir',
 subp = argparser.add_subparsers(help='Subcommand', dest='cmd')
 subp.required = True
 subp.add_parser('sum', help='Sum all transactions')
+subp.add_parser('party', help='Is it party time or not?')
 csv_parser = subp.add_parser('csv', help='Output transactions as csv')
 csv_parser.add_argument('--out',
                         action='store',
@@ -79,6 +80,10 @@ if __name__ == '__main__':
 
     if args.cmd == 'sum':
         print("Sum:\t{}".format(sum(parse_dir(args.dir))))
+
+    elif args.cmd == 'party':
+        balance = sum(parse_dir(args.dir))
+        print("Success" if balance > 0 else "Fail")
 
     elif args.cmd == 'csv':
         rows = sorted(parse_dir(args.dir), key=lambda x: x.date)
