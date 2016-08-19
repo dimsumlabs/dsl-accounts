@@ -102,5 +102,3 @@ if __name__ == '__main__':
 
     else:
         raise ValueError('Unknown command "{}"'.format(args.cmd))
-
-# What is the password?
