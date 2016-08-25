@@ -79,7 +79,7 @@ if __name__ == '__main__':
         raise RuntimeError('Directory "{}" does not exist'.format(args.dir))
 
     if args.cmd == 'sum':
-        print("Sum:\t{}".format(sum(parse_dir(args.dir))))
+        print("{}".format(sum(parse_dir(args.dir))))
 
     elif args.cmd == 'party':
         balance = sum(parse_dir(args.dir))
