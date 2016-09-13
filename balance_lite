@@ -1,0 +1,12 @@
+#!/bin/sh
+function dimsum() {
+perl -lane '$sum+= $F[0] if $F[0]=~m/^-?\d/;  END {print "$sum"}'
+}
+
+DSL_OUT=`cat cash/outgoing-????-?? | dimsum`
+DSL_IN=`cat cash/incoming-????-?? | dimsum`
+
+echo $(expr $DSL_IN - $DSL_OUT)
+
+
+
