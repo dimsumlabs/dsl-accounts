@@ -4,24 +4,51 @@
 <meta charset="utf-8" />
 <title>dsl balance</title>
 <style>
-html,pre {height:100%;margin:0;
+html,pre {height:100%;margin:0;padding:0;
 background-color:#222;
 color:#00E100;
 font-family: monospace; }
-body {height:100%;width:100%;
+body {height:100%;width:90%;
 text-align:center;
-line-height:1.5em;
-
 }
+
+dt {
+	font-size:5em;
+	color:#eee;
+	text-align:left;
+}
+dd {
+	font-size:7em;
+	text-align:right;
+}
+
 </style>
 </head>
-<body style="font-size:7em;">
-Cash Balance<br>
-<b>HKD
-8691
+<body>
+<dl>
+<dt>Account Balance</dt>
+<dd style="font-size:9em;">HKD 
+9691
+</dd>
+</dl>
+
+<center style="color:#fff;font-size:2em;">Membership fee <span style="color:#00E100">HKD 500</span> per month, <span style="color:#00E100">HKD 200</span> for students. <span style="color:pink">Donate if you can!</span></center>
+<br>
+
+
+<dl>
+	<dt>Rent</dt>
+	<dd style="color:red;">HKD 12500</dd>
+</dl>
+<dl>
+	<dt>Bills</dt>
+	<dd style="color:red;">HKD ~1000</dd>
+</dl>
+
 </b>
 <br>
-<small style="line-height:0.5em;font-size:0.5em">github.com/dimsumlabs/dsl-accounts<br>dimsumlabs.github.io/dsl-accounts<br>(patches welcome!)</small>
+
+<small style="color:#eee;font-size:1.5em">This is our Open Source IN/OUT ledger: github.com/dimsumlabs/dsl-accounts (patches welcome!)</small>
 
 </body>
 </html>
