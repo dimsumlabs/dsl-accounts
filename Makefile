@@ -1,4 +1,2 @@
 balance:
-	cat docs/head.html > docs/index.html
-	./balance_lite >> docs/index.html
-	cat docs/foot.html >> docs/index.html
+	python balance.py sum | cat docs/head.html - docs/foot.html > docs/index.html
