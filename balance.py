@@ -11,13 +11,21 @@ import os
 
 
 FILES_DIR = 'cash'
+IGNORE_FILES = ('membershipfees',)
+HASHTAGS = ('rent', 'electricity', 'internet', 'water')
+
+
+def list_files(dirname):
+    for f in os.listdir(dirname):
+        if f not in IGNORE_FILES:
+            yield f
 
 
 class Row(namedtuple('Row', ('value', 'date', 'comment'))):
 
     def __new__(cls, value, date, comment, direction):
         value = Decimal(value)
-        date = datetime.strptime(date, "%Y-%m-%d")
+        date = datetime.strptime(date.strip(), "%Y-%m-%d")
 
         if direction not in ('incoming', 'outgoing'):
             raise ValueError('Direction "{}" unhandled'.format(direction))
@@ -38,17 +46,19 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
     def __radd__(self, value):
         return self.__add__(value)
 
+
 def find_hashtag(keyword, rows):
-   '''Find a hash tag in the payment history'''
-   for row in rows:
-      if(row.comment.__contains__('#'+keyword)):
-         return True,-row.value,row.date
-   return False,'$0','Not yet'
+    '''Find a hash tag in the payment history'''
+    for row in rows:
+        if '#{}'.format(keyword) in row.comment:
+            return (True, -row.value, row.date)
+    return (False, '$0', 'Not yet')
+
 
 def parse_dir(dirname):
     '''Take all files in dirname and return Row instances'''
 
-    for filename in os.listdir(dirname):
+    for filename in list_files(dirname):
         direction, _ = filename.split('-', 1)
 
         with open(os.path.join(dirname, filename), 'r') as tsvfile:
@@ -57,22 +67,29 @@ def parse_dir(dirname):
             for row in reader:
                 yield Row(*row, direction=direction)
 
-def parse_outgoing_payments(dirname,date):
+
+def parse_outgoing_payments(dirname, date):
     '''Take all files in dirname and return Row instances'''
+    ret = []
 
     with open(os.path.join(dirname, 'outgoing-'+date), 'r') as tsvfile:
         reader = csv.reader(tsvfile, delimiter='\t')
 
         for row in reader:
-            yield Row(*row, direction='outgoing')
+            ret.append(Row(*row, direction='outgoing'))
+
+    ret.sort(key=lambda x: x.date)
+    return ret
+
 
 def get_outgoing_payment_months(dirname):
-    ret_array=[]
-    for filename in os.listdir(dirname):
+    ret_array = []
+    for filename in list_files(dirname):
         direction, date = filename.split('-', 1)
         if direction == "outgoing":
-             ret_array.append(date)
+            ret_array.append(date)
     return ret_array
+
 
 argparser = argparse.ArgumentParser(
     description='Run calculations and transformations on cash data')
@@ -107,32 +124,30 @@ if __name__ == '__main__':
 
     elif args.cmd == 'topay':
         for date in get_outgoing_payment_months(args.dir):
-            print('Date: '+date)
-            print('Bill       \tPrice\tPay Date')
-            rows = sorted(parse_outgoing_payments(args.dir,date), key=lambda x: x.date)
-            paid,price,date = find_hashtag('rent',rows)
-            print('Rent       \t'+str(price)+'\t'+str(date))
-            paid,price,date = find_hashtag('electricity',rows)
-            print('Electricity\t'+str(price)+'\t'+str(date))
-            paid,price,date = find_hashtag('internet',rows)
-            print('Internet   \t'+str(price)+'\t'+str(date))
-            paid,price,date = find_hashtag('water',rows)
-            print('Water      \t'+str(price)+'\t'+str(date))
+            print('Date: {}'.format(date))
+            print('\t'.join(('Bill', '', 'Price', 'Pay Date')))
+            rows = parse_outgoing_payments(args.dir, date)
+            for hashtag in HASHTAGS:
+                paid, price, date = find_hashtag(hashtag, rows)
+                print('\t'.join((
+                    hashtag.capitalize().ljust(15),  # Adjust column width
+                    str(price),
+                    str(date))))
 
     elif args.cmd == 'topay_html':
+        table_row_fmt = '''
+        <tr>
+            <td>{hashtag}</td><td>{price}</td><td>{date}</td>
+        </tr>'''
         for date in get_outgoing_payment_months(args.dir):
-            print('<h2>Date: <i>'+date+'</i></h2>')
-            rows = sorted(parse_outgoing_payments(args.dir,date), key=lambda x: x.date)
+            print('<h2>Date: <i>{}</i></h2>'.format(date))
+            rows = parse_outgoing_payments(args.dir, date)
             print('<table>')
             print('<tr><th>Bills</th><th>Price</th><th>Pay Date</th></tr>')
-	    paid,price,date = find_hashtag('rent',rows)
-            print('<tr><td>Rent</td><td>'+str(price)+'</td><td>'+str(date)+'</td></tr>')
-	    paid,price,date = find_hashtag('electricity',rows)
-            print('<tr><td>Electric</td><td>'+str(price)+'</td><td>'+str(date)+'</td></tr>')
-            paid,price,date = find_hashtag('internet',rows)
-            print('<tr><td>Internet</td><td>'+str(price)+'</td><td>'+str(date)+'</td></tr>')
-            paid,price,date = find_hashtag('water',rows)
-            print('<tr><td>Water</td><td>'+str(price)+'</td><td>'+str(date)+'</td></tr>')
+            for hashtag in HASHTAGS:
+                paid, price, date = find_hashtag(hashtag, rows)
+                print(table_row_fmt.format(hashtag=hashtag.capitalize(),
+                                           price=price, date=date))
             print('</table>')
 
     elif args.cmd == 'party':
