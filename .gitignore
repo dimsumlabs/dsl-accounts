@@ -1,1 +1,9 @@
 .DS_Store
+
+# ignore python's compiled objects
+*.pyc
+
+# ignore the code coverage generated output
+.coverage
+htmlcov
+
