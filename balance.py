@@ -139,6 +139,25 @@ def subp_csv(dir,f):
     writer.writerow(('Sum',))
     writer.writerow((sum(rows),))
 
+subp_cmds = {
+    'sum': {
+        'func': subp_sum,
+        'help': 'Sum all transactions',
+    },
+    'topay': {
+        'func': subp_topay,
+        'help': 'List all pending payments',
+    },
+    'topay_html': {
+        'func': subp_topay_html,
+        'help': 'List all pending payments as HTML table',
+    },
+    'party': {
+        'func': subp_party,
+        'help': 'Is it party time or not?',
+    },
+    #'csv': subp_csv,
+}
 
 argparser = argparse.ArgumentParser(
     description='Run calculations and transformations on cash data')
@@ -149,10 +168,9 @@ argparser.add_argument('--dir',
                        help='Input directory')
 subp = argparser.add_subparsers(help='Subcommand', dest='cmd')
 subp.required = True
-subp.add_parser('topay', help='List all pending payments')
-subp.add_parser('topay_html', help='List all pending payments as HTML table')
-subp.add_parser('sum', help='Sum all transactions')
-subp.add_parser('party', help='Is it party time or not?')
+for key,value in subp_cmds.iteritems():
+    subp.add_parser(key, help=value['help'])
+
 csv_parser = subp.add_parser('csv', help='Output transactions as csv')
 csv_parser.add_argument('--out',
                         action='store',
@@ -168,17 +186,8 @@ if __name__ == '__main__':
     if not os.path.exists(args.dir):
         raise RuntimeError('Directory "{}" does not exist'.format(args.dir))
 
-    if args.cmd == 'sum':
-        subp_sum(args.dir)
-
-    elif args.cmd == 'topay':
-        subp_topay(args.dir)
-
-    elif args.cmd == 'topay_html':
-        subp_topay_html(args.dir)
-
-    elif args.cmd == 'party':
-        subp_party(args.dir)
+    if args.cmd in subp_cmds:
+        subp_cmds[args.cmd]['func'](args.dir)
 
     elif args.cmd == 'csv':
         with (open(args.csv_out, 'w') if args.csv_out else sys.stdout) as f:
