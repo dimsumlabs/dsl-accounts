@@ -21,7 +21,7 @@ def list_files(dirname):
             yield f
 
 
-class Row(namedtuple('Row', ('value', 'date', 'comment'))):
+class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
 
     def __new__(cls, value, date, comment, direction):
         value = Decimal(value)
@@ -34,7 +34,7 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
         if direction == 'outgoing':
             value = Decimal(0)-value
 
-        obj = super(cls, Row).__new__(cls, value, date, comment)
+        obj = super(cls, Row).__new__(cls, value, date, comment, direction)
         return obj
 
     def __add__(self, value):
@@ -45,6 +45,9 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
 
     def __radd__(self, value):
         return self.__add__(value)
+
+    def month(self):
+        return self.date.strftime('%Y-%m')
 
 
 def find_hashtag(keyword, rows):
@@ -68,15 +71,13 @@ def parse_dir(dirname):
                 yield Row(*row, direction=direction)
 
 
-def parse_outgoing_payments(dirname, date):
-    '''Take all files in dirname and return Row instances'''
+def filter_outgoing_payments(rows, month):
+    '''Filter the given rows list for outgoing payments in the given month'''
     ret = []
 
-    with open(os.path.join(dirname, 'outgoing-'+date), 'r') as tsvfile:
-        reader = csv.reader(tsvfile, delimiter='\t')
-
-        for row in reader:
-            ret.append(Row(*row, direction='outgoing'))
+    for row in rows:
+        if row.month() == month and row.direction == 'outgoing':
+            ret.append(row)
 
     ret.sort(key=lambda x: x.date)
     return ret
@@ -91,9 +92,13 @@ def get_outgoing_payment_months(dirname):
     return ret_array
 
 def topay_render(dir,strings):
+    # yes, this is not ideal, since we load in all the 'incoming' transactions
+    # but just how much transaction data are we expecting, anyway?
+    all_rows = list(parse_dir(dir))
+
     for date in get_outgoing_payment_months(dir):
         print(strings['header'].format(date=date))
-        rows = parse_outgoing_payments(dir, date)
+        rows = filter_outgoing_payments(all_rows, date)
         print(strings['table_start'])
         for hashtag in HASHTAGS:
             paid, price, date = find_hashtag(hashtag, rows)
