@@ -159,28 +159,27 @@ subp_cmds = {
     #'csv': subp_csv,
 }
 
-argparser = argparse.ArgumentParser(
-    description='Run calculations and transformations on cash data')
-argparser.add_argument('--dir',
-                       action='store',
-                       type=str,
-                       default=FILES_DIR,
-                       help='Input directory')
-subp = argparser.add_subparsers(help='Subcommand', dest='cmd')
-subp.required = True
-for key,value in subp_cmds.iteritems():
-    subp.add_parser(key, help=value['help'])
-
-csv_parser = subp.add_parser('csv', help='Output transactions as csv')
-csv_parser.add_argument('--out',
-                        action='store',
-                        type=str,
-                        default=None,
-                        dest='csv_out',
-                        help='Output file')
-
-
 if __name__ == '__main__':
+    argparser = argparse.ArgumentParser(
+        description='Run calculations and transformations on cash data')
+    argparser.add_argument('--dir',
+                           action='store',
+                           type=str,
+                           default=FILES_DIR,
+                           help='Input directory')
+    subp = argparser.add_subparsers(help='Subcommand', dest='cmd')
+    subp.required = True
+    for key,value in subp_cmds.iteritems():
+        subp.add_parser(key, help=value['help'])
+
+    csv_parser = subp.add_parser('csv', help='Output transactions as csv')
+    csv_parser.add_argument('--out',
+                            action='store',
+                            type=str,
+                            default=None,
+                            dest='csv_out',
+                            help='Output file')
+
     args = argparser.parse_args()
 
     if not os.path.exists(args.dir):
