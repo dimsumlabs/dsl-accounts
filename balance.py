@@ -90,6 +90,55 @@ def get_outgoing_payment_months(dirname):
             ret_array.append(date)
     return ret_array
 
+def subp_sum(dir):
+    print("{}".format(sum(parse_dir(dir))))
+
+def subp_topay(dir):
+    for date in get_outgoing_payment_months(dir):
+        print('Date: {}'.format(date))
+        print('\t'.join(('Bill', '', 'Price', 'Pay Date')))
+        rows = parse_outgoing_payments(dir, date)
+        for hashtag in HASHTAGS:
+            paid, price, date = find_hashtag(hashtag, rows)
+            print('\t'.join((
+                hashtag.capitalize().ljust(15),  # Adjust column width
+                str(price),
+                str(date))))
+
+def subp_topay_html(dir):
+    table_row_fmt = '''
+    <tr>
+        <td>{hashtag}</td><td>{price}</td><td>{date}</td>
+    </tr>'''
+    for date in get_outgoing_payment_months(dir):
+        print('<h2>Date: <i>{}</i></h2>'.format(date))
+        rows = parse_outgoing_payments(dir, date)
+        print('<table>')
+        print('<tr><th>Bills</th><th>Price</th><th>Pay Date</th></tr>')
+        for hashtag in HASHTAGS:
+            paid, price, date = find_hashtag(hashtag, rows)
+            print(table_row_fmt.format(hashtag=hashtag.capitalize(),
+                                       price=price, date=date))
+        print('</table>')
+
+def subp_party(dir):
+    balance = sum(parse_dir(dir))
+    print("Success" if balance > 0 else "Fail")
+
+def subp_csv(dir,f):
+    rows = sorted(parse_dir(dir), key=lambda x: x.date)
+
+    writer = csv.writer(f)
+    # Write header
+    writer.writerow([row.capitalize() for row in Row._fields])
+
+    for row in rows:
+        writer.writerow(row)
+
+    writer.writerow('')
+    writer.writerow(('Sum',))
+    writer.writerow((sum(rows),))
+
 
 argparser = argparse.ArgumentParser(
     description='Run calculations and transformations on cash data')
@@ -120,54 +169,20 @@ if __name__ == '__main__':
         raise RuntimeError('Directory "{}" does not exist'.format(args.dir))
 
     if args.cmd == 'sum':
-        print("{}".format(sum(parse_dir(args.dir))))
+        subp_sum(args.dir)
 
     elif args.cmd == 'topay':
-        for date in get_outgoing_payment_months(args.dir):
-            print('Date: {}'.format(date))
-            print('\t'.join(('Bill', '', 'Price', 'Pay Date')))
-            rows = parse_outgoing_payments(args.dir, date)
-            for hashtag in HASHTAGS:
-                paid, price, date = find_hashtag(hashtag, rows)
-                print('\t'.join((
-                    hashtag.capitalize().ljust(15),  # Adjust column width
-                    str(price),
-                    str(date))))
+        subp_topay(args.dir)
 
     elif args.cmd == 'topay_html':
-        table_row_fmt = '''
-        <tr>
-            <td>{hashtag}</td><td>{price}</td><td>{date}</td>
-        </tr>'''
-        for date in get_outgoing_payment_months(args.dir):
-            print('<h2>Date: <i>{}</i></h2>'.format(date))
-            rows = parse_outgoing_payments(args.dir, date)
-            print('<table>')
-            print('<tr><th>Bills</th><th>Price</th><th>Pay Date</th></tr>')
-            for hashtag in HASHTAGS:
-                paid, price, date = find_hashtag(hashtag, rows)
-                print(table_row_fmt.format(hashtag=hashtag.capitalize(),
-                                           price=price, date=date))
-            print('</table>')
+        subp_topay_html(args.dir)
 
     elif args.cmd == 'party':
-        balance = sum(parse_dir(args.dir))
-        print("Success" if balance > 0 else "Fail")
+        subp_party(args.dir)
 
     elif args.cmd == 'csv':
-        rows = sorted(parse_dir(args.dir), key=lambda x: x.date)
-
         with (open(args.csv_out, 'w') if args.csv_out else sys.stdout) as f:
-            writer = csv.writer(f)
-            # Write header
-            writer.writerow([row.capitalize() for row in Row._fields])
-
-            for row in rows:
-                writer.writerow(row)
-
-            writer.writerow('')
-            writer.writerow(('Sum',))
-            writer.writerow((sum(rows),))
+            subp_csv(args.dir,f)
 
     else:
         raise ValueError('Unknown command "{}"'.format(args.cmd))
