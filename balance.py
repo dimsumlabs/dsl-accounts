@@ -90,38 +90,43 @@ def get_outgoing_payment_months(dirname):
             ret_array.append(date)
     return ret_array
 
+def topay_render(dir,strings):
+    for date in get_outgoing_payment_months(dir):
+        print(strings['header'].format(date=date))
+        rows = parse_outgoing_payments(dir, date)
+        print(strings['table_start'])
+        for hashtag in HASHTAGS:
+            paid, price, date = find_hashtag(hashtag, rows)
+            print(strings['table_row'].format(hashtag=hashtag.capitalize(),
+                                       price=price, date=date))
+        print(strings['table_end'])
 
 
 def subp_sum(args):
     print("{}".format(sum(parse_dir(args.dir))))
 
 def subp_topay(args):
-    for date in get_outgoing_payment_months(args.dir):
-        print('Date: {}'.format(date))
-        print('\t'.join(('Bill', '', 'Price', 'Pay Date')))
-        rows = parse_outgoing_payments(args.dir, date)
-        for hashtag in HASHTAGS:
-            paid, price, date = find_hashtag(hashtag, rows)
-            print('\t'.join((
-                hashtag.capitalize().ljust(15),  # Adjust column width
-                str(price),
-                str(date))))
+    strings = {
+        'header': 'Date: {date}',
+        'table_start': "Bill\t\tPrice\tPay Date",
+        'table_end': '',
+        'table_row': "{hashtag:<15}\t{price}\t{date}",
+    }
+    topay_render(args.dir,strings)
 
 def subp_topay_html(args):
-    table_row_fmt = '''
+    strings = {
+        'header': '<h2>Date: <i>{date}</i></h2>',
+        'table_start':
+            "<table>\n"+
+            "<tr><th>Bills</th><th>Price</th><th>Pay Date</th></tr>",
+        'table_end': '</table>',
+        'table_row': '''
     <tr>
         <td>{hashtag}</td><td>{price}</td><td>{date}</td>
-    </tr>'''
-    for date in get_outgoing_payment_months(args.dir):
-        print('<h2>Date: <i>{}</i></h2>'.format(date))
-        rows = parse_outgoing_payments(args.dir, date)
-        print('<table>')
-        print('<tr><th>Bills</th><th>Price</th><th>Pay Date</th></tr>')
-        for hashtag in HASHTAGS:
-            paid, price, date = find_hashtag(hashtag, rows)
-            print(table_row_fmt.format(hashtag=hashtag.capitalize(),
-                                       price=price, date=date))
-        print('</table>')
+    </tr>''',
+    }
+    topay_render(args.dir,strings)
 
 def subp_party(args):
     balance = sum(parse_dir(args.dir))
