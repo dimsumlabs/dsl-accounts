@@ -84,3 +84,13 @@ class TestMisc(unittest.TestCase):
                 balance.Row('10','1970-01-10','comment2','outgoing'),
             ]
         )
+
+    def test_payment_months(self):
+        rows = []
+        rows.append(balance.Row("10","1970-04-08","comment5","outgoing"))
+        rows.append(balance.Row("10","1970-03-02","comment6","incoming"))
+
+        self.assertEqual(
+            balance.get_payment_months(rows),
+            [ '1970-03', '1970-04' ]
+        )

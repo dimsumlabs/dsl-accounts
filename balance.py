@@ -93,20 +93,20 @@ def filter_outgoing_payments(rows, month):
     return ret
 
 
-def get_outgoing_payment_months(dirname):
-    ret_array = []
-    for filename in list_files(dirname):
-        direction, date = filename.split('-', 1)
-        if direction == "outgoing":
-            ret_array.append(date)
-    return ret_array
+def get_payment_months(rows):
+    months = set()
+    for row in rows:
+        months.add(row.month())
+    ret = list(months)
+    ret.sort()
+    return ret
 
 def topay_render(dir,strings):
     # yes, this is not ideal, since we load in all the 'incoming' transactions
     # but just how much transaction data are we expecting, anyway?
     all_rows = list(parse_dir(dir))
 
-    for date in get_outgoing_payment_months(dir):
+    for date in get_payment_months(all_rows):
         print(strings['header'].format(date=date))
         rows = filter_outgoing_payments(all_rows, date)
         print(strings['table_start'])
