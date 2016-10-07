@@ -49,6 +49,21 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
     def month(self):
         return self.date.strftime('%Y-%m')
 
+    def match(self,**kwargs):
+        """using kwargs check if this Row matches, if so, return it, or None
+        """
+
+        for key,value in kwargs.iteritems():
+            if not hasattr(self,key):
+                raise AttributeError('Object has no attribute "{}"'.format(key))
+            attr = getattr(self,key)
+            if callable(attr):
+                attr = attr()
+            if value != attr:
+                return None
+
+        return self
+
 
 def find_hashtag(keyword, rows):
     '''Find a hash tag in the payment history'''
@@ -73,12 +88,7 @@ def parse_dir(dirname):
 
 def filter_outgoing_payments(rows, month):
     '''Filter the given rows list for outgoing payments in the given month'''
-    ret = []
-
-    for row in rows:
-        if row.month() == month and row.direction == 'outgoing':
-            ret.append(row)
-
+    ret = filter(lambda row:row.match(month=month,direction='outgoing'), rows)
     ret.sort(key=lambda x: x.date)
     return ret
 
