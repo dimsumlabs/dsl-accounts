@@ -94,3 +94,34 @@ class TestMisc(unittest.TestCase):
             balance.get_payment_months(rows),
             [ '1970-03', '1970-04' ]
         )
+
+    def test_topay_render(self):
+        rows = []
+        rows.append(balance.Row("10","1970-05-15","foo #rent","outgoing"))
+        rows.append(balance.Row("10","1970-06-17","bah #water","outgoing"))
+
+        strings = {
+            'header': 'header: {date}',
+            'table_start': 'table_start:',
+            'table_end': 'table_end:',
+            'table_row': 'table_row: {hashtag}, {price}, {date}',
+        }
+
+        self.assertEqual(
+            balance.topay_render(rows,strings),
+            """header: 1970-05
+table_start:
+table_row: Rent, 10, 1970-05-15 00:00:00
+table_row: Electricity, $0, Not yet
+table_row: Internet, $0, Not yet
+table_row: Water, $0, Not yet
+table_end:
+header: 1970-06
+table_start:
+table_row: Rent, $0, Not yet
+table_row: Electricity, $0, Not yet
+table_row: Internet, $0, Not yet
+table_row: Water, 10, 1970-06-17 00:00:00
+table_end:
+"""
+        )
