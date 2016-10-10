@@ -106,16 +106,22 @@ def topay_render(dir,strings):
     # but just how much transaction data are we expecting, anyway?
     all_rows = list(parse_dir(dir))
 
+    s = []
     for date in get_payment_months(all_rows):
-        print(strings['header'].format(date=date))
+        s.append(strings['header'].format(date=date))
+        s.append("\n")
         rows = filter_outgoing_payments(all_rows, date)
-        print(strings['table_start'])
+        s.append(strings['table_start'])
+        s.append("\n")
         for hashtag in HASHTAGS:
             paid, price, date = find_hashtag(hashtag, rows)
-            print(strings['table_row'].format(hashtag=hashtag.capitalize(),
+            s.append(strings['table_row'].format(hashtag=hashtag.capitalize(),
                                        price=price, date=date))
-        print(strings['table_end'])
+            s.append("\n")
+        s.append(strings['table_end'])
+        s.append("\n")
 
+    return ''.join(s)
 
 def subp_sum(args):
     print("{}".format(sum(parse_dir(args.dir))))
@@ -127,7 +133,7 @@ def subp_topay(args):
         'table_end': '',
         'table_row': "{hashtag:<15}\t{price}\t{date}",
     }
-    topay_render(args.dir,strings)
+    print(topay_render(args.dir,strings))
 
 def subp_topay_html(args):
     strings = {
@@ -141,7 +147,7 @@ def subp_topay_html(args):
         <td>{hashtag}</td><td>{price}</td><td>{date}</td>
     </tr>''',
     }
-    topay_render(args.dir,strings)
+    print(topay_render(args.dir,strings))
 
 def subp_party(args):
     balance = sum(parse_dir(args.dir))
