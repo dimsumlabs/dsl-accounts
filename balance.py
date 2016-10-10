@@ -50,7 +50,7 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
         return self.date.strftime('%Y-%m')
 
     def match(self,**kwargs):
-        """using kwargs check if this Row matches, if so, return it, or None
+        """using kwargs, check if this Row matches if so, return it, or None
         """
 
         for key,value in kwargs.iteritems():
@@ -123,6 +123,15 @@ def topay_render(dir,strings):
 
     return ''.join(s)
 
+#
+# This section contains the implementation of the commandline
+# sub-commands.  Ideally, they are all small and simple, implemented with
+# calls to the above functions.  This will allow the simple unit tests
+# to provide confidence that none of the above functions are broken,
+# without needing the sub-commands to be tested (which would need a
+# more complex test system)
+#
+
 def subp_sum(args):
     print("{}".format(sum(parse_dir(args.dir))))
 
@@ -168,6 +177,7 @@ def subp_csv(args):
         writer.writerow(('Sum',))
         writer.writerow((sum(rows),))
 
+# A list of all the sub-commands
 subp_cmds = {
     'sum': {
         'func': subp_sum,
@@ -191,6 +201,11 @@ subp_cmds = {
     }
 }
 
+#
+# Most of this is boilerplate and stays the same even with addition of
+# features.  The only exception is if a sub-command needs to add a new
+# commandline option.
+#
 if __name__ == '__main__':
     argparser = argparse.ArgumentParser(
         description='Run calculations and transformations on cash data')
@@ -204,12 +219,14 @@ if __name__ == '__main__':
     for key,value in subp_cmds.iteritems():
         value['parser'] = subp.add_parser(key, help=value['help'])
 
+    # Add a new commandline option for the "csv" subcommand
     subp_cmds['csv']['parser'].add_argument('--out',
                             action='store',
                             type=str,
                             default=None,
                             dest='csv_out',
                             help='Output file')
+
 
     args = argparser.parse_args()
 
