@@ -101,11 +101,7 @@ def get_payment_months(rows):
     ret.sort()
     return ret
 
-def topay_render(dir,strings):
-    # yes, this is not ideal, since we load in all the 'incoming' transactions
-    # but just how much transaction data are we expecting, anyway?
-    all_rows = list(parse_dir(dir))
-
+def topay_render(all_rows,strings):
     s = []
     for date in get_payment_months(all_rows):
         s.append(strings['header'].format(date=date))
@@ -142,7 +138,8 @@ def subp_topay(args):
         'table_end': '',
         'table_row': "{hashtag:<15}\t{price}\t{date}",
     }
-    print(topay_render(args.dir,strings))
+    all_rows = list(parse_dir(args.dir))
+    print(topay_render(all_rows,strings))
 
 def subp_topay_html(args):
     strings = {
@@ -156,7 +153,8 @@ def subp_topay_html(args):
         <td>{hashtag}</td><td>{price}</td><td>{date}</td>
     </tr>''',
     }
-    print(topay_render(args.dir,strings))
+    all_rows = list(parse_dir(args.dir))
+    print(topay_render(all_rows,strings))
 
 def subp_party(args):
     balance = sum(parse_dir(args.dir))
