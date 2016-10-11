@@ -1,5 +1,5 @@
 balance:
-	python balance.py sum | cat docs/head.html - docs/foot.html > docs/index.html
+	python balance.py sum | cat docs/head.html - docs/foot.html cash/membershipfees > docs/index.html
 
 
 build-dep:
