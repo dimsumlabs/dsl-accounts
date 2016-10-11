@@ -8,6 +8,7 @@ import os.path
 import sys
 import csv
 import os
+import re
 
 
 FILES_DIR = 'cash'
@@ -49,6 +50,21 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
     def month(self):
         return self.date.strftime('%Y-%m')
 
+    def hashtag(self):
+        """Look at the comment for this row and extract any hashtags found
+        """
+        p = re.compile('#(\S+)')
+        all_tags = p.findall(self.comment)
+
+        # TODO - have a better plan for what to do with multiple tags
+        if len(all_tags) >1:
+            raise ValueError('Row has multiple tags: {}'.format(all_tags))
+
+        if len(all_tags) == 0:
+            return None
+
+        return all_tags[0]
+
     def match(self,**kwargs):
         """using kwargs, check if this Row matches if so, return it, or None
         """
@@ -68,7 +84,7 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
 def find_hashtag(keyword, rows):
     '''Find a hash tag in the payment history'''
     for row in rows:
-        if '#{}'.format(keyword) in row.comment:
+        if row.hashtag() == keyword:
             return (True, -row.value, row.date)
     return (False, '$0', 'Not yet')
 

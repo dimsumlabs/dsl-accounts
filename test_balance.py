@@ -43,6 +43,17 @@ class TestRowClass(unittest.TestCase):
         object = balance.Row("100","1970-01-01","a comment","incoming")
         self.assertEqual(object.month(),"1970-01")
 
+    def test_hashtag(self):
+        object = balance.Row("100","1970-01-01","a comment","incoming")
+        self.assertEqual(object.hashtag(),None)
+
+        object = balance.Row("100","1970-01-01","a #hashtag","incoming")
+        self.assertEqual(object.hashtag(),'hashtag')
+
+        object = balance.Row("100","1970-01-01","#two #hashtags","incoming")
+        with self.assertRaises(ValueError):
+            object.hashtag()
+
     def test_match(self):
         object = balance.Row("100","1970-01-01","a comment","incoming")
         with self.assertRaises(AttributeError):
