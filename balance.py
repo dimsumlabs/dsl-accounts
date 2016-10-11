@@ -57,7 +57,7 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
         all_tags = p.findall(self.comment)
 
         # TODO - have a better plan for what to do with multiple tags
-        if len(all_tags) >1:
+        if len(all_tags) > 1:
             raise ValueError('Row has multiple tags: {}'.format(all_tags))
 
         if len(all_tags) == 0:
@@ -65,14 +65,14 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
 
         return all_tags[0]
 
-    def match(self,**kwargs):
+    def match(self, **kwargs):
         """using kwargs, check if this Row matches if so, return it, or None
         """
 
-        for key,value in kwargs.iteritems():
-            if not hasattr(self,key):
-                raise AttributeError('Object has no attribute "{}"'.format(key))
-            attr = getattr(self,key)
+        for key, value in kwargs.items():
+            if not hasattr(self, key):
+                raise AttributeError('Object has no attr "{}"'.format(key))
+            attr = getattr(self, key)
             if callable(attr):
                 attr = attr()
             if value != attr:
@@ -104,7 +104,10 @@ def parse_dir(dirname):
 
 def filter_outgoing_payments(rows, month):
     '''Filter the given rows list for outgoing payments in the given month'''
-    ret = filter(lambda row:row.match(month=month,direction='outgoing'), rows)
+    ret = [
+        row for row in rows
+        if row.match(month=month, direction='outgoing')
+    ]
     ret.sort(key=lambda x: x.date)
     return ret
 
@@ -117,7 +120,8 @@ def get_payment_months(rows):
     ret.sort()
     return ret
 
-def topay_render(all_rows,strings):
+
+def topay_render(all_rows, strings):
     s = []
     for date in get_payment_months(all_rows):
         s.append(strings['header'].format(date=date))
@@ -128,7 +132,7 @@ def topay_render(all_rows,strings):
         for hashtag in HASHTAGS:
             paid, price, date = find_hashtag(hashtag, rows)
             s.append(strings['table_row'].format(hashtag=hashtag.capitalize(),
-                                       price=price, date=date))
+                                                 price=price, date=date))
             s.append("\n")
         s.append(strings['table_end'])
         s.append("\n")
@@ -144,8 +148,10 @@ def topay_render(all_rows,strings):
 # more complex test system)
 #
 
+
 def subp_sum(args):
     print("{}".format(sum(parse_dir(args.dir))))
+
 
 def subp_topay(args):
     strings = {
@@ -155,13 +161,14 @@ def subp_topay(args):
         'table_row': "{hashtag:<15}\t{price}\t{date}",
     }
     all_rows = list(parse_dir(args.dir))
-    print(topay_render(all_rows,strings))
+    print(topay_render(all_rows, strings))
+
 
 def subp_topay_html(args):
     strings = {
         'header': '<h2>Date: <i>{date}</i></h2>',
         'table_start':
-            "<table>\n"+
+            "<table>\n" +
             "<tr><th>Bills</th><th>Price</th><th>Pay Date</th></tr>",
         'table_end': '</table>',
         'table_row': '''
@@ -170,11 +177,13 @@ def subp_topay_html(args):
     </tr>''',
     }
     all_rows = list(parse_dir(args.dir))
-    print(topay_render(all_rows,strings))
+    print(topay_render(all_rows, strings))
+
 
 def subp_party(args):
     balance = sum(parse_dir(args.dir))
     print("Success" if balance > 0 else "Fail")
+
 
 def subp_csv(args):
     rows = sorted(parse_dir(args.dir), key=lambda x: x.date)
@@ -230,17 +239,16 @@ if __name__ == '__main__':
                            help='Input directory')
     subp = argparser.add_subparsers(help='Subcommand', dest='cmd')
     subp.required = True
-    for key,value in subp_cmds.iteritems():
+    for key, value in subp_cmds.items():
         value['parser'] = subp.add_parser(key, help=value['help'])
 
     # Add a new commandline option for the "csv" subcommand
     subp_cmds['csv']['parser'].add_argument('--out',
-                            action='store',
-                            type=str,
-                            default=None,
-                            dest='csv_out',
-                            help='Output file')
-
+                                            action='store',
+                                            type=str,
+                                            default=None,
+                                            dest='csv_out',
+                                            help='Output file')
 
     args = argparser.parse_args()
 
