@@ -83,10 +83,16 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
 
 def find_hashtag(keyword, rows):
     '''Find a hash tag in the payment history'''
-    for row in rows:
-        if row.hashtag() == keyword:
-            return (True, -row.value, row.date)
-    return (False, '$0', 'Not yet')
+    matching = [ x for x in rows if x.match(hashtag=keyword) ]
+
+    if len(matching) == 0:
+        return (False, '$0', 'Not yet')
+
+    # TODO - Accumulate the data:  sum the value, max the date ?
+    if len(matching) > 1:
+        raise ValueError('Multiple rows found with same hashtag: {}'.format(keyword))
+
+    return (True, -matching[0].value, matching[0].date)
 
 
 def parse_dir(dirname):
