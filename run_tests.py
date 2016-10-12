@@ -12,12 +12,13 @@ import sys
 # testing and development use.  It also does not break the case where the lib
 # has been installed properly on the normal sys.path
 sys.path.insert(0,
-                os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lib')
-               )
+                os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                             'lib'))
 # I would use site.addsitedir, but it does an append, not insert
 
-import unittest
-from coverage import Coverage
+import unittest  # noqa
+from coverage import Coverage  # noqa
+
 
 def main():
     """ The main function, mainly functioning to do the main functional work
@@ -36,8 +37,6 @@ def main():
         cover.start()
 
     tests = loader.discover('.')
-    #tests_lib = loader.discover('lib', top_level_dir='lib')
-    #tests.addTests(tests_lib)
     runner.run(tests)
 
     if cover:
@@ -52,4 +51,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

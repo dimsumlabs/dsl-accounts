@@ -8,6 +8,7 @@ build-dep:
 
 # Test the correctness and sanity of the code
 test:
+	flake8 ./*.py
 	./run_tests.py
 
 cover:
@@ -15,4 +16,3 @@ cover:
 
 clean:
 	rm -rf htmlcov .coverage
-
