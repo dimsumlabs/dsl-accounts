@@ -1,3 +1,6 @@
+.. image:: https://travis-ci.org/dimsumlabs/dsl-accounts.svg?branch=master
+           :target: https://travis-ci.org/dimsumlabs/dsl-accounts?branch=master
+
 Hey! We need to keep better track of cash expenses and incomings.
 
 To sort this out, we've set up a simple "cash log" as a public repo on GitHub:
