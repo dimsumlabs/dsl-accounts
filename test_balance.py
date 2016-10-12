@@ -81,6 +81,10 @@ class TestMisc(unittest.TestCase):
             (True, -10, datetime.datetime(1971, 1, 1, 0, 0))
         )
 
+        rows.append(balance.Row("15","1971-11-01","and #fred again","incoming"))
+        with self.assertRaises(ValueError):
+            balance.find_hashtag('fred',rows)
+
     def test_filter_outgoing_payments(self):
         rows = []
         rows.append(balance.Row("10","1970-01-05","comment1","incoming"))
