@@ -67,11 +67,20 @@ class TestRowClass(unittest.TestCase):
 
 
 class TestMisc(unittest.TestCase):
+    def setUp(self):
+        r = [None for x in range(5)]
+        r[0] = balance.Row("10", "1970-02-06", "comment4", "outgoing")
+        r[1] = balance.Row("10", "1970-01-05", "comment1", "incoming")
+        r[2] = balance.Row("10", "1970-01-10", "comment2 #rent", "outgoing")
+        r[3] = balance.Row("10", "1970-01-01", "comment3 #water", "outgoing")
+        r[4] = balance.Row("10", "1970-03-01", "comment5 #rent", "outgoing")
+        self.rows = r
+
+    def tearDown(self):
+        self.rows = None
 
     def test_hashtag(self):
-        rows = []
-        rows.append(balance.Row("100", "1970-01-01", "a comment", "incoming"))
-        rows.append(balance.Row("10", "1971-01-01", "a comment2", "incoming"))
+        rows = self.rows
 
         # look for "fred" in the comments
         self.assertEqual(
@@ -92,35 +101,21 @@ class TestMisc(unittest.TestCase):
             balance.find_hashtag('fred', rows)
 
     def test_filter_outgoing_payments(self):
-        rows = []
-        rows.append(balance.Row("10", "1970-01-05", "comment1", "incoming"))
-        rows.append(balance.Row("10", "1970-01-10", "comment2", "outgoing"))
-        rows.append(balance.Row("10", "1970-01-01", "comment3", "outgoing"))
-        rows.append(balance.Row("10", "1970-02-06", "comment4", "outgoing"))
-
         self.assertEqual(
-            balance.filter_outgoing_payments(rows, '1970-01'),
+            balance.filter_outgoing_payments(self.rows, '1970-01'),
             [
-                balance.Row('10', '1970-01-01', 'comment3', 'outgoing'),
-                balance.Row('10', '1970-01-10', 'comment2', 'outgoing'),
+                balance.Row('10', '1970-01-01', 'comment3 #water', 'outgoing'),
+                balance.Row('10', '1970-01-10', 'comment2 #rent', 'outgoing'),
             ]
         )
 
     def test_payment_months(self):
-        rows = []
-        rows.append(balance.Row("10", "1970-04-08", "comment5", "outgoing"))
-        rows.append(balance.Row("10", "1970-03-02", "comment6", "incoming"))
-
         self.assertEqual(
-            balance.get_payment_months(rows),
-            ['1970-03', '1970-04']
+            balance.get_payment_months(self.rows),
+            ['1970-01', '1970-02', '1970-03']
         )
 
     def test_topay_render(self):
-        rows = []
-        rows.append(balance.Row("10", "1970-05-15", "foo #rent", "outgoing"))
-        rows.append(balance.Row("10", "1970-06-17", "bah #water", "outgoing"))
-
         strings = {
             'header': 'header: {date}',
             'table_start': 'table_start:',
@@ -129,20 +124,27 @@ class TestMisc(unittest.TestCase):
         }
 
         self.assertEqual(
-            balance.topay_render(rows, strings),
-            """header: 1970-05
+            balance.topay_render(self.rows, strings),
+            """header: 1970-01
 table_start:
-table_row: Rent, 10, 1970-05-15 00:00:00
+table_row: Rent, 10, 1970-01-10 00:00:00
 table_row: Electricity, $0, Not yet
 table_row: Internet, $0, Not yet
-table_row: Water, $0, Not yet
+table_row: Water, 10, 1970-01-01 00:00:00
 table_end:
-header: 1970-06
+header: 1970-02
 table_start:
 table_row: Rent, $0, Not yet
 table_row: Electricity, $0, Not yet
 table_row: Internet, $0, Not yet
-table_row: Water, 10, 1970-06-17 00:00:00
+table_row: Water, $0, Not yet
+table_end:
+header: 1970-03
+table_start:
+table_row: Rent, 10, 1970-03-01 00:00:00
+table_row: Electricity, $0, Not yet
+table_row: Internet, $0, Not yet
+table_row: Water, $0, Not yet
 table_end:
 """
         )
