@@ -13,7 +13,7 @@ class TestRowClass(unittest.TestCase):
         r = [None for x in range(4)]
         r[0] = balance.Row("100", "1970-01-01", "incoming comment", "incoming")
         r[1] = balance.Row("100", "1970-01-02", "outgoing comment", "outgoing")
-        r[2] = balance.Row( "10", "1970-01-03", "a comment3", "incoming")
+        r[2] = balance.Row( "10", "1970-01-03", "a comment3", "incoming") # noqa
         r[3] = balance.Row("100", "1970-01-04", "a #hashtag", "incoming")
         self.rows = r
 
