@@ -9,59 +9,61 @@ import balance
 
 
 class TestRowClass(unittest.TestCase):
+    def setUp(self):
+        r = [None for x in range(4)]
+        r[0] = balance.Row("100", "1970-01-01", "incoming comment", "incoming")
+        r[1] = balance.Row("100", "1970-01-02", "outgoing comment", "outgoing")
+        r[2] = balance.Row( "10", "1970-01-03", "a comment3", "incoming")
+        r[3] = balance.Row("100", "1970-01-04", "a #hashtag", "incoming")
+        self.rows = r
+
+    def tearDown(self):
+        self.rows = None
 
     def test_direction(self):
         with self.assertRaises(ValueError):
             balance.Row("100", "1970-01-01", "a comment", "fred")
 
     def test_incoming(self):
-        obj = balance.Row("100", "1970-01-01", "a comment", "incoming")
+        obj = self.rows[0]
         self.assertEqual(obj.value, 100)
-        self.assertEqual(obj.comment, "a comment")
+        self.assertEqual(obj.comment, "incoming comment")
         self.assertEqual(obj.date, datetime.datetime(1970, 1, 1, 0, 0))
         self.assertEqual(obj.direction, 'incoming')
 
     def test_outgoing(self):
-        obj = balance.Row("100", "1970-01-01", "a comment", "outgoing")
+        obj = self.rows[1]
         self.assertEqual(obj.value, -100)
         self.assertEqual(obj.direction, 'outgoing')
 
     def test_addnum(self):
-        obj = balance.Row("100", "1970-01-01", "a comment", "incoming")
-        self.assertEqual(obj+10, 110)
+        self.assertEqual(self.rows[0]+10, 110)
 
     def test_raddnum(self):
-        obj = balance.Row("100", "1970-01-01", "a comment", "incoming")
-        self.assertEqual(10+obj, 110)
+        self.assertEqual(10+self.rows[0], 110)
 
     def test_addrow(self):
-        obj1 = balance.Row("100", "1970-01-01", "a comment", "incoming")
-        obj2 = balance.Row("10", "1971-01-01", "a comment2", "incoming")
-        obj3 = obj1 + obj2
-        self.assertEqual(obj3, 110)
+        self.assertEqual(self.rows[0] + self.rows[2], 110)
 
     def test_month(self):
-        obj = balance.Row("100", "1970-01-01", "a comment", "incoming")
-        self.assertEqual(obj.month(), "1970-01")
+        self.assertEqual(self.rows[0].month(), "1970-01")
 
     def test_hashtag(self):
-        obj = balance.Row("100", "1970-01-01", "a comment", "incoming")
-        self.assertEqual(obj.hashtag(), None)
+        self.assertEqual(self.rows[0].hashtag(), None)
 
-        obj = balance.Row("100", "1970-01-01", "a #hashtag", "incoming")
-        self.assertEqual(obj.hashtag(), 'hashtag')
+        self.assertEqual(self.rows[3].hashtag(), 'hashtag')
 
         obj = balance.Row("100", "1970-01-01", "#two #hashtags", "incoming")
         with self.assertRaises(ValueError):
             obj.hashtag()
 
     def test_match(self):
-        obj = balance.Row("100", "1970-01-01", "a comment", "incoming")
+        obj = self.rows[2]
         with self.assertRaises(AttributeError):
             obj.match(foo='blah')
 
         self.assertEqual(obj.match(direction='flubber'), None)
-        self.assertEqual(obj.match(comment='a comment'), obj)
+        self.assertEqual(obj.match(comment='a comment3'), obj)
 
 
 class TestMisc(unittest.TestCase):
