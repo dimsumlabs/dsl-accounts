@@ -37,6 +37,13 @@ def main():
         cover.start()
 
     tests = loader.discover('.')
+
+    # If we ever drop libraries into the 'lib' subdir defined in the above
+    # sys.path.insert then we will need to discover their tests and add
+    # them separately with the following:
+    #  tests_lib = loader.discover('lib', top_level_dir='lib')
+    #  tests.addTests(tests_lib)
+
     runner.run(tests)
 
     if cover:
