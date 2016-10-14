@@ -193,7 +193,7 @@ def grid_render(rows):
     # Render the accumulated data
     s = []
 
-    tags_len = max([len(tag) for tag in tags])
+    tags_len = max([len(i) for i in tags])
     months = sorted(months)
 
     # Skip the column of tag names
