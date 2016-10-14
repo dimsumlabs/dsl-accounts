@@ -148,3 +148,19 @@ table_row: Water, $0, Not yet
 table_end:
 """
         )
+
+    def test_grid_render(self):
+        self.rows.append(balance.Row("15", "1970-01-11",
+                                     "second #water", "outgoing"))
+
+        expect = ""
+        expect += "           	1970-01	1970-02	1970-03	\n"
+        expect += "In unknown 	     10			\n"
+        expect += "Out rent   	    -10		    -10	\n"
+        expect += "Out unknown		    -10		\n"
+        expect += "Out water  	    -25			\n"
+        expect += "\n"
+        expect += "TOTALS     	    -25	    -10	    -10	\n"
+        expect += "TOTAL:	    -45"
+
+        self.assertEqual(balance.grid_render(self.rows), expect)

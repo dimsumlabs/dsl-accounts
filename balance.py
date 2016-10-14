@@ -146,6 +146,90 @@ def topay_render(all_rows, strings):
 
     return ''.join(s)
 
+
+def grid_render(rows):
+    """Accumulate the rows into month+tag buckets, then render this as text
+    """
+    months = set()
+    tags = set()
+    grid = {}
+    totals = {}
+    totals['total'] = 0
+
+    # Accumulate the data
+    for row in rows:
+        month = row.month()
+        tag = row.hashtag()
+
+        if tag is None:
+            tag = 'unknown'
+
+        if row.direction == 'outgoing':
+            tag = 'out ' + tag
+        else:
+            tag = 'in ' + tag
+
+        tag = tag.capitalize()
+
+        # I would prefer auto-vivification to all these if statements
+        if tag not in grid:
+            grid[tag] = {}
+        if month not in grid[tag]:
+            grid[tag][month] = 0
+        if month not in totals:
+            totals[month] = 0
+
+        # sum this row into various buckets
+        grid[tag][month] += row.value
+        totals[month] += row.value
+        totals['total'] += row.value
+        months.add(month)
+        tags.add(tag)
+
+    # Technically, this function could be split here into an accumulate
+    # and a render function, but until there is a second consumer, that
+    # is just a complication
+
+    # Render the accumulated data
+    s = []
+
+    tags_len = max([len(tag) for tag in tags])
+    months = sorted(months)
+
+    # Skip the column of tag names
+    s.append(' '*tags_len)
+    s.append("\t")
+
+    # Output the month row headings
+    for month in months:
+        s.append(month)
+        s.append("\t")
+
+    s.append("\n")
+
+    # Output each tag
+    for tag in sorted(tags):
+        s.append("{:<{width}}\t".format(tag, width=tags_len))
+
+        for month in months:
+            if month in grid[tag]:
+                s.append("{:>7}\t".format(grid[tag][month]))
+            else:
+                s.append("\t")
+
+        s.append("\n")
+
+    s.append("\n")
+    s.append("{:<{width}}\t".format('TOTALS', width=tags_len))
+
+    for month in months:
+        s.append("{:>7}\t".format(totals[month]))
+
+    s.append("\n")
+    s.append("TOTAL:\t{:>7}".format(totals['total']))
+
+    return ''.join(s)
+
 #
 # This section contains the implementation of the commandline
 # sub-commands.  Ideally, they are all small and simple, implemented with
@@ -207,6 +291,12 @@ def subp_csv(args):
         writer.writerow(('Sum',))
         writer.writerow((sum(rows),))
 
+
+def subp_grid(args):
+    rows = list(parse_dir(args.dir))
+    print(grid_render(rows))
+
+
 # A list of all the sub-commands
 subp_cmds = {
     'sum': {
@@ -228,7 +318,11 @@ subp_cmds = {
     'csv': {
         'func': subp_csv,
         'help': 'Output transactions as csv',
-    }
+    },
+    'grid': {
+        'func': subp_grid,
+        'help': 'Output a grid of transaction tags vs months',
+    },
 }
 
 #
