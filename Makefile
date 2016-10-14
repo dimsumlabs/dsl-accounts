@@ -6,7 +6,7 @@ build-dep:
 	apt-get install python-coverage
 
 # Perform all available tests
-test: test.style cover.percent test.units
+test: test.style test.units
 
 # Test just the code style - note: much slower than the unit tests
 test.style:
