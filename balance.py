@@ -16,12 +16,6 @@ IGNORE_FILES = ('membershipfees',)
 HASHTAGS = ('rent', 'electricity', 'internet', 'water')
 
 
-def list_files(dirname):
-    for f in os.listdir(dirname):
-        if f not in IGNORE_FILES:
-            yield f
-
-
 class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
 
     def __new__(cls, value, date, comment, direction):
@@ -96,10 +90,13 @@ def find_hashtag(keyword, rows):
     return (True, -matching[0].value, matching[0].date)
 
 
-def parse_dir(dirname):
+def parse_dir(dirname):   # pragma: no cover
     '''Take all files in dirname and return Row instances'''
 
-    for filename in list_files(dirname):
+    for filename in os.listdir(dirname):
+        if filename in IGNORE_FILES:
+            continue
+
         direction, _ = filename.split('-', 1)
 
         with open(os.path.join(dirname, filename), 'r') as tsvfile:
@@ -240,11 +237,11 @@ def grid_render(rows):
 #
 
 
-def subp_sum(args):
+def subp_sum(args):  # pragma: no cover
     print("{}".format(sum(parse_dir(args.dir))))
 
 
-def subp_topay(args):
+def subp_topay(args):  # pragma: no cover
     strings = {
         'header': 'Date: {date}',
         'table_start': "Bill\t\tPrice\tPay Date",
@@ -255,7 +252,7 @@ def subp_topay(args):
     print(topay_render(all_rows, strings))
 
 
-def subp_topay_html(args):
+def subp_topay_html(args):  # pragma: no cover
     strings = {
         'header': '<h2>Date: <i>{date}</i></h2>',
         'table_start':
@@ -271,12 +268,12 @@ def subp_topay_html(args):
     print(topay_render(all_rows, strings))
 
 
-def subp_party(args):
+def subp_party(args):  # pragma: no cover
     balance = sum(parse_dir(args.dir))
     print("Success" if balance > 0 else "Fail")
 
 
-def subp_csv(args):
+def subp_csv(args):  # pragma: no cover
     rows = sorted(parse_dir(args.dir), key=lambda x: x.date)
 
     with (open(args.csv_out, 'w') if args.csv_out else sys.stdout) as f:
@@ -292,7 +289,7 @@ def subp_csv(args):
         writer.writerow((sum(rows),))
 
 
-def subp_grid(args):
+def subp_grid(args):  # pragma: no cover
     rows = list(parse_dir(args.dir))
     print(grid_render(rows))
 
@@ -330,7 +327,7 @@ subp_cmds = {
 # features.  The only exception is if a sub-command needs to add a new
 # commandline option.
 #
-if __name__ == '__main__':
+if __name__ == '__main__':  # pragma: no cover
     argparser = argparse.ArgumentParser(
         description='Run calculations and transformations on cash data')
     argparser.add_argument('--dir',
