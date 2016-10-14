@@ -6,7 +6,7 @@ build-dep:
 	apt-get install python-coverage
 
 # Perform all available tests
-test: test.style test.units
+test: test.style cover.percent test.units
 
 # Test just the code style - note: much slower than the unit tests
 test.style:
@@ -19,6 +19,9 @@ test.units:
 # run the unit tests and additionally produce a test coverage report
 cover:
 	./run_tests.py cover
+
+cover.percent:
+	coverage report --fail-under=100
 
 clean:
 	rm -rf htmlcov .coverage
