@@ -25,7 +25,12 @@ def main():
         (thanks pylint)
     """
     if len(sys.argv) > 1 and sys.argv[1] == 'cover':
-        cover = Coverage(branch=True, auto_data=True)
+        # FIXME - there are enough args now to need an arg parser
+        cover = Coverage(branch=True,auto_data=True)
+        min_percent = 0
+
+        if len(sys.argv) > 2:
+            min_percent = float(sys.argv[2])
     else:
         cover = False
 
@@ -54,7 +59,11 @@ def main():
             cover.html_report()
         except:
             pass
-        cover.report(show_missing=True)
+        percent = cover.report(show_missing=True)
+
+        if min_percent > percent:
+            print("The coverage ({:.1f}% reached) fails to reach the minimum required ({}%)".format(percent,min_percent))
+            exit(1)
 
 if __name__ == '__main__':
     main()
