@@ -26,7 +26,7 @@ def main():
     """
     if len(sys.argv) > 1 and sys.argv[1] == 'cover':
         # FIXME - there are enough args now to need an arg parser
-        cover = Coverage(branch=True,auto_data=True)
+        cover = Coverage(branch=True, auto_data=True)
         min_percent = 0
 
         if len(sys.argv) > 2:
@@ -62,7 +62,8 @@ def main():
         percent = cover.report(show_missing=True)
 
         if min_percent > percent:
-            print("The coverage ({:.1f}% reached) fails to reach the minimum required ({}%)".format(percent,min_percent))
+            err_fmt = "The coverage ({:.1f}% reached) fails to reach the minimum required ({}%)\n"  # noqa
+            sys.stderr.write(err_fmt.format(percent, min_percent))
             exit(1)
 
 if __name__ == '__main__':
