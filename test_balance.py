@@ -127,24 +127,21 @@ class TestMisc(unittest.TestCase):
             balance.topay_render(self.rows, strings),
             """header: 1970-01
 table_start:
-table_row: Rent, 10, 1970-01-10 00:00:00
-table_row: Electricity, $0, Not yet
-table_row: Internet, $0, Not yet
-table_row: Water, 10, 1970-01-01 00:00:00
+table_row: Out rent, -10, 1970-01-10 00:00:00
+table_row: Out unknown, $0, Not Yet
+table_row: Out water, -10, 1970-01-01 00:00:00
 table_end:
 header: 1970-02
 table_start:
-table_row: Rent, $0, Not yet
-table_row: Electricity, $0, Not yet
-table_row: Internet, $0, Not yet
-table_row: Water, $0, Not yet
+table_row: Out rent, $0, Not Yet
+table_row: Out unknown, -10, 1970-02-06 00:00:00
+table_row: Out water, $0, Not Yet
 table_end:
 header: 1970-03
 table_start:
-table_row: Rent, 10, 1970-03-01 00:00:00
-table_row: Electricity, $0, Not yet
-table_row: Internet, $0, Not yet
-table_row: Water, $0, Not yet
+table_row: Out rent, -10, 1970-03-01 00:00:00
+table_row: Out unknown, $0, Not Yet
+table_row: Out water, $0, Not Yet
 table_end:
 """
         )
