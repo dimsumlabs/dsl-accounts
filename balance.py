@@ -211,15 +211,23 @@ def grid_render(months, tags, grid, totals):
 
 
 def topay_render(all_rows, strings):
+    rows = [row for row in all_rows if row.match(direction='outgoing')]
+    (months, tags, grid, totals) = grid_accumulate(rows)
+
     s = []
-    for date in get_payment_months(all_rows):
-        s.append(strings['header'].format(date=date))
+    for month in sorted(months):
+        s.append(strings['header'].format(date=month))
         s.append("\n")
-        rows = filter_outgoing_payments(all_rows, date)
         s.append(strings['table_start'])
         s.append("\n")
-        for hashtag in HASHTAGS:
-            paid, price, date = find_hashtag(hashtag, rows)
+        for hashtag in sorted(tags):
+            if month in grid[hashtag]:
+                price = grid[hashtag][month]['sum']
+                date = grid[hashtag][month]['last']
+            else:
+                price = "$0"
+                date = "Not Yet"
+
             s.append(strings['table_row'].format(hashtag=hashtag.capitalize(),
                                                  price=price, date=date))
             s.append("\n")
