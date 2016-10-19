@@ -125,25 +125,6 @@ def get_payment_months(rows):
     return ret
 
 
-def topay_render(all_rows, strings):
-    s = []
-    for date in get_payment_months(all_rows):
-        s.append(strings['header'].format(date=date))
-        s.append("\n")
-        rows = filter_outgoing_payments(all_rows, date)
-        s.append(strings['table_start'])
-        s.append("\n")
-        for hashtag in HASHTAGS:
-            paid, price, date = find_hashtag(hashtag, rows)
-            s.append(strings['table_row'].format(hashtag=hashtag.capitalize(),
-                                                 price=price, date=date))
-            s.append("\n")
-        s.append(strings['table_end'])
-        s.append("\n")
-
-    return ''.join(s)
-
-
 def grid_accumulate(rows):
     """Accumulate the rows into month+tag buckets, then render this as text
     """
@@ -226,6 +207,26 @@ def grid_render(months, tags, grid, totals):
     s.append("TOTAL:\t{:>7}".format(totals['total']))
 
     return ''.join(s)
+
+
+def topay_render(all_rows, strings):
+    s = []
+    for date in get_payment_months(all_rows):
+        s.append(strings['header'].format(date=date))
+        s.append("\n")
+        rows = filter_outgoing_payments(all_rows, date)
+        s.append(strings['table_start'])
+        s.append("\n")
+        for hashtag in HASHTAGS:
+            paid, price, date = find_hashtag(hashtag, rows)
+            s.append(strings['table_row'].format(hashtag=hashtag.capitalize(),
+                                                 price=price, date=date))
+            s.append("\n")
+        s.append(strings['table_end'])
+        s.append("\n")
+
+    return ''.join(s)
+
 
 #
 # This section contains the implementation of the commandline
