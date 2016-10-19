@@ -153,12 +153,13 @@ def grid_accumulate(rows):
         if tag not in grid:
             grid[tag] = {}
         if month not in grid[tag]:
-            grid[tag][month] = 0
+            grid[tag][month] = {'sum': 0, 'last': datetime(1970, 1, 1, 0, 0)}
         if month not in totals:
             totals[month] = 0
 
         # sum this row into various buckets
-        grid[tag][month] += row.value
+        grid[tag][month]['sum'] += row.value
+        grid[tag][month]['last'] = max(row.date, grid[tag][month]['last'])
         totals[month] += row.value
         totals['total'] += row.value
         months.add(month)
@@ -191,7 +192,7 @@ def grid_render(months, tags, grid, totals):
 
         for month in months:
             if month in grid[tag]:
-                s.append("{:>7}\t".format(grid[tag][month]))
+                s.append("{:>7}\t".format(grid[tag][month]['sum']))
             else:
                 s.append("\t")
 
