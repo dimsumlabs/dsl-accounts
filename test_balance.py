@@ -64,6 +64,7 @@ class TestRowClass(unittest.TestCase):
 
         self.assertEqual(obj.match(direction='flubber'), None)
         self.assertEqual(obj.match(comment='a comment3'), obj)
+        self.assertEqual(obj.match(month='1970-01'), obj)
 
 
 class TestMisc(unittest.TestCase):
@@ -78,42 +79,6 @@ class TestMisc(unittest.TestCase):
 
     def tearDown(self):
         self.rows = None
-
-    def test_hashtag(self):
-        rows = self.rows
-
-        # look for "fred" in the comments
-        self.assertEqual(
-            balance.find_hashtag("fred", rows),
-            (False, '$0', 'Not yet')
-        )
-
-        rows.append(balance.Row("10", "1971-01-01",
-                                "here #fred is", "incoming"))
-        self.assertEqual(
-            balance.find_hashtag("fred", rows),
-            (True, -10, datetime.datetime(1971, 1, 1, 0, 0))
-        )
-
-        rows.append(balance.Row("15", "1971-11-01",
-                                "and #fred again", "incoming"))
-        with self.assertRaises(ValueError):
-            balance.find_hashtag('fred', rows)
-
-    def test_filter_outgoing_payments(self):
-        self.assertEqual(
-            balance.filter_outgoing_payments(self.rows, '1970-01'),
-            [
-                balance.Row('10', '1970-01-01', 'comment3 #water', 'outgoing'),
-                balance.Row('10', '1970-01-10', 'comment2 #rent', 'outgoing'),
-            ]
-        )
-
-    def test_payment_months(self):
-        self.assertEqual(
-            balance.get_payment_months(self.rows),
-            ['1970-01', '1970-02', '1970-03']
-        )
 
     def test_topay_render(self):
         strings = {

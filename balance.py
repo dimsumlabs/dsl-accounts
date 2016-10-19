@@ -13,7 +13,6 @@ import re
 
 FILES_DIR = 'cash'
 IGNORE_FILES = ('membershipfees',)
-HASHTAGS = ('rent', 'electricity', 'internet', 'water')
 
 
 class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
@@ -75,21 +74,6 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
         return self
 
 
-def find_hashtag(keyword, rows):
-    '''Find a hash tag in the payment history'''
-    matching = [x for x in rows if x.match(hashtag=keyword)]
-
-    if not matching:
-        return (False, '$0', 'Not yet')
-
-    # TODO - Accumulate the data:  sum the value, max the date ?
-    if len(matching) > 1:
-        raise ValueError(
-            'Multiple rows found with same hashtag: {}'.format(keyword))
-
-    return (True, -matching[0].value, matching[0].date)
-
-
 def parse_dir(dirname):   # pragma: no cover
     '''Take all files in dirname and return Row instances'''
 
@@ -104,25 +88,6 @@ def parse_dir(dirname):   # pragma: no cover
 
             for row in reader:
                 yield Row(*row, direction=direction)
-
-
-def filter_outgoing_payments(rows, month):
-    '''Filter the given rows list for outgoing payments in the given month'''
-    ret = [
-        row for row in rows
-        if row.match(month=month, direction='outgoing')
-    ]
-    ret.sort(key=lambda x: x.date)
-    return ret
-
-
-def get_payment_months(rows):
-    months = set()
-    for row in rows:
-        months.add(row.month())
-    ret = list(months)
-    ret.sort()
-    return ret
 
 
 def grid_accumulate(rows):
