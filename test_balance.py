@@ -163,4 +163,5 @@ table_end:
         expect += "TOTALS     	    -25	    -10	    -10	\n"
         expect += "TOTAL:	    -45"
 
-        self.assertEqual(balance.grid_render(self.rows), expect)
+        (m, t, grid, total) = balance.grid_accumulate(self.rows)
+        self.assertEqual(balance.grid_render(m, t, grid, total), expect)
