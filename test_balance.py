@@ -81,6 +81,49 @@ class TestMisc(unittest.TestCase):
     def tearDown(self):
         self.rows = None
 
+    def test_grid_accumulate(self):
+        self.assertEqual(
+            balance.grid_accumulate(self.rows),(
+                set(['1970-03', '1970-02', '1970-01']),
+                set(['Out water', 'Out unknown', 'Out rent', 'In unknown']),
+                {
+                    'Out water': {
+                        '1970-01': {
+                            'sum': -25,
+                            'last': datetime.datetime(1970, 1, 11, 0, 0)
+                        }
+                    },
+                    'Out unknown': {
+                        '1970-02': {
+                            'sum': -10,
+                            'last': datetime.datetime(1970, 2, 6, 0, 0)
+                        }
+                    },
+                    'Out rent': {
+                        '1970-03': {
+                            'sum': -10,
+                            'last': datetime.datetime(1970, 3, 1, 0, 0)
+                        },
+                        '1970-01': {
+                            'sum': -10,
+                            'last': datetime.datetime(1970, 1, 10, 0, 0)
+                        }
+                    },
+                    'In unknown': {
+                        '1970-01': {
+                            'sum': 10,
+                            'last': datetime.datetime(1970, 1, 5, 0, 0)
+                        }
+                    }
+                },
+                {
+                    '1970-03': -10,
+                    '1970-02': -10,
+                    '1970-01': -25,
+                    'total': -45
+                }
+        ) )
+
     def test_topay_render(self):
         strings = {
             'header': 'header: {date}',
