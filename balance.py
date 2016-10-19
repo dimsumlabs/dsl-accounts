@@ -254,9 +254,9 @@ def subp_sum(args):  # pragma: no cover
 def subp_topay(args):  # pragma: no cover
     strings = {
         'header': 'Date: {date}',
-        'table_start': "Bill\t\tPrice\tPay Date",
+        'table_start': "Bill\t\t\tPrice\tPay Date",
         'table_end': '',
-        'table_row': "{hashtag:<15}\t{price}\t{date}",
+        'table_row': "{hashtag:<23}\t{price}\t{date}",
     }
     all_rows = list(parse_dir(args.dir))
     print(topay_render(all_rows, strings))
