@@ -144,7 +144,7 @@ def topay_render(all_rows, strings):
     return ''.join(s)
 
 
-def grid_render(rows):
+def grid_accumulate(rows):
     """Accumulate the rows into month+tag buckets, then render this as text
     """
     months = set()
@@ -183,10 +183,10 @@ def grid_render(rows):
         months.add(month)
         tags.add(tag)
 
-    # Technically, this function could be split here into an accumulate
-    # and a render function, but until there is a second consumer, that
-    # is just a complication
+    return (months, tags, grid, totals)
 
+
+def grid_render(months, tags, grid, totals):
     # Render the accumulated data
     s = []
 
@@ -291,7 +291,8 @@ def subp_csv(args):  # pragma: no cover
 
 def subp_grid(args):  # pragma: no cover
     rows = list(parse_dir(args.dir))
-    print(grid_render(rows))
+    (months, tags, grid, totals) = grid_accumulate(rows)
+    print(grid_render(months, tags, grid, totals))
 
 
 # A list of all the sub-commands
