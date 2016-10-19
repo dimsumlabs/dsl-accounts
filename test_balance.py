@@ -83,7 +83,7 @@ class TestMisc(unittest.TestCase):
 
     def test_grid_accumulate(self):
         self.assertEqual(
-            balance.grid_accumulate(self.rows),(
+            balance.grid_accumulate(self.rows), (
                 set(['1970-03', '1970-02', '1970-01']),
                 set(['Out water', 'Out unknown', 'Out rent', 'In unknown']),
                 {
@@ -121,8 +121,7 @@ class TestMisc(unittest.TestCase):
                     '1970-02': -10,
                     '1970-01': -25,
                     'total': -45
-                }
-        ) )
+                }))
 
     def test_topay_render(self):
         strings = {
