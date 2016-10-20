@@ -90,6 +90,24 @@ def parse_dir(dirname):   # pragma: no cover
                 yield Row(*row, direction=direction)
 
 
+def apply_filter_strings(filter_strings, rows):
+    """Apply the given list of human readable filters to the rows
+    """
+    filters = {}
+    if filter_strings:
+        for s in filter_strings:
+            try:
+                (key, value) = s.split('=')
+            except ValueError:
+                raise ValueError('Filters must be "key=value", '
+                                 '"{}" is not'.format(s))
+            filters[key] = value
+
+    for row in rows:
+        if row.match(**filters):
+            yield row
+
+
 def grid_accumulate(rows):
     """Accumulate the rows into month+tag buckets, then render this as text
     """
@@ -213,7 +231,7 @@ def topay_render(all_rows, strings):
 
 
 def subp_sum(args):  # pragma: no cover
-    print("{}".format(sum(parse_dir(args.dir))))
+    print("{}".format(sum(args.rows)))
 
 
 def subp_topay(args):  # pragma: no cover
@@ -223,7 +241,7 @@ def subp_topay(args):  # pragma: no cover
         'table_end': '',
         'table_row': "{hashtag:<23}\t{price}\t{date}",
     }
-    all_rows = list(parse_dir(args.dir))
+    all_rows = list(args.rows)
     print(topay_render(all_rows, strings))
 
 
@@ -239,17 +257,17 @@ def subp_topay_html(args):  # pragma: no cover
         <td>{hashtag}</td><td>{price}</td><td>{date}</td>
     </tr>''',
     }
-    all_rows = list(parse_dir(args.dir))
+    all_rows = list(args.rows)
     print(topay_render(all_rows, strings))
 
 
 def subp_party(args):  # pragma: no cover
-    balance = sum(parse_dir(args.dir))
+    balance = sum(args.rows)
     print("Success" if balance > 0 else "Fail")
 
 
 def subp_csv(args):  # pragma: no cover
-    rows = sorted(parse_dir(args.dir), key=lambda x: x.date)
+    rows = sorted(args.rows, key=lambda x: x.date)
 
     with args.csv_out as f:
         writer = csv.writer(f)
@@ -265,7 +283,7 @@ def subp_csv(args):  # pragma: no cover
 
 
 def subp_grid(args):  # pragma: no cover
-    rows = list(parse_dir(args.dir))
+    rows = list(args.rows)
     (months, tags, grid, totals) = grid_accumulate(rows)
     print(grid_render(months, tags, grid, totals))
 
@@ -311,6 +329,9 @@ if __name__ == '__main__':  # pragma: no cover
                            type=str,
                            default=FILES_DIR,
                            help='Input directory')
+    argparser.add_argument('--filter', action='append',
+                           help='Add a key=value filter to the rows used')
+
     subp = argparser.add_subparsers(help='Subcommand', dest='cmd')
     subp.required = True
     for key, value in subp_cmds.items():
@@ -328,5 +349,7 @@ if __name__ == '__main__':  # pragma: no cover
 
     if not os.path.exists(args.dir):
         raise RuntimeError('Directory "{}" does not exist'.format(args.dir))
+
+    args.rows = apply_filter_strings(args.filter, parse_dir(args.dir))
 
     args.func(args)
