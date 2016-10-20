@@ -315,6 +315,7 @@ if __name__ == '__main__':  # pragma: no cover
     subp.required = True
     for key, value in subp_cmds.items():
         value['parser'] = subp.add_parser(key, help=value['help'])
+        value['parser'].set_defaults(func=value['func'])
 
     # Add a new commandline option for the "csv" subcommand
     subp_cmds['csv']['parser'].add_argument('--out',
@@ -329,8 +330,4 @@ if __name__ == '__main__':  # pragma: no cover
     if not os.path.exists(args.dir):
         raise RuntimeError('Directory "{}" does not exist'.format(args.dir))
 
-    if args.cmd in subp_cmds:
-        subp_cmds[args.cmd]['func'](args)
-
-    else:
-        raise ValueError('Unknown command "{}"'.format(args.cmd))
+    args.func(args)
