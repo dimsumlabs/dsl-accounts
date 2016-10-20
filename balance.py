@@ -251,7 +251,7 @@ def subp_party(args):  # pragma: no cover
 def subp_csv(args):  # pragma: no cover
     rows = sorted(parse_dir(args.dir), key=lambda x: x.date)
 
-    with (open(args.csv_out, 'w') if args.csv_out else sys.stdout) as f:
+    with args.csv_out as f:
         writer = csv.writer(f)
         # Write header
         writer.writerow([row.capitalize() for row in Row._fields])
@@ -319,9 +319,8 @@ if __name__ == '__main__':  # pragma: no cover
 
     # Add a new commandline option for the "csv" subcommand
     subp_cmds['csv']['parser'].add_argument('--out',
-                                            action='store',
-                                            type=str,
-                                            default=None,
+                                            type=argparse.FileType('w'),
+                                            default=sys.stdout,
                                             dest='csv_out',
                                             help='Output file')
 
