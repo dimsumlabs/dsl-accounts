@@ -109,7 +109,7 @@ def apply_filter_strings(filter_strings, rows):
 
 
 def grid_accumulate(rows):
-    """Accumulate the rows into month+tag buckets, then render this as text
+    """Accumulate the rows into month+tag buckets
     """
     months = set()
     tags = set()
@@ -193,8 +193,8 @@ def grid_render(months, tags, grid, totals):
     return ''.join(s)
 
 
-def topay_render(all_rows, strings):
-    rows = [row for row in all_rows if row.match(direction='outgoing')]
+def topay_render(rows, strings):
+    rows = apply_filter_strings(['direction=outgoing'], rows)
     (months, tags, grid, totals) = grid_accumulate(rows)
 
     s = []
@@ -241,8 +241,7 @@ def subp_topay(args):  # pragma: no cover
         'table_end': '',
         'table_row': "{hashtag:<23}\t{price}\t{date}",
     }
-    all_rows = list(args.rows)
-    print(topay_render(all_rows, strings))
+    print(topay_render(args.rows, strings))
 
 
 def subp_topay_html(args):  # pragma: no cover
@@ -257,8 +256,7 @@ def subp_topay_html(args):  # pragma: no cover
         <td>{hashtag}</td><td>{price}</td><td>{date}</td>
     </tr>''',
     }
-    all_rows = list(args.rows)
-    print(topay_render(all_rows, strings))
+    print(topay_render(args.rows, strings))
 
 
 def subp_party(args):  # pragma: no cover
@@ -283,8 +281,7 @@ def subp_csv(args):  # pragma: no cover
 
 
 def subp_grid(args):  # pragma: no cover
-    rows = list(args.rows)
-    (months, tags, grid, totals) = grid_accumulate(rows)
+    (months, tags, grid, totals) = grid_accumulate(args.rows)
     print(grid_render(months, tags, grid, totals))
 
 
