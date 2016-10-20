@@ -49,7 +49,7 @@ def main():
     #  tests_lib = loader.discover('lib', top_level_dir='lib')
     #  tests.addTests(tests_lib)
 
-    runner.run(tests)
+    result = runner.run(tests)
 
     if cover:
         cover.stop()
@@ -65,6 +65,9 @@ def main():
             err_fmt = "The coverage ({:.1f}% reached) fails to reach the minimum required ({}%)\n"  # noqa
             sys.stderr.write(err_fmt.format(percent, min_percent))
             exit(1)
+
+    if not result.wasSuccessful():
+        exit(1)
 
 if __name__ == '__main__':
     main()
