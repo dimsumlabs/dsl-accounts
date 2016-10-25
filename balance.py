@@ -64,6 +64,12 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
         """
         return self._xtag('#')
 
+    def bangtag(self):
+        """Look at the comment for this row and extract any '!' tags found
+           bangtags are used to insert meta-commands (like '!months=-1:5')
+        """
+        return self._xtag('!')
+
     def match(self, **kwargs):
         """using kwargs, check if this Row matches if so, return it, or None
         """

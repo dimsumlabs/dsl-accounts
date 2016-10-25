@@ -13,7 +13,7 @@ class TestRowClass(unittest.TestCase):
         r = [None for x in range(4)]
         r[0] = balance.Row("100", "1970-01-01", "incoming comment", "incoming")
         r[1] = balance.Row("100", "1970-01-02", "outgoing comment", "outgoing")
-        r[2] = balance.Row( "10", "1970-01-03", "a comment3", "incoming") # noqa
+        r[2] = balance.Row( "10", "1970-01-03", "a !bangtag", "incoming") # noqa
         r[3] = balance.Row("100", "1970-01-04", "a #hashtag", "incoming")
         self.rows = r
 
@@ -57,13 +57,22 @@ class TestRowClass(unittest.TestCase):
         with self.assertRaises(ValueError):
             obj.hashtag()
 
+    def test_bangtag(self):
+        self.assertEqual(self.rows[0].bangtag(), None)
+
+        self.assertEqual(self.rows[2].bangtag(), 'bangtag')
+
+        obj = balance.Row("100", "1970-01-01", "!two !bangtags", "incoming")
+        with self.assertRaises(ValueError):
+            obj.bangtag()
+
     def test_match(self):
         obj = self.rows[2]
         with self.assertRaises(AttributeError):
             obj.match(foo='blah')
 
         self.assertEqual(obj.match(direction='flubber'), None)
-        self.assertEqual(obj.match(comment='a comment3'), obj)
+        self.assertEqual(obj.match(comment='a !bangtag'), obj)
         self.assertEqual(obj.match(month='1970-01'), obj)
 
 
