@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # Licensed under GPLv3
 from collections import namedtuple
-from datetime import datetime
 from decimal import Decimal
+import datetime
 import argparse
 import os.path
 import sys
@@ -19,7 +19,7 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
 
     def __new__(cls, value, date, comment, direction):
         value = Decimal(value)
-        date = datetime.strptime(date.strip(), "%Y-%m-%d")
+        date = datetime.datetime.strptime(date.strip(), "%Y-%m-%d").date()
 
         if direction not in ('incoming', 'outgoing'):
             raise ValueError('Direction "{}" unhandled'.format(direction))
@@ -148,7 +148,7 @@ def grid_accumulate(rows):
         if tag not in grid:
             grid[tag] = {}
         if month not in grid[tag]:
-            grid[tag][month] = {'sum': 0, 'last': datetime(1970, 1, 1, 0, 0)}
+            grid[tag][month] = {'sum': 0, 'last': datetime.date(1970, 1, 1)}
         if month not in totals:
             totals[month] = 0
 
