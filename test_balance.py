@@ -105,9 +105,9 @@ class TestRowClass(unittest.TestCase):
 
     def test__split_dates(self):
         self.assertEqual(self.rows[0]._split_dates(),
-                         datetime.date(1970, 1, 1))
+                         [datetime.date(1970, 1, 1)])
         self.assertEqual(self.rows[2]._split_dates(),
-                         datetime.date(1970, 1, 3))
+                         [datetime.date(1970, 1, 3)])
         self.assertEqual(self.rows[4]._split_dates(), [
             datetime.date(1972, 1, 29),
             datetime.date(1972, 2, 29),
