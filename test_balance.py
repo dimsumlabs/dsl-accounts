@@ -28,7 +28,7 @@ class TestRowClass(unittest.TestCase):
         obj = self.rows[0]
         self.assertEqual(obj.value, 100)
         self.assertEqual(obj.comment, "incoming comment")
-        self.assertEqual(obj.date, datetime.datetime(1970, 1, 1, 0, 0))
+        self.assertEqual(obj.date, datetime.date(1970, 1, 1))
         self.assertEqual(obj.direction, 'incoming')
 
     def test_outgoing(self):
@@ -115,29 +115,29 @@ class TestMisc(unittest.TestCase):
                     'Out water': {
                         '1970-01': {
                             'sum': -25,
-                            'last': datetime.datetime(1970, 1, 11, 0, 0)
+                            'last': datetime.date(1970, 1, 11)
                         }
                     },
                     'Out unknown': {
                         '1970-02': {
                             'sum': -10,
-                            'last': datetime.datetime(1970, 2, 6, 0, 0)
+                            'last': datetime.date(1970, 2, 6)
                         }
                     },
                     'Out rent': {
                         '1970-03': {
                             'sum': -10,
-                            'last': datetime.datetime(1970, 3, 1, 0, 0)
+                            'last': datetime.date(1970, 3, 1)
                         },
                         '1970-01': {
                             'sum': -10,
-                            'last': datetime.datetime(1970, 1, 10, 0, 0)
+                            'last': datetime.date(1970, 1, 10)
                         }
                     },
                     'In unknown': {
                         '1970-01': {
                             'sum': 10,
-                            'last': datetime.datetime(1970, 1, 5, 0, 0)
+                            'last': datetime.date(1970, 1, 5)
                         }
                     }
                 },
@@ -160,19 +160,19 @@ class TestMisc(unittest.TestCase):
             balance.topay_render(self.rows, strings),
             """header: 1970-01
 table_start:
-table_row: Out rent, -10, 1970-01-10 00:00:00
+table_row: Out rent, -10, 1970-01-10
 table_row: Out unknown, $0, Not Yet
-table_row: Out water, -25, 1970-01-11 00:00:00
+table_row: Out water, -25, 1970-01-11
 table_end:
 header: 1970-02
 table_start:
 table_row: Out rent, $0, Not Yet
-table_row: Out unknown, -10, 1970-02-06 00:00:00
+table_row: Out unknown, -10, 1970-02-06
 table_row: Out water, $0, Not Yet
 table_end:
 header: 1970-03
 table_start:
-table_row: Out rent, -10, 1970-03-01 00:00:00
+table_row: Out rent, -10, 1970-03-01
 table_row: Out unknown, $0, Not Yet
 table_row: Out water, $0, Not Yet
 table_end:
