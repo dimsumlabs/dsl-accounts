@@ -263,40 +263,44 @@ def grid_render(months, tags, grid, totals):
     # Render the accumulated data
     s = []
 
+    # how much room to allow for the tags
     tags_len = max([len(i) for i in tags])
+    tags_len += 1
+
+    # how much room to allow for each month column
+    months_len = 10
+
     months = sorted(months)
 
     # Skip the column of tag names
     s.append(' '*tags_len)
-    s.append("\t")
 
     # Output the month row headings
     for month in months:
-        s.append(month)
-        s.append("\t")
+        s.append("{:>{}}".format(month, months_len))
 
     s.append("\n")
 
     # Output each tag
     for tag in sorted(tags):
-        s.append("{:<{width}}\t".format(tag, width=tags_len))
+        s.append("{:<{width}}".format(tag, width=tags_len))
 
         for month in months:
             if month in grid[tag]:
-                s.append("{:>7}\t".format(grid[tag][month]['sum']))
+                s.append("{:>{}}".format(grid[tag][month]['sum'], months_len))
             else:
-                s.append("\t")
+                s.append("{:>{}}".format('', months_len))
 
         s.append("\n")
 
     s.append("\n")
-    s.append("{:<{width}}\t".format('TOTALS', width=tags_len))
+    s.append("{:<{width}}".format('TOTALS', width=tags_len))
 
     for month in months:
-        s.append("{:>7}\t".format(totals[month]))
+        s.append("{:>{}}".format(totals[month], months_len))
 
     s.append("\n")
-    s.append("TOTAL:\t{:>7}".format(totals['total']))
+    s.append("TOTAL: {:>{}}".format(totals['total'], months_len))
 
     return ''.join(s)
 
