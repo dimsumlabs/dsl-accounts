@@ -15,8 +15,8 @@ class TestRowClass(unittest.TestCase):
         r[1] = balance.Row("100", "1970-01-02", "outgoing comment", "outgoing")
         r[2] = balance.Row( "10", "1970-01-03", "a !bangtag", "incoming") # noqa
         r[3] = balance.Row("100", "1970-01-04", "a #hashtag", "incoming")
-        r[4] = balance.Row("100", "1970-02-05", "!months:-1:5", "incoming")
-        r[5] = balance.Row("100", "1970-02-06", "!months:3", "incoming")
+        r[4] = balance.Row("100", "1972-02-29", "!months:-1:5", "incoming")
+        r[5] = balance.Row("100", "1972-01-31", "!months:4", "incoming")
         self.rows = r
 
     def tearDown(self):
@@ -109,16 +109,17 @@ class TestRowClass(unittest.TestCase):
         self.assertEqual(self.rows[2]._split_dates(),
                          datetime.date(1970, 1, 3))
         self.assertEqual(self.rows[4]._split_dates(), [
-            datetime.date(1970, 1, 5),
-            datetime.date(1970, 2, 5),
-            datetime.date(1970, 3, 5),
-            datetime.date(1970, 4, 5),
-            datetime.date(1970, 5, 5)
+            datetime.date(1972, 1, 29),
+            datetime.date(1972, 2, 29),
+            datetime.date(1972, 3, 29),
+            datetime.date(1972, 4, 29),
+            datetime.date(1972, 5, 29)
         ])
         self.assertEqual(self.rows[5]._split_dates(), [
-            datetime.date(1970, 2, 6),
-            datetime.date(1970, 3, 6),
-            datetime.date(1970, 4, 6),
+            datetime.date(1972, 1, 31),
+            datetime.date(1972, 2, 28),
+            datetime.date(1972, 3, 31),
+            datetime.date(1972, 4, 30),
         ])
 
         obj = balance.Row("100", "1970-01-01", "!months", "incoming")
