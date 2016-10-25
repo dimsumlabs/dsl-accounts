@@ -66,9 +66,57 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
 
     def bangtag(self):
         """Look at the comment for this row and extract any '!' tags found
-           bangtags are used to insert meta-commands (like '!months=-1:5')
+           bangtags are used to insert meta-commands (like '!months:-1:5')
         """
         return self._xtag('!')
+
+    def _month_add(ignore, date, incr):
+        """unghgnh.  I am following the pattern of not requiring any extra
+           libs to be installed to use this softare.  This means that
+           there are no month math functions, so I write my own
+
+           Given a date object and a number of months to increment
+           (or decrement) return a new date object
+        """
+        year = date.year
+        month = date.month + incr
+        while month > 12:
+            year += 1
+            month -= 12
+        while month < 1:
+            year -= 1
+            month += 12
+        return datetime.date(year, month, date.day)
+
+    def _split_dates(self):
+        """extract any !months tag and use that to calculate the list of
+           dates that this row could be split into
+        """
+        tag = self.bangtag()
+        if tag is None:
+            return self.date
+
+        fields = tag.split(':')
+
+        if fields[0] != 'months':       # TODO: fix this for multiple tags
+            return self.date
+
+        if len(fields) < 2 or len(fields) > 3:
+            raise ValueError('months bang must specfiy one or two numbers')
+
+        fields[1] = int(fields[1])
+        date = self.date
+        if fields[1] < 0:
+            # the starting month is earlier than the record date for this row
+            date = self._month_add(date, fields[1])
+            fields[2] = int(fields[2])
+            fields.remove(fields[1])
+
+        dates = []
+        for i in range(fields[1]):
+            dates.append(self._month_add(date, i))
+
+        return dates
 
     def match(self, **kwargs):
         """using kwargs, check if this Row matches if so, return it, or None
