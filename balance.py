@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Licensed under GPLv3
 from collections import namedtuple
-from decimal import Decimal
+import decimal
 import datetime
 import argparse
 import os.path
@@ -14,11 +14,14 @@ import re
 FILES_DIR = 'cash'
 IGNORE_FILES = ('membershipfees',)
 
+# Ensure we do not invent more money
+decimal.getcontext().rounding = decimal.ROUND_DOWN
+
 
 class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
 
     def __new__(cls, value, date, comment, direction):
-        value = Decimal(value)
+        value = decimal.Decimal(value)
         date = datetime.datetime.strptime(date.strip(), "%Y-%m-%d").date()
 
         if direction not in ('incoming', 'outgoing'):
@@ -26,7 +29,7 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
 
         # Inverse value
         if direction == 'outgoing':
-            value = Decimal(0)-value
+            value = decimal.Decimal(0)-value
 
         obj = super(cls, Row).__new__(cls, value, date, comment, direction)
         return obj
@@ -144,14 +147,22 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
         # would find two bangtags and raise an exception
         comment = self.comment+' !child'
 
-        # the total value of all the child rows will add up to the original
-        # row value
-        value = self.value / len(dates)
+        # divide the value amongst all the child rows
+        # (The abs value is taken because the sign is in the self.direction)
+        each_value = abs(self.value / len(dates))
+        # (quantize it to avoid numbers that cannot be represented with cash)
+        each_value = each_value.quantize(decimal.Decimal('.01'))
+        each_value = each_value.normalize()
+
+        # the remainder is any money lost due to rounding
+        remainder = abs(self.value) - each_value * len(dates)
 
         rows = []
         for date in dates:
             datestr = date.strftime('%Y-%m-%d')
-            rows.append(Row(value, datestr, comment, self.direction))
+            this_value = each_value + remainder
+            remainder = 0  # only add the remainder to the first child
+            rows.append(Row(this_value, datestr, comment, self.direction))
 
         return rows
 
