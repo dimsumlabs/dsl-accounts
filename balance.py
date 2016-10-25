@@ -118,8 +118,8 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
         if len(fields) < 2 or len(fields) > 3:
             raise ValueError('months bang must specify one or two numbers')
 
-        if int(fields[1]) < 0:
-            # a negative number indicates the fields are "start:count"
+        if len(fields) == 3:
+            # the fields are "start:count"
             start = int(fields[1])
             end = start+int(fields[2])
         else:
