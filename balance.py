@@ -130,6 +130,31 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
 
         return dates
 
+    def autosplit(self):
+        """look at the split bangtag and return a split row if needed
+        """
+        dates = self._split_dates()
+
+        # no splitting needed, return unchanged
+        if len(dates) == 1:
+            return [self]
+
+        # append a bangtag to show that something has happend to this row
+        # this also means that it cannot be passed to split() twice as that
+        # would find two bangtags and raise an exception
+        comment = self.comment+' !child'
+
+        # the total value of all the child rows will add up to the original
+        # row value
+        value = self.value / len(dates)
+
+        rows = []
+        for date in dates:
+            datestr = date.strftime('%Y-%m-%d')
+            rows.append(Row(value, datestr, comment, self.direction))
+
+        return rows
+
     def match(self, **kwargs):
         """using kwargs, check if this Row matches if so, return it, or None
         """

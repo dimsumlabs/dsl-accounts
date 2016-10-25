@@ -129,6 +129,22 @@ class TestRowClass(unittest.TestCase):
         with self.assertRaises(ValueError):
             obj._split_dates()
 
+    def test_autosplit(self):
+        self.assertEqual(self.rows[0].autosplit(), [self.rows[0]])
+        self.assertEqual(self.rows[4].autosplit(), [
+            balance.Row("20", "1972-01-29", "!months:-1:5 !child", "incoming"),
+            balance.Row("20", "1972-02-29", "!months:-1:5 !child", "incoming"),
+            balance.Row("20", "1972-03-29", "!months:-1:5 !child", "incoming"),
+            balance.Row("20", "1972-04-29", "!months:-1:5 !child", "incoming"),
+            balance.Row("20", "1972-05-29", "!months:-1:5 !child", "incoming"),
+        ])
+        self.assertEqual(self.rows[5].autosplit(), [
+            balance.Row("25", "1972-01-31", "!months:4 !child", "incoming"),
+            balance.Row("25", "1972-02-28", "!months:4 !child", "incoming"),
+            balance.Row("25", "1972-03-31", "!months:4 !child", "incoming"),
+            balance.Row("25", "1972-04-30", "!months:4 !child", "incoming"),
+        ])
+
     def test_match(self):
         obj = self.rows[2]
         with self.assertRaises(AttributeError):
