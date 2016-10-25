@@ -139,7 +139,7 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
         dates = self._split_dates()
 
         # no splitting needed, return unchanged
-        if len(dates) == 1:
+        if len(dates) == 1 and dates[0] == self.date:
             return [self]
 
         # append a bangtag to show that something has happend to this row
