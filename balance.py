@@ -49,7 +49,7 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
     def _xtag(self, x):
         """Generically extract tags with a given prefix
         """
-        p = re.compile(x+'(\S+)')
+        p = re.compile(x+'([a-zA-Z]\S*)')
         all_tags = p.findall(self.comment)
 
         # TODO - have a better plan for what to do with multiple tags
