@@ -425,6 +425,10 @@ if __name__ == '__main__':  # pragma: no cover
                            help='Input directory')
     argparser.add_argument('--filter', action='append',
                            help='Add a key=value filter to the rows used')
+    argparser.add_argument('--split',
+                           action='store_const', const=True,
+                           default=False,
+                           help='Split rows that cover multiple months')
 
     subp = argparser.add_subparsers(help='Subcommand', dest='cmd')
     subp.required = True
@@ -444,6 +448,17 @@ if __name__ == '__main__':  # pragma: no cover
     if not os.path.exists(args.dir):
         raise RuntimeError('Directory "{}" does not exist'.format(args.dir))
 
-    args.rows = apply_filter_strings(args.filter, parse_dir(args.dir))
+    # first, load the data
+    args.rows = parse_dir(args.dir)
+
+    # optionally split multi-month transactions into one per month
+    if args.split:
+        tmp = []
+        for orig_row in args.rows:
+            tmp.extend(orig_row.autosplit())
+        args.rows = tmp
+
+    # apply any filters requested
+    args.rows = apply_filter_strings(args.filter, args.rows)
 
     args.func(args)
