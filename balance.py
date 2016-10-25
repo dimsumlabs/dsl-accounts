@@ -105,12 +105,12 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
         """
         tag = self.bangtag()
         if tag is None:
-            return self.date
+            return [self.date]
 
         fields = tag.split(':')
 
         if fields[0] != 'months':       # TODO: fix this for multiple tags
-            return self.date
+            return [self.date]
 
         if len(fields) < 2 or len(fields) > 3:
             raise ValueError('months bang must specify one or two numbers')
