@@ -90,6 +90,19 @@ class TestRowClass(unittest.TestCase):
         self.assertEqual(r._month_add(date, 500), datetime.date(2012, 1, 18))
         self.assertEqual(r._month_add(date, -500), datetime.date(1928, 9, 18))
 
+        # dates that dont exist in other months
+        date = datetime.date(1970, 5, 31)
+        self.assertEqual(r._month_add(date, 1), datetime.date(1970, 6, 30))
+        self.assertEqual(r._month_add(date, -1), datetime.date(1970, 4, 30))
+
+        # feb is special - I just assume no years are leap years - show this
+        self.assertEqual(r._month_add(date, -3), datetime.date(1970, 2, 28))
+        self.assertEqual(r._month_add(date, 21), datetime.date(1972, 2, 28))
+
+        # unless you ask for a zero increment, when the date is unchanged
+        date = datetime.date(1972, 2, 29)
+        self.assertEqual(r._month_add(date, 0), datetime.date(1972, 2, 29))
+
     def test__split_dates(self):
         self.assertEqual(self.rows[0]._split_dates(),
                          datetime.date(1970, 1, 1))

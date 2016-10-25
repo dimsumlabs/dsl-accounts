@@ -77,16 +77,27 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
 
            Given a date object and a number of months to increment
            (or decrement) return a new date object
+           (NOTE: no leap year processing, they are assumed not to exist)
         """
+        # short cut that guarantees not to disturb the date
+        if incr == 0:
+            return date
+
         year = date.year
         month = date.month + incr
+        day = date.day
         while month > 12:
             year += 1
             month -= 12
         while month < 1:
             year -= 1
             month += 12
-        return datetime.date(year, month, date.day)
+
+        # clamp to maximum day of the month
+        max_dom = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        day = min(day, max_dom[month-1])
+
+        return datetime.date(year, month, day)
 
     def _split_dates(self):
         """extract any !months tag and use that to calculate the list of
@@ -102,19 +113,20 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
             return self.date
 
         if len(fields) < 2 or len(fields) > 3:
-            raise ValueError('months bang must specfiy one or two numbers')
+            raise ValueError('months bang must specify one or two numbers')
 
-        fields[1] = int(fields[1])
-        date = self.date
-        if fields[1] < 0:
-            # the starting month is earlier than the record date for this row
-            date = self._month_add(date, fields[1])
-            fields[2] = int(fields[2])
-            fields.remove(fields[1])
+        if int(fields[1]) < 0:
+            # a negative number indicates the fields are "start:count"
+            start = int(fields[1])
+            end = start+int(fields[2])
+        else:
+            # otherwise, the field is just "count"
+            start = 0
+            end = int(fields[1])
 
         dates = []
-        for i in range(fields[1]):
-            dates.append(self._month_add(date, i))
+        for i in range(start, end):
+            dates.append(self._month_add(self.date, i))
 
         return dates
 
