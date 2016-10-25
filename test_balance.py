@@ -10,11 +10,13 @@ import balance
 
 class TestRowClass(unittest.TestCase):
     def setUp(self):
-        r = [None for x in range(4)]
+        r = [None for x in range(6)]
         r[0] = balance.Row("100", "1970-01-01", "incoming comment", "incoming")
         r[1] = balance.Row("100", "1970-01-02", "outgoing comment", "outgoing")
         r[2] = balance.Row( "10", "1970-01-03", "a !bangtag", "incoming") # noqa
         r[3] = balance.Row("100", "1970-01-04", "a #hashtag", "incoming")
+        r[4] = balance.Row("100", "1970-02-05", "!months:-1:5", "incoming")
+        r[5] = balance.Row("100", "1970-02-06", "!months:3", "incoming")
         self.rows = r
 
     def tearDown(self):
@@ -65,6 +67,53 @@ class TestRowClass(unittest.TestCase):
         obj = balance.Row("100", "1970-01-01", "!two !bangtags", "incoming")
         with self.assertRaises(ValueError):
             obj.bangtag()
+
+    def test__month_add(self):
+        """I dont really want to test month maths, but I wrote it, so
+        """
+        r = self.rows[0]  # throw away to get to the namespace with _month_add
+        date = datetime.date(1970, 5, 18)
+        # simple add and subtract
+        self.assertEqual(r._month_add(date, 0), date)
+        self.assertEqual(r._month_add(date, 1), datetime.date(1970, 6, 18))
+        self.assertEqual(r._month_add(date, -1), datetime.date(1970, 4, 18))
+
+        # not crossing a year
+        self.assertEqual(r._month_add(date, 7), datetime.date(1970, 12, 18))
+        self.assertEqual(r._month_add(date, -4), datetime.date(1970, 1, 18))
+
+        # crossing a year
+        self.assertEqual(r._month_add(date, 8), datetime.date(1971, 1, 18))
+        self.assertEqual(r._month_add(date, -5), datetime.date(1969, 12, 18))
+
+        # silly large numbers
+        self.assertEqual(r._month_add(date, 500), datetime.date(2012, 1, 18))
+        self.assertEqual(r._month_add(date, -500), datetime.date(1928, 9, 18))
+
+    def test__split_dates(self):
+        self.assertEqual(self.rows[0]._split_dates(),
+                         datetime.date(1970, 1, 1))
+        self.assertEqual(self.rows[2]._split_dates(),
+                         datetime.date(1970, 1, 3))
+        self.assertEqual(self.rows[4]._split_dates(), [
+            datetime.date(1970, 1, 5),
+            datetime.date(1970, 2, 5),
+            datetime.date(1970, 3, 5),
+            datetime.date(1970, 4, 5),
+            datetime.date(1970, 5, 5)
+        ])
+        self.assertEqual(self.rows[5]._split_dates(), [
+            datetime.date(1970, 2, 6),
+            datetime.date(1970, 3, 6),
+            datetime.date(1970, 4, 6),
+        ])
+
+        obj = balance.Row("100", "1970-01-01", "!months", "incoming")
+        with self.assertRaises(ValueError):
+            obj._split_dates()
+        obj = balance.Row("100", "1970-01-01", "!months:1:2:3", "incoming")
+        with self.assertRaises(ValueError):
+            obj._split_dates()
 
     def test_match(self):
         obj = self.rows[2]
