@@ -10,6 +10,19 @@ import csv
 import os
 import re
 
+#
+# TODO
+# - make Row take Date objects and not strings with dates, removing a string
+#   handling fart from Row.autosplit() and removing external formatting
+#   knowledge from Row
+# - Row should throw an error with negative values
+# - If we know that there never negative values, we can store the Row.direction
+#   content in the sign of the Row.value field
+# - The "!months:[offset:]count" tag is perhaps a little awkward, find a
+#   more obvious format (perhaps "!months=month[,month]+" - which is clearly
+#   a more discoverable format, but would get quite verbose with yearly
+#   transactions (or even just one with more than 3 months...)
+#
 
 FILES_DIR = 'cash'
 IGNORE_FILES = ('membershipfees',)
