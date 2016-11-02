@@ -148,14 +148,14 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
         comment = self.comment+' !child'
 
         # divide the value amongst all the child rows
+        count_children = len(dates)
         # (The abs value is taken because the sign is in the self.direction)
-        each_value = abs(self.value / len(dates))
-        # (quantize it to avoid numbers that cannot be represented with cash)
-        each_value = each_value.quantize(decimal.Decimal('.01'))
-        each_value = each_value.normalize()
+        each_value = abs(self.value / count_children)
+        # (avoid numbers that cannot be represented with cash by using int())
+        each_value = int(each_value)
 
         # the remainder is any money lost due to rounding
-        remainder = abs(self.value) - each_value * len(dates)
+        remainder = abs(self.value) - each_value * count_children
 
         rows = []
         for date in dates:
