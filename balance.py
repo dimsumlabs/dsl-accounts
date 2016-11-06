@@ -270,7 +270,7 @@ def grid_accumulate(rows):
         months.add(month)
         tags.add(tag)
 
-    return (months, tags, grid, totals)
+    return months, tags, grid, totals
 
 
 def grid_render(months, tags, grid, totals):
