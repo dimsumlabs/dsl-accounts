@@ -86,7 +86,8 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
         """
         return self._xtag('!')
 
-    def _month_add(ignore, date, incr):
+    @staticmethod
+    def _month_add(date, incr):
         """unghgnh.  I am following the pattern of not requiring any extra
            libs to be installed to use this softare.  This means that
            there are no month math functions, so I write my own
