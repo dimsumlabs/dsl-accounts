@@ -426,7 +426,7 @@ def subp_make_balance(args):
     print(next(rows)[8:])
     for row in rows:
         if 'In dues' in row:
-            print(row.lstrip('In dues\:').title())
+            print(row.replace('In dues:', '').title())
 
 
 # A list of all the sub-commands
