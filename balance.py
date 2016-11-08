@@ -411,11 +411,33 @@ def subp_grid(args):  # pragma: no cover
     print(grid_render(months, tags, grid, totals))
 
 
+def subp_make_balance(args):
+    def _format_tpl(tpl, key, value):
+        '''Poor mans template engine'''
+        return tpl.replace(('{%s}' % key), str(int(value)))
+
+    with open('./docs/template.html') as f:
+        tpl = f.read()
+
+    print(_format_tpl(tpl, 'balance_sum', sum(args.rows)))
+    (months, tags, grid, totals) = grid_accumulate(args.rows)
+    rows = iter(grid_render(months, tags, grid, totals).split('\n'))
+    print('Payments according to github cash')
+    print(next(rows)[8:])
+    for row in rows:
+        if 'In dues' in row:
+            print(row.lstrip('In dues\:').title())
+
+
 # A list of all the sub-commands
 subp_cmds = {
     'sum': {
         'func': subp_sum,
         'help': 'Sum all transactions',
+    },
+    'make_balance': {
+        'func': subp_make_balance,
+        'help': 'Output sum HTML page',
     },
     'topay': {
         'func': subp_topay,
@@ -488,6 +510,6 @@ if __name__ == '__main__':  # pragma: no cover
         args.rows = tmp
 
     # apply any filters requested
-    args.rows = apply_filter_strings(args.filter, args.rows)
+    args.rows = list(apply_filter_strings(args.filter, args.rows))
 
     args.func(args)
