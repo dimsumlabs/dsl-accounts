@@ -152,9 +152,9 @@ class TestRowClass(unittest.TestCase):
 
         # showing the rounding and kept remainder
         self.assertEqual(self.rows[6].autosplit(), [
-            balance.Row("33.34", "1970-01-05", "!months:3 !child", "incoming"),
-            balance.Row("33.33", "1970-02-05", "!months:3 !child", "incoming"),
-            balance.Row("33.33", "1970-03-05", "!months:3 !child", "incoming"),
+            balance.Row("34", "1970-01-05", "!months:3 !child", "incoming"),
+            balance.Row("33", "1970-02-05", "!months:3 !child", "incoming"),
+            balance.Row("33", "1970-03-05", "!months:3 !child", "incoming"),
         ])
 
     def test_match(self):
