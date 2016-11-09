@@ -273,18 +273,8 @@ def grid_accumulate(rows):
     return months, tags, grid, totals
 
 
-def grid_render(months, tags, grid, totals):
-    # Render the accumulated data
+def grid_render_colheader(months, months_len, tags_len):
     s = []
-
-    # how much room to allow for the tags
-    tags_len = max([len(i) for i in tags])
-    tags_len += 1
-
-    # how much room to allow for each month column
-    months_len = 10
-
-    months = sorted(months)
 
     # Skip the column of tag names
     s.append(' '*tags_len)
@@ -295,17 +285,11 @@ def grid_render(months, tags, grid, totals):
 
     s.append("\n")
 
-    # Output each tag
-    for tag in sorted(tags):
-        s.append("{:<{width}}".format(tag, width=tags_len))
+    return s
 
-        for month in months:
-            if month in grid[tag]:
-                s.append("{:>{}}".format(grid[tag][month]['sum'], months_len))
-            else:
-                s.append("{:>{}}".format('', months_len))
 
-        s.append("\n")
+def grid_render_totals(months, totals, months_len, tags_len):
+    s = []
 
     s.append("\n")
     s.append("{:<{width}}".format('TOTALS', width=tags_len))
@@ -315,6 +299,54 @@ def grid_render(months, tags, grid, totals):
 
     s.append("\n")
     s.append("TOTAL: {:>{}}".format(totals['total'], months_len))
+
+    return s
+
+
+def grid_render_rows(months, tags, grid, months_len, tags_len):
+    s = []
+
+    # Output each tag
+    for tag in tags:
+        row = ''
+        row += "{:<{width}}".format(tag, width=tags_len)
+
+        for month in months:
+            if month in grid[tag]:
+                col = grid[tag][month]['sum']
+            else:
+                col = ''
+            row += "{:>{}}".format(col, months_len)
+
+        row += "\n"
+        s.append(row)
+
+    return s
+
+
+def grid_render_datagroom(months, tags):
+    # how much room to allow for the tags
+    tags_len = max([len(i) for i in tags])
+    tags_len += 1
+
+    # how much room to allow for each month column
+    months_len = 10
+
+    months = sorted(months)
+    tags = sorted(tags)
+
+    return months, tags, months_len, tags_len
+
+
+def grid_render(months, tags, grid, totals):
+    # Render the accumulated data
+
+    (months, tags, months_len, tags_len) = grid_render_datagroom(months, tags)
+
+    s = []
+    s += grid_render_colheader(months, months_len, tags_len)
+    s += grid_render_rows(months, tags, grid, months_len, tags_len)
+    s += grid_render_totals(months, totals, months_len, tags_len)
 
     return ''.join(s)
 
