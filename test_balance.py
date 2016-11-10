@@ -52,13 +52,12 @@ class TestRowClass(unittest.TestCase):
         self.assertEqual(self.rows[0].month(), "1970-01")
 
     def test_hashtag(self):
-        self.assertEqual(self.rows[0].hashtag(), None)
+        self.assertEqual(self.rows[0].hashtag, None)
 
-        self.assertEqual(self.rows[3].hashtag(), 'hashtag')
+        self.assertEqual(self.rows[3].hashtag, 'hashtag')
 
-        obj = balance.Row("100", "1970-01-01", "#two #hashtags", "incoming")
         with self.assertRaises(ValueError):
-            obj.hashtag()
+            balance.Row("100", "1970-01-01", "#two #hashtags", "incoming")
 
     def test_bangtag(self):
         self.assertEqual(self.rows[0].bangtag(), None)
