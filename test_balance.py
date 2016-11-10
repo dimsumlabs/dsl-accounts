@@ -200,21 +200,25 @@ class TestMisc(unittest.TestCase):
         self.assertEqual(
             balance.grid_accumulate(self.rows), (
                 set(['1970-03', '1970-02', '1970-01']),
-                set(['Out water', 'Out unknown', 'Out rent', 'In unknown']),
+                set(['Water', 'Unknown', 'Rent']),
                 {
-                    'Out water': {
+                    'Water': {
                         '1970-01': {
                             'sum': -25,
                             'last': datetime.date(1970, 1, 11)
-                        }
+                        },
                     },
-                    'Out unknown': {
+                    'Unknown': {
+                        '1970-01': {
+                            'sum': 10,
+                            'last': datetime.date(1970, 1, 5)
+                        },
                         '1970-02': {
                             'sum': -10,
                             'last': datetime.date(1970, 2, 6)
-                        }
+                        },
                     },
-                    'Out rent': {
+                    'Rent': {
                         '1970-03': {
                             'sum': -10,
                             'last': datetime.date(1970, 3, 1)
@@ -222,14 +226,8 @@ class TestMisc(unittest.TestCase):
                         '1970-01': {
                             'sum': -10,
                             'last': datetime.date(1970, 1, 10)
-                        }
+                        },
                     },
-                    'In unknown': {
-                        '1970-01': {
-                            'sum': 10,
-                            'last': datetime.date(1970, 1, 5)
-                        }
-                    }
                 },
                 {
                     '1970-03': -10,
@@ -250,34 +248,33 @@ class TestMisc(unittest.TestCase):
             balance.topay_render(self.rows, strings),
             """header: 1970-01
 table_start:
-table_row: Out rent, -10, 1970-01-10
-table_row: Out unknown, $0, Not Yet
-table_row: Out water, -25, 1970-01-11
+table_row: Rent, -10, 1970-01-10
+table_row: Unknown, $0, Not Yet
+table_row: Water, -25, 1970-01-11
 table_end:
 header: 1970-02
 table_start:
-table_row: Out rent, $0, Not Yet
-table_row: Out unknown, -10, 1970-02-06
-table_row: Out water, $0, Not Yet
+table_row: Rent, $0, Not Yet
+table_row: Unknown, -10, 1970-02-06
+table_row: Water, $0, Not Yet
 table_end:
 header: 1970-03
 table_start:
-table_row: Out rent, -10, 1970-03-01
-table_row: Out unknown, $0, Not Yet
-table_row: Out water, $0, Not Yet
+table_row: Rent, -10, 1970-03-01
+table_row: Unknown, $0, Not Yet
+table_row: Water, $0, Not Yet
 table_end:
 """
         )
 
     def test_grid_render(self):
         expect = ""
-        expect += "               1970-01   1970-02   1970-03\n"
-        expect += "In unknown          10                    \n"
-        expect += "Out rent           -10                 -10\n"
-        expect += "Out unknown                  -10          \n"
-        expect += "Out water          -25                    \n"
+        expect += "           1970-01   1970-02   1970-03\n"
+        expect += "Rent           -10                 -10\n"
+        expect += "Unknown         10       -10          \n"
+        expect += "Water          -25                    \n"
         expect += "\n"
-        expect += "TOTALS             -25       -10       -10\n"
+        expect += "TOTALS         -25       -10       -10\n"
         expect += "TOTAL:        -45"
 
         (m, t, grid, total) = balance.grid_accumulate(self.rows)
