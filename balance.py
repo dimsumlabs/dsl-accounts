@@ -247,11 +247,6 @@ def grid_accumulate(rows):
         if tag is None:
             tag = 'unknown'
 
-        if row.direction == 'outgoing':
-            tag = 'out ' + tag
-        else:
-            tag = 'in ' + tag
-
         tag = tag.capitalize()
 
         # I would prefer auto-vivification to all these if statements
@@ -439,6 +434,16 @@ def subp_csv(args):  # pragma: no cover
 
 
 def subp_grid(args):  # pragma: no cover
+    # ensure that each category has a nice and clear prefix
+    for row in args.rows:
+        if row.hashtag is None:
+            row.hashtag = 'unknown'
+
+        if row.direction == 'outgoing':
+            row.hashtag = 'out ' + row.hashtag
+        else:
+            row.hashtag = 'in ' + row.hashtag
+
     (months, tags, grid, totals) = grid_accumulate(args.rows)
     print(grid_render(months, tags, grid, totals))
 
@@ -457,8 +462,8 @@ def subp_make_balance(args):
     print('Payments according to github cash')
     print(next(rows)[8:])
     for row in rows:
-        if 'In dues' in row:
-            print(row.replace('In dues:', '').title())
+        if 'Dues:' in row:
+            print(row.replace('Dues:', '').title())
 
 
 # A list of all the sub-commands
