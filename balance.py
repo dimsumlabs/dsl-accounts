@@ -489,20 +489,34 @@ def subp_grid(args):  # pragma: no cover
 def subp_make_balance(args):
     def _format_tpl(tpl, key, value):
         '''Poor mans template engine'''
-        return tpl.replace(('{%s}' % key), str(int(value)))
+        return tpl.replace(('{%s}' % key), value)
 
     with open('./docs/template.html') as f:
         tpl = f.read()
 
-    print(_format_tpl(tpl, 'balance_sum', sum(args.rows)))
-    (months, tags, grid, totals) = grid_accumulate(args.rows)
-    rows = iter(grid_render(months, tags, grid, totals).split('\n'))
-    print('Payments according to github cash')
-    print(next(rows)[8:])
-    for row in rows:
-        if 'Dues:' in row:
-            print(row.replace('Dues:', '').title())
+    # Filter out only the membership dues
+    grid_rows = list(apply_filter_strings([
+        'direction==incoming',
+        'hashtag=~^dues:',
+    ], args.rows))
 
+    # Make the category look pretty
+    for row in grid_rows:
+        a = row.hashtag.split(':')
+        row.hashtag = ''.join(a[1:]).title()
+
+    (months, tags, grid, totals) = grid_accumulate(grid_rows)
+    (months, tags, months_len, tags_len) = grid_render_datagroom(months, tags)
+
+    header = ''.join(grid_render_colheader(months, months_len, tags_len))
+    grid = ''.join(grid_render_rows(months, tags, grid, months_len, tags_len))
+
+    tpl = _format_tpl(tpl, 'balance_sum', str(sum(args.rows)))
+    tpl = _format_tpl(tpl, 'grid_header', header)
+    tpl = _format_tpl(tpl, 'grid', grid)
+    # TODO: calculate when rent is due and add another field to the template
+
+    print(tpl)
 
 # A list of all the sub-commands
 subp_cmds = {
