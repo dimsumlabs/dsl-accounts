@@ -183,7 +183,7 @@ class TestMisc(unittest.TestCase):
     def test_apply_filter_strings(self):
         self.assertEqual(
             list(balance.apply_filter_strings(
-                    ["comment=comment1", "month=1970-01"],
+                    ["comment==comment1", "month==1970-01"],
                     self.rows)),
             self.rows[1:2]
         )
@@ -194,7 +194,7 @@ class TestMisc(unittest.TestCase):
         )
 
         with self.assertRaises(ValueError):
-            list(balance.apply_filter_strings(['noequalsignhere'], self.rows))
+            list(balance.apply_filter_strings(['nooperatorhere'], self.rows))
 
     def test_grid_accumulate(self):
         self.assertEqual(
