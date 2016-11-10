@@ -180,20 +180,49 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
 
         return rows
 
+    def _getvalue(self, field):
+        """return the field value, if the name refers to a method, call it to
+           obtain the value
+        """
+        if not hasattr(self, field):
+            raise AttributeError('Object has no attr "{}"'.format(field))
+        attr = getattr(self, field)
+        if callable(attr):
+            attr = attr()
+        return attr
+
     def match(self, **kwargs):
         """using kwargs, check if this Row matches if so, return it, or None
         """
-
         for key, value in kwargs.items():
-            if not hasattr(self, key):
-                raise AttributeError('Object has no attr "{}"'.format(key))
-            attr = getattr(self, key)
-            if callable(attr):
-                attr = attr()
+            attr = self._getvalue(key)
             if value != attr:
                 return None
 
         return self
+
+    def filter(self, string):
+        """Using the given human readable filter, check if this row matches
+           and if so, return it, or None
+        """
+
+        # its not a real tokeniser, its just a RE. so, now I have two problems
+        m = re.match("([a-z0-9_]+)([=]{1,2})(.*)", string, re.I)
+        if not m:
+            raise ValueError('filters must be <key><op><value>')
+
+        field = m.group(1)
+        op = m.group(2)
+        value_match = m.group(3)
+        value_now = self._getvalue(field)
+
+        if op == '==':
+            if value_now == value_match:
+                return self
+        else:
+            raise ValueError('Unknown filter operation "{}"'.format(op))
+
+        return None
 
 
 def parse_dir(dirname):   # pragma: no cover
@@ -215,18 +244,15 @@ def parse_dir(dirname):   # pragma: no cover
 def apply_filter_strings(filter_strings, rows):
     """Apply the given list of human readable filters to the rows
     """
-    filters = {}
-    if filter_strings:
-        for s in filter_strings:
-            try:
-                (key, value) = s.split('=')
-            except ValueError:
-                raise ValueError('Filters must be "key=value", '
-                                 '"{}" is not'.format(s))
-            filters[key] = value
-
+    if filter_strings is None:
+        filter_strings = []
     for row in rows:
-        if row.match(**filters):
+        match = True
+        for s in filter_strings:
+            if not row.filter(s):
+                match = False
+                break
+        if match:
             yield row
 
 
@@ -347,7 +373,7 @@ def grid_render(months, tags, grid, totals):
 
 
 def topay_render(rows, strings):
-    rows = apply_filter_strings(['direction=outgoing'], rows)
+    rows = apply_filter_strings(['direction==outgoing'], rows)
     (months, tags, grid, totals) = grid_accumulate(rows)
 
     s = []
