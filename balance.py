@@ -207,17 +207,29 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
         """
 
         # its not a real tokeniser, its just a RE. so, now I have two problems
-        m = re.match("([a-z0-9_]+)([=]{1,2})(.*)", string, re.I)
+        m = re.match("([a-z0-9_]+)([=!<>~]{1,2})(.*)", string, re.I)
         if not m:
             raise ValueError('filters must be <key><op><value>')
 
         field = m.group(1)
         op = m.group(2)
         value_match = m.group(3)
-        value_now = self._getvalue(field)
+        value_now = str(self._getvalue(field))
 
         if op == '==':
             if value_now == value_match:
+                return self
+        elif op == '!=':
+            if value_now != value_match:
+                return self
+        elif op == '>':
+            if value_now > value_match:
+                return self
+        elif op == '<':
+            if value_now < value_match:
+                return self
+        elif op == '=~':
+            if re.search(value_match, value_now, re.I):
                 return self
         else:
             raise ValueError('Unknown filter operation "{}"'.format(op))
