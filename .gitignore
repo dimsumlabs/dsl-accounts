@@ -1,5 +1,5 @@
 .DS_Store
-
+docs/index.html
 # ignore python's compiled objects
 *.pyc
 
