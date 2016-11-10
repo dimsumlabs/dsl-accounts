@@ -45,6 +45,12 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
             value = decimal.Decimal(0)-value
 
         obj = super(cls, Row).__new__(cls, value, date, comment, direction)
+
+        # Look at the comment for this row and extract any hashtags found
+        # hashtags are used to tag the category of each transaction and
+        # might be overwritten later to decorate them nicely
+        obj.hashtag = obj._xtag('#')
+
         return obj
 
     def __add__(self, value):
@@ -73,12 +79,6 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
             return None
 
         return all_tags[0]
-
-    def hashtag(self):
-        """Look at the comment for this row and extract any hashtags found
-           hashtags are used to tag the category of each transaction
-        """
-        return self._xtag('#')
 
     def bangtag(self):
         """Look at the comment for this row and extract any '!' tags found
@@ -242,7 +242,7 @@ def grid_accumulate(rows):
     # Accumulate the data
     for row in rows:
         month = row.month()
-        tag = row.hashtag()
+        tag = row.hashtag
 
         if tag is None:
             tag = 'unknown'
