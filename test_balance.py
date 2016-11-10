@@ -165,6 +165,29 @@ class TestRowClass(unittest.TestCase):
         self.assertEqual(obj.match(comment='a !bangtag'), obj)
         self.assertEqual(obj.match(month='1970-01'), obj)
 
+    def test_filter(self):
+        obj = self.rows[2]
+        with self.assertRaises(ValueError):
+            obj.filter('direction<>value')      # bad operator
+        with self.assertRaises(ValueError):
+            obj.filter('nooperator')
+
+        self.assertEqual(obj.filter('date==1970-01-03'), obj)
+        self.assertEqual(obj.filter('date==1970-01-05'), None)
+
+        self.assertEqual(obj.filter('date!=1970-01-03'), None)
+        self.assertEqual(obj.filter('date!=1970-01-05'), obj)
+
+        self.assertEqual(obj.filter('date<1970-01-02'), None)
+        self.assertEqual(obj.filter('date<1970-01-05'), obj)
+
+        self.assertEqual(obj.filter('month>1969-12'), obj)
+        self.assertEqual(obj.filter('month>1970-01'), None)
+
+        self.assertEqual(obj.filter('comment=~gtag'), obj)
+        self.assertEqual(obj.filter('comment=~^a'), obj)
+        self.assertEqual(obj.filter('comment=~^foo'), None)
+
 
 class TestMisc(unittest.TestCase):
     def setUp(self):
@@ -192,9 +215,6 @@ class TestMisc(unittest.TestCase):
             list(balance.apply_filter_strings(None, self.rows)),
             self.rows
         )
-
-        with self.assertRaises(ValueError):
-            list(balance.apply_filter_strings(['nooperatorhere'], self.rows))
 
     def test_grid_accumulate(self):
         self.assertEqual(
