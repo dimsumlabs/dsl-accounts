@@ -1,6 +1,5 @@
 balance:
-	python balance.py sum | cat docs/head.html - docs/foot.html cash/membershipfees > docs/index.html
-
+	python balance.py --split make_balance > docs/index.html
 
 build-dep:
 	apt-get install python-coverage

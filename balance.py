@@ -45,6 +45,12 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
             value = decimal.Decimal(0)-value
 
         obj = super(cls, Row).__new__(cls, value, date, comment, direction)
+
+        # Look at the comment for this row and extract any hashtags found
+        # hashtags are used to tag the category of each transaction and
+        # might be overwritten later to decorate them nicely
+        obj.hashtag = obj._xtag('#')
+
         return obj
 
     def __add__(self, value):
@@ -74,19 +80,14 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
 
         return all_tags[0]
 
-    def hashtag(self):
-        """Look at the comment for this row and extract any hashtags found
-           hashtags are used to tag the category of each transaction
-        """
-        return self._xtag('#')
-
     def bangtag(self):
         """Look at the comment for this row and extract any '!' tags found
            bangtags are used to insert meta-commands (like '!months:-1:5')
         """
         return self._xtag('!')
 
-    def _month_add(ignore, date, incr):
+    @staticmethod
+    def _month_add(date, incr):
         """unghgnh.  I am following the pattern of not requiring any extra
            libs to be installed to use this softare.  This means that
            there are no month math functions, so I write my own
@@ -179,20 +180,61 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
 
         return rows
 
+    def _getvalue(self, field):
+        """return the field value, if the name refers to a method, call it to
+           obtain the value
+        """
+        if not hasattr(self, field):
+            raise AttributeError('Object has no attr "{}"'.format(field))
+        attr = getattr(self, field)
+        if callable(attr):
+            attr = attr()
+        return attr
+
     def match(self, **kwargs):
         """using kwargs, check if this Row matches if so, return it, or None
         """
-
         for key, value in kwargs.items():
-            if not hasattr(self, key):
-                raise AttributeError('Object has no attr "{}"'.format(key))
-            attr = getattr(self, key)
-            if callable(attr):
-                attr = attr()
+            attr = self._getvalue(key)
             if value != attr:
                 return None
 
         return self
+
+    def filter(self, string):
+        """Using the given human readable filter, check if this row matches
+           and if so, return it, or None
+        """
+
+        # its not a real tokeniser, its just a RE. so, now I have two problems
+        m = re.match("([a-z0-9_]+)([=!<>~]{1,2})(.*)", string, re.I)
+        if not m:
+            raise ValueError('filters must be <key><op><value>')
+
+        field = m.group(1)
+        op = m.group(2)
+        value_match = m.group(3)
+        value_now = str(self._getvalue(field))
+
+        if op == '==':
+            if value_now == value_match:
+                return self
+        elif op == '!=':
+            if value_now != value_match:
+                return self
+        elif op == '>':
+            if value_now > value_match:
+                return self
+        elif op == '<':
+            if value_now < value_match:
+                return self
+        elif op == '=~':
+            if re.search(value_match, value_now, re.I):
+                return self
+        else:
+            raise ValueError('Unknown filter operation "{}"'.format(op))
+
+        return None
 
 
 def parse_dir(dirname):   # pragma: no cover
@@ -214,18 +256,15 @@ def parse_dir(dirname):   # pragma: no cover
 def apply_filter_strings(filter_strings, rows):
     """Apply the given list of human readable filters to the rows
     """
-    filters = {}
-    if filter_strings:
-        for s in filter_strings:
-            try:
-                (key, value) = s.split('=')
-            except ValueError:
-                raise ValueError('Filters must be "key=value", '
-                                 '"{}" is not'.format(s))
-            filters[key] = value
-
+    if filter_strings is None:
+        filter_strings = []
     for row in rows:
-        if row.match(**filters):
+        match = True
+        for s in filter_strings:
+            if not row.filter(s):
+                match = False
+                break
+        if match:
             yield row
 
 
@@ -241,15 +280,10 @@ def grid_accumulate(rows):
     # Accumulate the data
     for row in rows:
         month = row.month()
-        tag = row.hashtag()
+        tag = row.hashtag
 
         if tag is None:
             tag = 'unknown'
-
-        if row.direction == 'outgoing':
-            tag = 'out ' + tag
-        else:
-            tag = 'in ' + tag
 
         tag = tag.capitalize()
 
@@ -269,21 +303,11 @@ def grid_accumulate(rows):
         months.add(month)
         tags.add(tag)
 
-    return (months, tags, grid, totals)
+    return months, tags, grid, totals
 
 
-def grid_render(months, tags, grid, totals):
-    # Render the accumulated data
+def grid_render_colheader(months, months_len, tags_len):
     s = []
-
-    # how much room to allow for the tags
-    tags_len = max([len(i) for i in tags])
-    tags_len += 1
-
-    # how much room to allow for each month column
-    months_len = 10
-
-    months = sorted(months)
 
     # Skip the column of tag names
     s.append(' '*tags_len)
@@ -294,17 +318,11 @@ def grid_render(months, tags, grid, totals):
 
     s.append("\n")
 
-    # Output each tag
-    for tag in sorted(tags):
-        s.append("{:<{width}}".format(tag, width=tags_len))
+    return s
 
-        for month in months:
-            if month in grid[tag]:
-                s.append("{:>{}}".format(grid[tag][month]['sum'], months_len))
-            else:
-                s.append("{:>{}}".format('', months_len))
 
-        s.append("\n")
+def grid_render_totals(months, totals, months_len, tags_len):
+    s = []
 
     s.append("\n")
     s.append("{:<{width}}".format('TOTALS', width=tags_len))
@@ -315,11 +333,59 @@ def grid_render(months, tags, grid, totals):
     s.append("\n")
     s.append("TOTAL: {:>{}}".format(totals['total'], months_len))
 
+    return s
+
+
+def grid_render_rows(months, tags, grid, months_len, tags_len):
+    s = []
+
+    # Output each tag
+    for tag in tags:
+        row = ''
+        row += "{:<{width}}".format(tag, width=tags_len)
+
+        for month in months:
+            if month in grid[tag]:
+                col = grid[tag][month]['sum']
+            else:
+                col = ''
+            row += "{:>{}}".format(col, months_len)
+
+        row += "\n"
+        s.append(row)
+
+    return s
+
+
+def grid_render_datagroom(months, tags):
+    # how much room to allow for the tags
+    tags_len = max([len(i) for i in tags])
+    tags_len += 1
+
+    # how much room to allow for each month column
+    months_len = 10
+
+    months = sorted(months)
+    tags = sorted(tags)
+
+    return months, tags, months_len, tags_len
+
+
+def grid_render(months, tags, grid, totals):
+    # Render the accumulated data
+
+    (months, tags, months_len, tags_len) = grid_render_datagroom(months, tags)
+
+    s = []
+    s += grid_render_colheader(months, months_len, tags_len)
+    s += grid_render_rows(months, tags, grid, months_len, tags_len)
+    s += grid_render_totals(months, totals, months_len, tags_len)
+
     return ''.join(s)
 
 
 def topay_render(rows, strings):
-    rows = apply_filter_strings(['direction=outgoing'], rows)
+    rows = apply_filter_strings(['direction==outgoing'], rows)
     (months, tags, grid, totals) = grid_accumulate(rows)
 
     s = []
@@ -406,15 +472,61 @@ def subp_csv(args):  # pragma: no cover
 
 
 def subp_grid(args):  # pragma: no cover
+    # ensure that each category has a nice and clear prefix
+    for row in args.rows:
+        if row.hashtag is None:
+            row.hashtag = 'unknown'
+
+        if row.direction == 'outgoing':
+            row.hashtag = 'out ' + row.hashtag
+        else:
+            row.hashtag = 'in ' + row.hashtag
+
     (months, tags, grid, totals) = grid_accumulate(args.rows)
     print(grid_render(months, tags, grid, totals))
 
+
+def subp_make_balance(args):
+    def _format_tpl(tpl, key, value):
+        '''Poor mans template engine'''
+        return tpl.replace(('{%s}' % key), value)
+
+    with open('./docs/template.html') as f:
+        tpl = f.read()
+
+    # Filter out only the membership dues
+    grid_rows = list(apply_filter_strings([
+        'direction==incoming',
+        'hashtag=~^dues:',
+    ], args.rows))
+
+    # Make the category look pretty
+    for row in grid_rows:
+        a = row.hashtag.split(':')
+        row.hashtag = ''.join(a[1:]).title()
+
+    (months, tags, grid, totals) = grid_accumulate(grid_rows)
+    (months, tags, months_len, tags_len) = grid_render_datagroom(months, tags)
+
+    header = ''.join(grid_render_colheader(months, months_len, tags_len))
+    grid = ''.join(grid_render_rows(months, tags, grid, months_len, tags_len))
+
+    tpl = _format_tpl(tpl, 'balance_sum', str(sum(args.rows)))
+    tpl = _format_tpl(tpl, 'grid_header', header)
+    tpl = _format_tpl(tpl, 'grid', grid)
+    # TODO: calculate when rent is due and add another field to the template
+
+    print(tpl)
 
 # A list of all the sub-commands
 subp_cmds = {
     'sum': {
         'func': subp_sum,
         'help': 'Sum all transactions',
+    },
+    'make_balance': {
+        'func': subp_make_balance,
+        'help': 'Output sum HTML page',
     },
     'topay': {
         'func': subp_topay,
@@ -487,6 +599,6 @@ if __name__ == '__main__':  # pragma: no cover
         args.rows = tmp
 
     # apply any filters requested
-    args.rows = apply_filter_strings(args.filter, args.rows)
+    args.rows = list(apply_filter_strings(args.filter, args.rows))
 
     args.func(args)
