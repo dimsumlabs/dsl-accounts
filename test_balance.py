@@ -289,13 +289,14 @@ table_end:
 
     def test_grid_render(self):
         expect = ""
-        expect += "           1970-01   1970-02   1970-03\n"
-        expect += "Rent           -10                 -10\n"
-        expect += "Unknown         10       -10          \n"
-        expect += "Water          -25                    \n"
+        expect += "          1970-01  1970-02  1970-03\n"
+        expect += "Rent          -10               -10\n"
+        expect += "Unknown        10      -10         \n"
+        expect += "Water         -25                  \n"
         expect += "\n"
-        expect += "TOTALS         -25       -10       -10\n"
-        expect += "TOTAL:        -45"
+        expect += "TOTALS        -25      -10      -10\n"
+        expect += "RUNNING TOTALS      -25      -35      -45\n"
+        expect += "TOTAL:       -45"
 
         (m, t, grid, total) = balance.grid_accumulate(self.rows)
         self.assertEqual(balance.grid_render(m, t, grid, total), expect)
