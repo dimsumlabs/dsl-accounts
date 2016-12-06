@@ -331,6 +331,14 @@ def grid_render_totals(months, totals, months_len, tags_len):
         s.append("{:>{}}".format(totals[month], months_len))
 
     s.append("\n")
+    s.append("{:<{width}}".format('RUNNING TOTALS', width=tags_len))
+
+    running_total = 0
+    for month in months:
+        running_total += totals[month]
+        s.append("{:>{}}".format(running_total, months_len))
+
+    s.append("\n")
     s.append("TOTAL: {:>{}}".format(totals['total'], months_len))
 
     return s
@@ -363,7 +371,7 @@ def grid_render_datagroom(months, tags):
     tags_len += 1
 
     # how much room to allow for each month column
-    months_len = 10
+    months_len = 9
 
     months = sorted(months)
     tags = sorted(tags)
