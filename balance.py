@@ -247,10 +247,11 @@ def parse_dir(dirname):   # pragma: no cover
         direction, _ = filename.split('-', 1)
 
         with open(os.path.join(dirname, filename), 'r') as tsvfile:
-            reader = csv.reader(tsvfile, delimiter='\t')
-
-            for row in reader:
-                yield Row(*row, direction=direction)
+            for row in tsvfile.readlines():
+                yield Row(*re.split(r'\s+', row,
+                                    # Number of splits (3 fields)
+                                    maxsplit=2),
+                          direction=direction)
 
 
 def apply_filter_strings(filter_strings, rows):
