@@ -1,6 +1,10 @@
 balance:
 	python balance.py --split make_balance > docs/index.html
 
+docker:
+	docker build -t dsl-accounts .
+	docker run dsl-accounts
+
 build-dep:
 	apt-get install python-coverage
 
