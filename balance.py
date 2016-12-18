@@ -147,14 +147,10 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
 
         return dates
 
-    def autosplit(self):
+    def autosplit(self, method='simple'):
         """look at the split bangtag and return a split row if needed
         """
         dates = self._split_dates()
-
-        # no splitting needed, return unchanged
-        if len(dates) == 1 and dates[0] == self.date:
-            return [self]
 
         # append a bangtag to show that something has happend to this row
         # this also means that it cannot be passed to split() twice as that
@@ -168,15 +164,75 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
         # (avoid numbers that cannot be represented with cash by using int())
         each_value = int(each_value)
 
-        # the remainder is any money lost due to rounding
-        remainder = abs(self.value) - each_value * count_children
-
         rows = []
-        for date in dates:
+
+        if method == 'simple':
+            # The 'simple' splitting will just divide the transaction value
+            # amongst multiple months - rounding any fractions down
+            # and applying them to the first month
+
+            # no splitting needed, return unchanged
+            if len(dates) == 1 and dates[0] == self.date:
+                return [self]
+
+            # the remainder is any money lost due to rounding
+            remainder = abs(self.value) - each_value * count_children
+
+            for date in dates:
+                datestr = date.strftime('%Y-%m-%d')
+                this_value = each_value + remainder
+                remainder = 0  # only add the remainder to the first child
+                rows.append(Row(this_value, datestr, comment, self.direction))
+
+        elif method == 'proportional':
+            # The 'proportional' splitting attempts to pro-rata the transaction
+            # value.  If the transaction is recorded 20% through the month then
+            # only 80% of the monthly value is placed in that month.  The
+            # rest is carried over into the next month, and so on.  This is
+            # carried on until there is a month without enough value for the
+            # whole month.  This final month is accorded the remaining amount.
+            # Finally, the amount for the final month is converted to
+            # a percentage, which is used to approximate a "end date".
+            #
+            # The hope is that this "end date" is good enough to be used as
+            # a data source for membership end dates, but neither analysis nor
+            # discussion has been done on this.
+
+            value = self.value  # the total value available to share
+
+            # for first month, only add the cash for the remainder of the month
+            date = dates.pop(0)
+            day = date.day
+            percent = 1-min(28, day-1)/28.0  # FIXME - month lengths vary
             datestr = date.strftime('%Y-%m-%d')
-            this_value = each_value + remainder
-            remainder = 0  # only add the remainder to the first child
+            this_value = int(each_value * percent)
+            value -= this_value
             rows.append(Row(this_value, datestr, comment, self.direction))
+
+            # the body fills full months with full shares of the value
+            while value >= each_value and len(dates):
+                date = dates.pop(0)
+                datestr = date.strftime('%Y-%m-%d')
+                value -= each_value
+                rows.append(Row(each_value, datestr, comment, self.direction))
+
+            # finally, add any remainders
+            if len(dates):
+                date = dates.pop(0)
+            else:
+                date = self._month_add(date, 1)
+            datestr = date.strftime('%Y-%m-01')  # NOTE: clamp to 1st day
+            # this will include any money lost due to rounding
+            this_value = abs(sum(rows) - self.value)
+            percent = min(1, this_value/each_value)
+            day = percent * 27 + 1  # FIXME - month lengths vary
+            week = int(day/7)
+            comment += "({}% dom={} W{})".format(percent, day, week)
+            # FIXME - record the resulting "end date" somewhere
+            rows.append(Row(this_value, datestr, comment, self.direction))
+
+        else:
+            raise ValueError('unknown splitter method name')
 
         return rows
 
