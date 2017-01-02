@@ -3,7 +3,7 @@ balance:
 
 docker:
 	docker build -t dsl-accounts .
-	docker run dsl-accounts
+	docker run --rm dsl-accounts
 
 build-dep:
 	apt-get install python-coverage
