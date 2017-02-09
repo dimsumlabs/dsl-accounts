@@ -5,6 +5,7 @@ import decimal
 import datetime
 import argparse
 import os.path
+import json
 import sys
 import csv
 import os
@@ -552,6 +553,32 @@ def subp_grid(args):  # pragma: no cover
     print(grid_render(months, tags, grid, totals))
 
 
+def subp_json_dues(args):  # pragma: no cover
+    for row in args.rows:
+        if row.hashtag is None:
+            row.hashtag = 'unknown'
+
+        if row.direction == 'outgoing':
+            row.hashtag = 'out ' + row.hashtag
+        else:
+            row.hashtag = 'in ' + row.hashtag
+
+    def json_encode_custom(obj):
+        if isinstance(obj, decimal.Decimal):
+            return float(obj)
+
+        if isinstance(obj, (datetime.datetime, datetime.date)):
+            return obj.isoformat()
+
+        raise TypeError(obj)
+
+    (months, tags, grid, totals) = grid_accumulate(args.rows)
+    print(json.dumps(({
+        k.replace('In dues:', ''): v for k, v in grid.items()
+        if k.startswith('In dues:')
+    }), default=json_encode_custom))
+
+
 def subp_make_balance(args):
     def _format_tpl(tpl, key, value):
         '''Poor mans template engine'''
@@ -614,6 +641,10 @@ subp_cmds = {
     'grid': {
         'func': subp_grid,
         'help': 'Output a grid of transaction tags vs months',
+    },
+    'json_dues': {
+        'func': subp_json_dues,
+        'help': 'Output JSON of dues payments',
     },
 }
 
