@@ -297,13 +297,15 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
 def parse_dir(dirname):   # pragma: no cover
     '''Take all files in dirname and return Row instances'''
 
-    for filename in os.listdir(dirname):
+    for filename in os.listdir(os.path.join(os.path.dirname(__file__),
+                                            dirname)):
         if filename in IGNORE_FILES:
             continue
 
         direction, _ = filename.split('-', 1)
 
-        with open(os.path.join(dirname, filename), 'r') as tsvfile:
+        with open(os.path.join(os.path.dirname(__file__),
+                               dirname, filename), 'r') as tsvfile:
             for row in tsvfile.readlines():
                 row = row.rstrip('\n')
                 yield Row(*re.split(r'\s+', row,
@@ -683,7 +685,7 @@ if __name__ == '__main__':  # pragma: no cover
 
     args = argparser.parse_args()
 
-    if not os.path.exists(args.dir):
+    if not os.path.exists(os.path.join(os.path.dirname(__file__), args.dir)):
         raise RuntimeError('Directory "{}" does not exist'.format(args.dir))
 
     # first, load the data
