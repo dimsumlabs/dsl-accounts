@@ -114,8 +114,7 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
             month += 12
 
         # clamp to maximum day of the month
-        max_dom = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-        day = min(day, max_dom[month-1])
+        day = min(day, calendar.monthrange(year, month)[1])
 
         return datetime.date(year, month, day)
 
