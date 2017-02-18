@@ -251,7 +251,12 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
         attr = getattr(self, field)
         if callable(attr):
             attr = attr()
-        return attr
+
+        if isinstance(attr, (int, str, decimal.Decimal)):
+            return attr
+
+        # convert all 'complex' types into string representations
+        return str(attr)
 
     def match(self, **kwargs):
         """using kwargs, check if this Row matches if so, return it, or None
@@ -276,7 +281,13 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
         field = m.group(1)
         op = m.group(2)
         value_match = m.group(3)
-        value_now = str(self._getvalue(field))
+        value_now = self._getvalue(field)
+
+        # coerce our value to match into a number, if that looks possible
+        try:
+            value_match = float(value_match)
+        except ValueError:
+            pass
 
         if op == '==':
             if value_now == value_match:
