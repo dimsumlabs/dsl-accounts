@@ -72,6 +72,16 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
     def month(self):
         return self.date.strftime('%Y-%m')
 
+    def rel_months(self, now=None):
+        if now is None:
+            now = datetime.datetime.utcnow().date()
+        month_this = self.date.replace(day=1)
+        month_now = now.replace(day=1)
+        rel_days = (month_this - month_now).days
+
+        # approximate the relative number of months with 28 days per month
+        return int(rel_days / 28.0)
+
     def _xtag(self, x):
         """Generically extract tags with a given prefix
         """

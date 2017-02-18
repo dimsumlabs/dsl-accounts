@@ -51,6 +51,20 @@ class TestRowClass(unittest.TestCase):
     def test_month(self):
         self.assertEqual(self.rows[0].month(), "1970-01")
 
+    def test_relmonth(self):
+        self.assertEqual(
+            self.rows[0].rel_months(now=datetime.date(1970, 1, 10)),
+            0
+        )
+        self.assertEqual(
+            self.rows[0].rel_months(now=datetime.date(1970, 2, 10)),
+            -1
+        )
+        self.assertEqual(
+            self.rows[0].rel_months(now=datetime.date(1969, 12, 10)),
+            1
+        )
+
     def test_hashtag(self):
         self.assertEqual(self.rows[0].hashtag, None)
 
@@ -187,6 +201,8 @@ class TestRowClass(unittest.TestCase):
         self.assertEqual(obj.filter('comment=~gtag'), obj)
         self.assertEqual(obj.filter('comment=~^a'), obj)
         self.assertEqual(obj.filter('comment=~^foo'), None)
+
+        self.assertEqual(obj.filter('rel_months<-613'), obj)
 
 
 class TestMisc(unittest.TestCase):
