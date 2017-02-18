@@ -25,6 +25,10 @@ import re
 #   more obvious format (perhaps "!months=month[,month]+" - which is clearly
 #   a more discoverable format, but would get quite verbose with yearly
 #   transactions (or even just one with more than 3 months...)
+# - The sub function json_encode_custom is untestable (with the current unit
+#   test system) as the data it is working on has no class - there are enough
+#   users of all the 'grid' data that this could all benefit from being put
+#   into its own class (And thus become testable, too)
 #
 
 FILES_DIR = 'cash'
