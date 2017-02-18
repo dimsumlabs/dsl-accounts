@@ -4,7 +4,6 @@ from collections import namedtuple
 import datetime
 import argparse
 import calendar
-import operator
 import os.path
 import decimal
 import json
@@ -606,34 +605,6 @@ def subp_make_balance(args):
         '''Poor mans template engine'''
         return tpl.replace(('{%s}' % key), value)
 
-    def _get_adjacent_month(year, month, oper):
-        day = 1
-        if oper is operator.add:
-            day = calendar.monthrange(year, month)[1]
-        cur = datetime.date(year, month, day)
-        return oper(cur, datetime.timedelta(days=1))
-
-    def _get_prev_current_and_three_next_months():
-        now = datetime.datetime.utcnow().date()
-
-        months = [now]
-
-        for _ in range(4):
-            prev = months[0]
-            months.insert(
-                0,
-                _get_adjacent_month(prev.year, prev.month, operator.sub))
-
-        for _ in range(4):
-            prev = months[-1]
-            months.append(
-                _get_adjacent_month(prev.year, prev.month, operator.add))
-
-        return [
-            '{year}-{month:02d}'.format(year=i.year, month=i.month)
-            for i in months
-        ]
-
     with open('./docs/template.html') as f:
         tpl = f.read()
 
@@ -641,6 +612,8 @@ def subp_make_balance(args):
     grid_rows = list(apply_filter_strings([
         'direction==incoming',
         'hashtag=~^dues:',
+        'rel_months>-5',
+        'rel_months<5',
     ], args.rows))
 
     # Make the category look pretty
@@ -650,9 +623,6 @@ def subp_make_balance(args):
 
     (months, tags, grid, totals) = grid_accumulate(grid_rows)
     (months, tags, months_len, tags_len) = grid_render_datagroom(months, tags)
-
-    # A bit ugly perhaps, but fixes grid rendering
-    months = _get_prev_current_and_three_next_months()
 
     header = ''.join(grid_render_colheader(months, months_len, tags_len))
     grid = ''.join(grid_render_rows(months, tags, grid, months_len, tags_len))
