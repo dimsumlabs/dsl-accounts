@@ -95,9 +95,9 @@ class TestRowClass(unittest.TestCase):
         self.assertEqual(r._month_add(date, 1), datetime.date(1970, 6, 30))
         self.assertEqual(r._month_add(date, -1), datetime.date(1970, 4, 30))
 
-        # feb is special - I just assume no years are leap years - show this
+        # Show that leap years work
         self.assertEqual(r._month_add(date, -3), datetime.date(1970, 2, 28))
-        self.assertEqual(r._month_add(date, 21), datetime.date(1972, 2, 28))
+        self.assertEqual(r._month_add(date, 21), datetime.date(1972, 2, 29))
 
         # unless you ask for a zero increment, when the date is unchanged
         date = datetime.date(1972, 2, 29)
@@ -117,7 +117,7 @@ class TestRowClass(unittest.TestCase):
         ])
         self.assertEqual(self.rows[5]._split_dates(), [
             datetime.date(1972, 1, 31),
-            datetime.date(1972, 2, 28),
+            datetime.date(1972, 2, 29),
             datetime.date(1972, 3, 31),
             datetime.date(1972, 4, 30),
         ])
@@ -144,7 +144,7 @@ class TestRowClass(unittest.TestCase):
         # showing the end of month clamping to different values
         self.assertEqual(self.rows[5].autosplit(), [
             balance.Row("25", "1972-01-31", "!months:4 !child", "incoming"),
-            balance.Row("25", "1972-02-28", "!months:4 !child", "incoming"),
+            balance.Row("25", "1972-02-29", "!months:4 !child", "incoming"),
             balance.Row("25", "1972-03-31", "!months:4 !child", "incoming"),
             balance.Row("25", "1972-04-30", "!months:4 !child", "incoming"),
         ])
