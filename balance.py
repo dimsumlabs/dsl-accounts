@@ -555,14 +555,11 @@ def subp_grid(args):  # pragma: no cover
 
 
 def subp_json_dues(args):  # pragma: no cover
-    for row in args.rows:
-        if row.hashtag is None:
-            row.hashtag = 'unknown'
 
-        if row.direction == 'outgoing':
-            row.hashtag = 'out ' + row.hashtag
-        else:
-            row.hashtag = 'in ' + row.hashtag
+    args.rows = list(apply_filter_strings([
+        'direction==incoming',
+        'hashtag=~^dues:',
+    ], args.rows))
 
     def json_encode_custom(obj):
         if isinstance(obj, decimal.Decimal):
@@ -575,8 +572,7 @@ def subp_json_dues(args):  # pragma: no cover
 
     (months, tags, grid, totals) = grid_accumulate(args.rows)
     print(json.dumps(({
-        k.replace('In dues:', ''): v for k, v in grid.items()
-        if k.startswith('In dues:')
+        k.replace('Dues:', ''): v for k, v in grid.items()
     }), default=json_encode_custom))
 
 
