@@ -5,6 +5,15 @@
 import unittest
 import datetime
 
+# ensure that utcnow() always returns a fixed time
+fakenow = datetime.datetime(1990,5,4,12,12,12,0)
+
+class fakedatetime(datetime.datetime):
+    @staticmethod
+    def utcnow():
+        return fakenow
+setattr(datetime, 'datetime', fakedatetime)
+
 import balance
 
 
@@ -170,6 +179,8 @@ class TestRowClass(unittest.TestCase):
             balance.Row("33", "1970-03-05", "!months:3 !child", "incoming"),
         ])
 
+        # TODO - at at least a trivial example showing method==proportional
+
     def test_match(self):
         obj = self.rows[2]
         with self.assertRaises(AttributeError):
@@ -202,7 +213,9 @@ class TestRowClass(unittest.TestCase):
         self.assertEqual(obj.filter('comment=~^a'), obj)
         self.assertEqual(obj.filter('comment=~^foo'), None)
 
-        self.assertEqual(obj.filter('rel_months<-613'), obj)
+        # note that this is relative to our fake utcnow() defined above
+        self.assertEqual(obj.filter('rel_months<-264'), obj)
+        self.assertEqual(obj.filter('rel_months<-265'), None)
 
 
 class TestMisc(unittest.TestCase):
@@ -316,3 +329,128 @@ table_end:
 
         (m, t, grid, total) = balance.grid_accumulate(self.rows)
         self.assertEqual(balance.grid_render(m, t, grid, total), expect)
+
+
+class TestSubp(unittest.TestCase):
+    def setUp(self):
+        r = [None for x in range(8)]
+        r[0] = balance.Row("500", "1990-04-03", "#dues:test1", "incoming")
+        r[1] = balance.Row("20", "1990-04-03", "Unknown", "incoming")
+        r[2] = balance.Row("1500", "1990-04-27", "#clubmate", "incoming")
+        r[3] = balance.Row("12500", "1990-04-15", "#bills:rent", "outgoing")
+        r[4] = balance.Row("1174", "1990-04-27", "#bills:electric", "outgoing")
+        r[5] = balance.Row("1500", "1990-04-26", "#clubmate", "outgoing")
+        r[6] = balance.Row("500", "1990-05-02", "#dues:test1", "incoming")
+        r[7] = balance.Row("488", "1990-05-25", "#bills:internet", "outgoing")
+
+        self.rows = r
+
+    def tearDown(self):
+        self.rows = None
+
+    def test_sum(self):
+        self.assertEqual(balance.subp_sum(self), "-13142")
+
+    def test_topay(self):
+        # In case you are wondering why this string is built like this,
+        # it was the only way to satisfy the pyflakes linting.  It didnt
+        # like indentation or continuation or here-strings for various
+        # reasons ..
+        r = ""
+        r += "Date: 1990-04\n"
+        r += "Bill			Price	Pay Date\n"
+        r += "Bills:electric         	-1174	1990-04-27\n"
+        r += "Bills:internet         	$0	Not Yet\n"
+        r += "Bills:rent             	-12500	1990-04-15\n"
+        r += "Clubmate               	-1500	1990-04-26\n"
+        r += "\n"
+        r += "Date: 1990-05\n"
+        r += "Bill			Price	Pay Date\n"
+        r += "Bills:electric         	$0	Not Yet\n"
+        r += "Bills:internet         	-488	1990-05-25\n"
+        r += "Bills:rent             	$0	Not Yet\n"
+        r += "Clubmate               	$0	Not Yet\n"
+        r += "\n"
+        self.assertEqual(balance.subp_topay(self), r)
+
+    def test_topay_html(self):
+        r = ""
+        r += "<h2>Date: <i>1990-04</i></h2>\n"
+        r += "<table>\n"
+        r += "<tr><th>Bills</th><th>Price</th><th>Pay Date</th></tr>\n"
+        r += "\n"
+        r += "    <tr>\n"
+        r += "        "
+        r += "<td>Bills:electric</td><td>-1174</td><td>1990-04-27</td>\n"
+        r += "    </tr>\n"
+        r += "\n"
+        r += "    <tr>\n"
+        r += "        <td>Bills:internet</td><td>$0</td><td>Not Yet</td>\n"
+        r += "    </tr>\n"
+        r += "\n"
+        r += "    <tr>\n"
+        r += "        <td>Bills:rent</td><td>-12500</td><td>1990-04-15</td>\n"
+        r += "    </tr>\n"
+        r += "\n"
+        r += "    <tr>\n"
+        r += "        <td>Clubmate</td><td>-1500</td><td>1990-04-26</td>\n"
+        r += "    </tr>\n"
+        r += "</table>\n"
+        r += "<h2>Date: <i>1990-05</i></h2>\n"
+        r += "<table>\n"
+        r += "<tr><th>Bills</th><th>Price</th><th>Pay Date</th></tr>\n"
+        r += "\n"
+        r += "    <tr>\n"
+        r += "        <td>Bills:electric</td><td>$0</td><td>Not Yet</td>\n"
+        r += "    </tr>\n"
+        r += "\n"
+        r += "    <tr>\n"
+        r += "        "
+        r += "<td>Bills:internet</td><td>-488</td><td>1990-05-25</td>\n"
+        r += "    </tr>\n"
+        r += "\n"
+        r += "    <tr>\n"
+        r += "        <td>Bills:rent</td><td>$0</td><td>Not Yet</td>\n"
+        r += "    </tr>\n"
+        r += "\n"
+        r += "    <tr>\n"
+        r += "        <td>Clubmate</td><td>$0</td><td>Not Yet</td>\n"
+        r += "    </tr>\n"
+        r += "</table>\n"
+        self.assertEqual(balance.subp_topay_html(self), r)
+
+    def test_party(self):
+        self.assertEqual(balance.subp_party(self), "Fail")
+        # FIXME - add a "Success" case too
+
+    # FIXME - subp_csv
+
+    def test_grid(self):
+        r = ""
+        r += "                     1990-04  1990-05\n"
+        r += "In clubmate             1500         \n"
+        r += "In dues:test1            500      500\n"
+        r += "In unknown                20         \n"
+        r += "Out bills:electric     -1174         \n"
+        r += "Out bills:internet               -488\n"
+        r += "Out bills:rent        -12500         \n"
+        r += "Out clubmate           -1500         \n"
+        r += "\n"
+        r += "TOTALS                -13154       12\n"
+        r += "RUNNING TOTALS        -13154   -13142\n"
+        r += "TOTAL:    -13142"
+        self.assertEqual(balance.subp_grid(self), r)
+
+    def test_json_dues(self):
+        # FIXME - add rows with dues in them
+        r = ""
+        r += '{"test1":'
+        r += ' {"1990-05": {"sum": 500.0, "last": "1990-05-02"},'
+        r += ' "1990-04": {"sum": 500.0, "last": "1990-04-03"}}}'
+        self.assertEqual(balance.subp_json_dues(self), r)
+
+    def test_make_balance(self):
+        # this is the {grid_header} and {grid} values from the template
+        want = "        1990-04  1990-05\nTest1       500      500\n\n"
+        got = balance.subp_make_balance(self)
+        self.assertTrue(want in got)
