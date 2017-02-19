@@ -6,15 +6,15 @@ import unittest
 import datetime
 
 # ensure that utcnow() always returns a fixed time
-fakenow = datetime.datetime(1990,5,4,12,12,12,0)
+fakenow = datetime.datetime(1990, 5, 4, 12, 12, 12, 0)
 
-class fakedatetime(datetime.datetime):
+class fakedatetime(datetime.datetime): # noqa
     @staticmethod
     def utcnow():
         return fakenow
 setattr(datetime, 'datetime', fakedatetime)
 
-import balance
+import balance # noqa
 
 
 class TestRowClass(unittest.TestCase):
