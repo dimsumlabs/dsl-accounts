@@ -465,4 +465,4 @@ class TestSubp(unittest.TestCase):
         if sys.version_info.major == 2:
             self.assertTrue(want in got)
         else:
-            print "if you want to make breaking changes to your language, dont expect me to be happy" # noqa
+            print ("if you want to make breaking changes to your language, dont expect me to be happy") # noqa
