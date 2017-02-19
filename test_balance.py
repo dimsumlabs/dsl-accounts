@@ -5,16 +5,17 @@
 import unittest
 import datetime
 
-# ensure that utcnow() always returns a fixed time
-fakenow = datetime.datetime(1990, 5, 4, 12, 12, 12, 0)
-
-class fakedatetime(datetime.datetime): # noqa
-    @staticmethod
-    def utcnow():
-        return fakenow
-setattr(datetime, 'datetime', fakedatetime)
-
-import balance # noqa
+# ensure that utcnow() always returns a fixed time                      # noqa
+fakenow = datetime.datetime(1990, 5, 4, 12, 12, 12, 0)                  # noqa
+                                                                        # noqa
+class fakedatetime(datetime.datetime):                                  # noqa
+    @staticmethod                                                       # noqa
+    def utcnow():                                                       # noqa
+        return fakenow                                                  # noqa
+setattr(datetime, 'datetime', fakedatetime)                             # noqa
+                                                                        # noqa
+import balance                                                          # noqa
+                                                                        # noqa
 
 
 class TestRowClass(unittest.TestCase):
@@ -334,14 +335,18 @@ table_end:
 class TestSubp(unittest.TestCase):
     def setUp(self):
         r = [None for x in range(8)]
-        r[0] = balance.Row("500", "1990-04-03", "#dues:test1", "incoming")
-        r[1] = balance.Row("20", "1990-04-03", "Unknown", "incoming")
-        r[2] = balance.Row("1500", "1990-04-27", "#clubmate", "incoming")
-        r[3] = balance.Row("12500", "1990-04-15", "#bills:rent", "outgoing")
-        r[4] = balance.Row("1174", "1990-04-27", "#bills:electric", "outgoing")
-        r[5] = balance.Row("1500", "1990-04-26", "#clubmate", "outgoing")
-        r[6] = balance.Row("500", "1990-05-02", "#dues:test1", "incoming")
-        r[7] = balance.Row("488", "1990-05-25", "#bills:internet", "outgoing")
+        # hey pyflakes, these look much nicer all aligned like this, but you
+        # hate it, so I need to stick excludes on these lines, which just makes
+        # the lines exceed 80 columns, which makes them look shit.  I choose
+        # the path that messes with pyflakes the most in this case.
+        r[0] = balance.Row(  "500", "1990-04-03", "#dues:test1", "incoming") # noqa
+        r[1] = balance.Row(   "20", "1990-04-03", "Unknown", "incoming") # noqa
+        r[2] = balance.Row( "1500", "1990-04-27", "#clubmate", "incoming") # noqa
+        r[3] = balance.Row("12500", "1990-04-15", "#bills:rent", "outgoing") # noqa
+        r[4] = balance.Row( "1174", "1990-04-27", "#bills:electric", "outgoing") # noqa
+        r[5] = balance.Row( "1500", "1990-04-26", "#clubmate", "outgoing") # noqa
+        r[6] = balance.Row(  "500", "1990-05-02", "#dues:test1", "incoming") # noqa
+        r[7] = balance.Row(  "488", "1990-05-25", "#bills:internet", "outgoing") # noqa
 
         self.rows = r
 
@@ -356,6 +361,8 @@ class TestSubp(unittest.TestCase):
         # it was the only way to satisfy the pyflakes linting.  It didnt
         # like indentation or continuation or here-strings for various
         # reasons ..
+        # TODO - decorate all this with shitty pragmas to tell pyflakes to
+        # get stuffed, and then rewrite it so it makes more sense
         r = ""
         r += "Date: 1990-04\n"
         r += "Bill			Price	Pay Date\n"
