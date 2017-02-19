@@ -4,18 +4,20 @@
 
 import unittest
 import datetime
+import sys
+if sys.version_info[0] == 2:
+    import mock
+else:
+    from unittest import mock
 
-# ensure that utcnow() always returns a fixed time                      # noqa
-fakenow = datetime.datetime(1990, 5, 4, 12, 12, 12, 0)                  # noqa
-                                                                        # noqa
-class fakedatetime(datetime.datetime):                                  # noqa
-    @staticmethod                                                       # noqa
-    def utcnow():                                                       # noqa
-        return fakenow                                                  # noqa
-setattr(datetime, 'datetime', fakedatetime)                             # noqa
-                                                                        # noqa
-import balance                                                          # noqa
-                                                                        # noqa
+import balance  # noqa
+
+
+class fakedatetime(datetime.datetime):
+
+    @classmethod
+    def utcnow(cls):
+        return cls(1990, 5, 4, 12, 12, 12, 0)
 
 
 class TestRowClass(unittest.TestCase):
@@ -191,6 +193,7 @@ class TestRowClass(unittest.TestCase):
         self.assertEqual(obj.match(comment='a !bangtag'), obj)
         self.assertEqual(obj.match(month='1970-01'), obj)
 
+    @mock.patch('balance.datetime.datetime', fakedatetime)
     def test_filter(self):
         obj = self.rows[2]
         with self.assertRaises(ValueError):
@@ -456,6 +459,7 @@ class TestSubp(unittest.TestCase):
 #         r += ' "1990-04": {"sum": 500.0, "last": "1990-04-03"}}}'
 #         self.assertEqual(balance.subp_json_dues(self), r)
 
+    @mock.patch('balance.datetime.datetime', fakedatetime)
     def test_make_balance(self):
         # this is the {grid_header} and {grid} values from the template
         want = "        1990-04  1990-05\nTest1       500      500\n\n"

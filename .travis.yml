@@ -5,7 +5,7 @@ python:
   - 3.5
 
 install:
-  - pip install --quiet flake8 coverage
+  - pip install --quiet flake8 coverage mock
 
 script:
   - make test
