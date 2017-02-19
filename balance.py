@@ -28,7 +28,10 @@ import re
 #   test system) as the data it is working on has no class - there are enough
 #   users of all the 'grid' data that this could all benefit from being put
 #   into its own class (And thus become testable, too)
-#
+# - if we convert subp_csv to write to - and return - a string, then we
+#   can add a unit test for it.  We could also then turn the "--out"
+#   option into a global one, which would be the output destination for
+#   any command output
 
 FILES_DIR = 'cash'
 IGNORE_FILES = ('membershipfees',)
@@ -506,28 +509,26 @@ def topay_render(rows, strings):
 #
 # This section contains the implementation of the commandline
 # sub-commands.  Ideally, they are all small and simple, implemented with
-# calls to the above functions.  This will allow the simple unit tests
-# to provide confidence that none of the above functions are broken,
-# without needing the sub-commands to be tested (which would need a
-# more complex test system)
+# calls to the above functions.  This should allow clearer understanding
+# of the intent of each sub-command
 #
 
 
-def subp_sum(args):  # pragma: no cover
-    print("{}".format(sum(args.rows)))
+def subp_sum(args):
+    return "{}".format(sum(args.rows))
 
 
-def subp_topay(args):  # pragma: no cover
+def subp_topay(args):
     strings = {
         'header': 'Date: {date}',
         'table_start': "Bill\t\t\tPrice\tPay Date",
         'table_end': '',
         'table_row': "{hashtag:<23}\t{price}\t{date}",
     }
-    print(topay_render(args.rows, strings))
+    return topay_render(args.rows, strings)
 
 
-def subp_topay_html(args):  # pragma: no cover
+def subp_topay_html(args):
     strings = {
         'header': '<h2>Date: <i>{date}</i></h2>',
         'table_start':
@@ -539,12 +540,12 @@ def subp_topay_html(args):  # pragma: no cover
         <td>{hashtag}</td><td>{price}</td><td>{date}</td>
     </tr>''',
     }
-    print(topay_render(args.rows, strings))
+    return topay_render(args.rows, strings)
 
 
-def subp_party(args):  # pragma: no cover
+def subp_party(args):
     balance = sum(args.rows)
-    print("Success" if balance > 0 else "Fail")
+    return "Success" if balance > 0 else "Fail"
 
 
 def subp_csv(args):  # pragma: no cover
@@ -561,9 +562,10 @@ def subp_csv(args):  # pragma: no cover
         writer.writerow('')
         writer.writerow(('Sum',))
         writer.writerow((sum(rows),))
+    return None
 
 
-def subp_grid(args):  # pragma: no cover
+def subp_grid(args):
     # ensure that each category has a nice and clear prefix
     for row in args.rows:
         if row.hashtag is None:
@@ -575,10 +577,10 @@ def subp_grid(args):  # pragma: no cover
             row.hashtag = 'in ' + row.hashtag
 
     (months, tags, grid, totals) = grid_accumulate(args.rows)
-    print(grid_render(months, tags, grid, totals))
+    return grid_render(months, tags, grid, totals)
 
 
-def subp_json_dues(args):  # pragma: no cover
+def subp_json_dues(args):
 
     args.rows = list(apply_filter_strings([
         'direction==incoming',
@@ -595,9 +597,9 @@ def subp_json_dues(args):  # pragma: no cover
         raise TypeError(obj)
 
     (months, tags, grid, totals) = grid_accumulate(args.rows)
-    print(json.dumps(({
+    return json.dumps(({
         k.replace('Dues:', ''): v for k, v in grid.items()
-    }), default=json_encode_custom))
+    }), default=json_encode_custom)
 
 
 def subp_make_balance(args):
@@ -632,7 +634,7 @@ def subp_make_balance(args):
     tpl = _format_tpl(tpl, 'grid', grid)
     # TODO: calculate when rent is due and add another field to the template
 
-    print(tpl)
+    return tpl
 
 
 # A list of all the sub-commands
@@ -723,4 +725,6 @@ if __name__ == '__main__':  # pragma: no cover
     # apply any filters requested
     args.rows = list(apply_filter_strings(args.filter, args.rows))
 
-    args.func(args)
+    result = args.func(args)
+    if result is not None:
+        print(result)
