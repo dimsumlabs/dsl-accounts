@@ -2,7 +2,6 @@
 """ Perform tests on the balance.py
 """
 
-import sys
 import unittest
 import datetime
 
