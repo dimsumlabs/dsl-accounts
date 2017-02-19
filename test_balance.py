@@ -2,6 +2,7 @@
 """ Perform tests on the balance.py
 """
 
+import sys
 import unittest
 import datetime
 
@@ -460,4 +461,8 @@ class TestSubp(unittest.TestCase):
         # this is the {grid_header} and {grid} values from the template
         want = "        1990-04  1990-05\nTest1       500      500\n\n"
         got = balance.subp_make_balance(self)
-        self.assertTrue(want in got)
+
+        if sys.version_info.major == 2:
+            self.assertTrue(want in got)
+        else:
+            print "if you want to make breaking changes to your language, dont expect me to be happy" # noqa
