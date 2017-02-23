@@ -607,8 +607,8 @@ def subp_make_balance(args):
         '''Poor mans template engine'''
         return tpl.replace(('{%s}' % key), value)
 
-
-    with open(os.path.join(os.path.dirname(__file__) + './docs/template.html')) as f:
+    with open(os.path.join(os.path.dirname(__file__),
+                           './docs/template.html')) as f:
         tpl = f.read()
 
     # Filter out only the membership dues
