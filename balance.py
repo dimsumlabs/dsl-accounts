@@ -630,10 +630,29 @@ def subp_make_balance(args):
     header = ''.join(grid_render_colheader(months, months_len, tags_len))
     grid = ''.join(grid_render_rows(months, tags, grid, months_len, tags_len))
 
+    def _get_next_rent_month():
+        grid_rows = iter(apply_filter_strings([
+            'direction==outgoing',
+            'hashtag=~^bills:rent',
+        ], args.rows))
+        last_rent_payment = next(grid_rows).date
+        for r in grid_rows:
+            if r.date > last_rent_payment:
+                last_rent_payment = r.date
+
+        day = calendar.monthrange(last_rent_payment.year,
+                                  last_rent_payment.month)[1]
+        next_month = datetime.datetime(
+            last_rent_payment.year,
+            last_rent_payment.month,
+            day) + datetime.timedelta(days=1)
+        s = ' '.join((next_month.strftime('%B'), str(next_month.year))).upper()
+        return s
+
     tpl = _format_tpl(tpl, 'balance_sum', str(sum(args.rows)))
     tpl = _format_tpl(tpl, 'grid_header', header)
     tpl = _format_tpl(tpl, 'grid', grid)
-    # TODO: calculate when rent is due and add another field to the template
+    tpl = _format_tpl(tpl, 'rent_due', _get_next_rent_month())
 
     return tpl
 
