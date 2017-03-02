@@ -461,8 +461,14 @@ class TestSubp(unittest.TestCase):
 
     @mock.patch('balance.datetime.datetime', fakedatetime)
     def test_make_balance(self):
-        # this is the {grid_header} and {grid} values from the template
-        want = "        1990-04  1990-05\nTest1       500      500\n\n"
         got = balance.subp_make_balance(self)
 
+        # this is the {grid_header} and {grid} values from the template
+        want = "        1990-04  1990-05\nTest1       500      500\n\n"
+        self.assertTrue(want in got)
+
+        # this is the {rent_due} value from the template, with some of
+        # the template mixed in
+        # TODO - have a testable "rowset.forcastNext(category)" function
+        want = 'Rent (next due: <span style="color:red">MAY 1990</span>)'
         self.assertTrue(want in got)
