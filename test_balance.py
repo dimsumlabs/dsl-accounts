@@ -61,21 +61,7 @@ class TestRowClass(unittest.TestCase):
         self.assertEqual(self.rows[0] + self.rows[2], 110)
 
     def test_month(self):
-        self.assertEqual(self.rows[0].month(), "1970-01")
-
-    def test_relmonth(self):
-        self.assertEqual(
-            self.rows[0].rel_months(now=datetime.date(1970, 1, 10)),
-            0
-        )
-        self.assertEqual(
-            self.rows[0].rel_months(now=datetime.date(1970, 2, 10)),
-            -1
-        )
-        self.assertEqual(
-            self.rows[0].rel_months(now=datetime.date(1969, 12, 10)),
-            1
-        )
+        self.assertEqual(self.rows[0].month, "1970-01")
 
     def test_hashtag(self):
         self.assertEqual(self.rows[0].hashtag, None)
@@ -193,7 +179,6 @@ class TestRowClass(unittest.TestCase):
         self.assertEqual(obj.match(comment='a !bangtag'), obj)
         self.assertEqual(obj.match(month='1970-01'), obj)
 
-    @mock.patch('balance.datetime.datetime', fakedatetime)
     def test_filter(self):
         obj = self.rows[2]
         with self.assertRaises(ValueError):
@@ -217,7 +202,9 @@ class TestRowClass(unittest.TestCase):
         self.assertEqual(obj.filter('comment=~^a'), obj)
         self.assertEqual(obj.filter('comment=~^foo'), None)
 
-        # note that this is relative to our fake utcnow() defined above
+    @mock.patch('balance.datetime.datetime', fakedatetime)
+    def test_filter_rel_months(self):
+        obj = self.rows[2]
         self.assertEqual(obj.filter('rel_months<-264'), obj)
         self.assertEqual(obj.filter('rel_months<-265'), None)
 
