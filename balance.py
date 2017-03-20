@@ -423,13 +423,13 @@ def grid_render_totals(months, totals, months_len, tags_len):
     s = []
 
     s.append("\n")
-    s.append("{:<{width}}".format('TOTALS', width=tags_len))
+    s.append("{:<{width}}".format('MONTH Sub Total', width=tags_len))
 
     for month in months:
         s.append("{:>{}}".format(totals[month], months_len))
 
     s.append("\n")
-    s.append("{:<{width}}".format('RUNNING TOTALS', width=tags_len))
+    s.append("{:<{width}}".format('RUNNING Balance', width=tags_len))
 
     running_total = 0
     for month in months:
