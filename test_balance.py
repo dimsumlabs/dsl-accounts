@@ -308,18 +308,19 @@ table_end:
         )
 
     def test_grid_render(self):
-        expect = ""
-        expect += "          1970-01  1970-02  1970-03\n"
-        expect += "Rent          -10               -10\n"
-        expect += "Unknown        10      -10         \n"
-        expect += "Water         -25                  \n"
-        expect += "\n"
-        expect += "TOTALS        -25      -10      -10\n"
-        expect += "RUNNING TOTALS      -25      -35      -45\n"
-        expect += "TOTAL:       -45"
+        expect = []
+        expect += ["          1970-01  1970-02  1970-03"]
+        expect += ["Rent          -10               -10"]
+        expect += ["Unknown        10      -10         "]
+        expect += ["Water         -25                  "]
+        expect += [""]
+        expect += ["MONTH Sub Total      -25      -10      -10"]
+        expect += ["RUNNING Balance      -25      -35      -45"]
+        expect += ["TOTAL:       -45"]
 
         (m, t, grid, total) = balance.grid_accumulate(self.rows)
-        self.assertEqual(balance.grid_render(m, t, grid, total), expect)
+        got = balance.grid_render(m, t, grid, total).split("\n")
+        self.assertEqual(got, expect)
 
 
 class TestSubp(unittest.TestCase):
@@ -423,20 +424,22 @@ class TestSubp(unittest.TestCase):
     # FIXME - subp_csv
 
     def test_grid(self):
-        r = ""
-        r += "                     1990-04  1990-05\n"
-        r += "In clubmate             1500         \n"
-        r += "In dues:test1            500      500\n"
-        r += "In unknown                20         \n"
-        r += "Out bills:electric     -1174         \n"
-        r += "Out bills:internet               -488\n"
-        r += "Out bills:rent        -12500         \n"
-        r += "Out clubmate           -1500         \n"
-        r += "\n"
-        r += "TOTALS                -13154       12\n"
-        r += "RUNNING TOTALS        -13154   -13142\n"
-        r += "TOTAL:    -13142"
-        self.assertEqual(balance.subp_grid(self), r)
+        r = []
+        r += ["                     1990-04  1990-05"]
+        r += ["In clubmate             1500         "]
+        r += ["In dues:test1            500      500"]
+        r += ["In unknown                20         "]
+        r += ["Out bills:electric     -1174         "]
+        r += ["Out bills:internet               -488"]
+        r += ["Out bills:rent        -12500         "]
+        r += ["Out clubmate           -1500         "]
+        r += [""]
+        r += ["MONTH Sub Total       -13154       12"]
+        r += ["RUNNING Balance       -13154   -13142"]
+        r += ["TOTAL:    -13142"]
+
+        got = balance.subp_grid(self).split("\n")
+        self.assertEqual(got, r)
 
 # TODO - re-import the json from a string and do a deep compare
 #     def test_json_dues(self):
