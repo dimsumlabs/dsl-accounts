@@ -345,6 +345,8 @@ def parse_dir(dirname):   # pragma: no cover
         with open(os.path.join(dirname, filename), 'r') as tsvfile:
             for row in tsvfile.readlines():
                 row = row.rstrip('\n')
+                if not row:
+                    continue
                 yield Row(*re.split(r'\s+', row,
                                     # Number of splits (3 fields)
                                     maxsplit=2),
