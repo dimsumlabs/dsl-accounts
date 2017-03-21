@@ -39,6 +39,10 @@ class TestRowClass(unittest.TestCase):
         with self.assertRaises(ValueError):
             balance.Row("100", "1970-01-01", "a comment", "fred")
 
+    def test_value(self):
+        with self.assertRaises(ValueError):
+            balance.Row("-100", "1970-01-01", "a comment", "incoming")
+
     def test_incoming(self):
         obj = self.rows[0]
         self.assertEqual(obj.value, 100)
@@ -284,42 +288,46 @@ class TestMisc(unittest.TestCase):
             'table_row': 'table_row: {hashtag}, {price}, {date}',
         }
 
-        self.assertEqual(
-            balance.topay_render(self.rows, strings),
-            """header: 1970-01
-table_start:
-table_row: Rent, -10, 1970-01-10
-table_row: Unknown, $0, Not Yet
-table_row: Water, -25, 1970-01-11
-table_end:
-header: 1970-02
-table_start:
-table_row: Rent, $0, Not Yet
-table_row: Unknown, -10, 1970-02-06
-table_row: Water, $0, Not Yet
-table_end:
-header: 1970-03
-table_start:
-table_row: Rent, -10, 1970-03-01
-table_row: Unknown, $0, Not Yet
-table_row: Water, $0, Not Yet
-table_end:
-"""
-        )
+        expect = [
+            "header: 1970-01",
+            "table_start:",
+            "table_row: Rent, -10, 1970-01-10",
+            "table_row: Unknown, $0, Not Yet",
+            "table_row: Water, -25, 1970-01-11",
+            "table_end:",
+            "header: 1970-02",
+            "table_start:",
+            "table_row: Rent, $0, Not Yet",
+            "table_row: Unknown, -10, 1970-02-06",
+            "table_row: Water, $0, Not Yet",
+            "table_end:",
+            "header: 1970-03",
+            "table_start:",
+            "table_row: Rent, -10, 1970-03-01",
+            "table_row: Unknown, $0, Not Yet",
+            "table_row: Water, $0, Not Yet",
+            "table_end:",
+            "",
+        ]
+
+        got = balance.topay_render(self.rows, strings).split("\n")
+        self.assertEqual(got, expect)
 
     def test_grid_render(self):
-        expect = ""
-        expect += "          1970-01  1970-02  1970-03\n"
-        expect += "Rent          -10               -10\n"
-        expect += "Unknown        10      -10         \n"
-        expect += "Water         -25                  \n"
-        expect += "\n"
-        expect += "TOTALS        -25      -10      -10\n"
-        expect += "RUNNING TOTALS      -25      -35      -45\n"
-        expect += "TOTAL:       -45"
+        expect = [
+            "          1970-01  1970-02  1970-03",
+            "Rent          -10               -10",
+            "Unknown        10      -10         ",
+            "Water         -25                  ",
+            "",
+            "MONTH Sub Total      -25      -10      -10",
+            "RUNNING Balance      -25      -35      -45",
+            "TOTAL:       -45",
+        ]
 
         (m, t, grid, total) = balance.grid_accumulate(self.rows)
-        self.assertEqual(balance.grid_render(m, t, grid, total), expect)
+        got = balance.grid_render(m, t, grid, total).split("\n")
+        self.assertEqual(got, expect)
 
 
 class TestSubp(unittest.TestCase):
@@ -347,74 +355,74 @@ class TestSubp(unittest.TestCase):
         self.assertEqual(balance.subp_sum(self), "-13142")
 
     def test_topay(self):
-        # In case you are wondering why this string is built like this,
-        # it was the only way to satisfy the pyflakes linting.  It didnt
-        # like indentation or continuation or here-strings for various
-        # reasons ..
-        # TODO - decorate all this with shitty pragmas to tell pyflakes to
-        # get stuffed, and then rewrite it so it makes more sense
-        r = ""
-        r += "Date: 1990-04\n"
-        r += "Bill			Price	Pay Date\n"
-        r += "Bills:electric         	-1174	1990-04-27\n"
-        r += "Bills:internet         	$0	Not Yet\n"
-        r += "Bills:rent             	-12500	1990-04-15\n"
-        r += "Clubmate               	-1500	1990-04-26\n"
-        r += "\n"
-        r += "Date: 1990-05\n"
-        r += "Bill			Price	Pay Date\n"
-        r += "Bills:electric         	$0	Not Yet\n"
-        r += "Bills:internet         	-488	1990-05-25\n"
-        r += "Bills:rent             	$0	Not Yet\n"
-        r += "Clubmate               	$0	Not Yet\n"
-        r += "\n"
-        self.assertEqual(balance.subp_topay(self), r)
+        expect = [
+            "Date: 1990-04",
+            "Bill			Price	Pay Date",
+            "Bills:electric         	-1174	1990-04-27",
+            "Bills:internet         	$0	Not Yet",
+            "Bills:rent             	-12500	1990-04-15",
+            "Clubmate               	-1500	1990-04-26",
+            "",
+            "Date: 1990-05",
+            "Bill			Price	Pay Date",
+            "Bills:electric         	$0	Not Yet",
+            "Bills:internet         	-488	1990-05-25",
+            "Bills:rent             	$0	Not Yet",
+            "Clubmate               	$0	Not Yet",
+            "",
+            "",
+        ]
+        got = balance.subp_topay(self).split("\n")
+        self.assertEqual(got, expect)
 
     def test_topay_html(self):
-        r = ""
-        r += "<h2>Date: <i>1990-04</i></h2>\n"
-        r += "<table>\n"
-        r += "<tr><th>Bills</th><th>Price</th><th>Pay Date</th></tr>\n"
-        r += "\n"
-        r += "    <tr>\n"
-        r += "        "
-        r += "<td>Bills:electric</td><td>-1174</td><td>1990-04-27</td>\n"
-        r += "    </tr>\n"
-        r += "\n"
-        r += "    <tr>\n"
-        r += "        <td>Bills:internet</td><td>$0</td><td>Not Yet</td>\n"
-        r += "    </tr>\n"
-        r += "\n"
-        r += "    <tr>\n"
-        r += "        <td>Bills:rent</td><td>-12500</td><td>1990-04-15</td>\n"
-        r += "    </tr>\n"
-        r += "\n"
-        r += "    <tr>\n"
-        r += "        <td>Clubmate</td><td>-1500</td><td>1990-04-26</td>\n"
-        r += "    </tr>\n"
-        r += "</table>\n"
-        r += "<h2>Date: <i>1990-05</i></h2>\n"
-        r += "<table>\n"
-        r += "<tr><th>Bills</th><th>Price</th><th>Pay Date</th></tr>\n"
-        r += "\n"
-        r += "    <tr>\n"
-        r += "        <td>Bills:electric</td><td>$0</td><td>Not Yet</td>\n"
-        r += "    </tr>\n"
-        r += "\n"
-        r += "    <tr>\n"
-        r += "        "
-        r += "<td>Bills:internet</td><td>-488</td><td>1990-05-25</td>\n"
-        r += "    </tr>\n"
-        r += "\n"
-        r += "    <tr>\n"
-        r += "        <td>Bills:rent</td><td>$0</td><td>Not Yet</td>\n"
-        r += "    </tr>\n"
-        r += "\n"
-        r += "    <tr>\n"
-        r += "        <td>Clubmate</td><td>$0</td><td>Not Yet</td>\n"
-        r += "    </tr>\n"
-        r += "</table>\n"
-        self.assertEqual(balance.subp_topay_html(self), r)
+        expect = [
+            "<h2>Date: <i>1990-04</i></h2>",
+            "<table>",
+            "<tr><th>Bills</th><th>Price</th><th>Pay Date</th></tr>",
+            "",
+            "    <tr>",
+            "        "
+            "<td>Bills:electric</td><td>-1174</td><td>1990-04-27</td>",
+            "    </tr>",
+            "",
+            "    <tr>",
+            "        <td>Bills:internet</td><td>$0</td><td>Not Yet</td>",
+            "    </tr>",
+            "",
+            "    <tr>",
+            "        <td>Bills:rent</td><td>-12500</td><td>1990-04-15</td>",
+            "    </tr>",
+            "",
+            "    <tr>",
+            "        <td>Clubmate</td><td>-1500</td><td>1990-04-26</td>",
+            "    </tr>",
+            "</table>",
+            "<h2>Date: <i>1990-05</i></h2>",
+            "<table>",
+            "<tr><th>Bills</th><th>Price</th><th>Pay Date</th></tr>",
+            "",
+            "    <tr>",
+            "        <td>Bills:electric</td><td>$0</td><td>Not Yet</td>",
+            "    </tr>",
+            "",
+            "    <tr>",
+            "        "
+            "<td>Bills:internet</td><td>-488</td><td>1990-05-25</td>",
+            "    </tr>",
+            "",
+            "    <tr>",
+            "        <td>Bills:rent</td><td>$0</td><td>Not Yet</td>",
+            "    </tr>",
+            "",
+            "    <tr>",
+            "        <td>Clubmate</td><td>$0</td><td>Not Yet</td>",
+            "    </tr>",
+            "</table>",
+            "",
+        ]
+        got = balance.subp_topay_html(self).split("\n")
+        self.assertEqual(got, expect)
 
     def test_party(self):
         self.assertEqual(balance.subp_party(self), "Fail")
@@ -423,20 +431,23 @@ class TestSubp(unittest.TestCase):
     # FIXME - subp_csv
 
     def test_grid(self):
-        r = ""
-        r += "                     1990-04  1990-05\n"
-        r += "In clubmate             1500         \n"
-        r += "In dues:test1            500      500\n"
-        r += "In unknown                20         \n"
-        r += "Out bills:electric     -1174         \n"
-        r += "Out bills:internet               -488\n"
-        r += "Out bills:rent        -12500         \n"
-        r += "Out clubmate           -1500         \n"
-        r += "\n"
-        r += "TOTALS                -13154       12\n"
-        r += "RUNNING TOTALS        -13154   -13142\n"
-        r += "TOTAL:    -13142"
-        self.assertEqual(balance.subp_grid(self), r)
+        expect = [
+            "                     1990-04  1990-05",
+            "In clubmate             1500         ",
+            "In dues:test1            500      500",
+            "In unknown                20         ",
+            "Out bills:electric     -1174         ",
+            "Out bills:internet               -488",
+            "Out bills:rent        -12500         ",
+            "Out clubmate           -1500         ",
+            "",
+            "MONTH Sub Total       -13154       12",
+            "RUNNING Balance       -13154   -13142",
+            "TOTAL:    -13142",
+        ]
+
+        got = balance.subp_grid(self).split("\n")
+        self.assertEqual(got, expect)
 
 # TODO - re-import the json from a string and do a deep compare
 #     def test_json_dues(self):
