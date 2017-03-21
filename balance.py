@@ -17,21 +17,17 @@ import re
 # - make Row take Date objects and not strings with dates, removing a string
 #   handling fart from Row.autosplit() and removing external formatting
 #   knowledge from Row
-# - Row should throw an error with negative values
-# - If we know that there never negative values, we can store the Row.direction
-#   content in the sign of the Row.value field
 # - The "!months:[offset:]count" tag is perhaps a little awkward, find a
 #   more obvious format (perhaps "!months=month[,month]+" - which is clearly
 #   a more discoverable format, but would get quite verbose with yearly
 #   transactions (or even just one with more than 3 months...)
-# - The sub function json_encode_custom is untestable (with the current unit
-#   test system) as the data it is working on has no class - there are enough
-#   users of all the 'grid' data that this could all benefit from being put
-#   into its own class (And thus become testable, too)
 # - if we convert subp_csv to write to - and return - a string, then we
 #   can add a unit test for it.  We could also then turn the "--out"
 #   option into a global one, which would be the output destination for
 #   any command output
+# - The Row object should allow a direction indicating "auto" to take
+#   the direction from the sign of the value - this would simplify the
+#   places where we automatically create a new Row (eg, from splitting)
 
 FILES_DIR = 'cash'
 IGNORE_FILES = ('membershipfees',)
@@ -40,7 +36,7 @@ IGNORE_FILES = ('membershipfees',)
 decimal.getcontext().rounding = decimal.ROUND_DOWN
 
 
-class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
+class Row(namedtuple('Row', ('value', 'date', 'comment'))):
 
     def __new__(cls, value, date, comment, direction):
         value = decimal.Decimal(value)
@@ -49,11 +45,16 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
         if direction not in ('incoming', 'outgoing'):
             raise ValueError('Direction "{}" unhandled'.format(direction))
 
+        # We use the direction field, so it is impossible to have a negative
+        # value
+        if value < 0:
+            raise ValueError('Value "{}" is negative'.format(value))
+
         # Inverse value
         if direction == 'outgoing':
             value = decimal.Decimal(0)-value
 
-        obj = super(cls, Row).__new__(cls, value, date, comment, direction)
+        obj = super(cls, Row).__new__(cls, value, date, comment)
 
         # Look at the comment for this row and extract any hashtags found
         # hashtags are used to tag the category of each transaction and
@@ -70,6 +71,13 @@ class Row(namedtuple('Row', ('value', 'date', 'comment', 'direction'))):
 
     def __radd__(self, value):
         return self.__add__(value)
+
+    @property
+    def direction(self):
+        if self.value < 0:
+            return "outgoing"
+        else:
+            return "incoming"
 
     @property
     def month(self):
@@ -415,13 +423,13 @@ def grid_render_totals(months, totals, months_len, tags_len):
     s = []
 
     s.append("\n")
-    s.append("{:<{width}}".format('TOTALS', width=tags_len))
+    s.append("{:<{width}}".format('MONTH Sub Total', width=tags_len))
 
     for month in months:
         s.append("{:>{}}".format(totals[month], months_len))
 
     s.append("\n")
-    s.append("{:<{width}}".format('RUNNING TOTALS', width=tags_len))
+    s.append("{:<{width}}".format('RUNNING Balance', width=tags_len))
 
     running_total = 0
     for month in months:
