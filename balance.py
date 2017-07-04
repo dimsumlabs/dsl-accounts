@@ -188,6 +188,11 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
 
         # divide the value amongst all the child rows
         count_children = len(dates)
+        if count_children < 1:
+            raise ValueError(
+                'would divide by zero, splitting children from {}'.format(
+                    self.date))
+
         # (The abs value is taken because the sign is in the self.direction)
         each_value = abs(self.value / count_children)
         # (avoid numbers that cannot be represented with cash by using int())
