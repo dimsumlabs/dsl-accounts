@@ -533,7 +533,11 @@ def topay_render(rows, strings):
 
 
 def subp_sum(args):
-    return "{}".format(sum(args.rows))
+    result = sum(args.rows)
+    if result < 0:
+        raise ValueError(
+            "Impossible negative value cash balance: {}".format(result))
+    return "{}".format(result)
 
 
 def subp_topay(args):

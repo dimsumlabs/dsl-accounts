@@ -332,7 +332,7 @@ class TestMisc(unittest.TestCase):
 
 class TestSubp(unittest.TestCase):
     def setUp(self):
-        r = [None for x in range(8)]
+        r = [None for x in range(9)]
         # hey pyflakes, these look much nicer all aligned like this, but you
         # hate it, so I need to stick excludes on these lines, which just makes
         # the lines exceed 80 columns, which makes them look shit.  I choose
@@ -345,6 +345,7 @@ class TestSubp(unittest.TestCase):
         r[5] = balance.Row( "1500", "1990-04-26", "#clubmate", "outgoing") # noqa
         r[6] = balance.Row(  "500", "1990-05-02", "#dues:test1", "incoming") # noqa
         r[7] = balance.Row(  "488", "1990-05-25", "#bills:internet", "outgoing") # noqa
+        r[8] = balance.Row("13152", "1990-05-25", "balance books", "incoming") # noqa
 
         self.rows = r
 
@@ -352,7 +353,7 @@ class TestSubp(unittest.TestCase):
         self.rows = None
 
     def test_sum(self):
-        self.assertEqual(balance.subp_sum(self), "-13142")
+        self.assertEqual(balance.subp_sum(self), "10")
 
     def test_topay(self):
         expect = [
@@ -425,8 +426,8 @@ class TestSubp(unittest.TestCase):
         self.assertEqual(got, expect)
 
     def test_party(self):
-        self.assertEqual(balance.subp_party(self), "Fail")
-        # FIXME - add a "Success" case too
+        self.assertEqual(balance.subp_party(self), "Success")
+        # FIXME - add a "Fail" case too
 
     # FIXME - subp_csv
 
@@ -435,15 +436,15 @@ class TestSubp(unittest.TestCase):
             "                     1990-04  1990-05",
             "In clubmate             1500         ",
             "In dues:test1            500      500",
-            "In unknown                20         ",
+            "In unknown                20    13152",
             "Out bills:electric     -1174         ",
             "Out bills:internet               -488",
             "Out bills:rent        -12500         ",
             "Out clubmate           -1500         ",
             "",
-            "MONTH Sub Total       -13154       12",
-            "RUNNING Balance       -13154   -13142",
-            "TOTAL:    -13142",
+            "MONTH Sub Total       -13154    13164",
+            "RUNNING Balance       -13154       10",
+            "TOTAL:        10",
         ]
 
         got = balance.subp_grid(self).split("\n")
