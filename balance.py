@@ -28,6 +28,13 @@ import re
 # - The Row object should allow a direction indicating "auto" to take
 #   the direction from the sign of the value - this would simplify the
 #   places where we automatically create a new Row (eg, from splitting)
+# - Implement a running balance check - perhaps using pragma lines in
+#   the input - then we can add a check that the calculated balance matches
+#   the known counted balance at that point in time (quick, accounting people,
+#   tell me the name for this concept!).  Complicating this is the fact that
+#   the running balance is split accross two files - so, this might need
+#   consolidate the incoming and outgoing files.
+
 
 FILES_DIR = 'cash'
 IGNORE_FILES = ('membershipfees',)
@@ -351,6 +358,10 @@ def parse_dir(dirname):   # pragma: no cover
             for row in tsvfile.readlines():
                 row = row.rstrip('\n')
                 if not row:
+                    continue
+                if re.match(r'^# ', row):
+                    # skip comment lines
+                    # - in future there might be meta/pragmas
                     continue
                 yield Row(*re.split(r'\s+', row,
                                     # Number of splits (3 fields)
