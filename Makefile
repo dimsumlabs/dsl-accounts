@@ -6,7 +6,7 @@ docker:
 	docker run --rm dsl-accounts
 
 build-dep:
-	apt-get install python-coverage
+	apt-get install flake8 python-coverage
 
 # Perform all available tests
 test: test.style test.units test.sum
