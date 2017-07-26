@@ -26,7 +26,13 @@ def main():
     """
     if len(sys.argv) > 1 and sys.argv[1] == 'cover':
         # FIXME - there are enough args now to need an arg parser
-        cover = Coverage(branch=True, auto_data=True)
+        cover = Coverage(
+            branch=True,
+            auto_data=True,
+            omit=[
+                "/usr/share/pyshared/*",
+            ],
+        )
         min_percent = 0
 
         if len(sys.argv) > 2:
