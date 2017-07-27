@@ -5,12 +5,12 @@
 import unittest
 import datetime
 import sys
-if sys.version_info[0] == 2:
+if sys.version_info[0] == 2:  # pragma: no cover
     import mock
 else:
-    from unittest import mock
+    from unittest import mock  # pragma: no cover
 
-import balance  # noqa
+import balance # noqa
 
 
 class fakedatetime(datetime.datetime):
