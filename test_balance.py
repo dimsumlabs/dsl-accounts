@@ -300,15 +300,15 @@ class TestMisc(unittest.TestCase):
         self.assertEqual(
             balance.grid_accumulate(self.rows), (
                 set(['1970-03', '1970-02', '1970-01']),
-                set(['Water', 'Unknown', 'Rent']),
+                set(['water', 'unknown', 'rent']),
                 {
-                    'Water': {
+                    'water': {
                         '1970-01': {
                             'sum': -25,
                             'last': datetime.date(1970, 1, 11)
                         },
                     },
-                    'Unknown': {
+                    'unknown': {
                         '1970-01': {
                             'sum': 10,
                             'last': datetime.date(1970, 1, 5)
@@ -318,7 +318,7 @@ class TestMisc(unittest.TestCase):
                             'last': datetime.date(1970, 2, 6)
                         },
                     },
-                    'Rent': {
+                    'rent': {
                         '1970-03': {
                             'sum': -10,
                             'last': datetime.date(1970, 3, 1)
