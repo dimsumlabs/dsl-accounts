@@ -221,7 +221,7 @@ class TestRowSet(unittest.TestCase):
         r[2] = balance.Row("10", "1970-01-10", "comment2 #rent", "outgoing")
         r[3] = balance.Row("10", "1970-01-01", "comment3 #water", "outgoing")
         r[4] = balance.Row("10", "1970-03-01", "comment5 #rent", "outgoing")
-        r[5] = balance.Row("15", "1970-01-11", "comment6 #water", "outgoing")
+        r[5] = balance.Row("15", "1970-01-11", "comment6 #water !months:3", "outgoing")
         self.rows_array = r
 
         self.rows = balance.RowSet()
@@ -260,6 +260,12 @@ class TestRowSet(unittest.TestCase):
             self.rows.filter(None).rows,
             self.rows_array
         )
+
+    def test_autosplit(self):
+        self.rows.append(self.rows_array)
+
+        # FIXME - looking inside the object
+        self.assertEqual(len(self.rows.autosplit().rows), 8)
 
 
 class TestMisc(unittest.TestCase):
