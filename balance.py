@@ -456,8 +456,6 @@ def grid_accumulate(rows):
         if tag is None:
             tag = 'unknown'
 
-        tag = tag.capitalize()
-
         # I would prefer auto-vivification to all these if statements
         if tag not in grid:
             grid[tag] = {}
@@ -524,7 +522,7 @@ def grid_render_rows(months, tags, grid, months_len, tags_len):
     # Output each tag
     for tag in tags:
         row = ''
-        row += "{:<{width}}".format(tag, width=tags_len)
+        row += "{:<{width}}".format(tag.capitalize(), width=tags_len)
 
         for month in months:
             if month in grid[tag]:
