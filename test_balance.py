@@ -221,7 +221,7 @@ class TestRowSet(unittest.TestCase):
         r[2] = balance.Row("10", "1970-01-10", "comment2 #rent", "outgoing")
         r[3] = balance.Row("10", "1970-01-01", "comment3 #water", "outgoing")
         r[4] = balance.Row("10", "1970-03-01", "comment5 #rent", "outgoing")
-        r[5] = balance.Row("15", "1970-01-11", "comment6 #water !months:3", "outgoing")
+        r[5] = balance.Row("15", "1970-01-11", "comment6 #water !months:3", "outgoing") # noqa
         self.rows_array = r
 
         self.rows = balance.RowSet()
