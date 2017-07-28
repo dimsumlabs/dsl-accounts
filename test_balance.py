@@ -213,6 +213,55 @@ class TestRowClass(unittest.TestCase):
         self.assertEqual(obj.filter('rel_months<-265'), None)
 
 
+class TestRowSet(unittest.TestCase):
+    def setUp(self):
+        r = [None for x in range(6)]
+        r[0] = balance.Row("10", "1970-02-06", "comment4", "outgoing")
+        r[1] = balance.Row("10", "1970-01-05", "comment1", "incoming")
+        r[2] = balance.Row("10", "1970-01-10", "comment2 #rent", "outgoing")
+        r[3] = balance.Row("10", "1970-01-01", "comment3 #water", "outgoing")
+        r[4] = balance.Row("10", "1970-03-01", "comment5 #rent", "outgoing")
+        r[5] = balance.Row("15", "1970-01-11", "comment6 #water", "outgoing")
+        self.rows_array = r
+
+        self.rows = balance.RowSet()
+
+    def tearDown(self):
+        self.rows_array = None
+        self.rows = None
+
+    def test_append(self):
+        self.rows.append(self.rows_array[0])
+
+        # FIXME - looking inside the object
+        self.assertEqual(len(self.rows.rows), 1)
+
+        self.rows.append(self.rows_array)
+
+        # FIXME - looking inside the object
+        self.assertEqual(len(self.rows.rows), 7)
+
+        # FIXME - test appending a generator
+
+        with self.assertRaises(ValueError):
+            self.rows.append(None)
+
+    def test_filter(self):
+        self.rows.append(self.rows_array)
+
+        self.assertEqual(
+            # FIXME - looking inside the object
+            self.rows.filter(["comment==comment1", "month==1970-01"]).rows,
+            self.rows_array[1:2]
+        )
+
+        self.assertEqual(
+            # FIXME - looking inside the object
+            self.rows.filter(None).rows,
+            self.rows_array
+        )
+
+
 class TestMisc(unittest.TestCase):
     def setUp(self):
         r = [None for x in range(6)]
