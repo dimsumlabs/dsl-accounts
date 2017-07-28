@@ -582,6 +582,8 @@ def topay_render(rows, strings):
 
 def subp_sum(args):
     result = sum(args.rows)
+    # Only check the result for validity here and not in the class as
+    # the RowSet could be storing a virtual account in other places
     if result < 0:
         raise ValueError(
             "Impossible negative value cash balance: {}".format(result))

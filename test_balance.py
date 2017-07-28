@@ -400,6 +400,8 @@ class TestSubp(unittest.TestCase):
     def test_sum(self):
         self.assertEqual(balance.subp_sum(self), "10")
 
+        # FIXME - check the assertion for negative sums
+
     def test_topay(self):
         expect = [
             "Date: 1990-04",
