@@ -267,6 +267,18 @@ class TestRowSet(unittest.TestCase):
         # FIXME - looking inside the object
         self.assertEqual(len(self.rows.autosplit().rows), 8)
 
+    def test_months(self):
+        self.rows.append(self.rows_array)
+
+        self.assertEqual(
+            self.rows.months(),
+            set([
+                datetime.date(1970, 1, 1),
+                datetime.date(1970, 2, 1),
+                datetime.date(1970, 3, 1),
+            ])
+        )
+
 
 class TestMisc(unittest.TestCase):
     def setUp(self):
