@@ -388,6 +388,14 @@ class RowSet(object):
                 result.append(row)
         return result
 
+    def autosplit(self):
+        """look at the split bangtag and return the rowset all split
+        """
+        result = RowSet()
+        for row in self:
+            result.append(row.autosplit())
+        return result
+
 
 def parse_dir(dirname):   # pragma: no cover
     '''Take all files in dirname and return Row instances'''
@@ -809,10 +817,7 @@ if __name__ == '__main__':  # pragma: no cover
 
     # optionally split multi-month transactions into one per month
     if args.split:
-        tmp = []
-        for orig_row in args.rows:
-            tmp.extend(orig_row.autosplit())
-        args.rows = tmp
+        args.rows = args.rows.autosplit()
 
     # apply any filters requested
     args.rows = args.rows.filter(args.filter)
