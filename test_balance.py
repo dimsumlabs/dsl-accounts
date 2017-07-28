@@ -277,23 +277,12 @@ class TestMisc(unittest.TestCase):
         r[3] = balance.Row("10", "1970-01-01", "comment3 #water", "outgoing")
         r[4] = balance.Row("10", "1970-03-01", "comment5 #rent", "outgoing")
         r[5] = balance.Row("15", "1970-01-11", "comment6 #water", "outgoing")
-        self.rows = r
+
+        self.rows = balance.RowSet()
+        self.rows.append(r)
 
     def tearDown(self):
         self.rows = None
-
-    def test_apply_filter_strings(self):
-        self.assertEqual(
-            list(balance.apply_filter_strings(
-                    ["comment==comment1", "month==1970-01"],
-                    self.rows)),
-            self.rows[1:2]
-        )
-
-        self.assertEqual(
-            list(balance.apply_filter_strings(None, self.rows)),
-            self.rows
-        )
 
     def test_grid_accumulate(self):
         self.assertEqual(
@@ -402,7 +391,8 @@ class TestSubp(unittest.TestCase):
         r[7] = balance.Row(  "488", "1990-05-25", "#bills:internet", "outgoing") # noqa
         r[8] = balance.Row("13152", "1990-05-25", "balance books", "incoming") # noqa
 
-        self.rows = r
+        self.rows = balance.RowSet()
+        self.rows.append(r)
 
     def tearDown(self):
         self.rows = None
