@@ -11,6 +11,7 @@ import sys
 import csv
 import os
 import re
+import types
 
 #
 # TODO
@@ -343,6 +344,49 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
             raise ValueError('Unknown filter operation "{}"'.format(op))
 
         return None
+
+
+class RowSet(object):
+    """Contain a bunch of rows, allowing statistics to be done on them
+    """
+
+    def __init__(self):
+        self.rows = []
+
+    def __getitem__(self, i):
+        return self.rows[i]
+
+    def append(self, item):
+        if isinstance(item, Row):
+            self.rows.append(item)
+        elif isinstance(item, list):
+            for entry in item:
+                self.append(entry)
+        elif isinstance(item, types.GeneratorType):
+            # Yes, we could get fancy and store the generator and only
+            # render it when we need to, but that would also need us to
+            # take into account the correct ordering for all things
+            # - so until our dataset is huge, just skip the fancy bits
+            self.append(list(item))
+        else:
+            raise ValueError('dont know how to append {}'.format(item))
+
+    def filter(self, filter_strings):
+        """Apply the given list of human readable filters to the rows
+        """
+        if filter_strings is None:
+            filter_strings = []
+
+        result = RowSet()
+        for row in self.rows:
+            match = True
+            for s in filter_strings:
+                if not row.filter(s):
+                    match = False
+                    break
+            if match:
+                result.append(row)
+        return result
 
 
 def parse_dir(dirname):   # pragma: no cover
@@ -760,7 +804,8 @@ if __name__ == '__main__':  # pragma: no cover
         raise RuntimeError('Directory "{}" does not exist'.format(args.dir))
 
     # first, load the data
-    args.rows = parse_dir(args.dir)
+    args.rows = RowSet()
+    args.rows.append(parse_dir(args.dir))
 
     # optionally split multi-month transactions into one per month
     if args.split:
@@ -770,7 +815,7 @@ if __name__ == '__main__':  # pragma: no cover
         args.rows = tmp
 
     # apply any filters requested
-    args.rows = list(apply_filter_strings(args.filter, args.rows))
+    args.rows = args.rows.filter(args.filter)
 
     result = args.func(args)
     if result is not None:
