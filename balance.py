@@ -421,21 +421,6 @@ def parse_dir(dirname):   # pragma: no cover
                           direction=direction)
 
 
-def apply_filter_strings(filter_strings, rows):
-    """Apply the given list of human readable filters to the rows
-    """
-    if filter_strings is None:
-        filter_strings = []
-    for row in rows:
-        match = True
-        for s in filter_strings:
-            if not row.filter(s):
-                match = False
-                break
-        if match:
-            yield row
-
-
 def grid_accumulate(rows):
     """Accumulate the rows into month+tag buckets
     """
@@ -561,7 +546,7 @@ def grid_render(months, tags, grid, totals):
 
 
 def topay_render(rows, strings):
-    rows = apply_filter_strings(['direction==outgoing'], rows)
+    rows = rows.filter(['direction==outgoing'])
     (months, tags, grid, totals) = grid_accumulate(rows)
 
     s = []
@@ -667,11 +652,11 @@ def subp_grid(args):
 
 def subp_json_payments(args):
 
-    args.rows = list(apply_filter_strings([
+    rows = args.rows.filter([
         'direction==incoming',
-    ], args.rows))
+    ])
 
-    (months, tags, grid, totals) = grid_accumulate(args.rows)
+    (months, tags, grid, totals) = grid_accumulate(rows)
     # We are only interested in last payment date
     return json.dumps(({
         k.lower(): sorted(
@@ -691,12 +676,12 @@ def subp_make_balance(args):
         tpl = f.read()
 
     # Filter out only the membership dues
-    grid_rows = list(apply_filter_strings([
+    grid_rows = args.rows.filter([
         'direction==incoming',
         'hashtag=~^dues:',
         'rel_months>-5',
         'rel_months<5',
-    ], args.rows))
+    ])
 
     # Make the category look pretty
     for row in grid_rows:
@@ -710,10 +695,10 @@ def subp_make_balance(args):
     grid = ''.join(grid_render_rows(months, tags, grid, months_len, tags_len))
 
     def _get_next_rent_month():
-        grid_rows = iter(apply_filter_strings([
+        grid_rows = iter(args.rows.filter([
             'direction==outgoing',
             'hashtag=~^bills:rent',
-        ], args.rows))
+        ]))
         last_rent_payment = next(grid_rows).date
         for r in grid_rows:
             if r.date > last_rent_payment:
