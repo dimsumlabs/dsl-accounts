@@ -89,6 +89,10 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
 
     @property
     def month(self):
+        """a short string representation of the date as a month
+           - used for the filter language
+             (others should just use the date object)
+        """
         return self.date.strftime('%Y-%m')
 
     @property
@@ -396,6 +400,15 @@ class RowSet(object):
             result.append(row.autosplit())
         return result
 
+    def months(self):
+        """Returns a set with all the months referenced in this RowSet
+        """
+        result = set()
+        for row in self:
+            month = row.date.replace(day=1)
+            result.add(month)
+        return result
+
 
 def parse_dir(dirname):   # pragma: no cover
     '''Take all files in dirname and return Row instances'''
@@ -421,10 +434,15 @@ def parse_dir(dirname):   # pragma: no cover
                           direction=direction)
 
 
+def render_month(date):
+    """Return a short string representation of the date as a month
+    """
+    return date.strftime('%Y-%m')
+
+
 def grid_accumulate(rows):
     """Accumulate the rows into month+tag buckets
     """
-    months = set()
     tags = set()
     grid = {}
     totals = {}
@@ -432,7 +450,7 @@ def grid_accumulate(rows):
 
     # Accumulate the data
     for row in rows:
-        month = row.month
+        month = render_month(row.date)
         tag = row.hashtag
 
         if tag is None:
@@ -453,8 +471,11 @@ def grid_accumulate(rows):
         grid[tag][month]['last'] = max(row.date, grid[tag][month]['last'])
         totals[month] += row.value
         totals['total'] += row.value
-        months.add(month)
         tags.add(tag)
+
+    months = set()
+    for month in rows.months():
+        months.add(render_month(month))
 
     return months, tags, grid, totals
 
