@@ -485,9 +485,8 @@ def grid_accumulate(rows):
     months = set()
     for month in rows.months():
         months.add(render_month(month))
-    tags = rows.tags()
 
-    return months, tags, grid, totals
+    return months, grid, totals
 
 
 def grid_render_colheader(months, months_len, tags_len):
@@ -531,6 +530,8 @@ def grid_render_totals(months, totals, months_len, tags_len):
 def grid_render_rows(months, tags, grid, months_len, tags_len):
     s = []
 
+    tags = sorted(tags)
+
     # Output each tag
     for tag in tags:
         row = ''
@@ -557,16 +558,14 @@ def grid_render_datagroom(months, tags):
     # how much room to allow for each month column
     months_len = 9
 
-    months = sorted(months)
-    tags = sorted(tags)
-
-    return months, tags, months_len, tags_len
+    return months_len, tags_len
 
 
 def grid_render(months, tags, grid, totals):
     # Render the accumulated data
 
-    (months, tags, months_len, tags_len) = grid_render_datagroom(months, tags)
+    (months_len, tags_len) = grid_render_datagroom(months, tags)
+    months = sorted(months)
 
     s = []
     s += grid_render_colheader(months, months_len, tags_len)
@@ -578,7 +577,8 @@ def grid_render(months, tags, grid, totals):
 
 def topay_render(rows, strings):
     rows = rows.filter(['direction==outgoing'])
-    (months, tags, grid, totals) = grid_accumulate(rows)
+    (months, grid, totals) = grid_accumulate(rows)
+    tags = sorted(rows.tags())
 
     s = []
     for month in sorted(months):
@@ -586,7 +586,7 @@ def topay_render(rows, strings):
         s.append("\n")
         s.append(strings['table_start'])
         s.append("\n")
-        for hashtag in sorted(tags):
+        for hashtag in tags:
             if month in grid[hashtag]:
                 price = grid[hashtag][month]['sum']
                 date = grid[hashtag][month]['last']
@@ -679,7 +679,9 @@ def subp_grid(args):
         else:
             row.hashtag = 'in ' + row.hashtag
 
-    (months, tags, grid, totals) = grid_accumulate(args.rows)
+    (months, grid, totals) = grid_accumulate(args.rows)
+    tags = args.rows.tags()
+
     return grid_render(months, tags, grid, totals)
 
 
@@ -689,7 +691,8 @@ def subp_json_payments(args):
         'direction==incoming',
     ])
 
-    (months, tags, grid, totals) = grid_accumulate(rows)
+    (months, grid, totals) = grid_accumulate(rows)
+
     # We are only interested in last payment date
     return json.dumps(({
         k.lower(): sorted(
@@ -721,8 +724,11 @@ def subp_make_balance(args):
         a = row.hashtag.split(':')
         row.hashtag = ''.join(a[1:]).title()
 
-    (months, tags, grid, totals) = grid_accumulate(grid_rows)
-    (months, tags, months_len, tags_len) = grid_render_datagroom(months, tags)
+    (months, grid, totals) = grid_accumulate(grid_rows)
+    tags = grid_rows.tags()
+    months = sorted(months)
+
+    (months_len, tags_len) = grid_render_datagroom(months, tags)
 
     header = ''.join(grid_render_colheader(months, months_len, tags_len))
     grid = ''.join(grid_render_rows(months, tags, grid, months_len, tags_len))
