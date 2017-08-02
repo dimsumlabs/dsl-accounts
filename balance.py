@@ -422,6 +422,11 @@ class RowSet(object):
             result.add(tag)
         return result
 
+    def max_tags_len(self):
+        """For rendering, return the space needed to display the longest tag
+        """
+        return max([len(i) for i in self.tags()])
+
 
 def parse_dir(dirname):   # pragma: no cover
     '''Take all files in dirname and return Row instances'''
@@ -451,6 +456,13 @@ def render_month(date):
     """Return a short string representation of the date as a month
     """
     return date.strftime('%Y-%m')
+
+
+def render_month_len():
+    """how much room to allow for each month column
+    """
+    # TODO - this should eventually move into some rendering code
+    return 9
 
 
 def grid_accumulate(rows):
@@ -550,21 +562,12 @@ def grid_render_rows(months, tags, grid, months_len, tags_len):
     return s
 
 
-def grid_render_datagroom(months, tags):
-    # how much room to allow for the tags
-    tags_len = max([len(i) for i in tags])
-    tags_len += 1
-
-    # how much room to allow for each month column
-    months_len = 9
-
-    return months_len, tags_len
-
-
 def grid_render(months, tags, grid, totals):
     # Render the accumulated data
 
-    (months_len, tags_len) = grid_render_datagroom(months, tags)
+    # TODO: pass the rowset down to here and just call the max_tags_len method
+    tags_len = max([len(i) for i in tags])+1
+    months_len = render_month_len()
     months = sorted(months)
 
     s = []
@@ -728,7 +731,8 @@ def subp_make_balance(args):
     tags = grid_rows.tags()
     months = sorted(months)
 
-    (months_len, tags_len) = grid_render_datagroom(months, tags)
+    months_len = render_month_len()
+    tags_len = grid_rows.max_tags_len()+1
 
     header = ''.join(grid_render_colheader(months, months_len, tags_len))
     grid = ''.join(grid_render_rows(months, tags, grid, months_len, tags_len))

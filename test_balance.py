@@ -291,6 +291,14 @@ class TestRowSet(unittest.TestCase):
             ])
         )
 
+    def test_max_tags_len(self):
+        self.rows.append(self.rows_array)
+
+        self.assertEqual(
+            self.rows.max_tags_len(),
+            7
+        )
+
 
 class TestMisc(unittest.TestCase):
     def setUp(self):
