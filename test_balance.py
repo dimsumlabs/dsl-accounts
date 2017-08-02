@@ -312,7 +312,6 @@ class TestMisc(unittest.TestCase):
         self.assertEqual(
             balance.grid_accumulate(self.rows), (
                 set(['1970-03', '1970-02', '1970-01']),
-                set(['water', 'unknown', 'rent']),
                 {
                     'water': {
                         '1970-01': {
@@ -393,7 +392,9 @@ class TestMisc(unittest.TestCase):
             "TOTAL:       -45",
         ]
 
-        (m, t, grid, total) = balance.grid_accumulate(self.rows)
+        (m, grid, total) = balance.grid_accumulate(self.rows)
+        t = self.rows.tags()
+
         got = balance.grid_render(m, t, grid, total).split("\n")
         self.assertEqual(got, expect)
 
