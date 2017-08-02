@@ -403,10 +403,23 @@ class RowSet(object):
     def months(self):
         """Returns a set with all the months referenced in this RowSet
         """
+        # This could be cached for performance, but for clarity it is not
         result = set()
         for row in self:
             month = row.date.replace(day=1)
             result.add(month)
+        return result
+
+    def tags(self):
+        """Returns a set with all the tags referenced in this RowSet
+        """
+        # This could be cached for performance, but for clarity it is not
+        result = set()
+        for row in self:
+            tag = row.hashtag
+            if tag is None:
+                tag = 'unknown'
+            result.add(tag)
         return result
 
 
@@ -443,7 +456,6 @@ def render_month(date):
 def grid_accumulate(rows):
     """Accumulate the rows into month+tag buckets
     """
-    tags = set()
     grid = {}
     totals = {}
     totals['total'] = 0
@@ -469,11 +481,11 @@ def grid_accumulate(rows):
         grid[tag][month]['last'] = max(row.date, grid[tag][month]['last'])
         totals[month] += row.value
         totals['total'] += row.value
-        tags.add(tag)
 
     months = set()
     for month in rows.months():
         months.add(render_month(month))
+    tags = rows.tags()
 
     return months, tags, grid, totals
 
