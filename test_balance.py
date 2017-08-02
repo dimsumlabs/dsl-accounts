@@ -279,6 +279,18 @@ class TestRowSet(unittest.TestCase):
             ])
         )
 
+    def test_tags(self):
+        self.rows.append(self.rows_array)
+
+        self.assertEqual(
+            self.rows.tags(),
+            set([
+                'water',
+                'unknown',
+                'rent',
+            ])
+        )
+
 
 class TestMisc(unittest.TestCase):
     def setUp(self):
