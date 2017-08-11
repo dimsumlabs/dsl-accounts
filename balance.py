@@ -292,6 +292,13 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
         if callable(attr):
             attr = attr()
 
+        return attr
+
+    def _getvalue_simple(self, field):
+        """return the field value as a simple number or string
+        """
+        attr = self._getvalue(field)
+
         if isinstance(attr, (int, str, decimal.Decimal)):
             return attr
 
@@ -302,7 +309,7 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
         """using kwargs, check if this Row matches if so, return it, or None
         """
         for key, value in kwargs.items():
-            attr = self._getvalue(key)
+            attr = self._getvalue_simple(key)
             if value != attr:
                 return None
 
@@ -321,7 +328,7 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
         field = m.group(1)
         op = m.group(2)
         value_match = m.group(3)
-        value_now = self._getvalue(field)
+        value_now = self._getvalue_simple(field)
 
         # coerce our value to match into a number, if that looks possible
         try:
@@ -400,40 +407,35 @@ class RowSet(object):
             result.append(row.autosplit())
         return result
 
-    def months(self):
-        """Returns a dict of months, each value containing the matching rows
+    def group_by(self, field):
+        """Group the rowset by the given row field and return groups as a dict
         """
         # This could be cached for performance, but for clarity it is not
         result = {}
         for row in self:
-            month = row.date.replace(day=1)
+            if field == 'month':
+                # FIXME - Hack!
+                # - the "month" attribute of the row is intended for string
+                #   pattern matching, but the rowset wants to keep the original
+                #   objects intact as much as possible
+                key = row.date.replace(day=1)
+            else:
+                key = row._getvalue(field)
 
-            if month not in result:
-                result[month] = RowSet()
+            if key is None:
+                key = 'unknown'
 
-            result[month].append(row)
+            if key not in result:
+                result[key] = RowSet()
+
+            result[key].append(row)
         return result
 
-    def tags(self):
-        """Return a dict of tags, each value containing the matching rows
+    def last(self):
+        """Return the chronologically last row from the rowset
         """
-        # This could be cached for performance, but for clarity it is not
-        result = {}
-        for row in self:
-            tag = row.hashtag
-            if tag is None:
-                tag = 'unknown'
-
-            if tag not in result:
-                result[tag] = RowSet()
-
-            result[tag].append(row)
-        return result
-
-    def max_tags_len(self):
-        """For rendering, return the space needed to display the longest tag
-        """
-        return max([len(i) for i in self.tags().keys()])
+        rows = sorted(self, key=lambda x: x.date)
+        return rows[-1]
 
 
 def parse_dir(dirname):   # pragma: no cover
@@ -503,7 +505,7 @@ def grid_accumulate(rows):
         totals['total'] += row.value
 
     months = set()
-    for month in rows.months().keys():
+    for month in rows.group_by('month').keys():
         months.add(render_month(month))
 
     return months, grid, totals
@@ -573,7 +575,6 @@ def grid_render_rows(months, tags, grid, months_len, tags_len):
 def grid_render(months, tags, grid, totals):
     # Render the accumulated data
 
-    # TODO: pass the rowset down to here and just call the max_tags_len method
     tags_len = max([len(i) for i in tags])+1
     months_len = render_month_len()
     months = sorted(months)
@@ -588,19 +589,22 @@ def grid_render(months, tags, grid, totals):
 
 def topay_render(rows, strings):
     rows = rows.filter(['direction==outgoing'])
-    (months, grid, totals) = grid_accumulate(rows)
-    tags = sorted(rows.tags().keys())
+    alltags = sorted(rows.group_by('hashtag').keys())
+
+    months = rows.group_by('month')
 
     s = []
     for month in sorted(months):
-        s.append(strings['header'].format(date=month))
+        s.append(strings['header'].format(date=render_month(month)))
         s.append("\n")
         s.append(strings['table_start'])
         s.append("\n")
-        for hashtag in tags:
-            if month in grid[hashtag]:
-                price = grid[hashtag][month]['sum']
-                date = grid[hashtag][month]['last']
+
+        monthtags = months[month].group_by('hashtag')
+        for hashtag in alltags:
+            if hashtag in monthtags:
+                price = sum(monthtags[hashtag])
+                date = monthtags[hashtag].last().date
             else:
                 price = "$0"
                 date = "Not Yet"
@@ -691,7 +695,7 @@ def subp_grid(args):
             row.hashtag = 'in ' + row.hashtag
 
     (months, grid, totals) = grid_accumulate(args.rows)
-    tags = args.rows.tags().keys()
+    tags = args.rows.group_by('hashtag').keys()
 
     return grid_render(months, tags, grid, totals)
 
@@ -736,11 +740,11 @@ def subp_make_balance(args):
         row.hashtag = ''.join(a[1:]).title()
 
     (months, grid, totals) = grid_accumulate(grid_rows)
-    tags = grid_rows.tags().keys()
+    tags = grid_rows.group_by('hashtag').keys()
     months = sorted(months)
 
     months_len = render_month_len()
-    tags_len = grid_rows.max_tags_len()+1
+    tags_len = max([len(i) for i in tags])+1
 
     header = ''.join(grid_render_colheader(months, months_len, tags_len))
     grid = ''.join(grid_render_rows(months, tags, grid, months_len, tags_len))
