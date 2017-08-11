@@ -270,25 +270,29 @@ class TestRowSet(unittest.TestCase):
     def test_months(self):
         self.rows.append(self.rows_array)
 
+        # TODO - should construct the expected dict and all its rows and
+        # compare to that
         self.assertEqual(
-            self.rows.months(),
-            set([
+            sorted(self.rows.months().keys()),
+            [
                 datetime.date(1970, 1, 1),
                 datetime.date(1970, 2, 1),
                 datetime.date(1970, 3, 1),
-            ])
+            ]
         )
 
     def test_tags(self):
         self.rows.append(self.rows_array)
 
+        # TODO - should construct the expected dict and all its rows and
+        # compare to that
         self.assertEqual(
-            self.rows.tags(),
-            set([
-                'water',
-                'unknown',
+            sorted(self.rows.tags().keys()),
+            [
                 'rent',
-            ])
+                'unknown',
+                'water',
+            ]
         )
 
     def test_max_tags_len(self):
