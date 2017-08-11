@@ -267,13 +267,13 @@ class TestRowSet(unittest.TestCase):
         # FIXME - looking inside the object
         self.assertEqual(len(self.rows.autosplit().rows), 8)
 
-    def test_months(self):
+    def test_group_by(self):
         self.rows.append(self.rows_array)
 
         # TODO - should construct the expected dict and all its rows and
         # compare to that
         self.assertEqual(
-            sorted(self.rows.months().keys()),
+            sorted(self.rows.group_by('month').keys()),
             [
                 datetime.date(1970, 1, 1),
                 datetime.date(1970, 2, 1),
@@ -281,26 +281,15 @@ class TestRowSet(unittest.TestCase):
             ]
         )
 
-    def test_tags(self):
-        self.rows.append(self.rows_array)
-
         # TODO - should construct the expected dict and all its rows and
         # compare to that
         self.assertEqual(
-            sorted(self.rows.tags().keys()),
+            sorted(self.rows.group_by('hashtag').keys()),
             [
                 'rent',
                 'unknown',
                 'water',
             ]
-        )
-
-    def test_max_tags_len(self):
-        self.rows.append(self.rows_array)
-
-        self.assertEqual(
-            self.rows.max_tags_len(),
-            7
         )
 
 
@@ -405,7 +394,7 @@ class TestMisc(unittest.TestCase):
         ]
 
         (m, grid, total) = balance.grid_accumulate(self.rows)
-        t = self.rows.tags()
+        t = self.rows.group_by('hashtag')
 
         got = balance.grid_render(m, t, grid, total).split("\n")
         self.assertEqual(got, expect)
