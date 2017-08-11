@@ -401,31 +401,39 @@ class RowSet(object):
         return result
 
     def months(self):
-        """Returns a set with all the months referenced in this RowSet
+        """Returns a dict of months, each value containing the matching rows
         """
         # This could be cached for performance, but for clarity it is not
-        result = set()
+        result = {}
         for row in self:
             month = row.date.replace(day=1)
-            result.add(month)
+
+            if month not in result:
+                result[month] = RowSet()
+
+            result[month].append(row)
         return result
 
     def tags(self):
-        """Returns a set with all the tags referenced in this RowSet
+        """Return a dict of tags, each value containing the matching rows
         """
         # This could be cached for performance, but for clarity it is not
-        result = set()
+        result = {}
         for row in self:
             tag = row.hashtag
             if tag is None:
                 tag = 'unknown'
-            result.add(tag)
+
+            if tag not in result:
+                result[tag] = RowSet()
+
+            result[tag].append(row)
         return result
 
     def max_tags_len(self):
         """For rendering, return the space needed to display the longest tag
         """
-        return max([len(i) for i in self.tags()])
+        return max([len(i) for i in self.tags().keys()])
 
 
 def parse_dir(dirname):   # pragma: no cover
@@ -495,7 +503,7 @@ def grid_accumulate(rows):
         totals['total'] += row.value
 
     months = set()
-    for month in rows.months():
+    for month in rows.months().keys():
         months.add(render_month(month))
 
     return months, grid, totals
@@ -581,7 +589,7 @@ def grid_render(months, tags, grid, totals):
 def topay_render(rows, strings):
     rows = rows.filter(['direction==outgoing'])
     (months, grid, totals) = grid_accumulate(rows)
-    tags = sorted(rows.tags())
+    tags = sorted(rows.tags().keys())
 
     s = []
     for month in sorted(months):
@@ -683,7 +691,7 @@ def subp_grid(args):
             row.hashtag = 'in ' + row.hashtag
 
     (months, grid, totals) = grid_accumulate(args.rows)
-    tags = args.rows.tags()
+    tags = args.rows.tags().keys()
 
     return grid_render(months, tags, grid, totals)
 
@@ -728,7 +736,7 @@ def subp_make_balance(args):
         row.hashtag = ''.join(a[1:]).title()
 
     (months, grid, totals) = grid_accumulate(grid_rows)
-    tags = grid_rows.tags()
+    tags = grid_rows.tags().keys()
     months = sorted(months)
 
     months_len = render_month_len()
