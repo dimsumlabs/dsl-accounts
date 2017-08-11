@@ -480,35 +480,27 @@ def grid_accumulate(rows):
     """
     grid = {}
     totals = {}
-    totals['total'] = 0
+    month_names = set()
 
-    # Accumulate the data
-    for row in rows:
-        month = render_month(row.date)
-        tag = row.hashtag
+    months = rows.group_by('month')
+    for month in months:
+        month_str = render_month(month)
+        month_names.add(month_str)
+        totals[month_str] = sum(months[month])
 
-        if tag is None:
-            tag = 'unknown'
+        tags = months[month].group_by('hashtag')
 
-        # I would prefer auto-vivification to all these if statements
-        if tag not in grid:
-            grid[tag] = {}
-        if month not in grid[tag]:
-            grid[tag][month] = {'sum': 0, 'last': datetime.date(1970, 1, 1)}
-        if month not in totals:
-            totals[month] = 0
+        for tag in tags:
+            # I would prefer auto-vivification to all these if statements
+            if tag not in grid:
+                grid[tag] = {}
 
-        # sum this row into various buckets
-        grid[tag][month]['sum'] += row.value
-        grid[tag][month]['last'] = max(row.date, grid[tag][month]['last'])
-        totals[month] += row.value
-        totals['total'] += row.value
+            grid[tag][month_str] = {}
+            grid[tag][month_str]['sum'] = sum(tags[tag])
+            grid[tag][month_str]['last'] = tags[tag].last().date
 
-    months = set()
-    for month in rows.group_by('month').keys():
-        months.add(render_month(month))
-
-    return months, grid, totals
+    totals['total'] = sum(rows)
+    return month_names, grid, totals
 
 
 def grid_render_colheader(months, months_len, tags_len):
