@@ -351,6 +351,8 @@ def parse_dir(dirname):   # pragma: no cover
     for filename in os.listdir(dirname):
         if filename in IGNORE_FILES:
             continue
+        if (not filename.__contains__("incoming") and not filename.__contains__("outgoing")):
+            continue
 
         direction, _ = filename.split('-', 1)
 
