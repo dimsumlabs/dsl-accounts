@@ -33,54 +33,10 @@
 # Counted the notes in the cash box and it totalled 1570
 780 2017-08-15 Donations from the mailbox tin
 75 2017-08-15 #dues:hamish pay the remainder of my monthly dues
-#
-# Devon counted DSL cash on 2017 August 21 Monday:
-#
-#	HK$	type of bill or coin
-#	1000	1000
-#	1900	 100
-#	  50	  50
-#	 280	  20
-#	 180	  10
-#	   5	   5
-#	   8	   2
-#	   2	   1
-#	   0.50	   0.50
-#	   0.20	   0.20
-#	   0.50	   0.10
-#	   0.02	   0.01
-#	-------
-#	3426.22	HK$ DSL cash box total
-#
-#	1	RMB
-#	0.10	SGD
-#
-#	HK$	type of bill or coin
-#	1500	 500
-#	 600	 100
-#	  50	  50
-#	-------
-#	2150	HK$ DSL mailbox total
-#
-#	 500	Devon Sean McCullough	2017 September dues
-#	 500	Hans Lachman	2017 September dues
-#	 500	Tom	"Membership August 2017" so could be August or September dues???
-#	 600	MaxMSP workshop of 2017 August 16 Wednesday
-#	  50	donation
-#	-------
-#	2150	= mailbox total
-#
-#	3426.22
-#	2150.00
-#	=======
-#	5576.22	DSL cash on hand 2017 August 21 Monday
-#
 1000 2017-08-16 MaxMSP workshop
+# Please see the file notes-2017-08
+600 2017-08-21 MaxMSP workshop
 500 2017-08-21 #dues:devon !months:1:1
 500 2017-08-21 #dues:hans !months:1:1
 500 2017-08-21 #dues:tom !months:1:1
-600 2017-08-21 MaxMSP workshop
 50 2017-08-21 donation
-#
-# I leave it to others to impedance match the above with this bizarro file format.  Peace --Devon
-# P.S. I thought the MaxMSP workshop netted HK$2000 = HK$400 × 5 participants but I see only HK$1600.
