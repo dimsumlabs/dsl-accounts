@@ -351,7 +351,11 @@ def parse_dir(dirname):   # pragma: no cover
     for filename in os.listdir(dirname):
         if filename in IGNORE_FILES:
             continue
-        if (not filename.__contains__("incoming") and not filename.__contains__("outgoing")):
+
+        if not re.match(r'^(incoming|outgoing)-\d{4}-\d{2}', filename):
+            sys.stderr.write(
+                'Filename "{}" not valid, put into proper accounting file\n'
+                .format(filename))
             continue
 
         direction, _ = filename.split('-', 1)
