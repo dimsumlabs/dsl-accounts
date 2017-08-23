@@ -37,7 +37,6 @@ import re
 
 
 FILES_DIR = 'cash'
-IGNORE_FILES = ('membershipfees',)
 
 # Ensure we do not invent more money
 decimal.getcontext().rounding = decimal.ROUND_DOWN
@@ -349,9 +348,10 @@ def parse_dir(dirname):   # pragma: no cover
     '''Take all files in dirname and return Row instances'''
 
     for filename in os.listdir(dirname):
-        if filename in IGNORE_FILES:
-            continue
-        if (not filename.__contains__("incoming") and not filename.__contains__("outgoing")):
+        if not re.match(r'^(incoming|outgoing)-\d{4}-\d{2}', filename):
+            sys.stderr.write(
+                'Filename "{}" not valid, put into proper accounting file\n'
+                .format(filename))
             continue
 
         direction, _ = filename.split('-', 1)
@@ -361,7 +361,7 @@ def parse_dir(dirname):   # pragma: no cover
                 row = row.rstrip('\n')
                 if not row:
                     continue
-                if re.match(r'^# ', row):
+                if re.match(r'^#', row):
                     # skip comment lines
                     # - in future there might be meta/pragmas
                     continue
