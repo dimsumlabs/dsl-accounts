@@ -365,7 +365,7 @@ def parse_dir(dirname):   # pragma: no cover
                 row = row.rstrip('\n')
                 if not row:
                     continue
-                if re.match(r'^# ', row):
+                if re.match(r'^#', row):
                     # skip comment lines
                     # - in future there might be meta/pragmas
                     continue
