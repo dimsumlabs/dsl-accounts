@@ -367,8 +367,18 @@ class RowSet(object):
     def __getitem__(self, i):
         return self.rows[i]
 
+    @property
+    def value(self):
+        sum = 0
+        for row in self:
+            if isinstance(row, (Row, RowSet)):
+                sum += row.value
+            else:
+                raise ValueError("unexpected type")
+        return sum
+
     def append(self, item):
-        if isinstance(item, Row):
+        if isinstance(item, (Row, RowSet)):
             self.rows.append(item)
         elif isinstance(item, list):
             for entry in item:
@@ -486,7 +496,7 @@ def grid_accumulate(rows):
     for month in months:
         month_str = render_month(month)
         month_names.add(month_str)
-        totals[month_str] = sum(months[month])
+        totals[month_str] = months[month].value
 
         tags = months[month].group_by('hashtag')
 
@@ -496,10 +506,10 @@ def grid_accumulate(rows):
                 grid[tag] = {}
 
             grid[tag][month_str] = {}
-            grid[tag][month_str]['sum'] = sum(tags[tag])
+            grid[tag][month_str]['sum'] = tags[tag].value
             grid[tag][month_str]['last'] = tags[tag].last().date
 
-    totals['total'] = sum(rows)
+    totals['total'] = rows.value
     return month_names, grid, totals
 
 
@@ -595,7 +605,7 @@ def topay_render(rows, strings):
         monthtags = months[month].group_by('hashtag')
         for hashtag in alltags:
             if hashtag in monthtags:
-                price = sum(monthtags[hashtag])
+                price = monthtags[hashtag].value
                 date = monthtags[hashtag].last().date
             else:
                 price = "$0"
@@ -619,7 +629,7 @@ def topay_render(rows, strings):
 
 
 def subp_sum(args):
-    result = sum(args.rows)
+    result = args.rows.value
     # Only check the result for validity here and not in the class as
     # the RowSet could be storing a virtual account in other places
     if result < 0:
@@ -654,12 +664,13 @@ def subp_topay_html(args):
 
 
 def subp_party(args):
-    balance = sum(args.rows)
+    balance = args.rows.value
     return "Success" if balance > 0 else "Fail"
 
 
 def subp_csv(args):  # pragma: no cover
-    rows = sorted(args.rows, key=lambda x: x.date)
+    rows = RowSet()
+    rows.append(sorted(args.rows, key=lambda x: x.date))
 
     with args.csv_out as f:
         writer = csv.writer(f)
@@ -671,7 +682,7 @@ def subp_csv(args):  # pragma: no cover
 
         writer.writerow('')
         writer.writerow(('Sum',))
-        writer.writerow((sum(rows),))
+        writer.writerow((rows.value,))
     return None
 
 
@@ -760,7 +771,7 @@ def subp_make_balance(args):
         s = ' '.join((next_month.strftime('%B'), str(next_month.year))).upper()
         return s
 
-    tpl = _format_tpl(tpl, 'balance_sum', str(sum(args.rows)))
+    tpl = _format_tpl(tpl, 'balance_sum', str(args.rows.value))
     tpl = _format_tpl(tpl, 'grid_header', header)
     tpl = _format_tpl(tpl, 'grid', grid)
     tpl = _format_tpl(tpl, 'rent_due', _get_next_rent_month())
