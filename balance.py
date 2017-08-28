@@ -768,7 +768,7 @@ def subp_make_balance(args):
             last_rent_payment.year,
             last_rent_payment.month,
             day) + datetime.timedelta(days=1)
-        s = ' '.join((next_month.strftime('%B'), str(next_month.year))).upper()
+        s = next_month.strftime('%B %Y').upper()
         return s
 
     tpl = _format_tpl(tpl, 'balance_sum', str(args.rows.value))
