@@ -113,6 +113,8 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
         p = re.compile(x+'([a-zA-Z]\S*)')
         all_tags = p.findall(self.comment)
 
+        # FIXME - enforce known case on all tags
+
         # TODO - have a better plan for what to do with multiple tags
         if len(all_tags) > 1:
             raise ValueError('Row has multiple {}tags: {}'.format(x, all_tags))
@@ -753,14 +755,8 @@ def subp_make_balance(args):
     grid = ''.join(grid_render_rows(months, tags, grid, months_len, tags_len))
 
     def _get_next_rent_month():
-        grid_rows = iter(args.rows.filter([
-            'direction==outgoing',
-            'hashtag=~^bills:rent',
-        ]))
-        last_rent_payment = next(grid_rows).date
-        for r in grid_rows:
-            if r.date > last_rent_payment:
-                last_rent_payment = r.date
+        last_payment = args.rows.group_by('hashtag')['bills:rent'].last()
+        last_rent_payment = last_payment.date
 
         day = calendar.monthrange(last_rent_payment.year,
                                   last_rent_payment.month)[1]
