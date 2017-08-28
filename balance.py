@@ -756,15 +756,25 @@ def subp_make_balance(args):
 
     def _get_next_rent_month():
         last_payment = args.rows.group_by('hashtag')['bills:rent'].last()
-        last_rent_payment = last_payment.date
+        date = last_payment.date
 
-        day = calendar.monthrange(last_rent_payment.year,
-                                  last_rent_payment.month)[1]
-        next_month = datetime.datetime(
-            last_rent_payment.year,
-            last_rent_payment.month,
-            day) + datetime.timedelta(days=1)
-        s = next_month.strftime('%B %Y').upper()
+        # The landlord states that "the monthly rental payment should
+        # be settled seven (7) days in advance prior to the 1st day of
+        # each and every rental month"
+        #
+        # Implement business logic to find this date
+        #
+        # assuming the rent transactions have been placed into the
+        # month that they are paying the rent for, we can find the date
+        # that the rent is next due by clamping the day to seven days
+        # before the end of the month
+
+        # set to the due date during at the end of the month
+        date = date.replace(
+            day=calendar.monthrange(date.year, date.month)[1] - 7
+        )
+
+        s = date.strftime('%B %Y').upper()
         return s
 
     tpl = _format_tpl(tpl, 'balance_sum', str(args.rows.value))
