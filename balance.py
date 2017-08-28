@@ -774,13 +774,12 @@ def subp_make_balance(args):
             day=calendar.monthrange(date.year, date.month)[1] - 7
         )
 
-        s = date.strftime('%B %Y').upper()
-        return s
+        return date
 
     tpl = _format_tpl(tpl, 'balance_sum', str(args.rows.value))
     tpl = _format_tpl(tpl, 'grid_header', header)
     tpl = _format_tpl(tpl, 'grid', grid)
-    tpl = _format_tpl(tpl, 'rent_due', _get_next_rent_month())
+    tpl = _format_tpl(tpl, 'rent_due', str(_get_next_rent_month()))
 
     return tpl
 
