@@ -557,5 +557,5 @@ class TestSubp(unittest.TestCase):
         # this is the {rent_due} value from the template, with some of
         # the template mixed in
         # TODO - have a testable "rowset.forcastNext(category)" function
-        want = 'Rent (next due: <span style="color:red">MAY 1990</span>)'
+        want = 'Rent (next due: <span style="color:red">APRIL 1990</span>)'
         self.assertTrue(want in got)
