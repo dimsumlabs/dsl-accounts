@@ -213,6 +213,101 @@ class TestRowClass(unittest.TestCase):
         self.assertEqual(obj.filter('rel_months<-265'), None)
 
 
+class TestRowSet(unittest.TestCase):
+    def setUp(self):
+        r = [None for x in range(6)]
+        r[0] = balance.Row("10", "1970-02-06", "comment4", "outgoing")
+        r[1] = balance.Row("10", "1970-01-05", "comment1", "incoming")
+        r[2] = balance.Row("10", "1970-01-10", "comment2 #rent", "outgoing")
+        r[3] = balance.Row("10", "1970-01-01", "comment3 #water", "outgoing")
+        r[4] = balance.Row("10", "1970-03-01", "comment5 #rent", "outgoing")
+        r[5] = balance.Row("15", "1970-01-11", "comment6 #water !months:3", "outgoing") # noqa
+        self.rows_array = r
+
+        self.rows = balance.RowSet()
+
+    def tearDown(self):
+        self.rows_array = None
+        self.rows = None
+
+    def test_value(self):
+        self.rows.append(self.rows_array)
+
+        self.assertEqual(self.rows.value, -45)
+
+    def test_nested_rowset(self):
+        self.rows.append(self.rows_array)
+
+        r = [None for x in range(2)]
+        r[0] = balance.Row("13", "1971-02-06", "comment7", "outgoing")
+        r[1] = balance.Row("12", "1971-01-05", "comment8", "incoming")
+        self.rows.append(r)
+
+        self.assertEqual(self.rows.value, -46)
+
+    def test_append(self):
+        self.rows.append(self.rows_array[0])
+
+        # FIXME - looking inside the object
+        self.assertEqual(len(self.rows.rows), 1)
+
+        self.rows.append(self.rows_array)
+
+        # FIXME - looking inside the object
+        self.assertEqual(len(self.rows.rows), 7)
+
+        # FIXME - test appending a generator
+
+        with self.assertRaises(ValueError):
+            self.rows.append(None)
+
+    def test_filter(self):
+        self.rows.append(self.rows_array)
+
+        self.assertEqual(
+            # FIXME - looking inside the object
+            self.rows.filter(["comment==comment1", "month==1970-01"]).rows,
+            self.rows_array[1:2]
+        )
+
+        self.assertEqual(
+            # FIXME - looking inside the object
+            self.rows.filter(None).rows,
+            self.rows_array
+        )
+
+    def test_autosplit(self):
+        self.rows.append(self.rows_array)
+
+        # FIXME - looking inside the object
+        self.assertEqual(len(self.rows.autosplit().rows), 8)
+
+    def test_group_by(self):
+        self.rows.append(self.rows_array)
+
+        # TODO - should construct the expected dict and all its rows and
+        # compare to that
+        self.assertEqual(
+            sorted(self.rows.group_by('month').keys()),
+            [
+                datetime.date(1970, 1, 1),
+                datetime.date(1970, 2, 1),
+                datetime.date(1970, 3, 1),
+            ]
+        )
+
+        # TODO - should construct the expected dict and all its rows and
+        # compare to that
+        self.assertEqual(
+            sorted(self.rows.group_by('hashtag').keys()),
+            [
+                'rent',
+                'unknown',
+                'water',
+            ]
+        )
+
+
 class TestMisc(unittest.TestCase):
     def setUp(self):
         r = [None for x in range(6)]
@@ -222,37 +317,25 @@ class TestMisc(unittest.TestCase):
         r[3] = balance.Row("10", "1970-01-01", "comment3 #water", "outgoing")
         r[4] = balance.Row("10", "1970-03-01", "comment5 #rent", "outgoing")
         r[5] = balance.Row("15", "1970-01-11", "comment6 #water", "outgoing")
-        self.rows = r
+
+        self.rows = balance.RowSet()
+        self.rows.append(r)
 
     def tearDown(self):
         self.rows = None
-
-    def test_apply_filter_strings(self):
-        self.assertEqual(
-            list(balance.apply_filter_strings(
-                    ["comment==comment1", "month==1970-01"],
-                    self.rows)),
-            self.rows[1:2]
-        )
-
-        self.assertEqual(
-            list(balance.apply_filter_strings(None, self.rows)),
-            self.rows
-        )
 
     def test_grid_accumulate(self):
         self.assertEqual(
             balance.grid_accumulate(self.rows), (
                 set(['1970-03', '1970-02', '1970-01']),
-                set(['Water', 'Unknown', 'Rent']),
                 {
-                    'Water': {
+                    'water': {
                         '1970-01': {
                             'sum': -25,
                             'last': datetime.date(1970, 1, 11)
                         },
                     },
-                    'Unknown': {
+                    'unknown': {
                         '1970-01': {
                             'sum': 10,
                             'last': datetime.date(1970, 1, 5)
@@ -262,7 +345,7 @@ class TestMisc(unittest.TestCase):
                             'last': datetime.date(1970, 2, 6)
                         },
                     },
-                    'Rent': {
+                    'rent': {
                         '1970-03': {
                             'sum': -10,
                             'last': datetime.date(1970, 3, 1)
@@ -325,7 +408,9 @@ class TestMisc(unittest.TestCase):
             "TOTAL:       -45",
         ]
 
-        (m, t, grid, total) = balance.grid_accumulate(self.rows)
+        (m, grid, total) = balance.grid_accumulate(self.rows)
+        t = self.rows.group_by('hashtag')
+
         got = balance.grid_render(m, t, grid, total).split("\n")
         self.assertEqual(got, expect)
 
@@ -347,13 +432,16 @@ class TestSubp(unittest.TestCase):
         r[7] = balance.Row(  "488", "1990-05-25", "#bills:internet", "outgoing") # noqa
         r[8] = balance.Row("13152", "1990-05-25", "balance books", "incoming") # noqa
 
-        self.rows = r
+        self.rows = balance.RowSet()
+        self.rows.append(r)
 
     def tearDown(self):
         self.rows = None
 
     def test_sum(self):
         self.assertEqual(balance.subp_sum(self), "10")
+
+        # FIXME - check the assertion for negative sums
 
     def test_topay(self):
         expect = [
@@ -469,5 +557,5 @@ class TestSubp(unittest.TestCase):
         # this is the {rent_due} value from the template, with some of
         # the template mixed in
         # TODO - have a testable "rowset.forcastNext(category)" function
-        want = 'Rent (next due: <span style="color:red">MAY 1990</span>)'
+        want = 'Rent (next due: <span style="color:red">1990-04-23</span>)'
         self.assertTrue(want in got)
