@@ -11,6 +11,7 @@ import sys
 import csv
 import os
 import re
+import types
 
 #
 # TODO
@@ -87,6 +88,10 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
 
     @property
     def month(self):
+        """a short string representation of the date as a month
+           - used for the filter language
+             (others should just use the date object)
+        """
         return self.date.strftime('%Y-%m')
 
     @property
@@ -106,6 +111,8 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
         """
         p = re.compile(x+'([a-zA-Z]\S*)')
         all_tags = p.findall(self.comment)
+
+        # FIXME - enforce known case on all tags
 
         # TODO - have a better plan for what to do with multiple tags
         if len(all_tags) > 1:
@@ -286,6 +293,13 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
         if callable(attr):
             attr = attr()
 
+        return attr
+
+    def _getvalue_simple(self, field):
+        """return the field value as a simple number or string
+        """
+        attr = self._getvalue(field)
+
         if isinstance(attr, (int, str, decimal.Decimal)):
             return attr
 
@@ -296,7 +310,7 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
         """using kwargs, check if this Row matches if so, return it, or None
         """
         for key, value in kwargs.items():
-            attr = self._getvalue(key)
+            attr = self._getvalue_simple(key)
             if value != attr:
                 return None
 
@@ -315,7 +329,7 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
         field = m.group(1)
         op = m.group(2)
         value_match = m.group(3)
-        value_now = self._getvalue(field)
+        value_now = self._getvalue_simple(field)
 
         # coerce our value to match into a number, if that looks possible
         try:
@@ -342,6 +356,97 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
             raise ValueError('Unknown filter operation "{}"'.format(op))
 
         return None
+
+
+class RowSet(object):
+    """Contain a bunch of rows, allowing statistics to be done on them
+    """
+
+    def __init__(self):
+        self.rows = []
+
+    def __getitem__(self, i):
+        return self.rows[i]
+
+    @property
+    def value(self):
+        sum = 0
+        for row in self:
+            if isinstance(row, (Row, RowSet)):
+                sum += row.value
+            else:
+                raise ValueError("unexpected type")
+        return sum
+
+    def append(self, item):
+        if isinstance(item, (Row, RowSet)):
+            self.rows.append(item)
+        elif isinstance(item, list):
+            for entry in item:
+                self.append(entry)
+        elif isinstance(item, types.GeneratorType):
+            # Yes, we could get fancy and store the generator and only
+            # render it when we need to, but that would also need us to
+            # take into account the correct ordering for all things
+            # - so until our dataset is huge, just skip the fancy bits
+            self.append(list(item))
+        else:
+            raise ValueError('dont know how to append {}'.format(item))
+
+    def filter(self, filter_strings):
+        """Apply the given list of human readable filters to the rows
+        """
+        if filter_strings is None:
+            filter_strings = []
+
+        result = RowSet()
+        for row in self.rows:
+            match = True
+            for s in filter_strings:
+                if not row.filter(s):
+                    match = False
+                    break
+            if match:
+                result.append(row)
+        return result
+
+    def autosplit(self):
+        """look at the split bangtag and return the rowset all split
+        """
+        result = RowSet()
+        for row in self:
+            result.append(row.autosplit())
+        return result
+
+    def group_by(self, field):
+        """Group the rowset by the given row field and return groups as a dict
+        """
+        # This could be cached for performance, but for clarity it is not
+        result = {}
+        for row in self:
+            if field == 'month':
+                # FIXME - Hack!
+                # - the "month" attribute of the row is intended for string
+                #   pattern matching, but the rowset wants to keep the original
+                #   objects intact as much as possible
+                key = row.date.replace(day=1)
+            else:
+                key = row._getvalue(field)
+
+            if key is None:
+                key = 'unknown'
+
+            if key not in result:
+                result[key] = RowSet()
+
+            result[key].append(row)
+        return result
+
+    def last(self):
+        """Return the chronologically last row from the rowset
+        """
+        rows = sorted(self, key=lambda x: x.date)
+        return rows[-1]
 
 
 def parse_dir(dirname):   # pragma: no cover
@@ -371,57 +476,45 @@ def parse_dir(dirname):   # pragma: no cover
                           direction=direction)
 
 
-def apply_filter_strings(filter_strings, rows):
-    """Apply the given list of human readable filters to the rows
+def render_month(date):
+    """Return a short string representation of the date as a month
     """
-    if filter_strings is None:
-        filter_strings = []
-    for row in rows:
-        match = True
-        for s in filter_strings:
-            if not row.filter(s):
-                match = False
-                break
-        if match:
-            yield row
+    return date.strftime('%Y-%m')
+
+
+def render_month_len():
+    """how much room to allow for each month column
+    """
+    # TODO - this should eventually move into some rendering code
+    return 9
 
 
 def grid_accumulate(rows):
     """Accumulate the rows into month+tag buckets
     """
-    months = set()
-    tags = set()
     grid = {}
     totals = {}
-    totals['total'] = 0
+    month_names = set()
 
-    # Accumulate the data
-    for row in rows:
-        month = row.month
-        tag = row.hashtag
+    months = rows.group_by('month')
+    for month in months:
+        month_str = render_month(month)
+        month_names.add(month_str)
+        totals[month_str] = months[month].value
 
-        if tag is None:
-            tag = 'unknown'
+        tags = months[month].group_by('hashtag')
 
-        tag = tag.capitalize()
+        for tag in tags:
+            # I would prefer auto-vivification to all these if statements
+            if tag not in grid:
+                grid[tag] = {}
 
-        # I would prefer auto-vivification to all these if statements
-        if tag not in grid:
-            grid[tag] = {}
-        if month not in grid[tag]:
-            grid[tag][month] = {'sum': 0, 'last': datetime.date(1970, 1, 1)}
-        if month not in totals:
-            totals[month] = 0
+            grid[tag][month_str] = {}
+            grid[tag][month_str]['sum'] = tags[tag].value
+            grid[tag][month_str]['last'] = tags[tag].last().date
 
-        # sum this row into various buckets
-        grid[tag][month]['sum'] += row.value
-        grid[tag][month]['last'] = max(row.date, grid[tag][month]['last'])
-        totals[month] += row.value
-        totals['total'] += row.value
-        months.add(month)
-        tags.add(tag)
-
-    return months, tags, grid, totals
+    totals['total'] = rows.value
+    return month_names, grid, totals
 
 
 def grid_render_colheader(months, months_len, tags_len):
@@ -465,10 +558,12 @@ def grid_render_totals(months, totals, months_len, tags_len):
 def grid_render_rows(months, tags, grid, months_len, tags_len):
     s = []
 
+    tags = sorted(tags)
+
     # Output each tag
     for tag in tags:
         row = ''
-        row += "{:<{width}}".format(tag, width=tags_len)
+        row += "{:<{width}}".format(tag.capitalize(), width=tags_len)
 
         for month in months:
             if month in grid[tag]:
@@ -483,24 +578,12 @@ def grid_render_rows(months, tags, grid, months_len, tags_len):
     return s
 
 
-def grid_render_datagroom(months, tags):
-    # how much room to allow for the tags
-    tags_len = max([len(i) for i in tags])
-    tags_len += 1
-
-    # how much room to allow for each month column
-    months_len = 9
-
-    months = sorted(months)
-    tags = sorted(tags)
-
-    return months, tags, months_len, tags_len
-
-
 def grid_render(months, tags, grid, totals):
     # Render the accumulated data
 
-    (months, tags, months_len, tags_len) = grid_render_datagroom(months, tags)
+    tags_len = max([len(i) for i in tags])+1
+    months_len = render_month_len()
+    months = sorted(months)
 
     s = []
     s += grid_render_colheader(months, months_len, tags_len)
@@ -511,19 +594,23 @@ def grid_render(months, tags, grid, totals):
 
 
 def topay_render(rows, strings):
-    rows = apply_filter_strings(['direction==outgoing'], rows)
-    (months, tags, grid, totals) = grid_accumulate(rows)
+    rows = rows.filter(['direction==outgoing'])
+    alltags = sorted(rows.group_by('hashtag').keys())
+
+    months = rows.group_by('month')
 
     s = []
     for month in sorted(months):
-        s.append(strings['header'].format(date=month))
+        s.append(strings['header'].format(date=render_month(month)))
         s.append("\n")
         s.append(strings['table_start'])
         s.append("\n")
-        for hashtag in sorted(tags):
-            if month in grid[hashtag]:
-                price = grid[hashtag][month]['sum']
-                date = grid[hashtag][month]['last']
+
+        monthtags = months[month].group_by('hashtag')
+        for hashtag in alltags:
+            if hashtag in monthtags:
+                price = monthtags[hashtag].value
+                date = monthtags[hashtag].last().date
             else:
                 price = "$0"
                 date = "Not Yet"
@@ -546,7 +633,9 @@ def topay_render(rows, strings):
 
 
 def subp_sum(args):
-    result = sum(args.rows)
+    result = args.rows.value
+    # Only check the result for validity here and not in the class as
+    # the RowSet could be storing a virtual account in other places
     if result < 0:
         raise ValueError(
             "Impossible negative value cash balance: {}".format(result))
@@ -579,12 +668,13 @@ def subp_topay_html(args):
 
 
 def subp_party(args):
-    balance = sum(args.rows)
+    balance = args.rows.value
     return "Success" if balance > 0 else "Fail"
 
 
 def subp_csv(args):  # pragma: no cover
-    rows = sorted(args.rows, key=lambda x: x.date)
+    rows = RowSet()
+    rows.append(sorted(args.rows, key=lambda x: x.date))
 
     with args.csv_out as f:
         writer = csv.writer(f)
@@ -596,7 +686,7 @@ def subp_csv(args):  # pragma: no cover
 
         writer.writerow('')
         writer.writerow(('Sum',))
-        writer.writerow((sum(rows),))
+        writer.writerow((rows.value,))
     return None
 
 
@@ -611,17 +701,20 @@ def subp_grid(args):
         else:
             row.hashtag = 'in ' + row.hashtag
 
-    (months, tags, grid, totals) = grid_accumulate(args.rows)
+    (months, grid, totals) = grid_accumulate(args.rows)
+    tags = args.rows.group_by('hashtag').keys()
+
     return grid_render(months, tags, grid, totals)
 
 
 def subp_json_payments(args):
 
-    args.rows = list(apply_filter_strings([
+    rows = args.rows.filter([
         'direction==incoming',
-    ], args.rows))
+    ])
 
-    (months, tags, grid, totals) = grid_accumulate(args.rows)
+    (months, grid, totals) = grid_accumulate(rows)
+
     # We are only interested in last payment date
     return json.dumps(({
         k.lower(): sorted(
@@ -641,47 +734,54 @@ def subp_make_balance(args):
         tpl = f.read()
 
     # Filter out only the membership dues
-    grid_rows = list(apply_filter_strings([
+    grid_rows = args.rows.filter([
         'direction==incoming',
         'hashtag=~^dues:',
         'rel_months>-5',
         'rel_months<5',
-    ], args.rows))
+    ])
 
     # Make the category look pretty
     for row in grid_rows:
         a = row.hashtag.split(':')
         row.hashtag = ''.join(a[1:]).title()
 
-    (months, tags, grid, totals) = grid_accumulate(grid_rows)
-    (months, tags, months_len, tags_len) = grid_render_datagroom(months, tags)
+    (months, grid, totals) = grid_accumulate(grid_rows)
+    tags = grid_rows.group_by('hashtag').keys()
+    months = sorted(months)
+
+    months_len = render_month_len()
+    tags_len = max([len(i) for i in tags])+1
 
     header = ''.join(grid_render_colheader(months, months_len, tags_len))
     grid = ''.join(grid_render_rows(months, tags, grid, months_len, tags_len))
 
     def _get_next_rent_month():
-        grid_rows = iter(apply_filter_strings([
-            'direction==outgoing',
-            'hashtag=~^bills:rent',
-        ], args.rows))
-        last_rent_payment = next(grid_rows).date
-        for r in grid_rows:
-            if r.date > last_rent_payment:
-                last_rent_payment = r.date
+        last_payment = args.rows.group_by('hashtag')['bills:rent'].last()
+        date = last_payment.date
 
-        day = calendar.monthrange(last_rent_payment.year,
-                                  last_rent_payment.month)[1]
-        next_month = datetime.datetime(
-            last_rent_payment.year,
-            last_rent_payment.month,
-            day) + datetime.timedelta(days=1)
-        s = ' '.join((next_month.strftime('%B'), str(next_month.year))).upper()
-        return s
+        # The landlord states that "the monthly rental payment should
+        # be settled seven (7) days in advance prior to the 1st day of
+        # each and every rental month"
+        #
+        # Implement business logic to find this date
+        #
+        # assuming the rent transactions have been placed into the
+        # month that they are paying the rent for, we can find the date
+        # that the rent is next due by clamping the day to seven days
+        # before the end of the month
 
-    tpl = _format_tpl(tpl, 'balance_sum', str(sum(args.rows)))
+        # set to the due date during at the end of the month
+        date = date.replace(
+            day=calendar.monthrange(date.year, date.month)[1] - 7
+        )
+
+        return date
+
+    tpl = _format_tpl(tpl, 'balance_sum', str(args.rows.value))
     tpl = _format_tpl(tpl, 'grid_header', header)
     tpl = _format_tpl(tpl, 'grid', grid)
-    tpl = _format_tpl(tpl, 'rent_due', _get_next_rent_month())
+    tpl = _format_tpl(tpl, 'rent_due', str(_get_next_rent_month()))
 
     return tpl
 
@@ -762,17 +862,15 @@ if __name__ == '__main__':  # pragma: no cover
         raise RuntimeError('Directory "{}" does not exist'.format(args.dir))
 
     # first, load the data
-    args.rows = parse_dir(args.dir)
+    args.rows = RowSet()
+    args.rows.append(parse_dir(args.dir))
 
     # optionally split multi-month transactions into one per month
     if args.split:
-        tmp = []
-        for orig_row in args.rows:
-            tmp.extend(orig_row.autosplit())
-        args.rows = tmp
+        args.rows = args.rows.autosplit()
 
     # apply any filters requested
-    args.rows = list(apply_filter_strings(args.filter, args.rows))
+    args.rows = args.rows.filter(args.filter)
 
     result = args.func(args)
     if result is not None:
