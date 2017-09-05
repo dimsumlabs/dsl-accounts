@@ -376,6 +376,12 @@ class RowSet(object):
                 sum += row.value
             else:
                 raise ValueError("unexpected type")
+
+        # ensure that values that have been promoted to have some digits
+        # of significance return to being simple integers when possible.
+        if int(sum) == sum:
+            sum = int(sum)
+
         return sum
 
     def append(self, item):

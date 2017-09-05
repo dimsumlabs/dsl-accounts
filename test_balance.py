@@ -235,6 +235,10 @@ class TestRowSet(unittest.TestCase):
 
         self.assertEqual(self.rows.value, -45)
 
+        self.rows.append(balance.Row("0.5", "1970-03-12", "comment9", "outgoing")) # noqa
+        self.rows.append(balance.Row("0.5", "1970-03-13", "comment10", "outgoing")) # noqa
+        self.assertEqual(str(self.rows.value), '-46')
+
     def test_nested_rowset(self):
         self.rows.append(self.rows_array)
 
