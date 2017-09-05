@@ -6,3 +6,5 @@
 374 2017-09-04 donation from mailbox
 500 2017-09-04 #dues:tom
 # I counted the cash box and it totalled 576 (plus change), which is close enough to the accounting balance of 574.80
+0.20 2017-09-05 !months:-4:1 Move some of the extra in the box to make an earlier month an integer
+1 2017-09-05 Remainder of extra, makes account file and cash box balance (except for some small change)
