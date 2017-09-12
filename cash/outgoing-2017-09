@@ -5,3 +5,5 @@
 2505 2017-09-11 #bills:electricity !months:-3:3
 200 2017-09-11 luca workshop payback
 17.75 2017-09-12 Paypal fees #fees:paypal
+# I counted the cash box and it totalled 6430 (plus change), which is 115 less than the accounting balance of 6545
+115 2017-09-12 Force accounts balance to match counted cash balance
