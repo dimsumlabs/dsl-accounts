@@ -6,56 +6,82 @@
 <style>
 @font-face {
   font-family: 'ps2p';
-  src: url('https://github.com/davideast/TappyBase/raw/master/TappyBase/PressStart2P.ttf');
-}
-html,pre {
-	height:95%;
-	margin:0;
-	padding:10px;
-	background-color:#000;
-	color:#00E100;
-	font-family: ps2p,monospace;
-}
-body {
-	height:100%;width:95%;
-	text-align:center;
+  src: url('https://raw.githubusercontent.com/davideast/TappyBase/master/TappyBase/PressStart2P.ttf');
 }
 
-dt {
-	font-size:30px;
-	color:#eee;
-	text-align:left;
+html {
+	background-color:#000;
+	font-family: ps2p,monospace;
 }
-dd {
-	font-size:42px;
-	text-align:right;
+
+body {
+    width:95%;
+    text-align:center;
+}
+
+.bill_desc {
+    font-size:30px;
+    color:#eee;
+    text-align:right;
+}
+
+.bill_value {
+    font-size:42px;
+    text-align:right;
+}
+
+.color_neg {
+    /* negative numbers are bad */
+    color:red;
+}
+
+.color_pos {
+    /* positive numbers are good */
+    color:#00E100;
+}
+
+.membership_fees {
+    font-size:20px;
+    color:#fff;
+    text-align:center;
+}
+
+.grid {
+    font-size:12px;
+    color:#00E100;
+    text-align:left;
+    margin:0;
+    font-family: ps2p,monospace;
+}
+
+.donate {
+    font-size:25px;
+    color:pink;
+    text-align:center;
 }
 
 </style>
 </head>
 <body>
-<dl>
-<dt>Account Balance</dt>
-<dd style="font-size:64px;">HKD
-{balance_sum}
-</dd>
-</dl>
 
-<center style="color:#fff;font-size:20px;">Membership fee <span style="color:#00E100">HKD 500</span> per month, <span style="color:#00E100">HKD 200</span> for students. <span style="color:pink">Donate if you can!</span></center>
-<br>
+ <div class="membership_fees">Membership fee <span class="color_pos">500 HKD</span> per month, <span class="color_pos">200 HKD</span> for students.</div>
 
+ <table width=100%>
+  <tr>
+   <td colspan=2 class="bill_desc">Account Balance:</td>
+   <td class="bill_value color_pos">{balance_sum} HKD</td>
+  </tr>
+  <tr>
+   <td colspan=2 class="bill_desc">(due on: <span class="color_neg">{rent_due}</span>) Rent:</td>
+   <td class="bill_value color_neg">12500 HKD</td>
+  </tr>
+  <tr>
+   <td class="donate">Donate if you can!</td>
+   <td class="bill_desc">Bills:</td>
+   <td class="bill_value color_neg">~1500 HKD</td>
+  </tr>
+ </table>
 
-<dl>
-	<dt>Rent (next due: <span style="color:red">{rent_due}</span>)</dt>
-	<dd style="color:red;">HKD 12500</dd>
-</dl>
-<dl>
-	<dt>Bills</dt>
-	<dd style="color:red;">HKD ~1500</dd>
-</dl>
-
-<br>
-<small style="color:#eee;font-size:12px;text-align:left;"><pre>
-{grid_header}{grid}
-</pre>
-</small></body></html>
+<pre class="grid">{grid_header}{grid}</pre>
+</body>
+</html>
