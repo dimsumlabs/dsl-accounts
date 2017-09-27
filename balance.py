@@ -378,7 +378,7 @@ class RowSet(object):
 
     @property
     def value(self):
-        sum = 0
+        sum = decimal.Decimal(0)
         for row in self:
             if isinstance(row, (Row, RowSet)):
                 sum += row.value
