@@ -5,6 +5,7 @@
 import unittest
 import datetime
 import sys
+import json
 if sys.version_info[0] == 2:  # pragma: no cover
     import mock
 else:
@@ -561,13 +562,14 @@ class TestSubp(unittest.TestCase):
         got = balance.subp_grid(self).split("\n")
         self.assertEqual(got, expect)
 
-# TODO - re-import the json from a string and do a deep compare
-#     def test_json_dues(self):
-#         r = ""
-#         r += '{"test1":'
-#         r += ' {"1990-05": {"sum": 500.0, "last": "1990-05-02"},'
-#         r += ' "1990-04": {"sum": 500.0, "last": "1990-04-03"}}}'
-#         self.assertEqual(balance.subp_json_dues(self), r)
+    def test_json_payments(self):
+        expect = {
+            'unknown':    '1990-05',
+            'clubmate':   '1990-04',
+            'dues:test1': '1990-05',
+        }
+        got = json.loads(balance.subp_json_payments(self))
+        self.assertEqual(got, expect)
 
     @mock.patch('balance.datetime.datetime', fakedatetime)
     def test_make_balance(self):
