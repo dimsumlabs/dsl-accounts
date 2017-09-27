@@ -372,6 +372,9 @@ class RowSet(object):
     def __getitem__(self, i):
         return self.rows[i]
 
+    def __len__(self):
+        return len(self.rows)
+
     @property
     def value(self):
         sum = 0
