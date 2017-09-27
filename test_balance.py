@@ -521,7 +521,26 @@ class TestSubp(unittest.TestCase):
         self.assertEqual(balance.subp_party(self), "Success")
         # FIXME - add a "Fail" case too
 
-    # FIXME - subp_csv
+    def test_csv(self):
+        expect = [
+            'Value,Date,Comment\r',
+            '500,1990-04-03,#dues:test1\r',
+            '20,1990-04-03,Unknown\r',
+            '-12500,1990-04-15,#bills:rent\r',
+            '-1500,1990-04-26,#clubmate\r',
+            '1500,1990-04-27,#clubmate\r',
+            '-1174,1990-04-27,#bills:electric\r',
+            '500,1990-05-02,#dues:test1\r',
+            '-488,1990-05-25,#bills:internet\r',
+            '13152,1990-05-25,balance books\r',
+            '\r',
+            'Sum\r',
+            '10\r',
+            '',
+        ]
+
+        got = balance.subp_csv(self).split("\n")
+        self.assertEqual(got, expect)
 
     def test_grid(self):
         expect = [
