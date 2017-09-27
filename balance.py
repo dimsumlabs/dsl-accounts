@@ -490,7 +490,13 @@ def parse_dir(dirname):   # pragma: no cover
 def render_month(date):
     """Return a short string representation of the date as a month
     """
-    return date.strftime('%Y-%m')
+    if isinstance(date, datetime.date):
+        return date.strftime('%Y-%m')
+
+    # Awkwardly, if we want to have a "Total" month or a "Average"
+    # month, everything works except for this render_month function
+    # TODO - fix this in a cleaner way
+    return date
 
 
 def render_month_len():
