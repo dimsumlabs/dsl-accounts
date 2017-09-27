@@ -504,13 +504,12 @@ def grid_accumulate(rows):
     """
     grid = {}
     totals = {}
-    month_names = set()
+    months_present = set()
 
     months = rows.group_by('month')
     for month in months:
-        month_str = render_month(month)
-        month_names.add(month_str)
-        totals[month_str] = months[month].value
+        months_present.add(month)
+        totals[month] = months[month].value
 
         tags = months[month].group_by('hashtag')
 
@@ -519,11 +518,11 @@ def grid_accumulate(rows):
             if tag not in grid:
                 grid[tag] = {}
 
-            grid[tag][month_str] = {}
-            grid[tag][month_str]['sum'] = tags[tag].value
+            grid[tag][month] = {}
+            grid[tag][month]['sum'] = tags[tag].value
 
     totals['total'] = rows.value
-    return month_names, grid, totals
+    return months_present, grid, totals
 
 
 def grid_render_colheader(months, months_len, tags_len):
@@ -534,7 +533,7 @@ def grid_render_colheader(months, months_len, tags_len):
 
     # Output the month row headings
     for month in months:
-        s.append("{:>{}}".format(month, months_len))
+        s.append("{:>{}}".format(render_month(month), months_len))
 
     s.append("\n")
 
