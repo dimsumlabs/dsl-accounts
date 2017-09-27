@@ -30,9 +30,6 @@ except ImportError:
 #   more obvious format (perhaps "!months=month[,month]+" - which is clearly
 #   a more discoverable format, but would get quite verbose with yearly
 #   transactions (or even just one with more than 3 months...)
-# - The Row object should allow a direction indicating "auto" to take
-#   the direction from the sign of the value - this would simplify the
-#   places where we automatically create a new Row (eg, from splitting)
 # - Implement a running balance check - perhaps using pragma lines in
 #   the input - then we can add a check that the calculated balance matches
 #   the known counted balance at that point in time (quick, accounting people,
@@ -53,13 +50,15 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
         value = decimal.Decimal(value)
         date = datetime.datetime.strptime(date.strip(), "%Y-%m-%d").date()
 
-        if direction not in ('incoming', 'outgoing'):
+        if direction not in ('incoming', 'outgoing', 'signed'):
             raise ValueError('Direction "{}" unhandled'.format(direction))
 
-        # We use the direction field, so it is impossible to have a negative
-        # value
-        if value < 0:
-            raise ValueError('Value "{}" is negative'.format(value))
+        if direction != 'signed':
+            # If the direction is not 'signed', we use the direction
+            # field as the sign, so it is impossible to have a negative
+            # value - check that here
+            if value < 0:
+                raise ValueError('Value "{}" is negative'.format(value))
 
         # Inverse value
         if direction == 'outgoing':
@@ -210,8 +209,7 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
                 'would divide by zero, splitting children from {}'.format(
                     self.date))
 
-        # (The abs value is taken because the sign is in the self.direction)
-        each_value = abs(self.value / count_children)
+        each_value = self.value / count_children
         # (avoid numbers that cannot be represented with cash by using int())
         each_value = int(each_value)
 
@@ -227,13 +225,13 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
                 return [self]
 
             # the remainder is any money lost due to rounding
-            remainder = abs(self.value) - each_value * count_children
+            remainder = self.value - each_value * count_children
 
             for date in dates:
                 datestr = date.isoformat()
                 this_value = each_value + remainder
                 remainder = 0  # only add the remainder to the first child
-                rows.append(Row(this_value, datestr, comment, self.direction))
+                rows.append(Row(this_value, datestr, comment, 'signed'))
 
         elif method == 'proportional':
             # The 'proportional' splitting attempts to pro-rata the transaction

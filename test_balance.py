@@ -40,6 +40,15 @@ class TestRowClass(unittest.TestCase):
         with self.assertRaises(ValueError):
             balance.Row("100", "1970-01-01", "a comment", "fred")
 
+        self.assertEqual(
+            balance.Row("100", "1970-01-01", "a comment", "signed").value,
+            100
+        )
+        self.assertEqual(
+            balance.Row("-100", "1970-01-01", "a comment", "signed").value,
+            -100
+        )
+
     def test_value(self):
         with self.assertRaises(ValueError):
             balance.Row("-100", "1970-01-01", "a comment", "incoming")
