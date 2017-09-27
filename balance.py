@@ -525,40 +525,47 @@ def grid_accumulate(rows):
     return months_present, grid, totals
 
 
-def grid_render_colheader(months, months_len, tags_len):
+def grid_render_onerow(prefix, prefix_len, rowdata, cell_len):
     s = []
 
-    # Skip the column of tag names
-    s.append(' '*tags_len)
+    s += "{:<{width}}".format(prefix, width=prefix_len)
 
-    # Output the month row headings
-    for month in months:
-        s.append("{:>{}}".format(render_month(month), months_len))
+    for cell in rowdata:
+        s += "{:>{}}".format(cell, cell_len)
 
-    s.append("\n")
+    s += "\n"
 
     return s
+
+
+def grid_render_colheader(months, months_len, tags_len):
+    return grid_render_onerow(
+        ' ', tags_len,
+        [render_month(x) for x in months], months_len
+    )
 
 
 def grid_render_totals(months, totals, months_len, tags_len):
     s = []
 
-    s.append("\n")
-    s.append("{:<{width}}".format('MONTH Sub Total', width=tags_len))
+    s += "\n"
+    s += grid_render_onerow(
+        'MONTH Sub Total', tags_len,
+        [totals[x] for x in months], months_len
+    )
 
-    for month in months:
-        s.append("{:>{}}".format(totals[month], months_len))
-
-    s.append("\n")
-    s.append("{:<{width}}".format('RUNNING Balance', width=tags_len))
-
+    running_totals = []
     running_total = 0
     for month in months:
         running_total += totals[month]
-        s.append("{:>{}}".format(running_total, months_len))
+        running_totals.append(running_total)
 
-    s.append("\n")
-    s.append("TOTAL: {:>{}}".format(totals['total'], months_len))
+    s += grid_render_onerow(
+        'RUNNING Balance', tags_len,
+        running_totals, months_len
+    )
+
+    s += "TOTAL: {:>{}}".format(totals['total'], months_len)
 
     return s
 
@@ -568,20 +575,19 @@ def grid_render_rows(months, tags, grid, months_len, tags_len):
 
     tags = sorted(tags)
 
-    # Output each tag
+    # Output each tag on its own row
     for tag in tags:
-        row = ''
-        row += "{:<{width}}".format(tag.capitalize(), width=tags_len)
-
+        cells = []
         for month in months:
             if month in grid[tag]:
-                col = grid[tag][month]['sum']
+                cells.append(grid[tag][month]['sum'])
             else:
-                col = ''
-            row += "{:>{}}".format(col, months_len)
+                cells.append('')
 
-        row += "\n"
-        s.append(row)
+        s += grid_render_onerow(
+            tag.capitalize(), tags_len,
+            cells, months_len
+        )
 
     return s
 
