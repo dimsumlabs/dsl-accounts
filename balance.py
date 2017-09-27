@@ -6,6 +6,7 @@ import argparse
 import calendar
 import os.path
 import decimal
+import string
 import json
 import sys
 import csv
@@ -734,10 +735,8 @@ def subp_json_payments(args):
 
 
 def subp_make_balance(args):
-    def _format_tpl(tpl, key, value):
-        '''Poor mans template engine'''
-        return tpl.replace(('{%s}' % key), value)
-
+    # Load the template file
+    # TODO - use a string or an arg for the template source
     with open(os.path.join(os.path.dirname(__file__),
                            './docs/template.html')) as f:
         tpl = f.read()
@@ -787,12 +786,13 @@ def subp_make_balance(args):
 
         return date
 
-    tpl = _format_tpl(tpl, 'balance_sum', str(args.rows.value))
-    tpl = _format_tpl(tpl, 'grid_header', header)
-    tpl = _format_tpl(tpl, 'grid', grid)
-    tpl = _format_tpl(tpl, 'rent_due', str(_get_next_rent_month()))
-
-    return tpl
+    macros = {
+        'balance_sum': args.rows.value,
+        'grid_header': header,
+        'grid':        grid,
+        'rent_due':    _get_next_rent_month(),
+    }
+    return string.Template(tpl).substitute(macros)
 
 
 # A list of all the sub-commands
