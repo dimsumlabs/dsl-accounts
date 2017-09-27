@@ -384,7 +384,7 @@ class RowSet(object):
         # ensure that values that have been promoted to have some digits
         # of significance return to being simple integers when possible.
         if int(sum) == sum:
-            sum = int(sum)
+            sum = sum.to_integral_exact()
 
         return sum
 
