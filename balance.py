@@ -521,7 +521,6 @@ def grid_accumulate(rows):
 
             grid[tag][month_str] = {}
             grid[tag][month_str]['sum'] = tags[tag].value
-            grid[tag][month_str]['last'] = tags[tag].last().date
 
     totals['total'] = rows.value
     return month_names, grid, totals
