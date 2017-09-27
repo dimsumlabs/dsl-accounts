@@ -1,4 +1,4 @@
-1952 2017-09-04 #bills:internet !months:3  // only 488 was due, the rest is overlapping with payment on 2017-08-09
+1952 2017-09-04 #bills:internet !months:4  // only 488 was due, the rest is overlapping with payment on 2017-08-09
 22.20 2017-09-04 #bills:water !months:-4:4
 12500 2017-09-04 #bills:rent !months:-1:1  // rent for August
 686.24 2017-09-05 Paypal fees #fees:paypal
