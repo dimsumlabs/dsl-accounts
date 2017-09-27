@@ -214,7 +214,9 @@ class TestRowClass(unittest.TestCase):
 
         self.assertEqual(obj.filter('comment=~gtag'), obj)
         self.assertEqual(obj.filter('comment=~^a'), obj)
+        self.assertEqual(obj.filter('comment!~^a'), None)
         self.assertEqual(obj.filter('comment=~^foo'), None)
+        self.assertEqual(obj.filter('comment!~^foo'), obj)
 
     @mock.patch('balance.datetime.datetime', fakedatetime)
     def test_filter_rel_months(self):

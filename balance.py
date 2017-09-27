@@ -354,6 +354,9 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
         elif op == '=~':
             if re.search(value_match, value_now, re.I):
                 return self
+        elif op == '!~':
+            if not re.search(value_match, value_now, re.I):
+                return self
         else:
             raise ValueError('Unknown filter operation "{}"'.format(op))
 
