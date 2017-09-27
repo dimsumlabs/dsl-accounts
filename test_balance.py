@@ -594,3 +594,31 @@ class TestSubp(unittest.TestCase):
         # TODO - have a testable "rowset.forcastNext(category)" function
         want = '(due on: <span class="color_neg">1990-04-23</span>) Rent:'
         self.assertTrue(want in got)
+
+    def test_stats(self):
+        expect = [
+            '                 1990-04    1990-05    Average      Total',
+            'outgoing          -15174       -488      -7831     -15662',
+            'incoming            2020      13652       7836      15672',
+            '',
+            ' dues:               500        500        500       1000',
+            ' other:             1520      13152       7336      14672',
+            '',
+            'nr members             1          1          1          1',
+            '',
+            'members needed',
+            ' dues 500             31          1         16         16',
+            ' dues 600             26          1         14         14',
+            ' dues 700             22          1         12         12',
+            'dues needed',
+            ' members 17          892         28        460        460',
+            ' members 20          758         24        391        391',
+            ' members 25          606         19        313        313',
+            ' members 30          505         16        261        261',
+            '',
+
+
+        ]
+
+        got = balance.subp_stats(self).split("\n")
+        self.assertEqual(got, expect)

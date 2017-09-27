@@ -802,6 +802,112 @@ def subp_make_balance(args):
     return string.Template(tpl).substitute(macros)
 
 
+def subp_stats(args):
+    # stats are only likely to be valid for previous months
+    rows = args.rows.filter(['rel_months<0'])
+
+    def make_rowset(value):
+        r = RowSet()
+        r.append(Row(value, '1970-01-01', 'fake row', 'signed'))
+        return r
+
+    def stats_rowset(rowset):
+        r = {}
+        r['incoming'] = rowset.filter(['value>0'])
+        r['outgoing'] = rowset.filter(['value<0'])
+        # TODO - values of zero?  we have one member as such, but it is a
+        # exceptional case
+        r['dues']     = rowset.filter(['hashtag=~^dues:']) # noqa
+        r['members']  = len(r['dues'].group_by('hashtag').keys()) # noqa
+
+        r['other']    = rowset.filter(['value>0','hashtag!~^dues:']) # noqa
+
+        return r
+
+    result = {}
+    months = rows.group_by('month')
+    for k, month in months.items():
+        result[k] = stats_rowset(month)
+
+    months_len = render_month_len()+2
+    tags_len = 13
+
+    months = sorted(result.keys())
+
+    result['Total'] = stats_rowset(rows)
+
+    result['Average'] = {}
+    for tag in ('outgoing', 'incoming', 'dues', 'other'):
+        result['Average'][tag] = make_rowset(
+            result['Total'][tag].value / len(months))
+    result['Average']['members'] = sum(
+        [result[x]['members'] for x in months]
+    ) / len(months)
+
+    months.append('Average')
+    months.append('Total')
+
+    s = []
+    s += grid_render_colheader(months, months_len, tags_len)
+    for tag in ('outgoing', 'incoming'):
+        s += grid_render_onerow(
+            tag, tags_len,
+            [result[x][tag].value.to_integral_exact(
+                    rounding=decimal.ROUND_FLOOR
+                ) for x in months],
+            months_len
+        )
+    s += "\n"
+    for tag in ('dues', 'other'):
+        s += grid_render_onerow(
+            " {}:".format(tag), tags_len,
+            [result[x][tag].value.to_integral_exact(
+                    rounding=decimal.ROUND_FLOOR
+                ) for x in months],
+            months_len
+        )
+    s += "\n"
+    s += grid_render_onerow(
+        'nr members', tags_len,
+        [result[x]['members'] for x in months],
+        months_len
+    )
+
+    def members_given_dues_outgoing(dues, rowset):
+        months = len(rowset.group_by('month').keys())
+        total_dues = dues * months
+        return abs((rowset.value / total_dues).to_integral_exact(
+                rounding=decimal.ROUND_FLOOR
+        ))
+
+    def dues_given_members_outgoing(members, rowset):
+        months = len(rowset.group_by('month').keys())
+        return abs(rowset.value / members / months).to_integral_exact(
+                rounding=decimal.ROUND_FLOOR
+        )
+
+    s += "\n"
+    s += "members needed\n"
+    for dues in (500, 600, 700):
+        s += grid_render_onerow(
+            " dues {}".format(dues), tags_len,
+            [members_given_dues_outgoing(dues, result[x]['outgoing'])
+                for x in months],
+            months_len
+        )
+
+    s += "dues needed\n"
+    for members in (17, 20, 25, 30):
+        s += grid_render_onerow(
+            " members {}".format(members), tags_len,
+            [dues_given_members_outgoing(members, result[x]['outgoing'])
+                for x in months],
+            months_len
+        )
+
+    return ''.join(s)
+
+
 # A list of all the sub-commands
 subp_cmds = {
     'sum': {
@@ -835,6 +941,10 @@ subp_cmds = {
     'json_payments': {
         'func': subp_json_payments,
         'help': 'Output JSON of incoming payments',
+    },
+    'stats': {
+        'func': subp_stats,
+        'help': 'Output finance stats report',
     },
 }
 
