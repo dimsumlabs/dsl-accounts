@@ -337,27 +337,22 @@ class TestMisc(unittest.TestCase):
                     'water': {
                         '1970-01': {
                             'sum': -25,
-                            'last': datetime.date(1970, 1, 11)
                         },
                     },
                     'unknown': {
                         '1970-01': {
                             'sum': 10,
-                            'last': datetime.date(1970, 1, 5)
                         },
                         '1970-02': {
                             'sum': -10,
-                            'last': datetime.date(1970, 2, 6)
                         },
                     },
                     'rent': {
                         '1970-03': {
                             'sum': -10,
-                            'last': datetime.date(1970, 3, 1)
                         },
                         '1970-01': {
                             'sum': -10,
-                            'last': datetime.date(1970, 1, 10)
                         },
                     },
                 },
