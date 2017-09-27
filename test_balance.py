@@ -555,11 +555,11 @@ class TestSubp(unittest.TestCase):
         got = balance.subp_make_balance(self)
 
         # this is the {grid_header} and {grid} values from the template
-        want = "        1990-04  1990-05\nTest1       500      500\n\n"
+        want = "        1990-04  1990-05\nTest1       500      500\n"
         self.assertTrue(want in got)
 
         # this is the {rent_due} value from the template, with some of
         # the template mixed in
         # TODO - have a testable "rowset.forcastNext(category)" function
-        want = 'Rent (next due: <span style="color:red">1990-04-23</span>)'
+        want = '(due on: <span class="color_neg">1990-04-23</span>) Rent:'
         self.assertTrue(want in got)
