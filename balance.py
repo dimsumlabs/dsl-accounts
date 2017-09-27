@@ -840,9 +840,9 @@ def subp_stats(args):
     for tag in ('outgoing', 'incoming', 'dues', 'other'):
         result['Average'][tag] = make_rowset(
             result['Total'][tag].value / len(months))
-    result['Average']['members'] = sum(
+    result['Average']['members'] = int(sum(
         [result[x]['members'] for x in months]
-    ) / len(months)
+    ) / len(months))
 
     months.append('Average')
     months.append('Total')
