@@ -13,6 +13,13 @@ import os
 import re
 import types
 
+try:
+    # python 2
+    from StringIO import StringIO
+except ImportError:
+    # python 3
+    from io import StringIO
+
 #
 # TODO
 # - make Row take Date objects and not strings with dates, removing a string
@@ -22,10 +29,6 @@ import types
 #   more obvious format (perhaps "!months=month[,month]+" - which is clearly
 #   a more discoverable format, but would get quite verbose with yearly
 #   transactions (or even just one with more than 3 months...)
-# - if we convert subp_csv to write to - and return - a string, then we
-#   can add a unit test for it.  We could also then turn the "--out"
-#   option into a global one, which would be the output destination for
-#   any command output
 # - The Row object should allow a direction indicating "auto" to take
 #   the direction from the sign of the value - this would simplify the
 #   places where we automatically create a new Row (eg, from splitting)
@@ -678,22 +681,22 @@ def subp_party(args):
     return "Success" if balance > 0 else "Fail"
 
 
-def subp_csv(args):  # pragma: no cover
+def subp_csv(args):
     rows = RowSet()
     rows.append(sorted(args.rows, key=lambda x: x.date))
 
-    with args.csv_out as f:
-        writer = csv.writer(f)
-        # Write header
-        writer.writerow([row.capitalize() for row in Row._fields])
+    buf = StringIO()
+    writer = csv.writer(buf)
 
-        for row in rows:
-            writer.writerow(row)
+    # Write header
+    writer.writerow([row.capitalize() for row in Row._fields])
 
-        writer.writerow('')
-        writer.writerow(('Sum',))
-        writer.writerow((rows.value,))
-    return None
+    writer.writerows(rows)
+
+    writer.writerow('')
+    writer.writerow(('Sum',))
+    writer.writerow((rows.value,))
+    return buf.getvalue()
 
 
 def subp_grid(args):
@@ -855,13 +858,6 @@ if __name__ == '__main__':  # pragma: no cover
         value['parser'] = subp.add_parser(key, help=value['help'])
         value['parser'].set_defaults(func=value['func'])
 
-    # Add a new commandline option for the "csv" subcommand
-    subp_cmds['csv']['parser'].add_argument('--out',
-                                            type=argparse.FileType('w'),
-                                            default=sys.stdout,
-                                            dest='csv_out',
-                                            help='Output file')
-
     args = argparser.parse_args()
 
     if not os.path.exists(args.dir):
@@ -879,5 +875,4 @@ if __name__ == '__main__':  # pragma: no cover
     args.rows = args.rows.filter(args.filter)
 
     result = args.func(args)
-    if result is not None:
-        print(result)
+    print(result)
