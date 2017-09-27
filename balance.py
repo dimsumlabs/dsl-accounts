@@ -718,19 +718,12 @@ def subp_grid(args):
 
 def subp_json_payments(args):
 
-    rows = args.rows.filter([
-        'direction==incoming',
-    ])
+    payments = args.rows.filter(['direction==incoming']).group_by('hashtag')
 
-    (months, grid, totals) = grid_accumulate(rows)
-
-    # We are only interested in last payment date
-    return json.dumps(({
-        k.lower(): sorted(
-            v.keys(),
-            key=lambda x: tuple(map(int, x.split('-')))
-        )[-1] for k, v in grid.items()
-    }))
+    r = {}
+    for tag, payment in payments.items():
+        r[tag] = render_month(payment.last().date)
+    return json.dumps((r))
 
 
 def subp_make_balance(args):
