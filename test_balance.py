@@ -605,6 +605,7 @@ class TestSubp(unittest.TestCase):
             ' other:             1520      13152       7336      14672',
             '',
             'nr members             1          1          1          1',
+            'ARPM                 500        500        500       1000',
             '',
             'members needed',
             ' dues 500             31          1         16         16',

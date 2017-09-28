@@ -819,6 +819,7 @@ def subp_stats(args):
         # exceptional case
         r['dues']     = rowset.filter(['hashtag=~^dues:']) # noqa
         r['members']  = len(r['dues'].group_by('hashtag').keys()) # noqa
+        r['ARPM']     = int(r['dues'].value / r['members'])
 
         r['other']    = rowset.filter(['value>0','hashtag!~^dues:']) # noqa
 
@@ -843,6 +844,7 @@ def subp_stats(args):
     result['Average']['members'] = int(sum(
         [result[x]['members'] for x in months]
     ) / len(months))
+    result['Average']['ARPM'] = int(result['Total']['dues'].value / result['Average']['members'] / len(months))
 
     months.append('Average')
     months.append('Total')
@@ -870,6 +872,11 @@ def subp_stats(args):
     s += grid_render_onerow(
         'nr members', tags_len,
         [result[x]['members'] for x in months],
+        months_len
+    )
+    s += grid_render_onerow(
+        'ARPM', tags_len,
+        [result[x]['ARPM'] for x in months],
         months_len
     )
 
