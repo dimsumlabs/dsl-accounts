@@ -819,7 +819,7 @@ def subp_stats(args):
         # exceptional case
         r['dues']     = rowset.filter(['hashtag=~^dues:']) # noqa
         r['members']  = len(r['dues'].group_by('hashtag').keys()) # noqa
-        r['ARPM']     = int(r['dues'].value / r['members'])
+        r['ARPM']     = int(r['dues'].value / r['members']) # noqa
 
         r['other']    = rowset.filter(['value>0','hashtag!~^dues:']) # noqa
 
