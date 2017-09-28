@@ -880,6 +880,10 @@ def subp_stats(args):
         months_len
     )
 
+    # The rows after this are identical in the Average and Total columns,
+    # so to make that easier to see, remove the Total column from display
+    months = months[:-1]
+
     def members_given_dues_outgoing(dues, rowset):
         months = len(rowset.group_by('month').keys())
         total_dues = dues * months
