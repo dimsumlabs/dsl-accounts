@@ -844,7 +844,11 @@ def subp_stats(args):
     result['Average']['members'] = int(sum(
         [result[x]['members'] for x in months]
     ) / len(months))
-    result['Average']['ARPM'] = int(result['Total']['dues'].value / result['Average']['members'] / len(months))
+    result['Average']['ARPM'] = int(
+        result['Total']['dues'].value /
+        result['Average']['members'] /
+        len(months)
+    )
 
     months.append('Average')
     months.append('Total')
