@@ -595,30 +595,33 @@ class TestSubp(unittest.TestCase):
         want = '(due on: <span class="color_neg">1990-04-23</span>) Rent:'
         self.assertTrue(want in got)
 
+    @mock.patch('balance.datetime.datetime', fakedatetime)
     def test_stats(self):
+        # FIXME - this would look more meaningful with at least one more
+        #         month's data
         expect = [
-            '                 1990-04    1990-05    Average      Total',
-            'outgoing          -15174       -488      -7831     -15662',
-            'incoming            2020      13652       7836      15672',
+            '                 1990-04    Average    MonthTD      Total',
+            'outgoing          -15174     -15174       -488     -15174',
+            'incoming            2020       2020      13652       2020',
             '',
-            ' dues:               500        500        500       1000',
-            ' other:             1520      13152       7336      14672',
+            ' dues:               500        500        500        500',
+            ' other:             1520       1520      13152       1520',
             '',
             'nr members             1          1          1          1',
-            'ARPM                 500        500        500       1000',
+            'ARPM                 500        500        500        500',
             '',
             'members needed',
-            ' dues 500             31          1         16',
-            ' dues 600             26          1         14',
-            ' dues 700             22          1         12',
+            ' dues 500             31         31',
+            ' dues 600             26         26',
+            ' dues 700             22         22',
             'dues needed',
-            ' members 17          892         28        460',
-            ' members 20          758         24        391',
-            ' members 25          606         19        313',
-            ' members 30          505         16        261',
+            ' members 17          892        892',
+            ' members 20          758        758',
+            ' members 25          606        606',
+            ' members 30          505        505',
             '',
-
-
+            'Note: Total column does not include MonthTD numbers',
+            '',
         ]
 
         got = balance.subp_stats(self).split("\n")
