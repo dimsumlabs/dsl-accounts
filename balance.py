@@ -805,6 +805,7 @@ def subp_make_balance(args):
 def subp_stats(args):
     # stats are only likely to be valid for previous months
     rows = args.rows.filter(['rel_months<0'])
+    current_month = args.rows.filter(['rel_months==0'])
 
     def make_rowset(value):
         r = RowSet()
@@ -850,7 +851,10 @@ def subp_stats(args):
         len(months)
     )
 
+    result['MonthTD'] = stats_rowset(current_month)
+
     months.append('Average')
+    months.append('MonthTD')
     months.append('Total')
 
     s = []
@@ -886,7 +890,9 @@ def subp_stats(args):
 
     # The rows after this are identical in the Average and Total columns,
     # so to make that easier to see, remove the Total column from display
-    months = months[:-1]
+    # Also remove the MonthTD, since the calcualted numbers will be bogus
+    # until near the end of the month
+    months = months[:-2]
 
     def members_given_dues_outgoing(dues, rowset):
         months = len(rowset.group_by('month').keys())
@@ -919,6 +925,8 @@ def subp_stats(args):
                 for x in months],
             months_len
         )
+
+    s += "\nNote: Total column does not include MonthTD numbers\n"
 
     return ''.join(s)
 
