@@ -63,7 +63,7 @@ def main():
         # (and additionally, that thing is not packaged for debian elsewhere)
         try:
             cover.html_report()
-        except:
+        except Exception:
             pass
         percent = cover.report(show_missing=True)
 
