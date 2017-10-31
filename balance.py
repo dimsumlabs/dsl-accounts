@@ -99,7 +99,7 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
 
     @property
     def rel_months(self):
-        now = datetime.datetime.utcnow().date()
+        now = datetime.datetime.now().date()
         month_this = self.date.replace(day=1)
         month_now = now.replace(day=1)
         rel_days = (month_this - month_now).days
