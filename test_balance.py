@@ -17,7 +17,7 @@ import balance # noqa
 class fakedatetime(datetime.datetime):
 
     @classmethod
-    def utcnow(cls):
+    def now(cls):
         return cls(1990, 5, 4, 12, 12, 12, 0)
 
 
