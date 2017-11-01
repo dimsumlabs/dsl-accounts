@@ -6,6 +6,16 @@ import decimal
 import re
 
 
+# TODO
+# - make Row take Date objects and not strings with dates, removing a string
+#   handling fart from Row.autosplit() and removing external formatting
+#   knowledge from Row
+# - The "!months:[offset:]count" tag is perhaps a little awkward, find a
+#   more obvious format (perhaps "!months=month[,month]+" - which is clearly
+#   a more discoverable format, but would get quite verbose with yearly
+#   transactions (or even just one with more than 3 months...)
+
+
 class Row(namedtuple('Row', ('value', 'date', 'comment'))):
 
     def __new__(cls, value, date, comment, direction):
