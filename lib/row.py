@@ -1,17 +1,10 @@
 # Licensed under GPLv3
 from collections import namedtuple
 import datetime
-import argparse
 import calendar
-import os.path
 import decimal
-import string
-import json
-import sys
-import csv
-import os
 import re
-import types
+
 
 class Row(namedtuple('Row', ('value', 'date', 'comment'))):
 
@@ -330,5 +323,3 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
             raise ValueError('Unknown filter operation "{}"'.format(op))
 
         return None
-
-

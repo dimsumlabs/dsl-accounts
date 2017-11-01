@@ -6,7 +6,6 @@ import unittest
 import datetime
 import sys
 import os
-import json
 if sys.version_info[0] == 2:  # pragma: no cover
     import mock
 else:
@@ -20,11 +19,12 @@ sys.path.insert(0,
                 )
 # I would use site.addsitedir, but it does an append, not insert
 
-import row as balance
+import row as balance # noqa
 # Originally, this class was imported from the balance.py, thus the
 # name in the import above
 # TODO:
 # - rename all the balance lines below to use row instead
+
 
 class fakedatetime(datetime.datetime):
 
@@ -235,5 +235,3 @@ class TestRowClass(unittest.TestCase):
         obj = self.rows[2]
         self.assertEqual(obj.filter('rel_months<-264'), obj)
         self.assertEqual(obj.filter('rel_months<-265'), None)
-
-
