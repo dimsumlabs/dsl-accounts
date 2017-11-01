@@ -13,7 +13,7 @@ test: test.style test.units test.sum
 
 # Test just the code style - note: much slower than the unit tests
 test.style:
-	flake8 ./*.py
+	flake8 ./*.py lib/*.py
 
 # Test the correctness and sanity of the code with unit tests
 test.units:
