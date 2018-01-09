@@ -111,9 +111,9 @@ class TestMisc(unittest.TestCase):
     def test_grid_render(self):
         expect = [
             "          1970-01  1970-02  1970-03",
-            "Rent          -10               -10",
-            "Unknown        10      -10         ",
-            "Water         -25                  ",
+            "rent          -10               -10",
+            "unknown        10      -10         ",
+            "water         -25                  ",
             "",
             "MONTH Sub Total      -25      -10      -10",
             "RUNNING Balance      -25      -35      -45",
@@ -253,13 +253,13 @@ class TestSubp(unittest.TestCase):
     def test_grid(self):
         expect = [
             "                     1990-04  1990-05",
-            "In clubmate             1500         ",
-            "In dues:test1            500      500",
-            "In unknown                20    13152",
-            "Out bills:electric     -1174         ",
-            "Out bills:internet               -488",
-            "Out bills:rent        -12500         ",
-            "Out clubmate           -1500         ",
+            "bills:electric out     -1174         ",
+            "bills:internet out               -488",
+            "bills:rent out        -12500         ",
+            "clubmate in             1500         ",
+            "clubmate out           -1500         ",
+            "dues:test1 in            500      500",
+            "unknown in                20    13152",
             "",
             "MONTH Sub Total       -13154    13164",
             "RUNNING Balance       -13154       10",

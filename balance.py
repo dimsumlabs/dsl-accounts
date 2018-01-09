@@ -178,7 +178,7 @@ def grid_render_rows(months, tags, grid, months_len, tags_len):
                 cells.append('')
 
         s += grid_render_onerow(
-            tag.capitalize(), tags_len,
+            tag, tags_len,
             cells, months_len
         )
 
@@ -304,9 +304,9 @@ def subp_grid(args):
             row.hashtag = 'unknown'
 
         if row.direction == 'outgoing':
-            row.hashtag = 'out ' + row.hashtag
+            row.hashtag = row.hashtag + ' out'
         else:
-            row.hashtag = 'in ' + row.hashtag
+            row.hashtag = row.hashtag + ' in'
 
     (months, grid, totals) = grid_accumulate(args.rows)
     tags = args.rows.group_by('hashtag').keys()
