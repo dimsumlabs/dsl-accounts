@@ -1,6 +1,14 @@
 balance:
 	python balance.py --split make_balance > docs/index.html
 
+report:
+	git describe --always --dirty
+	@echo
+	./balance.py --split grid
+	@echo
+	./balance.py --split --filter 'month>2016-08' --filter 'month!=2017-07' stats
+
+
 docker:
 	docker build -t dsl-accounts .
 	docker run --rm dsl-accounts
