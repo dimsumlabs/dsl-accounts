@@ -9,3 +9,15 @@ install:
 
 script:
   - make test
+  - make pages
+
+deploy:
+    provider: pages
+    repo: dimsumlabs/dsl-accounts-pages
+    local-dir: docs
+    target-branch: master
+    skip-cleanup: true
+    github-token: $GITHUB_TOKEN
+    on:
+        branch: master
+        python: 3.5

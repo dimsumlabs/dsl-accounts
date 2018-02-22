@@ -1,5 +1,22 @@
-balance:
+# this target is kept for a short time for historical purposes
+balance: pages
+
+# Generate the output into the docs directory, ready for publishing with
+# something like github pages
+#
+.PHONY: pages
+pages:
 	python balance.py --split make_balance > docs/index.html
+	python balance.py --split json_payments > docs/payments.json
+	$(MAKE) report > docs/report.txt
+
+report:
+	git describe --always --dirty
+	@echo
+	./balance.py --split grid
+	@echo
+	./balance.py --split --filter 'month>2016-08' --filter 'month!=2017-07' stats
+
 
 docker:
 	docker build -t dsl-accounts .
@@ -31,4 +48,4 @@ cover.percent:
 	coverage report --fail-under=100
 
 clean:
-	rm -rf htmlcov .coverage
+	rm -rf htmlcov .coverage docs/index.html docs/payments.json docs/report.txt
