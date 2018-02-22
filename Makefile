@@ -1,5 +1,8 @@
-balance:
+balance: docs
+.PHONY: docs
+docs:
 	python balance.py --split make_balance > docs/index.html
+	python balance.py --split json_payments > docs/payments.json
 
 report:
 	git describe --always --dirty
@@ -39,4 +42,4 @@ cover.percent:
 	coverage report --fail-under=100
 
 clean:
-	rm -rf htmlcov .coverage
+	rm -rf htmlcov .coverage docs/index.html docs/payments.json
