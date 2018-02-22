@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+# Get the list of people on the mailing list 
+#
+
+echo "name,email"
+ssh -t dimsumlabs.com sudo list_members -f dimsumlabs-members |sed -e '/</!s/^/,/;s/[ \t]*<\(.*\)>/,\1/' |sort
+

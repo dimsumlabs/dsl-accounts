@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# Get a list from the accounts system
+#
+# This is such a hack
+#
+
+echo "handle,month_last_paid"
+
+../balance.py --split json_payments |json_pp |grep dues: |sed -e "s/^   //;s/ : /,/;s/dues://" |sort
+

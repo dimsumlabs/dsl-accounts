@@ -495,7 +495,14 @@ def subp_stats(args):
 
     s += "\n"
     s += "members needed\n"
-    for dues in (500, 600, 700):
+
+    # Which fee rates do we want to see membership numbers for?
+    # Add in the recent official numbers
+    fees_rates = set([500, 700])
+    # Also add in some of the average revenue numbers
+    fees_rates.add(result['Average']['ARPM'])
+    fees_rates.add(result['MonthTD']['ARPM'])
+    for dues in sorted(fees_rates):
         s += grid_render_onerow(
             " dues {}".format(dues), tags_len,
             [members_given_dues_outgoing(dues, result[x]['outgoing'])
@@ -504,7 +511,14 @@ def subp_stats(args):
         )
 
     s += "dues needed\n"
-    for members in (17, 20, 25, 30):
+
+    # Which membership numbers do we want to see needed fees for?
+    members_count = set([17, 30])
+    # add in some of the average member numbers
+    members_count.add(result['Average']['members'])
+    members_count.add(result['MonthTD']['members'])
+
+    for members in sorted(members_count):
         s += grid_render_onerow(
             " members {}".format(members), tags_len,
             [dues_given_members_outgoing(members, result[x]['outgoing'])
