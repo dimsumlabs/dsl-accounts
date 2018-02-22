@@ -13,8 +13,9 @@ script:
 
 deploy:
     provider: pages
-    repo: dimsumlabs/dsl-accounts-pages.git
+    repo: dimsumlabs/dsl-accounts-pages
     local-dir: docs
+    target-branch: master
     skip-cleanup: true
     github-token: $GITHUB_TOKEN
     on:
