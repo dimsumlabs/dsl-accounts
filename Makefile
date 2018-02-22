@@ -1,6 +1,11 @@
-balance: docs
-.PHONY: docs
-docs:
+# this target is kept for a short time for historical purposes
+balance: pages
+
+# Generate the output into the docs directory, ready for publishing with
+# something like github pages
+#
+.PHONY: pages
+pages:
 	python balance.py --split make_balance > docs/index.html
 	python balance.py --split json_payments > docs/payments.json
 
