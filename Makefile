@@ -8,6 +8,7 @@ balance: pages
 pages:
 	python balance.py --split make_balance > docs/index.html
 	python balance.py --split json_payments > docs/payments.json
+	$(MAKE) report > docs/report.txt
 
 report:
 	git describe --always --dirty
@@ -47,4 +48,4 @@ cover.percent:
 	coverage report --fail-under=100
 
 clean:
-	rm -rf htmlcov .coverage docs/index.html docs/payments.json
+	rm -rf htmlcov .coverage docs/index.html docs/payments.json docs/report.txt
