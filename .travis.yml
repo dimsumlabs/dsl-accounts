@@ -20,3 +20,4 @@ deploy:
     github-token: $GITHUB_TOKEN
     on:
         branch: master
+        python: 3.5
