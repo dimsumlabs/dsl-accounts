@@ -376,11 +376,19 @@ def subp_make_balance(args):
 
         return date
 
+    def _iso8601_str():
+        """Oh Python, why oh why is this so hard to do properly?
+        """
+        now = datetime.datetime.utcnow()
+        delta_str = "Z"
+        return now.strftime('%FT%T') + delta_str
+
     macros = {
         'balance_sum': args.rows.value,
         'grid_header': header,
         'grid':        grid,
         'rent_due':    _get_next_rent_month(),
+        'time_now':    _iso8601_str(),
     }
     return string.Template(tpl).substitute(macros)
 
