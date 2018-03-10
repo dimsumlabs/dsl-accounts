@@ -30,6 +30,7 @@ deploy: pages
             false; \
 	fi
 	@cd pages; git remote add origin https://$(GITHUB_TOKEN)@github.com/dimsumlabs/dsl-accounts-pages
+	git --version
 	cd pages; git push --verbose --force origin master:master
 
 report:
