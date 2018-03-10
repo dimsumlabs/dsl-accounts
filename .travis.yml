@@ -12,8 +12,14 @@ script:
   - make pages
 
 deploy:
-    provider: script
-    script: make deploy
+    provider: pages
+    edge:
+        branch: v1.8.47
+    repo: dimsumlabs/dsl-accounts-pages
+    local-dir: docs
+    target-branch: master
+    skip-cleanup: true
+    github-token: $GITHUB_TOKEN
     on:
         branch: master
         python: 3.5
