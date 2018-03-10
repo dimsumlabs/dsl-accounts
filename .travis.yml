@@ -16,7 +16,7 @@ deploy:
     edge:
         branch: v1.8.47
     repo: dimsumlabs/dsl-accounts-pages
-    local-dir: docs
+    local-dir: pages
     target-branch: master
     skip-cleanup: true
     github-token: $GITHUB_TOKEN
