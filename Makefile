@@ -26,12 +26,10 @@ deploy: pages
 	cd pages; git commit -m "Auto Deploy"
 	@if [ -z "$(GITHUB_TOKEN)" ]; then \
             echo ERROR: no token found in environment, manual deploy required; \
-            echo Run git push --force origin master or similar; \
             false; \
 	fi
 	@cd pages; git remote add origin https://$(GITHUB_TOKEN)@github.com/dimsumlabs/dsl-accounts-pages
-	cd pages; git remote -v
-	cd pages; git push --verbose --force origin master:master
+	cd pages; git push --force origin master:master
 
 report:
 	git describe --always --dirty
