@@ -1,14 +1,35 @@
 # this target is kept for a short time for historical purposes
 balance: pages
 
-# Generate the output into the docs directory, ready for publishing with
+# Generate the output into the pages directory, ready for publishing with
 # something like github pages
 #
 .PHONY: pages
 pages:
-	python balance.py --split make_balance > docs/index.html
-	python balance.py --split json_payments > docs/payments.json
-	$(MAKE) report > docs/report.txt
+	mkdir -p pages
+	python balance.py --split make_balance > pages/index.html
+	python balance.py --split json_payments > pages/payments.json
+	cp docs/pressstart2p.ttf pages
+	$(MAKE) report > pages/report.txt
+
+# Replicate the travisCI deploy pages provider.
+#
+# This open-coded version is more understandable, more debuggable and
+# more likely to be reusuable on other CI systems.
+#
+# But most importantly, it is not broken in some unfathomable way.
+#
+deploy: pages
+	rm -rf pages/.git
+	git init pages
+	cd pages; git add -A .
+	cd pages; git commit -m "Auto Deploy"
+	@echo Run git push --force https://github.com/dimsumlabs/dsl-accounts-pages master:master
+	@if [ -z "$(GITHUB_TOKEN)" ]; then \
+            echo ERROR: no token found in environment, manual deploy required; \
+            false; \
+	fi
+	@cd pages; git push --force https://$(GITHUB_TOKEN)@github.com/dimsumlabs/dsl-accounts-pages master:master
 
 report:
 	git describe --always --dirty

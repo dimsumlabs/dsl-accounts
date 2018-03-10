@@ -1,5 +1,4 @@
 .DS_Store
-docs/index.html
 # ignore python's compiled objects
 *.pyc
 
@@ -7,3 +6,5 @@ docs/index.html
 .coverage
 htmlcov
 
+# ignore our staging area for the generated pages
+pages
