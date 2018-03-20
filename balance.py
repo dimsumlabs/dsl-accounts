@@ -377,8 +377,22 @@ def subp_make_balance(args):
         return date
 
     def _iso8601_str():
-        """Oh Python, why oh why is this so hard to do properly?
+        """Why oh why is this so hard to do?
         """
+        # now = datetime.datetime.now()
+        # now_timestamp = now.timestamp()
+        # utc_horror = datetime.datetime.utcfromtimestamp( now_timestamp ).timestamp() # noqa
+        # delta_min = (now_timestamp - utc_horror) //60
+        # sign="+"
+        # if (delta_min<0):
+        #     sign="-"
+        #     delta_min = abs(delta_min)
+
+        # delta_hr = delta_min /60.0
+        # delta_min = (int(delta_hr) - delta_hr) * 60
+        # delta_hr = int(delta_hr)
+        # delta_str = sign+"{:02d}:{:02d}".format(delta_hr, delta_min)
+
         now = datetime.datetime.utcnow()
         delta_str = "Z"
         return now.strftime('%FT%T') + delta_str
