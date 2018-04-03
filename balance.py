@@ -510,6 +510,10 @@ def subp_stats(args):
         ))
 
     def dues_given_members_outgoing(members, rowset):
+        if members == 0:
+            # no value possible!
+            return 0;
+
         months = len(rowset.group_by('month').keys())
         return abs(rowset.value / members / months).to_integral_exact(
                 rounding=decimal.ROUND_FLOOR
