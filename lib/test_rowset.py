@@ -21,12 +21,12 @@ import rowset as balance # noqa
 class TestRowSet(unittest.TestCase):
     def setUp(self):
         r = [None for x in range(6)]
-        r[0] = balance.Row("10", "1970-02-06", "comment4", "outgoing")
-        r[1] = balance.Row("10", "1970-01-05", "comment1", "incoming")
-        r[2] = balance.Row("10", "1970-01-10", "comment2 #rent", "outgoing")
-        r[3] = balance.Row("10", "1970-01-01", "comment3 #water", "outgoing")
-        r[4] = balance.Row("10", "1970-03-01", "comment5 #rent", "outgoing")
-        r[5] = balance.Row("15", "1970-01-11", "comment6 #water !months:3", "outgoing") # noqa
+        r[0] = balance.Row("-10", "1970-02-06", "comment4") # noqa
+        r[1] = balance.Row( "10", "1970-01-05", "comment1") # noqa
+        r[2] = balance.Row("-10", "1970-01-10", "comment2 #rent") # noqa
+        r[3] = balance.Row("-10", "1970-01-01", "comment3 #water") # noqa
+        r[4] = balance.Row("-10", "1970-03-01", "comment5 #rent") # noqa
+        r[5] = balance.Row("-15", "1970-01-11", "comment6 #water !months:3") # noqa
         self.rows_array = r
 
         self.rows = balance.RowSet()
@@ -40,16 +40,16 @@ class TestRowSet(unittest.TestCase):
 
         self.assertEqual(self.rows.value, -45)
 
-        self.rows.append(balance.Row("0.5", "1970-03-12", "comment9", "outgoing")) # noqa
-        self.rows.append(balance.Row("0.5", "1970-03-13", "comment10", "outgoing")) # noqa
+        self.rows.append(balance.Row("-0.5", "1970-03-12", "comment9")) # noqa
+        self.rows.append(balance.Row("-0.5", "1970-03-13", "comment10")) # noqa
         self.assertEqual(str(self.rows.value), '-46')
 
     def test_nested_rowset(self):
         self.rows.append(self.rows_array)
 
         r = [None for x in range(2)]
-        r[0] = balance.Row("13", "1971-02-06", "comment7", "outgoing")
-        r[1] = balance.Row("12", "1971-01-05", "comment8", "incoming")
+        r[0] = balance.Row("-13", "1971-02-06", "comment7") # noqa
+        r[1] = balance.Row( "12", "1971-01-05", "comment8") # noqa
         self.rows.append(r)
 
         self.assertEqual(self.rows.value, -46)

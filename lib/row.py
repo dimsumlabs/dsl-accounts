@@ -18,23 +18,9 @@ import re
 
 class Row(namedtuple('Row', ('value', 'date', 'comment'))):
 
-    def __new__(cls, value, date, comment, direction):
+    def __new__(cls, value, date, comment):
         value = decimal.Decimal(value)
         date = datetime.datetime.strptime(date.strip(), "%Y-%m-%d").date()
-
-        if direction not in ('incoming', 'outgoing', 'signed'):
-            raise ValueError('Direction "{}" unhandled'.format(direction))
-
-        if direction != 'signed':
-            # If the direction is not 'signed', we use the direction
-            # field as the sign, so it is impossible to have a negative
-            # value - check that here
-            if value < 0:
-                raise ValueError('Value "{}" is negative'.format(value))
-
-        # Inverse value
-        if direction == 'outgoing':
-            value = decimal.Decimal(0)-value
 
         obj = super(cls, Row).__new__(cls, value, date, comment)
 
@@ -203,7 +189,7 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
                 datestr = date.isoformat()
                 this_value = each_value + remainder
                 remainder = 0  # only add the remainder to the first child
-                rows.append(Row(this_value, datestr, comment, 'signed'))
+                rows.append(Row(this_value, datestr, comment))
 
         elif method == 'proportional':
             # The 'proportional' splitting attempts to pro-rata the transaction
@@ -218,6 +204,10 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
             # The hope is that this "end date" is good enough to be used as
             # a data source for membership end dates, but neither analysis nor
             # discussion has been done on this.
+            #
+            # TODO
+            # - the code has rotted - it depends on calling Row() with
+            #   the old direction arg
 
             value = self.value  # the total value available to share
 
