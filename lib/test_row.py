@@ -36,34 +36,17 @@ class fakedatetime(datetime.datetime):
 class TestRowClass(unittest.TestCase):
     def setUp(self):
         r = [None for x in range(7)]
-        r[0] = balance.Row("100", "1970-01-01", "incoming comment", "incoming")
-        r[1] = balance.Row("100", "1970-01-02", "outgoing comment", "outgoing")
-        r[2] = balance.Row( "10", "1970-01-03", "a !bangtag", "incoming") # noqa
-        r[3] = balance.Row("100", "1970-01-04", "a #hashtag", "incoming")
-        r[4] = balance.Row("100", "1972-02-29", "!months:-1:5", "incoming")
-        r[5] = balance.Row("100", "1972-01-31", "!months:4", "incoming")
-        r[6] = balance.Row("100", "1970-01-05", "!months:3", "incoming")
+        r[0] = balance.Row( "100", "1970-01-01", "incoming comment") # noqa
+        r[1] = balance.Row("-100", "1970-01-02", "outgoing comment")
+        r[2] = balance.Row(  "10", "1970-01-03", "a !bangtag") # noqa
+        r[3] = balance.Row( "100", "1970-01-04", "a #hashtag") # noqa
+        r[4] = balance.Row( "100", "1972-02-29", "!months:-1:5") # noqa
+        r[5] = balance.Row( "100", "1972-01-31", "!months:4") # noqa
+        r[6] = balance.Row( "100", "1970-01-05", "!months:3") # noqa
         self.rows = r
 
     def tearDown(self):
         self.rows = None
-
-    def test_direction(self):
-        with self.assertRaises(ValueError):
-            balance.Row("100", "1970-01-01", "a comment", "fred")
-
-        self.assertEqual(
-            balance.Row("100", "1970-01-01", "a comment", "signed").value,
-            100
-        )
-        self.assertEqual(
-            balance.Row("-100", "1970-01-01", "a comment", "signed").value,
-            -100
-        )
-
-    def test_value(self):
-        with self.assertRaises(ValueError):
-            balance.Row("-100", "1970-01-01", "a comment", "incoming")
 
     def test_incoming(self):
         obj = self.rows[0]
@@ -95,14 +78,14 @@ class TestRowClass(unittest.TestCase):
         self.assertEqual(self.rows[3].hashtag, 'hashtag')
 
         with self.assertRaises(ValueError):
-            balance.Row("100", "1970-01-01", "#two #hashtags", "incoming")
+            balance.Row("100", "1970-01-01", "#two #hashtags")
 
     def test_bangtag(self):
         self.assertEqual(self.rows[0].bangtag(), None)
 
         self.assertEqual(self.rows[2].bangtag(), 'bangtag')
 
-        obj = balance.Row("100", "1970-01-01", "!two !bangtags", "incoming")
+        obj = balance.Row("100", "1970-01-01", "!two !bangtags")
         with self.assertRaises(ValueError):
             obj.bangtag()
 
@@ -160,10 +143,10 @@ class TestRowClass(unittest.TestCase):
             datetime.date(1972, 4, 30),
         ])
 
-        obj = balance.Row("100", "1970-01-01", "!months", "incoming")
+        obj = balance.Row("100", "1970-01-01", "!months")
         with self.assertRaises(ValueError):
             obj._split_dates()
-        obj = balance.Row("100", "1970-01-01", "!months:1:2:3", "incoming")
+        obj = balance.Row("100", "1970-01-01", "!months:1:2:3")
         with self.assertRaises(ValueError):
             obj._split_dates()
 
@@ -172,26 +155,26 @@ class TestRowClass(unittest.TestCase):
 
         # showing we can have a leap day if it is the original row date
         self.assertEqual(self.rows[4].autosplit(), [
-            balance.Row("20", "1972-01-29", "!months:-1:5 !child", "incoming"),
-            balance.Row("20", "1972-02-29", "!months:-1:5 !child", "incoming"),
-            balance.Row("20", "1972-03-29", "!months:-1:5 !child", "incoming"),
-            balance.Row("20", "1972-04-29", "!months:-1:5 !child", "incoming"),
-            balance.Row("20", "1972-05-29", "!months:-1:5 !child", "incoming"),
+            balance.Row("20", "1972-01-29", "!months:-1:5 !child"),
+            balance.Row("20", "1972-02-29", "!months:-1:5 !child"),
+            balance.Row("20", "1972-03-29", "!months:-1:5 !child"),
+            balance.Row("20", "1972-04-29", "!months:-1:5 !child"),
+            balance.Row("20", "1972-05-29", "!months:-1:5 !child"),
         ])
 
         # showing the end of month clamping to different values
         self.assertEqual(self.rows[5].autosplit(), [
-            balance.Row("25", "1972-01-31", "!months:4 !child", "incoming"),
-            balance.Row("25", "1972-02-29", "!months:4 !child", "incoming"),
-            balance.Row("25", "1972-03-31", "!months:4 !child", "incoming"),
-            balance.Row("25", "1972-04-30", "!months:4 !child", "incoming"),
+            balance.Row("25", "1972-01-31", "!months:4 !child"),
+            balance.Row("25", "1972-02-29", "!months:4 !child"),
+            balance.Row("25", "1972-03-31", "!months:4 !child"),
+            balance.Row("25", "1972-04-30", "!months:4 !child"),
         ])
 
         # showing the rounding and kept remainder
         self.assertEqual(self.rows[6].autosplit(), [
-            balance.Row("34", "1970-01-05", "!months:3 !child", "incoming"),
-            balance.Row("33", "1970-02-05", "!months:3 !child", "incoming"),
-            balance.Row("33", "1970-03-05", "!months:3 !child", "incoming"),
+            balance.Row("34", "1970-01-05", "!months:3 !child"),
+            balance.Row("33", "1970-02-05", "!months:3 !child"),
+            balance.Row("33", "1970-03-05", "!months:3 !child"),
         ])
 
         # TODO - at at least a trivial example showing method==proportional
