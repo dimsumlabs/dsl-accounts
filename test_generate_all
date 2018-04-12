@@ -33,6 +33,6 @@ for i in $SIMPLE; do
 done
 
 for i in $JSON; do
-    ./balance.py --split $i |json_pp |sort >$OUTDIR/$i
+    ./balance.py --split $i |json_pp |sort |sed -e 's/,$//' >$OUTDIR/$i
 done
 
