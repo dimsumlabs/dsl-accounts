@@ -1,5 +1,6 @@
 1000	2017-01-02	#dues:stigo !months:2
 500	2017-01-02	#dues:syed
+-100	2017-01-02	PayPal fees #fees:paypal
 500	2017-01-03	#dues:stigo !months:2:1
 200	2017-01-03	#dues:tobias
 500	2017-01-03	#dues:james
@@ -9,6 +10,8 @@
 500	2017-01-08	#dues:meebey
 500	2017-01-11	#dues:tom
 500	2017-01-11	Donation Tom #workshop
+-976	2017-01-11	Tom PCCW overdue bill #bills:internet !months:-1:2
+-12500	2017-01-16	Rent #bills:rent !months:-1:1
 500	2017-01-17	#dues:adam
 500	2017-01-17	#dues:lio
 500     2017-01-17	#dues:luca
@@ -16,6 +19,7 @@
 500     2017-01-17      #dues:julianlee
 500     2017-01-17      #dues:charles
 70	2017-01-17      donation ben
+-100	2017-01-17	PayPal fees #fees:paypal
 100	2017-01-16	Donation Luca
 40	2017-01-16	Donations
 200	2017-01-24	#dues:brad

@@ -11,6 +11,9 @@
 500 2017-10-10 #dues:julianlee
 500 2017-10-10 #dues:lio
 200 2017-10-10 #dues:stigo !months:1:1
+-200 2017-10-10 #fees:paypal
+-2100 2017-10-10 #loan Repay Hamish for his loan dated 2017-09-29
+-238 2017-10-10 #fridge Ensure there are drinks in the fridge for the Noisebridge visit
 800 2017-10-11 #tshirt sold 4 shirts to Noisebridge visitors
 1280 2017-10-11 donations, fridge and sticker sales
 700 2017-10-11 #dues:meebey
@@ -33,6 +36,9 @@
 530 2017-10-25 donations
 270 2017-10-25 #fridge remove notes from fridge change box
 24 2017-10-25 count some of the coins in the donation box
+-12500 2017-10-25 #bills:rent (was due 2017-09-24)
+-724 2017-10-25 #bills:electricity (was due 2017-09-29) !months:-1:1
+-172.70 2017-10-27 #fridge filled the fridge with beer and softdrinks (Note 7HKD ended up as coins in the cashbox)
 202.70 2017-10-31 donations
 500 2017-10-31 #dues:manolis
 200 2017-10-31 #dues:tobias
