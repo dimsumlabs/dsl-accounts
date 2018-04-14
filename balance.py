@@ -50,14 +50,6 @@ def parse_dir(dirname):   # pragma: no cover
     '''Take all files in dirname and return Row instances'''
 
     for filename in os.listdir(dirname):
-        if not re.match(r'^(incoming|outgoing)-\d{4}-\d{2}', filename):
-            sys.stderr.write(
-                'Filename "{}" not valid, put into proper accounting file\n'
-                .format(filename))
-            continue
-
-        direction, _ = filename.split('-', 1)
-
         with open(os.path.join(dirname, filename), 'r') as tsvfile:
             for row in tsvfile.readlines():
                 row = row.rstrip('\n')
@@ -67,10 +59,7 @@ def parse_dir(dirname):   # pragma: no cover
                     # skip comment lines
                     # - in future there might be meta/pragmas
                     continue
-                yield Row(*re.split(r'\s+', row,
-                                    # Number of splits (3 fields)
-                                    maxsplit=2),
-                          direction=direction)
+                yield Row(*re.split(r'\s+', row, maxsplit=2))
 
 
 def render_month(date):
@@ -414,7 +403,7 @@ def subp_stats(args):
 
     def make_rowset(value):
         r = RowSet()
-        r.append(Row(value, '1970-01-01', 'fake row', 'signed'))
+        r.append(Row(value, '1970-01-01', 'fake row'))
         return r
 
     def stats_rowset(rowset):

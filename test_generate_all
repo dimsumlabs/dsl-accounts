@@ -1,0 +1,38 @@
+#!/bin/bash
+#
+# Generate a full set of output files from the data.  This is intended to be
+# used to allow testing larger changes to the code or data - a before and an
+# after dataset can be generated and diffed.
+#
+# In order to allow diffing, some files are pretty printed and/or sorted
+# (Eg: the json_payments output) which may render that data file unusable
+# for any normal use.
+#
+# An example use:
+#
+# ./test_generate_all 1
+# ## make a lot of changes
+# ./test_generate_all 2
+# diff -ur 1 2
+#
+
+OUTDIR="$1"
+if [ -z "$OUTDIR" ]; then
+    echo Please provide output dir
+    exit 1
+fi
+shift
+
+mkdir -p "$OUTDIR"
+
+SIMPLE="topay make_balance grid party sum topay_html stats csv"
+JSON=json_payments
+
+for i in $SIMPLE; do
+    ./balance.py --split $i >$OUTDIR/$i
+done
+
+for i in $JSON; do
+    ./balance.py --split $i |json_pp |sort |sed -e 's/,$//' >$OUTDIR/$i
+done
+
