@@ -18,7 +18,11 @@ class fakedatetime(datetime.datetime):
 
     @classmethod
     def now(cls):
-        return cls(1990, 5, 4, 12, 12, 12, 0)
+        # was cls(1990, 5, 4, 12, 12, 12), but apparently I need to write
+        # an entire subclass to specify a simplistic "none" timezone.  Or
+        # install one of many packages - none of which are included with
+        # python...  batteries indeed.
+        return cls.utcfromtimestamp(641823132)
 
 
 class TestMisc(unittest.TestCase):
