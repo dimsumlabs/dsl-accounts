@@ -11,7 +11,7 @@
 500 2017-08-03 #dues:meebey
 500 2017-08-03 #dues:leviathan
 40  2017-08-03 Donations metal box
-130 2017-08-04 Club Mate
+130 2017-08-04 #fridge Club Mate
 1000 2017-08-08 #donation:members Lio
 500 2017-08-08 #dues:jd
 500 2017-08-08 #dues:luca
@@ -36,13 +36,13 @@
 # Counted the notes in the cash box and it totalled 1570
 780 2017-08-15 Donations from the mailbox tin
 75 2017-08-15 #dues:hamish pay the remainder of my monthly dues
-1000 2017-08-16 MaxMSP workshop
-600 2017-08-21 MaxMSP workshop
+1000 2017-08-16 MaxMSP #workshop
+600 2017-08-21 MaxMSP #workshop
 500 2017-08-21 #dues:devon !months:1:1
 500 2017-08-21 #dues:hans !months:1:1
 500 2017-08-21 #dues:tom
 50 2017-08-21 donation
-400 2017-08-23 MaxMSP workshop
+400 2017-08-23 MaxMSP #workshop
 # As of this line, Devon counted the cash and it totalled 5576.22, which is close enough to the accounting balance of 5575
 # (Please see the file notes-2017-08)
 #	Crashed the brittle software so removed from dsl-accounts/cash/incoming-2017-08

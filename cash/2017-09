@@ -1,6 +1,6 @@
 500 2017-09-01 #dues:shing
 6000 2017-09-04 bookshelves rent #bookshelves !months:3    // Sep-Oct-Nov
-200 2017-09-04 tshirt
+200 2017-09-04 #tshirt
 500 2017-09-04 #dues:kam     // new member Kam: tai54212@gmail.com
 1000 2017-09-04 #dues:anthony !months:2
 374 2017-09-04 donation from mailbox
@@ -23,26 +23,26 @@
 500 2017-09-05 #dues:luca
 500 2017-09-05 #dues:julianlee
 500 2017-09-05 #dues:lio
-1586.24 2017-09-05 workshop MaxMSP
+1586.24 2017-09-05 #workshop MaxMSP
 -686.24 2017-09-05 Paypal fees #fees:paypal
 -2505 2017-09-11 #bills:electricity !months:-3:3
--200 2017-09-11 luca workshop payback
+-200 2017-09-11 luca #workshop payback
 -17.75 2017-09-12 Paypal fees #fees:paypal
 500 2017-09-12 #donation:c3 benedict (c3)
 200 2017-09-12 #dues:stigo !months:1:1
 500 2017-09-12 #dues:igor !months:1:1
 500 2017-09-12 #donation:c3 sarah (c3)
 300 2017-09-12 #donation:c3 Dawn Walker (c3)
-417.75 2017-09-12 workshop MaxMSP
+417.75 2017-09-12 #workshop MaxMSP
 # I counted the cash box and it totalled 6430 (plus change), which is 115 less than the accounting balance of 6545
 # I counted the cash box and it totalled 6430 (plus change), which is 115 less than the accounting balance of 6545
 -115 2017-09-12 Force accounts balance to match counted cash balance
 200 2017-09-12 #dues:brad
--200 2017-09-14 luca workshop payback
+-200 2017-09-14 luca #workshop payback
 500 2017-09-26 #dues:manolis
 500 2017-09-26 #dues:pierre !months:1:1
 200 2017-09-26 #dues:tobias
-417.75 2017-09-26 donations Luca Workshop
+417.75 2017-09-26 #workshop Luca
 -82.25 2017-09-26 Paypal fees #fees:paypal
 # I counted the cash box and it totalled 8130 (plus change), which is 164.5 more than the accounting balance of 7965.50
 164.5 2017-09-28 extra to make accounting match the cash box
