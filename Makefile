@@ -31,13 +31,19 @@ deploy: pages
 	@cd pages; git remote add origin https://$(GITHUB_TOKEN)@github.com/dimsumlabs/dsl-accounts-pages
 	cd pages; git push --force origin master:master
 
-report:
+report.describe:
 	git describe --always --dirty
 	@echo
+
+report.grid:
 	./balance.py --split grid
 	@echo
-	./balance.py --split --filter 'month>2016-08' --filter 'month!=2017-07' stats
 
+report.stats:
+	./balance.py --split --filter 'month>2016-08' --filter 'month!=2017-07' stats
+	@echo
+
+report: report.describe report.grid report.stats
 
 docker:
 	docker build -t dsl-accounts .
