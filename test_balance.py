@@ -292,6 +292,11 @@ class TestSubp(unittest.TestCase):
         want = '(due on: <span class="color_neg">1990-04-23</span>) Rent:'
         self.assertTrue(want in got)
 
+# TODO
+# - test create_stats() independantly
+# - add a test with a mocked time that has no members paid (to test the
+#   zero divsion avoidance if test in the ARPM generation)
+
     @mock.patch('balance.datetime.datetime', fakedatetime)
     def test_stats(self):
         # FIXME - this would look more meaningful with at least one more

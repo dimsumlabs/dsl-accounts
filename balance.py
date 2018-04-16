@@ -396,7 +396,7 @@ def subp_make_balance(args):
     return string.Template(tpl).substitute(macros)
 
 
-def subp_stats(args):
+def create_stats(args):
     # stats are only likely to be valid for previous months
     rows = args.rows.filter(['rel_months<0'])
     current_month = args.rows.filter(['rel_months==0'])
@@ -428,9 +428,6 @@ def subp_stats(args):
     for k, month in months.items():
         result[k] = stats_rowset(month)
 
-    months_len = render_month_len()+2
-    tags_len = 13
-
     months = sorted(result.keys())
 
     result['Total'] = stats_rowset(rows)
@@ -453,6 +450,21 @@ def subp_stats(args):
     months.append('Average')
     months.append('MonthTD')
     months.append('Total')
+
+    balance = 0
+    for month in months:
+        result[month]['subtotal'] = result[month]['incoming'].value + result[month]['outgoing'].value
+        balance += result[month]['subtotal']
+        result[month]['balance'] = balance
+
+    return result, months
+
+
+def subp_stats(args):
+    result, months = create_stats(args)
+
+    months_len = render_month_len()+2
+    tags_len = 13
 
     s = []
     s += grid_render_colheader(months, months_len, tags_len)
