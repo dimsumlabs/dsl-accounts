@@ -3,7 +3,7 @@
 200 2017-10-10 #dues:brad
 500 2017-10-10 #dues:sunny
 500 2017-10-10 #dues:nicolas
-500 2017-10-10 donation chris.edsall (c3)
+500 2017-10-10 #dues:christopher chris.edsall (c3) !months:1:1
 500 2017-10-10 #dues:james
 500 2017-10-10 #dues:neil (was pahl)
 500 2017-10-10 #dues:jd
@@ -48,6 +48,6 @@
 500 2017-10-31 #dues:james !months:1:1
 500 2017-10-31 #dues:neil !months:1:1
 500 2017-10-31 #dues:christopher
-100 2017-10-31 donation - Garry Ing (c3)
-500 2017-10-31 donation - manolis
+100 2017-10-31 #donation:c3 - Garry Ing (c3)
+500 2017-10-31 #donation:members - manolis
 500 2017-10-31 #dues:jim

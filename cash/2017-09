@@ -17,7 +17,7 @@
 74 2017-09-05 donations
 500 2017-09-05 #dues:igor
 500 2017-09-05 #dues:elliot
-300 2017-09-05 donations stigo
+300 2017-09-05 #donation:members stigo
 500 2017-09-05 #dues:neil
 500 2017-09-05 #dues:jd
 500 2017-09-05 #dues:luca
@@ -28,11 +28,11 @@
 -2505 2017-09-11 #bills:electricity !months:-3:3
 -200 2017-09-11 luca workshop payback
 -17.75 2017-09-12 Paypal fees #fees:paypal
-500 2017-09-12 #dues:benedict (c3)
+500 2017-09-12 #donation:c3 benedict (c3)
 200 2017-09-12 #dues:stigo !months:1:1
 500 2017-09-12 #dues:igor !months:1:1
-500 2017-09-12 donation sarah (c3)
-300 2017-09-12 donation Dawn Walker (c3)
+500 2017-09-12 #donation:c3 sarah (c3)
+300 2017-09-12 #donation:c3 Dawn Walker (c3)
 417.75 2017-09-12 workshop MaxMSP
 # I counted the cash box and it totalled 6430 (plus change), which is 115 less than the accounting balance of 6545
 # I counted the cash box and it totalled 6430 (plus change), which is 115 less than the accounting balance of 6545
@@ -51,5 +51,5 @@
 2100 2017-09-29 #loan Hamish lends money to DSL in advance of known paypal payments
 500 2017-09-29 #dues:hamish !months:1:1
 500 2017-09-29 #dues:audrey !months:1:1
-240 2017-09-29 donation from Hamish
+240 2017-09-29 #donation:members from Hamish
 -12500 2017-09-29 #bills:rent rent for Sep (was due 2017-08-24)

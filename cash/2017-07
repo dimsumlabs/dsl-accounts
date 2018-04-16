@@ -26,12 +26,12 @@
 500 2017-07-14 #dues:audrey !months:1:1
 200 2017-07-14 Counted the donations box - $30 in notes, $170 in coins
 425 2017-07-14 #dues:hamish !months:1:1 IOU $75, but this was all the cash in my pockets
-500 2017-07-18 Donations
+500 2017-07-18 Donations #donation:members
 500 2017-07-18 #dues:anthony
 710 2017-07-18 Donations
 -12500 2017-07-19 Paying rent for June #bills:rent !months:-1:1
 500 2017-07-25 #dues:manolis
 500 2017-07-25 #dues:elliot
-500 2017-07-25 Donations James
+500 2017-07-25 Donations James #donation:members
 50  2017-07-25 Donations Peter
 -150 2017-07-25 Paypal fees #fees:paypal
