@@ -11,6 +11,7 @@ pages:
 	python balance.py --split json_payments > pages/payments.json
 	cp docs/pressstart2p.ttf pages
 	$(MAKE) report > pages/report.txt
+	python balance.py --split statstsv >pages/stats.tsv
 
 # Replicate the travisCI deploy pages provider.
 #
