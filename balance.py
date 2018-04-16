@@ -292,10 +292,17 @@ def subp_grid(args):
         if row.hashtag is None:
             row.hashtag = 'unknown'
 
-        if row.direction == 'outgoing':
-            row.hashtag = row.hashtag + ' out'
-        else:
-            row.hashtag = row.hashtag + ' in'
+        # Most of the time, the in and out with either be
+        # one-way or balance each other out to zero.  So,
+        # we can avoid the extra lines to separate them.
+        #
+        # Occasionally, we might want to dig into the flow
+        # to see where some strange number comes from
+        if args.separate_inout:
+            if row.direction == 'outgoing':
+                row.hashtag = row.hashtag + ' out'
+            else:
+                row.hashtag = row.hashtag + ' in'
 
     (months, grid, totals) = grid_accumulate(args.rows)
     tags = args.rows.group_by('hashtag').keys()
@@ -685,6 +692,29 @@ if __name__ == '__main__':  # pragma: no cover
     for key, value in subp_cmds.items():
         value['parser'] = subp.add_parser(key, help=value['help'])
         value['parser'].set_defaults(func=value['func'])
+
+    # Add an additional commandline option for the "grid" subcommand
+    subp_cmds['grid']['parser'].add_argument('--separate_inout',        # noqa
+        action='store_const', const=True, default=False,                # noqa
+        help='Show incoming and outgoing on separate lines of the grid' # noqa
+    )                                                                   # noqa
+    #
+    # Hello? is that flake8?  I'd like to talk to you about presentation
+    # values.  I know you like to keep lines under 78 characters wide, and
+    # I support you in this goal, as it mostly makes sense.  I also know that
+    # you like the idea of indenting options to the same depth as the opening
+    # parenthesis, which sometimes makes sense too.
+    # However, if that opening parenthesis is 45 chars deep, and one of the
+    # parameters is a verbose help text line, you are just full of shit and
+    # should be shot if you think the results look sane.
+    #
+    # So I shot you.
+    #
+    # Everybody is sad.  You are sad because I'm not meeting your ugly style
+    # guide, I am sad because all my nicely readable lines now have this ugly
+    # comment at the end of them.
+    #
+    # Now get off my lawn
 
     args = argparser.parse_args()
 

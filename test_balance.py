@@ -250,7 +250,7 @@ class TestSubp(unittest.TestCase):
         got = balance.subp_csv(self).split("\n")
         self.assertEqual(got, expect)
 
-    def test_grid(self):
+    def test_grid1(self):
         expect = [
             "                     1990-04  1990-05",
             "bills:electric out     -1174         ",
@@ -266,6 +266,26 @@ class TestSubp(unittest.TestCase):
             "TOTAL:        10",
         ]
 
+        self.separate_inout = True
+        got = balance.subp_grid(self).split("\n")
+        self.assertEqual(got, expect)
+
+    def test_grid2(self):
+        expect = [
+            "                 1990-04  1990-05",
+            "bills:electric     -1174         ",
+            "bills:internet               -488",
+            "bills:rent        -12500         ",
+            "clubmate               0         ",
+            "dues:test1           500      500",
+            "unknown               20    13152",
+            "",
+            "MONTH Sub Total   -13154    13164",
+            "RUNNING Balance   -13154       10",
+            "TOTAL:        10",
+        ]
+
+        self.separate_inout = False
         got = balance.subp_grid(self).split("\n")
         self.assertEqual(got, expect)
 
