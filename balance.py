@@ -453,7 +453,10 @@ def create_stats(args):
 
     balance = 0
     for month in months:
-        result[month]['subtotal'] = result[month]['incoming'].value + result[month]['outgoing'].value
+        result[month]['subtotal'] = (
+            result[month]['incoming'].value
+            + result[month]['outgoing'].value
+        )
         balance += result[month]['subtotal']
         result[month]['balance'] = balance
 
