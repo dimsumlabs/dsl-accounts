@@ -463,6 +463,60 @@ def create_stats(args):
     return result, months
 
 
+def subp_statstsv(args):
+    result, months = create_stats(args)
+
+    fields = (
+        'balance',
+        'subtotal',
+        'outgoing',
+        'incoming',
+        'dues',
+        'other',
+        'members',
+        'ARPM',
+    )
+    s = []
+
+    s += "#column 1 timestamp\n"
+    column_nr = 3
+    for field in fields:
+        s += '#column '
+        s += str(column_nr)
+        s += ' '
+        s += field
+        column_nr += 1
+        s += "\n"
+
+    for month in months:
+        if isinstance(month, str):
+            # its one of our rollup fake months
+            s += "# x"
+        else:
+            s += month.strftime('%s')
+
+        s += ' '
+        s += render_month(month)
+        s += ' '
+
+        # TODO
+        # - the timestamp is for the 1st of the month, however
+        #   all the stats are "as of end of month" - thus the
+        #   timestamp should probably be incremented to make
+        #   clear to anyone spelunking in the stats
+
+        for field in fields:
+            val = result[month][field]
+            if isinstance(val, (int, decimal.Decimal)):
+                s += str(val)
+            else:
+                s += str(result[month][field].value)
+            s += ' '
+
+        s += "\n"
+    return ''.join(s)
+
+
 def subp_stats(args):
     result, months = create_stats(args)
 
@@ -598,6 +652,10 @@ subp_cmds = {
     'stats': {
         'func': subp_stats,
         'help': 'Output finance stats report',
+    },
+    'statstsv': {
+        'func': subp_statstsv,
+        'help': 'Output finance stats report as TSV',
     },
 }
 

@@ -326,3 +326,25 @@ class TestSubp(unittest.TestCase):
 
         got = balance.subp_stats(self).split("\n")
         self.assertEqual(got, expect)
+
+    @mock.patch('balance.datetime.datetime', fakedatetime)
+    def test_statstsv(self):
+        expect = [
+            '#column 1 timestamp',
+            '#column 3 balance',
+            '#column 4 subtotal',
+            '#column 5 outgoing',
+            '#column 6 incoming',
+            '#column 7 dues',
+            '#column 8 other',
+            '#column 9 members',
+            '#column 10 ARPM',
+            '638899200 1990-04 -13154 -13154 -15174 2020 500 1520 1 500 ',
+            '# x Average -26308 -13154 -15174 2020 500 1520 1 500 ',
+            '# x MonthTD -13144 13164 -488 13652 500 13152 1 500 ',
+            '# x Total -26298 -13154 -15174 2020 500 1520 1 500 ',
+            '',
+        ]
+
+        got = balance.subp_statstsv(self).split("\n")
+        self.assertEqual(got, expect)
