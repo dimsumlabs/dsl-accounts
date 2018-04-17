@@ -46,6 +46,18 @@ FILES_DIR = 'cash'
 decimal.getcontext().rounding = decimal.ROUND_DOWN
 
 
+class HKT(datetime.tzinfo):
+
+    def utcoffset(self, dt):
+        return datetime.timedelta(hours=8)
+
+    def tzname(self, dt):
+        return "HKT"
+
+    def dst(self, dt):
+        return datetime.timedelta(hours=0)
+
+
 def parse_dir(dirname):   # pragma: no cover
     '''Take all files in dirname and return Row instances'''
 
@@ -389,9 +401,8 @@ def subp_make_balance(args):
         # delta_hr = int(delta_hr)
         # delta_str = sign+"{:02d}:{:02d}".format(delta_hr, delta_min)
 
-        now = datetime.datetime.utcnow()
-        delta_str = "Z"
-        return now.strftime('%FT%T') + delta_str
+        now = datetime.datetime.utcnow().replace(tzinfo=HKT())
+        return now.isoformat()
 
     macros = {
         'balance_sum': args.rows.value,
