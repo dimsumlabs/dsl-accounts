@@ -402,7 +402,7 @@ def subp_make_balance(args):
         # delta_str = sign+"{:02d}:{:02d}".format(delta_hr, delta_min)
 
         now = datetime.datetime.utcnow().replace(tzinfo=HKT())
-        return now.isoformat()
+        return now.replace(microsecond=0).isoformat()
 
     macros = {
         'balance_sum': args.rows.value,
