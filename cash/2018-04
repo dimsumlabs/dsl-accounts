@@ -18,3 +18,6 @@
 -12500 2018-04-10 #bills:rent !months:-1:1 Rent for March
 1350 2018-04-15 #donation:members from Audrey towards the power bill
 -1350 2018-04-15 #bills:electricity (was due 2018-02-28, last payment was 2017-10-25) !months:-6:5
+700 2018-04-17 #dues:audrey
+900 2018-04-17 #dues:meebey
+700 2018-04-17 #dues:adam !months:-1:1
