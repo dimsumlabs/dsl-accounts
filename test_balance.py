@@ -18,11 +18,24 @@ class fakedatetime(datetime.datetime):
 
     @classmethod
     def now(cls):
-        # was cls(1990, 5, 4, 12, 12, 12), but apparently I need to write
-        # an entire subclass to specify a simplistic "none" timezone.  Or
-        # install one of many packages - none of which are included with
-        # python...  batteries indeed.
+        # This is similar to cls(1990, 5, 4, 12, 12, 12) but the unix
+        # timestamp is defined as UTC, and thus it is not a time that
+        # floats around depending on which timezone is specified.
+        # The timestamp value can be checked/confirmed with these
+        # cmdlines:
+        #       date --date @641823132 --iso-8601=seconds
+        #       date --date @641823132 --iso-8601=seconds --utc
+        #
         return cls.utcfromtimestamp(641823132)
+
+
+class TestTime(unittest.TestCase):
+
+    def test_iso8601(self):
+        self.assertEqual(
+            balance._iso8601_str(fakedatetime.now()),
+            "1990-05-04T20:12:12+08:00"
+            )
 
 
 class TestMisc(unittest.TestCase):
