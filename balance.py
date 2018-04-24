@@ -75,8 +75,14 @@ def _iso8601_str(dt):
     # delta_hr = int(delta_hr)
     # delta_str = sign+"{:02d}:{:02d}".format(delta_hr, delta_min)
 
-    dt = dt.replace(tzinfo=HKT())
-    return dt.replace(microsecond=0).isoformat()
+    # Ideally, this would work, but the HKT class needs ... something ...
+    # dt = dt.replace(tzinfo=HKT())
+    # return dt.replace(microsecond=0).isoformat()
+
+    dt = dt.replace(microsecond=0)
+    dt = dt + datetime.timedelta(hours=8)
+    timezone_str = "+08:00"
+    return dt.strftime('%FT%T') + timezone_str
 
 
 def parse_dir(dirname):   # pragma: no cover
