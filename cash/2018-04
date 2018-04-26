@@ -33,3 +33,10 @@
 -225 2018-04-24 #fridge
 225 2018-04-24 #loan
 700 2018-04-24 #dues:anthony !months:1:1
+700 2018-04-26 #dues:sunny !months:1:1
+1400 2018-04-26 #dues:nicolas !months:0:2
+700 2018-04-26 #dues:james !months:1:1
+700 2018-04-26 #dues:neil !months:1:1
+500 2018-04-26 #dues:christopher
+-12500 2018-04-26 #bills:rent Rent for April
+40 2018-04-26 #fridge
