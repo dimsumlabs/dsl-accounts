@@ -14,5 +14,14 @@
 500 2018-05-23 #dues:hamish !months:-16:1
 500 2018-05-23 #dues:hamish !months:-17:1
 300 2018-05-23 #loan loan from hamish
--12500 2018-05-24 #bills:rent !months:-1:1 Rent for April
+-12500 2018-05-24 #bills:rent !months:-1:1 Rent for May
 7000 2018-05-24 #loan loan from nicolas
+500 2018-05-24 #workshop introduction to Arduino by Tom
+290 2018-05-25 #fridge
+700 2018-05-25 #dues:manolis
+200 2018-05-25 #dues:tobias
+700 2018-05-25 #dues:richard
+700 2018-05-25 #dues:mazakazu
+100 2018-05-25 donations Hua Qiang Bei visit
+-100 2018-05-25 #fees:paypal
+-2300 2018-05-25 #loan loan from nicolas
