@@ -10,7 +10,6 @@ import json
 import sys
 import csv
 import os
-import re
 
 try:
     # python 2
@@ -86,19 +85,16 @@ def _iso8601_str(dt):
 
 
 def parse_dir(dirname):   # pragma: no cover
-    '''Take all files in dirname and return Row instances'''
+    '''Take all files in dirname and return a RowSet with their contents'''
 
+    result = RowSet()
     for filename in os.listdir(dirname):
+        this = RowSet()
         with open(os.path.join(dirname, filename), 'r') as tsvfile:
-            for row in tsvfile.readlines():
-                row = row.rstrip('\n')
-                if not row:
-                    continue
-                if re.match(r'^#', row):
-                    # skip comment lines
-                    # - in future there might be meta/pragmas
-                    continue
-                yield Row(*re.split(r'\s+', row, maxsplit=2))
+            this.load_file(tsvfile)
+        result.merge(this)
+
+    return result
 
 
 def render_month(date):
@@ -740,8 +736,7 @@ if __name__ == '__main__':  # pragma: no cover
         raise RuntimeError('Directory "{}" does not exist'.format(args.dir))
 
     # first, load the data
-    args.rows = RowSet()
-    args.rows.append(parse_dir(args.dir))
+    args.rows = parse_dir(args.dir)
 
     # optionally split multi-month transactions into one per month
     if args.split:

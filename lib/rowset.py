@@ -2,6 +2,8 @@
 # Licensed under GPLv3
 import decimal
 import types
+import re
+
 
 from row import Row
 
@@ -35,12 +37,19 @@ class RowSet(object):
 
         return sum
 
+    def merge(self, entries):
+        """Given a list of Rows or a RowSet, append each entry to our data
+        """
+        for entry in entries:
+            self.rows.append(entry)
+
     def append(self, item):
+        """Given an object append it opaquely to our data as a single Row
+        """
         if isinstance(item, (Row, RowSet)):
             self.rows.append(item)
         elif isinstance(item, list):
-            for entry in item:
-                self.append(entry)
+            self.merge(item)
         elif isinstance(item, types.GeneratorType):
             # Yes, we could get fancy and store the generator and only
             # render it when we need to, but that would also need us to
@@ -49,6 +58,23 @@ class RowSet(object):
             self.append(list(item))
         else:
             raise ValueError('dont know how to append {}'.format(item))
+
+    def load_file(self, stream):
+        """Given an open file handle, read Row lines into this RowSet
+        """
+        for row in stream.readlines():
+            row = row.rstrip('\n')
+
+            if not row:
+                # Skip blank lines
+                continue
+
+            if re.match(r'^#', row):
+                # skip comment lines
+                # - in future there might be meta/pragmas
+                continue
+
+            self.append(Row(*re.split(r'\s+', row, maxsplit=2)))
 
     def filter(self, filter_strings):
         """Apply the given list of human readable filters to the rows
