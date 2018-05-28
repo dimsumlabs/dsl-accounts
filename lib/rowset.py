@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # Licensed under GPLv3
 import decimal
-import types
 import re
 
 
@@ -50,12 +49,6 @@ class RowSet(object):
             self.rows.append(item)
         elif isinstance(item, list):
             self.merge(item)
-        elif isinstance(item, types.GeneratorType):
-            # Yes, we could get fancy and store the generator and only
-            # render it when we need to, but that would also need us to
-            # take into account the correct ordering for all things
-            # - so until our dataset is huge, just skip the fancy bits
-            self.append(list(item))
         else:
             raise ValueError('dont know how to append {}'.format(item))
 
