@@ -4,3 +4,9 @@
 80 2018-06-02 #fridge
 -50 2018-06-04 #fridge
 110 2018-06-04 #fridge
+6300 2018-06-04 #dues:audrey !months:9 Part of the year in advance payment from our core committed members
+5600 2018-06-04 #dues:hamish !months:8 Part of the year in advance payment from our core committed members
+600 2018-06-04 #dues:hamish !months:8:1 Part of the year in advance payment from our core committed members
+-12500 2018-06-04 #bills:rent Rent for June - was due 24th May (this is paying our back-rent owed)
+-100 2018-06-04 #loan partial repayment to Hamish of last month's loan (200 remaining)
+100 2018-06-04 #dues:hamish !months:8:1 Round partially paid month up using loan money
