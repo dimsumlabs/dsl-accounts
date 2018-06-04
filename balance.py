@@ -175,6 +175,11 @@ def grid_render_totals(months, totals, months_len, tags_len):
     running_total = 0
     for month in months:
         running_total += totals[month]
+
+        # if we have only zeros after the decimal, change to an int
+        if int(running_total) == running_total:
+            running_total = running_total.to_integral_exact()
+
         running_totals.append(running_total)
 
     s += grid_render_onerow(
