@@ -10,3 +10,4 @@
 -12500 2018-06-04 #bills:rent Rent for June - was due 24th May (this is paying our back-rent owed)
 -100 2018-06-04 #loan partial repayment to Hamish of last month's loan (200 remaining)
 100 2018-06-04 #dues:hamish !months:8:1 Round partially paid month up using loan money
+400 2018-06-05 #dues:gregg
