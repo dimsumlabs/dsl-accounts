@@ -11,3 +11,10 @@
 -100 2018-06-04 #loan partial repayment to Hamish of last month's loan (200 remaining)
 100 2018-06-04 #dues:hamish !months:8:1 Round partially paid month up using loan money
 400 2018-06-05 #dues:gregg
+500 2018-06-06 #dues:christopher
+700 2018-06-06 #dues:james
+700 2018-06-06 #dues:neil
+300 2018-06-06 #workshop Into to Git x2 part 1
+700 2018-06-06 #dues:alex
+100 2018-06-06 donations by Shoji
+-400 2018-06-06 #fees:paypal
