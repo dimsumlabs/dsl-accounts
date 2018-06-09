@@ -14,7 +14,7 @@
 -200 2017-10-10 #fees:paypal
 -2100 2017-10-10 #loan Repay Hamish for his loan dated 2017-09-29
 -238 2017-10-10 #fridge Ensure there are drinks in the fridge for the Noisebridge visit
-800 2017-10-11 #tshirt sold 4 shirts to Noisebridge visitors
+800 2017-10-11 #merch:tshirt sold 4 shirts to Noisebridge visitors
 1280 2017-10-11 donations, fridge and sticker sales
 700 2017-10-11 #dues:meebey
 238 2017-10-11 #fridge repay the fridge cash-advance
@@ -30,7 +30,7 @@
 700 2017-10-24 #dues:hamish !months:1:1
 700 2017-10-24 #dues:audrey !months:1:1
 1500 2017-10-24 #dues:adam !months:3
-200 2017-10-24 #tshirt sold 1 shirt to audrey
+200 2017-10-24 #merch:tshirt sold 1 shirt to audrey
 1000 2017-10-25 #dues:tim !months:-1:2
 500 2017-10-25 donation - a lone 500 note, so it could be someone trying to become a member
 530 2017-10-25 donations
