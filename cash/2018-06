@@ -4,12 +4,17 @@
 80 2018-06-02 #fridge
 -50 2018-06-04 #fridge
 110 2018-06-04 #fridge
-6300 2018-06-04 #dues:audrey !months:9 Part of the year in advance payment from our core committed members
-5600 2018-06-04 #dues:hamish !months:8 Part of the year in advance payment from our core committed members
-600 2018-06-04 #dues:hamish !months:8:1 Part of the year in advance payment from our core committed members
+# The following dues payments are all part of the year in advance that was
+# paid by our core committed club members.
+3500 2018-06-04 !months:5 #dues:audrey
+3500 2018-06-04 !months:5 #dues:anthony
+3500 2018-06-04 !months:5 #dues:alex
+3500 2018-06-04 !months:5 #dues:nicholas
+2800 2018-06-04 !months:1:4 #dues:meebey
+2800 2018-06-04 !months:4   #dues:hamish
+260  2018-06-04 !months:4:1 #dues:hamish remainder so that these dues match the below two expenses
 -12500 2018-06-04 #bills:rent Rent for June - was due 24th May (this is paying our back-rent owed)
--100 2018-06-04 #loan partial repayment to Hamish of last month's loan (200 remaining)
-100 2018-06-04 #dues:hamish !months:8:1 Round partially paid month up using loan money
+-7360 2018-06-04 !months:12 #bills:br Create a new legal entity to operate the club
 400 2018-06-05 #dues:gregg
 500 2018-06-06 #dues:christopher
 700 2018-06-06 #dues:james
