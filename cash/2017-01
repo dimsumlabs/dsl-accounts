@@ -10,7 +10,7 @@
 500	2017-01-08	#dues:meebey
 500	2017-01-11	#dues:tom
 500	2017-01-11	Donation Tom #workshop
--976	2017-01-11	Tom PCCW overdue bill #bills:internet !months:-1:2
+-976	2017-01-11	Tom PCCW overdue bill #bills:internet !months:-2:2
 -12500	2017-01-16	Rent #bills:rent !months:-1:1
 500	2017-01-17	#dues:adam
 500	2017-01-17	#dues:lio

@@ -1,7 +1,7 @@
 500 2017-04-05 #dues:joakimn
 500 2017-04-05 #dues:tom
 400 2017-04-05 Donation Tom #workshop
--976 2017-04-06 #bills:internet !months:2
+-976 2017-04-06 #bills:internet !months:-1:2
 -325 2017-04-06 #bills:electricity "From 01/03/2017 to 31/03/2017" !months:-1:1
 500 2017-04-08 #dues:pierre
 500 2017-04-08 #dues:sunny

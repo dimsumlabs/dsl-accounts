@@ -16,7 +16,7 @@
 0   2017-03-08 DSL owes Mathis money, consider these dues #dues:mathis !months:-2:12
 200 2017-03-13 #dues:brad
 200 2017-03-13 #dues:jerry
--488 2017-03-13 #bills:internet , not sure about exact date
+-488 2017-03-13 #bills:internet , not sure about exact date !months:-1:1
 500 2017-03-14 #dues:charles
 500 2017-03-14 #dues:leviathan
 200 2017-03-21 #dues:tobias

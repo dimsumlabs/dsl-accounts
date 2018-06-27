@@ -5,7 +5,7 @@
 1000 2017-09-04 #dues:anthony !months:2
 374 2017-09-04 donation from mailbox
 500 2017-09-04 #dues:tom
--1952 2017-09-04 #bills:internet !months:4  // only 488 was due, the rest is overlapping with payment on 2017-08-09
+-1952 2017-09-04 #bills:internet !months:-1:4  // only 488 was due, the rest is overlapping with payment on 2017-08-09
 -22.20 2017-09-04 #bills:water !months:-4:4
 -12500 2017-09-04 #bills:rent !months:-1:1  // rent for August
 # I counted the cash box and it totalled 576 (plus change), which is close enough to the accounting balance of 574.80
