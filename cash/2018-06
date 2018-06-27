@@ -5,7 +5,8 @@
 -50 2018-06-04 #fridge
 110 2018-06-04 #fridge
 # The following dues payments are all part of the year in advance that was
-# paid by our core committed club members.
+# paid by our core committed club members. (these lumps of additions will
+# show up whenever we use up the advance payment
 3500 2018-06-04 !months:5 #dues:audrey
 3500 2018-06-04 !months:5 #dues:anthony
 3500 2018-06-04 !months:5 #dues:alex
@@ -35,4 +36,13 @@
 -1170 2018-06-09 #bills:electricity !months:-3:3
 30 2018-06-09 #merch:sticker Sell some sticker to James
 200 2018-06-09 #merch:tshirt sell a yet-to-be-delivered tshirt to James (we have some money for shipping too)
+700 2018-06-25 !months:5:1 #dues:anthony
+700 2018-06-25 !months:5:1 #dues:alex
+700 2018-06-25 !months:5:1 #dues:meebey
+700 2018-06-25 !months:6:1 #dues:nicolas
+1400 2018-06-25 !months:5:2 #dues:audrey
+440 2018-06-25 !months:4:1 #dues:hamish
+700 2018-06-25 !months:5:1 #dues:hamish
+330 2018-06-25 !months:6:1 #dues:hamish
+-14000 2018-06-25 !months:1:1 #bills:rent Rent for July - was due on the day before - a sunday
 1500 2018-06-26 #dues:adam !months:-1:2
