@@ -46,3 +46,7 @@
 330 2018-06-25 !months:6:1 #dues:hamish
 -14000 2018-06-25 !months:1:1 #bills:rent Rent for July - was due on the day before - a sunday
 1500 2018-06-26 #dues:adam !months:-1:2
+-976 2018-06-25 #bills:internet (TODO - work out which months this was actually for!) !months:-2:2
+370 2018-06-25 !months:6:1 #dues:hamish
+82 2018-06-25 !months:7:1 #dues:hamish
+-976 2018-06-25 #bills:internet (includes "04/06 - 03/07" - so all the internet bills are off by one month) (TODO - work out which months this was actually for!) !months:2
