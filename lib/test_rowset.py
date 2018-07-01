@@ -7,6 +7,13 @@ import datetime
 import sys
 import os
 
+try:
+    # python 2
+    from StringIO import StringIO
+except ImportError:
+    # python 3
+    from io import StringIO
+
 # Ensure that we look for any modules in our local lib dir.  This allows simple
 # testing and development use.  It also does not break the case where the lib
 # has been installed properly on the normal sys.path
@@ -69,6 +76,21 @@ class TestRowSet(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             self.rows.append(None)
+
+    def test_load_file(self):
+        f = StringIO("""
+# A comment
+10 1970-01-10 easy come
+-10 1970-02-20 easy go
+""")
+        self.rows.load_file(f)
+
+        # FIXME - looking inside the object
+        self.assertEqual(len(self.rows.rows), 2)
+
+        # TODO
+        # - add more tests?
+        # - switch object initialisation to use load_file
 
     def test_filter(self):
         self.rows.append(self.rows_array)
