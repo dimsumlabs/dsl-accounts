@@ -10,6 +10,7 @@ import json
 import sys
 import csv
 import os
+import glob
 
 try:
     # python 2
@@ -88,9 +89,9 @@ def parse_dir(dirname):   # pragma: no cover
     '''Take all files in dirname and return a RowSet with their contents'''
 
     result = RowSet()
-    for filename in os.listdir(dirname):
+    for filename in glob.glob(os.path.join(dirname, "*.txt")):
         this = RowSet()
-        with open(os.path.join(dirname, filename), 'r') as tsvfile:
+        with open(filename, 'r') as tsvfile:
             this.load_file(tsvfile)
         result.merge(this)
 
