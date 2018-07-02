@@ -41,7 +41,6 @@ class TestRowSet(unittest.TestCase):
         self.rows.load_file(f)
 
     def tearDown(self):
-        self.rows_array = None
         self.rows = None
 
     def test_value(self):
