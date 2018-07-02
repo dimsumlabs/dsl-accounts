@@ -218,3 +218,6 @@ class TestRowClass(unittest.TestCase):
         obj = self.rows[2]
         self.assertEqual(obj.filter('rel_months<-264'), obj)
         self.assertEqual(obj.filter('rel_months<-265'), None)
+
+    def test_str(self):
+        self.assertEqual(str(self.rows[4]), "100 1972-02-29 !months:-1:5")

@@ -323,3 +323,7 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
             raise ValueError('Unknown filter operation "{}"'.format(op))
 
         return None
+
+    def __str__(self):
+        """Output the same format as input file - allowing roundtripping"""
+        return "{} {} {}".format(self.value, self.date, self.comment)

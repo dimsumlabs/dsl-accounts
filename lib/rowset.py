@@ -67,6 +67,7 @@ class RowSet(object):
                 # - in future there might be meta/pragmas
                 continue
 
+            # TODO - the row class should handle fields inside the line
             self.append(Row(*re.split(r'\s+', row, maxsplit=2)))
 
     def filter(self, filter_strings):
