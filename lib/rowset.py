@@ -70,6 +70,17 @@ class RowSet(object):
             # TODO - the row class should handle fields inside the line
             self.append(Row(*re.split(r'\s+', row, maxsplit=2)))
 
+    def save_file(self, stream):
+        """Given an open file handle, output the rowset in a format that can
+           be loaded by load_file()
+        """
+
+        for row in self.rows:
+            stream.write(str(row))
+            stream.write("\n")
+
+        return stream
+
     def filter(self, filter_strings):
         """Apply the given list of human readable filters to the rows
         """
