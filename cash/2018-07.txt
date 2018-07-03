@@ -1,3 +1,5 @@
 148 2018-07-01 #donations:members
 -148 2018-07-01 Replace toilet seat
 100 2018-07-01 money from donations tin
+200 2018-07-04 #merch:tshirt
+700 2018-07-04 #dues:tom membership for july
