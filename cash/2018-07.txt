@@ -4,3 +4,12 @@
 200 2018-07-04 #merch:tshirt
 700 2018-07-04 #dues:tom membership for july
 400 2018-07-04 #merch:tshirt two more tshirt sales
+200 2018-07-05 #dues:tobias
+700 2018-07-05 #dues:ana
+700 2018-07-05 #dues:mazakazu
+700 2018-07-05 #dues:richards
+700 2018-07-05 #dues:manolis
+700 2018-07-05 #dues:neil
+700 2018-07-05 #dues:james
+50 2018-07-05 #supporter:fung
+-650 2018-07-05 #fees:paypal
