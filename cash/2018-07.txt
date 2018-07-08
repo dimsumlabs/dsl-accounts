@@ -13,3 +13,4 @@
 700 2018-07-05 #dues:james
 50 2018-07-05 #supporter:fung
 -650 2018-07-05 #fees:paypal
+200 2018-07-07 #merch:tshirt
