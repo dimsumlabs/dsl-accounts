@@ -18,3 +18,7 @@
 700 2018-07-11 #dues:sam
 260 2018-07-11 #fridge
 40 2018-07-13 #fridge
+700 2018-07-18 #dues:julianlee
+700 2018-07-18 #dues:cathy
+398.82 2018-07-18 #fees:paypal
+
