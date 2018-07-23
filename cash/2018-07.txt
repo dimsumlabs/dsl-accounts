@@ -21,4 +21,7 @@
 700 2018-07-18 #dues:julianlee
 700 2018-07-18 #dues:cathy
 398.82 2018-07-18 #fees:paypal
-
+700 2018-07-23 #dues:manolis
+700 2018-07-23 #dues:richards
+200 2018-07-23 #dues:tobias
+434.38 2018-07-23 #fees:paypal
