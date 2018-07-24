@@ -25,3 +25,5 @@
 700 2018-07-23 #dues:richards
 200 2018-07-23 #dues:tobias
 434.38 2018-07-23 #fees:paypal
+300 2018-07-23 #dues:brad
+50 2018-07-23 #donations by CHIC
