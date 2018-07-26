@@ -6,12 +6,12 @@
 400 2018-07-04 #merch:tshirt two more tshirt sales
 200 2018-07-05 #dues:tobias
 700 2018-07-05 #dues:ana
-700 2018-07-05 #dues:mazakazu
+700 2018-07-05 #dues:mazakazu !months:-1:1
 700 2018-07-05 #dues:richard
-700 2018-07-05 #dues:manolis
+700 2018-07-05 #dues:manolis !months:-1:1
 700 2018-07-05 #dues:neil
 700 2018-07-05 #dues:james
-50 2018-07-05 #supporter:fung
+50 2018-07-05 #supporter:fung !months:-1:1
 -650 2018-07-05 #fees:paypal
 200 2018-07-07 #merch:tshirt
 200 2018-07-11 #merch:tshirt
@@ -22,7 +22,7 @@
 700 2018-07-18 #dues:cathy
 -398.82 2018-07-18 #fees:paypal
 700 2018-07-23 #dues:manolis
-700 2018-07-23 #dues:richard
+700 2018-07-23 #dues:richard !months:1:1
 200 2018-07-23 #dues:tobias
 -434.38 2018-07-23 #fees:paypal
 300 2018-07-23 #dues:brad
