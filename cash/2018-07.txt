@@ -1,4 +1,4 @@
-148 2018-07-01 #donations:members
+148 2018-07-01 #donation:members
 -148 2018-07-01 Replace toilet seat
 100 2018-07-01 money from donations tin
 200 2018-07-04 #merch:tshirt
@@ -26,7 +26,7 @@
 200 2018-07-23 #dues:tobias
 -434.38 2018-07-23 #fees:paypal
 300 2018-07-23 #dues:brad
-50 2018-07-23 #donations by CHIC
+50 2018-07-23 #donation by CHIC
 700 2018-07-26 #dues:alex !months:5:1
 700 2018-07-26 #dues:anthony !months:5:1
 700 2018-07-26 #dues:audrey !months:6:1
