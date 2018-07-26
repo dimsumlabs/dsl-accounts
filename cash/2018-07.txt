@@ -27,3 +27,11 @@
 -434.38 2018-07-23 #fees:paypal
 300 2018-07-23 #dues:brad
 50 2018-07-23 #donations by CHIC
+700 2018-07-26 #dues:alex !months:5:1
+700 2018-07-26 #dues:anthony !months:5:1
+700 2018-07-26 #dues:audrey !months:6:1
+700 2018-07-26 #dues:meebey !months:5:1
+700 2018-07-26 #dues:nicolas !months:6:1
+433 2018-07-26 #dues:hamish !months:6:1
+0.2 2018-07-26 #donation:members
+-14000 2018-07-26 #bills:rent !months:1:1
