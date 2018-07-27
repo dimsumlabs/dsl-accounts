@@ -35,3 +35,6 @@
 433 2018-07-26 #dues:hamish !months:6:1
 0.2 2018-07-26 #donation:members
 -14000 2018-07-26 #bills:rent !months:1:1
+700 2018-07-27 #dues:mazakazu
+700 2018-07-27 #dues:daniel
+400 2018-07-27 #fees:paypal
