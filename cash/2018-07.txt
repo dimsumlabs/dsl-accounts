@@ -39,3 +39,4 @@
 700 2018-07-27 #dues:daniel
 400 2018-07-27 #fees:paypal
 50 2018-07-28 #fridge
+470 2018-07-28 #fridge
