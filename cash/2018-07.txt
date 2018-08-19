@@ -23,7 +23,7 @@
 -398.82 2018-07-18 #fees:paypal
 700 2018-07-23 #dues:manolis
 700 2018-07-23 #dues:richard !months:1:1
-200 2018-07-23 #dues:tobias
+200 2018-07-23 #dues:tobias !months:-1:1
 -434.38 2018-07-23 #fees:paypal
 300 2018-07-23 #dues:brad
 50 2018-07-23 #donation by CHIC
