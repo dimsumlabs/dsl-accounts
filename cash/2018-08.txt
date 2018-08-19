@@ -1,2 +1,6 @@
 1000 2018-08-14 #dues:adam !months:-1:2
 500 2018-08-14 #dues:jerry
+300 2018-08-19 #fridge
+700 2018-08-19 #dues:tom
+100 2018-08-19 money from donations box
+20 2018-08-19 #workshop donations from the re-create workshop
