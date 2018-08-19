@@ -4,3 +4,4 @@
 700 2018-08-19 #dues:tom
 100 2018-08-19 money from donations box
 20 2018-08-19 #workshop donations from the re-create workshop
+40 2018-08-19 #donation:members !months:-2:1 round June up to a positive balance
