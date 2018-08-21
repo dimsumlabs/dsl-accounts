@@ -8,3 +8,11 @@
 20 2018-08-19 #workshop donations from the re-create workshop
 40 2018-08-19 #donation:members !months:-2:1 round June up to a positive balance
 # counted the cash it was $2660 - note, not the whole balance as the finances are still split at the moment
+700 2018-08-21 #dues:julianlee
+700 2018-08-21 #dues:ana
+700 2018-08-21 #dues:cathy
+700 2018-08-21 #dues:manolis
+200 2018-08-21 #dues:tobias
+50 2018-08-21 #fridge
+-169.9 2018-08-21 #fees:paypal
+
