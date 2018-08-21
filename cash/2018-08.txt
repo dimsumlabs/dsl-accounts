@@ -16,3 +16,5 @@
 50 2018-08-21 #fridge
 169.9 2018-08-21 #fees:paypal
 -150.9 2018-08-21 #fridge fill up with some drinks
+-585 2018-08-22 #bills:electricity !months:-2:1
+-389 2018-08-22 #bills:electricity !months:-1:1
