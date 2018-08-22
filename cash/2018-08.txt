@@ -18,3 +18,8 @@
 -150.9 2018-08-21 #fridge fill up with some drinks
 -585 2018-08-22 #bills:electricity !months:-2:1
 -389 2018-08-22 #bills:electricity !months:-1:1
+400 2018-08-22 #workshop LED Earrings
+15 2018-08-22 #workshop Space Museum Visit
+1200 2018-08-22 #workshop Maker Faire Introduction to Arduino (6 participants) !months:-1:1
+1164 2018-08-22 #workshop Maker Faire LED Earrings (11 participants) !months:-1:1
+-300 2018-08-22 #workshop Maker Faire Registration !months:-1:1
