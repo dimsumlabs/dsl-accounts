@@ -23,3 +23,4 @@
 1200 2018-08-22 #workshop Maker Faire Introduction to Arduino (6 participants) !months:-1:1
 1164 2018-08-22 #workshop Maker Faire LED Earrings (11 participants) !months:-1:1
 -300 2018-08-22 #workshop Maker Faire Registration !months:-1:1
+700 2018-08-24 #dues:mazakazu  On Paypal Not Yet Transferred
