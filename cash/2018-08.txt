@@ -24,4 +24,4 @@
 1164 2018-08-22 #workshop Maker Faire LED Earrings (11 participants) !months:-1:1
 -300 2018-08-22 #workshop Maker Faire Registration !months:-1:1
 700 2018-08-24 #dues:mazakazu  On Paypal Not Yet Transferred
-700 2018-08-24 #dues:richard  On Paypal Not Yet Transferred
+700 2018-08-24 #dues:richard !months:1:1 On Paypal Not Yet Transferred
