@@ -45,6 +45,17 @@ class RowSet(object):
         """
         self.rows.append(item)
         self.balance += item.value
+        # TODO
+        # - since we are recording cash values, it doesnt make sense for the
+        #   balance to ever fall below zero.  Consider making that an fatal
+        #   error here
+
+    # TODO
+    # - implement a "merge two RowSets" and ensure that it checks the
+    #   closing/opening balances for compatibility with each other.
+    #   Then use this function in the parse_dir() instead of manually
+    #   itterating the entries. (Remember, this will force data load
+    #   ordering requirements too)
 
     def append(self, item):
         """Given an object append it opaquely to our data as a single Row
