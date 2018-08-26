@@ -97,7 +97,8 @@ class RowSet(object):
                         continue
                     elif given_balance != current_balance:
                         raise ValueError(
-                            '{}:{} Failed to balance - expected {} but calculated {}'.
+                            '{}:{} Failed to balance - expected {} but calcul'
+                            'ated {}'.
                             format(
                                 filename,
                                 line_number,
