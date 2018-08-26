@@ -13,6 +13,7 @@ class RowSet(object):
 
     def __init__(self):
         self.rows = []
+        self.balance = decimal.Decimal(0)
 
     def __getitem__(self, i):
         return self.rows[i]
@@ -29,6 +30,9 @@ class RowSet(object):
             else:
                 raise ValueError("unexpected type")
 
+        if self.balance != sum:
+            raise ValueError("here {} {}".format(self.balance, sum))
+
         # ensure that values that have been promoted to have some digits
         # of significance return to being simple integers when possible.
         if int(sum) == sum:
@@ -40,6 +44,7 @@ class RowSet(object):
         """Given an object that looks like a Row, add its data to our current set
         """
         self.rows.append(item)
+        self.balance += item.value
 
     def append(self, item):
         """Given an object append it opaquely to our data as a single Row
