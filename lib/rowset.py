@@ -71,6 +71,8 @@ class RowSet(object):
                 '{}: can only load files into an empty RowSet'.format(filename)
             )
 
+        opening_balance = 0
+
         line_number = 0
         for row in stream.readlines():
             row = row.rstrip('\n')
@@ -87,14 +89,20 @@ class RowSet(object):
                 match = re.match(r'^#balance ([-0-9.]+)', row)
                 if match:
                     given_balance = decimal.Decimal(match.group(1))
-                    if given_balance != self.balance:
+                    current_balance = opening_balance+self.balance
+                    if len(self.rows) == 0:
+                        # if the balance pragma is before any transaction
+                        # data then it sets the opening balance for the set
+                        opening_balance = given_balance
+                        continue
+                    elif given_balance != current_balance:
                         raise ValueError(
-                            '{}:{} Failed to balance - expected {} got {}'.
+                            '{}:{} Failed to balance - expected {} but calculated {}'.
                             format(
                                 filename,
                                 line_number,
                                 given_balance,
-                                self.balance
+                                current_balance
                             )
                         )
                 # - in future there might be additional meta/pragmas

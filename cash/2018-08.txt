@@ -1,3 +1,4 @@
+#balance 2330 opening balance for the month
 1000 2018-08-14 #dues:adam !months:-1:2
 500 2018-08-14 #dues:jerry
 148 2018-08-18 #donation:members money for temporary internet

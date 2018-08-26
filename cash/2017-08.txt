@@ -1,3 +1,4 @@
+#balance 2265 opening balance for month
 500 2017-08-01 #dues:anthony
 -25  2017-08-01 Paypal fees #fees:paypal
 200 2017-07-25 #dues:tobias
@@ -34,6 +35,7 @@
 500 2017-09-01 #dues:meebey
 200 2017-09-01 #dues:leviathan
 # Counted the notes in the cash box and it totalled 1570
+#balance 1570
 780 2017-08-15 Donations from the mailbox tin
 75 2017-08-15 #dues:hamish pay the remainder of my monthly dues
 1000 2017-08-16 MaxMSP #workshop
@@ -42,6 +44,7 @@
 500 2017-08-21 #dues:hans !months:1:1
 500 2017-08-21 #dues:tom
 50 2017-08-21 donation
+#balance 5575
 400 2017-08-23 MaxMSP #workshop
 # As of this line, Devon counted the cash and it totalled 5576.22, which is close enough to the accounting balance of 5575
 # (Please see the file notes-2017-08)
@@ -91,3 +94,4 @@
 #
 # I leave it to others to impedance match the above with this bizarro file format.  Peace --Devon
 # P.S. I thought the MaxMSP workshop netted HK$2000 = HK$400 × 5 participants but I see only HK$1600.
+#balance 5975

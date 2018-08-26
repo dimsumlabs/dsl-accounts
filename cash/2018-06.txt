@@ -1,3 +1,4 @@
+#balance 2710 opening balance for the month
 100 2018-06-01 #fridge
 100 2018-06-01 donations
 600 2018-06-02 #workshop Take-apart Day
@@ -28,6 +29,7 @@
 250 2018-06-07 #fridge
 800 2018-06-09 Extra money found when counting cash box
 #x balance 7600 I counted the cash box and good news - this the balance (800 more than expected)
+#balance 7600
 70 2018-06-09 counted the donations tin
 700 2018-06-09 #dues:tom paid for June
 750 2018-06-09 #workshop Introduction to Arduino (6 attendees, one was a member)
@@ -55,3 +57,4 @@
 50 2018-06-27 money in the donations tin
 300 2018-06-27 #dues:brad
 500 2018-06-28 #workshop Advanced Arduino by Tom (3 attendees)
+#balance 950

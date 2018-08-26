@@ -1,3 +1,4 @@
+#balance 950 opening balance for the month
 148 2018-07-01 #donation:members
 -148 2018-07-01 #bills:upkeep Replace toilet seat
 100 2018-07-01 money from donations tin
@@ -41,3 +42,4 @@
 50 2018-07-28 #fridge
 470 2018-07-28 #fridge
 10 2018-07-30 #fridge
+#balance 2330

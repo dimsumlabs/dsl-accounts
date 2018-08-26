@@ -1,3 +1,4 @@
+#balance 232 opening balance for the month
 500 2017-12-12 #dues:pierre
 500 2017-12-12 #dues:richard
 500 2017-12-12 #dues:sunny
@@ -17,3 +18,4 @@
 500 2017-12-23 #dues:nicolas !months:1:1
 500 2017-12-23 #dues:james !months:1:1
 500 2017-12-23 #dues:neil !months:1:1
+#balance 9332

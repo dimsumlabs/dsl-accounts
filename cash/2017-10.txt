@@ -1,3 +1,4 @@
+#balance 0 opening balance for month
 170 2017-10-10 donations
 500 2017-10-10 #dues:alex
 200 2017-10-10 #dues:brad
@@ -51,3 +52,4 @@
 100 2017-10-31 #donation:c3 - Garry Ing (c3)
 500 2017-10-31 #donation:members - manolis
 500 2017-10-31 #dues:jim
+#balance 5730

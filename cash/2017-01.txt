@@ -1,3 +1,4 @@
+#balance 8061 opening balance for month
 1000	2017-01-02	#dues:stigo !months:2
 500	2017-01-02	#dues:syed
 -100	2017-01-02	PayPal fees #fees:paypal
@@ -31,3 +32,4 @@
 100	2017-01-24	Donations
 1000	2017-01-30	#dues:manolis !months:2
 1000	2017-01-30	#dues:aurelio !months:2
+#balance 7795

@@ -1,3 +1,4 @@
+#balance 520 opening balance for the month
 100 2018-05-01 #fridge
 130 2018-05-10 donations from the tin
 200 2018-05-10 #merch:tshirt
@@ -42,3 +43,4 @@
 300 2018-05-30 #loan Meebey overpaid for his dues, convert it to a loan
 40 2018-05-30 #fridge
 -50 2018-05-31 #fridge
+#balance 2710

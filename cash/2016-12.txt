@@ -1,3 +1,4 @@
+#balance 7770 opening balance for month
 500	2016-12-06	Adam #dues:adam
 500	2016-12-06	Hamish #dues:hamish !months:-1:1
 6000	2016-12-06	MSL shelves Dec-Feb #bookshelves !months:3
@@ -23,3 +24,4 @@
 500	2016-12-16	Aurelio #dues:aurelio
 500	2016-12-16	Unknown
 40	2016-12-16	Unknown
+#balance 8061

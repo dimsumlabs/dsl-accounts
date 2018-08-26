@@ -1,3 +1,4 @@
+#balance 2541 opening balance for month
 400	2016-10-01	From RoofTopParty
 500	2016-10-04	Lio, October #dues:lio
 400	2016-10-04	Leviathan, Aug/Sept #dues:leviathan !months:-2:2
@@ -22,3 +23,4 @@
 500	2016-10-29	Adam #dues:adam !months:1:1
 25	2016-10-29	Adjustment
 40	2016-10-29	l33t donations
+#balance 13370

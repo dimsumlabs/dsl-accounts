@@ -1,3 +1,4 @@
+#balance 9935 opening balance for month
 500 2017-04-05 #dues:joakimn
 500 2017-04-05 #dues:tom
 400 2017-04-05 Donation Tom #workshop
@@ -18,3 +19,4 @@
 200 2017-04-18 #dues:brad
 500 2017-04-18 #dues:manolis
 500 2017-04-18 #dues:meebey
+#balance 3054

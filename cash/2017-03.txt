@@ -1,3 +1,4 @@
+#balance 1347 opening balance for month
 500 2017-03-05 #dues:michelle
 50 2017-03-05 Donations
 500 2017-03-05 #dues:syed
@@ -25,3 +26,4 @@
 500 2017-03-27 #dues:meebey
 500 2017-03-27 #dues:devon !months:1:1
 500 2017-03-27 #dues:adam !months:1:1
+#balance 9935

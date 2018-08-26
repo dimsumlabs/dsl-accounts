@@ -1,3 +1,4 @@
+#balance 5730
 500 2017-11-21 #dues:julianlee
 500 2017-11-21 #dues:lio
 200 2017-11-21 #dues:stigo
@@ -11,6 +12,7 @@
 300 2017-11-21 #dues:brad
 272 2017-11-21 donation metal box
 # I counted the cash box and the notes totalled 9640 - there was more than enough change to bring that up to the accounting balance of 9672
+#balance 9672
 700 2017-11-30 #dues:anthony !months:1:1
 40 2017-11-30 donations
 220 2017-11-30 #fridge
@@ -18,3 +20,4 @@
 700 2017-11-30 #dues:audrey !months:1:1
 700 2017-11-30 #dues:hamish !months:2:1
 -12500 2017-11-30 #bills:rent
+#balance 232

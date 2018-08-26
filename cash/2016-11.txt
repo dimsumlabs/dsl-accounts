@@ -1,3 +1,4 @@
+#balance 13370 opening balance for month
 600	2016-11-02	Charles Paul, November #dues:charles
 -12500	2016-11-03	Rent paid for November by leviathan at 2/F in cash #bills:rent !months:-1:1
 400	2016-11-08	Syed, November #dues:syed
@@ -18,3 +19,4 @@
 1020	2016-11-30	Wearable workshop donation #workshop
 488	2016-11-25	Leviathan Donation PCCW bill #donation:members
 -488	2016-11-25	Leviathan Donation PCCW bill #bills:internet !months:-1:1
+#balance 7770

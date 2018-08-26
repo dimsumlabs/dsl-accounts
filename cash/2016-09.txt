@@ -1,3 +1,4 @@
+#balance 1971 opening balance for month
 700	2016-09-03	Tobias Kaiser (mail@tb-kaiser.de) (Membership for September) #dues:tobias
 6000	2016-09-03	Bookshelves rent (Sep/Nov/Oct) #bookshelves !months:3
 20	2016-09-03	Unknown
@@ -15,3 +16,4 @@
 240	2016-09-28	Donations
 500	2016-09-28	Stigo, October #dues:stigo !months:1:1
 1110	2016-09-28	Cash from Mate box (donated to DSL econ)
+#balance 2541

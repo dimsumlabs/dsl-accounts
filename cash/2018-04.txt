@@ -1,3 +1,4 @@
+#balance 8807.45
 810 2018-04-09 #workshop of Luca on MaxMSP
 700 2018-04-09 #dues:james
 500 2018-04-09 #dues:christopher !months:-1:1
@@ -43,3 +44,4 @@
 100 2018-04-26 #fridge
 120 2018-04-26 #fridge
 40 2018-04-27 #fridge
+#balance 520

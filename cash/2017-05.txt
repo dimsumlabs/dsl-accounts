@@ -1,3 +1,4 @@
+#balance 3054 opening balance for month
 200 2017-05-02 #dues:stigo
 500 2017-05-02 #dues:manolis
 200 2017-05-02 #dues:tobias
@@ -23,3 +24,4 @@
 200 2017-05-16 #dues:stigo !months:1:1
 6000 2017-05-29 Bookshelves rent #bookshelves !months:1:3
 -12500 2017-05-30 #bills:rent Rent for April !months:-1:1
+#balance 6254

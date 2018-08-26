@@ -1,3 +1,4 @@
+#balance 13302
 700 2018-03-01 #dues:nicolas
 700 2018-03-01 #dues:james
 500 2018-03-01 #dues:christopher !months:-1:1
@@ -19,6 +20,7 @@
 -12500 2018-03-06 #bills:rent !months:-1:1 Rent for February
 310 2018-03-20 extra cash found in cash box
 # I counted the cash box and it had 4090
+#balance 4090
 10 2018-03-20 donations
 500 2018-03-20 #dues:jerry
 300 2018-03-20 #dues:marble
@@ -33,4 +35,4 @@
 -202.55 2018-03-27 #loan nicolas
 700 2018-03-29 #dues:anthony !months:1:1
 30 2018-03-29 #fridge
-
+#balance 8807.45

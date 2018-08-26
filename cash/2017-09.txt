@@ -1,3 +1,4 @@
+#balance 5975 opening balance for month
 500 2017-09-01 #dues:shing
 6000 2017-09-04 bookshelves rent #bookshelves !months:3    // Sep-Oct-Nov
 200 2017-09-04 #merch:tshirt
@@ -10,6 +11,7 @@
 -12500 2017-09-04 #bills:rent !months:-1:1  // rent for August
 # I counted the cash box and it totalled 576 (plus change), which is close enough to the accounting balance of 574.80
 0.20 2017-09-05 !months:-4:1 Move some of the extra in the box to make an earlier month an integer
+#balance 575
 1 2017-09-05 Remainder of extra, makes account file and cash box balance (except for some small change)
 500 2017-09-05 #dues:alex
 500 2017-09-05 #dues:hamish
@@ -37,6 +39,7 @@
 # I counted the cash box and it totalled 6430 (plus change), which is 115 less than the accounting balance of 6545
 # I counted the cash box and it totalled 6430 (plus change), which is 115 less than the accounting balance of 6545
 -115 2017-09-12 Force accounts balance to match counted cash balance
+#balance 6430
 200 2017-09-12 #dues:brad
 -200 2017-09-14 luca #workshop payback
 500 2017-09-26 #dues:manolis
@@ -46,6 +49,7 @@
 -82.25 2017-09-26 Paypal fees #fees:paypal
 # I counted the cash box and it totalled 8130 (plus change), which is 164.5 more than the accounting balance of 7965.50
 164.5 2017-09-28 extra to make accounting match the cash box
+#balance 8130
 770 2017-09-28 donations from mailbox
 260 2017-09-28 #fridge throw in cash from the fridge
 2100 2017-09-29 #loan Hamish lends money to DSL in advance of known paypal payments
@@ -53,3 +57,4 @@
 500 2017-09-29 #dues:audrey !months:1:1
 240 2017-09-29 #donation:members from Hamish
 -12500 2017-09-29 #bills:rent rent for Sep (was due 2017-08-24)
+#balance 0
