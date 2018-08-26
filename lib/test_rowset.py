@@ -36,6 +36,7 @@ class TestRowSet(unittest.TestCase):
 -10 1970-01-01 comment3 #water
 -10 1970-03-01 comment5 #rent
 -15 1970-01-11 comment6 #water !months:3
+#balance -45 A comment
 """)
         self.rows = balance.RowSet()
         self.rows.load_file(f)
@@ -56,6 +57,19 @@ class TestRowSet(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             self.rows.load_file(StringIO(''))
+
+    def test_load_file2(self):
+        """Any balance pragma must match the running balance
+        """
+
+        f = StringIO("""
+10 1972-02-03 comment7
+#balance 100000 The wrong balance
+""")
+
+        rowset = balance.RowSet()
+        with self.assertRaises(ValueError):
+            rowset.load_file(f)
 
     def test_nested_rowset(self):
         r = [None for x in range(2)]

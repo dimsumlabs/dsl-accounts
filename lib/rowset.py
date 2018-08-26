@@ -71,16 +71,33 @@ class RowSet(object):
                 '{}: can only load files into an empty RowSet'.format(filename)
             )
 
+        line_number = 0
         for row in stream.readlines():
             row = row.rstrip('\n')
+            line_number += 1
 
             if not row:
                 # Skip blank lines
                 continue
 
             if re.match(r'^#', row):
-                # skip comment lines
-                # - in future there might be meta/pragmas
+                # TODO
+                # - add comments and pragmas into the rows array for 100% round-triping
+                match = re.match(r'^#balance ([-0-9.]+)', row)
+                if match:
+                    given_balance = decimal.Decimal(match.group(1))
+                    if given_balance != self.balance:
+                        raise ValueError(
+                            '{}:{} Failed to balance - expected {} got {}'.
+                            format(
+                                filename,
+                                line_number,
+                                given_balance,
+                                self.balance
+                            )
+                        )
+                # - in future there might be additional meta/pragmas
+                # skip adding comment or meta lines
                 continue
 
             # TODO - the row class should handle fields inside the line
