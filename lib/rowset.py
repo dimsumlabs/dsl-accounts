@@ -60,6 +60,12 @@ class RowSet(object):
     def load_file(self, stream):
         """Given an open file handle, read Row lines into this RowSet
         """
+        if isinstance(stream, str):
+            filename = stream
+            stream = open(filename, 'r')
+        else:
+            filename = '(stream)'
+
         for row in stream.readlines():
             row = row.rstrip('\n')
 

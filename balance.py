@@ -91,8 +91,7 @@ def parse_dir(dirname):   # pragma: no cover
     result = RowSet()
     for filename in glob.glob(os.path.join(dirname, "*.txt")):
         this = RowSet()
-        with open(filename, 'r') as tsvfile:
-            this.load_file(tsvfile)
+        this.load_file(filename)
         # TODO - eventually, we should be able to simply deal with the
         # rowset, but for now, we manually split it apart
         for entry in this:
