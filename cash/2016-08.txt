@@ -1,3 +1,4 @@
+#balance 0 Initial opening balance
 5750	2016-08-09	Initial cash box balance, counted after first fundraising move
 12750	2016-08-10	Estimated amt. from "Good news everyone! Just counted the money and we have more than 18'500 HKD!" @leviathan
 -12500	2016-08-12	Rent paid for August "leviathan @everyone: I paid the outstanding rent for July now" #bills:rent !months:-1:1
@@ -19,3 +20,4 @@
 30	2016-08-27	Autaktik (Jerry)
 787	2016-08-30 	PCCW bill paid by labmouse7 as dues #dues:christine !months:3
 -787	2016-08-30	PCCW bill donated by labmouse7 #bills:internet
+#balance 1971 month closing balance
