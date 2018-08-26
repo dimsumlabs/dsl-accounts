@@ -36,19 +36,19 @@ class RowSet(object):
 
         return sum
 
-    def merge(self, entries):
-        """Given a list of Rows or a RowSet, append each entry to our data
+    def _add_one_value(self, item):
+        """Given an object that looks like a Row, add its data to our current set
         """
-        for entry in entries:
-            self.rows.append(entry)
+        self.rows.append(item)
 
     def append(self, item):
         """Given an object append it opaquely to our data as a single Row
         """
         if isinstance(item, (Row, RowSet)):
-            self.rows.append(item)
+            self._add_one_value(item)
         elif isinstance(item, list):
-            self.merge(item)
+            for entry in item:
+                self._add_one_value(entry)
         else:
             raise ValueError('dont know how to append {}'.format(item))
 
