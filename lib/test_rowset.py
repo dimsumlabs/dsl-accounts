@@ -50,6 +50,13 @@ class TestRowSet(unittest.TestCase):
         self.rows.append(balance.Row("-0.5", "1970-03-13", "comment10")) # noqa
         self.assertEqual(str(self.rows.value), '-46')
 
+    def test_load_file1(self):
+        """Only load_file() into an empty RowSet
+        """
+
+        with self.assertRaises(ValueError):
+            self.rows.load_file(StringIO(''))
+
     def test_nested_rowset(self):
         r = [None for x in range(2)]
         r[0] = balance.Row("-13", "1971-02-06", "comment7") # noqa

@@ -66,6 +66,11 @@ class RowSet(object):
         else:
             filename = '(stream)'
 
+        if len(self) > 0:
+            raise ValueError(
+                '{}: can only load files into an empty RowSet'.format(filename)
+            )
+
         for row in stream.readlines():
             row = row.rstrip('\n')
 
