@@ -82,7 +82,8 @@ class RowSet(object):
 
             if re.match(r'^#', row):
                 # TODO
-                # - add comments and pragmas into the rows array for 100% round-triping
+                # - add comments and pragmas into the rows array for 100%
+                #   round-triping
                 match = re.match(r'^#balance ([-0-9.]+)', row)
                 if match:
                     given_balance = decimal.Decimal(match.group(1))
