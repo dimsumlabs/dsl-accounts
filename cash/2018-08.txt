@@ -36,3 +36,5 @@
 700 2018-08-24 #dues:richard !months:1:1 In Bank Account
 700 2018-08-26 #dues:sunny In Bank Account
 -800 2018-08-28 #fees:paypal
+700 2018-08-29 #dues:neil On Paypal Only
+700 2018-08-29 #dues:james On Paypal Only
