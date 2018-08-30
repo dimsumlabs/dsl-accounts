@@ -38,3 +38,4 @@
 -800 2018-08-28 #fees:paypal
 700 2018-08-29 #dues:neil On Paypal Only
 700 2018-08-29 #dues:james On Paypal Only
+100 2018-08-30 #workshop Hype Explainers Machine Learning
