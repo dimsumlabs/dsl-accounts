@@ -121,8 +121,11 @@ class RowSet(object):
                 # skip adding comment or meta lines
                 continue
 
-            # TODO - the row class should handle fields inside the line
-            self.append(Row(*re.split(r'\s+', row, maxsplit=2)))
+            try:
+                # TODO - the row class should handle fields inside the line
+                self.append(Row(*re.split(r'\s+', row, maxsplit=2)))
+            except: # noqa
+                print("{}:{} Syntax error".format(filename, line_number))
 
     def save_file(self, stream):
         """Given an open file handle, output the rowset in a format that can
