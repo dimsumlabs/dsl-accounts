@@ -55,8 +55,7 @@ class TestMisc(unittest.TestCase):
         self.rows = None
 
     def test_grid_accumulate(self):
-        self.assertEqual(
-            balance.grid_accumulate(self.rows), (
+        expected = (
                 set([
                     datetime.date(1970, 1, 1),
                     datetime.date(1970, 2, 1),
@@ -90,7 +89,10 @@ class TestMisc(unittest.TestCase):
                     datetime.date(1970, 2, 1): -10,
                     datetime.date(1970, 3, 1): -10,
                     'total': -45
-                }))
+                })
+        got = balance.grid_accumulate(self.rows)
+
+        self.assertEqual(expected, got)
 
     def test_topay_render(self):
         strings = {
