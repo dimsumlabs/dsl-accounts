@@ -89,7 +89,13 @@ class TestMisc(unittest.TestCase):
                     datetime.date(1970, 2, 1): -10,
                     datetime.date(1970, 3, 1): -10,
                     'total': -45
-                })
+                },
+                {
+                    datetime.date(1970, 1, 1): -25,
+                    datetime.date(1970, 2, 1): -35,
+                    datetime.date(1970, 3, 1): -45,
+                }
+            )
         got = balance.grid_accumulate(self.rows)
 
         self.assertEqual(expected, got)
@@ -139,10 +145,10 @@ class TestMisc(unittest.TestCase):
             "TOTAL:       -45",
         ]
 
-        (m, grid, total) = balance.grid_accumulate(self.rows)
+        (m, grid, total, runtotals) = balance.grid_accumulate(self.rows)
         t = self.rows.group_by('hashtag')
 
-        got = balance.grid_render(m, t, grid, total).split("\n")
+        got = balance.grid_render(m, t, grid, total, runtotals).split("\n")
         self.assertEqual(got, expect)
 
 

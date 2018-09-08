@@ -142,7 +142,19 @@ def grid_accumulate(rows):
             grid[tag][month]['sum'] = tags[tag].value
 
     totals['total'] = rows.value
-    return months_present, grid, totals
+
+    running_totals = {}
+    running_total = 0
+    for month in sorted(months_present):
+        running_total += totals[month]
+
+        # if we have only zeros after the decimal, change to an int
+        if int(running_total) == running_total:
+            running_total = running_total.to_integral_exact()
+
+        running_totals[month] = running_total
+
+    return months_present, grid, totals, running_totals
 
 
 def grid_render_onerow(prefix, prefix_len, rowdata, cell_len):
@@ -165,7 +177,7 @@ def grid_render_colheader(months, months_len, tags_len):
     )
 
 
-def grid_render_totals(months, totals, months_len, tags_len):
+def grid_render_totals(months, totals, months_len, tags_len, running_totals):
     """
     months is a set of months (as datetime.date objects) that we want to render
     totals is a dictionary of the isolated month total
@@ -180,20 +192,9 @@ def grid_render_totals(months, totals, months_len, tags_len):
         [totals[x] for x in months], months_len
     )
 
-    running_totals = []
-    running_total = 0
-    for month in months:
-        running_total += totals[month]
-
-        # if we have only zeros after the decimal, change to an int
-        if int(running_total) == running_total:
-            running_total = running_total.to_integral_exact()
-
-        running_totals.append(running_total)
-
     s += grid_render_onerow(
         'RUNNING Balance', tags_len,
-        running_totals, months_len
+        [running_totals[x] for x in months], months_len
     )
 
     s += "TOTAL: {:>{}}".format(totals['total'], months_len)
@@ -223,7 +224,7 @@ def grid_render_rows(months, tags, grid, months_len, tags_len):
     return s
 
 
-def grid_render(months, tags, grid, totals):
+def grid_render(months, tags, grid, totals, running_totals):
     # Render the accumulated data
 
     tags_len = max([len(i) for i in tags])+1
@@ -233,7 +234,8 @@ def grid_render(months, tags, grid, totals):
     s = []
     s += grid_render_colheader(months, months_len, tags_len)
     s += grid_render_rows(months, tags, grid, months_len, tags_len)
-    s += grid_render_totals(months, totals, months_len, tags_len)
+    s += grid_render_totals(
+            months, totals, months_len, tags_len, running_totals)
 
     return ''.join(s)
 
@@ -353,10 +355,11 @@ def subp_grid(args):
             else:
                 row.hashtag = row.hashtag + ' in'
 
-    (months, grid, totals) = grid_accumulate(args.rows)
+    (months, grid, totals, running_totals) = grid_accumulate(args.rows)
+
     tags = args.rows.group_by('hashtag').keys()
 
-    return grid_render(months, tags, grid, totals)
+    return grid_render(months, tags, grid, totals, running_totals)
 
 
 def subp_json_payments(args):
@@ -389,7 +392,7 @@ def subp_make_balance(args):
         a = row.hashtag.split(':')
         row.hashtag = ''.join(a[1:]).title()
 
-    (months, grid, totals) = grid_accumulate(grid_rows)
+    (months, grid, totals, running_totals) = grid_accumulate(grid_rows)
     tags = grid_rows.group_by('hashtag').keys()
     months = sorted(months)
 
