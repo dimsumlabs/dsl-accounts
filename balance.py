@@ -740,6 +740,7 @@ if __name__ == '__main__':  # pragma: no cover
         type=int ,                                # noqa
         help='Quick hack specifying oldest entries to display - the arg is the number of days' # noqa
     )                                                                   # noqa
+    subp_cmds['grid']['parser'].set_defaults(filter_hack=640)
     #
     # Hello? is that flake8?  I'd like to talk to you about presentation
     # values.  I know you like to keep lines under 78 characters wide, and
