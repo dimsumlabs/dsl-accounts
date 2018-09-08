@@ -166,6 +166,12 @@ def grid_render_colheader(months, months_len, tags_len):
 
 
 def grid_render_totals(months, totals, months_len, tags_len):
+    """
+    months is a set of months (as datetime.date objects) that we want to render
+    totals is a dictionary of the isolated month total
+    months_len is the width needed to render one month column
+    tags_len is the width needed to show the longest tag
+    """
     s = []
 
     s += "\n"
