@@ -720,10 +720,13 @@ if __name__ == '__main__':  # pragma: no cover
                            help='Input directory')
     argparser.add_argument('--filter', action='append',
                            help='Add a key=value filter to the rows used')
-    argparser.add_argument('--split',
-                           action='store_const', const=True,
-                           default=False,
+    argparser.add_argument('--split', dest='split',
+                           action='store_true',
                            help='Split rows that cover multiple months')
+    argparser.add_argument('--nosplit', dest='split',
+                           action='store_false',
+                           help='Do not split rows that cover multiple months')
+    argparser.set_defaults(split=True)
 
     subp = argparser.add_subparsers(help='Subcommand', dest='cmd')
     subp.required = True
