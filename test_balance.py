@@ -292,6 +292,7 @@ class TestSubp(unittest.TestCase):
         ]
 
         self.separate_inout = True
+        self.filter_hack = None
         got = balance.subp_grid(self).split("\n")
         self.assertEqual(got, expect)
 
@@ -311,8 +312,12 @@ class TestSubp(unittest.TestCase):
         ]
 
         self.separate_inout = False
+        self.filter_hack = None
         got = balance.subp_grid(self).split("\n")
         self.assertEqual(got, expect)
+
+    # TODO
+    # - test grid output with filter_hack set
 
     def test_json_payments(self):
         expect = {

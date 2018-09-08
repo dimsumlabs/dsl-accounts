@@ -37,7 +37,7 @@ report.describe:
 	@echo
 
 report.grid:
-	./balance.py --split grid
+	./balance.py --split grid --filter_hack 410
 	@echo
 
 report.stats:

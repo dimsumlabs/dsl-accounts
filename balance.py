@@ -357,7 +357,14 @@ def subp_grid(args):
 
     (months, grid, totals, running_totals) = grid_accumulate(args.rows)
 
+    # FIXME - tags contains entries that might be filtered
     tags = args.rows.group_by('hashtag').keys()
+
+    if args.filter_hack:
+        today = datetime.date.today()
+        oldest = today - datetime.timedelta(args.filter_hack)
+
+        months = [month for month in months if month > oldest]
 
     return grid_render(months, tags, grid, totals, running_totals)
 
@@ -728,6 +735,10 @@ if __name__ == '__main__':  # pragma: no cover
     subp_cmds['grid']['parser'].add_argument('--separate_inout',        # noqa
         action='store_const', const=True, default=False,                # noqa
         help='Show incoming and outgoing on separate lines of the grid' # noqa
+    )                                                                   # noqa
+    subp_cmds['grid']['parser'].add_argument('--filter_hack',        # noqa
+        type=int ,                                # noqa
+        help='Quick hack specifying oldest entries to display - the arg is the number of days' # noqa
     )                                                                   # noqa
     #
     # Hello? is that flake8?  I'd like to talk to you about presentation
