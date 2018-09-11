@@ -6,3 +6,6 @@
 700 2018-09-02 #dues:julianlee On PayPal Only
 500 2018-09-11 #dues:jerry
 -398 2018-09-11 #bills:electricity !months:-1:1
+100 2018-09-11 #fridge
+700 2018-09-11 #dues:tom
+200 2018-09-11 extra from counting
