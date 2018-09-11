@@ -32,12 +32,12 @@
 185 2018-08-25 #dues:hamish !months:5:1
 215 2018-08-25 #dues:hamish !months:6:1
 -14000 2018-08-25 #bills:rent !months:1:1 Rent for Sep
-700 2018-08-24 #dues:mazakazu In Bank Account
-700 2018-08-24 #dues:richard !months:1:1 In Bank Account
-700 2018-08-26 #dues:sunny In Bank Account
+700 2018-08-24 #dues:mazakazu
+700 2018-08-24 #dues:richard !months:1:1
+700 2018-08-26 #dues:sunny
 -800 2018-08-28 #fees:paypal
-700 2018-08-29 #dues:neil In Bank Account
-700 2018-08-29 #dues:james In Bank Account
+700 2018-08-29 #dues:neil
+700 2018-08-29 #dues:james
 100 2018-08-30 #workshop Hype Explainers Machine Learning
 375 2018-08-26 #workshop Introduction to Soldering (2 participants and 1 member)
 #balance 3175
