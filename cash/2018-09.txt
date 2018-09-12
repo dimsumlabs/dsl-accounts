@@ -9,3 +9,5 @@
 100 2018-09-11 #fridge
 700 2018-09-11 #dues:tom
 200 2018-09-11 extra from counting
+700 2018-09-12 #dues:michelle New member!
+1200 2018-09-12 #workshop Introduction to Arduino (4 participants)
