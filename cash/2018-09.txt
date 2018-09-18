@@ -13,3 +13,4 @@
 1200 2018-09-12 #workshop Introduction to Arduino (4 participants)
 -200 2018-09-12 #workshop materials costs
 300 2018-09-14 #fridge   In the Blue Safe
+700 2018-0*-17 #dues:cathy On PayPal Only
