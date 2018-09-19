@@ -19,3 +19,5 @@
 0.5 2018-07-01 #donation:members round up
 -100 2018-09-18 #fridge
 700 2018-09-18 #dues:adam
+700 2018-09-18 #dues:manolis On PayPal Only
+200 2018-09-19 #dues:tobias On PayPal Only
