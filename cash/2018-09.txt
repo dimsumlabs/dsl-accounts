@@ -21,3 +21,5 @@
 700 2018-09-18 #dues:adam
 700 2018-09-18 #dues:manolis On PayPal Only
 200 2018-09-19 #dues:tobias On PayPal Only
+-76 2018-09-20 #bills:internet !months:-1:1 pro-rata, partial month
+-238 2018-09-20 #bills:internet
