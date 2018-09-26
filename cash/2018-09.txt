@@ -25,3 +25,12 @@
 -238 2018-09-20 #bills:internet
 300 2018-09-20 #fridge
 700 2018-09-21 #dues:richard !months:1:1 On PayPal Only
+1400 2018-09-27 #dues:audrey !months:5:2
+1400 2018-09-27 #dues:nicolas !months:5:2
+1400 2018-09-27 #dues:anthony !months:5:2
+1400 2018-09-27 #dues:alex !months:5:2
+1400 2018-09-27 #dues:meebey !months:5:2
+485 2018-09-27 #dues:hamish !months:5:1
+1400 2018-09-27 #dues:hamish !months:6:2
+134 2018-09-27 #dues:hamish !months:8:1
+-14000 2018-09-27 #bills:rent !months:1:1 pay rent for Oct
