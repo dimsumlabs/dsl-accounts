@@ -34,3 +34,8 @@
 1400 2018-09-27 #dues:hamish !months:6:2
 134 2018-09-27 #dues:hamish !months:8:1
 -14000 2018-09-27 #bills:rent !months:1:1 pay rent for Oct
+700 2018-09-23 #dues:mazakazu On PayPal Only
+700 2018-09-26 #dues:sunny On PayPal Only
+700 2018-09-29 #dues:neil On PayPal Only
+700 2018-09-29 #dues:james On PayPal Only
+
