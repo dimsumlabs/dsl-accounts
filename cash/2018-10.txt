@@ -1,2 +1,4 @@
 700 2018-10-02 #dues:julianlee On PayPal Only
+-200 2018-10-08 #fees:paypal
+700 2018-10-08 #dues:tom
 
