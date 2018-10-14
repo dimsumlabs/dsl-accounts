@@ -5,13 +5,24 @@ balance: pages
 # something like github pages
 #
 .PHONY: pages
-pages:
-	mkdir -p pages
-	python balance.py --split make_balance > pages/index.html
-	python balance.py --split json_payments > pages/payments.json
+pages: pages/index.html pages/payments.json pages/report.txt pages/stats.tsv
 	cp docs/pressstart2p.ttf pages
+
+pages/index.html:
+	@mkdir -p pages
+	./balance.py --split make_balance >$@
+
+pages/payments.json:
+	@mkdir -p pages
+	./balance.py --split json_payments >$@
+
+pages/stats.tsv:
+	@mkdir -p pages
+	./balance.py --split statstsv >$@
+
+pages/report.txt:
+	@mkdir -p pages
 	$(MAKE) report > pages/report.txt
-	python balance.py --split statstsv >pages/stats.tsv
 
 # Replicate the travisCI deploy pages provider.
 #
