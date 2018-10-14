@@ -3,6 +3,6 @@
 -200 2018-10-08 #fees:paypal
 700 2018-10-08 #dues:tom
 340 2018-10-08 #fridge
--132.2 2018-10-08 #fridge Taken from Paypal
+-132.2 2018-10-08 #fridge
 
 
