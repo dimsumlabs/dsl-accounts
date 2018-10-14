@@ -41,7 +41,7 @@ report.grid:
 	@echo
 
 report.stats:
-	./balance.py --split --filter 'month>2016-08' --filter 'month!=2017-07' stats
+	./balance.py --split --filter 'rel_months>-20' --filter 'month!=2017-07' stats
 	@echo
 
 report: report.describe report.grid report.stats
