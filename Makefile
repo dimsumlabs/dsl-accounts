@@ -20,6 +20,9 @@ pages/stats.tsv:
 	@mkdir -p pages
 	./balance.py --split statstsv >$@
 
+pages/stats.pdf: pages/stats.tsv
+	gnuplot stats.gnuplot
+
 pages/report.txt:
 	@mkdir -p pages
 	$(MAKE) report > pages/report.txt
