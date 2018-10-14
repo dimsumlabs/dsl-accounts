@@ -38,4 +38,4 @@
 700 2018-09-26 #dues:sunny
 700 2018-09-29 #dues:neil
 700 2018-09-29 #dues:james
-
+#balance 3340
