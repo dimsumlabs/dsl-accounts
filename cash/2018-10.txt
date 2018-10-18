@@ -7,3 +7,4 @@
 2.2 2018-10-08 #donation:members round up
 700 2018-10-16 #dues:devon
 200 2018-10-16 #workshop Introduction to Soldering
+700 2018-10-18 #dues:cathy On PayPal Only
