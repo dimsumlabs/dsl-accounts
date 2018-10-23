@@ -14,3 +14,4 @@
 700 2018-10-21 #dues:richard On PayPal Only
 700 2018-10-23 #dues:michelle In Blue Box
 200 2018-10-23 #fridge In Blue Box
+-100 2018-10-23 #fridge
