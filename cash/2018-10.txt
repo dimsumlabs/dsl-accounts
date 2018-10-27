@@ -11,7 +11,7 @@
 -238 2018-10-20 #bills:internet
 700 2018-10-18 #dues:manolis On PayPal Only
 200 2018-10-19 #dues:tobias On PayPal Only
-700 2018-10-21 #dues:richard On PayPal Only
+700 2018-10-21 #dues:richard On PayPal Only !months:1:1
 700 2018-10-23 #dues:michelle In Blue Box
 200 2018-10-23 #fridge In Blue Box
 -100 2018-10-23 #fridge
