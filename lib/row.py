@@ -70,7 +70,7 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
     def _xtag(self, x):
         """Generically extract tags with a given prefix
         """
-        p = re.compile(x+'([a-zA-Z]\S*)')
+        p = re.compile(x+r'([a-zA-Z]\S*)')
         all_tags = p.findall(self.comment)
 
         # FIXME - enforce known case on all tags
