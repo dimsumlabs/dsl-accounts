@@ -29,3 +29,4 @@
 700 2018-10-30 #dues:neil On PayPal Only
 700 2018-10-30 #dues:devon !months:1:1
 200 2018-10-30 #merch:tshirt sold a size M to Mirco
+100 2018-10-30 #fridge
