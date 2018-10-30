@@ -25,3 +25,5 @@
 566 2018-10-27 #dues:hamish !months:7:1
 293 2018-10-27 #dues:hamish !months:8:1
 -14000 2018-10-27 #bills:rent !months:1:1
+700 2018-10-30 #dues:james On PayPal Only
+700 2018-10-30 #dues:neil On PayPal Only
