@@ -1,2 +1,3 @@
 #balance 2940 opening balance
 600 2018-11-01 #workshop introduction to raspberry pi (4 participants)
+800 2018-11-03 found in blue box with note describing it
