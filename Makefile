@@ -9,24 +9,27 @@ cashfiles := $(wildcard cash/*.txt)
 #
 .PHONY: pages
 pages: pages/index.html pages/payments.json pages/report.txt pages/stats.tsv
-	cp docs/pressstart2p.ttf pages
+pages: pages/pressstart2p.ttf
 
-pages/index.html:
+pages/pressstart2p.ttf: docs/pressstart2p.ttf
+	cp $< $@
+
+pages/index.html: ./balance.py docs/template.html $(cashfiles)
 	@mkdir -p pages
 	./balance.py --split make_balance >$@
 
-pages/payments.json:
+pages/payments.json: ./balance.py $(cashfiles)
 	@mkdir -p pages
 	./balance.py --split json_payments >$@
 
-pages/stats.tsv:
+pages/stats.tsv: ./balance.py $(cashfiles)
 	@mkdir -p pages
 	./balance.py --split statstsv >$@
 
-pages/stats.pdf: pages/stats.tsv
+pages/stats.pdf: stats.gnuplot pages/stats.tsv
 	gnuplot stats.gnuplot
 
-pages/report.txt:
+pages/report.txt: ./balance.py $(cashfiles)
 	@mkdir -p pages
 	$(MAKE) report > pages/report.txt
 
