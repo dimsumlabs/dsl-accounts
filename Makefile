@@ -1,5 +1,8 @@
-# this target is kept for a short time for historical purposes
-balance: pages
+# by default, spit out a quick report
+.PHONY: all
+all: report
+
+cashfiles := $(wildcard cash/*.txt)
 
 # Generate the output into the pages directory, ready for publishing with
 # something like github pages
