@@ -391,7 +391,7 @@ def subp_make_balance(args):
         'direction==incoming',
         'hashtag=~^dues:',
         'rel_months>-5',
-        'rel_months<5',
+        'rel_months<1',
     ])
 
     # Make the category look pretty
