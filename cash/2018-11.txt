@@ -14,3 +14,4 @@
 300 2018-11-14 #fridge count the cash from the fridge
 -263.6 2018-11-14 #fridge fill the fridge
 0.20 2018-11-14 #donation:members round up
+1390 2018-11-14 #workshop Introduction to home automation (9 attendees)
