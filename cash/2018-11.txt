@@ -1,12 +1,12 @@
 #balance 2940 opening balance
 600 2018-11-01 #workshop introduction to raspberry pi (4 participants)
 800 2018-11-03 found in blue box with note describing it
-40 2018-11-03 SSP market visit donation
+40 2018-11-03 SSP market visit Nov donation
 700 2018-11-13 #dues:michelle
 200 2018-11-13 #fridge
 700 2018-11-02 #dues:julianlee On PayPal Only
 75 2018-11-09 #supporter:stig On PayPal Only
-100 2018-11-12 donations by Yung Lai Ching (Janet) On PayPal Only
+100 2018-11-12 SSP market visit Nov donation by Yung Lai Ching (Janet) On PayPal Only
 700 2018-11-13 #dues:lio
 40 2018-11-13 #merch:sticker
 -823 2018-11-14 #bills:electricity !months:-2:2
@@ -16,3 +16,7 @@
 0.20 2018-11-14 #donation:members round up
 1390 2018-11-14 #workshop Introduction to home automation (9 attendees)
 1000 2018-11-14 #dues:alex !months:6:1
+100 2018-11-17 #fridge
+120 2018-11-17 #workshop donations for TakeApart Day Nov
+700 2018-11-17 #dues:tom
+40 2018-11-17 donations
