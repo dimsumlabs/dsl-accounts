@@ -15,8 +15,12 @@
 -263.6 2018-11-14 #fridge fill the fridge
 0.20 2018-11-14 #donation:members round up
 1390 2018-11-14 #workshop Introduction to home automation (9 attendees)
-1000 2018-11-14 #dues:alex !months:6:1
+1000 2018-11-14 #dues:alex !months:6:1  On PayPal Only
 100 2018-11-17 #fridge
 120 2018-11-17 #workshop donations for TakeApart Day Nov
 700 2018-11-17 #dues:tom
 40 2018-11-17 donations
+300 2018-11-18 #workshop donations for TakeApart Day  On PayPal Only
+700 2018-11-19 #dues:cathy
+700 2018-11-19 #dues:manolis
+200 2018-11-20 #dues:tobias
