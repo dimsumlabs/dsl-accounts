@@ -1,5 +1,5 @@
 #balance 3340 opening balance
-700 2018-10-02 #dues:julianlee On PayPal Only
+700 2018-10-02 #dues:julianlee
 -200 2018-10-08 #fees:paypal
 700 2018-10-08 #dues:tom
 340 2018-10-08 #fridge
@@ -7,15 +7,15 @@
 2.2 2018-10-08 #donation:members round up
 700 2018-10-16 #dues:devon
 200 2018-10-16 #workshop Introduction to Soldering
-700 2018-10-18 #dues:cathy On PayPal Only
+700 2018-10-18 #dues:cathy
 -238 2018-10-20 #bills:internet
-700 2018-10-18 #dues:manolis On PayPal Only
-200 2018-10-19 #dues:tobias On PayPal Only
-700 2018-10-21 #dues:richard On PayPal Only !months:1:1
+700 2018-10-18 #dues:manolis
+200 2018-10-19 #dues:tobias
+700 2018-10-21 #dues:richard !months:1:1
 700 2018-10-23 #dues:michelle In Blue Box
 200 2018-10-23 #fridge In Blue Box
 -100 2018-10-23 #fridge
-700 2018-10-26 #dues:sunny On PayPal Only
+700 2018-10-26 #dues:sunny
 700 2018-10-27 #dues:alex !months:6:1
 700 2018-10-27 #dues:anthony !months:6:1
 700 2018-10-27 #dues:meebey !months:6:1
@@ -25,8 +25,8 @@
 566 2018-10-27 #dues:hamish !months:7:1
 293 2018-10-27 #dues:hamish !months:8:1
 -14000 2018-10-27 #bills:rent !months:1:1
-700 2018-10-30 #dues:james On PayPal Only
-700 2018-10-30 #dues:neil On PayPal Only
+700 2018-10-30 #dues:james
+700 2018-10-30 #dues:neil
 700 2018-10-30 #dues:devon !months:1:1
 200 2018-10-30 #merch:tshirt sold a size M to Mirco
 100 2018-10-30 #fridge
