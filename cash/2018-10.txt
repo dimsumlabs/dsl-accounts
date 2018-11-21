@@ -16,7 +16,7 @@
 200 2018-10-23 #fridge In Blue Box
 -100 2018-10-23 #fridge
 700 2018-10-26 #dues:sunny
-700 2018-10-27 #dues:alex !months:6:1
+700 2018-10-27 #dues:alex !months:7:1
 700 2018-10-27 #dues:anthony !months:6:1
 700 2018-10-27 #dues:meebey !months:6:1
 1400 2018-10-27 #dues:nicolas !months:6:2

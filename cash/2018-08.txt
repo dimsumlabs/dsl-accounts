@@ -27,7 +27,7 @@
 1925 2018-08-25 extra cash found when counting
 11 2018-08-25 #donation:members round up total
 700 2018-08-25 #dues:meebey !months:5:1
-700 2018-08-25 #dues:alex !months:5:1
+700 2018-08-25 #dues:alex !months:6:1
 700 2018-08-25 #dues:anthony !months:5:1
 185 2018-08-25 #dues:hamish !months:5:1
 215 2018-08-25 #dues:hamish !months:6:1
