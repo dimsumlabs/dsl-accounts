@@ -26,3 +26,4 @@
 200 2018-11-20 #dues:tobias
 -342.8 2018-11-20 #fees:paypal
 700 2018-11-21 #dues:richard Now on PayPal and should be released on Dec 4th
+0.80 2018-11-22 #donation:members round up - decimal amounts of HKD are just too small to track
