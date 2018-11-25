@@ -21,9 +21,9 @@
 700 2018-10-27 #dues:meebey !months:6:1
 1400 2018-10-27 #dues:nicolas !months:6:2
 700 2018-10-27 #dues:audrey !months:6:1
-269 2018-10-27 #dues:audrey !months:7:1
+269 2018-10-27 #dues:audrey !months:1:1
 566 2018-10-27 #dues:hamish !months:7:1
-293 2018-10-27 #dues:hamish !months:8:1
+293 2018-10-27 #dues:hamish !months:1:1
 -14000 2018-10-27 #bills:rent !months:1:1
 700 2018-10-30 #dues:james
 700 2018-10-30 #dues:neil

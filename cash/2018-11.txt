@@ -30,3 +30,5 @@
 100 2018-11-24 #fridge
 238 2018-11-22 #donation:members Cover the internet
 -238 2018-11-22 #bills:internet
+7 2018-11-25 #dues:hamish round up Hamish's Nov dues to 1000
+31 2018-11-25 #dues:audrey round up as above
