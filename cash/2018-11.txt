@@ -40,3 +40,5 @@
 300 2018-11-27 #dues:hamish !months:1:1 Additional topup
 -14000 2018-11-27 #bills:rent !months:1:1 Rent for Dec
 700 2018-11-26 #dues:sunny Now on PayPal and should be released on Dec 4th
+21 2018-11-26 donations from tin
+920 2018-11-25 #workshop Soldering TV-Be-Gone with Mitch Altman
