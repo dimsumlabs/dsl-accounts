@@ -32,3 +32,10 @@
 -238 2018-11-22 #bills:internet
 7 2018-11-25 #dues:hamish round up Hamish's Nov dues to 1000
 31 2018-11-25 #dues:audrey round up as above
+700 2018-11-27 #dues:anthony !months:6:1 Final amount from his advance payment
+700 2018-11-27 #dues:audrey !months:6:1
+123 2018-11-27 #dues:audrey !months:1:1 Final amount from her advance payment
+700 2018-11-27 #dues:meebey !months:6:1 Final amount from his advance payment
+177 2018-11-27 #dues:audrey !months:1:1 Additional topup
+300 2018-11-27 #dues:hamish !months:1:1 Additional topup
+-14000 2018-11-27 #bills:rent !months:1:1 Rent for Dec
