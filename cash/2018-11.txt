@@ -39,3 +39,4 @@
 177 2018-11-27 #dues:audrey !months:1:1 Additional topup
 300 2018-11-27 #dues:hamish !months:1:1 Additional topup
 -14000 2018-11-27 #bills:rent !months:1:1 Rent for Dec
+700 2018-11-26 #dues:sunny !months:1:1 Now on PayPal and should be released on Dec 4th
