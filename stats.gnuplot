@@ -10,7 +10,7 @@ set key left top Left title 'Legend' box 3
 
 set timefmt '%s'
 set xdata time
-set format x '%Y-%m-%d'
+set format x '%b %Y'
 set mouse mouseformat 5
 set style data lines
 set terminal pdf size 11,8
