@@ -536,7 +536,13 @@ def subp_statstsv(args):
     for month in months:
         if isinstance(month, str):
             # its one of our rollup fake months
-            s += "# x"
+            if month == 'MonthTD':
+                # Use the path via datetime now() so that we can use the
+                # existing mock in the test suite
+                thismonth = datetime.datetime.now().date().replace(day=1)
+                s += thismonth.strftime('%s')
+            else:
+                s += "# x"
         else:
             s += month.strftime('%s')
 
