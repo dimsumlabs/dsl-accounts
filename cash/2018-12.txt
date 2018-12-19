@@ -9,4 +9,5 @@
 1000 2018-12-15 #dues:alex Now on PayPal
 700 2018-12-17 #dues:cathy Now on PayPal
 700 2018-12-18 #dues:tom Cash on bank account
+700 2018-12-18 #dues:manolis Now on PayPal
 
