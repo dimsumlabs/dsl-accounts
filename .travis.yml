@@ -13,8 +13,6 @@ script:
 
 deploy:
     provider: pages
-    edge:
-        branch: v1.8.47
     repo: dimsumlabs/dsl-accounts-pages
     local-dir: pages
     target-branch: master
