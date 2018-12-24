@@ -18,3 +18,4 @@
 2100 2018-12-24 #loan Hamish loans the space in advance of expected dues
 700 2018-12-24 #dues:audrey !months:6:1
 700 2018-12-24 #dues:hamish !months:6:1
+-14000 2018-12-24 #bills:rent !months:1:1
