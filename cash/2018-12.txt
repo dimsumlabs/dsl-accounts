@@ -13,3 +13,5 @@
 200 2018-12-20 #supporter:tobias Now on PayPal
 300 2018-12-24 #dues:hamish !months:1:1
 300 2018-12-24 #dues:audrey !months:1:1
+700 2018-12-24 #dues:nicolas !months:6:1
+700 2018-12-24 #dues:alex !months:7:1
