@@ -209,12 +209,19 @@ def grid_render_rows(months, tags, grid, months_len, tags_len):
 
     # Output each tag on its own row
     for tag in tags:
+        count_seen = 0
         cells = []
         for month in months:
             if month in grid[tag]:
                 cells.append(grid[tag][month]['sum'])
+                count_seen += 1
             else:
                 cells.append('')
+
+        # skip rendering for lines that have no cell data
+        # (this could happen if the filter_hack is used)
+        if count_seen == 0:
+            continue
 
         s += grid_render_onerow(
             tag, tags_len,
