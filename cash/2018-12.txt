@@ -10,7 +10,7 @@
 700 2018-12-17 #dues:cathy Now on PayPal
 700 2018-12-18 #dues:tom Cash on bank account
 700 2018-12-18 #dues:manolis Now on PayPal
-200 2018-12-20 #supporter:tobias Now on PayPal
+200 2018-12-20 #dues:tobias Now on PayPal
 300 2018-12-24 #dues:hamish !months:1:1
 300 2018-12-24 #dues:audrey !months:1:1
 700 2018-12-24 #dues:nicolas !months:6:1
