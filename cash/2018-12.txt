@@ -5,7 +5,7 @@
 100 2018-12-04 #dues:meebey
 160 2018-12-06 #fridge
 80 2018-12-06 found in donations tin
-75 2018-12-09 #supporter:stig Now on PayPal
+75 2018-12-09 #supporters stig Now on PayPal
 1000 2018-12-15 #dues:alex Now on PayPal
 700 2018-12-17 #dues:cathy Now on PayPal
 700 2018-12-18 #dues:tom Cash on bank account

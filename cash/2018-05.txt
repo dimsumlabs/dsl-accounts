@@ -28,7 +28,7 @@
 -2300 2018-05-25 #loan loan from nicolas (4700)
 700 2018-05-28 #dues:sunny !months:1:1
 700 2018-05-28 #dues:nicolas !months:1:1
-50 2018-05-28 #supporter:fung
+50 2018-05-28 #supporters fung
 25 2018-05-28 donations from Ho Oi Fung
 -60 2018-05-28 #fees:paypal
 -1415 2018-05-28 #loan loan from nicolas (3285)

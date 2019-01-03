@@ -5,7 +5,7 @@
 700 2018-11-13 #dues:michelle
 200 2018-11-13 #fridge
 700 2018-11-02 #dues:julianlee
-75 2018-11-09 #supporter:stig
+75 2018-11-09 #supporters stig
 100 2018-11-12 #workshop SSP market visit Nov donation by Yung Lai Ching (Janet)
 700 2018-11-13 #dues:lio
 40 2018-11-13 #merch:sticker

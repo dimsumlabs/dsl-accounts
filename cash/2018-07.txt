@@ -12,7 +12,7 @@
 700 2018-07-05 #dues:manolis !months:-1:1
 700 2018-07-05 #dues:neil
 700 2018-07-05 #dues:james
-50 2018-07-05 #supporter:fung !months:-1:1
+50 2018-07-05 #supporters fung !months:-1:1
 -650 2018-07-05 #fees:paypal
 200 2018-07-07 #merch:tshirt
 200 2018-07-11 #merch:tshirt
