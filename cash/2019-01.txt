@@ -1,0 +1,4 @@
+#balance 149 opening balance
+100 2019-01-05 #fridge
+-238 2019-01-05 #bills:internet !months:-1:1 Late payment
+
