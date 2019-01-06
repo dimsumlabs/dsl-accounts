@@ -43,6 +43,9 @@ class RowSet(object):
     def _add_one_value(self, item):
         """Given an object that looks like a Row, add its data to our current set
         """
+        # FIXME
+        # - if new rowset has an opening balance, it /MUST/ match the current
+        #   blaance of the current rowset!!!
         self.rows.append(item)
         self.balance += item.value
         # TODO

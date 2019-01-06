@@ -1,4 +1,4 @@
-#balance 3340 opening balance
+#balance 2800 opening balance
 700 2018-10-02 #dues:julianlee
 -200 2018-10-08 #fees:paypal
 700 2018-10-08 #dues:tom
@@ -30,4 +30,4 @@
 700 2018-10-30 #dues:devon !months:1:1
 200 2018-10-30 #merch:tshirt sold a size M to Mirco
 100 2018-10-30 #fridge
-#balance 2940
+#balance 2400

@@ -1,4 +1,4 @@
-#balance 4448 opening balance
+#balance 3908 opening balance
 700 2018-12-3 #dues:julianlee Now on PayPal 
 150 2018-12-4 #workshop x1 TV-Be-Gone set
 -124 2018-12-4 #fridge
