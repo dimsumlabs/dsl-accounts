@@ -9,6 +9,7 @@ cashfiles := $(wildcard cash/*.txt)
 #
 .PHONY: pages
 pages: pages/index.html pages/payments.json pages/report.txt pages/stats.tsv
+pages: pages/transactions.csv
 pages: pages/pressstart2p.ttf
 
 pages/pressstart2p.ttf: docs/pressstart2p.ttf
@@ -17,6 +18,10 @@ pages/pressstart2p.ttf: docs/pressstart2p.ttf
 pages/index.html: ./balance.py docs/template.html $(cashfiles)
 	@mkdir -p pages
 	./balance.py --split make_balance >$@
+
+pages/transactions.csv: ./balance.py $(cashfiles)
+	@mkdir -p pages
+	./balance.py --nosplit csv >$@
 
 pages/payments.json: ./balance.py $(cashfiles)
 	@mkdir -p pages
