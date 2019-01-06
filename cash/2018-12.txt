@@ -20,3 +20,4 @@
 700 2018-12-24 #dues:audrey !months:6:1
 700 2018-12-24 #dues:hamish !months:6:1
 -14000 2018-12-24 #bills:rent !months:1:1
+#balance 149 closing balance
