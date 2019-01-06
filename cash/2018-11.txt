@@ -47,3 +47,4 @@
 20 2018-11-28 #donation From the donations steamer
 700 2018-11-29 #dues:neil Now on PayPal 
 700 2018-11-30 #dues:james Now on PayPal
+#balance 4448 closing balance
