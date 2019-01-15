@@ -22,3 +22,6 @@
 100 2019-01-15 #donation:Peter T.
 500 2019-01-15 dues:lawrence
 1000 2019-01-15 dues:alex
+700 2019-01-15 dues:julianlee  Cash On PayPal
+75 2019-01-15 dues:stig  Cash On PayPal
+
