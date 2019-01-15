@@ -1,17 +1,17 @@
 #balance 3908 opening balance
-700 2018-12-3 #dues:julianlee Now on PayPal 
+700 2018-12-3 #dues:julianlee 
 150 2018-12-4 #workshop x1 TV-Be-Gone set
 -124 2018-12-4 #fridge
 300 2018-12-04 #dues:meebey !months:-1:1
 100 2018-12-04 #dues:meebey
 160 2018-12-06 #fridge
 80 2018-12-06 found in donations tin
-75 2018-12-09 #supporters stig Now on PayPal
-1000 2018-12-15 #dues:alex Now on PayPal
-700 2018-12-17 #dues:cathy Now on PayPal
-700 2018-12-18 #dues:tom Cash on bank account
-700 2018-12-18 #dues:manolis Now on PayPal
-200 2018-12-20 #dues:tobias Now on PayPal
+75 2018-12-09 #supporters stig 
+1000 2018-12-15 #dues:alex
+700 2018-12-17 #dues:cathy 
+700 2018-12-18 #dues:tom 
+700 2018-12-18 #dues:manolis 
+200 2018-12-20 #dues:tobias 
 300 2018-12-24 #dues:hamish !months:1:1
 300 2018-12-24 #dues:audrey !months:1:1
 700 2018-12-24 #dues:nicolas !months:6:1

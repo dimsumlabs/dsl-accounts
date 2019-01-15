@@ -25,7 +25,7 @@
 700 2018-11-19 #dues:manolis
 200 2018-11-20 #dues:tobias
 -342.8 2018-11-20 #fees:paypal
-700 2018-11-21 #dues:richard !months:1:1 Now on PayPal and should be released on Dec 4th
+700 2018-11-21 #dues:richard !months:1:1
 0.80 2018-11-22 #donation:members round up - decimal amounts of HKD are just too small to track
 100 2018-11-24 #fridge
 238 2018-11-22 #donation:members Cover the internet
@@ -39,12 +39,12 @@
 177 2018-11-27 #dues:audrey !months:1:1 Additional topup
 300 2018-11-27 #dues:hamish !months:1:1 Additional topup
 -14000 2018-11-27 #bills:rent !months:1:1 Rent for Dec
-700 2018-11-26 #dues:sunny Now on PayPal and should be released on Dec 4th
+700 2018-11-26 #dues:sunny 
 21 2018-11-26 #donation donations from tin
 920 2018-11-25 #workshop Soldering TV-Be-Gone with Mitch Altman
 500 2018-11-28 #workshop Introduction to Arduino (2 participants, minus materials cost)
 340 2018-11-28 #fridge
 20 2018-11-28 #donation From the donations steamer
-700 2018-11-29 #dues:neil Now on PayPal 
-700 2018-11-30 #dues:james Now on PayPal
+700 2018-11-29 #dues:neil
+700 2018-11-30 #dues:james 
 #balance 3908 closing balance

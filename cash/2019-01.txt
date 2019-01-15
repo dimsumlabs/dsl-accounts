@@ -5,17 +5,6 @@
 100 2019-01-08 #fridge
 -105 2019-01-08 #fridge
 700 2019-01-15 dues:richard
-700 2019-01-15 dues:sunny
-700 2019-01-15 dues:neil
-700 2019-01-15 dues:james
-700 2019-01-15 dues:julianlee
-75 2019-01-15 dues:stig
-1000 2019-01-15 dues:alex
-700 2019-01-15 dues:cathy
-700 2019-01-15 dues:tom
-700 2019-01-15 dues:manolis
-200 2019-01-15 dues:tobias
-700 2019-01-15 dues:richard
 -175 2019-01-15 #fees:paypal
 700 2019-01-15 dues:sunny
 700 2019-01-15 dues:james
