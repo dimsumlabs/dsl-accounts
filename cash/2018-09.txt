@@ -3,7 +3,7 @@
 50 2018-09-05 money in cash box
 450 2018-09-05 #workshop LED Earrings (3 participants)
 -500 2018-09-01 #fees:paypal with memberships of neil and james
-700 2018-09-02 #dues:julianlee
+700 2018-09-02 paypaltxn:9SM41541J2157931S #dues:julianlee
 500 2018-09-11 #dues:jerry
 -398 2018-09-11 #bills:electricity !months:-1:1
 100 2018-09-11 #fridge
@@ -13,18 +13,18 @@
 1200 2018-09-12 #workshop Introduction to Arduino (4 participants)
 -200 2018-09-12 #workshop materials costs
 300 2018-09-14 #fridge
-700 2018-09-17 #dues:cathy
+700 2018-09-17 paypaltxn:0T28037543688764X #dues:cathy
 -4500 2018-07-01 #bills:rent Increase rental deposit
 -422.50 2018-07-01 #bills:rent pay our half of the stamp duty
 0.5 2018-07-01 #donation:members round up
 -100 2018-09-18 #fridge
 700 2018-09-18 #dues:adam
-700 2018-09-18 #dues:manolis
-200 2018-09-19 #dues:tobias
+700 2018-09-18 paypaltxn:12603446MU0022508 #dues:manolis
+200 2018-09-19 paypaltxn:0VC77620T7024862D #dues:tobias
 -76 2018-09-20 #bills:internet !months:-1:1 pro-rata, partial month
 -238 2018-09-20 #bills:internet
 300 2018-09-20 #fridge
-700 2018-09-21 #dues:richard !months:1:1
+700 2018-09-21 paypaltxn:43Y803801B0904615 #dues:richard !months:1:1
 1400 2018-09-27 #dues:audrey !months:5:2
 1400 2018-09-27 #dues:nicolas !months:5:2
 1400 2018-09-27 #dues:anthony !months:5:2
@@ -34,8 +34,8 @@
 1400 2018-09-27 #dues:hamish !months:6:2
 134 2018-09-27 #dues:hamish !months:8:1
 -14000 2018-09-27 #bills:rent !months:1:1 pay rent for Oct
-700 2018-09-23 #dues:mazakazu
-700 2018-09-26 #dues:sunny
-700 2018-09-29 #dues:neil
-700 2018-09-29 #dues:james
+700 2018-09-23 paypaltxn:8E413694KT159062U #dues:mazakazu
+700 2018-09-26 paypaltxn:82V89526VT4558838 #dues:sunny
+700 2018-09-29 paypaltxn:87N44849DX8326822 #dues:neil
+700 2018-09-29 paypaltxn:92J841623F754774U #dues:james
 #balance 2800

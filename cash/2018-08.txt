@@ -11,9 +11,9 @@
 # counted the cash it was $2660 - note, not the whole balance as the finances are still split at the moment
 700 2018-08-21 #dues:julianlee
 700 2018-08-21 #dues:ana
-700 2018-08-21 #dues:cathy
-700 2018-08-21 #dues:manolis
-200 2018-08-21 #dues:tobias
+700 2018-08-21 paypaltxn:7ED557048G200405C #dues:cathy
+700 2018-08-21 paypaltxn:96539758KS663894F #dues:manolis
+200 2018-08-21 paypaltxn:0VE05978A59584924 #dues:tobias
 50 2018-08-21 #fridge
 169.9 2018-08-21 #fees:paypal
 -150.9 2018-08-21 #fridge fill up with some drinks
@@ -32,12 +32,12 @@
 185 2018-08-25 #dues:hamish !months:5:1
 215 2018-08-25 #dues:hamish !months:6:1
 -14000 2018-08-25 #bills:rent !months:1:1 Rent for Sep
-700 2018-08-24 #dues:mazakazu
-700 2018-08-24 #dues:richard !months:1:1
-700 2018-08-26 #dues:sunny
+700 2018-08-24 paypaltxn:11116965R1553873L #dues:mazakazu
+700 2018-08-24 paypaltxn:37M86392XP9126043 #dues:richard !months:1:1
+700 2018-08-26 paypaltxn:98G869867P5578119 #dues:sunny
 -800 2018-08-28 #fees:paypal
-700 2018-08-29 #dues:neil
-700 2018-08-29 #dues:james
+700 2018-08-29 paypaltxn:4H704245YD033634P #dues:neil
+700 2018-08-29 paypaltxn:7JF885228S688203J #dues:james
 100 2018-08-30 #workshop Hype Explainers Machine Learning
 375 2018-08-26 #workshop Introduction to Soldering (2 participants and 1 member)
 #balance 3175

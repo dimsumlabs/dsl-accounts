@@ -1,17 +1,17 @@
 #balance 3908 opening balance
-700 2018-12-3 #dues:julianlee 
+700 2018-12-3 paypaltxn:85185350JJ8428536 #dues:julianlee
 150 2018-12-4 #workshop x1 TV-Be-Gone set
 -124 2018-12-4 #fridge
 300 2018-12-04 #dues:meebey !months:-1:1
 100 2018-12-04 #dues:meebey
 160 2018-12-06 #fridge
 80 2018-12-06 found in donations tin
-75 2018-12-09 #supporters stig 
-1000 2018-12-15 #dues:alex
-700 2018-12-17 #dues:cathy 
+75 2018-12-09 paypaltxn:39045721PC896333A #supporters stig
+1000 2018-12-15 paypaltxn:7AM844411A040635G #dues:alex
+700 2018-12-17 paypaltxn:7JH422539M706600M #dues:cathy
 700 2018-12-18 #dues:tom 
-700 2018-12-18 #dues:manolis 
-200 2018-12-20 #dues:tobias 
+700 2018-12-18 paypaltxn:8LF98350AA537913R #dues:manolis
+200 2018-12-20 paypaltxn:84E39136928721452 #dues:tobias
 300 2018-12-24 #dues:hamish !months:1:1
 300 2018-12-24 #dues:audrey !months:1:1
 700 2018-12-24 #dues:nicolas !months:6:1
