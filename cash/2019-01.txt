@@ -14,3 +14,4 @@
 700 2019-01-15 #dues:julianlee  Cash On PayPal
 75 2019-01-15 #supporters stig Cash On PayPal
 700 2019-01-16 #dues:neil !months:-1:1 paypaltxn:2EC97916V6811383U TODO - check
+-2100 2019-01-16 #loan repay Hamish for loan dated 2018-12-24
