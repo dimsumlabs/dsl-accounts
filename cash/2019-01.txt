@@ -4,13 +4,13 @@
 700 2019-01-08 #dues:tom
 100 2019-01-08 #fridge
 -105 2019-01-08 #fridge
-700 2019-01-15 dues:richard
+700 2019-01-15 #dues:richard
 -175 2019-01-15 #fees:paypal
-700 2019-01-15 dues:sunny
-700 2019-01-15 dues:james
-100 2019-01-15 #donation:Peter T.
-500 2019-01-15 dues:lawrence
-1000 2019-01-15 dues:alex
-700 2019-01-15 dues:julianlee  Cash On PayPal
-75 2019-01-15 dues:stig  Cash On PayPal
+700 2019-01-15 #dues:sunny !months:-1:1
+700 2019-01-15 #dues:james !months:-1:1
+100 2019-01-15 #donation Peter T.
+500 2019-01-15 #dues:lawrence
+1000 2019-01-15 #dues:alex
+700 2019-01-15 #dues:julianlee  Cash On PayPal
+75 2019-01-15 #supporters stig Cash On PayPal
 
