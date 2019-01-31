@@ -15,8 +15,8 @@
 75 2019-01-09 paypaltxn:8N1591726Y368363T #supporters stig Cash On PayPal
 700 2018-12-30 paypaltxn:2EC97916V6811383U #dues:neil TODO - check
 -2100 2019-01-16 #loan repay Hamish for loan dated 2018-12-24
-700 2019-01-21 #dues:richard
+700 2019-01-21 #dues:richard Cash on Paypal
 700 2019-01-24 #workshop Machine Learning and Artificial Intelligence
-700 2019-01-26 #dues:sunny
-700 2019-01-28 #dues:james
-700 2019-01-28 #dues:neil
+700 2019-01-26 #dues:sunny Cash on Paypal
+700 2019-01-28 #dues:james Cash on Paypal
+700 2019-01-28 #dues:neil Cash on Paypal
