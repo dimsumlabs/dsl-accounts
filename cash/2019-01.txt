@@ -20,3 +20,4 @@
 700 2019-01-26 #dues:sunny Cash on Paypal
 700 2019-01-28 #dues:james Cash on Paypal
 700 2019-01-28 #dues:neil Cash on Paypal
+#balance 7106 closing balance
