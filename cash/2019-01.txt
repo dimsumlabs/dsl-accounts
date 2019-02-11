@@ -17,3 +17,9 @@
 -2100 2019-01-16 #loan repay Hamish for loan dated 2018-12-24
 750 2019-01-16 #workshop Introduction to Arduino (3 participants, excludes hardware costs)
 -238 2019-01-17 #bills:internet
+700 2019-01-21 #dues:richard Cash on Paypal
+700 2019-01-24 #workshop Machine Learning and Artificial Intelligence
+700 2019-01-26 #dues:sunny Cash on Paypal
+700 2019-01-28 #dues:james Cash on Paypal
+700 2019-01-28 #dues:neil Cash on Paypal
+#balance 7106 closing balance
