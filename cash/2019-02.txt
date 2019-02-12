@@ -11,3 +11,4 @@
 300 2019-02-12 #dues:hamish
 300 2019-02-12 #dues:audrey
 450 2019-02-12 #fridge
+500 2019-02-12 #dues:gary Cash on Paypal
