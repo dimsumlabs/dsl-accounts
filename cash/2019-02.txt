@@ -3,7 +3,7 @@
 100 2019-02-08 #donation from P.Tapio Cash on Paypal
 75 2019-02-10 #supporters: stig Cash on Paypal
 -183 2019-02-11 #bills:electricity Bill and Receipt in the Blue Box
-500 2019-02-11 #dues:jerry Cash in the Blue Box
+500 2019-02-11 #dues:jerry !months:-1:1 Cash in the Blue Box
 700 2019-02-11 #dues:michelle Cash in the Blue Box
 20 2019-02-11 #donation Cash in the Blue Box
 200 2019-02-11 #dues:meebey !months:-2:1 For December 2018 Cash in the Blue Box
@@ -13,3 +13,4 @@
 450 2019-02-12 #fridge
 224 2019-02-12 #donation
 500 2019-02-12 #dues:gary Cash on Paypal
+500 2019-02-12 #dues:jerry
