@@ -438,12 +438,23 @@ def subp_make_balance(args):
 
         return date
 
+    def _get_hashtag_value(tag):
+        """Return the value for a hashtag group, or a zero"""
+        # FIXME - should cache the group_by
+        hashtags = args.rows.group_by('hashtag')
+
+        if tag in hashtags:
+            return hashtags[tag].value
+        else:
+            return 0
+
     macros = {
         'balance_sum': args.rows.value,
         'grid_header': header,
         'grid':        grid,
         'rent_due':    _get_next_rent_month(),
         'time_now':    _iso8601_str(datetime.datetime.utcnow()),
+        'loan':        _get_hashtag_value('loan')
     }
     return string.Template(tpl).substitute(macros)
 
