@@ -8,3 +8,5 @@
 20 2019-02-11 #donation Cash in the Blue Box
 200 2019-02-11 #dues:meebey !months:-2:1 For December 2018 Cash in the Blue Box
 556 2019-01-26 #workshop LED earring kits
+300 2019-02-12 #dues:hamish
+300 2019-02-12 #dues:audrey
