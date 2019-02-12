@@ -22,3 +22,6 @@
 700 2019-01-26 #dues:sunny Cash on Paypal
 700 2019-01-28 #dues:james Cash on Paypal
 700 2019-01-28 #dues:neil Cash on Paypal
+6382 2019-01-26 #loan Hamish lends the space money for the rent
+-14000 2019-01-26 #bills:rent !months:1:1
+#balance 0 closing balance
