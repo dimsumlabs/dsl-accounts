@@ -10,3 +10,4 @@
 556 2019-01-26 #workshop LED earring kits
 300 2019-02-12 #dues:hamish
 300 2019-02-12 #dues:audrey
+450 2019-02-12 #fridge
