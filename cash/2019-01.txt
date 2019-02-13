@@ -11,17 +11,19 @@
 100 2018-12-28 paypaltxn:8DP667226P178371U #donation Peter T.
 500 2019-01-09 paypaltxn:44E12751C35149631 #dues:lawrence
 1000 2019-01-14 paypaltxn:0LS856018H491114W #dues:alex
-700 2019-01-03 paypaltxn:3UG8524712069484A #dues:julianlee Cash On PayPal
-75 2019-01-09 paypaltxn:8N1591726Y368363T #supporters stig Cash On PayPal
+700 2019-01-03 paypaltxn:3UG8524712069484A #dues:julianlee
+75 2019-01-09 paypaltxn:8N1591726Y368363T #supporters stig
 700 2018-12-30 paypaltxn:2EC97916V6811383U #dues:neil TODO - check
 -2100 2019-01-16 #loan repay Hamish for loan dated 2018-12-24
 750 2019-01-16 #workshop Introduction to Arduino (3 participants, excludes hardware costs)
 -238 2019-01-17 #bills:internet
-700 2019-01-21 #dues:richard !months:1:1 Cash on Paypal
+700 2019-01-17 #dues:cathy
+700 2019-01-18 #dues:manolis
+700 2019-01-21 #dues:richard !months:1:1
 700 2019-01-24 #workshop Machine Learning and Artificial Intelligence
-700 2019-01-26 #dues:sunny Cash on Paypal
-700 2019-01-28 #dues:james Cash on Paypal
-700 2019-01-28 #dues:neil Cash on Paypal
+700 2019-01-26 #dues:sunny
+700 2019-01-28 #dues:james
+700 2019-01-28 #dues:neil
 6382 2019-01-26 #loan Hamish lends the space money for the rent
 -14000 2019-01-26 #bills:rent !months:1:1
 #balance 0 closing balance
