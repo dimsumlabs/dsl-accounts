@@ -15,3 +15,5 @@
 500 2019-02-12 #dues:gary Cash on Paypal
 500 2019-02-12 #dues:jerry
 -475 2019-02-12 #fees:paypal
+257 2019-02-12 #fridge
+-257 2019-02-12 #fridge
