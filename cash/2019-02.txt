@@ -19,3 +19,4 @@
 257 2019-02-12 #fridge
 -257 2019-02-12 #fridge
 210 2019-02-13 #workshop Creative Coding Meetup (over 30 people attended)
+1000 2019-02-14 paypaltxn:5FD27855MJ994242L #dues:alex TODO where is cash?
