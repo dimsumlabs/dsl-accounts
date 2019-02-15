@@ -1,5 +1,6 @@
 #balance 0 opening balance
 700 2019-02-02 paypaltxn:98K9924024341673W #dues:julianlee
+700 2019-02-08 paypaltxn:4SM00281MU784951W #dues:lawrence FIXME where is cash?
 100 2019-02-08 paypaltxn:94167979UB411880R #donation from P.Tapio Cash on Paypal
 75 2019-02-10 paypaltxn:93A12001KA527244B #supporters: stig Cash on Paypal
 -183 2019-02-11 #bills:electricity Bill and Receipt in the Blue Box
