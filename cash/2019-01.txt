@@ -24,6 +24,6 @@
 700 2019-01-26 paypaltxn:2RC50007XY714821N #dues:sunny
 700 2019-01-28 paypaltxn:5KB38090CK438332M #dues:james
 700 2019-01-28 paypaltxn:9EA54736DY222225N #dues:neil
-6382 2019-01-26 #loan Hamish lends the space money for the rent
+4982 2019-01-26 #loan Hamish lends the space money for the rent
 -14000 2019-01-26 #bills:rent !months:1:1
-#balance 1400 closing balance
+#balance 0 closing balance
