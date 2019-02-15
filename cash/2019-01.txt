@@ -17,13 +17,13 @@
 -2100 2019-01-16 #loan repay Hamish for loan dated 2018-12-24
 750 2019-01-16 #workshop Introduction to Arduino (3 participants, excludes hardware costs)
 -238 2019-01-17 #bills:internet
-700 2019-01-17 #dues:cathy
-700 2019-01-18 #dues:manolis
-700 2019-01-21 #dues:richard !months:1:1
+700 2019-01-17 paypaltxn:3VE01488L9019231J #dues:cathy
+700 2019-01-18 paypaltxn:3TT297063W083881L #dues:manolis
+700 2019-01-21 paypaltxn:5H4589054D8182133 #dues:richard !months:1:1
 700 2019-01-24 #workshop Machine Learning and Artificial Intelligence
-700 2019-01-26 #dues:sunny
-700 2019-01-28 #dues:james
-700 2019-01-28 #dues:neil
+700 2019-01-26 paypaltxn:2RC50007XY714821N #dues:sunny
+700 2019-01-28 paypaltxn:5KB38090CK438332M #dues:james
+700 2019-01-28 paypaltxn:9EA54736DY222225N #dues:neil
 6382 2019-01-26 #loan Hamish lends the space money for the rent
 -14000 2019-01-26 #bills:rent !months:1:1
 #balance 1400 closing balance

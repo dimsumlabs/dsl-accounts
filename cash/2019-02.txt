@@ -1,7 +1,7 @@
 #balance 0 opening balance
-700 2019-02-02 #dues:julianlee
-100 2019-02-08 #donation from P.Tapio Cash on Paypal
-75 2019-02-10 #supporters: stig Cash on Paypal
+700 2019-02-02 paypaltxn:98K9924024341673W #dues:julianlee
+100 2019-02-08 paypaltxn:94167979UB411880R #donation from P.Tapio Cash on Paypal
+75 2019-02-10 paypaltxn:93A12001KA527244B #supporters: stig Cash on Paypal
 -183 2019-02-11 #bills:electricity Bill and Receipt in the Blue Box
 500 2019-02-11 #dues:jerry !months:-1:1
 700 2019-02-11 #dues:michelle
@@ -12,7 +12,7 @@
 300 2019-02-12 #dues:audrey
 450 2019-02-12 #fridge
 224 2019-02-12 #donation
-500 2019-02-12 #dues:gary Cash on Paypal
+500 2019-02-12 paypaltxn:33L593621C888051G #dues:gary Cash on Paypal
 500 2019-02-12 #dues:jerry
 -475 2019-02-12 #fees:paypal
 257 2019-02-12 #fridge
