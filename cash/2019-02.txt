@@ -20,8 +20,12 @@
 -257 2019-02-12 #fridge
 210 2019-02-13 #workshop Creative Coding Meetup (over 30 people attended)
 1000 2019-02-14 paypaltxn:5FD27855MJ994242L #dues:alex 
+240 2019-02-17 #workshop Take apart Day (approx 12 people, inc 5 children)
+200 2019-02-17 #fridge
+-80 2019-02-17 #fridge Fill the fridge
 100 2019-02-17 #donation by fishkingsin
 700 2019-02-18 #dues:manolis Cash on Paypal
 625 2019-02-18 #fees:paypal
+-116 2019-02-19 #fridge Fill the fridge
 700 2019-02-20 #dues:tom
 300 2019-02-20 #fridge
