@@ -2,7 +2,7 @@
 700 2019-02-02 paypaltxn:98K9924024341673W #dues:julianlee
 700 2019-02-08 paypaltxn:4SM00281MU784951W #dues:lawrence
 100 2019-02-08 paypaltxn:94167979UB411880R #donation from P.Tapio
-75 2019-02-10 paypaltxn:93A12001KA527244B #supporters: stig
+75 2019-02-10 paypaltxn:93A12001KA527244B #supporters stig
 -183 2019-02-11 #bills:electricity Bill and Receipt in the Blue Box
 500 2019-02-11 #dues:jerry !months:-1:1
 700 2019-02-11 #dues:michelle
