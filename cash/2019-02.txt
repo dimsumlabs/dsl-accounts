@@ -23,3 +23,5 @@
 100 2019-02-17 #donation by fishkingsin
 700 2019-02-18 #dues:manolis Cash on Paypal
 625 2019-02-18 #fees:paypal
+700 2019-02-20 #dues:tom
+300 2019-02-20 #fridge
