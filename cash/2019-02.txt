@@ -24,7 +24,7 @@
 200 2019-02-17 #fridge
 -80 2019-02-17 #fridge Fill the fridge
 100 2019-02-17 #donation by fishkingsin
-700 2019-02-18 #dues:manolis Cash on Paypal
+700 2019-02-18 #dues:manolis
 625 2019-02-18 #fees:paypal
 -116 2019-02-19 #fridge Fill the fridge
 700 2019-02-20 #dues:tom
@@ -32,4 +32,6 @@
 -238 2019-02-21 #bills:internet
 100 2019-02-22 #fridge
 -276 2019-02-22 #fridge
-700 2019-02-21 #dues:richard Cash on Paypal
+700 2019-02-21 #dues:richard
+-100 2019-02-26 #fees:paypal
+
