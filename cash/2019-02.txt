@@ -35,3 +35,4 @@
 700 2019-02-21 #dues:richard
 -100 2019-02-26 #fees:paypal
 600 2019-02-26 #fridge
+700 2019-02-27 #dues:sunny Cash on Paypal
