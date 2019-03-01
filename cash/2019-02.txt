@@ -32,7 +32,7 @@
 -238 2019-02-21 #bills:internet
 100 2019-02-22 #fridge
 -276 2019-02-22 #fridge
-700 2019-02-21 #dues:richard
+700 2019-02-21 #dues:richard !months:1:1
 -100 2019-02-26 #fees:paypal
 600 2019-02-26 #fridge
 700 2019-02-27 #dues:sunny Cash on Paypal
