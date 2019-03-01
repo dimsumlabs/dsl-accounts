@@ -36,3 +36,5 @@
 -100 2019-02-26 #fees:paypal
 600 2019-02-26 #fridge
 700 2019-02-27 paypaltxn:9Y029492YA389440P #dues:sunny Cash on Paypal
+700 2019-02-28 paypaltxn:07C85524VK3580714 #dues:james Cash on Paypal
+700 2019-02-28 paypaltxn:31489620KG0064057 #dues:neil Cash on Paypal
