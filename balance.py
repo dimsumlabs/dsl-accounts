@@ -30,15 +30,6 @@ sys.path.insert(0,
 from row import Row # noqa
 from rowset import RowSet # noqa
 
-# TODO
-# - Implement a running balance check - perhaps using pragma lines in
-#   the input - then we can add a check that the calculated balance matches
-#   the known counted balance at that point in time (quick, accounting people,
-#   tell me the name for this concept!).  Complicating this is the fact that
-#   the running balance is split accross two files - so, this might need
-#   consolidate the incoming and outgoing files.
-
-
 FILES_DIR = 'cash'
 
 # Ensure we do not invent more money
