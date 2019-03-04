@@ -80,10 +80,11 @@ class RowSet(object):
         else:
             filename = '(stream)'
 
+        require_balance_line = False
         if len(self) > 0:
-            raise ValueError(
-                '{}: can only load files into an empty RowSet'.format(filename)
-            )
+            # If we already have data in the rowset, then the first line of the
+            # incoming file must be a balance line
+            require_balance_line = True
 
         opening_balance = 0
 
@@ -102,6 +103,7 @@ class RowSet(object):
                 #   round-triping
                 match = re.match(r'^#balance ([-0-9.]+)', row)
                 if match:
+                    require_balance_line = False
                     given_balance = decimal.Decimal(match.group(1))
                     current_balance = opening_balance+self.balance
                     if len(self.rows) == 0:
@@ -123,6 +125,12 @@ class RowSet(object):
                 # - in future there might be additional meta/pragmas
                 # skip adding comment or meta lines
                 continue
+
+            if require_balance_line:
+                raise ValueError(
+                    '{}: trying to load a file that does not start with a'
+                    'balance pragma'.format(filename)
+                )
 
             try:
                 # TODO - the row class should handle fields inside the line

@@ -30,6 +30,7 @@ class TestRowSet(unittest.TestCase):
         f = StringIO("""
 # Files can contain comments and empty lines
 
+#balance 0 Opening Balance
 -10 1970-02-06 comment4
 10 1970-01-05 comment1
 -10 1970-01-10 comment2 #rent
@@ -52,11 +53,19 @@ class TestRowSet(unittest.TestCase):
         self.assertEqual(str(self.rows.value), '-46')
 
     def test_load_file1(self):
-        """Only load_file() into an empty RowSet
+        """Loading a file into an existing rowset requires a balance pragma
         """
 
         with self.assertRaises(ValueError):
-            self.rows.load_file(StringIO(''))
+            self.rows.load_file(StringIO('10 1970-03-20 comment12'))
+
+        f = StringIO("""
+# First non transaction line is a balance line
+
+#balance -45 comment 13
+10 1970-03-20 comment14
+""")
+        self.rows.load_file(f)
 
     def test_load_file2(self):
         """Any balance pragma must match the running balance
@@ -70,6 +79,8 @@ class TestRowSet(unittest.TestCase):
         rowset = balance.RowSet()
         with self.assertRaises(ValueError):
             rowset.load_file(f)
+
+# TODO: loading a file with a syntax error should raise an exception
 
     def test_nested_rowset(self):
         r = [None for x in range(2)]
