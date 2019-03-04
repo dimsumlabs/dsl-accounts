@@ -68,6 +68,15 @@ class TestRowSet(unittest.TestCase):
         self.rows.load_file(f)
 
     def test_load_file2(self):
+        """Special files can be loaded with the balance check skipped
+        """
+
+        self.rows.load_file(
+            StringIO('10 1970-03-20 comment12'),
+            skip_balance_check=True
+        )
+
+    def test_load_file3(self):
         """Any balance pragma must match the running balance
         """
 

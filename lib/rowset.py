@@ -72,7 +72,7 @@ class RowSet(object):
         else:
             raise ValueError('dont know how to append {}'.format(item))
 
-    def load_file(self, stream):
+    def load_file(self, stream, skip_balance_check=False):
         """Given an open file handle, read Row lines into this RowSet
         """
         if isinstance(stream, str):
@@ -82,7 +82,7 @@ class RowSet(object):
             filename = '(stream)'
 
         require_balance_line = False
-        if len(self) > 0:
+        if len(self) > 0 and not skip_balance_check:
             # If we already have data in the rowset, then the first line of the
             # incoming file must be a balance line
             require_balance_line = True
@@ -140,7 +140,7 @@ class RowSet(object):
                 print("{}:{} Syntax error".format(filename, line_number))
                 raise
 
-    def load_directory(self, dirname):
+    def load_directory(self, dirname, skip_balance_check=False):
         """Given the pathname to a directory, load all the relevant files found
         """
 
@@ -151,7 +151,7 @@ class RowSet(object):
         files = sorted(glob.glob(os.path.join(dirname, pattern)))
 
         for filename in files:
-            self.load_file(filename)
+            self.load_file(filename, skip_balance_check)
 
     def save_file(self, stream):
         """Given an open file handle, output the rowset in a format that can
