@@ -2,7 +2,8 @@
 # Licensed under GPLv3
 import decimal
 import re
-
+import os
+import glob
 
 from row import Row
 
@@ -138,6 +139,19 @@ class RowSet(object):
             except: # noqa
                 print("{}:{} Syntax error".format(filename, line_number))
                 raise
+
+    def load_directory(self, dirname):
+        """Given the pathname to a directory, load all the relevant files found
+        """
+
+        # which files are relevant
+        pattern = "*.txt"
+
+        # sort the list so that we always load with matching balances
+        files = sorted(glob.glob(os.path.join(dirname, pattern)))
+
+        for filename in files:
+            self.load_file(filename)
 
     def save_file(self, stream):
         """Given an open file handle, output the rowset in a format that can

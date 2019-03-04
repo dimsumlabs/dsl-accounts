@@ -10,7 +10,6 @@ import json
 import sys
 import csv
 import os
-import glob
 
 try:
     # python 2
@@ -83,21 +82,6 @@ def _iso8601_str(dt):
     dt = dt + datetime.timedelta(hours=8)
     timezone_str = "+08:00"
     return dt.strftime('%FT%T') + timezone_str
-
-
-def parse_dir(dirname):   # pragma: no cover
-    '''Take all files in dirname and return a RowSet with their contents'''
-
-    result = RowSet()
-    for filename in glob.glob(os.path.join(dirname, "*.txt")):
-        this = RowSet()
-        this.load_file(filename)
-        # TODO - eventually, we should be able to simply deal with the
-        # rowset, but for now, we manually split it apart
-        for entry in this:
-            result.append(entry)
-
-    return result
 
 
 def render_month(date):
@@ -792,7 +776,8 @@ if __name__ == '__main__':  # pragma: no cover
         raise RuntimeError('Directory "{}" does not exist'.format(args.dir))
 
     # first, load the data
-    args.rows = parse_dir(args.dir)
+    args.rows = RowSet()
+    args.rows.load_directory(args.dir)
 
     # optionally split multi-month transactions into one per month
     if args.split:
