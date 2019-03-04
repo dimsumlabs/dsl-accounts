@@ -72,6 +72,12 @@ report.stats:
 
 report: report.describe report.grid report.stats
 
+report.future:
+	git describe --always --dirty
+	@echo
+	./balance.py --includefuture grid --filter_hack 410
+	@echo
+
 docker:
 	docker build -t dsl-accounts .
 	docker run --rm dsl-accounts

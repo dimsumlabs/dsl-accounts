@@ -11,6 +11,10 @@ import sys
 import csv
 import os
 
+# TODO:
+# - provide a way to mark a transation as "predicted future" and render these
+#   transaction visually distinct
+
 try:
     # python 2
     from StringIO import StringIO
@@ -717,6 +721,10 @@ if __name__ == '__main__':  # pragma: no cover
                            default=os.path.join(os.path.join(
                                os.path.dirname(__file__), FILES_DIR)),
                            help='Input directory')
+    argparser.add_argument('--includefuture',
+                           action='store_true',
+                           help='Include predicted future transactions from '
+                           'a separate input directory')
     argparser.add_argument('--filter', action='append',
                            help='Add a key=value filter to the rows used')
     argparser.add_argument('--split', dest='split',
@@ -769,6 +777,12 @@ if __name__ == '__main__':  # pragma: no cover
     # first, load the data
     args.rows = RowSet()
     args.rows.load_directory(args.dir)
+
+    if args.includefuture:
+        args.rows.load_directory(
+            os.path.join(args.dir, "future"),
+            skip_balance_check=True
+        )
 
     # optionally split multi-month transactions into one per month
     if args.split:
