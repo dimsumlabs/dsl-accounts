@@ -8,9 +8,10 @@ cashfiles := $(wildcard cash/*.txt)
 # something like github pages
 #
 .PHONY: pages
-pages: pages/index.html pages/payments.json pages/report.txt pages/stats.tsv
+pages: pages/index.html pages/payments.json pages/stats.tsv
 pages: pages/transactions.csv
 pages: pages/pressstart2p.ttf
+pages: pages/report.txt
 
 pages/pressstart2p.ttf: docs/pressstart2p.ttf
 	cp $< $@
@@ -36,7 +37,7 @@ pages/stats.pdf: stats.gnuplot pages/stats.tsv
 
 pages/report.txt: ./balance.py $(cashfiles)
 	@mkdir -p pages
-	$(MAKE) report > pages/report.txt
+	$(MAKE) report >$@
 
 # Replicate the travisCI deploy pages provider.
 #
