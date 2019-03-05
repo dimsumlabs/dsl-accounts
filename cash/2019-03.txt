@@ -6,3 +6,4 @@
 300 2019-03-02 #dues:meebey
 450 2019-03-02 #workshop Raspberry Jam entry (8 non member participants, plus one member generously paying - thanks Gary)
 340 2019-03-02 #merch:rpikit (Sold 2 kits at the raspberry jam)
+120 2019-03-05 #fridge
