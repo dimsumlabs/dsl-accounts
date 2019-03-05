@@ -35,9 +35,9 @@
 700 2019-02-21 paypaltxn:1GM18747YB8453447 #dues:richard !months:1:1
 -100 2019-02-26 #fees:paypal
 600 2019-02-26 #fridge
-700 2019-02-27 paypaltxn:9Y029492YA389440P #dues:sunny Cash on Paypal
-700 2019-02-28 paypaltxn:07C85524VK3580714 #dues:james Cash on Paypal
-700 2019-02-28 paypaltxn:31489620KG0064057 #dues:neil Cash on Paypal
+700 2019-02-27 paypaltxn:9Y029492YA389440P #dues:sunny
+700 2019-02-28 paypaltxn:07C85524VK3580714 #dues:james
+700 2019-02-28 paypaltxn:31489620KG0064057 #dues:neil
 2068 2019-02-28 #loan from Hamish
 -14000 2019-02-28 #bills:rent !months:1:1
 #balance 0 closing balance
