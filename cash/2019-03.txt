@@ -14,7 +14,7 @@
 -600 2019-03-05 #fees:paypal
 100 2019-03-07 #workshop Guided tear-down (1 participant)
 200 2019-03-07 #fridge
-40 2019-03-07 from donations steamer
+40 2019-03-07 #donation from steamer box
 263 2018-12-07 #donation:members
 -263 2018-12-07 #bills:electricity !months:-1:1
 181 2019-01-05 #donation:members
