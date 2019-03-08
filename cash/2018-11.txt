@@ -10,7 +10,7 @@
 700 2018-11-13 #dues:lio
 40 2018-11-13 #merch:sticker
 -823 2018-11-14 #bills:electricity !months:-2:2
--7.60 2018-11-14 #bills:water !months:-3:3
+-7.60 2018-11-14 #bills:water !months:-3:2
 300 2018-11-14 #fridge count the cash from the fridge
 -263.6 2018-11-14 #fridge fill the fridge
 0.20 2018-11-14 #donation:members round up
