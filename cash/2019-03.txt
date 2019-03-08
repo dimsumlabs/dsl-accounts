@@ -8,7 +8,7 @@
 340 2019-03-02 #merch:rpikit (Sold 2 kits at the raspberry jam)
 172.50 2019-03-05 #fridge
 -172.50 2019-03-05 #fridge Soft drinks
-700 2019-03-02 #dues:julianlee
-500 2019-03-04 #dues:mathis
-800 2019-03-05 #dues:neil
+700 2019-03-02 paypaltxn:4TW78274T4171710V #dues:julianlee
+500 2019-03-04 paypaltxn:2B8118494N1803309 #dues:mathis
+800 2019-03-05 paypaltxn:4XM04840LG0161428 #dues:neil
 -600 2019-03-05 #fees:paypal
