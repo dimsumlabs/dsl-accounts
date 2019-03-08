@@ -12,3 +12,6 @@
 500 2019-03-04 paypaltxn:2B8118494N1803309 #dues:mathis
 800 2019-03-05 paypaltxn:4XM04840LG0161428 #dues:neil
 -600 2019-03-05 #fees:paypal
+100 2019-03-08 #workshop Guided tear-down (1 participant)
+200 2019-03-08 #fridge
+40 2019-03-08 from donations steamer
