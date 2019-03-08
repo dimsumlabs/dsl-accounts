@@ -21,3 +21,8 @@
 -181 2019-01-05 #bills:electricity !months:-1:1
 -197 2019-03-07 #bills:electricity !months:-1:1
 -7.5 2019-02-11 #bills:water !months:-4:2
+0.55 2018-03-01 #donation:members rount up small change
+0.45 2018-04-01 #donation:members rount up small change
+0.6 2018-08-01 #donation:members round up small change
+0.5 2018-10-01 #donation:members round up small change
+0.4 2018-11-01 #donation:members round up small change
