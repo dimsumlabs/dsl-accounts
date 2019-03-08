@@ -20,3 +20,4 @@
 181 2019-01-05 #donation:members
 -181 2019-01-05 #bills:electricity !months:-1:1
 -197 2019-03-08 #bills:electricity !months:-1:1
+-7.5 2019-02-11 #bills:water !months:-4:2
