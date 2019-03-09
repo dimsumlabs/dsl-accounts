@@ -31,3 +31,4 @@
 157 2019-03-01 #donation:members from Audrey for meetup
 -157 2019-03-01 #bills:meetup (USD20/month)
 75 2019-03-08 #donation:workshop earrings (Nisha friend of Audrey) Cash on Paypal
+100 2019-03-09 #fridge
