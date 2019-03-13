@@ -35,3 +35,4 @@
 200 2019-03-12 #merch:tshirt sold to Lio
 700 2019-03-12 #dues:tom
 50 2019-03-12 #donation
+100 2019-03-12 #workshop Impromptu "how to assemble a PC" workshop
