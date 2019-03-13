@@ -33,3 +33,4 @@
 75 2019-03-08 #donation:workshop earrings (Nisha friend of Audrey) Cash on Paypal
 100 2019-03-09 #fridge
 200 2019-03-12 #merch:tshirt sold to Lio
+700 2019-03-12 #dues:tom
