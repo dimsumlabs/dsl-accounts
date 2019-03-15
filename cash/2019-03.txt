@@ -38,3 +38,7 @@
 100 2019-03-12 #workshop Impromptu "how to assemble a PC" workshop
 700 2019-03-13 paypaltxn:9E141241TF8174945 #dues:gary Cash on Paypal
 1000 2019-03-14 paypaltxn:05Y32802VP089215R #dues:alex Cash on Paypal
+75 2019-03-05 #supporters:stig
+700 2019-03-08 #dues:lawrence
+425 2019-03-12 #fees:paypal
+
