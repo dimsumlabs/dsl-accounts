@@ -42,3 +42,5 @@
 700 2019-03-08 paypaltxn:2N859583NY0695704 #dues:lawrence presume Cash on Paypal
 425 2019-03-12 #fees:paypal
 300 2019-03-19 #fridge
+500 2019-03-15 paypaltxn:5EY86989HR246121E #supporters stig presume Cash on Paypal
+700 2019-03-18 paypaltxn:1SP384394T702824D #dues:manolis presume Cash on Paypal
