@@ -41,4 +41,4 @@
 75 2019-03-05 #supporters:stig
 700 2019-03-08 #dues:lawrence
 425 2019-03-12 #fees:paypal
-
+300 2019-03-19 #fridge
