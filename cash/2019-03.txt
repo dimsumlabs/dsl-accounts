@@ -38,9 +38,12 @@
 100 2019-03-12 #workshop Impromptu "how to assemble a PC" workshop
 700 2019-03-13 paypaltxn:9E141241TF8174945 #dues:gary Cash on Paypal
 1000 2019-03-14 paypaltxn:05Y32802VP089215R #dues:alex Cash on Paypal
-75 2019-03-05 paypaltxn:7N159213F3473763H #supporters stig presume Cash on Paypal
-700 2019-03-08 paypaltxn:2N859583NY0695704 #dues:lawrence presume Cash on Paypal
-425 2019-03-12 #fees:paypal
+75 2019-03-09 paypaltxn:7N159213F3473763H #supporters stig
+700 2019-03-08 paypaltxn:2N859583NY0695704 #dues:lawrence
 300 2019-03-19 #fridge
-500 2019-03-15 paypaltxn:5EY86989HR246121E #supporters stig presume Cash on Paypal
-700 2019-03-18 paypaltxn:1SP384394T702824D #dues:manolis presume Cash on Paypal
+500 2019-03-15 paypaltxn:5EY86989HR246121E #supporters stig Cash on Paypal
+700 2019-03-18 paypaltxn:1SP384394T702824D #dues:manolis Cash on Paypal
+700 2019-03-21 paypaltxn:8DX729867U189064M #dues:richard Cash on Paypal
+700 2019-03-26 paypaltxn:90617343GV258783M #dues:sunny Cash on Paypal
+
+
