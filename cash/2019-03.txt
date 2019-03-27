@@ -45,5 +45,6 @@
 700 2019-03-18 paypaltxn:1SP384394T702824D #dues:manolis Cash on Paypal
 700 2019-03-21 paypaltxn:8DX729867U189064M #dues:richard Cash on Paypal
 700 2019-03-26 paypaltxn:90617343GV258783M #dues:sunny Cash on Paypal
+500 2019-03-27 paypaltxn:48B110330W821321X #dues:philip Cash on Paypal
 
 
