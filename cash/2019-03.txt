@@ -48,3 +48,4 @@
 500 2019-03-27 paypaltxn:48B110330W821321X #dues:philip Cash on Paypal
 200 2019-03-18 #merch:kits Sell 4 LED earring kits while attending FOSSASIA Singapore conference
 2872 2019-03-31 #loan Hamish lends the space money for the rent
+-14000 2019-03-31 #bills:rent !months:1:1
