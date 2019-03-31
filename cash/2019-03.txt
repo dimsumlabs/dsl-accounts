@@ -30,7 +30,7 @@
 -157 2019-02-01 #bills:meetup (USD20/month)
 157 2019-03-01 #donation:members from Audrey for meetup
 -157 2019-03-01 #bills:meetup (USD20/month)
-75 2019-03-08 #donation:workshop earrings (Nisha friend of Audrey) Cash on Paypal
+75 2019-03-08 #merch:kits earrings (Nisha friend of Audrey) Cash on Paypal
 100 2019-03-09 #fridge
 200 2019-03-12 #merch:tshirt sold to Lio
 700 2019-03-12 #dues:tom
@@ -46,4 +46,4 @@
 700 2019-03-21 paypaltxn:8DX729867U189064M #dues:richard Cash on Paypal
 700 2019-03-26 paypaltxn:90617343GV258783M #dues:sunny Cash on Paypal
 500 2019-03-27 paypaltxn:48B110330W821321X #dues:philip Cash on Paypal
-200 2019-03-18 #workshop Sell 4 LED earring kits while attending FOSSASIA Singapore conference
+200 2019-03-18 #merch:kits Sell 4 LED earring kits while attending FOSSASIA Singapore conference
