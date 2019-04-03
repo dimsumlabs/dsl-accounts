@@ -1,1 +1,2 @@
 #balance 0 opening balance
+200 2019-04-03 #workshop Guided tear down (2 participants)
