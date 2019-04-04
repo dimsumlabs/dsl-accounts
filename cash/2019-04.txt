@@ -2,3 +2,5 @@
 200 2019-04-03 #workshop Guided tear down (2 participants)
 100 2019-04-03 from the donation box
 500 2019-04-03 #fridge
+-247 2019-04-04 #bills:electricity !months:-1:1
+-238 2019-04-04 #bills:internet !months:-1:1 Slightly late payment
