@@ -4,3 +4,5 @@
 500 2019-04-03 #fridge
 -247 2019-04-04 #bills:electricity !months:-1:1
 -238 2019-04-04 #bills:internet !months:-1:1 Slightly late payment
+300 2019-04-01 #dues:hamish top up
+300 2019-04-01 #dues:audrey top up
