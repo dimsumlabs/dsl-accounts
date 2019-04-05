@@ -7,3 +7,4 @@
 300 2019-04-01 #dues:hamish top up
 300 2019-04-01 #dues:audrey top up
 216 2019-04-05 #fridge
+-356 2019-04-05 #fridge Fill up the fridge
