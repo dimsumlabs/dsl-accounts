@@ -15,3 +15,4 @@
 500 2019-04-06 #dues:antonia paypaltxn:70T18206KV8968253 CAsh on Paypal
 150 2019-04-06 #workshop Raspberry Jam (3 participants)
 250 2019-04-08 #workshop Intro to Arduino (1 participant) Cash on Bank account
+700 2019-04-08 #dues:lawrence paypaltxn:8HM617028V125690W CAsh on Paypal
