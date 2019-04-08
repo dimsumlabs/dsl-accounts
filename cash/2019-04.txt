@@ -13,3 +13,4 @@
 700 2019-04-05 #dues:philip paypaltxn:20Y40509AK966582K CAsh on Paypal
 200 2019-04-06 #dues:antonia2 paypaltxn:85F15683GP8026730 CAsh on Paypal
 500 2019-04-06 #dues:antonia paypaltxn:70T18206KV8968253 CAsh on Paypal
+150 2019-04-06 #workshop Raspberry Jam (3 participants)
