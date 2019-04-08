@@ -8,3 +8,8 @@
 300 2019-04-01 #dues:audrey top up
 216 2019-04-05 #fridge
 -356 2019-04-05 #fridge Fill up the fridge
+700 2019-04-02 #dues:julianlee paypaltxn:9XU78491AR665210S CAsh on Paypal
+700 2019-04-04 #dues:mathis paypaltxn:3AP80957AM6315143 CAsh on Paypal
+700 2019-04-05 #dues:philip paypaltxn:20Y40509AK966582K CAsh on Paypal
+700 2019-04-06 #dues:antonia paypaltxn:85F15683GP8026730 CAsh on Paypal
+700 2019-04-06 #dues:antonia paypaltxn:70T18206KV8968253 CAsh on Paypal
