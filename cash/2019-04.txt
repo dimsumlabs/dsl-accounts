@@ -8,11 +8,12 @@
 300 2019-04-01 #dues:audrey top up
 216 2019-04-05 #fridge
 -356 2019-04-05 #fridge Fill up the fridge
-700 2019-04-02 #dues:julianlee paypaltxn:9XU78491AR665210S CAsh on Paypal
-700 2019-04-04 #dues:mathis paypaltxn:3AP80957AM6315143 CAsh on Paypal
+700 2019-04-02 #dues:julianlee paypaltxn:9XU78491AR665210S
+700 2019-04-04 #dues:mathis paypaltxn:3AP80957AM6315143
 700 2019-04-05 #dues:philip paypaltxn:20Y40509AK966582K CAsh on Paypal
-200 2019-04-06 #dues:antonia2 paypaltxn:85F15683GP8026730 CAsh on Paypal
-500 2019-04-06 #dues:antonia paypaltxn:70T18206KV8968253 CAsh on Paypal
+200 2019-04-06 #dues:max paypaltxn:85F15683GP8026730
+500 2019-04-06 #dues:antonia paypaltxn:70T18206KV8968253
 150 2019-04-06 #workshop Raspberry Jam (3 participants)
-250 2019-04-08 #workshop Intro to Arduino (1 participant) Cash on Bank account
+250 2019-04-08 #workshop Intro to Arduino (1 participant)
 700 2019-04-08 #dues:lawrence paypaltxn:8HM617028V125690W CAsh on Paypal
+-300 2019-04-09 #fees:paypal
