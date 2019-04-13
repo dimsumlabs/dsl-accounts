@@ -18,3 +18,4 @@
 700 2019-04-08 #dues:lawrence paypaltxn:8HM617028V125690W CAsh on Paypal
 -300 2019-04-09 #fees:paypal
 200 2019-04-13 #fridge
+30 2019-04-13 #donation
