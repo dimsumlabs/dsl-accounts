@@ -19,3 +19,4 @@
 -300 2019-04-09 #fees:paypal
 200 2019-04-13 #fridge
 30 2019-04-13 #donation
+700 2019-04-13 #dues:felix
