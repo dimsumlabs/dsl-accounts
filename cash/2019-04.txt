@@ -23,3 +23,4 @@
 700 2019-04-13 #dues:felix
 1000 2019-04-14 #dues:alex paypaltxn:90H58129MD035725M Cash on Paypal
 100 2019-04-16 #fridge
+800 2019-04-16 #dues:neil
