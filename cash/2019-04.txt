@@ -24,3 +24,5 @@
 1000 2019-04-14 #dues:alex paypaltxn:90H58129MD035725M Cash on Paypal
 100 2019-04-16 #fridge
 800 2019-04-16 #dues:neil
+700 2019-04-18 #dues:manolis paypaltxn:70016583CM8991029 CAsh on Paypal
+700 2019-04-21 #dues:richard paypaltxn:9WP92680WW629024A CAsh on Paypal
