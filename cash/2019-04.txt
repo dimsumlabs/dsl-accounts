@@ -27,3 +27,4 @@
 700 2019-04-18 #dues:manolis paypaltxn:70016583CM8991029 CAsh on Paypal
 700 2019-04-21 paypaltxn:9WP92680WW629024A #dues:richard !months:1:1 CAsh on Paypal
 250 2019-04-27 #workshop from HQB tour (5 adult participants, 2 children)
+600 2019-04-27 #dues:meebey !months:2
