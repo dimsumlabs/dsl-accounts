@@ -30,3 +30,4 @@
 600 2019-04-28 #dues:meebey !months:2
 3545 2019-04-29 #loan
 -14000 2019-04-30 #bills:rent !months:1:1
+#balance 0 closing balance
