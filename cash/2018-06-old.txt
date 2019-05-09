@@ -5,4 +5,4 @@
 80 2018-06-02 #fridge
 -50 2018-06-04 #fridge
 110 2018-06-04 #fridge
-#balance 3650 close balance early - everything before this is imported from the previous company hosting dim sum labs
+#balance 3650 close balance early - everything before this line is imported from the previous company that hosted dim sum labs
