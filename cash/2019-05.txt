@@ -2,3 +2,4 @@
 100 2019-05-04 #workshop Raspberry Jam
 690 2019-05-07 #fridge
 -370 2019-05-07 #fridge
+-238 2019-05-09 #bills:internet !months:-1:1
