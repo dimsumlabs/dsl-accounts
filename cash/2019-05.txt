@@ -1,2 +1,3 @@
 #balance 0 opening balance
 100 2019-05-04 #workshop Raspberry Jam
+690 2019-05-07 #fridge
