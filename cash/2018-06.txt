@@ -1,10 +1,4 @@
-#balance 2710 opening balance for the month
-100 2018-06-01 #fridge
-100 2018-06-01 donations
-600 2018-06-02 #workshop Take-apart Day
-80 2018-06-02 #fridge
--50 2018-06-04 #fridge
-110 2018-06-04 #fridge
+#balance 3650 opening balance for the month
 # The following dues payments are all part of the year in advance that was
 # paid by our core committed club members. (these lumps of additions will
 # show up whenever we use up the advance payment

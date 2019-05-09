@@ -1,0 +1,8 @@
+#balance 2710 opening balance for the month
+100 2018-06-01 #fridge
+100 2018-06-01 donations
+600 2018-06-02 #workshop Take-apart Day
+80 2018-06-02 #fridge
+-50 2018-06-04 #fridge
+110 2018-06-04 #fridge
+#balance 3650 close balance early - everything before this is imported from the previous company hosting dim sum labs
