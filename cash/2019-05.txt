@@ -3,3 +3,11 @@
 690 2019-05-07 #fridge
 -370 2019-05-07 #fridge
 -238 2019-05-09 #bills:internet !months:-1:1
+700 2019-05-02 #dues:julianlee Cash on Paypal
+700 2019-05-04 #dues:mathis Cash on Paypal
+1600 2019-05-05 #dues:neil Cash on Paypal
+700 2019-05-06 #dues:sunny Cash on Paypal
+300 2019-05-06 #dues:max Cash on Paypal
+700 2019-05-06 #dues:antonia Cash on Paypal
+700 2019-05-08 #dues:lawrence Cash on Paypal
+
