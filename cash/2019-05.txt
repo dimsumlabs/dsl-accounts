@@ -17,3 +17,7 @@
 700 2019-05-21 #dues:richard paypaltxn:31T46440UK893431N Cash on Paypal
 500 2019-05-21 #dues:jerry Cash on Bank
 700 2019-05-23 #dues:philip paypaltxn:0EN50742U3085264H Cash on Paypal
+700 2019-05-26 #dues:sunny paypaltxn:8MG44037RF649543M Cash on Paypal
+200 2019-05-28 #supporters:stig paypaltxn:8AK80590YH122091T CAsh on Paypal
+1500 2019-05-30 #workshop Introduction to Arduino - 5 ladies + 1 guy  CAsh on Bank
+
