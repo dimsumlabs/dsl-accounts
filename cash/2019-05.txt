@@ -3,6 +3,7 @@
 690 2019-05-07 #fridge
 -370 2019-05-07 #fridge
 -238 2019-05-09 #bills:internet !months:-1:1
+-440 2019-05-09 #bills:electricity !months:-1:1
 700 2019-05-02 #dues:julianlee paypaltxn:0GL2719934176070N Cash on Paypal
 700 2019-05-04 #dues:mathis paypaltxn:6VC12007YE506694W Cash on Paypal
 1600 2019-05-05 #dues:neil paypaltxn:4FA93871EL005662E Cash on Paypal
