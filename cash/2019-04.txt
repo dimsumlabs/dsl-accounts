@@ -19,7 +19,6 @@
 -300 2019-04-09 #fees:paypal
 840 2019-04-12 #dues:gary paypaltxn:5XX05856MA715540P Cash on Paypal
 160 2019-04-17 paypaltxn:32841245MW520021J #dues:gary (top up made by Nic on Gary's behalf) Cash unknown
-120 2019-04-17 paypaltxn:32841245MW520021J (unsure what for, but part of above) Cash unknown
 200 2019-04-13 #fridge
 30 2019-04-13 #donation
 700 2019-04-13 #dues:felix

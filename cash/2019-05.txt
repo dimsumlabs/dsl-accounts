@@ -22,4 +22,5 @@
 200 2019-05-28 #supporters stig paypaltxn:8AK80590YH122091T CAsh on Paypal
 1500 2019-05-30 #workshop Introduction to Arduino - 5 ladies + 1 guy  CAsh on Bank
 75 2019-04-09 paypaltxn:4T738814C8934254F #supporters stig Cash unknown
+120 2019-04-17 paypaltxn:32841245MW520021J (unsure what for, but part of earlier payment) Cash unknown
 
