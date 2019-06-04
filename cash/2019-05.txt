@@ -6,8 +6,8 @@
 -440 2019-05-09 #bills:electricity !months:-1:1
 700 2019-05-02 #dues:julianlee paypaltxn:0GL2719934176070N 
 700 2019-05-04 #dues:mathis paypaltxn:6VC12007YE506694W 
-1600 2019-05-05 #dues:neil paypaltxn:4FA93871EL005662E 
-700 2019-05-06 #dues:sunny paypaltxn:23F911791Y801983K 
+1600 2019-05-05 #dues:neil paypaltxn:4FA93871EL005662E !months:2
+700 2019-05-06 #dues:sunny paypaltxn:23F911791Y801983K !months:-1:1
 300 2019-05-06 #dues:max paypaltxn:6AX78693TL135464N 
 700 2019-05-06 #dues:antonia paypaltxn:5P092627U9957813P 
 700 2019-05-08 #dues:lawrence paypaltxn:5W541317T9861305J 
@@ -15,7 +15,7 @@
 75 2019-05-14 #supporters stig paypaltxn:9Y272802W1467910C 
 1000 2019-05-14 #dues:alex paypaltxn:5AW66036A9753835Y 
 700 2019-05-18 #dues:manolis paypaltxn:36N12195DF8216308 
-700 2019-05-21 #dues:richard paypaltxn:31T46440UK893431N 
+700 2019-05-21 #dues:richard paypaltxn:31T46440UK893431N !months:1:1
 500 2019-05-21 #dues:jerry 
 700 2019-05-23 #dues:philip paypaltxn:0EN50742U3085264H 
 700 2019-05-26 #dues:sunny paypaltxn:8MG44037RF649543M 
