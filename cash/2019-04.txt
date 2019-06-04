@@ -18,7 +18,9 @@
 700 2019-04-08 #dues:lawrence paypaltxn:8HM617028V125690W 
 -300 2019-04-09 #fees:paypal
 840 2019-04-12 #dues:gary paypaltxn:5XX05856MA715540P
-160 2019-04-17 paypaltxn:32841245MW520021J #dues:gary (top up made by Nic on Gary's behalf) Cash unknown
+160 2019-04-12 #dues:gary (Top up the above - made by Nic on Gary's behalf)
+280 2019-04-17 paypaltxn:32841245MW520021J Nic testing
+-280 2019-04-17 More testing - reversal of the above
 200 2019-04-13 #fridge
 30 2019-04-13 #donation
 700 2019-04-13 #dues:felix
