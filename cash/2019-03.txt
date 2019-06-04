@@ -10,7 +10,8 @@
 -172.50 2019-03-05 #fridge Soft drinks
 700 2019-03-02 paypaltxn:4TW78274T4171710V #dues:julianlee
 500 2019-03-04 paypaltxn:2B8118494N1803309 #dues:mathis
-800 2019-03-05 paypaltxn:4XM04840LG0161428 #dues:neil
+500 2019-03-05 paypaltxn:4XM04840LG0161428 #dues:neil
+300 2019-03-05 paypaltxn:81N9879019228751J #dues:neil (additional payment to top up)
 -600 2019-03-05 #fees:paypal
 100 2019-03-07 #workshop Guided tear-down (1 participant)
 200 2019-03-07 #fridge
