@@ -15,18 +15,18 @@
 500 2019-04-06 #dues:antonia paypaltxn:70T18206KV8968253
 150 2019-04-06 #workshop Raspberry Jam (3 participants)
 250 2019-04-08 #workshop Intro to Arduino (1 participant)
-700 2019-04-08 #dues:lawrence paypaltxn:8HM617028V125690W Cash on Paypal
+700 2019-04-08 #dues:lawrence paypaltxn:8HM617028V125690W 
 -300 2019-04-09 #fees:paypal
-840 2019-04-12 #dues:gary paypaltxn:5XX05856MA715540P Cash on Paypal
+840 2019-04-12 #dues:gary paypaltxn:5XX05856MA715540P
 160 2019-04-17 paypaltxn:32841245MW520021J #dues:gary (top up made by Nic on Gary's behalf) Cash unknown
 200 2019-04-13 #fridge
 30 2019-04-13 #donation
 700 2019-04-13 #dues:felix
-1000 2019-04-14 #dues:alex paypaltxn:90H58129MD035725M Cash on Paypal
+1000 2019-04-14 #dues:alex paypaltxn:90H58129MD035725M 
 100 2019-04-16 #fridge
 800 2019-04-16 #dues:neil
-700 2019-04-18 #dues:manolis paypaltxn:70016583CM8991029 CAsh on Paypal
-700 2019-04-21 paypaltxn:9WP92680WW629024A #dues:richard !months:1:1 CAsh on Paypal
+700 2019-04-18 #dues:manolis paypaltxn:70016583CM8991029 
+700 2019-04-21 paypaltxn:9WP92680WW629024A #dues:richard !months:1:1 
 250 2019-04-27 #workshop from HQB tour (5 adult participants, 2 children)
 600 2019-04-28 #dues:meebey !months:2
 3545 2019-04-29 #loan
