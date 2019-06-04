@@ -3,3 +3,6 @@
 300 2019-06-04 #fridge
 1788 2019-05-31 #loan Hamish lends the space money for the rent
 -14000 2019-06-01 #bills:rent
+235 2019-06-04 donation (rounding up during money transfers)
+3 2019-06-04 donation (rounding up to afford the internet bill)
+-238 2019-06-04 #bills:internet !months:-1:1
