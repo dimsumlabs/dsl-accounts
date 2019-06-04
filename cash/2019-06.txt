@@ -1,2 +1,3 @@
 #balance 11642 opening balance
 270 2019-06-04 donations from tin and box
+300 2019-06-04 #fridge
