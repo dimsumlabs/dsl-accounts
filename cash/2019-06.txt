@@ -10,3 +10,4 @@
 700 2019-06-02 #dues:julianlee paypaltxn:8TY45812NN822105C Cash On PayPal
 700 2019-06-04 #dues:mathis paypaltxn:64156988ND9173645 Cash On PayPal
 700 2019-06-06 #dues:nathan
+-412 2019-06-07 #bills:electricity !months:-1:1
