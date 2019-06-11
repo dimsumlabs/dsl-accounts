@@ -16,3 +16,4 @@
 700 2019-06-05 #dues:antonia paypaltxn:8CR271189G4545619 Cash on PayPal
 700 2019-06-05 #dues:lawrence paypaltxn:44T42379Y5262303D Cash on PayPal
 75 2019-06-05 #supporters:stig paypaltxn:2S603929DE459580U Cash on PayPal
+1000 2019-06-05 #donation David gave us a donation for the use of our old Pelican case
