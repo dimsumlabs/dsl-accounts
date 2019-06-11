@@ -21,3 +21,7 @@
 1000 2019-06-05 #dues:anthony
 600 2019-06-05 #donation from tonight
 150 2019-06-05 #donation envelope in donation box - perhaps from tv be gone workshop
+300 2019-06-05 #dues:hamish !months:-1:1
+300 2019-06-05 #dues:audrey !months:-1:1
+300 2019-06-05 #dues:hamish
+300 2019-06-05 #dues:audrey
