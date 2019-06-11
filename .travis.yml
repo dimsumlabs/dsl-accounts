@@ -6,7 +6,8 @@ python:
 
 install:
   - pip install --quiet flake8 coverage mock
-  - sudo apt-get install gnuplot
+  - sudo apt-get update
+  - sudo apt-get install -y gnuplot
 
 script:
   - make test
