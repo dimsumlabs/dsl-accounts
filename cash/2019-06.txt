@@ -19,5 +19,5 @@
 1000 2019-06-05 #donation David gave us a donation for the use of our old Pelican case
 1000 2019-06-05 #dues:meebey
 1000 2019-06-05 #dues:anthony
-600 2019-06-05 donation from tonight
-150 2019-06-05 envelope in donation box - perhaps from tv be gone workshop
+600 2019-06-05 #donation from tonight
+150 2019-06-05 #donation envelope in donation box - perhaps from tv be gone workshop
