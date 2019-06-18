@@ -25,6 +25,9 @@
 300 2019-06-05 #dues:audrey !months:-1:1
 300 2019-06-05 #dues:hamish
 300 2019-06-05 #dues:audrey
+1000 2019-06-10 #dues:nicolas Cash on Bank
 840 2019-06-12 paypaltxn:9TU219800N2381336 #dues:gary Cash on PayPal
 1000 2019-06-14 paypaltxn:6HM408855M467382E #dues:alex Cash on PayPal
 700 2019-06-15 paypaltxn:9DD735737S2411633 #dues:philip Cash on PayPal
+20 2019-06-18 donations from tin
+700 2019-06-18 #dues:michelle
