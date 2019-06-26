@@ -34,3 +34,4 @@
 40 2019-06-25 #donation steamer
 300 2019-06-25 #fridge
 30 2019-06-25 #donation from visitor tonight
+-14000 2019-06-26 #bills:rent !months:1:1
