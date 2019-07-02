@@ -39,3 +39,4 @@
 700 2019-06-21 paypaltxn:4Y988352AJ514102C #dues:richard !months:1:1 cash on paypal
 700 2019-06-26 #dues:sunny paypaltxn:38663114PS5694104 cash on Paypal
 750 2019-06-27 #workshop Introduction to Arduino Cash on bank
+#balance 3193 closing balance
