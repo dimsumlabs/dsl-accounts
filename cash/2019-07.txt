@@ -3,3 +3,5 @@
 -345.70 2019-07-02 #fridge
 -476 2019-07-05 #bills:internet !months:-1:2
 -467 2019-07-05 #bills:electricity !months:-1:1
+700 2019-07-06 #dues:hamish
+700 2019-07-06 #dues:audrey
