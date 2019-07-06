@@ -33,7 +33,7 @@
 700 2019-06-18 #dues:michelle
 40 2019-06-25 #donation steamer
 300 2019-06-25 #fridge
-30 2019-06-25 #donation from visitor tonight
+30 2019-06-25 #donation from hackjam visitor
 -14000 2019-06-26 #bills:rent !months:1:1
 700 2019-06-18 #dues:manolis paypaltxn:04C68477SR3532138 Cash on Paypal
 700 2019-06-21 paypaltxn:4Y988352AJ514102C #dues:richard !months:1:1 cash on paypal
