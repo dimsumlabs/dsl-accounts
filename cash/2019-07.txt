@@ -6,3 +6,15 @@
 1000 2019-07-05 #dues:meebey
 700 2019-07-06 #dues:hamish
 700 2019-07-06 #dues:audrey
+700 2019-07-02 #dues:julianlee Cash on Paypal
+700 2019-07-04 #dues:mathis Cash on Paypal
+800 2019-07-05 #dues:neil Cash on Paypal
+300 2019-07-06 #dues:max Cash on Paypal
+700 2019-07-06 #dues:antonia Cash on Paypal
+700 2019-07-08 #dues:lawrence Cash on Paypal
+75 2019-07-09 #supporters:stig Cash on Paypal
+700 2019-07-10 #dues:nicolas Cash on Bank
+840 2019-07-12 #dues:gary Cash on Paypal
+1000 2019-07-14 #dues:alex Cash on Paypal
+100 2019-07-16 donations Cash on Bank
+
