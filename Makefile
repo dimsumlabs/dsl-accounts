@@ -86,7 +86,7 @@ build-dep:
 	apt-get install flake8 python-coverage python-mock
 
 # Perform all available tests
-test: test.style test.units test.sum
+test: test.style test.units test.sum test.sanetags
 
 # Test just the code style - note: much slower than the unit tests
 test.style:
@@ -99,6 +99,11 @@ test.units:
 # Test to check that the code is able to sum the data in cash/* without crashing
 test.sum:
 	./balance.py sum
+
+# Check that the tags are all sane.  For the moment, just check for some
+# common errors
+test.sanetags:
+	rgrep supporters:stig cash && false
 
 # run the unit tests and additionally produce a test coverage report
 cover:
