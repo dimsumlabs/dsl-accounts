@@ -105,6 +105,10 @@ test.sum:
 test.sanetags:
 	rgrep supporters:stig cash && false
 
+# TODO
+# have a test that errors if there are two payments for the same tag in the
+# same month?
+
 # run the unit tests and additionally produce a test coverage report
 cover:
 	TZ=UTC ./run_tests.py cover
