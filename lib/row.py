@@ -24,10 +24,13 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
 
         obj = super(cls, Row).__new__(cls, value, date, comment)
 
-        # Look at the comment for this row and extract any hashtags found
+        # Look at the comment for this row and extract the various types of
+        # tags found.
         # hashtags are used to tag the category of each transaction and
         # might be overwritten later to decorate them nicely
+        # bangtags are metainstructions to the parser
         obj.hashtag = obj._xtag('#')
+        obj.bangtag = obj._xtag('!')
 
         return obj
 
@@ -84,12 +87,6 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
 
         return all_tags[0]
 
-    def bangtag(self):
-        """Look at the comment for this row and extract any '!' tags found
-           bangtags are used to insert meta-commands (like '!months:-1:5')
-        """
-        return self._xtag('!')
-
     @staticmethod
     def _month_add(date, incr):
         """unghgnh.  I am following the pattern of not requiring any extra
@@ -123,7 +120,7 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
         """extract any !months tag and use that to calculate the list of
            dates that this row could be split into
         """
-        tag = self.bangtag()
+        tag = self.bangtag
         if tag is None:
             return [self.date]
 
@@ -155,10 +152,9 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
         """
         dates = self._split_dates()
 
-        # append a bangtag to show that something has happend to this row
-        # this also means that it cannot be passed to split() twice as that
-        # would find two bangtags and raise an exception
-        comment = self.comment+' !child'
+        # TODO:
+        # - mark the new split children to show that something has happend
+        #   to this row
 
         # divide the value amongst all the child rows
         count_children = len(dates)
@@ -189,7 +185,7 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
                 datestr = date.isoformat()
                 this_value = each_value + remainder
                 remainder = 0  # only add the remainder to the first child
-                rows.append(Row(this_value, datestr, comment))
+                rows.append(Row(this_value, datestr, self.comment))
 
         # elif method == 'proportional':
         #   # The 'proportional' splitting attempts to pro-rata the transaction

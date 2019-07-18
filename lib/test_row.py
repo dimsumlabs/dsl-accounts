@@ -81,13 +81,12 @@ class TestRowClass(unittest.TestCase):
             balance.Row("100", "1970-01-01", "#two #hashtags")
 
     def test_bangtag(self):
-        self.assertEqual(self.rows[0].bangtag(), None)
+        self.assertEqual(self.rows[0].bangtag, None)
 
-        self.assertEqual(self.rows[2].bangtag(), 'bangtag')
+        self.assertEqual(self.rows[2].bangtag, 'bangtag')
 
-        obj = balance.Row("100", "1970-01-01", "!two !bangtags")
         with self.assertRaises(ValueError):
-            obj.bangtag()
+            balance.Row("100", "1970-01-01", "!two !bangtags")
 
     def test__month_add(self):
         """I dont really want to test month maths, but I wrote it, so
@@ -155,26 +154,26 @@ class TestRowClass(unittest.TestCase):
 
         # showing we can have a leap day if it is the original row date
         self.assertEqual(self.rows[4].autosplit(), [
-            balance.Row("20", "1972-01-29", "!months:-1:5 !child"),
-            balance.Row("20", "1972-02-29", "!months:-1:5 !child"),
-            balance.Row("20", "1972-03-29", "!months:-1:5 !child"),
-            balance.Row("20", "1972-04-29", "!months:-1:5 !child"),
-            balance.Row("20", "1972-05-29", "!months:-1:5 !child"),
+            balance.Row("20", "1972-01-29", "!months:-1:5"),
+            balance.Row("20", "1972-02-29", "!months:-1:5"),
+            balance.Row("20", "1972-03-29", "!months:-1:5"),
+            balance.Row("20", "1972-04-29", "!months:-1:5"),
+            balance.Row("20", "1972-05-29", "!months:-1:5"),
         ])
 
         # showing the end of month clamping to different values
         self.assertEqual(self.rows[5].autosplit(), [
-            balance.Row("25", "1972-01-31", "!months:4 !child"),
-            balance.Row("25", "1972-02-29", "!months:4 !child"),
-            balance.Row("25", "1972-03-31", "!months:4 !child"),
-            balance.Row("25", "1972-04-30", "!months:4 !child"),
+            balance.Row("25", "1972-01-31", "!months:4"),
+            balance.Row("25", "1972-02-29", "!months:4"),
+            balance.Row("25", "1972-03-31", "!months:4"),
+            balance.Row("25", "1972-04-30", "!months:4"),
         ])
 
         # showing the rounding and kept remainder
         self.assertEqual(self.rows[6].autosplit(), [
-            balance.Row("34", "1970-01-05", "!months:3 !child"),
-            balance.Row("33", "1970-02-05", "!months:3 !child"),
-            balance.Row("33", "1970-03-05", "!months:3 !child"),
+            balance.Row("34", "1970-01-05", "!months:3"),
+            balance.Row("33", "1970-02-05", "!months:3"),
+            balance.Row("33", "1970-03-05", "!months:3"),
         ])
 
         # TODO - at at least a trivial example showing method==proportional
