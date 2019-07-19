@@ -70,6 +70,54 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
         # TODO - improve the accuracy when needed
         return int(rel_days / 28.0)
 
+    def _xtag_validate(self, x, tag):
+        """Check the tag against valid tag names
+        """
+
+        # TODO:
+        # load these lists from a file
+
+        valid = {
+            '#': [
+                'bills:br',
+                'bills:electricity',
+                'bills:internet',
+                'bills:meetup',
+                'bills:rent',
+                'bills:upkeep',
+                'bills:water',
+                'bookshelves',
+                'donation',
+                'donation:c3',
+                'donation:members',
+                'dues:[a-z][a-z0-9]*',
+                'fees:paypal',
+                'fridge',
+                'loan',
+                'merch:[a-z][a-z0-9]*',
+                'supporters',
+                'test_hashtag',
+                'workshop',
+            ],
+            '!': [
+                'months:[-0-9]+(:[0-9]+)?',
+                'test_bangtag',
+            ],
+        }
+
+        if x not in valid:
+            raise ValueError("Unknown tag type {}".format(x))
+
+        # TODO: constructing the regex could be optimised ..
+        items = []
+        for i in valid[x]:
+            items.append('(^' + i + '$)')
+        regex = '|'.join(items)
+        p = re.compile(regex)
+
+        if p.match(tag) is None:
+            raise ValueError("Unknown tag {}{}".format(x, tag))
+
     def _xtag(self, x):
         """Generically extract tags with a given prefix
         """
@@ -84,6 +132,8 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
 
         if len(all_tags) == 0:
             return None
+
+        self._xtag_validate(x, all_tags[0])
 
         return all_tags[0]
 

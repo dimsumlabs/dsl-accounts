@@ -142,12 +142,10 @@ class TestRowClass(unittest.TestCase):
             datetime.date(1972, 4, 30),
         ])
 
-        obj = balance.Row("100", "1970-01-01", "!months")
         with self.assertRaises(ValueError):
-            obj._split_dates()
-        obj = balance.Row("100", "1970-01-01", "!months:1:2:3")
+            balance.Row("100", "1970-01-01", "!months")
         with self.assertRaises(ValueError):
-            obj._split_dates()
+            balance.Row("100", "1970-01-01", "!months:1:2:3")
 
     def test_autosplit(self):
         self.assertEqual(self.rows[0].autosplit(), [self.rows[0]])
