@@ -33,10 +33,10 @@ class TestRowSet(unittest.TestCase):
 #balance 0 Opening Balance
 -10 1970-02-06 comment4
 10 1970-01-05 comment1
--10 1970-01-10 comment2 #rent
--10 1970-01-01 comment3 #water
--10 1970-03-01 comment5 #rent
--15 1970-01-11 comment6 #water !months:3
+-10 1970-01-10 comment2 #bills:rent
+-10 1970-01-01 comment3 #bills:water
+-10 1970-03-01 comment5 #bills:rent
+-15 1970-01-11 comment6 #bills:water !months:3
 #balance -45 A comment
 """)
         self.rows = balance.RowSet()
@@ -152,9 +152,9 @@ class TestRowSet(unittest.TestCase):
         self.assertEqual(
             sorted(self.rows.group_by('hashtag').keys()),
             [
-                'rent',
+                'bills:rent',
+                'bills:water',
                 'unknown',
-                'water',
             ]
         )
 
@@ -162,10 +162,10 @@ class TestRowSet(unittest.TestCase):
         expect = [
             '-10 1970-02-06 comment4',
             '10 1970-01-05 comment1',
-            '-10 1970-01-10 comment2 #rent',
-            '-10 1970-01-01 comment3 #water',
-            '-10 1970-03-01 comment5 #rent',
-            '-15 1970-01-11 comment6 #water !months:3',
+            '-10 1970-01-10 comment2 #bills:rent',
+            '-10 1970-01-01 comment3 #bills:water',
+            '-10 1970-03-01 comment5 #bills:rent',
+            '-15 1970-01-11 comment6 #bills:water !months:3',
             ''
         ]
 

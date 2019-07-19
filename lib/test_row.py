@@ -38,8 +38,8 @@ class TestRowClass(unittest.TestCase):
         r = [None for x in range(7)]
         r[0] = balance.Row( "100", "1970-01-01", "incoming comment") # noqa
         r[1] = balance.Row("-100", "1970-01-02", "outgoing comment")
-        r[2] = balance.Row(  "10", "1970-01-03", "a !bangtag") # noqa
-        r[3] = balance.Row( "100", "1970-01-04", "a #hashtag") # noqa
+        r[2] = balance.Row(  "10", "1970-01-03", "a !test_bangtag") # noqa
+        r[3] = balance.Row( "100", "1970-01-04", "a #test_hashtag") # noqa
         r[4] = balance.Row( "100", "1972-02-29", "!months:-1:5") # noqa
         r[5] = balance.Row( "100", "1972-01-31", "!months:4") # noqa
         r[6] = balance.Row( "100", "1970-01-05", "!months:3") # noqa
@@ -75,7 +75,7 @@ class TestRowClass(unittest.TestCase):
     def test_hashtag(self):
         self.assertEqual(self.rows[0].hashtag, None)
 
-        self.assertEqual(self.rows[3].hashtag, 'hashtag')
+        self.assertEqual(self.rows[3].hashtag, 'test_hashtag')
 
         with self.assertRaises(ValueError):
             balance.Row("100", "1970-01-01", "#two #hashtags")
@@ -83,7 +83,7 @@ class TestRowClass(unittest.TestCase):
     def test_bangtag(self):
         self.assertEqual(self.rows[0].bangtag, None)
 
-        self.assertEqual(self.rows[2].bangtag, 'bangtag')
+        self.assertEqual(self.rows[2].bangtag, 'test_bangtag')
 
         with self.assertRaises(ValueError):
             balance.Row("100", "1970-01-01", "!two !bangtags")
@@ -184,7 +184,7 @@ class TestRowClass(unittest.TestCase):
             obj.match(foo='blah')
 
         self.assertEqual(obj.match(direction='flubber'), None)
-        self.assertEqual(obj.match(comment='a !bangtag'), obj)
+        self.assertEqual(obj.match(comment='a !test_bangtag'), obj)
         self.assertEqual(obj.match(month='1970-01'), obj)
 
     def test_filter(self):

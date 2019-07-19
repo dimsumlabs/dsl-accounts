@@ -43,10 +43,10 @@ class TestMisc(unittest.TestCase):
         r = [None for x in range(6)]
         r[0] = balance.Row("-10", "1970-02-06", "comment4")
         r[1] = balance.Row( "10", "1970-01-05", "comment1") # noqa
-        r[2] = balance.Row("-10", "1970-01-10", "comment2 #rent")
-        r[3] = balance.Row("-10", "1970-01-01", "comment3 #water")
-        r[4] = balance.Row("-10", "1970-03-01", "comment5 #rent")
-        r[5] = balance.Row("-15", "1970-01-11", "comment6 #water")
+        r[2] = balance.Row("-10", "1970-01-10", "comment2 #bills:rent")
+        r[3] = balance.Row("-10", "1970-01-01", "comment3 #bills:water")
+        r[4] = balance.Row("-10", "1970-03-01", "comment5 #bills:rent")
+        r[5] = balance.Row("-15", "1970-01-11", "comment6 #bills:water")
 
         self.rows = balance.RowSet()
         self.rows.append(r)
@@ -62,7 +62,7 @@ class TestMisc(unittest.TestCase):
                     datetime.date(1970, 3, 1),
                 ]),
                 {
-                    'water': {
+                    'bills:water': {
                         datetime.date(1970, 1, 1): {
                             'sum': -25,
                         },
@@ -75,7 +75,7 @@ class TestMisc(unittest.TestCase):
                             'sum': -10,
                         },
                     },
-                    'rent': {
+                    'bills:rent': {
                         datetime.date(1970, 3, 1): {
                             'sum': -10,
                         },
@@ -111,21 +111,21 @@ class TestMisc(unittest.TestCase):
         expect = [
             "header: 1970-01",
             "table_start:",
-            "table_row: Rent, -10, 1970-01-10",
+            "table_row: Bills:rent, -10, 1970-01-10",
+            "table_row: Bills:water, -25, 1970-01-11",
             "table_row: Unknown, $0, Not Yet",
-            "table_row: Water, -25, 1970-01-11",
             "table_end:",
             "header: 1970-02",
             "table_start:",
-            "table_row: Rent, $0, Not Yet",
+            "table_row: Bills:rent, $0, Not Yet",
+            "table_row: Bills:water, $0, Not Yet",
             "table_row: Unknown, -10, 1970-02-06",
-            "table_row: Water, $0, Not Yet",
             "table_end:",
             "header: 1970-03",
             "table_start:",
-            "table_row: Rent, -10, 1970-03-01",
+            "table_row: Bills:rent, -10, 1970-03-01",
+            "table_row: Bills:water, $0, Not Yet",
             "table_row: Unknown, $0, Not Yet",
-            "table_row: Water, $0, Not Yet",
             "table_end:",
             "",
         ]
@@ -135,10 +135,10 @@ class TestMisc(unittest.TestCase):
 
     def test_grid_render(self):
         expect = [
-            "          1970-01  1970-02  1970-03",
-            "rent          -10               -10",
-            "unknown        10      -10         ",
-            "water         -25                  ",
+            "              1970-01  1970-02  1970-03",
+            "bills:rent        -10               -10",
+            "bills:water       -25                  ",
+            "unknown            10      -10         ",
             "",
             "MONTH Sub Total      -25      -10      -10",
             "RUNNING Balance      -25      -35      -45",
@@ -161,10 +161,10 @@ class TestSubp(unittest.TestCase):
         # the path that messes with pyflakes the most in this case.
         r[0] = balance.Row(   "500", "1990-04-03", "#dues:test1") # noqa
         r[1] = balance.Row(    "20", "1990-04-03", "Unknown") # noqa
-        r[2] = balance.Row(  "1500", "1990-04-27", "#clubmate") # noqa
+        r[2] = balance.Row(  "1500", "1990-04-27", "#fridge") # noqa
         r[3] = balance.Row("-12500", "1990-04-15", "#bills:rent") # noqa
-        r[4] = balance.Row( "-1174", "1990-04-27", "#bills:electric") # noqa
-        r[5] = balance.Row( "-1500", "1990-04-26", "#clubmate") # noqa
+        r[4] = balance.Row( "-1174", "1990-04-27", "#bills:electricity") # noqa
+        r[5] = balance.Row( "-1500", "1990-04-26", "#fridge") # noqa
         r[6] = balance.Row(   "500", "1990-05-02", "#dues:test1") # noqa
         r[7] = balance.Row(  "-488", "1990-05-25", "#bills:internet") # noqa
         r[8] = balance.Row( "13152", "1990-05-25", "balance books") # noqa
@@ -184,17 +184,17 @@ class TestSubp(unittest.TestCase):
         expect = [
             "Date: 1990-04",
             "Bill			Price	Pay Date",
-            "Bills:electric         	-1174	1990-04-27",
+            "Bills:electricity      	-1174	1990-04-27",
             "Bills:internet         	$0	Not Yet",
             "Bills:rent             	-12500	1990-04-15",
-            "Clubmate               	-1500	1990-04-26",
+            "Fridge                 	-1500	1990-04-26",
             "",
             "Date: 1990-05",
             "Bill			Price	Pay Date",
-            "Bills:electric         	$0	Not Yet",
+            "Bills:electricity      	$0	Not Yet",
             "Bills:internet         	-488	1990-05-25",
             "Bills:rent             	$0	Not Yet",
-            "Clubmate               	$0	Not Yet",
+            "Fridge                 	$0	Not Yet",
             "",
             "",
         ]
@@ -209,7 +209,7 @@ class TestSubp(unittest.TestCase):
             "",
             "    <tr>",
             "        "
-            "<td>Bills:electric</td><td>-1174</td><td>1990-04-27</td>",
+            "<td>Bills:electricity</td><td>-1174</td><td>1990-04-27</td>",
             "    </tr>",
             "",
             "    <tr>",
@@ -221,7 +221,7 @@ class TestSubp(unittest.TestCase):
             "    </tr>",
             "",
             "    <tr>",
-            "        <td>Clubmate</td><td>-1500</td><td>1990-04-26</td>",
+            "        <td>Fridge</td><td>-1500</td><td>1990-04-26</td>",
             "    </tr>",
             "</table>",
             "<h2>Date: <i>1990-05</i></h2>",
@@ -229,7 +229,7 @@ class TestSubp(unittest.TestCase):
             "<tr><th>Bills</th><th>Price</th><th>Pay Date</th></tr>",
             "",
             "    <tr>",
-            "        <td>Bills:electric</td><td>$0</td><td>Not Yet</td>",
+            "        <td>Bills:electricity</td><td>$0</td><td>Not Yet</td>",
             "    </tr>",
             "",
             "    <tr>",
@@ -242,7 +242,7 @@ class TestSubp(unittest.TestCase):
             "    </tr>",
             "",
             "    <tr>",
-            "        <td>Clubmate</td><td>$0</td><td>Not Yet</td>",
+            "        <td>Fridge</td><td>$0</td><td>Not Yet</td>",
             "    </tr>",
             "</table>",
             "",
@@ -260,9 +260,9 @@ class TestSubp(unittest.TestCase):
             '500,1990-04-03,#dues:test1\r',
             '20,1990-04-03,Unknown\r',
             '-12500,1990-04-15,#bills:rent\r',
-            '-1500,1990-04-26,#clubmate\r',
-            '1500,1990-04-27,#clubmate\r',
-            '-1174,1990-04-27,#bills:electric\r',
+            '-1500,1990-04-26,#fridge\r',
+            '1500,1990-04-27,#fridge\r',
+            '-1174,1990-04-27,#bills:electricity\r',
             '500,1990-05-02,#dues:test1\r',
             '-488,1990-05-25,#bills:internet\r',
             '13152,1990-05-25,balance books\r',
@@ -277,17 +277,17 @@ class TestSubp(unittest.TestCase):
 
     def test_grid1(self):
         expect = [
-            "                     1990-04  1990-05",
-            "bills:electric out     -1174         ",
-            "bills:internet out               -488",
-            "bills:rent out        -12500         ",
-            "clubmate in             1500         ",
-            "clubmate out           -1500         ",
-            "dues:test1 in            500      500",
-            "unknown in                20    13152",
+            "                        1990-04  1990-05",
+            "bills:electricity out     -1174         ",
+            "bills:internet out                  -488",
+            "bills:rent out           -12500         ",
+            "dues:test1 in               500      500",
+            "fridge in                  1500         ",
+            "fridge out                -1500         ",
+            "unknown in                   20    13152",
             "",
-            "MONTH Sub Total       -13154    13164",
-            "RUNNING Balance       -13154       10",
+            "MONTH Sub Total          -13154    13164",
+            "RUNNING Balance          -13154       10",
             "TOTAL:        10",
         ]
 
@@ -298,16 +298,16 @@ class TestSubp(unittest.TestCase):
 
     def test_grid2(self):
         expect = [
-            "                 1990-04  1990-05",
-            "bills:electric     -1174         ",
-            "bills:internet               -488",
-            "bills:rent        -12500         ",
-            "clubmate               0         ",
-            "dues:test1           500      500",
-            "unknown               20    13152",
+            "                    1990-04  1990-05",
+            "bills:electricity     -1174         ",
+            "bills:internet                  -488",
+            "bills:rent           -12500         ",
+            "dues:test1              500      500",
+            "fridge                    0         ",
+            "unknown                  20    13152",
             "",
-            "MONTH Sub Total   -13154    13164",
-            "RUNNING Balance   -13154       10",
+            "MONTH Sub Total      -13154    13164",
+            "RUNNING Balance      -13154       10",
             "TOTAL:        10",
         ]
 
@@ -322,7 +322,7 @@ class TestSubp(unittest.TestCase):
     def test_json_payments(self):
         expect = {
             'unknown':    '1990-05',
-            'clubmate':   '1990-04',
+            'fridge':   '1990-04',
             'dues:test1': '1990-05',
         }
         got = json.loads(balance.subp_json_payments(self))
