@@ -6,15 +6,25 @@
 1000 2019-07-05 #dues:meebey
 700 2019-07-06 #dues:hamish
 700 2019-07-06 #dues:audrey
-700 2019-07-02 #dues:julianlee Cash on Paypal
-700 2019-07-04 #dues:mathis Cash on Paypal
-800 2019-07-05 #dues:neil Cash on Paypal
-300 2019-07-06 #dues:max Cash on Paypal
-700 2019-07-06 #dues:antonia Cash on Paypal
-700 2019-07-08 #dues:lawrence Cash on Paypal
-75 2019-07-09 #supporters:stig Cash on Paypal
+700 2019-07-02 #dues:julianlee paypaltxn:9JJ3651884208221C Cash on Paypal
+700 2019-07-04 #dues:mathis paypaltxn:6JH86583J42052209 Cash on Paypal
+800 2019-07-05 #dues:neil paypaltxn:02946371JB043264K Cash on Paypal
+300 2019-07-06 #dues:max paypaltxn:0CL07851MR739402A Cash on Paypal
+700 2019-07-06 #dues:antonia paypaltxn:0G113884TK643723G Cash on Paypal
+700 2019-07-08 #dues:lawrence paypaltxn:9MU852660C6154909 Cash on Paypal
+75 2019-07-09 #supporters:stig paypaltxn:2M6883315C7784625 Cash on Paypal
 700 2019-07-10 #dues:nicolas Cash on Bank
-840 2019-07-12 #dues:gary Cash on Paypal
-1000 2019-07-14 #dues:alex Cash on Paypal
-100 2019-07-16 donations Cash on Bank
+840 2019-07-12 #dues:gary paypaltxn:63V35764DG5650616 Cash on Paypal
+1000 2019-07-14 #dues:alex paypaltxn:6CW733345E022805N Cash on Paypal
+100 2019-07-16 donations Metal box Cash on Bank 
+50 2019-07-16 donations Bamboo box Cash on Bank
+700 2019-07-18 #dues:philip paypaltxn:6LR29022TC836342K cash on paypal
+700 2019-07-18 #dues:anthony paypaltxn:9UM58635T48896801 cash on paypal
+300 2019-07-18 #dues:anthony paypaltxn:8Y666647J6129082G cash on paypal
+700 2019-07-18 #dues:manolis paypaltxn:05575355H08523943 cash on paypal
+700 2019-07-21 #dues:richard paypaltxn:8U724648659865238 cash on paypal
+100 2019-07-23 donations
+250 2019-07-23 #workshop Introduction to Arduino
+-250 2019-07-25 #bills:businessregistration
+700 2019-07-26 #dues:sunny paypaltxn:8KL58676A5333010E cash on paypal
 
