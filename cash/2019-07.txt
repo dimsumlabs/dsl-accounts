@@ -25,6 +25,6 @@
 700 2019-07-21 paypaltxn:8U724648659865238 #dues:richard !months:1:1 cash on paypal
 100 2019-07-23 donations
 250 2019-07-23 #workshop Introduction to Arduino
--250 2019-07-25 #bills:br
+-250 2019-07-25 #bills:br !months:12
 700 2019-07-26 #dues:sunny paypaltxn:8KL58676A5333010E cash on paypal
 
