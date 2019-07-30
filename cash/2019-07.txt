@@ -27,4 +27,4 @@
 250 2019-07-23 #workshop Introduction to Arduino
 -250 2019-07-25 #bills:br !months:12
 700 2019-07-26 #dues:sunny paypaltxn:8KL58676A5333010E cash on paypal
-
+-14000 2019-07-29 #bills:rent !months:1:1
