@@ -23,8 +23,9 @@
 300 2019-07-18 #dues:anthony paypaltxn:8Y666647J6129082G cash on paypal
 700 2019-07-18 #dues:manolis paypaltxn:05575355H08523943 cash on paypal
 700 2019-07-21 paypaltxn:8U724648659865238 #dues:richard !months:1:1 cash on paypal
-100 2019-07-23 donations
-250 2019-07-23 #workshop Introduction to Arduino
+100 2019-07-23 donations cash on bank
+250 2019-07-23 #workshop Introduction to Arduino cash on bank
 -250 2019-07-25 #bills:br !months:12
 700 2019-07-26 #dues:sunny paypaltxn:8KL58676A5333010E cash on paypal
 -14000 2019-07-29 #bills:rent !months:1:1
+300 2019-07-31 donations cash on bank
