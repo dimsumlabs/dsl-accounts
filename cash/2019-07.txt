@@ -29,5 +29,4 @@
 700 2019-07-26 #dues:sunny paypaltxn:8KL58676A5333010E cash on paypal
 -14000 2019-07-29 #bills:rent !months:1:1
 300 2019-07-31 #donation cash on bank
-300 2019-08-03 #workshop Raspberry Pi Jam cash on bank
--549 2019-08-03 #bills:electricity !months:-1:1
+#balance 1515 closing balance

@@ -1,0 +1,3 @@
+#balance 1515 opening balance
+300 2019-08-03 #workshop Raspberry Pi Jam cash on bank
+-549 2019-08-03 #bills:electricity !months:-1:1
