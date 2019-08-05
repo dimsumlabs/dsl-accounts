@@ -1,10 +1,10 @@
 #balance 11642 opening balance
-270 2019-06-04 donations from tin and box
+270 2019-06-04 #donation from tin and box
 300 2019-06-04 #fridge
 1788 2019-05-31 #loan Hamish lends the space money for the rent
 -14000 2019-06-01 #bills:rent
-235 2019-06-04 donation (rounding up during money transfers)
-3 2019-06-04 donation (rounding up to afford the internet bill)
+235 2019-06-04 #donation (rounding up during money transfers)
+3 2019-06-04 #donation (rounding up to afford the internet bill)
 -238 2019-06-04 #bills:internet !months:-1:1
 500 2019-06-04 #dues:jerry
 700 2019-06-02 #dues:julianlee paypaltxn:8TY45812NN822105C Cash On PayPal
@@ -29,7 +29,7 @@
 840 2019-06-12 paypaltxn:9TU219800N2381336 #dues:gary Cash on PayPal
 1000 2019-06-14 paypaltxn:6HM408855M467382E #dues:alex Cash on PayPal
 700 2019-06-15 paypaltxn:9DD735737S2411633 #dues:philip Cash on PayPal
-20 2019-06-18 donations from tin
+20 2019-06-18 #donation from tin
 700 2019-06-18 #dues:michelle
 40 2019-06-25 #donation steamer
 300 2019-06-25 #fridge
