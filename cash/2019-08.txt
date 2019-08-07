@@ -1,3 +1,11 @@
 #balance 1515 opening balance
 300 2019-08-03 #workshop Raspberry Pi Jam cash on bank
 -549 2019-08-03 #bills:electricity !months:-1:1
+700 2019-08-02 #dues:julianlee paypaltxn:0YY22145C5554382G Cash on paypal
+700 2019-08-04 #dues:philip paypaltxn:19S132831B997881B Cash on paypal
+700 2019-08-04 #dues:mathis paypaltxn:89146178WX886724S Cash on paypal
+700 2019-08-05 #dues:lio paypaltxn:4VA31437PA4810846 Cash on paypal
+800 2019-08-05 #dues:neil paypaltxn:9R150184JF5966415 Cash on paypal
+700 2019-08-06 #dues:antonia paypaltxn:8JM39747BK205393H Cash on paypal
+300 2019-08-06 #dues:max paypaltxn:3T913337R3052983Y Cash on paypal
+
