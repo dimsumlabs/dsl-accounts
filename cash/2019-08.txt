@@ -17,3 +17,4 @@
 700 2019-08-21 #dues:nicolas cash on Bank
 50 2019-08-22 donations cash on bank
 1000 2019-08-22 #dues:meebey cash on bank
+700 2019-08-21 #dues:richard paypaltxn:8TX26768PL4406351 cash on paypal
