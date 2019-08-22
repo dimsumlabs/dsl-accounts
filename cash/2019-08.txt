@@ -15,3 +15,5 @@
 50 2019-08-15 #workshop Introduction to Soldering cash on bank
 1000 2019-08-18 #dues:anthony paypaltxn:3JW179250E740464X Cash on Paypal
 700 2019-08-21 #dues:nicolas cash on Bank
+50 2019-08-22 donations cash on bank
+1000 2019-08-22 #dues:meebey cash on bank
