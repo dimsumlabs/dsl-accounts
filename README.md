@@ -1,7 +1,4 @@
-.. image:: https://travis-ci.org/dimsumlabs/dsl-accounts.svg?branch=master
-           :target: https://travis-ci.org/dimsumlabs/dsl-accounts?branch=master
-.. image:: https://coveralls.io/repos/dimsumlabs/dsl-accounts/badge.svg?branch=master&service=github
-           :target: https://travis-ci.org/dimsumlabs/dsl-accounts?branch=master
+[![Build Status](https://travis-ci.org/dimsumlabs/dsl-accounts.svg?branch=master)](https://travis-ci.org/dimsumlabs/dsl-accounts)
 
 Hey! We need to keep better track of cash expenses and incomings.
 
