@@ -663,6 +663,46 @@ def subp_stats(args):
     return ''.join(s)
 
 
+def subp_check_doubletxn(args):
+    """
+    Go through each transaction in a month.  Alert if there are two
+    or more transactions that have the same dollar amount and the
+    same tag
+    """
+
+    rows = args.rows.filter([
+        'hashtag=~^dues:',
+    ])
+
+    # TODO:
+    # - get better at deduplicating the non dues payments too?
+
+    db = {}
+    for row in rows:
+        month = row.month
+        if month not in db:
+            db[month] = {}
+
+        tag = row.hashtag
+        if tag is None:
+            # TODO - ensure that every line has a tag?
+            continue
+
+        if tag not in db[month]:
+            db[month][tag] = {}
+
+        value = row.value
+        if value in db[month][tag]:
+            raise ValueError(
+                "Duplicate transaction found:\n{}\n{}".format(
+                    db[month][tag][value],
+                    row))
+
+        db[month][tag][value] = row
+
+    return
+
+
 # A list of all the sub-commands
 subp_cmds = {
     'sum': {
@@ -704,6 +744,10 @@ subp_cmds = {
     'statstsv': {
         'func': subp_statstsv,
         'help': 'Output finance stats report as TSV',
+    },
+    'check_doubletxn': {
+        'func': subp_check_doubletxn,
+        'help': 'Check for identical transactions in each month',
     },
 }
 
