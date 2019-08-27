@@ -774,10 +774,12 @@ if __name__ == '__main__':  # pragma: no cover
     if not os.path.exists(args.dir):
         raise RuntimeError('Directory "{}" does not exist'.format(args.dir))
 
-    # first, load the data
+    # first, load the main data
     args.rows = RowSet()
     args.rows.load_directory(args.dir)
 
+    # next, optionally load additional directories
+    # TODO - make these loaders into a generic list of directories
     if args.includefuture:
         args.rows.load_directory(
             os.path.join(args.dir, "future"),
