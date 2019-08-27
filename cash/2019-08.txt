@@ -9,7 +9,7 @@
 700 2019-08-06 #dues:antonia paypaltxn:8JM39747BK205393H Cash on paypal
 300 2019-08-06 #dues:max paypaltxn:3T913337R3052983Y Cash on paypal
 700 2019-08-08 #dues:lawrence paypaltxn:8ML51908KS874293U Cash on paypal
-75 2019-08-08 #supporters:stig paypaltxn:83A00045J2604240B Cash on paypal
+75 2019-08-08 #supporters stig paypaltxn:83A00045J2604240B Cash on paypal
 130 2019-08-15 donations cash on bank
 250 2019-08-15 #workshop Introduction to Arduino cash on bank 300
 50 2019-08-15 #workshop Introduction to Soldering cash on bank
