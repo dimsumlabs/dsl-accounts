@@ -11,7 +11,7 @@
 500 2017-10-10 #dues:luca
 500 2017-10-10 #dues:julianlee
 500 2017-10-10 #dues:lio
-200 2017-10-10 #dues:stigo !months:1:1
+200 2017-10-10 #dues:stigo !months:7:1
 -200 2017-10-10 #fees:paypal
 -2100 2017-10-10 #loan Repay Hamish for his loan dated 2017-09-29
 -238 2017-10-10 #fridge Ensure there are drinks in the fridge for the Noisebridge visit
