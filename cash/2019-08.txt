@@ -21,4 +21,5 @@
 250 2019-08-22 #workshop Introduction to Arduino Cash on bank
 700 2019-08-26 #dues:sunny paypaltxn:8WD03834XV726741W Cash on paypal
 1000 2019-08-27 paypaltxn:8X818539807458813 #dues:philip !months:1:1 Cash on Paypal
-
+700 2019-08-27 #dues:hamish
+700 2019-08-27 #dues:audrey
