@@ -1,34 +1,32 @@
 [![Build Status](https://travis-ci.org/dimsumlabs/dsl-accounts.svg?branch=master)](https://travis-ci.org/dimsumlabs/dsl-accounts)
 
-Hey! We need to keep better track of cash expenses and incomings.
+This repository keeps track of the DimSumLabs accounting.  We want to put
+as much as possible of our internal working out in the open for all to see.
+So, all the normal monthly expenses are visible via this repository.
 
-To sort this out, we've set up a simple "cash log" as a public repo on GitHub:
-
-	https://github.com/dimsumlabs/dsl-accounts
-
-It's got a very simplistic tab separated format for keeping track of
-transactions, and the idea is to have a public log of incoming and
-outgoing cash to re-establish some visibility into the cashflow for DSL.
-
-For this to work, we have to keep the lists updated. (It's not a
-double-entry accouting system, but simple text files to give us some
-cashflow information, KISS style).
+It's not a double-entry accouting system, but simple text files to give us some
+cashflow information, KISS style.
 
 Patches welcome, let's keep it so simple that we'll actually do it! :)
 
-* dsl-accounts/
+It includes both the python code to generate reports, check consistancy and
+output webpages as well as the actual data for our finances.
 
-  * balance.py
-  * cash
+The transactions are all in a very simplistic text file, formated with
+whitespace separated columns in the "cash" subdirectory.
 
-    * incoming-2016-08
-    * outgoing-2016-08
+After any changes are committed, the Continuous Integration system will
+run checks and tests to be sure that everything looks ok.
 
-::
+You can run the same tests localally, so you can be sure that your changes
+will pass:
 
-    ~/dsl-accounts $ ./balance.py sum
-    Sum:  8100
+```
+make test
+```
 
-(The sum should be the balance in the petty cash box, useful for knowing
-where we stand regarding rent, bills)
+You can also see a simple report from the system:
 
+```
+make report
+```
