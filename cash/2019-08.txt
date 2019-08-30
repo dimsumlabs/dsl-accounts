@@ -24,3 +24,4 @@
 700 2019-08-27 #dues:hamish
 700 2019-08-27 #dues:audrey
 300 2019-08-29 #dues:urd !months:1:1
+-14000 2019-08-30 #bills:rent !months:1:1
