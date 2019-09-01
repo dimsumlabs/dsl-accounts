@@ -1,1 +1,2 @@
 #balanve 171 opening balance
+1150 #fridge
