@@ -1,4 +1,4 @@
 #balance 171 opening balance
-1150 #fridge
--370 #fridge
-10 #donation
+1150 2019-09-01 #fridge
+-370 2019-09-01 #fridge
+10 2019-09-01 #donation
