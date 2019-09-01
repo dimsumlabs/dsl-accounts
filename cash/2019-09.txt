@@ -1,3 +1,4 @@
 #balanve 171 opening balance
 1150 #fridge
 -370 #fridge
+10 #donation
