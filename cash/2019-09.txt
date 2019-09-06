@@ -3,3 +3,7 @@
 -370 2019-09-01 #fridge
 10 2019-09-01 #donation
 1000 2019-09-02 #dues:hamish
+500 2019-09-06 #donation From Philip for laser tube replacement
+500 2019-09-06 #donation From Anthony for laser tube replacement
+300 2019-09-06 #donation Fron Lio for laser tube replacement
+-1300 2019-09-06 #bills:upkeep Order new 60W laser tube
