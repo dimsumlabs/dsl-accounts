@@ -14,6 +14,6 @@
 1000 2019-09-04 #dues:lio paypaltxn:1UP93330AA913310D cash on paypal Cash on bank
 700 2019-09-06 #dues:antonia paypaltxn:19W79229FN7965947 cash on paypal
 300 2019-09-06 #dues:max paypaltxn:02N5586823994034V cash on paypal
--370.41 2019-09-07 #fees:paypal June 2019
--380.96 2019-09-07 #fees:paypal July 2019
--331.80 2019-09-07 #fees:paypal August 2019
+-370.41 2019-09-07 #fees:paypal June 2019 !months:-3:1
+-380.96 2019-09-07 #fees:paypal July 2019 !months:-2:1
+-331.80 2019-09-07 #fees:paypal August 2019 !months:-1:1
