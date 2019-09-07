@@ -1,26 +1,26 @@
 #balance 1515 opening balance
-300 2019-08-03 #workshop Raspberry Pi Jam cash on bank
+300 2019-08-03 #workshop Raspberry Pi Jam
 -549 2019-08-03 #bills:electricity !months:-1:1
-700 2019-08-02 #dues:julianlee paypaltxn:0YY22145C5554382G Cash on paypal
-700 2019-08-04 #dues:philip paypaltxn:19S132831B997881B Cash on paypal
-700 2019-08-04 #dues:mathis paypaltxn:89146178WX886724S Cash on paypal
-700 2019-08-05 #dues:lio paypaltxn:4VA31437PA4810846 Cash on paypal
-800 2019-08-05 paypaltxn:9R150184JF5966415 #dues:neil !months:1:1 Cash on paypal
-700 2019-08-06 #dues:antonia paypaltxn:8JM39747BK205393H Cash on paypal
-300 2019-08-06 #dues:max paypaltxn:3T913337R3052983Y Cash on paypal
-700 2019-08-08 #dues:lawrence paypaltxn:8ML51908KS874293U Cash on paypal
-75 2019-08-08 #supporters stig paypaltxn:83A00045J2604240B Cash on paypal
-130 2019-08-15 donations cash on bank
-250 2019-08-15 #workshop Introduction to Arduino cash on bank 300
-50 2019-08-15 #workshop Introduction to Soldering cash on bank
-1000 2019-08-18 #dues:anthony paypaltxn:3JW179250E740464X Cash on Paypal
-700 2019-08-21 #dues:nicolas cash on Bank
-50 2019-08-22 donations cash on bank
-1000 2019-08-22 #dues:meebey cash on bank
-700 2019-08-21 paypaltxn:8TX26768PL4406351 #dues:richard !months:1:1 cash on paypal
-250 2019-08-22 #workshop Introduction to Arduino Cash on bank
-700 2019-08-26 #dues:sunny paypaltxn:8WD03834XV726741W Cash on paypal
-1000 2019-08-27 paypaltxn:8X818539807458813 #dues:philip !months:1:1 Cash on Paypal
+700 2019-08-02 #dues:julianlee paypaltxn:0YY22145C5554382G
+700 2019-08-04 #dues:philip paypaltxn:19S132831B997881B
+700 2019-08-04 #dues:mathis paypaltxn:89146178WX886724S
+700 2019-08-05 #dues:lio paypaltxn:4VA31437PA4810846
+800 2019-08-05 paypaltxn:9R150184JF5966415 #dues:neil !months:1:1
+700 2019-08-06 #dues:antonia paypaltxn:8JM39747BK205393H
+300 2019-08-06 #dues:max paypaltxn:3T913337R3052983Y
+700 2019-08-08 #dues:lawrence paypaltxn:8ML51908KS874293U
+75 2019-08-08 #supporters stig paypaltxn:83A00045J2604240B
+130 2019-08-15 donations
+250 2019-08-15 #workshop Introduction to Arduino
+50 2019-08-15 #workshop Introduction to Soldering
+1000 2019-08-18 #dues:anthony paypaltxn:3JW179250E740464X
+700 2019-08-21 #dues:nicolas
+50 2019-08-22 donations
+1000 2019-08-22 #dues:meebey
+700 2019-08-21 paypaltxn:8TX26768PL4406351 #dues:richard !months:1:1
+250 2019-08-22 #workshop Introduction to Arduino
+700 2019-08-26 #dues:sunny paypaltxn:8WD03834XV726741W
+1000 2019-08-27 paypaltxn:8X818539807458813 #dues:philip !months:1:1
 700 2019-08-27 #dues:hamish
 700 2019-08-27 #dues:audrey
 300 2019-08-29 #dues:urd !months:1:1
