@@ -10,7 +10,7 @@
 700 2019-08-28 #dues:manolis paypaltxn:41L887911S1414810 Cash on Paypal
 700 2019-09-02 #dues:julianlee paypaltxn:2XY49085TW438340R Cash on Paypal
 700 2019-09-04 #dues:mathis paypaltxn:5AS999677G278294J cash on paypal
-800 2019-09-04 #dues:neil paypaltxn:64S449981G610243M cash on paypal
+800 2019-09-04 #dues:neil paypaltxn:64S449981G610243M cash on paypal  !months:1:1
 1000 2019-09-04 #dues:lio paypaltxn:1UP93330AA913310D cash on paypal
 700 2019-09-06 #dues:antonia paypaltxn:19W79229FN7965947 cash on paypal
 300 2019-09-06 #dues:max paypaltxn:02N5586823994034V cash on paypal
