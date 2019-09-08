@@ -17,3 +17,6 @@
 -370.41 2019-09-07 #fees:paypal June 2019 !months:-3:1
 -380.96 2019-09-07 #fees:paypal July 2019 !months:-2:1
 -331.80 2019-09-07 #fees:paypal August 2019 !months:-1:1
+0.41 2019-09-08 #donation to round up and remove cents !months:-3:1
+0.96 2019-09-08 #donation to round up and remove cents !months:-2:1
+0.80 2019-09-08 #donation to round up and remove cents !months:-1:1
