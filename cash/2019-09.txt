@@ -20,3 +20,5 @@
 0.41 2019-09-08 #donation:members to round up and remove cents !months:-3:1
 0.96 2019-09-08 #donation:members to round up and remove cents !months:-2:1
 0.80 2019-09-08 #donation:members to round up and remove cents !months:-1:1
+700 2019-09-08 #dues:lawrence paypaltxn:3GG67132V2308525T Cash on paypal
+75 2019-09-09 #supporters stig paypaltxn:4S928329H0593910H
