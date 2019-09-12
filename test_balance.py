@@ -402,3 +402,12 @@ class TestSubp(unittest.TestCase):
 
         got = balance.subp_statstsv(self).split("\n")
         self.assertEqual(got, expect)
+
+    def test_subp_check_doubletxn(self):
+        self.assertEqual(balance.subp_check_doubletxn(self), None)
+
+        self.rows.append(
+            balance.Row(   "500", "1990-05-12", "#dues:test1 unwanted second payment") # noqa
+        )
+        with self.assertRaises(ValueError):
+            balance.subp_check_doubletxn(self)
