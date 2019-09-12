@@ -178,7 +178,11 @@ class TestSubp(unittest.TestCase):
     def test_sum(self):
         self.assertEqual(balance.subp_sum(self), "10")
 
-        # FIXME - check the assertion for negative sums
+        self.rows.append(
+            balance.Row( "-20", "1990-05-26", "make total negative") # noqa
+        )
+        with self.assertRaises(ValueError):
+            self.assertEqual(balance.subp_sum(self), "-10")
 
     def test_topay(self):
         expect = [
