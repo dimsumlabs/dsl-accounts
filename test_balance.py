@@ -182,7 +182,7 @@ class TestSubp(unittest.TestCase):
             balance.Row( "-20", "1990-05-26", "make total negative") # noqa
         )
         with self.assertRaises(ValueError):
-            self.assertEqual(balance.subp_sum(self), "-10")
+            balance.subp_sum(self)
 
     def test_topay(self):
         expect = [
