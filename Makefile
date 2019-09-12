@@ -86,23 +86,34 @@ build-dep:
 	apt-get install flake8 python-coverage python-mock
 
 # Perform all available tests
-test: test.style test.units test.sum test.doubletxn
+.PHONY: test
+test: test.code test.data
+
+.PHONY: test.code
+test.code: test.code.style test.code.units
 
 # Test just the code style - note: much slower than the unit tests
-test.style:
+.PHONY: test.code.style
+test.code.style:
 	flake8 ./*.py lib/*.py
 
 # Test the correctness and sanity of the code with unit tests
-test.units:
+.PHONY: test.code.units
+test.code.units:
 	TZ=UTC ./run_tests.py
 
-# Test to check that the code is able to sum the data in cash/* without crashing
-test.sum:
-	./balance.py sum
+.PHONY: test.data
+test.data: test.data.doubletxn test.data.sum
 
 # Test to check that there are not two payments for the same tag in the same month
-test.doubletxn:
+.PHONY: test.data.doubletxn
+test.data.doubletxn:
 	./balance.py check_doubletxn
+
+# Test to check that the code is able to sum the data in cash/* without crashing
+.PHONY: test.data.sum
+test.data.sum:
+	./balance.py sum
 
 # run the unit tests and additionally produce a test coverage report
 cover:
