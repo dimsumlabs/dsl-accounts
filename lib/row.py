@@ -124,6 +124,9 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
         p = re.compile(x+r'([a-zA-Z]\S*)')
         all_tags = p.findall(self.comment)
 
+        for tag in all_tags:
+            self._xtag_validate(x, tag)
+
         # FIXME - enforce known case on all tags
 
         # TODO - have a better plan for what to do with multiple tags
@@ -132,8 +135,6 @@ class Row(namedtuple('Row', ('value', 'date', 'comment'))):
 
         if len(all_tags) == 0:
             return None
-
-        self._xtag_validate(x, all_tags[0])
 
         return all_tags[0]
 
