@@ -28,3 +28,4 @@
 -476 2019-09-17 #bills:internet !months:-1:2
 -120 2019-09-17 #fridge
 1000 2019-09-17 #dues:meebey
+600 2019-09-17 paypaltxn:2V303157HS947782S #dues:xro Cash on Paypal
