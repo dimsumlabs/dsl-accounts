@@ -29,3 +29,4 @@
 -120 2019-09-17 #fridge
 1000 2019-09-17 #dues:meebey
 600 2019-09-17 paypaltxn:2V303157HS947782S #dues:xro Cash on Paypal
+500 2019-09-10 paypaltxn:8GN84853053692540 #dues:alex !months:1:1 Cash on paypal
