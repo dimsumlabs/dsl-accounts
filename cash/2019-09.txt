@@ -26,3 +26,4 @@
 500 2019-09-11 #donation:members From Antonia towards laser cutter maintenance
 60 2019-09-11 #workshop Playing with addressable LEDs night
 -476 2019-09-17 #bills:internet !months:-1:2
+-120 2019-09-17 #fridge
