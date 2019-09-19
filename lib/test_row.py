@@ -4,14 +4,13 @@
 
 import unittest
 import datetime
+from datetime import date as Date
 import sys
 import os
 if sys.version_info[0] == 2:  # pragma: no cover
     import mock
 else:
     from unittest import mock  # pragma: no cover
-
-from datetime import date as Date
 
 # Ensure that we look for any modules in our local lib dir.  This allows simple
 # testing and development use.  It also does not break the case where the lib
@@ -83,7 +82,7 @@ class TestRowClass(unittest.TestCase):
         self.assertEqual(self.rows[3].hashtag, 'test_hashtag')
 
         with self.assertRaises(ValueError):
-            row.Row("100", Date(1970,01,01), "#two #hashtags")
+            row.Row("100", Date(1970, 1, 1), "#two #hashtags")
 
     def test_bangtag(self):
         self.assertEqual(self.rows[0].bangtag, None)
@@ -91,7 +90,7 @@ class TestRowClass(unittest.TestCase):
         self.assertEqual(self.rows[2].bangtag, 'test_bangtag')
 
         with self.assertRaises(ValueError):
-            row.Row("100", Date(1970,01,01), "!two !bangtags")
+            row.Row("100", Date(1970, 1, 1), "!two !bangtags")
 
     def test__month_add(self):
         """I dont really want to test month maths, but I wrote it, so
@@ -148,35 +147,35 @@ class TestRowClass(unittest.TestCase):
         ])
 
         with self.assertRaises(ValueError):
-            row.Row("100", Date(1970,01,01), "!months")
+            row.Row("100", Date(1970, 1, 1), "!months")
         with self.assertRaises(ValueError):
-            row.Row("100", Date(1970,01,01), "!months:1:2:3")
+            row.Row("100", Date(1970, 1, 1), "!months:1:2:3")
 
     def test_autosplit(self):
         self.assertEqual(self.rows[0].autosplit(), [self.rows[0]])
 
         # showing we can have a leap day if it is the original row date
         self.assertEqual(self.rows[4].autosplit(), [
-            row.Row("20", Date(1972,01,29), "!months:-1:5"),
-            row.Row("20", Date(1972,02,29), "!months:-1:5"),
-            row.Row("20", Date(1972,03,29), "!months:-1:5"),
-            row.Row("20", Date(1972,04,29), "!months:-1:5"),
-            row.Row("20", Date(1972,05,29), "!months:-1:5"),
+            row.Row("20", Date(1972, 1, 29), "!months:-1:5"),
+            row.Row("20", Date(1972, 2, 29), "!months:-1:5"),
+            row.Row("20", Date(1972, 3, 29), "!months:-1:5"),
+            row.Row("20", Date(1972, 4, 29), "!months:-1:5"),
+            row.Row("20", Date(1972, 5, 29), "!months:-1:5"),
         ])
 
         # showing the end of month clamping to different values
         self.assertEqual(self.rows[5].autosplit(), [
-            row.Row("25", Date(1972,01,31), "!months:4"),
-            row.Row("25", Date(1972,02,29), "!months:4"),
-            row.Row("25", Date(1972,03,31), "!months:4"),
-            row.Row("25", Date(1972,04,30), "!months:4"),
+            row.Row("25", Date(1972, 1, 31), "!months:4"),
+            row.Row("25", Date(1972, 2, 29), "!months:4"),
+            row.Row("25", Date(1972, 3, 31), "!months:4"),
+            row.Row("25", Date(1972, 4, 30), "!months:4"),
         ])
 
         # showing the rounding and kept remainder
         self.assertEqual(self.rows[6].autosplit(), [
-            row.Row("34", Date(1970,01,05), "!months:3"),
-            row.Row("33", Date(1970,02,05), "!months:3"),
-            row.Row("33", Date(1970,03,05), "!months:3"),
+            row.Row("34", Date(1970, 1, 5), "!months:3"),
+            row.Row("33", Date(1970, 2, 5), "!months:3"),
+            row.Row("33", Date(1970, 3, 5), "!months:3"),
         ])
 
         # TODO - at at least a trivial example showing method==proportional

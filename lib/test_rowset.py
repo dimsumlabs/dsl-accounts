@@ -25,7 +25,8 @@ sys.path.insert(0,
 # I would use site.addsitedir, but it does an append, not insert
 
 import rowset # noqa
-import row
+import row # noqa
+
 
 class TestRowSet(unittest.TestCase):
     def setUp(self):

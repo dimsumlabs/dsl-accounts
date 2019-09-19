@@ -4,6 +4,7 @@
 
 import unittest
 import datetime
+from datetime import date as Date
 import sys
 import json
 
@@ -13,8 +14,6 @@ if sys.version_info[0] == 2:  # pragma: no cover
 else:
     from unittest import mock  # pragma: no cover
     from io import StringIO
-
-from datetime import date as Date
 
 import balance # noqa
 
