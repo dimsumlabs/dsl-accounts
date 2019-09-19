@@ -6,10 +6,13 @@ import unittest
 import datetime
 import sys
 import json
+
 if sys.version_info[0] == 2:  # pragma: no cover
     import mock
+    from StringIO import StringIO
 else:
     from unittest import mock  # pragma: no cover
+    from io import StringIO
 
 from datetime import date as Date
 
@@ -42,16 +45,18 @@ class TestTime(unittest.TestCase):
 
 class TestMisc(unittest.TestCase):
     def setUp(self):
-        r = [None for x in range(6)]
-        r[0] = balance.Row("-10", Date(1970,02,06), "comment4")
-        r[1] = balance.Row( "10", Date(1970,01,05), "comment1") # noqa
-        r[2] = balance.Row("-10", Date(1970,01,10), "comment2 #bills:rent")
-        r[3] = balance.Row("-10", Date(1970,01,01), "comment3 #bills:water")
-        r[4] = balance.Row("-10", Date(1970,03,01), "comment5 #bills:rent")
-        r[5] = balance.Row("-15", Date(1970,01,11), "comment6 #bills:water")
-
+        f = StringIO("""
+#balance 0 Opening Balance
+-10 1970-02-06 comment4
+10  1970-01-05 comment1
+-10 1970-01-10 comment2 #bills:rent
+-10 1970-01-01 comment3 #bills:water
+-10 1970-03-01 comment5 #bills:rent
+-15 1970-01-11 comment6 #bills:water
+#balance -45 Closing balance
+""")
         self.rows = balance.RowSet()
-        self.rows.append(r)
+        self.rows.load_file(f)
 
     def tearDown(self):
         self.rows = None
@@ -156,23 +161,21 @@ class TestMisc(unittest.TestCase):
 
 class TestSubp(unittest.TestCase):
     def setUp(self):
-        r = [None for x in range(9)]
-        # hey pyflakes, these look much nicer all aligned like this, but you
-        # hate it, so I need to stick excludes on these lines, which just makes
-        # the lines exceed 80 columns, which makes them look shit.  I choose
-        # the path that messes with pyflakes the most in this case.
-        r[0] = balance.Row(   "500", Date(1990,04,03), "#dues:test1") # noqa
-        r[1] = balance.Row(    "20", Date(1990,04,03), "Unknown") # noqa
-        r[2] = balance.Row(  "1500", Date(1990,04,27), "#fridge") # noqa
-        r[3] = balance.Row("-12500", Date(1990,04,15), "#bills:rent") # noqa
-        r[4] = balance.Row( "-1174", Date(1990,04,27), "#bills:electricity") # noqa
-        r[5] = balance.Row( "-1500", Date(1990,04,26), "#fridge") # noqa
-        r[6] = balance.Row(   "500", Date(1990,05,02), "#dues:test1") # noqa
-        r[7] = balance.Row(  "-488", Date(1990,05,25), "#bills:internet") # noqa
-        r[8] = balance.Row( "13152", Date(1990,05,25), "balance books") # noqa
-
+        f = StringIO("""
+#balance 0 Opening Balance
+500 1990-04-03 #dues:test1
+20 1990-04-03 Unknown
+1500 1990-04-27 #fridge
+-12500 1990-04-15 #bills:rent
+-1174 1990-04-27 #bills:electricity
+-1500 1990-04-26 #fridge
+500 1990-05-02 #dues:test1
+-488 1990-05-25 #bills:internet
+13152 1990-05-25 balance books
+#balance 10 Closing balance
+""")
         self.rows = balance.RowSet()
-        self.rows.append(r)
+        self.rows.load_file(f)
 
     def tearDown(self):
         self.rows = None
