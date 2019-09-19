@@ -7,6 +7,8 @@ import datetime
 import sys
 import os
 
+from datetime import date as Date
+
 try:
     # python 2
     from StringIO import StringIO
@@ -141,9 +143,9 @@ class TestRowSet(unittest.TestCase):
         self.assertEqual(
             sorted(self.rows.group_by('month').keys()),
             [
-                datetime.date(1970, 1, 1),
-                datetime.date(1970, 2, 1),
-                datetime.date(1970, 3, 1),
+                Date(1970, 1, 1),
+                Date(1970, 2, 1),
+                Date(1970, 3, 1),
             ]
         )
 

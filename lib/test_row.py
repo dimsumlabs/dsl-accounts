@@ -11,6 +11,8 @@ if sys.version_info[0] == 2:  # pragma: no cover
 else:
     from unittest import mock  # pragma: no cover
 
+from datetime import date as Date
+
 # Ensure that we look for any modules in our local lib dir.  This allows simple
 # testing and development use.  It also does not break the case where the lib
 # has been installed properly on the normal sys.path
@@ -52,7 +54,7 @@ class TestRowClass(unittest.TestCase):
         obj = self.rows[0]
         self.assertEqual(obj.value, 100)
         self.assertEqual(obj.comment, "incoming comment")
-        self.assertEqual(obj.date, datetime.date(1970, 1, 1))
+        self.assertEqual(obj.date, Date(1970, 1, 1))
         self.assertEqual(obj.direction, 'incoming')
 
     def test_outgoing(self):
@@ -92,54 +94,54 @@ class TestRowClass(unittest.TestCase):
         """I dont really want to test month maths, but I wrote it, so
         """
         r = self.rows[0]  # throw away to get to the namespace with _month_add
-        date = datetime.date(1970, 5, 18)
+        date = Date(1970, 5, 18)
         # simple add and subtract
         self.assertEqual(r._month_add(date, 0), date)
-        self.assertEqual(r._month_add(date, 1), datetime.date(1970, 6, 18))
-        self.assertEqual(r._month_add(date, -1), datetime.date(1970, 4, 18))
+        self.assertEqual(r._month_add(date, 1), Date(1970, 6, 18))
+        self.assertEqual(r._month_add(date, -1), Date(1970, 4, 18))
 
         # not crossing a year
-        self.assertEqual(r._month_add(date, 7), datetime.date(1970, 12, 18))
-        self.assertEqual(r._month_add(date, -4), datetime.date(1970, 1, 18))
+        self.assertEqual(r._month_add(date, 7), Date(1970, 12, 18))
+        self.assertEqual(r._month_add(date, -4), Date(1970, 1, 18))
 
         # crossing a year
-        self.assertEqual(r._month_add(date, 8), datetime.date(1971, 1, 18))
-        self.assertEqual(r._month_add(date, -5), datetime.date(1969, 12, 18))
+        self.assertEqual(r._month_add(date, 8), Date(1971, 1, 18))
+        self.assertEqual(r._month_add(date, -5), Date(1969, 12, 18))
 
         # silly large numbers
-        self.assertEqual(r._month_add(date, 500), datetime.date(2012, 1, 18))
-        self.assertEqual(r._month_add(date, -500), datetime.date(1928, 9, 18))
+        self.assertEqual(r._month_add(date, 500), Date(2012, 1, 18))
+        self.assertEqual(r._month_add(date, -500), Date(1928, 9, 18))
 
         # dates that dont exist in other months
-        date = datetime.date(1970, 5, 31)
-        self.assertEqual(r._month_add(date, 1), datetime.date(1970, 6, 30))
-        self.assertEqual(r._month_add(date, -1), datetime.date(1970, 4, 30))
+        date = Date(1970, 5, 31)
+        self.assertEqual(r._month_add(date, 1), Date(1970, 6, 30))
+        self.assertEqual(r._month_add(date, -1), Date(1970, 4, 30))
 
         # Show that leap years work
-        self.assertEqual(r._month_add(date, -3), datetime.date(1970, 2, 28))
-        self.assertEqual(r._month_add(date, 21), datetime.date(1972, 2, 29))
+        self.assertEqual(r._month_add(date, -3), Date(1970, 2, 28))
+        self.assertEqual(r._month_add(date, 21), Date(1972, 2, 29))
 
         # unless you ask for a zero increment, when the date is unchanged
-        date = datetime.date(1972, 2, 29)
-        self.assertEqual(r._month_add(date, 0), datetime.date(1972, 2, 29))
+        date = Date(1972, 2, 29)
+        self.assertEqual(r._month_add(date, 0), Date(1972, 2, 29))
 
     def test__split_dates(self):
         self.assertEqual(self.rows[0]._split_dates(),
-                         [datetime.date(1970, 1, 1)])
+                         [Date(1970, 1, 1)])
         self.assertEqual(self.rows[2]._split_dates(),
-                         [datetime.date(1970, 1, 3)])
+                         [Date(1970, 1, 3)])
         self.assertEqual(self.rows[4]._split_dates(), [
-            datetime.date(1972, 1, 29),
-            datetime.date(1972, 2, 29),
-            datetime.date(1972, 3, 29),
-            datetime.date(1972, 4, 29),
-            datetime.date(1972, 5, 29)
+            Date(1972, 1, 29),
+            Date(1972, 2, 29),
+            Date(1972, 3, 29),
+            Date(1972, 4, 29),
+            Date(1972, 5, 29)
         ])
         self.assertEqual(self.rows[5]._split_dates(), [
-            datetime.date(1972, 1, 31),
-            datetime.date(1972, 2, 29),
-            datetime.date(1972, 3, 31),
-            datetime.date(1972, 4, 30),
+            Date(1972, 1, 31),
+            Date(1972, 2, 29),
+            Date(1972, 3, 31),
+            Date(1972, 4, 30),
         ])
 
         with self.assertRaises(ValueError):
