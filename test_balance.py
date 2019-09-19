@@ -11,6 +11,8 @@ if sys.version_info[0] == 2:  # pragma: no cover
 else:
     from unittest import mock  # pragma: no cover
 
+from datetime import date as Date
+
 import balance # noqa
 
 
@@ -57,43 +59,43 @@ class TestMisc(unittest.TestCase):
     def test_grid_accumulate(self):
         expected = (
                 set([
-                    datetime.date(1970, 1, 1),
-                    datetime.date(1970, 2, 1),
-                    datetime.date(1970, 3, 1),
+                    Date(1970, 1, 1),
+                    Date(1970, 2, 1),
+                    Date(1970, 3, 1),
                 ]),
                 {
                     'bills:water': {
-                        datetime.date(1970, 1, 1): {
+                        Date(1970, 1, 1): {
                             'sum': -25,
                         },
                     },
                     'unknown': {
-                        datetime.date(1970, 1, 1): {
+                        Date(1970, 1, 1): {
                             'sum': 10,
                         },
-                        datetime.date(1970, 2, 1): {
+                        Date(1970, 2, 1): {
                             'sum': -10,
                         },
                     },
                     'bills:rent': {
-                        datetime.date(1970, 3, 1): {
+                        Date(1970, 3, 1): {
                             'sum': -10,
                         },
-                        datetime.date(1970, 1, 1): {
+                        Date(1970, 1, 1): {
                             'sum': -10,
                         },
                     },
                 },
                 {
-                    datetime.date(1970, 1, 1): -25,
-                    datetime.date(1970, 2, 1): -10,
-                    datetime.date(1970, 3, 1): -10,
+                    Date(1970, 1, 1): -25,
+                    Date(1970, 2, 1): -10,
+                    Date(1970, 3, 1): -10,
                     'total': -45
                 },
                 {
-                    datetime.date(1970, 1, 1): -25,
-                    datetime.date(1970, 2, 1): -35,
-                    datetime.date(1970, 3, 1): -45,
+                    Date(1970, 1, 1): -25,
+                    Date(1970, 2, 1): -35,
+                    Date(1970, 3, 1): -45,
                 }
             )
         got = balance.grid_accumulate(self.rows)
