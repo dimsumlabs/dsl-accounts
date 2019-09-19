@@ -1,5 +1,4 @@
 # Licensed under GPLv3
-from collections import namedtuple
 import datetime
 import calendar
 import decimal
@@ -16,23 +15,45 @@ import re
 #   transactions (or even just one with more than 3 months...)
 
 
-class Row(namedtuple('Row', ('value', 'date', 'comment'))):
+class Row:
+    # This is used for compatibility with the old named tuple object
+    # it is only used in the CSV handling.
+    # TODO - change the way CSV works and remove this
+    _fields = ['value', 'date', 'comment']
 
-    def __new__(cls, value, date, comment):
-        value = decimal.Decimal(value)
-        date = datetime.datetime.strptime(date.strip(), "%Y-%m-%d").date()
-
-        obj = super(cls, Row).__new__(cls, value, date, comment)
+    def __init__(self, value, date, comment):
+        self.value = decimal.Decimal(value)
+        self.date = datetime.datetime.strptime(date.strip(), "%Y-%m-%d").date()
+        self.comment = comment
 
         # Look at the comment for this row and extract the various types of
         # tags found.
         # hashtags are used to tag the category of each transaction and
         # might be overwritten later to decorate them nicely
         # bangtags are metainstructions to the parser
-        obj.hashtag = obj._xtag('#')
-        obj.bangtag = obj._xtag('!')
+        self.hashtag = self._xtag('#')
+        self.bangtag = self._xtag('!')
 
-        return obj
+    # Implement len and getitem so that this object can be used with the
+    # csv writer.
+    # TODO - handle csv row creation within the row class and remove these
+    def __len__(self):
+        return len(self._fields)
+
+    def __getitem__(self, i):
+        attr = self._fields[i]
+        return getattr(self, attr)
+
+    # Implement equality test with other Row objects
+    # This is used in the test_autosplit
+    # TODO - implement the test differently and remove this
+    def __eq__(self, other):
+        return (
+            self.__class__ == other.__class__ and
+            self.value == other.value and
+            self.date == other.date and
+            self.comment == other.comment
+        )
 
     def __add__(self, value):
         if isinstance(value, Row):
