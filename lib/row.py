@@ -13,6 +13,9 @@ import re
 #   more obvious format (perhaps "!months=month[,month]+" - which is clearly
 #   a more discoverable format, but would get quite verbose with yearly
 #   transactions (or even just one with more than 3 months...)
+# - if the comment field is updated, re-extract the tags (currently the tags
+#   are only extracted at __init__ time, so an empty Row that has data added
+#   to it is not going to behave identically..
 
 
 class Row:
