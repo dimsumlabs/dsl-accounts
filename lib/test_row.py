@@ -1,5 +1,5 @@
 
-""" Perform tests on the balance.py
+""" Perform tests on the row.py
 """
 
 import unittest
@@ -21,11 +21,7 @@ sys.path.insert(0,
                 )
 # I would use site.addsitedir, but it does an append, not insert
 
-import row as balance # noqa
-# Originally, this class was imported from the balance.py, thus the
-# name in the import above
-# TODO:
-# - rename all the balance lines below to use row instead
+import row # noqa
 
 
 class fakedatetime(datetime.datetime):
@@ -38,13 +34,13 @@ class fakedatetime(datetime.datetime):
 class TestRowClass(unittest.TestCase):
     def setUp(self):
         r = [None for x in range(7)]
-        r[0] = balance.Row( "100", "1970-01-01", "incoming comment") # noqa
-        r[1] = balance.Row("-100", "1970-01-02", "outgoing comment")
-        r[2] = balance.Row(  "10", "1970-01-03", "a !test_bangtag") # noqa
-        r[3] = balance.Row( "100", "1970-01-04", "a #test_hashtag") # noqa
-        r[4] = balance.Row( "100", "1972-02-29", "!months:-1:5") # noqa
-        r[5] = balance.Row( "100", "1972-01-31", "!months:4") # noqa
-        r[6] = balance.Row( "100", "1970-01-05", "!months:3") # noqa
+        r[0] = row.Row( "100", "1970-01-01", "incoming comment") # noqa
+        r[1] = row.Row("-100", "1970-01-02", "outgoing comment")
+        r[2] = row.Row(  "10", "1970-01-03", "a !test_bangtag") # noqa
+        r[3] = row.Row( "100", "1970-01-04", "a #test_hashtag") # noqa
+        r[4] = row.Row( "100", "1972-02-29", "!months:-1:5") # noqa
+        r[5] = row.Row( "100", "1972-01-31", "!months:4") # noqa
+        r[6] = row.Row( "100", "1970-01-05", "!months:3") # noqa
         self.rows = r
 
     def tearDown(self):
@@ -80,7 +76,7 @@ class TestRowClass(unittest.TestCase):
         self.assertEqual(self.rows[3].hashtag, 'test_hashtag')
 
         with self.assertRaises(ValueError):
-            balance.Row("100", "1970-01-01", "#two #hashtags")
+            row.Row("100", "1970-01-01", "#two #hashtags")
 
     def test_bangtag(self):
         self.assertEqual(self.rows[0].bangtag, None)
@@ -88,7 +84,7 @@ class TestRowClass(unittest.TestCase):
         self.assertEqual(self.rows[2].bangtag, 'test_bangtag')
 
         with self.assertRaises(ValueError):
-            balance.Row("100", "1970-01-01", "!two !bangtags")
+            row.Row("100", "1970-01-01", "!two !bangtags")
 
     def test__month_add(self):
         """I dont really want to test month maths, but I wrote it, so
@@ -145,35 +141,35 @@ class TestRowClass(unittest.TestCase):
         ])
 
         with self.assertRaises(ValueError):
-            balance.Row("100", "1970-01-01", "!months")
+            row.Row("100", "1970-01-01", "!months")
         with self.assertRaises(ValueError):
-            balance.Row("100", "1970-01-01", "!months:1:2:3")
+            row.Row("100", "1970-01-01", "!months:1:2:3")
 
     def test_autosplit(self):
         self.assertEqual(self.rows[0].autosplit(), [self.rows[0]])
 
         # showing we can have a leap day if it is the original row date
         self.assertEqual(self.rows[4].autosplit(), [
-            balance.Row("20", "1972-01-29", "!months:-1:5"),
-            balance.Row("20", "1972-02-29", "!months:-1:5"),
-            balance.Row("20", "1972-03-29", "!months:-1:5"),
-            balance.Row("20", "1972-04-29", "!months:-1:5"),
-            balance.Row("20", "1972-05-29", "!months:-1:5"),
+            row.Row("20", "1972-01-29", "!months:-1:5"),
+            row.Row("20", "1972-02-29", "!months:-1:5"),
+            row.Row("20", "1972-03-29", "!months:-1:5"),
+            row.Row("20", "1972-04-29", "!months:-1:5"),
+            row.Row("20", "1972-05-29", "!months:-1:5"),
         ])
 
         # showing the end of month clamping to different values
         self.assertEqual(self.rows[5].autosplit(), [
-            balance.Row("25", "1972-01-31", "!months:4"),
-            balance.Row("25", "1972-02-29", "!months:4"),
-            balance.Row("25", "1972-03-31", "!months:4"),
-            balance.Row("25", "1972-04-30", "!months:4"),
+            row.Row("25", "1972-01-31", "!months:4"),
+            row.Row("25", "1972-02-29", "!months:4"),
+            row.Row("25", "1972-03-31", "!months:4"),
+            row.Row("25", "1972-04-30", "!months:4"),
         ])
 
         # showing the rounding and kept remainder
         self.assertEqual(self.rows[6].autosplit(), [
-            balance.Row("34", "1970-01-05", "!months:3"),
-            balance.Row("33", "1970-02-05", "!months:3"),
-            balance.Row("33", "1970-03-05", "!months:3"),
+            row.Row("34", "1970-01-05", "!months:3"),
+            row.Row("33", "1970-02-05", "!months:3"),
+            row.Row("33", "1970-03-05", "!months:3"),
         ])
 
         # TODO - at at least a trivial example showing method==proportional
@@ -212,7 +208,7 @@ class TestRowClass(unittest.TestCase):
         self.assertEqual(obj.filter('comment=~^foo'), None)
         self.assertEqual(obj.filter('comment!~^foo'), obj)
 
-    @mock.patch('balance.datetime.datetime', fakedatetime)
+    @mock.patch('row.datetime.datetime', fakedatetime)
     def test_filter_rel_months(self):
         obj = self.rows[2]
         self.assertEqual(obj.filter('rel_months<-264'), obj)

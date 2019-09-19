@@ -1,5 +1,5 @@
 
-""" Perform tests on the balance.py
+""" Perform tests on the rowset.py
 """
 
 import unittest
@@ -24,8 +24,8 @@ sys.path.insert(0,
                 )
 # I would use site.addsitedir, but it does an append, not insert
 
-import rowset as balance # noqa
-
+import rowset # noqa
+import row
 
 class TestRowSet(unittest.TestCase):
     def setUp(self):
@@ -41,7 +41,7 @@ class TestRowSet(unittest.TestCase):
 -15 1970-01-11 comment6 #bills:water !months:3
 #balance -45 A comment
 """)
-        self.rows = balance.RowSet()
+        self.rows = rowset.RowSet()
         self.rows.load_file(f)
 
     def tearDown(self):
@@ -50,8 +50,8 @@ class TestRowSet(unittest.TestCase):
     def test_value(self):
         self.assertEqual(self.rows.value, -45)
 
-        self.rows.append(balance.Row("-0.5", "1970-03-12", "comment9")) # noqa
-        self.rows.append(balance.Row("-0.5", "1970-03-13", "comment10")) # noqa
+        self.rows.append(row.Row("-0.5", "1970-03-12", "comment9")) # noqa
+        self.rows.append(row.Row("-0.5", "1970-03-13", "comment10")) # noqa
         self.assertEqual(str(self.rows.value), '-46')
 
     def test_load_file1(self):
@@ -87,16 +87,16 @@ class TestRowSet(unittest.TestCase):
 #balance 100000 The wrong balance
 """)
 
-        rowset = balance.RowSet()
+        set = rowset.RowSet()
         with self.assertRaises(ValueError):
-            rowset.load_file(f)
+            set.load_file(f)
 
 # TODO: loading a file with a syntax error should raise an exception
 
     def test_nested_rowset(self):
         r = [None for x in range(2)]
-        r[0] = balance.Row("-13", "1971-02-06", "comment7") # noqa
-        r[1] = balance.Row( "12", "1971-01-05", "comment8") # noqa
+        r[0] = row.Row("-13", "1971-02-06", "comment7") # noqa
+        r[1] = row.Row( "12", "1971-01-05", "comment8") # noqa
         self.rows.append(r)
 
         self.assertEqual(self.rows.value, -46)
