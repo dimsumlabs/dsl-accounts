@@ -6,9 +6,6 @@ import re
 
 
 # TODO
-# - make Row take Date objects and not strings with dates, removing a string
-#   handling fart from Row.autosplit() and removing external formatting
-#   knowledge from Row
 # - The "!months:[offset:]count" tag is perhaps a little awkward, find a
 #   more obvious format (perhaps "!months=month[,month]+" - which is clearly
 #   a more discoverable format, but would get quite verbose with yearly
@@ -26,14 +23,18 @@ class Row:
 
     @classmethod
     def fromTxt(cls, text):
-        return cls(*re.split(r'\s+', text, maxsplit=2))
+        (value, date, comment) = re.split(r'\s+', text, maxsplit=2)
+        date = datetime.datetime.strptime(date.strip(), "%Y-%m-%d").date()
+
+        return cls(value, date, comment)
 
     def __init__(self, value=None, date=None, comment=None):
         if value is not None:
             value = decimal.Decimal(value)
 
         if date is not None:
-            date = datetime.datetime.strptime(date.strip(), "%Y-%m-%d").date()
+            if not isinstance(date, datetime.date):
+                raise ValueError("{} is not a date object".format(date))
 
         self.value = value
         self.date = date
@@ -271,10 +272,9 @@ class Row:
             remainder = self.value - each_value * count_children
 
             for date in dates:
-                datestr = date.isoformat()
                 this_value = each_value + remainder
                 remainder = 0  # only add the remainder to the first child
-                rows.append(Row(this_value, datestr, self.comment))
+                rows.append(Row(this_value, date, self.comment))
 
         # elif method == 'proportional':
         #   # The 'proportional' splitting attempts to pro-rata the transaction

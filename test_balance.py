@@ -43,12 +43,12 @@ class TestTime(unittest.TestCase):
 class TestMisc(unittest.TestCase):
     def setUp(self):
         r = [None for x in range(6)]
-        r[0] = balance.Row("-10", "1970-02-06", "comment4")
-        r[1] = balance.Row( "10", "1970-01-05", "comment1") # noqa
-        r[2] = balance.Row("-10", "1970-01-10", "comment2 #bills:rent")
-        r[3] = balance.Row("-10", "1970-01-01", "comment3 #bills:water")
-        r[4] = balance.Row("-10", "1970-03-01", "comment5 #bills:rent")
-        r[5] = balance.Row("-15", "1970-01-11", "comment6 #bills:water")
+        r[0] = balance.Row("-10", Date(1970,02,06), "comment4")
+        r[1] = balance.Row( "10", Date(1970,01,05), "comment1") # noqa
+        r[2] = balance.Row("-10", Date(1970,01,10), "comment2 #bills:rent")
+        r[3] = balance.Row("-10", Date(1970,01,01), "comment3 #bills:water")
+        r[4] = balance.Row("-10", Date(1970,03,01), "comment5 #bills:rent")
+        r[5] = balance.Row("-15", Date(1970,01,11), "comment6 #bills:water")
 
         self.rows = balance.RowSet()
         self.rows.append(r)
@@ -161,15 +161,15 @@ class TestSubp(unittest.TestCase):
         # hate it, so I need to stick excludes on these lines, which just makes
         # the lines exceed 80 columns, which makes them look shit.  I choose
         # the path that messes with pyflakes the most in this case.
-        r[0] = balance.Row(   "500", "1990-04-03", "#dues:test1") # noqa
-        r[1] = balance.Row(    "20", "1990-04-03", "Unknown") # noqa
-        r[2] = balance.Row(  "1500", "1990-04-27", "#fridge") # noqa
-        r[3] = balance.Row("-12500", "1990-04-15", "#bills:rent") # noqa
-        r[4] = balance.Row( "-1174", "1990-04-27", "#bills:electricity") # noqa
-        r[5] = balance.Row( "-1500", "1990-04-26", "#fridge") # noqa
-        r[6] = balance.Row(   "500", "1990-05-02", "#dues:test1") # noqa
-        r[7] = balance.Row(  "-488", "1990-05-25", "#bills:internet") # noqa
-        r[8] = balance.Row( "13152", "1990-05-25", "balance books") # noqa
+        r[0] = balance.Row(   "500", Date(1990,04,03), "#dues:test1") # noqa
+        r[1] = balance.Row(    "20", Date(1990,04,03), "Unknown") # noqa
+        r[2] = balance.Row(  "1500", Date(1990,04,27), "#fridge") # noqa
+        r[3] = balance.Row("-12500", Date(1990,04,15), "#bills:rent") # noqa
+        r[4] = balance.Row( "-1174", Date(1990,04,27), "#bills:electricity") # noqa
+        r[5] = balance.Row( "-1500", Date(1990,04,26), "#fridge") # noqa
+        r[6] = balance.Row(   "500", Date(1990,05,02), "#dues:test1") # noqa
+        r[7] = balance.Row(  "-488", Date(1990,05,25), "#bills:internet") # noqa
+        r[8] = balance.Row( "13152", Date(1990,05,25), "balance books") # noqa
 
         self.rows = balance.RowSet()
         self.rows.append(r)
@@ -181,7 +181,7 @@ class TestSubp(unittest.TestCase):
         self.assertEqual(balance.subp_sum(self), "10")
 
         self.rows.append(
-            balance.Row( "-20", "1990-05-26", "make total negative") # noqa
+            balance.Row( "-20", Date(1990,05,26), "make total negative") # noqa
         )
         with self.assertRaises(ValueError):
             balance.subp_sum(self)
@@ -409,7 +409,7 @@ class TestSubp(unittest.TestCase):
         self.assertEqual(balance.subp_check_doubletxn(self), None)
 
         self.rows.append(
-            balance.Row(   "500", "1990-05-12", "#dues:test1 unwanted second payment") # noqa
+            balance.Row(   "500", Date(1990,05,12), "#dues:test1 unwanted second payment") # noqa
         )
         with self.assertRaises(ValueError):
             balance.subp_check_doubletxn(self)
