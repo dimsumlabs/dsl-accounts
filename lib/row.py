@@ -24,6 +24,10 @@ class Row:
     # TODO - change the way CSV works and remove this
     _fields = ['value', 'date', 'comment']
 
+    @classmethod
+    def fromTxt(cls, text):
+        return cls(*re.split(r'\s+', text, maxsplit=2))
+
     def __init__(self, value=None, date=None, comment=None):
         if value is not None:
             value = decimal.Decimal(value)

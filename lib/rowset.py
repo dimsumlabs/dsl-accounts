@@ -134,8 +134,7 @@ class RowSet(object):
                 )
 
             try:
-                # TODO - the row class should handle fields inside the line
-                self.append(Row(*re.split(r'\s+', row, maxsplit=2)))
+                self.append(Row.fromTxt(row))
             except: # noqa
                 print("{}:{} Syntax error".format(filename, line_number))
                 raise
