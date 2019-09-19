@@ -24,10 +24,15 @@ class Row:
 
     @classmethod
     def fromTxt(cls, text):
+        """Return a new object constructed from the given input text line"""
         (value, date, comment) = re.split(r'\s+', text, maxsplit=2)
         date = datetime.datetime.strptime(date.strip(), "%Y-%m-%d").date()
 
         return cls(value, date, comment)
+
+    def __str__(self):
+        """Output the same format as input file - allowing roundtripping"""
+        return "{} {} {}".format(self.value, self.date, self.comment)
 
     def __init__(self, value=None, date=None, comment=None):
         if value is not None:
@@ -409,7 +414,3 @@ class Row:
             raise ValueError('Unknown filter operation "{}"'.format(op))
 
         return None
-
-    def __str__(self):
-        """Output the same format as input file - allowing roundtripping"""
-        return "{} {} {}".format(self.value, self.date, self.comment)
