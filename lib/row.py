@@ -21,9 +21,15 @@ class Row:
     # TODO - change the way CSV works and remove this
     _fields = ['value', 'date', 'comment']
 
-    def __init__(self, value, date, comment):
-        self.value = decimal.Decimal(value)
-        self.date = datetime.datetime.strptime(date.strip(), "%Y-%m-%d").date()
+    def __init__(self, value=None, date=None, comment=None):
+        if value is not None:
+            value = decimal.Decimal(value)
+
+        if date is not None:
+            date = datetime.datetime.strptime(date.strip(), "%Y-%m-%d").date()
+
+        self.value = value
+        self.date = date
         self.comment = comment
 
         # Look at the comment for this row and extract the various types of
