@@ -33,14 +33,21 @@ class fakedatetime(datetime.datetime):
 
 class TestRowClass(unittest.TestCase):
     def setUp(self):
-        r = [None for x in range(7)]
-        r[0] = row.Row( "100", Date(1970,01,01), "incoming comment") # noqa
-        r[1] = row.Row("-100", Date(1970,01,02), "outgoing comment")
-        r[2] = row.Row(  "10", Date(1970,01,03), "a !test_bangtag") # noqa
-        r[3] = row.Row( "100", Date(1970,01,04), "a #test_hashtag") # noqa
-        r[4] = row.Row( "100", Date(1972,02,29), "!months:-1:5") # noqa
-        r[5] = row.Row( "100", Date(1972,01,31), "!months:4") # noqa
-        r[6] = row.Row( "100", Date(1970,01,05), "!months:3") # noqa
+
+        data = [
+            "100  1970-01-01 incoming comment",
+            "-100 1970-01-02 outgoing comment",
+            "10   1970-01-03 a !test_bangtag",
+            "100  1970-01-04 a #test_hashtag",
+            "100  1972-02-29 !months:-1:5",
+            "100  1972-01-31 !months:4",
+            "100  1970-01-05 !months:3",
+        ]
+
+        r = []
+        for line in data:
+            r.append(row.Row.fromTxt(line))
+
         self.rows = r
 
     def tearDown(self):
