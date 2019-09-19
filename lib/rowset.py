@@ -196,11 +196,14 @@ class RowSet(object):
         result = {}
         for row in self:
             if field == 'month':
-                # FIXME - Hack!
-                # - the "month" attribute of the row is intended for string
-                #   pattern matching, but the rowset wants to keep the original
-                #   objects intact as much as possible
-                key = row.date.replace(day=1)
+                if row.date is None:
+                    key = None
+                else:
+                    # FIXME - Hack!
+                    # - the "month" attribute of the row is intended for string
+                    #   pattern matching, but the rowset wants to keep the
+                    #   original objects intact as much as possible
+                    key = row.date.replace(day=1)
             else:
                 key = row._getvalue(field)
 

@@ -445,7 +445,7 @@ def create_stats(args):
 
     def make_rowset(value):
         r = RowSet()
-        r.append(Row(value, '1970-01-01', 'fake row'))
+        r.append(Row(value))
         return r
 
     def stats_rowset(rowset):

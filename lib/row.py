@@ -151,6 +151,10 @@ class Row:
     def _xtag(self, x):
         """Generically extract tags with a given prefix
         """
+
+        if self.comment is None:
+            return None
+
         p = re.compile(x+r'([a-zA-Z]\S*)')
         all_tags = p.findall(self.comment)
 
