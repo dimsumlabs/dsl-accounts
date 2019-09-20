@@ -46,6 +46,15 @@ class Row:
             self.comment == other.comment
         )
 
+    def __add__(self, value):
+        if isinstance(value, Row):
+            value = value.value
+
+        return self.value + value
+
+    def __radd__(self, value):
+        return self.__add__(value)
+
     def __init__(self):
         self.value = 0
         self.date = None
@@ -161,15 +170,6 @@ class RowData(Row):
     def __getitem__(self, i):
         attr = self._fields[i]
         return getattr(self, attr)
-
-    def __add__(self, value):
-        if isinstance(value, Row):
-            value = value.value
-
-        return self.value + value
-
-    def __radd__(self, value):
-        return self.__add__(value)
 
     @property
     def direction(self):
