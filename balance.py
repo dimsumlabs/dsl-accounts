@@ -31,6 +31,7 @@ sys.path.insert(0,
 # I would use site.addsitedir, but it does an append, not insert
 
 # Stupid pyflake, neither of these imports can be before the sys.path
+from row import Row # noqa
 from row import RowData # noqa
 from rowset import RowSet # noqa
 
@@ -454,8 +455,10 @@ def create_stats(args):
     current_month = args.rows.filter(['rel_months==0'])
 
     def make_rowset(value):
+        fake = Row()
+        fake.value = value
         r = RowSet()
-        r.append(RowData(value))
+        r.append(fake)
         return r
 
     def stats_rowset(rowset):
