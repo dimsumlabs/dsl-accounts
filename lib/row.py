@@ -27,6 +27,11 @@ class Row(object):
         if not text:
             return Row()
 
+        match = re.match(r'^#\s(.*)', text)
+        if match:
+            comment = match.group(1)
+            return RowComment(comment)
+
         (value, date, comment) = re.split(r'\s+', text, maxsplit=2)
         date = datetime.datetime.strptime(date.strip(), "%Y-%m-%d").date()
 
