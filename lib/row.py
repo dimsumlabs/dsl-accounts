@@ -108,9 +108,29 @@ class Row(object):
         value_match = m.group(3)
         value_now = self._getvalue_simple(field)
 
-        if value_now is None:
-            # TODO - does this make sense?
+        # FIXME TODO HACK
+        # - the old _getvalue_simple always coerced None into str('None'),
+        #   which was not the intention, however the re.search matches
+        #   turn out to rely on that
+        value_now_str = str(value_now)
+
+        if op == '=~':
+            if re.search(value_match, value_now_str, re.I):
+                return self
             return None
+
+        if op == '!~':
+            if not re.search(value_match, value_now_str, re.I):
+                return self
+            return None
+
+        if value_now is None:
+            # FIXME TODO HACK
+            # - python 2 silently compared str('None') to 0 and worked
+            # - python 3 complains
+            # - This code turns out to rely on the python 2 comparison
+            # As a hack, if we detect this, pretend None is very negative
+            value_now = float('-inf')
 
         # coerce our value to match into a number, if that looks possible
         try:
@@ -121,25 +141,24 @@ class Row(object):
         if op == '==':
             if value_now == value_match:
                 return self
-        elif op == '!=':
+            return None
+
+        if op == '!=':
             if value_now != value_match:
                 return self
-        elif op == '>':
+            return None
+
+        if op == '>':
             if value_now > value_match:
                 return self
-        elif op == '<':
+            return None
+
+        if op == '<':
             if value_now < value_match:
                 return self
-        elif op == '=~':
-            if re.search(value_match, value_now, re.I):
-                return self
-        elif op == '!~':
-            if not re.search(value_match, value_now, re.I):
-                return self
-        else:
-            raise ValueError('Unknown filter operation "{}"'.format(op))
+            return None
 
-        return None
+        raise ValueError('Unknown filter operation "{}"'.format(op))
 
     def autosplit(self, method=None):
         return [self]
