@@ -222,7 +222,7 @@ def grid_render(months, tags, grid, totals, running_totals):
     s += grid_render_colheader(months, months_len, tags_len)
     s += grid_render_rows(months, tags, grid, months_len, tags_len)
     s += grid_render_totals(
-            months, totals, months_len, tags_len, running_totals)
+        months, totals, months_len, tags_len, running_totals)
 
     return ''.join(s)
 
@@ -468,14 +468,14 @@ def create_stats(args):
         r['outgoing'] = rowset.filter(['value<0'])
         # TODO - values of zero?  we have one member as such, but it is a
         # exceptional case
-        r['dues']     = rowset.filter(['hashtag=~^dues:']) # noqa
-        r['members']  = len(r['dues'].group_by('hashtag').keys()) # noqa
+        r['dues'] = rowset.filter(['hashtag=~^dues:'])
+        r['members'] = len(r['dues'].group_by('hashtag').keys())
         if r['members']:
-            r['ARPM'] = int(r['dues'].value / r['members']) # noqa
+            r['ARPM'] = int(r['dues'].value / r['members'])
         else:
             r['ARPM'] = -1
 
-        r['other']    = rowset.filter(['value>0','hashtag!~^dues:']) # noqa
+        r['other'] = rowset.filter(['value>0', 'hashtag!~^dues:'])
 
         return r
 
@@ -591,8 +591,8 @@ def subp_stats(args):
         s += grid_render_onerow(
             tag, tags_len,
             [result[x][tag].value.to_integral_exact(
-                    rounding=decimal.ROUND_FLOOR
-                ) for x in months],
+                rounding=decimal.ROUND_FLOOR
+            ) for x in months],
             months_len
         )
     s += "\n"
@@ -600,8 +600,8 @@ def subp_stats(args):
         s += grid_render_onerow(
             " {}:".format(tag), tags_len,
             [result[x][tag].value.to_integral_exact(
-                    rounding=decimal.ROUND_FLOOR
-                ) for x in months],
+                rounding=decimal.ROUND_FLOOR
+            ) for x in months],
             months_len
         )
     s += "\n"
@@ -631,7 +631,7 @@ def subp_stats(args):
             months = 1
         total_dues = dues * months
         return abs((rowset.value / total_dues).to_integral_exact(
-                rounding=decimal.ROUND_FLOOR
+            rounding=decimal.ROUND_FLOOR
         ))
 
     def dues_given_members_outgoing(members, rowset):
@@ -646,7 +646,7 @@ def subp_stats(args):
             # is at least one column that doesnt group_by properly
             months = 1
         return abs(rowset.value / members / months).to_integral_exact(
-                rounding=decimal.ROUND_FLOOR
+            rounding=decimal.ROUND_FLOOR
         )
 
     s += "\n"
@@ -662,7 +662,7 @@ def subp_stats(args):
         s += grid_render_onerow(
             " dues {}".format(dues), tags_len,
             [members_given_dues_outgoing(dues, result[x]['outgoing'])
-                for x in months],
+             for x in months],
             months_len
         )
 
@@ -678,7 +678,7 @@ def subp_stats(args):
         s += grid_render_onerow(
             " members {}".format(members), tags_len,
             [dues_given_members_outgoing(members, result[x]['outgoing'])
-                for x in months],
+             for x in months],
             months_len
         )
 
@@ -723,8 +723,6 @@ def subp_check_doubletxn(args):
                     row))
 
         db[month][tag][value] = row
-
-    return
 
 
 # A list of all the sub-commands
@@ -819,7 +817,7 @@ if __name__ == '__main__':  # pragma: no cover
         help='Show incoming and outgoing on separate lines of the grid' # noqa
     )                                                                   # noqa
     subp_cmds['grid']['parser'].add_argument('--filter_hack',        # noqa
-        type=int ,                                # noqa
+        type=int,                                # noqa
         help='Quick hack specifying oldest entries to display - the arg is the number of days' # noqa
     )                                                                   # noqa
     subp_cmds['grid']['parser'].set_defaults(filter_hack=640)
