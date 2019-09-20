@@ -107,6 +107,15 @@ class RowSet(object):
                     raise
                 continue
 
+            if re.match(r'^#\s', row):
+                # (Once Row can handle all line types, this will go)
+                try:
+                    self.append(Row.fromTxt(row))
+                except: # noqa
+                    print("{}:{} Syntax error".format(filename, line_number))
+                    raise
+                continue
+
             if re.match(r'^#', row):
                 # TODO
                 # - add comments and pragmas into the rows array for 100%

@@ -52,6 +52,7 @@ class TestRowSet(unittest.TestCase):
         # for setup as for this assert
 
         expect = """
+# Files can contain comments and empty lines
 
 -10 1970-02-06 comment4
 10 1970-01-05 comment1
@@ -118,13 +119,13 @@ class TestRowSet(unittest.TestCase):
 
     def test_append(self):
         # FIXME - looking inside the object
-        self.assertEqual(len(self.rows.rows), 8)
+        self.assertEqual(len(self.rows.rows), 9)
 
         row = self.rows.rows[2]
         self.rows.append(row)
 
         # FIXME - looking inside the object
-        self.assertEqual(len(self.rows.rows), 9)
+        self.assertEqual(len(self.rows.rows), 10)
 
         # FIXME - test appending a generator
 
@@ -132,7 +133,7 @@ class TestRowSet(unittest.TestCase):
             self.rows.append(None)
 
     def test_filter(self):
-        rows = self.rows.rows[3:4]
+        rows = self.rows.rows[4:5]
 
         self.assertEqual(
             # FIXME - looking inside the object
@@ -150,7 +151,7 @@ class TestRowSet(unittest.TestCase):
 
     def test_autosplit(self):
         # FIXME - looking inside the object
-        self.assertEqual(len(self.rows.autosplit().rows), 10)
+        self.assertEqual(len(self.rows.autosplit().rows), 11)
 
     def test_group_by(self):
         # TODO - should construct the expected dict and all its rows and
