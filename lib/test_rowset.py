@@ -63,8 +63,8 @@ class TestRowSet(unittest.TestCase):
     def test_value(self):
         self.assertEqual(self.rows.value, -45)
 
-        self.rows.append(row.Row("-0.5", Date(1970, 3,12), "comment9")) # noqa
-        self.rows.append(row.Row("-0.5", Date(1970, 3,13), "comment10")) # noqa
+        self.rows.append(row.RowData("-0.5", Date(1970, 3,12), "comment9")) # noqa
+        self.rows.append(row.RowData("-0.5", Date(1970, 3,13), "comment10")) # noqa
         self.assertEqual(str(self.rows.value), '-46')
 
     def test_load_file1(self):
@@ -108,8 +108,8 @@ class TestRowSet(unittest.TestCase):
 
     def test_nested_rowset(self):
         r = [None for x in range(2)]
-        r[0] = row.Row("-13", Date(1971, 2, 6), "comment7") # noqa
-        r[1] = row.Row( "12", Date(1971, 1, 5), "comment8") # noqa
+        r[0] = row.RowData("-13", Date(1971, 2, 6), "comment7") # noqa
+        r[1] = row.RowData( "12", Date(1971, 1, 5), "comment8") # noqa
         self.rows.append(r)
 
         self.assertEqual(self.rows.value, -46)

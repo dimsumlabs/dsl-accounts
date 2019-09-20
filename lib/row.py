@@ -17,6 +17,10 @@ import re
 
 
 class Row:
+    pass
+
+
+class RowData(Row):
     # This is used for compatibility with the old named tuple object
     # it is only used in the CSV handling.
     # TODO - change the way CSV works and remove this
@@ -280,7 +284,7 @@ class Row:
             for date in dates:
                 this_value = each_value + remainder
                 remainder = 0  # only add the remainder to the first child
-                rows.append(Row(this_value, date, self.comment))
+                rows.append(RowData(this_value, date, self.comment))
 
         # elif method == 'proportional':
         #   # The 'proportional' splitting attempts to pro-rata the transaction

@@ -6,6 +6,7 @@ import os
 import glob
 
 from row import Row
+from row import RowData
 
 
 class RowSet(object):
@@ -140,7 +141,7 @@ class RowSet(object):
                 )
 
             try:
-                self.append(Row.fromTxt(row))
+                self.append(RowData.fromTxt(row))
             except: # noqa
                 print("{}:{} Syntax error".format(filename, line_number))
                 raise

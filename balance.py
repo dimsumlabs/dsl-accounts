@@ -31,7 +31,7 @@ sys.path.insert(0,
 # I would use site.addsitedir, but it does an append, not insert
 
 # Stupid pyflake, neither of these imports can be before the sys.path
-from row import Row # noqa
+from row import RowData # noqa
 from rowset import RowSet # noqa
 
 FILES_DIR = 'cash'
@@ -313,7 +313,7 @@ def subp_csv(args):
     writer = csv.writer(buf)
 
     # Write header
-    writer.writerow([row.capitalize() for row in Row._fields])
+    writer.writerow([row.capitalize() for row in RowData._fields])
 
     writer.writerows(rows)
 
@@ -450,7 +450,7 @@ def create_stats(args):
 
     def make_rowset(value):
         r = RowSet()
-        r.append(Row(value))
+        r.append(RowData(value))
         return r
 
     def stats_rowset(rowset):

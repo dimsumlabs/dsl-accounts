@@ -183,7 +183,7 @@ class TestSubp(unittest.TestCase):
         self.assertEqual(balance.subp_sum(self), "10")
 
         self.rows.append(
-            balance.Row( "-20", Date(1990, 5,26), "make total negative") # noqa
+            balance.RowData( "-20", Date(1990, 5,26), "make total negative") # noqa
         )
         with self.assertRaises(ValueError):
             balance.subp_sum(self)
@@ -429,7 +429,7 @@ class TestSubp(unittest.TestCase):
         self.assertEqual(balance.subp_check_doubletxn(self), None)
 
         self.rows.append(
-            balance.Row(   "500", Date(1990, 5,12), "#dues:test1 unwanted second payment") # noqa
+            balance.RowData(   "500", Date(1990, 5,12), "#dues:test1 unwanted second payment") # noqa
         )
         with self.assertRaises(ValueError):
             balance.subp_check_doubletxn(self)
