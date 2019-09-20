@@ -225,5 +225,7 @@ class RowSet(object):
     def last(self):
         """Return the chronologically last row from the rowset
         """
-        rows = sorted(self, key=lambda x: x.date)
-        return rows[-1]
+        def keyfn(row):
+            return row.date
+
+        return max(self, key=keyfn)
