@@ -17,14 +17,7 @@ import re
 
 
 class Row:
-    pass
-
-
-class RowData(Row):
-    # This is used for compatibility with the old named tuple object
-    # it is only used in the CSV handling.
-    # TODO - change the way CSV works and remove this
-    _fields = ['value', 'date', 'comment']
+    """A generic row type"""
 
     @classmethod
     def fromTxt(cls, text):
@@ -32,7 +25,16 @@ class RowData(Row):
         (value, date, comment) = re.split(r'\s+', text, maxsplit=2)
         date = datetime.datetime.strptime(date.strip(), "%Y-%m-%d").date()
 
-        return cls(value, date, comment)
+        return RowData(value, date, comment)
+
+
+class RowData(Row):
+    """A row containing accounting data"""
+
+    # This is used for compatibility with the old named tuple object
+    # it is only used in the CSV handling.
+    # TODO - change the way CSV works and remove this
+    _fields = ['value', 'date', 'comment']
 
     def __str__(self):
         """Output the same format as input file - allowing roundtripping"""
