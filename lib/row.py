@@ -177,7 +177,7 @@ class RowComment(Row):
     """A row containing a comment"""
 
     def __init__(self, comment):
-        super(RowComment, self).__init__()
+        super().__init__()
         self.comment = comment
 
     def __str__(self):
@@ -188,7 +188,7 @@ class RowPragma(Row):
     """A row containing a pragma command"""
 
     def __init__(self, pragma, string):
-        super(RowPragma, self).__init__()
+        super().__init__()
         self.pragma = pragma
         self.pragma_args = string
 
