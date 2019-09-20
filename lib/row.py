@@ -53,8 +53,71 @@ class Row:
         self.direction = None
         self.hashtag = None
         self.month = None
+        self.rel_months = None
+
+    def _getvalue_simple(self, field):
+        """return the field value as a simple number or string
+        """
+        attr = getattr(self, field)
+
+        if isinstance(attr, (int, str, decimal.Decimal)):
+            return attr
+
+        # convert all 'complex' types into string representations
+        return str(attr)
+
+    def match(self, **kwargs):
+        """using kwargs, check if this Row matches if so, return it, or None
+        """
+        for key, value in kwargs.items():
+            attr = self._getvalue_simple(key)
+            if value != attr:
+                return None
+
+        return self
 
     def filter(self, string):
+        """Using the given human readable filter, check if this row matches
+           and if so, return it, or None
+        """
+
+        # its not a real tokeniser, its just a RE. so, now I have two problems
+        m = re.match("([a-z0-9_]+)([=!<>~]{1,2})(.*)", string, re.I)
+        if not m:
+            raise ValueError('filters must be <key><op><value>')
+
+        field = m.group(1)
+        op = m.group(2)
+        value_match = m.group(3)
+        value_now = self._getvalue_simple(field)
+
+        # coerce our value to match into a number, if that looks possible
+        try:
+            value_match = float(value_match)
+        except ValueError:
+            pass
+
+        if op == '==':
+            if value_now == value_match:
+                return self
+        elif op == '!=':
+            if value_now != value_match:
+                return self
+        elif op == '>':
+            if value_now > value_match:
+                return self
+        elif op == '<':
+            if value_now < value_match:
+                return self
+        elif op == '=~':
+            if re.search(value_match, value_now, re.I):
+                return self
+        elif op == '!~':
+            if not re.search(value_match, value_now, re.I):
+                return self
+        else:
+            raise ValueError('Unknown filter operation "{}"'.format(op))
+
         return None
 
     def autosplit(self, method=None):
@@ -365,68 +428,3 @@ class RowData(Row):
             raise ValueError('unknown splitter method name')
 
         return rows
-
-    def _getvalue_simple(self, field):
-        """return the field value as a simple number or string
-        """
-        attr = getattr(self, field)
-
-        if isinstance(attr, (int, str, decimal.Decimal)):
-            return attr
-
-        # convert all 'complex' types into string representations
-        return str(attr)
-
-    def match(self, **kwargs):
-        """using kwargs, check if this Row matches if so, return it, or None
-        """
-        for key, value in kwargs.items():
-            attr = self._getvalue_simple(key)
-            if value != attr:
-                return None
-
-        return self
-
-    def filter(self, string):
-        """Using the given human readable filter, check if this row matches
-           and if so, return it, or None
-        """
-
-        # its not a real tokeniser, its just a RE. so, now I have two problems
-        m = re.match("([a-z0-9_]+)([=!<>~]{1,2})(.*)", string, re.I)
-        if not m:
-            raise ValueError('filters must be <key><op><value>')
-
-        field = m.group(1)
-        op = m.group(2)
-        value_match = m.group(3)
-        value_now = self._getvalue_simple(field)
-
-        # coerce our value to match into a number, if that looks possible
-        try:
-            value_match = float(value_match)
-        except ValueError:
-            pass
-
-        if op == '==':
-            if value_now == value_match:
-                return self
-        elif op == '!=':
-            if value_now != value_match:
-                return self
-        elif op == '>':
-            if value_now > value_match:
-                return self
-        elif op == '<':
-            if value_now < value_match:
-                return self
-        elif op == '=~':
-            if re.search(value_match, value_now, re.I):
-                return self
-        elif op == '!~':
-            if not re.search(value_match, value_now, re.I):
-                return self
-        else:
-            raise ValueError('Unknown filter operation "{}"'.format(op))
-
-        return None
