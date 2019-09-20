@@ -10,17 +10,12 @@ import json
 import sys
 import csv
 import os
+from io import StringIO
 
 # TODO:
 # - provide a way to mark a transation as "predicted future" and render these
 #   transaction visually distinct
 
-try:
-    # python 2
-    from StringIO import StringIO
-except ImportError:
-    # python 3
-    from io import StringIO
 
 # Ensure that we look for any modules in our local lib dir.  This allows simple
 # testing and development use.  It also does not break the case where the lib

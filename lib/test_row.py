@@ -7,10 +7,7 @@ import datetime
 from datetime import date as Date
 import sys
 import os
-if sys.version_info[0] == 2:  # pragma: no cover
-    import mock
-else:
-    from unittest import mock  # pragma: no cover
+from unittest import mock  # pragma: no cover
 
 # Ensure that we look for any modules in our local lib dir.  This allows simple
 # testing and development use.  It also does not break the case where the lib

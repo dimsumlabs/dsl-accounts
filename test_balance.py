@@ -5,17 +5,12 @@
 import unittest
 import datetime
 from datetime import date as Date
-import sys
 import json
 
-if sys.version_info[0] == 2:  # pragma: no cover
-    import mock
-    from StringIO import StringIO
-else:
-    from unittest import mock  # pragma: no cover
-    from io import StringIO
+from unittest import mock  # pragma: no cover
+from io import StringIO
 
-import balance # noqa
+import balance
 
 
 class fakedatetime(datetime.datetime):
