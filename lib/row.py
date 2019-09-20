@@ -35,6 +35,12 @@ class Row(object):
             comment = match.group(1)
             return RowComment(comment)
 
+        match = re.match(r'^#(\w+)\s+(.*)', text)
+        if match:
+            pragma = match.group(1)
+            args = match.group(2)
+            return RowPragma(pragma, args)
+
         (value, date, comment) = re.split(r'\s+', text, maxsplit=2)
         date = datetime.datetime.strptime(date.strip(), "%Y-%m-%d").date()
 
@@ -176,6 +182,23 @@ class RowComment(Row):
 
     def __str__(self):
         return "# {}".format(self.comment)
+
+
+class RowPragma(Row):
+    """A row containing a pragma command"""
+
+    def __init__(self, pragma, string):
+        super(RowPragma, self).__init__()
+        self.pragma = pragma
+        self.pragma_args = string
+
+        # TODO
+        # - validate pragma name
+        # - extract params better
+        # - move more of the pragma processing into this class
+
+    def __str__(self):
+        return "#{} {}".format(self.pragma, self.pragma_args)
 
 
 class RowData(Row):
