@@ -1,6 +1,7 @@
 .DS_Store
+
 # ignore python's compiled objects
-*.pyc
+__pycache__/
 
 # ignore the code coverage generated output
 .coverage
