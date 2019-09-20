@@ -306,8 +306,13 @@ def subp_party(args):
 
 
 def subp_csv(args):
+
+    # remove rows with no date (TODO: should csv output match input?)
+    filtered = RowSet()
+    filtered.append(filter(lambda d: d.date is not None, args.rows))
+
     rows = RowSet()
-    rows.append(sorted(args.rows, key=lambda x: x.date))
+    rows.append(sorted(filtered, key=lambda x: x.date))
 
     buf = StringIO()
     writer = csv.writer(buf)
