@@ -344,22 +344,10 @@ class RowData(Row):
 
         return rows
 
-    def _getvalue(self, field):
-        """return the field value, if the name refers to a method, call it to
-           obtain the value
-        """
-        if not hasattr(self, field):
-            raise AttributeError('Object has no attr "{}"'.format(field))
-        attr = getattr(self, field)
-        if callable(attr):
-            attr = attr()
-
-        return attr
-
     def _getvalue_simple(self, field):
         """return the field value as a simple number or string
         """
-        attr = self._getvalue(field)
+        attr = getattr(self, field)
 
         if isinstance(attr, (int, str, decimal.Decimal)):
             return attr
