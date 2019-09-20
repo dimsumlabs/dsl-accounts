@@ -319,6 +319,7 @@ def subp_csv(args):
     writer = csv.writer(buf)
 
     # Write header
+    # TODO - this is the only user of the RowData in this file, remove it
     writer.writerow([row.capitalize() for row in RowData._fields])
 
     writer.writerows(rows)
