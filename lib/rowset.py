@@ -202,7 +202,8 @@ class RowSet(object):
         for row in self:
             if field == 'month':
                 if row.date is None:
-                    key = None
+                    # If we have no date, then we cannot be grouped by that!
+                    continue
                 else:
                     # FIXME - Hack!
                     # - the "month" attribute of the row is intended for string
