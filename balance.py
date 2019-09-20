@@ -438,6 +438,11 @@ def subp_make_balance(args):
     return string.Template(tpl).substitute(macros)
 
 
+def subp_roundtrip(args):
+    """Allow round-tripping the input data"""
+    return str(args.rows)
+
+
 def create_stats(args):
     # stats are only likely to be valid for previous months
     rows = args.rows.filter(['rel_months<0'])
@@ -728,6 +733,10 @@ subp_cmds = {
     'party': {
         'func': subp_party,
         'help': 'Is it party time or not?',
+    },
+    'roundtrip': {
+        'func': subp_roundtrip,
+        'help': 'Output the database the same way as the input',
     },
     'sum': {
         'func': subp_sum,

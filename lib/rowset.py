@@ -22,6 +22,12 @@ class RowSet(object):
     def __len__(self):
         return len(self.rows)
 
+    def __str__(self):
+        s = ""
+        for entry in self.rows:
+            s += str(entry) + "\n"
+        return s
+
     @property
     def value(self):
         sum = decimal.Decimal(0)

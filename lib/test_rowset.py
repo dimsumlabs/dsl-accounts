@@ -47,6 +47,19 @@ class TestRowSet(unittest.TestCase):
     def tearDown(self):
         self.rows = None
 
+    def test_str(self):
+        # TODO - eventually, I want to be able to use the same string
+        # for setup as for this assert
+
+        expect = """-10 1970-02-06 comment4
+10 1970-01-05 comment1
+-10 1970-01-10 comment2 #bills:rent
+-10 1970-01-01 comment3 #bills:water
+-10 1970-03-01 comment5 #bills:rent
+-15 1970-01-11 comment6 #bills:water !months:3
+"""
+        self.assertEqual(str(self.rows), expect)
+
     def test_value(self):
         self.assertEqual(self.rows.value, -45)
 

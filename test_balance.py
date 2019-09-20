@@ -350,6 +350,24 @@ class TestSubp(unittest.TestCase):
         want = '(due on: <span class="color_neg">1990-04-23</span>) Rent:'
         self.assertTrue(want in got)
 
+    def test_roundtrip(self):
+        got = balance.subp_roundtrip(self)
+
+        # TODO - when everything is in place, the same string should be used
+        # for both setup and this test
+        want = """500 1990-04-03 #dues:test1
+20 1990-04-03 Unknown
+1500 1990-04-27 #fridge
+-12500 1990-04-15 #bills:rent
+-1174 1990-04-27 #bills:electricity
+-1500 1990-04-26 #fridge
+500 1990-05-02 #dues:test1
+-488 1990-05-25 #bills:internet
+13152 1990-05-25 balance books
+"""
+
+        self.assertEqual(got, want)
+
 # TODO
 # - test create_stats() independantly
 # - add a test with a mocked time that has no members paid (to test the
