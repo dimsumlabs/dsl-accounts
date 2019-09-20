@@ -136,15 +136,11 @@ class RowData(Row):
         """Output the same format as input file - allowing roundtripping"""
         return "{} {} {}".format(self.value, self.date, self.comment)
 
-    def __init__(self, value=None, date=None, comment=None):
-        if value is not None:
-            value = decimal.Decimal(value)
+    def __init__(self, value, date, comment):
+        if not isinstance(date, datetime.date):
+            raise ValueError("{} is not a date object".format(date))
 
-        if date is not None:
-            if not isinstance(date, datetime.date):
-                raise ValueError("{} is not a date object".format(date))
-
-        self.value = value
+        self.value = decimal.Decimal(value)
         self.date = date
         self.comment = comment
 
