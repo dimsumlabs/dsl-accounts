@@ -16,7 +16,7 @@ import re
 # - update Row __init__ to enforce that value is a number
 
 
-class Row:
+class Row(object):
     """A generic row type"""
 
     @classmethod
