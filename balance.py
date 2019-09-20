@@ -620,6 +620,11 @@ def subp_stats(args):
 
     def members_given_dues_outgoing(dues, rowset):
         months = len(rowset.group_by('month').keys())
+        if months == 0:
+            # TODO HACK
+            # - since we use a 'magic' column name that is not a date, there
+            # is at least one column that doesnt group_by properly
+            months = 1
         total_dues = dues * months
         return abs((rowset.value / total_dues).to_integral_exact(
                 rounding=decimal.ROUND_FLOOR
@@ -631,6 +636,11 @@ def subp_stats(args):
             return 0
 
         months = len(rowset.group_by('month').keys())
+        if months == 0:
+            # TODO HACK
+            # - since we use a 'magic' column name that is not a date, there
+            # is at least one column that doesnt group_by properly
+            months = 1
         return abs(rowset.value / members / months).to_integral_exact(
                 rounding=decimal.ROUND_FLOOR
         )
