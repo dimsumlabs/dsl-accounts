@@ -211,7 +211,8 @@ class RowSet(object):
                     #   original objects intact as much as possible
                     key = row.date.replace(day=1)
             else:
-                key = row._getvalue(field)
+                if hasattr(row, field):
+                    key = getattr(row, field)
 
             if key is None:
                 key = 'unknown'
