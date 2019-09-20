@@ -705,25 +705,9 @@ def subp_check_doubletxn(args):
 
 # A list of all the sub-commands
 subp_cmds = {
-    'sum': {
-        'func': subp_sum,
-        'help': 'Sum all transactions',
-    },
-    'make_balance': {
-        'func': subp_make_balance,
-        'help': 'Output sum HTML page',
-    },
-    'topay': {
-        'func': subp_topay,
-        'help': 'List all pending payments',
-    },
-    'topay_html': {
-        'func': subp_topay_html,
-        'help': 'List all pending payments as HTML table',
-    },
-    'party': {
-        'func': subp_party,
-        'help': 'Is it party time or not?',
+    'check_doubletxn': {
+        'func': subp_check_doubletxn,
+        'help': 'Check for identical transactions in each month',
     },
     'csv': {
         'func': subp_csv,
@@ -737,6 +721,26 @@ subp_cmds = {
         'func': subp_json_payments,
         'help': 'Output JSON of incoming payments',
     },
+    'make_balance': {
+        'func': subp_make_balance,
+        'help': 'Output sum HTML page',
+    },
+    'party': {
+        'func': subp_party,
+        'help': 'Is it party time or not?',
+    },
+    'sum': {
+        'func': subp_sum,
+        'help': 'Sum all transactions',
+    },
+    'topay': {
+        'func': subp_topay,
+        'help': 'List all pending payments',
+    },
+    'topay_html': {
+        'func': subp_topay_html,
+        'help': 'List all pending payments as HTML table',
+    },
     'stats': {
         'func': subp_stats,
         'help': 'Output finance stats report',
@@ -744,10 +748,6 @@ subp_cmds = {
     'statstsv': {
         'func': subp_statstsv,
         'help': 'Output finance stats report as TSV',
-    },
-    'check_doubletxn': {
-        'func': subp_check_doubletxn,
-        'help': 'Check for identical transactions in each month',
     },
 }
 
