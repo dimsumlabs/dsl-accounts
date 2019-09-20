@@ -133,6 +133,17 @@ class Row(object):
         return [self]
 
 
+class RowComment(Row):
+    """A row containing a comment"""
+
+    def __init__(self, comment):
+        super(RowComment, self).__init__()
+        self.comment = comment
+
+    def __str__(self):
+        return "# {}".format(self.comment)
+
+
 class RowData(Row):
     """A row containing accounting data"""
 
