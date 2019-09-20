@@ -25,7 +25,7 @@ shift
 
 mkdir -p "$OUTDIR"
 
-SIMPLE="topay make_balance grid party sum topay_html stats statstsv csv"
+SIMPLE="topay make_balance grid party sum topay_html stats statstsv csv roundtrip"
 JSON=json_payments
 
 for i in $SIMPLE; do
