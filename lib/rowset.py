@@ -101,7 +101,13 @@ class RowSet(object):
             line_number += 1
 
             if not row:
-                # Skip blank lines
+                # Handle blank lines early
+                # (Once Row can handle all line types, this will go)
+                try:
+                    self.append(Row.fromTxt(row))
+                except: # noqa
+                    print("{}:{} Syntax error".format(filename, line_number))
+                    raise
                 continue
 
             if re.match(r'^#', row):

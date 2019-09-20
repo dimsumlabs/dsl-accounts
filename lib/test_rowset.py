@@ -51,7 +51,9 @@ class TestRowSet(unittest.TestCase):
         # TODO - eventually, I want to be able to use the same string
         # for setup as for this assert
 
-        expect = """-10 1970-02-06 comment4
+        expect = """
+
+-10 1970-02-06 comment4
 10 1970-01-05 comment1
 -10 1970-01-10 comment2 #bills:rent
 -10 1970-01-01 comment3 #bills:water
@@ -116,13 +118,13 @@ class TestRowSet(unittest.TestCase):
 
     def test_append(self):
         # FIXME - looking inside the object
-        self.assertEqual(len(self.rows.rows), 6)
+        self.assertEqual(len(self.rows.rows), 8)
 
-        row = self.rows.rows[0]
+        row = self.rows.rows[2]
         self.rows.append(row)
 
         # FIXME - looking inside the object
-        self.assertEqual(len(self.rows.rows), 7)
+        self.assertEqual(len(self.rows.rows), 9)
 
         # FIXME - test appending a generator
 
@@ -130,7 +132,7 @@ class TestRowSet(unittest.TestCase):
             self.rows.append(None)
 
     def test_filter(self):
-        rows = self.rows.rows[1:2]
+        rows = self.rows.rows[3:4]
 
         self.assertEqual(
             # FIXME - looking inside the object
@@ -148,7 +150,7 @@ class TestRowSet(unittest.TestCase):
 
     def test_autosplit(self):
         # FIXME - looking inside the object
-        self.assertEqual(len(self.rows.autosplit().rows), 8)
+        self.assertEqual(len(self.rows.autosplit().rows), 10)
 
     def test_group_by(self):
         # TODO - should construct the expected dict and all its rows and

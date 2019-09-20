@@ -355,7 +355,8 @@ class TestSubp(unittest.TestCase):
 
         # TODO - when everything is in place, the same string should be used
         # for both setup and this test
-        want = """500 1990-04-03 #dues:test1
+        want = """
+500 1990-04-03 #dues:test1
 20 1990-04-03 Unknown
 1500 1990-04-27 #fridge
 -12500 1990-04-15 #bills:rent
