@@ -46,14 +46,14 @@ class Row:
             self.comment == other.comment
         )
 
-    def __add__(self, value):
-        if isinstance(value, Row):
-            value = value.value
+    def __add__(self, other):
+        if isinstance(other, Row):
+            other = other.value
 
-        return self.value + value
+        return self.value + other
 
-    def __radd__(self, value):
-        return self.__add__(value)
+    def __radd__(self, other):
+        return self.__add__(other)
 
     def __init__(self):
         self.value = 0
