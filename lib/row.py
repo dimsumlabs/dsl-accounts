@@ -22,10 +22,43 @@ class Row:
     @classmethod
     def fromTxt(cls, text):
         """Return a new object constructed from the given input text line"""
+
+        # First, handle blank lines
+        if not text:
+            return Row()
+
         (value, date, comment) = re.split(r'\s+', text, maxsplit=2)
         date = datetime.datetime.strptime(date.strip(), "%Y-%m-%d").date()
 
         return RowData(value, date, comment)
+
+    def __str__(self):
+        return ""
+
+    # Implement equality test with other Row objects
+    # This is used in the test_autosplit
+    # TODO - implement the test differently and remove this
+    def __eq__(self, other):
+        return (
+            self.__class__ == other.__class__ and
+            self.value == other.value and
+            self.date == other.date and
+            self.comment == other.comment
+        )
+
+    def __init__(self):
+        self.value = 0
+        self.date = None
+        self.comment = None
+        self.direction = None
+        self.hashtag = None
+        self.month = None
+
+    def filter(self, string):
+        return None
+
+    def autosplit(self, method=None):
+        return [self]
 
 
 class RowData(Row):
@@ -69,17 +102,6 @@ class RowData(Row):
     def __getitem__(self, i):
         attr = self._fields[i]
         return getattr(self, attr)
-
-    # Implement equality test with other Row objects
-    # This is used in the test_autosplit
-    # TODO - implement the test differently and remove this
-    def __eq__(self, other):
-        return (
-            self.__class__ == other.__class__ and
-            self.value == other.value and
-            self.date == other.date and
-            self.comment == other.comment
-        )
 
     def __add__(self, value):
         if isinstance(value, Row):
