@@ -32,10 +32,7 @@ class RowSet(object):
     def value(self):
         sum = decimal.Decimal(0)
         for row in self:
-            if isinstance(row, (Row, RowSet)):
-                sum += row.value
-            else:
-                raise ValueError("unexpected type")
+            sum += row.value
 
         if self.balance != sum:
             raise ValueError("here {} {}".format(self.balance, sum))
