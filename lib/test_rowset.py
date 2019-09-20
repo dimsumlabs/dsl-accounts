@@ -28,8 +28,7 @@ import row # noqa
 
 
 class TestRowSet(unittest.TestCase):
-    def setUp(self):
-        f = StringIO("""
+    input_data = """
 # Files can contain comments and empty lines
 
 #balance 0 Opening Balance
@@ -40,7 +39,10 @@ class TestRowSet(unittest.TestCase):
 -10 1970-03-01 comment5 #bills:rent
 -15 1970-01-11 comment6 #bills:water !months:3
 #balance -45 A comment
-""")
+"""
+
+    def setUp(self):
+        f = StringIO(self.input_data)
         self.rows = rowset.RowSet()
         self.rows.load_file(f)
 
@@ -48,20 +50,7 @@ class TestRowSet(unittest.TestCase):
         self.rows = None
 
     def test_str(self):
-        # TODO - eventually, I want to be able to use the same string
-        # for setup as for this assert
-
-        expect = """
-# Files can contain comments and empty lines
-
--10 1970-02-06 comment4
-10 1970-01-05 comment1
--10 1970-01-10 comment2 #bills:rent
--10 1970-01-01 comment3 #bills:water
--10 1970-03-01 comment5 #bills:rent
--15 1970-01-11 comment6 #bills:water !months:3
-"""
-        self.assertEqual(str(self.rows), expect)
+        self.assertEqual(str(self.rows), self.input_data)
 
     def test_value(self):
         self.assertEqual(self.rows.value, -45)
@@ -119,13 +108,13 @@ class TestRowSet(unittest.TestCase):
 
     def test_append(self):
         # FIXME - looking inside the object
-        self.assertEqual(len(self.rows.rows), 9)
+        self.assertEqual(len(self.rows.rows), 11)
 
         row = self.rows.rows[2]
         self.rows.append(row)
 
         # FIXME - looking inside the object
-        self.assertEqual(len(self.rows.rows), 10)
+        self.assertEqual(len(self.rows.rows), 12)
 
         # FIXME - test appending a generator
 
@@ -133,7 +122,7 @@ class TestRowSet(unittest.TestCase):
             self.rows.append(None)
 
     def test_filter(self):
-        rows = self.rows.rows[4:5]
+        rows = self.rows.rows[5:6]
 
         self.assertEqual(
             # FIXME - looking inside the object
@@ -151,7 +140,7 @@ class TestRowSet(unittest.TestCase):
 
     def test_autosplit(self):
         # FIXME - looking inside the object
-        self.assertEqual(len(self.rows.autosplit().rows), 11)
+        self.assertEqual(len(self.rows.autosplit().rows), 13)
 
     def test_group_by(self):
         # TODO - should construct the expected dict and all its rows and

@@ -6,6 +6,8 @@ import os
 import glob
 
 from row import Row
+from row import RowPragma
+from row import RowData
 
 
 class RowSet(object):
@@ -97,30 +99,15 @@ class RowSet(object):
             row = row.rstrip('\n')
             line_number += 1
 
-            if not row:
-                # Handle blank lines early
-                # (Once Row can handle all line types, this will go)
-                try:
-                    self.append(Row.fromTxt(row))
-                except: # noqa
-                    print("{}:{} Syntax error".format(filename, line_number))
-                    raise
-                continue
+            try:
+                obj = Row.fromTxt(row)
+            except: # noqa
+                print("{}:{} Syntax error".format(filename, line_number))
+                raise
 
-            if re.match(r'^#\s', row):
-                # (Once Row can handle all line types, this will go)
-                try:
-                    self.append(Row.fromTxt(row))
-                except: # noqa
-                    print("{}:{} Syntax error".format(filename, line_number))
-                    raise
-                continue
-
-            if re.match(r'^#', row):
-                # TODO
-                # - add comments and pragmas into the rows array for 100%
-                #   round-triping
-                match = re.match(r'^#balance ([-0-9.]+)', row)
+            if isinstance(obj, RowPragma) and obj.pragma == 'balance': # noqa
+                # TODO - move more of the pragma logic in to the pragma class
+                match = re.match(r'^([-0-9.]+)', obj.pragma_args)
                 if match:
                     require_balance_line = False
                     given_balance = decimal.Decimal(match.group(1))
@@ -129,7 +116,6 @@ class RowSet(object):
                         # if the balance pragma is before any transaction
                         # data then it sets the opening balance for the set
                         opening_balance = given_balance
-                        continue
                     elif given_balance != current_balance:
                         raise ValueError(
                             '{}:{} Failed to balance - expected {} but calcul'
@@ -141,21 +127,14 @@ class RowSet(object):
                                 current_balance
                             )
                         )
-                # - in future there might be additional meta/pragmas
-                # skip adding comment or meta lines
-                continue
 
-            if require_balance_line:
+            if isinstance(obj, RowData) and require_balance_line:
                 raise ValueError(
                     '{}: trying to load a file that does not start with a'
-                    'balance pragma'.format(filename)
+                    ' balance pragma'.format(filename)
                 )
 
-            try:
-                self.append(Row.fromTxt(row))
-            except: # noqa
-                print("{}:{} Syntax error".format(filename, line_number))
-                raise
+            self.append(obj)
 
     def load_directory(self, dirname, skip_balance_check=False):
         """Given the pathname to a directory, load all the relevant files found

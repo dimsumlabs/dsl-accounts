@@ -43,8 +43,8 @@ class TestTime(unittest.TestCase):
 
 
 class TestMisc(unittest.TestCase):
-    def setUp(self):
-        f = StringIO("""
+
+    input_data = """
 #balance 0 Opening Balance
 -10 1970-02-06 comment4
 10  1970-01-05 comment1
@@ -53,7 +53,10 @@ class TestMisc(unittest.TestCase):
 -10 1970-03-01 comment5 #bills:rent
 -15 1970-01-11 comment6 #bills:water
 #balance -45 Closing balance
-""")
+"""
+
+    def setUp(self):
+        f = StringIO(self.input_data)
         self.rows = balance.RowSet()
         self.rows.load_file(f)
 
@@ -159,8 +162,7 @@ class TestMisc(unittest.TestCase):
 
 
 class TestSubp(unittest.TestCase):
-    def setUp(self):
-        f = StringIO("""
+    input_data = """
 #balance 0 Opening Balance
 500 1990-04-03 #dues:test1
 20 1990-04-03 Unknown
@@ -172,7 +174,10 @@ class TestSubp(unittest.TestCase):
 -488 1990-05-25 #bills:internet
 13152 1990-05-25 balance books
 #balance 10 Closing balance
-""")
+"""
+
+    def setUp(self):
+        f = StringIO(self.input_data)
         self.rows = balance.RowSet()
         self.rows.load_file(f)
 
@@ -352,22 +357,7 @@ class TestSubp(unittest.TestCase):
 
     def test_roundtrip(self):
         got = balance.subp_roundtrip(self)
-
-        # TODO - when everything is in place, the same string should be used
-        # for both setup and this test
-        want = """
-500 1990-04-03 #dues:test1
-20 1990-04-03 Unknown
-1500 1990-04-27 #fridge
--12500 1990-04-15 #bills:rent
--1174 1990-04-27 #bills:electricity
--1500 1990-04-26 #fridge
-500 1990-05-02 #dues:test1
--488 1990-05-25 #bills:internet
-13152 1990-05-25 balance books
-"""
-
-        self.assertEqual(got, want)
+        self.assertEqual(got, self.input_data)
 
 # TODO
 # - test create_stats() independantly
