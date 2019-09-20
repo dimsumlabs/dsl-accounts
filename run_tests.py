@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """ This is a test harness - it finds all the test scripts in this dir and in
     the lib dir and runs the tests.  It optionally does a code coverage check

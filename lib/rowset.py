@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # Licensed under GPLv3
 import decimal
 import re

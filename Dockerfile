@@ -1,4 +1,4 @@
-from python:2-alpine
+from python:3-alpine
 RUN pip install --quiet flake8 coverage
 COPY . /app
 WORKDIR /app
