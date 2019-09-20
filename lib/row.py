@@ -27,6 +27,9 @@ class Row(object):
         if not text:
             return Row()
 
+        if text == '#':
+            return RowComment('')
+
         match = re.match(r'^#\s(.*)', text)
         if match:
             comment = match.group(1)
