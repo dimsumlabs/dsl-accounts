@@ -77,6 +77,9 @@ class Row(object):
         if isinstance(attr, (int, str, decimal.Decimal)):
             return attr
 
+        if attr is None:
+            return None
+
         # convert all 'complex' types into string representations
         return str(attr)
 
@@ -104,6 +107,10 @@ class Row(object):
         op = m.group(2)
         value_match = m.group(3)
         value_now = self._getvalue_simple(field)
+
+        if value_now is None:
+            # TODO - does this make sense?
+            return None
 
         # coerce our value to match into a number, if that looks possible
         try:
