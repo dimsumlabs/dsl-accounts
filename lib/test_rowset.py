@@ -174,20 +174,3 @@ class TestRowSet(unittest.TestCase):
                 'unknown',
             ]
         )
-
-    def test_save_file(self):
-        expect = [
-            '-10 1970-02-06 comment4',
-            '10 1970-01-05 comment1',
-            '-10 1970-01-10 comment2 #bills:rent',
-            '-10 1970-01-01 comment3 #bills:water',
-            '-10 1970-03-01 comment5 #bills:rent',
-            '-15 1970-01-11 comment6 #bills:water !months:3',
-            ''
-        ]
-
-        f = StringIO()
-        self.rows.save_file(f)
-        got = f.getvalue().split("\n")
-
-        self.assertEqual(got, expect)

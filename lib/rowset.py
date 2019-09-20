@@ -164,17 +164,6 @@ class RowSet(object):
         for filename in files:
             self.load_file(filename, skip_balance_check)
 
-    def save_file(self, stream):
-        """Given an open file handle, output the rowset in a format that can
-           be loaded by load_file()
-        """
-
-        for row in self.rows:
-            stream.write(str(row))
-            stream.write("\n")
-
-        return stream
-
     def filter(self, filter_strings):
         """Apply the given list of human readable filters to the rows
         """
