@@ -95,7 +95,7 @@ test.code: test.code.style test.code.units
 # Test just the code style - note: much slower than the unit tests
 .PHONY: test.code.style
 test.code.style:
-	flake8 ./*.py lib/*.py
+	flake8
 
 # Test the correctness and sanity of the code with unit tests
 .PHONY: test.code.units
