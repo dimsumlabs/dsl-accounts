@@ -148,35 +148,6 @@ class TestRowClass(unittest.TestCase):
         with self.assertRaises(ValueError):
             row.RowData("100", Date(1970, 1, 1), "!months:1:2:3")
 
-    def test_autosplit(self):
-        self.assertEqual(self.rows[0].autosplit(), [self.rows[0]])
-
-        # showing we can have a leap day if it is the original row date
-        self.assertEqual(self.rows[4].autosplit(), [
-            row.RowData("20", Date(1972, 1, 29), "!months:-1:5"),
-            row.RowData("20", Date(1972, 2, 29), "!months:-1:5"),
-            row.RowData("20", Date(1972, 3, 29), "!months:-1:5"),
-            row.RowData("20", Date(1972, 4, 29), "!months:-1:5"),
-            row.RowData("20", Date(1972, 5, 29), "!months:-1:5"),
-        ])
-
-        # showing the end of month clamping to different values
-        self.assertEqual(self.rows[5].autosplit(), [
-            row.RowData("25", Date(1972, 1, 31), "!months:4"),
-            row.RowData("25", Date(1972, 2, 29), "!months:4"),
-            row.RowData("25", Date(1972, 3, 31), "!months:4"),
-            row.RowData("25", Date(1972, 4, 30), "!months:4"),
-        ])
-
-        # showing the rounding and kept remainder
-        self.assertEqual(self.rows[6].autosplit(), [
-            row.RowData("34", Date(1970, 1, 5), "!months:3"),
-            row.RowData("33", Date(1970, 2, 5), "!months:3"),
-            row.RowData("33", Date(1970, 3, 5), "!months:3"),
-        ])
-
-        # TODO - at at least a trivial example showing method==proportional
-
     def test_match(self):
         obj = self.rows[2]
         with self.assertRaises(AttributeError):

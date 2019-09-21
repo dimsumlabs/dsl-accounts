@@ -132,10 +132,6 @@ class TestRowSet(unittest.TestCase):
             rows
         )
 
-    def test_autosplit(self):
-        # FIXME - looking inside the object
-        self.assertEqual(len(self.rows.autosplit().rows), 13)
-
     def test_group_by(self):
         # TODO - should construct the expected dict and all its rows and
         # compare to that
@@ -158,3 +154,79 @@ class TestRowSet(unittest.TestCase):
                 'unknown',
             ]
         )
+
+class TestAutoSplit(unittest.TestCase):
+
+    def test_len(self):
+        """After splitting, we should have the right number of new rows"""
+        input_data = """
+100  1980-01-01 incoming comment
+-100 1980-01-02 outgoing comment
+10   1980-01-03 a !test_bangtag
+100  1980-01-04 a #test_hashtag
+100  1984-02-29 !months:-1:5
+100  1984-01-31 !months:4
+100  1980-01-05 !months:3
+"""
+        rows = rowset.RowSet()
+        rows.load_file(StringIO(input_data))
+
+        self.assertEqual(len(rows), 8)
+        self.assertEqual(len(rows.autosplit()), 17)
+
+    def test_leapday(self):
+        """We can split a leap day, if it is the original row date"""
+        input_data = """
+100  1984-02-29 !months:-1:5
+"""
+        rows = rowset.RowSet()
+        rows.load_file(StringIO(input_data))
+
+        got = str(rows.autosplit())
+
+        expected = """
+20 1984-01-29 !months:-1:5
+20 1984-02-29 !months:-1:5
+20 1984-03-29 !months:-1:5
+20 1984-04-29 !months:-1:5
+20 1984-05-29 !months:-1:5
+"""
+
+        self.assertEqual(expected, got)
+
+    def test_endofmonth(self):
+        """When splitting, We clamp to the correct end of month"""
+        input_data = """
+100  1984-01-31 !months:4
+"""
+        rows = rowset.RowSet()
+        rows.load_file(StringIO(input_data))
+
+        got = str(rows.autosplit())
+
+        expected = """
+25 1984-01-31 !months:4
+25 1984-02-29 !months:4
+25 1984-03-31 !months:4
+25 1984-04-30 !months:4
+"""
+
+        self.assertEqual(expected, got)
+
+    def test_rounding(self):
+        """When splitting, round down and add the remainder to the first"""
+        input_data = """
+100  1980-01-05 !months:3
+"""
+        rows = rowset.RowSet()
+        rows.load_file(StringIO(input_data))
+
+        got = str(rows.autosplit())
+
+        expected = """
+34 1980-01-05 !months:3
+33 1980-02-05 !months:3
+33 1980-03-05 !months:3
+"""
+
+        self.assertEqual(expected, got)

@@ -401,6 +401,11 @@ class RowData(Row):
     def autosplit(self, method='simple'):
         """look at the split bangtag and return a split row if needed
         """
+
+        # TODO
+        # - the autosplit is only used on RowSet objects, so remove all the
+        #   infrastructure from Row and add it to RowSet
+
         dates = self._split_dates()
 
         # TODO:
