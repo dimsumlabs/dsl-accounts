@@ -13,7 +13,7 @@
 # ./test_generate_all 1
 # ## make a lot of changes
 # ./test_generate_all 2
-# diff -ur 1 2
+# git diff --no-index --word-diff=color 1 2
 #
 
 OUTDIR="$1"
