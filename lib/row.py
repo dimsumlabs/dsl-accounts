@@ -49,17 +49,6 @@ class Row(object):
     def __str__(self):
         return ""
 
-    # Implement equality test with other Row objects
-    # This is used in the test_autosplit
-    # TODO - implement the test differently and remove this
-    def __eq__(self, other):
-        return (
-            self.__class__ == other.__class__ and
-            self.value == other.value and
-            self.date == other.date and
-            self.comment == other.comment
-        )
-
     def __add__(self, other):
         if isinstance(other, Row):
             other = other.value
