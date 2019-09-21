@@ -71,7 +71,7 @@ class TestRowClass(unittest.TestCase):
         self.assertEqual(self.rows[0] + self.rows[2], 110)
 
     def test_month(self):
-        self.assertEqual(self.rows[0].month, "1970-01")
+        self.assertEqual(self.rows[0].month, Date(1970, 1, 1))
 
     def test_hashtag(self):
         self.assertEqual(self.rows[0].hashtag, None)
@@ -155,7 +155,7 @@ class TestRowClass(unittest.TestCase):
 
         self.assertEqual(obj.match(direction='flubber'), None)
         self.assertEqual(obj.match(comment='a !test_bangtag'), obj)
-        self.assertEqual(obj.match(month='1970-01'), obj)
+        self.assertEqual(obj.match(month='1970-01-01'), obj)
 
     def test_filter(self):
         obj = self.rows[2]

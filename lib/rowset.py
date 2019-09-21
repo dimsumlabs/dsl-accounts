@@ -181,17 +181,12 @@ class RowSet(object):
         for row in self:
             if field == 'month':
                 if row.date is None:
+                    # FIXME - Hack!
                     # If we have no date, then we cannot be grouped by that!
                     continue
-                else:
-                    # FIXME - Hack!
-                    # - the "month" attribute of the row is intended for string
-                    #   pattern matching, but the rowset wants to keep the
-                    #   original objects intact as much as possible
-                    key = row.date.replace(day=1)
-            else:
-                if hasattr(row, field):
-                    key = getattr(row, field)
+
+            if hasattr(row, field):
+                key = getattr(row, field)
 
             if key is None:
                 key = 'unknown'

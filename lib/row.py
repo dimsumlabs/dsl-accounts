@@ -106,6 +106,12 @@ class Row(object):
         value_match = m.group(3)
         value_now = self._getvalue_simple(field)
 
+        if field == 'month':
+            # HACK - months are datetime objects, but to compare with the
+            # user supplied string, we need to strip off the date
+            # - there is no similar hack in the match() method, should there?
+            value_now = value_now[0:7]
+
         # FIXME TODO HACK
         # - the old _getvalue_simple always coerced None into str('None'),
         #   which was not the intention, however the re.search matches
@@ -241,14 +247,13 @@ class RowData(Row):
            - used for the filter language
              (others should just use the date object)
         """
-        return self.date.strftime('%Y-%m')
+        return self.date.replace(day=1)
 
     @property
     def rel_months(self):
         now = datetime.datetime.now().date()
-        month_this = self.date.replace(day=1)
         month_now = now.replace(day=1)
-        rel_days = (month_this - month_now).days
+        rel_days = (self.month - month_now).days
 
         # approximate the relative number of months with 28 days per month.
         # for large enough relative values, this will be inaccurate.
