@@ -155,6 +155,7 @@ class TestRowSet(unittest.TestCase):
             ]
         )
 
+
 class TestAutoSplit(unittest.TestCase):
 
     def test_len(self):
