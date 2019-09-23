@@ -32,3 +32,4 @@
 500 2019-09-10 paypaltxn:8GN84853053692540 #dues:alex !months:1:1 Cash on paypal
 1000 2019-09-18 paypaltxn:6LC85941455051212 #dues:anthony Cash on Paypal
 350 2019-09-21 #fridge
+700 2019-09-21 paypaltxn:50D03088XS978823A #dues:richard !months:1:1 Cash on Paypal
