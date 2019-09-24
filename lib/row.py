@@ -165,7 +165,9 @@ class RowComment(Row):
         self.comment = comment
 
     def __str__(self):
-        return "#{}".format(self.comment)
+        if self.comment:
+            return '#' + self.comment
+        return '#'
 
 
 class RowPragma(Row):
@@ -176,11 +178,13 @@ class RowPragma(Row):
         if text[0] != '#':
             raise ValueError("Not a pragma or a comment: {}".format(text))
 
-        match = re.match(r'^#balance ([-0-9.]+)(\s?.*)', text)
+        match = re.match(r'^#balance ([-0-9.]+)(\s+)?(.*)', text)
         if match:
             balance = match.group(1)
-            comment = match.group(2)
+            comment = match.group(3)
             return RowPragmaBalance(balance, comment)
+
+        # TODO - detect /and/report/ errors in balance lines syntax..
 
         return RowComment(text[1:])
 
@@ -200,7 +204,10 @@ class RowPragmaBalance(RowPragma):
         self.comment = comment
 
     def __str__(self):
-        return "#balance {}{}".format(self.balance, self.comment)
+        string = '#balance {}'.format(self.balance)
+        if self.comment:
+            return string + ' ' + self.comment
+        return string
 
 
 class RowData(Row):
