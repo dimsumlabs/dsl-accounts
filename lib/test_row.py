@@ -51,9 +51,6 @@ class TestRowClass(unittest.TestCase):
 
     def test_incoming(self):
         obj = self.rows[0]
-        self.assertEqual(obj.value, 100)
-        self.assertEqual(obj.comment, "incoming comment")
-        self.assertEqual(obj.date, Date(1970, 1, 1))
         self.assertEqual(obj.direction, 'incoming')
 
     def test_outgoing(self):
@@ -190,3 +187,33 @@ class TestRowClass(unittest.TestCase):
 
     def test_str(self):
         self.assertEqual(str(self.rows[4]), "100 1972-02-29 !months:-1:5")
+
+
+class TestRowPragmaClass(unittest.TestCase):
+    def test_balance(self):
+        input_data = "#balance 10 The Comment"
+        obj = row.Row.fromTxt(input_data)
+
+        self.assertIsInstance(obj, row.RowPragmaBalance)
+        self.assertEqual(obj.balance, 10)
+        self.assertEqual(obj.comment, 'The Comment')
+        self.assertEqual(str(obj), input_data)
+
+        with self.assertRaises(ValueError):
+            row.Row.fromTxt("#balance notanumber Still a Comment")
+
+        with self.assertRaises(ValueError):
+            row.RowPragma.fromTxt("No leading hash")
+
+
+class TestRowDataClass(unittest.TestCase):
+    def test_fields(self):
+        obj = row.RowData(10, Date(1970, 10, 20), "A Comment")
+
+        self.assertIsInstance(obj, row.RowData)
+        self.assertEqual(obj.value, 10)
+        self.assertEqual(obj.date, Date(1970, 10, 20))
+        self.assertEqual(obj.comment, "A Comment")
+
+        with self.assertRaises(ValueError):
+            row.RowData(10, 'notadate', "A Comment")

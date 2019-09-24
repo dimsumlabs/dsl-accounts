@@ -24,6 +24,7 @@ import row # noqa
 class TestRowSet(unittest.TestCase):
     input_data = """
 # Files can contain comments and empty lines
+#
 
 #balance 0 Opening Balance
 -10 1970-02-06 comment4
@@ -32,7 +33,7 @@ class TestRowSet(unittest.TestCase):
 -10 1970-01-01 comment3 #bills:water
 -10 1970-03-01 comment5 #bills:rent
 -15 1970-01-11 comment6 #bills:water !months:3
-#balance -45 A comment
+#balance -45
 """
 
     def setUp(self):
@@ -102,13 +103,13 @@ class TestRowSet(unittest.TestCase):
 
     def test_append(self):
         # FIXME - looking inside the object
-        self.assertEqual(len(self.rows.rows), 11)
+        self.assertEqual(len(self.rows.rows), 12)
 
-        row = self.rows.rows[2]
+        row = self.rows.rows[3]
         self.rows.append(row)
 
         # FIXME - looking inside the object
-        self.assertEqual(len(self.rows.rows), 12)
+        self.assertEqual(len(self.rows.rows), 13)
 
         # FIXME - test appending a generator
 
@@ -116,7 +117,7 @@ class TestRowSet(unittest.TestCase):
             self.rows.append(None)
 
     def test_filter(self):
-        rows = self.rows.rows[5:6]
+        rows = self.rows.rows[6:7]
 
         self.assertEqual(
             # FIXME - looking inside the object
