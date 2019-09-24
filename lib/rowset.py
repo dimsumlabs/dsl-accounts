@@ -83,16 +83,18 @@ class RowSet(object):
             stream = open(filename, 'r')
         else:
             filename = '(stream)'
-
-        require_balance_line = False
-        if len(self) > 0 and not skip_balance_check:
-            # If we already have data in the rowset, then the first line of the
-            # incoming file must be a balance line
-            require_balance_line = True
-
-        opening_balance = 0
-
         line_number = 0
+
+        need_balance = True
+
+        # TODO
+        # - if we are loading just one file from a whole dir, its opening
+        #   balance will need to be added to any calculated balance to avoid
+        #   errors
+
+        if skip_balance_check:
+            need_balance = False
+
         for row in stream.readlines():
             row = row.rstrip('\n')
             line_number += 1
@@ -106,26 +108,21 @@ class RowSet(object):
             if isinstance(obj, RowPragmaBalance):
                 # TODO - move more of the pragma logic in to the pragma class
 
-                require_balance_line = False
-                given_balance = obj.balance
-                current_balance = opening_balance+self.balance
-                if len(self.rows) == 0:
-                    # if the balance pragma is before any transaction
-                    # data then it sets the opening balance for the set
-                    opening_balance = given_balance
-                elif given_balance != current_balance:
+                if obj.balance != self.balance:
                     raise ValueError(
                         '{}:{} Failed to balance - expected {} but calcul'
                         'ated {}'.
                         format(
                             filename,
                             line_number,
-                            given_balance,
-                            current_balance
+                            obj.balance,
+                            self.balance
                         )
                     )
 
-            if isinstance(obj, RowData) and require_balance_line:
+                need_balance = False
+
+            if isinstance(obj, RowData) and need_balance:
                 raise ValueError(
                     '{}: trying to load a file that does not start with a'
                     ' balance pragma'.format(filename)

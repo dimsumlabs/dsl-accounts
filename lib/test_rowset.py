@@ -186,6 +186,7 @@ class TestAutoSplit(unittest.TestCase):
     def test_len(self):
         """After splitting, we should have the right number of new rows"""
         input_data = """
+#balance 0
 100  1980-01-01 incoming comment
 -100 1980-01-02 outgoing comment
 10   1980-01-03 a !test_bangtag
@@ -197,12 +198,13 @@ class TestAutoSplit(unittest.TestCase):
         rows = rowset.RowSet()
         rows.load_file(StringIO(input_data))
 
-        self.assertEqual(len(rows), 8)
-        self.assertEqual(len(rows.autosplit()), 17)
+        self.assertEqual(len(rows), 9)
+        self.assertEqual(len(rows.autosplit()), 18)
 
     def test_leapday(self):
         """We can split a leap day, if it is the original row date"""
         input_data = """
+#balance 0
 100  1984-02-29 !months:-1:5
 """
         rows = rowset.RowSet()
@@ -211,6 +213,7 @@ class TestAutoSplit(unittest.TestCase):
         got = str(rows.autosplit())
 
         expected = """
+#balance 0
 20 1984-01-29 !months:-1:5
 20 1984-02-29 !months:-1:5
 20 1984-03-29 !months:-1:5
@@ -223,6 +226,7 @@ class TestAutoSplit(unittest.TestCase):
     def test_endofmonth(self):
         """When splitting, We clamp to the correct end of month"""
         input_data = """
+#balance 0
 100  1984-01-31 !months:4
 """
         rows = rowset.RowSet()
@@ -231,6 +235,7 @@ class TestAutoSplit(unittest.TestCase):
         got = str(rows.autosplit())
 
         expected = """
+#balance 0
 25 1984-01-31 !months:4
 25 1984-02-29 !months:4
 25 1984-03-31 !months:4
@@ -242,6 +247,7 @@ class TestAutoSplit(unittest.TestCase):
     def test_rounding(self):
         """When splitting, round down and add the remainder to the first"""
         input_data = """
+#balance 0
 100  1980-01-05 !months:3
 """
         rows = rowset.RowSet()
@@ -250,6 +256,7 @@ class TestAutoSplit(unittest.TestCase):
         got = str(rows.autosplit())
 
         expected = """
+#balance 0
 34 1980-01-05 !months:3
 33 1980-02-05 !months:3
 33 1980-03-05 !months:3
