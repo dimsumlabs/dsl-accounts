@@ -178,13 +178,14 @@ class RowPragma(Row):
         if text[0] != '#':
             raise ValueError("Not a pragma or a comment: {}".format(text))
 
-        match = re.match(r'^#balance ([-0-9.]+)(\s+)?(.*)', text)
-        if match:
-            balance = match.group(1)
-            comment = match.group(3)
-            return RowPragmaBalance(balance, comment)
+        if text[0:8] == '#balance':
+            match = re.match(r'^#balance ([-0-9.]+)(\s+)?(.*)', text)
+            if match:
+                balance = match.group(1)
+                comment = match.group(3)
+                return RowPragmaBalance(balance, comment)
 
-        # TODO - detect /and/report/ errors in balance lines syntax..
+            raise ValueError("Syntax Error in balance pragma: {}".format(text))
 
         return RowComment(text[1:])
 

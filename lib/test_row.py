@@ -42,7 +42,7 @@ class TestRowClass(unittest.TestCase):
 
         r = []
         for line in data:
-            r.append(row.RowData.fromTxt(line))
+            r.append(row.Row.fromTxt(line))
 
         self.rows = r
 
