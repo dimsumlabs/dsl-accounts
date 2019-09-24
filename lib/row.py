@@ -27,19 +27,8 @@ class Row(object):
         if not text:
             return Row()
 
-        if text == '#':
-            return RowComment('')
-
-        match = re.match(r'^#\s(.*)', text)
-        if match:
-            comment = match.group(1)
-            return RowComment(comment)
-
-        match = re.match(r'^#(\w+)\s+(.*)', text)
-        if match:
-            pragma = match.group(1)
-            args = match.group(2)
-            return RowPragma(pragma, args)
+        if text[0] == '#':
+            return RowPragma.fromTxt(text)
 
         (value, date, comment) = re.split(r'\s+', text, maxsplit=2)
         date = datetime.datetime.strptime(date.strip(), "%Y-%m-%d").date()
@@ -176,24 +165,42 @@ class RowComment(Row):
         self.comment = comment
 
     def __str__(self):
-        return "# {}".format(self.comment)
+        return "#{}".format(self.comment)
 
 
 class RowPragma(Row):
     """A row containing a pragma command"""
 
-    def __init__(self, pragma, string):
-        super().__init__()
-        self.pragma = pragma
-        self.pragma_args = string
+    @classmethod
+    def fromTxt(cls, text):
+        if text[0] != '#':
+            raise ValueError("Not a pragma or a comment: {}".format(text))
+
+        match = re.match(r'^#balance ([-0-9.]+)(\s?.*)', text)
+        if match:
+            balance = match.group(1)
+            comment = match.group(2)
+            return RowPragmaBalance(balance, comment)
+
+        return RowComment(text[1:])
 
         # TODO
-        # - validate pragma name
         # - extract params better
-        # - move more of the pragma processing into this class
+
+
+class RowPragmaBalance(RowPragma):
+    """A row with the balance pragma"""
+
+    # TODO
+    # - move more of the pragma processing into this class
+
+    def __init__(self, balance, comment):
+        super().__init__()
+        self.balance = decimal.Decimal(balance)
+        self.comment = comment
 
     def __str__(self):
-        return "#{} {}".format(self.pragma, self.pragma_args)
+        return "#balance {}{}".format(self.balance, self.comment)
 
 
 class RowData(Row):

@@ -1,11 +1,10 @@
 # Licensed under GPLv3
 import decimal
-import re
 import os
 import glob
 
 from row import Row
-from row import RowPragma
+from row import RowPragmaBalance
 from row import RowData
 
 
@@ -104,28 +103,27 @@ class RowSet(object):
                 print("{}:{} Syntax error".format(filename, line_number))
                 raise
 
-            if isinstance(obj, RowPragma) and obj.pragma == 'balance': # noqa
+            if isinstance(obj, RowPragmaBalance):
                 # TODO - move more of the pragma logic in to the pragma class
-                match = re.match(r'^([-0-9.]+)', obj.pragma_args)
-                if match:
-                    require_balance_line = False
-                    given_balance = decimal.Decimal(match.group(1))
-                    current_balance = opening_balance+self.balance
-                    if len(self.rows) == 0:
-                        # if the balance pragma is before any transaction
-                        # data then it sets the opening balance for the set
-                        opening_balance = given_balance
-                    elif given_balance != current_balance:
-                        raise ValueError(
-                            '{}:{} Failed to balance - expected {} but calcul'
-                            'ated {}'.
-                            format(
-                                filename,
-                                line_number,
-                                given_balance,
-                                current_balance
-                            )
+
+                require_balance_line = False
+                given_balance = obj.balance
+                current_balance = opening_balance+self.balance
+                if len(self.rows) == 0:
+                    # if the balance pragma is before any transaction
+                    # data then it sets the opening balance for the set
+                    opening_balance = given_balance
+                elif given_balance != current_balance:
+                    raise ValueError(
+                        '{}:{} Failed to balance - expected {} but calcul'
+                        'ated {}'.
+                        format(
+                            filename,
+                            line_number,
+                            given_balance,
+                            current_balance
                         )
+                    )
 
             if isinstance(obj, RowData) and require_balance_line:
                 raise ValueError(
