@@ -5,6 +5,7 @@
 import unittest
 import sys
 import os
+import decimal
 
 from datetime import date as Date
 from io import StringIO
@@ -90,6 +91,29 @@ class TestRowSet(unittest.TestCase):
         set = rowset.RowSet()
         with self.assertRaises(ValueError):
             set.load_file(f)
+
+    def test_load_file4(self):
+        """Loading a file with a mismatching balance will cause error
+        """
+
+        f = StringIO("""
+# First non transaction line is a balance line
+
+#balance -50 comment 23
+10 1970-03-20 comment24
+""")
+        with self.assertRaises(ValueError):
+            self.rows.load_file(f)
+
+    def test_load_file5(self):
+        """Loading a file with a syntax error will cause error
+        """
+
+        f = StringIO("""
+apple 1970-03-20 comment24
+""")
+        with self.assertRaises(decimal.InvalidOperation):
+            self.rows.load_file(f)
 
 # TODO: loading a file with a syntax error should raise an exception
 
