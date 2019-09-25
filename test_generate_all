@@ -26,13 +26,17 @@ shift
 mkdir -p "$OUTDIR"
 
 SIMPLE="topay make_balance grid party sum topay_html stats statstsv csv roundtrip"
+NOSPLIT="csv roundtrip"
 JSON=json_payments
 
 for i in $SIMPLE; do
     ./balance.py --split $i >$OUTDIR/$i
 done
 
+for i in $NOSPLIT; do
+    ./balance.py --nosplit $i >$OUTDIR/$i.nosplit
+done
+
 for i in $JSON; do
     ./balance.py --split $i |json_pp |sort |sed -e 's/,$//' >$OUTDIR/$i
 done
-
