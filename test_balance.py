@@ -115,6 +115,74 @@ class TestMisc(unittest.TestCase):
 
         self.assertEqual(expected, got)
 
+    def test_grid_accumulate_forecast(self):
+        expected = (
+                set([
+                    Date(1970, 1, 1),
+                    Date(1970, 2, 1),
+                    Date(1970, 3, 1),
+                ]),
+                {
+                    'bills:water': {
+                        Date(1970, 1, 1): {
+                            'sum': Decimal(-25),
+                        },
+                    },
+                    'unknown': {
+                        Date(1970, 1, 1): {
+                            'sum': Decimal(10),
+                        },
+                        Date(1970, 2, 1): {
+                            'sum': Decimal(-10),
+                        },
+                    },
+                    'bills:rent': {
+                        Date(1970, 3, 1): {
+                            'sum': Decimal(-10),
+                        },
+                        Date(1970, 2, 1): {
+                            'sum': Decimal(-10),
+                        },
+                        Date(1970, 1, 1): {
+                            'sum': Decimal(-10),
+                        },
+                    },
+                },
+                {
+                    Date(1970, 1, 1): Decimal(-25),
+                    Date(1970, 2, 1): Decimal(-20),
+                    Date(1970, 3, 1): Decimal(-10),
+                    'total': Decimal(-55),
+                },
+                {
+                    Date(1970, 1, 1): Decimal(-25),
+                    Date(1970, 2, 1): '~-45',
+                    Date(1970, 3, 1): '~-55',
+                }
+            )
+
+        append_data = """
+#balance -45
+-10 1970-02-13 comment7 #bills:rent !forecast
+-10 1970-03-13 comment8 #bills:rent !forecast
+"""
+        self.rows.load_file(StringIO(append_data))
+
+        got = balance.grid_accumulate(self.rows)
+
+        # TODO
+        # - this is a hack
+        # convert the returned data from non-comparable RowSets to numbers
+        for category, categoryi in got[1].items():
+            for date, datei in categoryi.items():
+                if 'sum' in datei:
+                    datei['sum'] = datei['sum'].value
+        for date in got[2]:
+            got[2][date] = got[2][date].value
+
+        self.maxDiff = None
+        self.assertEqual(expected, got)
+
     def test_topay_render(self):
         strings = {
             'header': 'header: {date}',

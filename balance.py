@@ -94,29 +94,54 @@ def render_month_len():
     return 9
 
 
+def forecast_filter(rows):
+    """If the rowset has forecast data, try to guess if it also has
+    superceeding real data, and if so, remove the forecast """
+
+    if not rows.isforecast:
+        return rows
+
+    split = rows.group_by('isforecast')
+
+    if len(split[True]) != 1:
+        # there is more than one forecast item, dont filter
+        return rows
+
+    if False not in split:
+        # There are no real items, dont filter
+        return rows
+
+    # it looks like we have good data to replace the forecast
+    return split[False]
+
+
 def grid_accumulate(rows):
     """Accumulate the rows into month+tag buckets
     """
     grid = {}
     totals = {}
+    totals['total'] = RowSet()
     months_present = set()
 
     months = rows.group_by('month')
     for month in months:
         months_present.add(month)
-        totals[month] = months[month]
+        totals[month] = RowSet()
 
         tags = months[month].group_by('hashtag')
 
         for tag in tags:
+            tagrows = forecast_filter(tags[tag])
+
             # I would prefer auto-vivification to all these if statements
             if tag not in grid:
                 grid[tag] = {}
 
             grid[tag][month] = {}
-            grid[tag][month]['sum'] = tags[tag]
+            grid[tag][month]['sum'] = tagrows
 
-    totals['total'] = rows
+            totals[month].append(tagrows)
+            totals['total'].append(tagrows)
 
     running_totals = {}
     running_total = 0
