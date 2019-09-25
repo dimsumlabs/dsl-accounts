@@ -504,8 +504,10 @@ class RowData(Row):
                 if self.hashtag:
                     new.hashtag = self.hashtag
 
-                # TODO - mutate the bangtag to show this is a child
                 new.bangtag = self.bangtag.copy()
+
+                # mutate the bangtag to show this is a child
+                new.bangtag['months'] = ['child']
 
                 rows.append(new)
 

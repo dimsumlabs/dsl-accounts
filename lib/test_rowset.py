@@ -214,11 +214,11 @@ class TestAutoSplit(unittest.TestCase):
 
         expected = """
 #balance 0
-20 1984-01-29 !months:-1:5
-20 1984-02-29 !months:-1:5
-20 1984-03-29 !months:-1:5
-20 1984-04-29 !months:-1:5
-20 1984-05-29 !months:-1:5
+20 1984-01-29 !months:child
+20 1984-02-29 !months:child
+20 1984-03-29 !months:child
+20 1984-04-29 !months:child
+20 1984-05-29 !months:child
 """
 
         self.assertEqual(expected, got)
@@ -236,10 +236,10 @@ class TestAutoSplit(unittest.TestCase):
 
         expected = """
 #balance 0
-25 1984-01-31 !months:4
-25 1984-02-29 !months:4
-25 1984-03-31 !months:4
-25 1984-04-30 !months:4
+25 1984-01-31 !months:child
+25 1984-02-29 !months:child
+25 1984-03-31 !months:child
+25 1984-04-30 !months:child
 """
 
         self.assertEqual(expected, got)
@@ -257,9 +257,9 @@ class TestAutoSplit(unittest.TestCase):
 
         expected = """
 #balance 0
-34 1980-01-05 !months:3
-33 1980-02-05 !months:3
-33 1980-03-05 !months:3
+34 1980-01-05 !months:child
+33 1980-02-05 !months:child
+33 1980-03-05 !months:child
 """
 
         self.assertEqual(expected, got)
