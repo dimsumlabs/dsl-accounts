@@ -464,7 +464,7 @@ class RowData(Row):
 
         return dates
 
-    def autosplit(self, method='simple'):
+    def autosplit(self):
         """look at the split bangtag and return a split row if needed
         """
 
@@ -491,31 +491,30 @@ class RowData(Row):
 
         rows = []
 
-        if method == 'simple':
-            # The 'simple' splitting will just divide the transaction value
-            # amongst multiple months - rounding any fractions down
-            # and applying them to the first month
+        # just divide the transaction value
+        # amongst multiple months - rounding any fractions down
+        # and applying them to the first month
 
-            # no splitting needed, return unchanged
-            if len(dates) == 1 and dates[0] == self.date:
-                return [self]
+        # no splitting needed, return unchanged
+        if len(dates) == 1 and dates[0] == self.date:
+            return [self]
 
-            # the remainder is any money lost due to rounding
-            remainder = self.value - each_value * count_children
+        # the remainder is any money lost due to rounding
+        remainder = self.value - each_value * count_children
 
-            for date in dates:
-                this_value = each_value + remainder
-                remainder = 0  # only add the remainder to the first child
-                new = RowData(this_value, date, self._comment)
-                if self.hashtag:
-                    new.hashtag = self.hashtag
+        for date in dates:
+            this_value = each_value + remainder
+            remainder = 0  # only add the remainder to the first child
+            new = RowData(this_value, date, self._comment)
+            if self.hashtag:
+                new.hashtag = self.hashtag
 
-                new.bangtags = self.bangtags.copy()
+            new.bangtags = self.bangtags.copy()
 
-                # mutate the bangtags to show this is a child
-                new.bangtags['months'] = ['child']
+            # mutate the bangtags to show this is a child
+            new.bangtags['months'] = ['child']
 
-                rows.append(new)
+            rows.append(new)
 
         # elif method == 'proportional':
         #   # The 'proportional' splitting attempts to pro-rata the transaction
@@ -567,8 +566,5 @@ class RowData(Row):
         #   comment += "({}% dom={} W{})".format(percent, day, week)
         #   # FIXME - record the resulting "end date" somewhere
         #   rows.append(Row(this_value, datestr, comment, self.direction))
-
-        else:
-            raise ValueError('unknown splitter method name')
 
         return rows
