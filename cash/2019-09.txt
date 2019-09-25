@@ -36,3 +36,4 @@
 25 2019-09-23 palpaltxn:74S96529R8776212R #fridge Xro purchases a drink Cash on Paypal
 -95 2019-09-24 #fridge
 200 2019-09-24 #dues:alex top up !months:1:1
+200 2019-09-24 #donation
