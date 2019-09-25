@@ -1,0 +1,4 @@
+# payment in cash
+#
+
+1000 2019-06-05 #dues:meebey !forecast:monthly

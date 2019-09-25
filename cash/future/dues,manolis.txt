@@ -1,0 +1,4 @@
+# paypal automated payments
+#
+
+700 2018-06-04 #dues:manolis !forecast:monthly

@@ -1,0 +1,7 @@
+# TODO
+# - get a better handle on the real costs
+#
+
+# Accounting and book keeping
+# nominally 10000, spread over 12 months
+-834 2019-09-20 #bills:accounting !forecast:monthly

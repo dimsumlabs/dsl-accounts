@@ -1,0 +1,4 @@
+# paypal automated payments
+#
+
+300 2019-05-06 #dues:max !forecast:monthly

@@ -1,0 +1,11 @@
+# Lease agreement
+#
+# Term:
+# 2 years, commencing from the 1st July, 2018 and expiring on 30th June 2020.
+# No termination for 14 months
+# 2 months notice for Termination
+#
+# First month possible to break the lease
+# -14000 2019-09-01 #bills:rent
+
+-14000 2018-07-01 #bills:rent !forecast:monthly:until:2020-06-30

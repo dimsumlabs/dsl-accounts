@@ -1,0 +1,4 @@
+# paypal automated payments
+#
+
+700 2019-01-08 #dues:lawrence !forecast:monthly

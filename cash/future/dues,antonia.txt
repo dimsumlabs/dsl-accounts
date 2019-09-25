@@ -1,0 +1,4 @@
+# paypal automated payments
+#
+
+700 2019-05-06 #dues:antonia !forecast:monthly

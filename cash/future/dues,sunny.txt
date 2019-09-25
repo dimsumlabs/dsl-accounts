@@ -1,0 +1,4 @@
+# paypal automated payments
+#
+
+700 2018-08-05 #dues:sunny !forecast:monthly

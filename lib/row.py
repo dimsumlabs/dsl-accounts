@@ -317,6 +317,7 @@ class RowData(Row):
 
         valid = {
             '#': [
+                'bills:accounting',
                 'bills:br',
                 'bills:electricity',
                 'bills:internet',

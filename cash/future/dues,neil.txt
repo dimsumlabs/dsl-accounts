@@ -1,0 +1,4 @@
+# paypal automated payments
+#
+
+800 2019-06-05 #dues:neil !forecast:monthly

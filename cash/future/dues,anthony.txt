@@ -1,0 +1,4 @@
+# paypal automated payments
+#
+
+1000 2019-08-18 #dues:anthony !forecast:monthly

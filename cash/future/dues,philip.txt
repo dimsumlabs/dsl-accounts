@@ -1,0 +1,4 @@
+# payment manually via paypal
+#
+
+1000 2019-08-27 #dues:philip !forecast:monthly

@@ -1,0 +1,5 @@
+# paypal automated payments
+#
+
+# stigo
+75 2018-11-09 #supporters !forecast:monthly

@@ -1,0 +1,5 @@
+# TODO:
+# - include details about the plan name and expected end dates
+#
+
+-400 2018-06-04 #bills:electricity !forecast:monthly
