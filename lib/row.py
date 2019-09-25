@@ -233,7 +233,7 @@ class RowData(Row):
             raise ValueError("{} is not a date object".format(date))
 
         self.hashtag = None
-        self.bangtag = dict()
+        self.bangtags = dict()
         self.value = decimal.Decimal(value)
         self.date = date
         self.comment = comment
@@ -281,7 +281,7 @@ class RowData(Row):
         if self.hashtag:
             tags['hashtag'] = '#'+self.hashtag
 
-        for k, v in self.bangtag.items():
+        for k, v in self.bangtags.items():
             fields = v.copy()
             fields.insert(0, k)
             tags['bangtag,'+k] = '!' + ':'.join(fields)
@@ -298,7 +298,7 @@ class RowData(Row):
         # might be overwritten later to decorate them nicely
         # bangtags are metainstructions to the parser
         self._hashtag()
-        self._bangtag()
+        self._bangtags()
 
     def _xtag_validate(self, x, tag):
         """Check the tag against valid tag names
@@ -382,8 +382,8 @@ class RowData(Row):
 
         self._comment = re.sub(r'#'+hashtag, '{hashtag}', self._comment)
 
-    def _bangtag(self):
-        """Extract any bangtag from the comment"""
+    def _bangtags(self):
+        """Extract any bangtags from the comment"""
 
         bangtags = self._xtag('!')
 
@@ -394,10 +394,10 @@ class RowData(Row):
             fields = bangtag.split(':')
             tagname = fields.pop(0)
 
-            if tagname in self.bangtag:
+            if tagname in self.bangtags:
                 raise ValueError('Row has multiple !{} tags'.format(tagname))
 
-            self.bangtag[tagname] = fields
+            self.bangtags[tagname] = fields
 
             replacement = '{bangtag,'+tagname+'}'
             self._comment = re.sub(r'!'+bangtag, replacement, self._comment)
@@ -435,10 +435,10 @@ class RowData(Row):
         """extract any !months tag and use that to calculate the list of
            dates that this row could be split into
         """
-        if 'months' not in self.bangtag:
+        if 'months' not in self.bangtags:
             return [self.date]
 
-        fields = self.bangtag['months']
+        fields = self.bangtags['months']
 
         if len(fields) < 1 or len(fields) > 2:
             raise ValueError('months bang must specify one or two numbers')
@@ -504,10 +504,10 @@ class RowData(Row):
                 if self.hashtag:
                     new.hashtag = self.hashtag
 
-                new.bangtag = self.bangtag.copy()
+                new.bangtags = self.bangtags.copy()
 
-                # mutate the bangtag to show this is a child
-                new.bangtag['months'] = ['child']
+                # mutate the bangtags to show this is a child
+                new.bangtags['months'] = ['child']
 
                 rows.append(new)
 
