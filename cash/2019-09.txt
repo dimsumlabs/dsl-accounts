@@ -38,3 +38,4 @@
 200 2019-09-24 #dues:alex top up !months:1:1
 200 2019-09-24 #donation
 500 2019-09-24 paypaltxn:02137021YS120183D #dues:neilg !months:1:1
+1000 2019-09-25 paypaltxn:08443197WX259480B #dues:philip !months:1:1
