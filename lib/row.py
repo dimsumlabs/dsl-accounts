@@ -326,11 +326,13 @@ class RowData(Row):
                 'merch:[a-z][a-z0-9]*',
                 'supporters',
                 'test_hashtag',
+                'test_hashtag2(:.*)?',
                 'workshop',
             ],
             '!': [
                 'months:[-0-9]+(:[0-9]+)?',
                 'test_bangtag',
+                'test_bangtag2(:.*)?',
             ],
         }
 

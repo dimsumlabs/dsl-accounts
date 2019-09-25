@@ -76,7 +76,7 @@ class TestRowClass(unittest.TestCase):
         self.assertEqual(self.rows[3].hashtag, 'test_hashtag')
 
         with self.assertRaises(ValueError):
-            row.RowData("100", Date(1970, 1, 1), "#two #hashtags")
+            row.RowData("100", Date(1970, 1, 1), "#test_hashtag #test_hashtag2")
 
     def test_bangtag(self):
         self.assertEqual(self.rows[0].bangtag, dict())
@@ -84,7 +84,7 @@ class TestRowClass(unittest.TestCase):
         self.assertIn('test_bangtag', self.rows[2].bangtag)
 
         with self.assertRaises(ValueError):
-            row.RowData("100", Date(1970, 1, 1), "!two !bangtags")
+            row.RowData("100", Date(1970, 1, 1), "!test_bangtag !test_bangtag")
 
     def test__month_add(self):
         """I dont really want to test month maths, but I wrote it, so
