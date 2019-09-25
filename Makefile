@@ -3,6 +3,7 @@
 all: report
 
 cashfiles := $(wildcard cash/*.txt)
+cashfuturefiles := $(wildcard cash/future/*.txt)
 
 # Generate the output into the pages directory, ready for publishing with
 # something like github pages
@@ -12,6 +13,7 @@ pages: pages/index.html pages/payments.json pages/stats.tsv
 pages: pages/transactions.csv
 pages: pages/pressstart2p.ttf
 pages: pages/report.txt
+pages: pages/report.future.txt
 
 pages/pressstart2p.ttf: docs/pressstart2p.ttf
 	cp $< $@
@@ -38,6 +40,10 @@ pages/stats.pdf: stats.gnuplot pages/stats.tsv
 pages/report.txt: ./balance.py $(cashfiles)
 	@mkdir -p pages
 	$(MAKE) report >$@
+
+pages/report.future.txt: ./balance.py $(cashfiles) $(cashfuturefiles)
+	@mkdir -p pages
+	$(MAKE) report.future >$@
 
 # Replicate the travisCI deploy pages provider.
 #
