@@ -79,9 +79,9 @@ class TestRowClass(unittest.TestCase):
             row.RowData("100", Date(1970, 1, 1), "#two #hashtags")
 
     def test_bangtag(self):
-        self.assertEqual(self.rows[0].bangtag, None)
+        self.assertEqual(self.rows[0].bangtag, dict())
 
-        self.assertEqual(self.rows[2].bangtag, 'test_bangtag')
+        self.assertIn('test_bangtag', self.rows[2].bangtag)
 
         with self.assertRaises(ValueError):
             row.RowData("100", Date(1970, 1, 1), "!two !bangtags")

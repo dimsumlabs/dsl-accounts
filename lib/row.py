@@ -232,6 +232,7 @@ class RowData(Row):
         if not isinstance(date, datetime.date):
             raise ValueError("{} is not a date object".format(date))
 
+        self.bangtag = dict()
         self.value = decimal.Decimal(value)
         self.date = date
         self.comment = comment
@@ -278,8 +279,12 @@ class RowData(Row):
         tags = dict()
         if self.hashtag:
             tags['hashtag'] = '#'+self.hashtag
-        if self.bangtag:
-            tags['bangtag'] = '!'+self.bangtag
+
+        for k, v in self.bangtag.items():
+            fields = v.copy()
+            fields.insert(0, k)
+            tags['bangtag,'+k] = '!' + ':'.join(fields)
+
         return self._comment.format(**tags)
 
     @comment.setter
@@ -379,10 +384,17 @@ class RowData(Row):
         """Extract any bangtag from the comment"""
 
         bangtag = self._xtag('!')
-        self.bangtag = bangtag
 
-        if bangtag:
-            self._comment = re.sub(r'!'+bangtag, '{bangtag}', self._comment)
+        if not bangtag:
+            return
+
+        fields = bangtag.split(':')
+        tagname = fields.pop(0)
+
+        self.bangtag[tagname] = fields
+
+        replacement = '{bangtag,'+tagname+'}'
+        self._comment = re.sub(r'!'+bangtag, replacement, self._comment)
 
     @staticmethod
     def _month_add(date, incr):
@@ -417,26 +429,22 @@ class RowData(Row):
         """extract any !months tag and use that to calculate the list of
            dates that this row could be split into
         """
-        tag = self.bangtag
-        if tag is None:
+        if 'months' not in self.bangtag:
             return [self.date]
 
-        fields = tag.split(':')
+        fields = self.bangtag['months']
 
-        if fields[0] != 'months':       # TODO: fix this for multiple tags
-            return [self.date]
-
-        if len(fields) < 2 or len(fields) > 3:
+        if len(fields) < 1 or len(fields) > 2:
             raise ValueError('months bang must specify one or two numbers')
 
-        if len(fields) == 3:
+        if len(fields) == 2:
             # the fields are "start:count"
-            start = int(fields[1])
-            end = start+int(fields[2])
+            start = int(fields[0])
+            end = start+int(fields[1])
         else:
             # otherwise, the field is just "count"
             start = 0
-            end = int(fields[1])
+            end = int(fields[0])
 
         dates = []
         for i in range(start, end):
@@ -489,9 +497,10 @@ class RowData(Row):
                 new = RowData(this_value, date, self._comment)
                 if self.hashtag:
                     new.hashtag = self.hashtag
-                if self.bangtag:
-                    # TODO - mutate the bangtag to show this is a child
-                    new.bangtag = self.bangtag
+
+                # TODO - mutate the bangtag to show this is a child
+                new.bangtag['months'] = self.bangtag['months'].copy()
+
                 rows.append(new)
 
         # elif method == 'proportional':
