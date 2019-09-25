@@ -52,6 +52,7 @@ class Row(object):
         self.hashtag = None
         self.month = None
         self.rel_months = None
+        self.isforecast = False
 
     def _getvalue_simple(self, field):
         """return the field value as a simple number or string
@@ -300,6 +301,10 @@ class RowData(Row):
         self._hashtag()
         self._bangtags()
 
+    @property
+    def isforecast(self):
+        return ('forecast' in self.bangtags)
+
     def _xtag_validate(self, x, tag):
         """Check the tag against valid tag names
         """
@@ -331,6 +336,7 @@ class RowData(Row):
                 'workshop',
             ],
             '!': [
+                'forecast',
                 'id:paypal:[0-9ABCDEFGHJKLMNPRSTUVWXY]{17}',
                 'months:[-0-9]+(:[0-9]+)?',
                 'test_bangtag',

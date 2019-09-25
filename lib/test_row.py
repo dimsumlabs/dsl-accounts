@@ -215,6 +215,11 @@ class TestRowDataClass(unittest.TestCase):
         self.assertEqual(obj.value, 10)
         self.assertEqual(obj.date, Date(1970, 10, 20))
         self.assertEqual(obj.comment, "A Comment")
+        self.assertEqual(obj.isforecast, False)
 
         with self.assertRaises(ValueError):
             row.RowData(10, 'notadate', "A Comment")
+
+    def test_forecast(self):
+        obj = row.RowData(10, Date(1970, 10, 21), "A Comment !forecast")
+        self.assertEqual(obj.isforecast, True)
