@@ -232,6 +232,7 @@ class RowData(Row):
         if not isinstance(date, datetime.date):
             raise ValueError("{} is not a date object".format(date))
 
+        self.hashtag = None
         self.bangtag = dict()
         self.value = decimal.Decimal(value)
         self.date = date
@@ -364,39 +365,41 @@ class RowData(Row):
 
         # FIXME - enforce known case on all tags
 
-        # TODO - have a better plan for what to do with multiple tags
-        if len(all_tags) > 1:
-            raise ValueError('Row has multiple {}tags: {}'.format(x, all_tags))
-
-        if len(all_tags) == 0:
-            return None
-
-        return all_tags[0]
+        return all_tags
 
     def _hashtag(self):
         """Extract any hashtag from the comment"""
 
-        hashtag = self._xtag('#')
+        hashtags = self._xtag('#')
+        if len(hashtags) > 1:
+            raise ValueError('Row has multiple hashtags: {}'.format(hashtags))
+        if not hashtags:
+            return
+
+        hashtag = hashtags[0]
         self.hashtag = hashtag
 
-        if hashtag:
-            self._comment = re.sub(r'#'+hashtag, '{hashtag}', self._comment)
+        self._comment = re.sub(r'#'+hashtag, '{hashtag}', self._comment)
 
     def _bangtag(self):
         """Extract any bangtag from the comment"""
 
-        bangtag = self._xtag('!')
+        bangtags = self._xtag('!')
 
-        if not bangtag:
+        if not bangtags:
             return
 
-        fields = bangtag.split(':')
-        tagname = fields.pop(0)
+        for bangtag in bangtags:
+            fields = bangtag.split(':')
+            tagname = fields.pop(0)
 
-        self.bangtag[tagname] = fields
+            if tagname in self.bangtag:
+                raise ValueError('Row has multiple !{} tags'.format(tagname))
 
-        replacement = '{bangtag,'+tagname+'}'
-        self._comment = re.sub(r'!'+bangtag, replacement, self._comment)
+            self.bangtag[tagname] = fields
+
+            replacement = '{bangtag,'+tagname+'}'
+            self._comment = re.sub(r'!'+bangtag, replacement, self._comment)
 
     @staticmethod
     def _month_add(date, incr):
@@ -501,7 +504,7 @@ class RowData(Row):
                     new.hashtag = self.hashtag
 
                 # TODO - mutate the bangtag to show this is a child
-                new.bangtag['months'] = self.bangtag['months'].copy()
+                new.bangtag = self.bangtag.copy()
 
                 rows.append(new)
 
