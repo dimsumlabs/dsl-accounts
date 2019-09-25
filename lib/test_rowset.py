@@ -180,6 +180,20 @@ apple 1970-03-20 comment24
             ]
         )
 
+    def test_forecast1(self):
+        """By default, forecast should be false"""
+        self.assertEqual(self.rows.isforecast, False)
+
+    def test_forecast2(self):
+        """If we add a forecast row, it should taint the rowset"""
+
+        f = StringIO("""
+#balance -45
+10 1970-03-26 comment18 !forecast
+""")
+        self.rows.load_file(f)
+        self.assertEqual(self.rows.isforecast, True)
+
 
 class TestAutoSplit(unittest.TestCase):
 

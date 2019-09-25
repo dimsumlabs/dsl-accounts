@@ -15,6 +15,7 @@ class RowSet(object):
     def __init__(self):
         self.rows = []
         self.balance = decimal.Decimal(0)
+        self.isforecast = False
 
     def __getitem__(self, i):
         return self.rows[i]
@@ -56,6 +57,11 @@ class RowSet(object):
         # - since we are recording cash values, it doesnt make sense for the
         #   balance to ever fall below zero.  Consider making that an fatal
         #   error here
+
+        # if we incorporate any uncertain future forecast data, taint the
+        # whole rowset with this status
+        if item.isforecast:
+            self.isforecast = True
 
     # TODO
     # - implement a "merge two RowSets" and ensure that it checks the
