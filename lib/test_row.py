@@ -87,6 +87,10 @@ class TestRowClass(unittest.TestCase):
         with self.assertRaises(ValueError):
             row.RowData("100", Date(1970, 1, 1), "!test_bangtag !test_bangtag")
 
+    def test_both_months_and_forecast(self):
+        with self.assertRaises(ValueError):
+            row.RowData("100", Date(1970, 1, 1), "!months:3 !forecast")
+
     def test__month_add(self):
         """I dont really want to test month maths, but I wrote it, so
         """
@@ -220,6 +224,6 @@ class TestRowDataClass(unittest.TestCase):
         with self.assertRaises(ValueError):
             row.RowData(10, 'notadate', "A Comment")
 
-    def test_forecast(self):
+    def test_forecast_simple(self):
         obj = row.RowData(10, Date(1970, 10, 21), "A Comment !forecast")
         self.assertEqual(obj.isforecast, True)

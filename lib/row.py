@@ -239,6 +239,9 @@ class RowData(Row):
         self.date = date
         self.comment = comment
 
+        if 'months' in self.bangtags and 'forecast' in self.bangtags:
+            raise ValueError('Cannot have both months and forecast bang tags')
+
     # Implement len and getitem so that this object can be used with the
     # csv writer.
     # TODO - handle csv row creation within the row class and remove these
@@ -336,7 +339,7 @@ class RowData(Row):
                 'workshop',
             ],
             '!': [
-                'forecast',
+                'forecast(:.*)?',
                 'id:paypal:[0-9ABCDEFGHJKLMNPRSTUVWXY]{17}',
                 'months:[-0-9]+(:[0-9]+)?',
                 'test_bangtag',
@@ -464,6 +467,45 @@ class RowData(Row):
 
         return dates
 
+    def _autosplit_forecast(self):
+        """split forecast monthly reoccuring items into one for each month"""
+        args = self.bangtags['forecast']
+
+        if not args:
+            # This is a singleton forecast line
+            return None
+
+        if args[0] != 'monthly':
+            raise ValueError("Dont know how to handle forecast {}".format(
+                args[0]))
+
+        if len(args) > 1:
+            if args[1] != 'until':
+                raise ValueError("Dont know how to handle forecast:monthly {}"
+                                 .format(args[1]))
+            lastdate = datetime.datetime.strptime(
+                    args[2].strip(), "%Y-%m-%d").date()
+        else:
+            lastdate = self._month_add(datetime.datetime.now().date(), 6)
+
+        rows = []
+        this = self.date
+        while this <= lastdate:
+            new = RowData(self.value, this, self._comment)
+            if self.hashtag:
+                new.hashtag = self.hashtag
+
+            new.bangtags = self.bangtags.copy()
+
+            # mutate the bangtags to show this is a child
+            new.bangtags['forecast'][0] = 'child'
+
+            rows.append(new)
+
+            this = self._month_add(this, 1)
+
+        return rows
+
     def autosplit(self):
         """look at the split bangtag and return a split row if needed
         """
@@ -472,49 +514,62 @@ class RowData(Row):
         # - the autosplit is only used on RowSet objects, so remove all the
         #   infrastructure from Row and add it to RowSet
 
-        dates = self._split_dates()
-
-        # TODO:
-        # - mark the new split children to show that something has happend
-        #   to this row
-
-        # divide the value amongst all the child rows
-        count_children = len(dates)
-        if count_children < 1:
-            raise ValueError(
-                'would divide by zero, splitting children from {}'.format(
-                    self.date))
-
-        each_value = self.value / count_children
-        # (avoid numbers that cannot be represented with cash by using int())
-        each_value = int(each_value)
-
         rows = []
 
-        # just divide the transaction value
-        # amongst multiple months - rounding any fractions down
-        # and applying them to the first month
+        if 'months' in self.bangtags:
+            # we have a transaction to split
 
-        # no splitting needed, return unchanged
-        if len(dates) == 1 and dates[0] == self.date:
+            dates = self._split_dates()
+
+            # TODO:
+            # - mark the new split children to show that something has happend
+            #   to this row
+
+            # divide the value amongst all the child rows
+            count_children = len(dates)
+            if count_children < 1:
+                raise ValueError(
+                    'would divide by zero, splitting children from {}'.format(
+                        self.date))
+
+            each_value = self.value / count_children
+            # (force numbers that can be represented in cash by using int())
+            each_value = int(each_value)
+
+            # just divide the transaction value
+            # amongst multiple months - rounding any fractions down
+            # and applying them to the first month
+
+            # no splitting needed, return unchanged
+            if len(dates) == 1 and dates[0] == self.date:
+                return [self]
+
+            # the remainder is any money lost due to rounding
+            remainder = self.value - each_value * count_children
+
+            for date in dates:
+                this_value = each_value + remainder
+                remainder = 0  # only add the remainder to the first child
+                new = RowData(this_value, date, self._comment)
+                if self.hashtag:
+                    new.hashtag = self.hashtag
+
+                new.bangtags = self.bangtags.copy()
+
+                # mutate the bangtags to show this is a child
+                new.bangtags['months'] = ['child']
+
+                rows.append(new)
+
+            return rows
+
+        if 'forecast' in self.bangtags:
+            rows = self._autosplit_forecast()
+
+        if not rows:
             return [self]
 
-        # the remainder is any money lost due to rounding
-        remainder = self.value - each_value * count_children
-
-        for date in dates:
-            this_value = each_value + remainder
-            remainder = 0  # only add the remainder to the first child
-            new = RowData(this_value, date, self._comment)
-            if self.hashtag:
-                new.hashtag = self.hashtag
-
-            new.bangtags = self.bangtags.copy()
-
-            # mutate the bangtags to show this is a child
-            new.bangtags['months'] = ['child']
-
-            rows.append(new)
+        return rows
 
         # elif method == 'proportional':
         #   # The 'proportional' splitting attempts to pro-rata the transaction
@@ -566,5 +621,3 @@ class RowData(Row):
         #   comment += "({}% dom={} W{})".format(percent, day, week)
         #   # FIXME - record the resulting "end date" somewhere
         #   rows.append(Row(this_value, datestr, comment, self.direction))
-
-        return rows

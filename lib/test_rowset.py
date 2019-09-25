@@ -6,9 +6,11 @@ import unittest
 import sys
 import os
 import decimal
+import datetime
 
 from datetime import date as Date
 from io import StringIO
+from unittest import mock
 
 # Ensure that we look for any modules in our local lib dir.  This allows simple
 # testing and development use.  It also does not break the case where the lib
@@ -20,6 +22,13 @@ sys.path.insert(0,
 
 import rowset # noqa
 import row # noqa
+
+
+class fakedatetime(datetime.datetime):
+
+    @classmethod
+    def now(cls):
+        return cls(1981, 3, 4, 12, 12, 12, 0)
 
 
 class TestRowSet(unittest.TestCase):
@@ -274,6 +283,86 @@ class TestAutoSplit(unittest.TestCase):
 34 1980-01-05 !months:child
 33 1980-02-05 !months:child
 33 1980-03-05 !months:child
+"""
+
+        self.assertEqual(expected, got)
+
+    def test_forecast_simple(self):
+        input_data = """
+#balance 0
+100 1980-04-05 !forecast
+"""
+        rows = rowset.RowSet()
+        rows.load_file(StringIO(input_data))
+
+        got = str(rows.autosplit())
+
+        self.assertEqual(input_data, got)
+
+    def test_forecast_error1(self):
+        input_data = """
+#balance 0
+100 1980-04-05 !forecast:flubber
+"""
+        rows = rowset.RowSet()
+        rows.load_file(StringIO(input_data))
+
+        with self.assertRaises(ValueError):
+            rows.autosplit()
+
+    def test_forecast_error2(self):
+        input_data = """
+#balance 0
+100 1980-04-05 !forecast:monthly:rain
+"""
+        rows = rowset.RowSet()
+        rows.load_file(StringIO(input_data))
+
+        with self.assertRaises(ValueError):
+            rows.autosplit()
+
+    def test_forecast_until(self):
+        input_data = """
+#balance 0
+100  1980-05-05 !forecast:monthly:until:1980-10-01
+"""
+        rows = rowset.RowSet()
+        rows.load_file(StringIO(input_data))
+
+        got = str(rows.autosplit())
+
+        expected = """
+#balance 0
+100 1980-05-05 !forecast:child:until:1980-10-01
+100 1980-06-05 !forecast:child:until:1980-10-01
+100 1980-07-05 !forecast:child:until:1980-10-01
+100 1980-08-05 !forecast:child:until:1980-10-01
+100 1980-09-05 !forecast:child:until:1980-10-01
+"""
+
+        self.assertEqual(expected, got)
+
+    @mock.patch('row.datetime.datetime', fakedatetime)
+    def test_forecast_endless(self):
+        input_data = """
+#balance 0
+100  1981-01-05 !forecast:monthly
+"""
+        rows = rowset.RowSet()
+        rows.load_file(StringIO(input_data))
+
+        got = str(rows.autosplit())
+
+        expected = """
+#balance 0
+100 1981-01-05 !forecast:child
+100 1981-02-05 !forecast:child
+100 1981-03-05 !forecast:child
+100 1981-04-05 !forecast:child
+100 1981-05-05 !forecast:child
+100 1981-06-05 !forecast:child
+100 1981-07-05 !forecast:child
+100 1981-08-05 !forecast:child
 """
 
         self.assertEqual(expected, got)
