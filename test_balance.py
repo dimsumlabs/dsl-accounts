@@ -5,6 +5,7 @@
 import unittest
 import datetime
 from datetime import date as Date
+from decimal import Decimal
 import json
 
 from unittest import mock  # pragma: no cover
@@ -68,23 +69,23 @@ class TestMisc(unittest.TestCase):
                 {
                     'bills:water': {
                         Date(1970, 1, 1): {
-                            'sum': -25,
+                            'sum': Decimal(-25),
                         },
                     },
                     'unknown': {
                         Date(1970, 1, 1): {
-                            'sum': 10,
+                            'sum': Decimal(10),
                         },
                         Date(1970, 2, 1): {
-                            'sum': -10,
+                            'sum': Decimal(-10),
                         },
                     },
                     'bills:rent': {
                         Date(1970, 3, 1): {
-                            'sum': -10,
+                            'sum': Decimal(-10),
                         },
                         Date(1970, 1, 1): {
-                            'sum': -10,
+                            'sum': Decimal(-10),
                         },
                     },
                 },
@@ -95,12 +96,22 @@ class TestMisc(unittest.TestCase):
                     'total': -45
                 },
                 {
-                    Date(1970, 1, 1): -25,
-                    Date(1970, 2, 1): -35,
-                    Date(1970, 3, 1): -45,
+                    Date(1970, 1, 1): Decimal(-25),
+                    Date(1970, 2, 1): Decimal(-35),
+                    Date(1970, 3, 1): Decimal(-45),
                 }
             )
         got = balance.grid_accumulate(self.rows)
+
+        # TODO
+        # - this is a hack
+        # convert the returned data from non-comparable RowSets to numbers
+        for category, categoryi in got[1].items():
+            for date, datei in categoryi.items():
+                if 'sum' in datei:
+                    datei['sum'] = datei['sum'].value
+        for date in got[2]:
+            got[2][date] = got[2][date].value
 
         self.assertEqual(expected, got)
 

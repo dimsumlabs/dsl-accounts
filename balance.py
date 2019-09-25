@@ -104,7 +104,7 @@ def grid_accumulate(rows):
     months = rows.group_by('month')
     for month in months:
         months_present.add(month)
-        totals[month] = months[month].value
+        totals[month] = months[month]
 
         tags = months[month].group_by('hashtag')
 
@@ -114,22 +114,42 @@ def grid_accumulate(rows):
                 grid[tag] = {}
 
             grid[tag][month] = {}
-            grid[tag][month]['sum'] = tags[tag].value
+            grid[tag][month]['sum'] = tags[tag]
 
-    totals['total'] = rows.value
+    totals['total'] = rows
 
     running_totals = {}
     running_total = 0
+    isforecast = False
     for month in sorted(months_present):
-        running_total += totals[month]
+        if totals[month].isforecast:
+            # Taint all future values
+            isforecast = True
+
+        running_total += totals[month].value
 
         # if we have only zeros after the decimal, change to an int
         if int(running_total) == running_total:
             running_total = running_total.to_integral_exact()
 
-        running_totals[month] = running_total
+        if isforecast:
+            running_totals[month] = '~' + str(running_total)
+        else:
+            running_totals[month] = running_total
 
     return months_present, grid, totals, running_totals
+
+
+def grid_cell_tostr(cell):
+    """Return the string version of a cell
+    which might be a RowSet and might include forecast flags"""
+
+    if isinstance(cell, (Row, RowSet)):
+        if cell.isforecast:
+            cell = '~' + str(cell.value)
+        else:
+            cell = cell.value
+    return cell
 
 
 def grid_render_onerow(prefix, prefix_len, rowdata, cell_len):
@@ -138,7 +158,7 @@ def grid_render_onerow(prefix, prefix_len, rowdata, cell_len):
     s += "{:<{width}}".format(prefix, width=prefix_len)
 
     for cell in rowdata:
-        s += "{:>{}}".format(cell, cell_len)
+        s += "{:>{}}".format(grid_cell_tostr(cell), cell_len)
 
     s += "\n"
 
@@ -172,7 +192,7 @@ def grid_render_totals(months, totals, months_len, tags_len, running_totals):
         [running_totals[x] for x in months], months_len
     )
 
-    s += "TOTAL: {:>{}}".format(totals['total'], months_len)
+    s += "TOTAL: {:>{}}".format(grid_cell_tostr(totals['total']), months_len)
 
     return s
 
