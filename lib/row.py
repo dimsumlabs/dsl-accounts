@@ -10,9 +10,6 @@ import re
 #   more obvious format (perhaps "!months=month[,month]+" - which is clearly
 #   a more discoverable format, but would get quite verbose with yearly
 #   transactions (or even just one with more than 3 months...)
-# - if the comment field is updated, re-extract the tags (currently the tags
-#   are only extracted at __init__ time, so an empty Row that has data added
-#   to it is not going to behave identically..
 # - update Row __init__ to enforce that value is a number
 
 
@@ -221,7 +218,15 @@ class RowData(Row):
 
     def __str__(self):
         """Output the same format as input file - allowing roundtripping"""
-        return "{} {} {}".format(self.value, self.date, self.comment)
+
+        # the two manditory fields
+        fields = [str(self.value), str(self.date)]
+
+        comment = self.comment
+        if comment:
+            fields.append(comment)
+
+        return ' '.join(fields)
 
     def __init__(self, value, date, comment):
         if not isinstance(date, datetime.date):
@@ -230,14 +235,6 @@ class RowData(Row):
         self.value = decimal.Decimal(value)
         self.date = date
         self.comment = comment
-
-        # Look at the comment for this row and extract the various types of
-        # tags found.
-        # hashtags are used to tag the category of each transaction and
-        # might be overwritten later to decorate them nicely
-        # bangtags are metainstructions to the parser
-        self.hashtag = self._xtag('#')
-        self.bangtag = self._xtag('!')
 
     # Implement len and getitem so that this object can be used with the
     # csv writer.
@@ -274,6 +271,28 @@ class RowData(Row):
         # for large enough relative values, this will be inaccurate.
         # TODO - improve the accuracy when needed
         return int(rel_days / 28.0)
+
+    @property
+    def comment(self):
+        """Re-insert the tags into the comment"""
+        tags = dict()
+        if self.hashtag:
+            tags['hashtag'] = '#'+self.hashtag
+        if self.bangtag:
+            tags['bangtag'] = '!'+self.bangtag
+        return self._comment.format(**tags)
+
+    @comment.setter
+    def comment(self, newcomment):
+        self._comment = newcomment
+
+        # Look at the comment for this row and extract the various types of
+        # tags found.
+        # hashtags are used to tag the category of each transaction and
+        # might be overwritten later to decorate them nicely
+        # bangtags are metainstructions to the parser
+        self._hashtag()
+        self._bangtag()
 
     def _xtag_validate(self, x, tag):
         """Check the tag against valid tag names
@@ -327,11 +346,11 @@ class RowData(Row):
         """Generically extract tags with a given prefix
         """
 
-        if self.comment is None:
+        if self._comment is None:
             return None
 
         p = re.compile(x+r'([a-zA-Z]\S*)')
-        all_tags = p.findall(self.comment)
+        all_tags = p.findall(self._comment)
 
         for tag in all_tags:
             self._xtag_validate(x, tag)
@@ -346,6 +365,24 @@ class RowData(Row):
             return None
 
         return all_tags[0]
+
+    def _hashtag(self):
+        """Extract any hashtag from the comment"""
+
+        hashtag = self._xtag('#')
+        self.hashtag = hashtag
+
+        if hashtag:
+            self._comment = re.sub(r'#'+hashtag, '{hashtag}', self._comment)
+
+    def _bangtag(self):
+        """Extract any bangtag from the comment"""
+
+        bangtag = self._xtag('!')
+        self.bangtag = bangtag
+
+        if bangtag:
+            self._comment = re.sub(r'!'+bangtag, '{bangtag}', self._comment)
 
     @staticmethod
     def _month_add(date, incr):
@@ -449,7 +486,13 @@ class RowData(Row):
             for date in dates:
                 this_value = each_value + remainder
                 remainder = 0  # only add the remainder to the first child
-                rows.append(RowData(this_value, date, self.comment))
+                new = RowData(this_value, date, self._comment)
+                if self.hashtag:
+                    new.hashtag = self.hashtag
+                if self.bangtag:
+                    # TODO - mutate the bangtag to show this is a child
+                    new.bangtag = self.bangtag
+                rows.append(new)
 
         # elif method == 'proportional':
         #   # The 'proportional' splitting attempts to pro-rata the transaction
