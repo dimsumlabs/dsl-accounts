@@ -56,6 +56,7 @@ parameters.
 | ------- | ---------- | ----------- |
 | `!months` | $number | Split this row into $number new rows over the same number of months, each one containing a fraction of the value (rounded down, with the remainder paid to the first month) - this is often used to record an advance payment for a year long service, where we want the effective date to be once per month |
 | `!months` | $offset:$number | Similar to the one-parameter version, this first offsets the effective month by the offset - allowing back-dated effective dates or advance payments for a month in the future |
+| `!id` | $type:$value | If we have a unique transaction id for this entry, it should be recorded with this tag, making it available for automated processing |
 
 ### Valudating the tags
 

@@ -331,6 +331,7 @@ class RowData(Row):
                 'workshop',
             ],
             '!': [
+                'id:paypal:[0-9ABCDEFGHJKLMNPRSTUVWXY]{17}',
                 'months:[-0-9]+(:[0-9]+)?',
                 'test_bangtag',
                 'test_bangtag2(:.*)?',
