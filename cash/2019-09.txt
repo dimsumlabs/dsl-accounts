@@ -38,7 +38,7 @@
 200 2019-09-24 #dues:alex top up !months:1:1
 200 2019-09-24 #donation
 500 2019-09-24 paypaltxn:02137021YS120183D #dues:neilg !months:1:1
-1000 2019-09-25 paypaltxn:08443197WX259480B #dues:philip !months:1:1
+1000 2019-09-25 !id:paypal:08443197WX259480B #dues:philip !months:1:1 Cash on Paypal
 -1242 2019-09-09 !months:-5:6 #bills:meetup
 1242 2019-09-09 !months:-5:6 #donation:members From Audrey, for meetup
 700 2019-09-26 !id:paypal:11R565192E4967152 #dues:sunny Cash on Paypal
