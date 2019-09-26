@@ -41,3 +41,4 @@
 1000 2019-09-25 paypaltxn:08443197WX259480B #dues:philip !months:1:1
 -1242 2019-09-09 !months:-5:6 #bills:meetup
 1242 2019-09-09 !months:-5:6 #donation:members From Audrey, for meetup
+700 2019-09-26 !id:paypal:11R565192E4967152 #dues:sunny Cash on Paypal
