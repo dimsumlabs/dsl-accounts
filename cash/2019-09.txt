@@ -46,3 +46,4 @@
 76.90 2019-09-27 #fridge
 -76.90 2019-09-27 #fridge
 700 2019-09-28 !id:paypal:49F11422923127538 #dues:manolis Cash on Paypal
+700 2019-09-29 #dues:audrey
