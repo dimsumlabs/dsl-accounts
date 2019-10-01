@@ -48,3 +48,4 @@
 700 2019-09-28 !id:paypal:49F11422923127538 #dues:manolis Cash on Paypal
 700 2019-09-29 #dues:audrey
 -14000 2019-09-30 #bills:rent !months:1:1
+#balance 1299 closing balance
