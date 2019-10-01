@@ -1,1 +1,2 @@
 #balance 1299 opening balance
+1000 2019-10-01 #dues:hamish
