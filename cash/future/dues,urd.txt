@@ -1,4 +1,4 @@
 # payment by cash in person
 #
 
-300 2019-09-29 #dues:urd !forecast:monthly
+500 2019-11-02 #dues:urd !forecast:monthly

@@ -1,2 +1,3 @@
 #balance 1299 opening balance
 1000 2019-10-01 #dues:hamish
+300 2019-10-02 !id:paypal:2XJ849397M136674U #dues:urd Cash on Paypal
