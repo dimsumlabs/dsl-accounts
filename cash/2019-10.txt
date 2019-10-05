@@ -5,3 +5,4 @@
 318.11 2019-09-11 #donation:members !months:-1:1 Matching the electricity
 -318.11 2019-09-11 #bills:electricity !months:-1:1
 -624 2019-10-05 #bills:electricity !months:-1:1
+200 2019-10-05 #fridge
