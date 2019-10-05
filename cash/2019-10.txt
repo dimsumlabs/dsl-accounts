@@ -6,3 +6,4 @@
 -318.11 2019-09-11 #bills:electricity !months:-1:1
 -624 2019-10-05 #bills:electricity !months:-1:1
 200 2019-10-05 #fridge
+1000 2019-10-05 #dues:meebey
