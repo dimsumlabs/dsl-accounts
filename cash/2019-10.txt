@@ -4,3 +4,4 @@
 700 2019-10-02 !id:paypal:0SF793367J615710K #dues:julianlee Cash on Paypal
 318.11 2019-09-11 #donation:members !months:-1:1 Matching the electricity
 -318.11 2019-09-11 #bills:electricity !months:-1:1
+-624 2019-10-05 #bills:electricity !months:-1:1
