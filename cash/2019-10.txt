@@ -7,3 +7,5 @@
 -624 2019-10-05 #bills:electricity !months:-1:1
 200 2019-10-05 #fridge
 1000 2019-10-05 #dues:meebey
+1000 2019-10-05 !id:paypal:1W876090L5167035D #dues:lio
+800 2019-10-05 !id:paypal:0R881207B72364826 #dues:neil !months:1:1
