@@ -11,3 +11,4 @@
 800 2019-10-05 !id:paypal:0R881207B72364826 #dues:neil !months:1:1
 200 2019-10-09 #fridge
 -147 2019-10-09 #fridge
+250 2019-10-09 #workshop Introduction to arduino (1 participant)
