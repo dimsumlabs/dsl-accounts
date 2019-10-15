@@ -12,3 +12,9 @@
 200 2019-10-09 #fridge
 -147 2019-10-09 #fridge
 250 2019-10-09 #workshop Introduction to arduino (1 participant)
+300 2019-10-06 !id:paypal:7HK847642E864012N #dues:max Cash on Paypal
+700 2019-10-06 !id:paypal:92E683192T6844112 #dues:antonia Cash on Paypal
+700 2019-10-06 !id:paypal:2RV91778CD256151X #dues:lawrence Cash on Paypal
+75 2019-10-09 !id:paypal:1AH38664C6927111U supporters stig Cash on Paypal
+700 2019-10-10  !id:paypal:39912798LS840344C #dues:alex Cash on Paypal
+700 2019-10-15 #dues:nicolas Cash on Bank
