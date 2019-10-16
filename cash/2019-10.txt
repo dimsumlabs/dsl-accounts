@@ -17,5 +17,5 @@
 700 2019-10-06 !id:paypal:2RV91778CD256151X #dues:lawrence Cash on Paypal
 75 2019-10-09 !id:paypal:1AH38664C6927111U supporters stig Cash on Paypal
 700 2019-10-10  !id:paypal:39912798LS840344C #dues:alex Cash on Paypal
-700 2019-10-15 #dues:nicolas Cash on Bank
+700 2019-10-15 #dues:nicolas !months:-1:1 Cash on Bank
 200 2019-10-15 !id:paypal:99562646BR086694J #dues:oliver Cash on Paypal
