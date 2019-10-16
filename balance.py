@@ -10,6 +10,7 @@ import json
 import sys
 import csv
 import os
+import re
 from io import StringIO
 
 # TODO:
@@ -765,6 +766,53 @@ def subp_check_doubletxn(args):
         db[month][tag][value] = row
 
 
+def subp_report_cashon(args):
+    """
+    Read all the comments and try to guess where is is saying the cash is.
+    - Since we want to account payment as made as soon as possible, we
+      sometimes add transactions significantly before the cash is actually
+      available.
+    - These lines are manually marked with comments, so this is only a
+      guess.
+    """
+
+    groups = {}
+    groups['none'] = RowSet()
+    groups['bank'] = RowSet()
+    groups['paypal'] = RowSet()
+    groups['bankpaypal'] = RowSet()
+
+    for row in args.rows:
+        where = ''
+        if re.search(r'cash on bank', row.comment, re.IGNORECASE):
+            where += 'bank'
+        if re.search(r'cash on paypal', row.comment, re.IGNORECASE):
+            where += 'paypal'
+
+        if not where:
+            where = 'none'
+
+        groups[where].append(row)
+
+    s = []
+    for where, rows in groups.items():
+        s += where
+        s += ':\n'
+        s += str(rows)
+        s += '\n'
+
+    s += '\n\n'
+
+    s += '\nTOTALS\n\n'
+    for where, rows in groups.items():
+        s += where
+        s += ' '
+        s += str(rows.value)
+        s += '\n'
+
+    return ''.join(s)
+
+
 # A list of all the sub-commands
 subp_cmds = {
     'check_doubletxn': {
@@ -814,6 +862,10 @@ subp_cmds = {
     'statstsv': {
         'func': subp_statstsv,
         'help': 'Output finance stats report as TSV',
+    },
+    'report_cashon': {
+        'func': subp_report_cashon,
+        'help': 'Read the comments and report where "cash on"',
     },
 }
 
