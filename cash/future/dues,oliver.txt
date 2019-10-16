@@ -1,0 +1,4 @@
+# paypal automated payments
+#
+
+300 2019-11-15 #dues:oliver !forecast:monthly:until:2020-02-15
