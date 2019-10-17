@@ -768,12 +768,18 @@ def subp_check_doubletxn(args):
 
 def subp_report_cashon(args):
     """
-    Read all the comments and try to guess where is is saying the cash is.
+    Read all the comments and try to guess where it is saying the cash is.
+    - This accounting system was always designed around one single account
+      for storing the cash.
     - Since we want to account payment as made as soon as possible, we
       sometimes add transactions significantly before the cash is actually
-      available.
-    - These lines are manually marked with comments, so this is only a
-      guess.
+      available - which violates the single account assumption (as there
+      is now money in multiple places)
+    - There is an emerging pattern for the humans to note where the cash
+      is using english comments.  Which this report attempts to summarise
+    - Since this is not machine readable, nor is it checked against a
+      whitelist of allowed markups, it is only a guess
+    - Longer term, we should work out a better way to handle this issue.
     """
 
     groups = {}
