@@ -20,3 +20,4 @@
 700 2019-10-15 #dues:nicolas !months:-1:1 Cash on Bank
 200 2019-10-15 !id:paypal:99562646BR086694J #dues:oliver Cash on Paypal
 700 2019-10-16 !id:paypal:0F448371TX0752848 #dues:bryan Cash on Paypal
+300 2019-10-17 #fridge
