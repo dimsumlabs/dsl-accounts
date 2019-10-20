@@ -22,3 +22,4 @@
 700 2019-10-16 !id:paypal:0F448371TX0752848 #dues:bryan Cash on Paypal
 300 2019-10-17 #fridge
 -100 2019-10-18 #fridge
+350 2019-10-20 #fridge
