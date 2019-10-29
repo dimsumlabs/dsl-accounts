@@ -790,6 +790,8 @@ def subp_report_cashon(args):
 
     for row in args.rows:
         where = ''
+        if row.comment is None:
+            continue
         if re.search(r'cash on bank', row.comment, re.IGNORECASE):
             where += 'bank'
         if re.search(r'cash on paypal', row.comment, re.IGNORECASE):
