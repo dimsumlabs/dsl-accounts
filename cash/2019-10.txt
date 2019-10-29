@@ -1,7 +1,7 @@
 #balance 1299 opening balance
 1000 2019-10-01 #dues:hamish
-300 2019-10-02 !id:paypal:2XJ849397M136674U #dues:urd Cash on Paypal
-700 2019-10-02 !id:paypal:0SF793367J615710K #dues:julianlee Cash on Paypal
+300 2019-10-02 !id:paypal:2XJ849397M136674U #dues:urd
+700 2019-10-02 !id:paypal:0SF793367J615710K #dues:julianlee
 318.11 2019-09-11 #donation:members !months:-1:1 Matching the electricity
 -318.11 2019-09-11 #bills:electricity !months:-1:1
 -624 2019-10-05 #bills:electricity !months:-1:1
@@ -12,23 +12,23 @@
 200 2019-10-09 #fridge
 -147 2019-10-09 #fridge
 250 2019-10-09 #workshop Introduction to arduino (1 participant)
-300 2019-10-06 !id:paypal:7HK847642E864012N #dues:max Cash on Paypal
-700 2019-10-06 !id:paypal:92E683192T6844112 #dues:antonia Cash on Paypal
-700 2019-10-06 !id:paypal:2RV91778CD256151X #dues:lawrence Cash on Paypal
-75 2019-10-09 !id:paypal:1AH38664C6927111U #supporters stig Cash on Paypal
-700 2019-10-10 !id:paypal:39912798LS840344C #dues:alex !months:1:1 Cash on Paypal
-700 2019-10-15 #dues:nicolas !months:-1:1 Cash on Bank
-200 2019-10-15 !id:paypal:99562646BR086694J #dues:oliver Cash on Paypal
-700 2019-10-16 !id:paypal:0F448371TX0752848 #dues:bryan Cash on Paypal
+300 2019-10-06 !id:paypal:7HK847642E864012N #dues:max
+700 2019-10-06 !id:paypal:92E683192T6844112 #dues:antonia
+700 2019-10-06 !id:paypal:2RV91778CD256151X #dues:lawrence
+75 2019-10-09 !id:paypal:1AH38664C6927111U #supporters stig
+700 2019-10-10 !id:paypal:39912798LS840344C #dues:alex !months:1:1
+700 2019-10-15 #dues:nicolas !months:-1:1
+200 2019-10-15 !id:paypal:99562646BR086694J #dues:oliver
+700 2019-10-16 !id:paypal:0F448371TX0752848 #dues:bryan
 300 2019-10-17 #fridge
 -100 2019-10-18 #fridge
 350 2019-10-20 #fridge
-840 2019-10-17 !id:paypal:4FC57246C8365981K #dues:gary Cash on Paypal
-1000 2019-10-18 !id:paypal:3R3218077V755861W #dues:anthony Cash on Paypal
-1000 2019-10-19 !id:paypal:45S43096WF342830P #dues:philip Cash on Paypal
-700 2019-10-21 !id:paypal:2E50162429048580R #dues:richard Cash on Paypal
-700 2019-10-23 !id:paypal:1YV26209JA027945U #dues:manolis Cash on Paypal
-700 2019-10-24 !id:paypal:27N279492X0113126 #dues:neilg Cash on Paypal
-700 2019-10-26 !id:paypal:6B381081HH5375613 #dues:sunny Cash on Paypal
-700 2019-10-17 #dues:nicolas Cash on bank
+840 2019-10-17 !id:paypal:4FC57246C8365981K #dues:gary
+1000 2019-10-18 !id:paypal:3R3218077V755861W #dues:anthony
+1000 2019-10-19 !id:paypal:45S43096WF342830P #dues:philip
+700 2019-10-21 !id:paypal:2E50162429048580R #dues:richard
+700 2019-10-23 !id:paypal:1YV26209JA027945U #dues:manolis
+700 2019-10-24 !id:paypal:27N279492X0113126 #dues:neilg
+700 2019-10-26 !id:paypal:6B381081HH5375613 #dues:sunny
+700 2019-10-17 #dues:nicolas
 
