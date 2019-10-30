@@ -2,4 +2,4 @@
 # - get a better estimate of the exact fees
 #
 
--370 2019-09-28 #fees:paypal !forecast:monthly
+-390 2019-09-28 #fees:paypal !forecast:monthly
