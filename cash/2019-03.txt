@@ -8,10 +8,10 @@
 340 2019-03-02 #merch:rpikit (Sold 2 kits at the raspberry jam)
 172.50 2019-03-05 #fridge
 -172.50 2019-03-05 #fridge Soft drinks
-700 2019-03-02 paypaltxn:4TW78274T4171710V #dues:julianlee
-500 2019-03-04 paypaltxn:2B8118494N1803309 #dues:mathis
-500 2019-03-05 paypaltxn:4XM04840LG0161428 #dues:neil
-300 2019-03-05 paypaltxn:81N9879019228751J #dues:neil (additional payment to top up)
+700 2019-03-02 !id:paypal:4TW78274T4171710V #dues:julianlee
+500 2019-03-04 !id:paypal:2B8118494N1803309 #dues:mathis
+500 2019-03-05 !id:paypal:4XM04840LG0161428 #dues:neil
+300 2019-03-05 !id:paypal:81N9879019228751J #dues:neil (additional payment to top up)
 -600 2019-03-05 #fees:paypal
 100 2019-03-07 #workshop Guided tear-down (1 participant)
 200 2019-03-07 #fridge
@@ -31,22 +31,22 @@
 -157 2019-02-01 #bills:meetup (USD20/month)
 157 2019-03-01 #donation:members from Audrey for meetup
 -157 2019-03-01 #bills:meetup (USD20/month)
-75 2019-03-08 paypaltxn:7BP20322SC191761C #merch:kits earrings (Nisha friend of Audrey)
+75 2019-03-08 !id:paypal:7BP20322SC191761C #merch:kits earrings (Nisha friend of Audrey)
 100 2019-03-09 #fridge
 200 2019-03-12 #merch:tshirt sold to Lio
 700 2019-03-12 #dues:tom
 50 2019-03-12 #donation
 100 2019-03-12 #workshop Impromptu "how to assemble a PC" workshop
-700 2019-03-13 paypaltxn:9E141241TF8174945 #dues:gary
-1000 2019-03-14 paypaltxn:05Y32802VP089215R #dues:alex
-75 2019-03-09 paypaltxn:7N159213F3473763H #supporters stig
-700 2019-03-08 paypaltxn:2N859583NY0695704 #dues:lawrence
+700 2019-03-13 !id:paypal:9E141241TF8174945 #dues:gary
+1000 2019-03-14 !id:paypal:05Y32802VP089215R #dues:alex
+75 2019-03-09 !id:paypal:7N159213F3473763H #supporters stig
+700 2019-03-08 !id:paypal:2N859583NY0695704 #dues:lawrence
 300 2019-03-19 #fridge
-500 2019-03-15 paypaltxn:5EY86989HR246121E #supporters stig
-700 2019-03-18 paypaltxn:1SP384394T702824D #dues:manolis
-700 2019-03-21 paypaltxn:8DX729867U189064M #dues:richard !months:1:1
-700 2019-03-26 paypaltxn:90617343GV258783M #dues:sunny
-500 2019-03-27 paypaltxn:48B110330W821321X #dues:philip
+500 2019-03-15 !id:paypal:5EY86989HR246121E #supporters stig
+700 2019-03-18 !id:paypal:1SP384394T702824D #dues:manolis
+700 2019-03-21 !id:paypal:8DX729867U189064M #dues:richard !months:1:1
+700 2019-03-26 !id:paypal:90617343GV258783M #dues:sunny
+500 2019-03-27 !id:paypal:48B110330W821321X #dues:philip
 200 2019-03-18 #merch:kits Sell 4 LED earring kits while attending FOSSASIA Singapore conference
 2872 2019-03-31 #loan Hamish lends the space money for the rent
 -14000 2019-03-31 #bills:rent !months:1:1

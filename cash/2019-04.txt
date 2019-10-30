@@ -8,27 +8,27 @@
 300 2019-04-01 #dues:audrey top up
 216 2019-04-05 #fridge
 -356 2019-04-05 #fridge Fill up the fridge
-700 2019-04-02 #dues:julianlee paypaltxn:9XU78491AR665210S
-700 2019-04-04 #dues:mathis paypaltxn:3AP80957AM6315143
-700 2019-04-05 #dues:philip paypaltxn:20Y40509AK966582K
-200 2019-04-06 #dues:max paypaltxn:85F15683GP8026730
-500 2019-04-06 #dues:antonia paypaltxn:70T18206KV8968253
+700 2019-04-02 #dues:julianlee !id:paypal:9XU78491AR665210S
+700 2019-04-04 #dues:mathis !id:paypal:3AP80957AM6315143
+700 2019-04-05 #dues:philip !id:paypal:20Y40509AK966582K
+200 2019-04-06 #dues:max !id:paypal:85F15683GP8026730
+500 2019-04-06 #dues:antonia !id:paypal:70T18206KV8968253
 150 2019-04-06 #workshop Raspberry Jam (3 participants)
 250 2019-04-08 #workshop Intro to Arduino (1 participant)
-700 2019-04-08 #dues:lawrence paypaltxn:8HM617028V125690W 
+700 2019-04-08 #dues:lawrence !id:paypal:8HM617028V125690W
 -300 2019-04-09 #fees:paypal
-840 2019-04-12 #dues:gary paypaltxn:5XX05856MA715540P
+840 2019-04-12 #dues:gary !id:paypal:5XX05856MA715540P
 160 2019-04-12 #dues:gary (Top up the above - made by Nic on Gary's behalf)
-280 2019-04-17 paypaltxn:32841245MW520021J Nic testing
+280 2019-04-17 !id:paypal:32841245MW520021J Nic testing
 -280 2019-04-17 More testing - reversal of the above
 200 2019-04-13 #fridge
 30 2019-04-13 #donation
 700 2019-04-13 #dues:felix
-1000 2019-04-14 #dues:alex paypaltxn:90H58129MD035725M 
+1000 2019-04-14 #dues:alex !id:paypal:90H58129MD035725M
 100 2019-04-16 #fridge
 800 2019-04-16 #dues:neil
-700 2019-04-18 #dues:manolis paypaltxn:70016583CM8991029 
-700 2019-04-21 paypaltxn:9WP92680WW629024A #dues:richard !months:1:1 
+700 2019-04-18 #dues:manolis !id:paypal:70016583CM8991029
+700 2019-04-21 !id:paypal:9WP92680WW629024A #dues:richard !months:1:1
 250 2019-04-27 #workshop from HQB tour (5 adult participants, 2 children)
 600 2019-04-28 #dues:meebey !months:2
 3545 2019-04-29 #loan

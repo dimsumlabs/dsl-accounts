@@ -1,5 +1,5 @@
 #balance 2800 opening balance
-700 2018-10-02 paypaltxn:6E182967E31979023 #dues:julianlee
+700 2018-10-02 !id:paypal:6E182967E31979023 #dues:julianlee
 -200 2018-10-08 #fees:paypal
 700 2018-10-08 #dues:tom
 340 2018-10-08 #fridge
@@ -7,15 +7,15 @@
 2.2 2018-10-08 #donation:members round up
 700 2018-10-16 #dues:devon
 200 2018-10-16 #workshop Introduction to Soldering
-700 2018-10-18 paypaltxn:2C797314LR0144637 #dues:cathy
+700 2018-10-18 !id:paypal:2C797314LR0144637 #dues:cathy
 -238 2018-10-20 #bills:internet
-700 2018-10-18 paypaltxn:833108432Y669481N #dues:manolis
-200 2018-10-19 paypaltxn:5UU470029Y688641K #dues:tobias
-700 2018-10-21 paypaltxn:2TK75562J7352093W #dues:richard !months:1:1
+700 2018-10-18 !id:paypal:833108432Y669481N #dues:manolis
+200 2018-10-19 !id:paypal:5UU470029Y688641K #dues:tobias
+700 2018-10-21 !id:paypal:2TK75562J7352093W #dues:richard !months:1:1
 700 2018-10-23 #dues:michelle In Blue Box
 200 2018-10-23 #fridge In Blue Box
 -100 2018-10-23 #fridge
-700 2018-10-26 paypaltxn:91N11172C5924783J #dues:sunny
+700 2018-10-26 !id:paypal:91N11172C5924783J #dues:sunny
 700 2018-10-27 #dues:alex !months:7:1
 700 2018-10-27 #dues:anthony !months:6:1
 700 2018-10-27 #dues:meebey !months:6:1
@@ -25,8 +25,8 @@
 566 2018-10-27 #dues:hamish !months:7:1
 293 2018-10-27 #dues:hamish !months:1:1 Final amount from his advance payment
 -14000 2018-10-27 #bills:rent !months:1:1
-700 2018-10-30 paypaltxn:9U850663174852238 #dues:james
-700 2018-10-30 paypaltxn:5EB54282V6861545D #dues:neil
+700 2018-10-30 !id:paypal:9U850663174852238 #dues:james
+700 2018-10-30 !id:paypal:5EB54282V6861545D #dues:neil
 700 2018-10-30 #dues:devon !months:1:1
 200 2018-10-30 #merch:tshirt sold a size M to Mirco
 100 2018-10-30 #fridge

@@ -6,27 +6,27 @@
 1000 2019-07-05 #dues:meebey
 700 2019-07-06 #dues:hamish
 700 2019-07-06 #dues:audrey
-700 2019-07-02 #dues:julianlee paypaltxn:9JJ3651884208221C
-700 2019-07-04 #dues:mathis paypaltxn:6JH86583J42052209
-800 2019-07-05 paypaltxn:02946371JB043264K #dues:neil !months:1:1
-300 2019-07-06 #dues:max paypaltxn:0CL07851MR739402A 
-700 2019-07-06 #dues:antonia paypaltxn:0G113884TK643723G
-700 2019-07-08 #dues:lawrence paypaltxn:9MU852660C6154909
-75 2019-07-09 paypaltxn:2M6883315C7784625 #supporters stig
+700 2019-07-02 #dues:julianlee !id:paypal:9JJ3651884208221C
+700 2019-07-04 #dues:mathis !id:paypal:6JH86583J42052209
+800 2019-07-05 !id:paypal:02946371JB043264K #dues:neil !months:1:1
+300 2019-07-06 #dues:max !id:paypal:0CL07851MR739402A
+700 2019-07-06 #dues:antonia !id:paypal:0G113884TK643723G
+700 2019-07-08 #dues:lawrence !id:paypal:9MU852660C6154909
+75 2019-07-09 !id:paypal:2M6883315C7784625 #supporters stig
 700 2019-07-10 #dues:nicolas
-840 2019-07-12 #dues:gary paypaltxn:63V35764DG5650616
-1000 2019-07-14 #dues:alex paypaltxn:6CW733345E022805N
+840 2019-07-12 #dues:gary !id:paypal:63V35764DG5650616
+1000 2019-07-14 #dues:alex !id:paypal:6CW733345E022805N
 100 2019-07-16 #donation Metal box
 50 2019-07-16 #donation Bamboo box
-700 2019-07-18 #dues:philip paypaltxn:6LR29022TC836342K
-700 2019-07-18 #dues:anthony paypaltxn:9UM58635T48896801
-300 2019-07-18 #dues:anthony paypaltxn:8Y666647J6129082G
-700 2019-07-18 #dues:manolis paypaltxn:05575355H08523943
-700 2019-07-21 paypaltxn:8U724648659865238 #dues:richard !months:1:1
+700 2019-07-18 #dues:philip !id:paypal:6LR29022TC836342K
+700 2019-07-18 #dues:anthony !id:paypal:9UM58635T48896801
+300 2019-07-18 #dues:anthony !id:paypal:8Y666647J6129082G
+700 2019-07-18 #dues:manolis !id:paypal:05575355H08523943
+700 2019-07-21 !id:paypal:8U724648659865238 #dues:richard !months:1:1
 100 2019-07-23 #donation
 250 2019-07-23 #workshop Introduction to Arduino
 -250 2019-07-25 #bills:br !months:12
-700 2019-07-26 #dues:sunny paypaltxn:8KL58676A5333010E
+700 2019-07-26 #dues:sunny !id:paypal:8KL58676A5333010E
 -14000 2019-07-29 #bills:rent !months:1:1
 300 2019-07-31 #donation
 #balance 1515 closing balance

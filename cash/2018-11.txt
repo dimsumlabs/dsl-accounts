@@ -4,8 +4,8 @@
 40 2018-11-03 SSP market visit Nov donation
 700 2018-11-13 #dues:michelle
 200 2018-11-13 #fridge
-700 2018-11-02 paypaltxn:5MV696068N486593D #dues:julianlee
-75 2018-11-09 paypaltxn:87N55677UG548701F #supporters stig
+700 2018-11-02 !id:paypal:5MV696068N486593D #dues:julianlee
+75 2018-11-09 !id:paypal:87N55677UG548701F #supporters stig
 100 2018-11-12 #workshop SSP market visit Nov donation by Yung Lai Ching (Janet)
 700 2018-11-13 #dues:lio
 40 2018-11-13 #merch:sticker
@@ -15,17 +15,17 @@
 -263.6 2018-11-14 #fridge fill the fridge
 0.20 2018-11-14 #donation:members round up
 1390 2018-11-14 #workshop Introduction to home automation (9 attendees)
-1000 2018-11-14 paypaltxn:037029929C875730K #dues:alex
+1000 2018-11-14 !id:paypal:037029929C875730K #dues:alex
 100 2018-11-17 #fridge
 120 2018-11-17 #workshop donations for TakeApart Day Nov
 700 2018-11-17 #dues:tom
 40 2018-11-17 donations
 300 2018-11-18 #workshop donations for TakeApart Day
-700 2018-11-19 paypaltxn:3DF78396X80644300 #dues:cathy
-700 2018-11-19 paypaltxn:41N38228Y4841400L #dues:manolis
-200 2018-11-20 paypaltxn:92396840P1952523B #dues:tobias
+700 2018-11-19 !id:paypal:3DF78396X80644300 #dues:cathy
+700 2018-11-19 !id:paypal:41N38228Y4841400L #dues:manolis
+200 2018-11-20 !id:paypal:92396840P1952523B #dues:tobias
 -342.8 2018-11-20 #fees:paypal
-700 2018-11-21 paypaltxn:661434435V7410744 #dues:richard !months:1:1
+700 2018-11-21 !id:paypal:661434435V7410744 #dues:richard !months:1:1
 0.80 2018-11-22 #donation:members round up - decimal amounts of HKD are just too small to track
 100 2018-11-24 #fridge
 238 2018-11-22 #donation:members Cover the internet
@@ -39,12 +39,12 @@
 177 2018-11-27 #dues:audrey !months:1:1 Additional topup
 300 2018-11-27 #dues:hamish !months:1:1 Additional topup
 -14000 2018-11-27 #bills:rent !months:1:1 Rent for Dec
-700 2018-11-26 paypaltxn:96P17557UK963283K #dues:sunny
+700 2018-11-26 !id:paypal:96P17557UK963283K #dues:sunny
 21 2018-11-26 #donation donations from tin
 920 2018-11-25 #workshop Soldering TV-Be-Gone with Mitch Altman
 500 2018-11-28 #workshop Introduction to Arduino (2 participants, minus materials cost)
 340 2018-11-28 #fridge
 20 2018-11-28 #donation From the donations steamer
-700 2018-11-29 paypaltxn:1B800135UU3578217 #dues:neil
-700 2018-11-30 paypaltxn:2FJ41182MX566162K #dues:james
+700 2018-11-29 !id:paypal:1B800135UU3578217 #dues:neil
+700 2018-11-30 !id:paypal:2FJ41182MX566162K #dues:james
 #balance 3908 closing balance

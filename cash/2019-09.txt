@@ -7,37 +7,37 @@
 500 2019-09-06 #donation:members From Anthony for laser tube replacement
 300 2019-09-06 #donation:members Fron Lio for laser tube replacement
 -1300 2019-09-06 #bills:upkeep Order new 60W laser tube
-700 2019-08-28 #dues:manolis paypaltxn:41L887911S1414810
-700 2019-09-02 #dues:julianlee paypaltxn:2XY49085TW438340R
-700 2019-09-04 #dues:mathis paypaltxn:5AS999677G278294J
-800 2019-09-04 #dues:neil paypaltxn:64S449981G610243M !months:1:1
-1000 2019-09-04 #dues:lio paypaltxn:1UP93330AA913310D
-700 2019-09-06 #dues:antonia paypaltxn:19W79229FN7965947
-300 2019-09-06 #dues:max paypaltxn:02N5586823994034V
+700 2019-08-28 #dues:manolis !id:paypal:41L887911S1414810
+700 2019-09-02 #dues:julianlee !id:paypal:2XY49085TW438340R
+700 2019-09-04 #dues:mathis !id:paypal:5AS999677G278294J
+800 2019-09-04 #dues:neil !id:paypal:64S449981G610243M !months:1:1
+1000 2019-09-04 #dues:lio !id:paypal:1UP93330AA913310D
+700 2019-09-06 #dues:antonia !id:paypal:19W79229FN7965947
+300 2019-09-06 #dues:max !id:paypal:02N5586823994034V
 -370.41 2019-09-07 #fees:paypal June 2019 !months:-3:1
 -380.96 2019-09-07 #fees:paypal July 2019 !months:-2:1
 -331.80 2019-09-07 #fees:paypal August 2019 !months:-1:1
 0.41 2019-09-08 #donation:members to round up and remove cents !months:-3:1
 0.96 2019-09-08 #donation:members to round up and remove cents !months:-2:1
 0.80 2019-09-08 #donation:members to round up and remove cents !months:-1:1
-700 2019-09-08 #dues:lawrence paypaltxn:3GG67132V2308525T
-75 2019-09-09 #supporters stig paypaltxn:4S928329H0593910H
+700 2019-09-08 #dues:lawrence !id:paypal:3GG67132V2308525T
+75 2019-09-09 #supporters stig !id:paypal:4S928329H0593910H
 400 2019-09-11 #fridge
 500 2019-09-11 #donation:members From Antonia towards laser cutter maintenance
 60 2019-09-11 #workshop Playing with addressable LEDs night
 -476 2019-09-17 #bills:internet !months:-1:2
 -120 2019-09-17 #fridge
 1000 2019-09-17 #dues:meebey
-600 2019-09-17 paypaltxn:2V303157HS947782S #dues:xro
-500 2019-09-10 paypaltxn:8GN84853053692540 #dues:alex !months:1:1
-1000 2019-09-18 paypaltxn:6LC85941455051212 #dues:anthony
+600 2019-09-17 !id:paypal:2V303157HS947782S #dues:xro
+500 2019-09-10 !id:paypal:8GN84853053692540 #dues:alex !months:1:1
+1000 2019-09-18 !id:paypal:6LC85941455051212 #dues:anthony
 350 2019-09-21 #fridge
-700 2019-09-21 paypaltxn:50D03088XS978823A #dues:richard !months:1:1
-25 2019-09-23 paypaltxn:74S96529R8776212R #fridge Xro purchases a drink
+700 2019-09-21 !id:paypal:50D03088XS978823A #dues:richard !months:1:1
+25 2019-09-23 !id:paypal:74S96529R8776212R #fridge Xro purchases a drink
 -95 2019-09-24 #fridge
 200 2019-09-24 #dues:alex top up !months:1:1
 200 2019-09-24 #donation
-500 2019-09-24 paypaltxn:02137021YS120183D #dues:neilg !months:1:1
+500 2019-09-24 !id:paypal:02137021YS120183D #dues:neilg !months:1:1
 1000 2019-09-25 !id:paypal:08443197WX259480B #dues:philip !months:1:1
 -1242 2019-09-09 !months:-5:6 #bills:meetup
 1242 2019-09-09 !months:-5:6 #donation:members From Audrey, for meetup
