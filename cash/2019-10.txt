@@ -28,7 +28,7 @@
 1000 2019-10-19 !id:paypal:45S43096WF342830P #dues:philip !months:1:1
 700 2019-10-21 !id:paypal:2E50162429048580R #dues:richard !months:1:1
 700 2019-10-23 !id:paypal:1YV26209JA027945U #dues:manolis
-700 2019-10-24 !id:paypal:27N279492X0113126 #dues:neilg
+700 2019-10-24 !id:paypal:27N279492X0113126 #dues:neilg !months:1:1
 700 2019-10-26 !id:paypal:6B381081HH5375613 #dues:sunny
 700 2019-10-17 #dues:nicolas
 
