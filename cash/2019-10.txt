@@ -31,4 +31,6 @@
 700 2019-10-24 !id:paypal:27N279492X0113126 #dues:neilg !months:1:1
 700 2019-10-26 !id:paypal:6B381081HH5375613 #dues:sunny
 700 2019-10-17 #dues:nicolas
-
+-137 2019-10-22 #fridge
+270 2019-10-29 #fridge
+-236 2019-10-29 #fridge
