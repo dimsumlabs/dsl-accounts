@@ -320,6 +320,7 @@ class RowData(Row):
                 'bills:accounting',
                 'bills:br',
                 'bills:electricity',
+                'bills:hosting',
                 'bills:internet',
                 'bills:meetup',
                 'bills:rent',
