@@ -35,3 +35,5 @@
 270 2019-10-29 #fridge
 -236 2019-10-29 #fridge
 700 2019-10-30 #dues:audrey
+700 2019-10-29 #donation
+-700 2019-10-29 #loan Pay some of hamish's loan back
