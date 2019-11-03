@@ -37,3 +37,5 @@
 700 2019-10-30 #dues:audrey
 700 2019-10-29 #donation
 -700 2019-10-29 #loan Pay some of hamish's loan back
+-14000 2019-11-02 #bills:rent
+#balance 3540 closing balance
