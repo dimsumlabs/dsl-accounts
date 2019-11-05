@@ -1,4 +1,5 @@
 #balance 3540 opening balance
 700 2019-11-02 !id:paypal:8BT80901K7375044T #dues:julianlee Cash on Paypal
 500 2019-11-02 !id:paypal:4DL14478R67126352 #dues:urd Cash on paypal
-
+700 2019-11-05 !id:paypal:6AK764192X559112D #dues:neil Cash on Paypal
+1000 2019-11-05 #dues:nicolas
