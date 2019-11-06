@@ -1,4 +1,0 @@
-# paypal automated payments
-#
-
-700 2018-07-04 #dues:julianlee !forecast:monthly
