@@ -5,3 +5,4 @@
 1000 2019-11-05 #dues:nicolas
 40 2019-11-05 #donation
 1000 2019-11-06 #dues:hamish
+-238 2019-11-06 #bills:internet !months:-1:1
