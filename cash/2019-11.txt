@@ -4,3 +4,4 @@
 800 2019-11-05 !id:paypal:6AK764192X559112D #dues:neil Cash on Paypal !months:1:1
 1000 2019-11-05 #dues:nicolas
 40 2019-11-05 #donation
+1000 2019-11-06 #dues:hamish
