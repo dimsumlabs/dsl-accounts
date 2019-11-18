@@ -1,11 +1,20 @@
 #balance 3540 opening balance
-700 2019-11-02 !id:paypal:8BT80901K7375044T #dues:julianlee Cash on Paypal
-500 2019-11-02 !id:paypal:4DL14478R67126352 #dues:urd Cash on paypal
-800 2019-11-05 !id:paypal:6AK764192X559112D #dues:neil Cash on Paypal !months:1:1
+700  2019-11-02 !id:paypal:8BT80901K7375044T #dues:julianlee Cash on Paypal
+500  2019-11-02 !id:paypal:4DL14478R67126352 #dues:urd Cash on paypal
+800  2019-11-05 !id:paypal:6AK764192X559112D #dues:neil Cash on Paypal !months:1:1
 1000 2019-11-05 #dues:nicolas
-40 2019-11-05 #donation
+40   2019-11-05 #donation
 1000 2019-11-06 #dues:hamish
 -238 2019-11-06 #bills:internet !months:-1:1
-300 2019-11-07 #fridge
--40 2019-11-05 #bills:hosting
-40 2019-11-05 #donation:members Hamish pays the hosting
+300  2019-11-07 #fridge
+-40  2019-11-05 #bills:hosting
+40   2019-11-05 #donation:members Hamish pays the hosting
+1000 2019-11-05 !id:paypal:6EB838793P6839547 #dues:lio Cash on Paypal
+700  2019-11-06 !id:paypal:3UD59433GX909072B #dues:antonia Cash on Paypal
+300  2019-11-06 id!:paypal:7U8220153U129592Y #dues:max Cash on Paypal
+700  2019-11-08 id!:paypal:9D607421SF5741305 #dues:lawrence Cash on Paypal
+700  2019-11-10 id!:paypal:2PJ9648896024063F #dues:alex CAsh on Paypal !months:1:1
+300  2019-11-15 id!:paypal:8YH73453Y5025324W #dues:oliver Cash on Paypal
+1000 2019-11-16 id!:paypal:7JA746682A2042537 #dues:philip Cash on Paypal !months:1:1
+1000 2019-11-16 id!:paypal:8EN15289DM249193U #dues:bryan Cash on Paypal
+
