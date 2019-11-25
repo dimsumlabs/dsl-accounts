@@ -21,3 +21,5 @@
 1000 2019-11-25 #dues:meebey
 50   2019-11-25 #donation Found in donation box
 360  2019-11-25 #fridge
+40   2019-11-21 #donation:members !months:1:1 Hamish pays the hosting
+-40  2019-11-21 #bills:hosting !months:1:1 !id:cac:12761770

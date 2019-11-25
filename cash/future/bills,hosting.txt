@@ -2,4 +2,4 @@
 # Server hosting
 #
 
--40 2019-10-20 #bills:hosting !forecast:monthly
+-40 2019-11-05 #bills:hosting !forecast:monthly
