@@ -27,7 +27,9 @@ class Row(object):
         if text[0] == '#':
             return RowPragma.fromTxt(text)
 
-        (value, date, comment) = re.split(r'\s+', text, maxsplit=2)
+        # TODO: enforce four digits for year and two digits for month and day
+
+        (value, date, comment) = text.split(None, maxsplit=2)
         date = datetime.datetime.strptime(date.strip(), "%Y-%m-%d").date()
 
         return RowData(value, date, comment)
