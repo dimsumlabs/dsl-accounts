@@ -24,3 +24,4 @@
 40   2019-11-21 #donation:members !months:1:1 Hamish pays the hosting
 -40  2019-11-21 #bills:hosting !months:1:1 !id:cac:12761770
 1000 2019-11-25 !id:paypal:9DF760536Y604071R #dues:anthony Cash on Paypal
+-14000 2019-11-25 #bills:rent !months:1:1
