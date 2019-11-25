@@ -321,6 +321,7 @@ class RowData(Row):
             '#': [
                 'bills:accounting',
                 'bills:br',
+                'bills:dns',
                 'bills:electricity',
                 'bills:hosting',
                 'bills:internet',
