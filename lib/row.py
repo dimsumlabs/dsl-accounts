@@ -369,7 +369,11 @@ class RowData(Row):
         if self._comment is None:
             return None
 
-        p = re.compile(x+r'([a-zA-Z]\S*)')
+        # TODO:
+        # - should a tag char start a tag /anywhere/ in the string?
+        # - how do we detect syntax errors like "xyz id!:paypal:foo abc"?
+
+        p = re.compile(x+r'([A-Za-z:]\S*)')
         all_tags = p.findall(self._comment)
 
         for tag in all_tags:
