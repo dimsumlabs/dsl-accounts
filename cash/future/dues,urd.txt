@@ -1,4 +1,4 @@
-# payment by cash in person
+# payment via paypal
 #
 
 500 2019-11-02 #dues:urd !forecast:monthly
