@@ -20,3 +20,4 @@
 200  2019-11-25 #merch:tshirt Sold a t-shirt to Urd
 1000 2019-11-25 #dues:meebey
 50   2019-11-25 #donation Found in donation box
+360  2019-11-25 #fridge
