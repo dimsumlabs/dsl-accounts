@@ -1,0 +1,5 @@
+#
+# automated paypal payments
+
+700 2019-10-24 #dues:neilg !forecast:monthly
+
