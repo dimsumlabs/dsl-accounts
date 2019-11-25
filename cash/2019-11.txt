@@ -17,4 +17,4 @@
 300  2019-11-15 !id:paypal:8YH73453Y5025324W #dues:oliver Cash on Paypal
 1000 2019-11-16 !id:paypal:7JA746682A2042537 #dues:philip Cash on Paypal !months:1:1
 1000 2019-11-16 !id:paypal:8EN15289DM249193U #dues:bryan Cash on Paypal
-
+200  2019-11-25 #merch:tshirt Sold a t-shirt to Urd
