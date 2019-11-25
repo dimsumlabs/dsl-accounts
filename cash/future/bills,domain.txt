@@ -1,0 +1,6 @@
+#
+# DNS registration fees
+#
+
+# Approx USD 15.50/year
+-10 2019-11-01 #bills:dns !forecast:monthly
