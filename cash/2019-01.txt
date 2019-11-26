@@ -1,29 +1,29 @@
 #balance 149 opening balance
-100 2019-01-05 #fridge
+100  2019-01-05 #fridge
 -238 2019-01-05 #bills:internet !months:-1:1 Late payment
-700 2019-01-08 #dues:tom
-100 2019-01-08 #fridge
+700  2019-01-08 #dues:tom
+100  2019-01-08 #fridge
 -105 2019-01-08 #fridge
-700 2018-12-21 !id:paypal:0KJ217950B477010C #dues:richard !months:1:1
+700  2018-12-21 !id:paypal:0KJ217950B477010C #dues:richard !months:1:1
 -175 2019-01-15 #fees:paypal
-700 2018-12-26 !id:paypal:0TF73967MX536310F #dues:sunny
-700 2018-12-29 !id:paypal:71S63491FT965963L #dues:james
-100 2018-12-28 !id:paypal:8DP667226P178371U #donation Peter T.
-500 2019-01-09 !id:paypal:44E12751C35149631 #dues:lawrence
+700  2018-12-26 !id:paypal:0TF73967MX536310F #dues:sunny
+700  2018-12-29 !id:paypal:71S63491FT965963L #dues:james
+100  2018-12-28 !id:paypal:8DP667226P178371U #donation Peter T.
+500  2019-01-09 !id:paypal:44E12751C35149631 #dues:lawrence
 1000 2019-01-14 !id:paypal:0LS856018H491114W #dues:alex
-700 2019-01-03 !id:paypal:3UG8524712069484A #dues:julianlee
-75 2019-01-09 !id:paypal:8N1591726Y368363T #supporters stig
-700 2018-12-30 !id:paypal:2EC97916V6811383U #dues:neil TODO - check
+700  2019-01-03 !id:paypal:3UG8524712069484A #dues:julianlee
+75   2019-01-09 !id:paypal:8N1591726Y368363T #supporters stig
+700  2018-12-30 !id:paypal:2EC97916V6811383U #dues:neil TODO - check
 -2100 2019-01-16 #loan repay Hamish for loan dated 2018-12-24
-750 2019-01-16 #workshop Introduction to Arduino (3 participants, excludes hardware costs)
+750  2019-01-16 #workshop Introduction to Arduino (3 participants, excludes hardware costs)
 -238 2019-01-17 #bills:internet
-700 2019-01-17 !id:paypal:3VE01488L9019231J #dues:cathy
-700 2019-01-18 !id:paypal:3TT297063W083881L #dues:manolis
-700 2019-01-21 !id:paypal:5H4589054D8182133 #dues:richard !months:1:1
-700 2019-01-24 #workshop Machine Learning and Artificial Intelligence
-700 2019-01-26 !id:paypal:2RC50007XY714821N #dues:sunny
-700 2019-01-28 !id:paypal:5KB38090CK438332M #dues:james
-700 2019-01-28 !id:paypal:9EA54736DY222225N #dues:neil
+700  2019-01-17 !id:paypal:3VE01488L9019231J #dues:cathy
+700  2019-01-18 !id:paypal:3TT297063W083881L #dues:manolis
+700  2019-01-21 !id:paypal:5H4589054D8182133 #dues:richard !months:1:1
+700  2019-01-24 #workshop Machine Learning and Artificial Intelligence
+700  2019-01-26 !id:paypal:2RC50007XY714821N #dues:sunny
+700  2019-01-28 !id:paypal:5KB38090CK438332M #dues:james
+700  2019-01-28 !id:paypal:9EA54736DY222225N #dues:neil
 4982 2019-01-26 #loan Hamish lends the space money for the rent
 -14000 2019-01-26 #bills:rent !months:1:1
 #balance 0 closing balance

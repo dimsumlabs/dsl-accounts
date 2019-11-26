@@ -1,26 +1,26 @@
 #balance 0 opening balance
-100 2019-05-04 #workshop Raspberry Jam
-690 2019-05-07 #fridge
+100  2019-05-04 #workshop Raspberry Jam
+690  2019-05-07 #fridge
 -370 2019-05-07 #fridge
 -238 2019-05-09 #bills:internet !months:-1:1
 -440 2019-05-09 #bills:electricity !months:-1:1
-700 2019-05-02 #dues:julianlee !id:paypal:0GL2719934176070N
-700 2019-05-04 #dues:mathis !id:paypal:6VC12007YE506694W
+700  2019-05-02 #dues:julianlee !id:paypal:0GL2719934176070N
+700  2019-05-04 #dues:mathis !id:paypal:6VC12007YE506694W
 1600 2019-05-05 #dues:neil !id:paypal:4FA93871EL005662E !months:2
-700 2019-05-06 #dues:sunny !id:paypal:23F911791Y801983K !months:-1:1
-300 2019-05-06 #dues:max !id:paypal:6AX78693TL135464N
-700 2019-05-06 #dues:antonia !id:paypal:5P092627U9957813P
-700 2019-05-08 #dues:lawrence !id:paypal:5W541317T9861305J
-840 2019-05-12 #dues:gary !id:paypal:0GH05710LE5056010
-75 2019-05-14 #supporters stig !id:paypal:9Y272802W1467910C
+700  2019-05-06 #dues:sunny !id:paypal:23F911791Y801983K !months:-1:1
+300  2019-05-06 #dues:max !id:paypal:6AX78693TL135464N
+700  2019-05-06 #dues:antonia !id:paypal:5P092627U9957813P
+700  2019-05-08 #dues:lawrence !id:paypal:5W541317T9861305J
+840  2019-05-12 #dues:gary !id:paypal:0GH05710LE5056010
+75   2019-05-14 #supporters stig !id:paypal:9Y272802W1467910C
 1000 2019-05-14 #dues:alex !id:paypal:5AW66036A9753835Y
-700 2019-05-18 #dues:manolis !id:paypal:36N12195DF8216308
-700 2019-05-21 #dues:richard !id:paypal:31T46440UK893431N !months:1:1
-500 2019-05-21 #dues:jerry 
-700 2019-05-23 #dues:philip !id:paypal:0EN50742U3085264H
-700 2019-05-26 #dues:sunny !id:paypal:8MG44037RF649543M
-200 2019-05-28 #supporters stig !id:paypal:8AK80590YH122091T
+700  2019-05-18 #dues:manolis !id:paypal:36N12195DF8216308
+700  2019-05-21 #dues:richard !id:paypal:31T46440UK893431N !months:1:1
+500  2019-05-21 #dues:jerry 
+700  2019-05-23 #dues:philip !id:paypal:0EN50742U3085264H
+700  2019-05-26 #dues:sunny !id:paypal:8MG44037RF649543M
+200  2019-05-28 #supporters stig !id:paypal:8AK80590YH122091T
 1500 2019-05-30 #workshop Introduction to Arduino - 5 ladies + 1 guy
-75 2019-04-09 !id:paypal:4T738814C8934254F #supporters stig Cash unknown
+75   2019-04-09 !id:paypal:4T738814C8934254F #supporters stig Cash unknown
 -490 2019-05-31 #fees:paypal
 #balance 11642 closing balance

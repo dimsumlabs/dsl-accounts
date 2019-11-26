@@ -1,42 +1,42 @@
 #balance 11642 opening balance
-270 2019-06-04 #donation from tin and box
-300 2019-06-04 #fridge
+270  2019-06-04 #donation from tin and box
+300  2019-06-04 #fridge
 1788 2019-05-31 #loan Hamish lends the space money for the rent
 -14000 2019-06-01 #bills:rent
-235 2019-06-04 #donation (rounding up during money transfers)
-3 2019-06-04 #donation (rounding up to afford the internet bill)
+235  2019-06-04 #donation (rounding up during money transfers)
+3    2019-06-04 #donation (rounding up to afford the internet bill)
 -238 2019-06-04 #bills:internet !months:-1:1
-500 2019-06-04 #dues:jerry
-700 2019-06-02 #dues:julianlee !id:paypal:8TY45812NN822105C
-700 2019-06-04 #dues:mathis !id:paypal:64156988ND9173645
-700 2019-06-06 #dues:nathan
+500  2019-06-04 #dues:jerry
+700  2019-06-02 #dues:julianlee !id:paypal:8TY45812NN822105C
+700  2019-06-04 #dues:mathis !id:paypal:64156988ND9173645
+700  2019-06-06 #dues:nathan
 -412 2019-06-07 #bills:electricity !months:-1:1
-800 2019-06-05 !id:paypal:3BH11497EL086940X #dues:neil !months:1:1
-300 2019-06-05 #dues:max !id:paypal:7VL73506ET964621J
-700 2019-06-05 #dues:antonia !id:paypal:8CR271189G4545619
-700 2019-06-05 #dues:lawrence !id:paypal:44T42379Y5262303D
-75 2019-06-05 !id:paypal:2S603929DE459580U #supporters stig
+800  2019-06-05 !id:paypal:3BH11497EL086940X #dues:neil !months:1:1
+300  2019-06-05 #dues:max !id:paypal:7VL73506ET964621J
+700  2019-06-05 #dues:antonia !id:paypal:8CR271189G4545619
+700  2019-06-05 #dues:lawrence !id:paypal:44T42379Y5262303D
+75   2019-06-05 !id:paypal:2S603929DE459580U #supporters stig
 1000 2019-06-05 #donation David gave us a donation for the use of our old Pelican case
 1000 2019-06-05 #dues:meebey
 1000 2019-06-05 #dues:anthony
-600 2019-06-05 #donation from tonight
-150 2019-06-05 #donation envelope in donation box - perhaps from tv be gone workshop
-300 2019-06-05 #dues:hamish !months:-1:1
-300 2019-06-05 #dues:audrey !months:-1:1
-300 2019-06-05 #dues:hamish
-300 2019-06-05 #dues:audrey
+600  2019-06-05 #donation from tonight
+150  2019-06-05 #donation envelope in donation box - perhaps from tv be gone workshop
+300  2019-06-05 #dues:hamish !months:-1:1
+300  2019-06-05 #dues:audrey !months:-1:1
+300  2019-06-05 #dues:hamish
+300  2019-06-05 #dues:audrey
 1000 2019-06-10 #dues:nicolas
-840 2019-06-12 !id:paypal:9TU219800N2381336 #dues:gary
+840  2019-06-12 !id:paypal:9TU219800N2381336 #dues:gary
 1000 2019-06-14 !id:paypal:6HM408855M467382E #dues:alex
-700 2019-06-15 !id:paypal:9DD735737S2411633 #dues:philip
-20 2019-06-18 #donation from tin
-700 2019-06-18 #dues:michelle
-40 2019-06-25 #donation steamer
-300 2019-06-25 #fridge
-30 2019-06-25 #donation from hackjam visitor
+700  2019-06-15 !id:paypal:9DD735737S2411633 #dues:philip
+20   2019-06-18 #donation from tin
+700  2019-06-18 #dues:michelle
+40   2019-06-25 #donation steamer
+300  2019-06-25 #fridge
+30   2019-06-25 #donation from hackjam visitor
 -14000 2019-06-26 #bills:rent !months:1:1
-700 2019-06-18 #dues:manolis !id:paypal:04C68477SR3532138
-700 2019-06-21 !id:paypal:4Y988352AJ514102C #dues:richard !months:1:1
-700 2019-06-26 #dues:sunny !id:paypal:38663114PS5694104
-750 2019-06-27 #workshop Introduction to Arduino
+700  2019-06-18 #dues:manolis !id:paypal:04C68477SR3532138
+700  2019-06-21 !id:paypal:4Y988352AJ514102C #dues:richard !months:1:1
+700  2019-06-26 #dues:sunny !id:paypal:38663114PS5694104
+750  2019-06-27 #workshop Introduction to Arduino
 #balance 3193 closing balance

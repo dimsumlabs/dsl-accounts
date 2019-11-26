@@ -1,53 +1,53 @@
 #balance 0 opening balance
-300 2019-03-01 #dues:hamish top up
-300 2019-03-01 #dues:audrey top up
-300 2019-03-02 #dues:meebey !months:-2:1
-300 2019-03-02 #dues:meebey !months:-1:1
-300 2019-03-02 #dues:meebey
-450 2019-03-02 #workshop Raspberry Jam entry (8 non member participants, plus one member generously paying - thanks Gary)
-340 2019-03-02 #merch:rpikit (Sold 2 kits at the raspberry jam)
-172.50 2019-03-05 #fridge
+300  2019-03-01 #dues:hamish top up
+300  2019-03-01 #dues:audrey top up
+300  2019-03-02 #dues:meebey !months:-2:1
+300  2019-03-02 #dues:meebey !months:-1:1
+300  2019-03-02 #dues:meebey
+450  2019-03-02 #workshop Raspberry Jam entry (8 non member participants, plus one member generously paying - thanks Gary)
+340  2019-03-02 #merch:rpikit (Sold 2 kits at the raspberry jam)
+172.50  2019-03-05 #fridge
 -172.50 2019-03-05 #fridge Soft drinks
-700 2019-03-02 !id:paypal:4TW78274T4171710V #dues:julianlee
-500 2019-03-04 !id:paypal:2B8118494N1803309 #dues:mathis
-500 2019-03-05 !id:paypal:4XM04840LG0161428 #dues:neil
-300 2019-03-05 !id:paypal:81N9879019228751J #dues:neil (additional payment to top up)
+700  2019-03-02 !id:paypal:4TW78274T4171710V #dues:julianlee
+500  2019-03-04 !id:paypal:2B8118494N1803309 #dues:mathis
+500  2019-03-05 !id:paypal:4XM04840LG0161428 #dues:neil
+300  2019-03-05 !id:paypal:81N9879019228751J #dues:neil (additional payment to top up)
 -600 2019-03-05 #fees:paypal
-100 2019-03-07 #workshop Guided tear-down (1 participant)
-200 2019-03-07 #fridge
-40 2019-03-07 #donation from steamer box
-263 2018-12-07 #donation:members
+100  2019-03-07 #workshop Guided tear-down (1 participant)
+200  2019-03-07 #fridge
+40   2019-03-07 #donation from steamer box
+263  2018-12-07 #donation:members
 -263 2018-12-07 #bills:electricity !months:-1:1
-181 2019-01-05 #donation:members
+181  2019-01-05 #donation:members
 -181 2019-01-05 #bills:electricity !months:-1:1
 -197 2019-03-07 #bills:electricity !months:-1:1
 -7.5 2019-02-11 #bills:water !months:-4:2
 0.55 2018-03-01 #donation:members rount up small change
 0.45 2018-04-01 #donation:members rount up small change
-0.6 2018-08-01 #donation:members round up small change
-0.5 2018-10-01 #donation:members round up small change
-0.4 2018-11-01 #donation:members round up small change
-157 2019-02-01 #donation:members from Audrey for meetup
+0.6  2018-08-01 #donation:members round up small change
+0.5  2018-10-01 #donation:members round up small change
+0.4  2018-11-01 #donation:members round up small change
+157  2019-02-01 #donation:members from Audrey for meetup
 -157 2019-02-01 #bills:meetup (USD20/month)
-157 2019-03-01 #donation:members from Audrey for meetup
+157  2019-03-01 #donation:members from Audrey for meetup
 -157 2019-03-01 #bills:meetup (USD20/month)
-75 2019-03-08 !id:paypal:7BP20322SC191761C #merch:kits earrings (Nisha friend of Audrey)
-100 2019-03-09 #fridge
-200 2019-03-12 #merch:tshirt sold to Lio
-700 2019-03-12 #dues:tom
-50 2019-03-12 #donation
-100 2019-03-12 #workshop Impromptu "how to assemble a PC" workshop
-700 2019-03-13 !id:paypal:9E141241TF8174945 #dues:gary
+75   2019-03-08 !id:paypal:7BP20322SC191761C #merch:kits earrings (Nisha friend of Audrey)
+100  2019-03-09 #fridge
+200  2019-03-12 #merch:tshirt sold to Lio
+700  2019-03-12 #dues:tom
+50   2019-03-12 #donation
+100  2019-03-12 #workshop Impromptu "how to assemble a PC" workshop
+700  2019-03-13 !id:paypal:9E141241TF8174945 #dues:gary
 1000 2019-03-14 !id:paypal:05Y32802VP089215R #dues:alex
-75 2019-03-09 !id:paypal:7N159213F3473763H #supporters stig
-700 2019-03-08 !id:paypal:2N859583NY0695704 #dues:lawrence
-300 2019-03-19 #fridge
-500 2019-03-15 !id:paypal:5EY86989HR246121E #supporters stig
-700 2019-03-18 !id:paypal:1SP384394T702824D #dues:manolis
-700 2019-03-21 !id:paypal:8DX729867U189064M #dues:richard !months:1:1
-700 2019-03-26 !id:paypal:90617343GV258783M #dues:sunny
-500 2019-03-27 !id:paypal:48B110330W821321X #dues:philip
-200 2019-03-18 #merch:kits Sell 4 LED earring kits while attending FOSSASIA Singapore conference
+75   2019-03-09 !id:paypal:7N159213F3473763H #supporters stig
+700  2019-03-08 !id:paypal:2N859583NY0695704 #dues:lawrence
+300  2019-03-19 #fridge
+500  2019-03-15 !id:paypal:5EY86989HR246121E #supporters stig
+700  2019-03-18 !id:paypal:1SP384394T702824D #dues:manolis
+700  2019-03-21 !id:paypal:8DX729867U189064M #dues:richard !months:1:1
+700  2019-03-26 !id:paypal:90617343GV258783M #dues:sunny
+500  2019-03-27 !id:paypal:48B110330W821321X #dues:philip
+200  2019-03-18 #merch:kits Sell 4 LED earring kits while attending FOSSASIA Singapore conference
 2872 2019-03-31 #loan Hamish lends the space money for the rent
 -14000 2019-03-31 #bills:rent !months:1:1
 #balance 0 closing balance

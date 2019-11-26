@@ -1,43 +1,43 @@
 #balance 0 opening balance
-700 2019-02-02 !id:paypal:98K9924024341673W #dues:julianlee
-700 2019-02-08 !id:paypal:4SM00281MU784951W #dues:lawrence
-100 2019-02-08 !id:paypal:94167979UB411880R #donation from P.Tapio
-75 2019-02-10 !id:paypal:93A12001KA527244B #supporters stig
+700  2019-02-02 !id:paypal:98K9924024341673W #dues:julianlee
+700  2019-02-08 !id:paypal:4SM00281MU784951W #dues:lawrence
+100  2019-02-08 !id:paypal:94167979UB411880R #donation from P.Tapio
+75   2019-02-10 !id:paypal:93A12001KA527244B #supporters stig
 -183 2019-02-11 #bills:electricity !months:-1:1
-500 2019-02-11 #dues:jerry !months:-1:1
-700 2019-02-11 #dues:michelle
-20 2019-02-11 #donation
-200 2019-02-11 #dues:meebey !months:-2:1 For December 2018
-556 2019-01-26 #merch:kits LED earring kits
-300 2019-02-12 #dues:hamish
-300 2019-02-12 #dues:audrey
-450 2019-02-12 #fridge
-224 2019-02-12 #donation
-500 2019-02-12 !id:paypal:33L593621C888051G #dues:gary
-500 2019-02-12 #dues:jerry
+500  2019-02-11 #dues:jerry !months:-1:1
+700  2019-02-11 #dues:michelle
+20   2019-02-11 #donation
+200  2019-02-11 #dues:meebey !months:-2:1 For December 2018
+556  2019-01-26 #merch:kits LED earring kits
+300  2019-02-12 #dues:hamish
+300  2019-02-12 #dues:audrey
+450  2019-02-12 #fridge
+224  2019-02-12 #donation
+500  2019-02-12 !id:paypal:33L593621C888051G #dues:gary
+500  2019-02-12 #dues:jerry
 -475 2019-02-12 #fees:paypal
-257 2019-02-12 #fridge
+257  2019-02-12 #fridge
 -257 2019-02-12 #fridge
-210 2019-02-13 #workshop Creative Coding Meetup (over 30 people attended)
+210  2019-02-13 #workshop Creative Coding Meetup (over 30 people attended)
 1000 2019-02-14 !id:paypal:5FD27855MJ994242L #dues:alex
-240 2019-02-17 #workshop Take apart Day (approx 12 people, inc 5 children)
-200 2019-02-17 #fridge
--80 2019-02-17 #fridge Fill the fridge
-100 2019-02-17 !id:paypal:07264550PM5346323 #donation by fishkingsin
-700 2019-02-18 !id:paypal:66K977113T6014232 #dues:manolis
-625 2019-02-18 #fees:paypal
+240  2019-02-17 #workshop Take apart Day (approx 12 people, inc 5 children)
+200  2019-02-17 #fridge
+-80  2019-02-17 #fridge Fill the fridge
+100  2019-02-17 !id:paypal:07264550PM5346323 #donation by fishkingsin
+700  2019-02-18 !id:paypal:66K977113T6014232 #dues:manolis
+625  2019-02-18 #fees:paypal
 -116 2019-02-19 #fridge Fill the fridge
-700 2019-02-20 #dues:tom
-300 2019-02-20 #fridge
+700  2019-02-20 #dues:tom
+300  2019-02-20 #fridge
 -238 2019-02-21 #bills:internet
-100 2019-02-22 #fridge
+100  2019-02-22 #fridge
 -276 2019-02-22 #fridge
-700 2019-02-21 !id:paypal:1GM18747YB8453447 #dues:richard !months:1:1
+700  2019-02-21 !id:paypal:1GM18747YB8453447 #dues:richard !months:1:1
 -100 2019-02-26 #fees:paypal
-600 2019-02-26 #fridge
-700 2019-02-27 !id:paypal:9Y029492YA389440P #dues:sunny
-700 2019-02-28 !id:paypal:07C85524VK3580714 #dues:james
-700 2019-02-28 !id:paypal:31489620KG0064057 #dues:neil
+600  2019-02-26 #fridge
+700  2019-02-27 !id:paypal:9Y029492YA389440P #dues:sunny
+700  2019-02-28 !id:paypal:07C85524VK3580714 #dues:james
+700  2019-02-28 !id:paypal:31489620KG0064057 #dues:neil
 2068 2019-02-28 #loan from Hamish
 -14000 2019-02-28 #bills:rent !months:1:1
 #balance 0 closing balance
