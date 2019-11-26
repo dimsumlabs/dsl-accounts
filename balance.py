@@ -474,7 +474,15 @@ def subp_make_balance(args):
         else:
             return 0
 
+    def _get_balance_this_month():
+        month_data = args.rows.filter([
+            'rel_months==0',
+        ])
+
+        return month_data.value
+
     macros = {
+        'balance_this_month': _get_balance_this_month(),
         'balance_sum': args.rows.value,
         'grid_header': header,
         'grid':        grid,

@@ -429,6 +429,10 @@ class TestSubp(unittest.TestCase):
         want = '(due on: <span class="color_neg">1990-04-23</span>) Rent:'
         self.assertTrue(want in got)
 
+        # this is the ${balance_this_month} value from the template
+        want = '   <td class="bill_value color_pos">13164 HKD</td>'
+        self.assertTrue(want in got)
+
     def test_roundtrip(self):
         got = balance.subp_roundtrip(self)
         self.assertEqual(got, self.input_data)
