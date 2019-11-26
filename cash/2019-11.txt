@@ -23,5 +23,11 @@
 360  2019-11-25 #fridge
 40   2019-11-21 #donation:members !months:1:1 Hamish pays the hosting
 -40  2019-11-21 #bills:hosting !months:1:1 !id:cac:12761770
-1000 2019-11-25 !id:paypal:9DF760536Y604071R #dues:anthony Cash on Paypal
+1000 2019-11-25 !id:paypal:9DF760536Y604071R #dues:anthony Cash on Paypal !months:1:1
 -14000 2019-11-25 #bills:rent !months:1:1
+1000 2019-11-18 !id:paypal:19B83758FD746303L #dues:anthony Cash on Paypal
+700  2019-11-18 !id:paypal:0US88721WA9386259 #dues:manolis Cash on Paypal
+700  2019-11-21 !id:paypal:53L65092B07103335 #dues:richard Cash on Paypal !months:1:1
+840  2019-11-22 !id:paypal:42V24957G4795783A #dues:gary Cash on Paypal
+700  2019-11-22 !id:paypal:9BY11976V2968330R #dues:neilg Cash on Paypal !months:1:1
+
