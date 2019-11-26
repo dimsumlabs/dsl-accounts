@@ -101,15 +101,16 @@ class RowSet(object):
         if skip_balance_check:
             need_balance = False
 
+        last_error = None
         for row in stream.readlines():
             row = row.rstrip('\n')
             line_number += 1
 
             try:
                 obj = Row.fromTxt(row)
-            except: # noqa
+            except Exception as e:
                 print("{}:{} Syntax error".format(filename, line_number))
-                raise
+                last_error = e
 
             if isinstance(obj, RowPragmaBalance):
                 # TODO - move more of the pragma logic in to the pragma class
@@ -135,6 +136,10 @@ class RowSet(object):
                 )
 
             self.append(obj)
+
+        if last_error is not None:
+            print("Error: at least one syntax error. Trace is from last")
+            raise last_error
 
     def load_directory(self, dirname, skip_balance_check=False):
         """Given the pathname to a directory, load all the relevant files found
