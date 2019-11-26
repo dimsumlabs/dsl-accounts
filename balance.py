@@ -422,7 +422,6 @@ def subp_make_balance(args):
 
     # Filter out only the membership dues
     grid_rows = args.rows.filter([
-        'direction==incoming',
         'hashtag=~^dues:',
         'rel_months>-5',
         'rel_months<1',
