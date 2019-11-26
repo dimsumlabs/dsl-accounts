@@ -1,47 +1,47 @@
 #balance 8807.45
-810 2018-04-09 #workshop of Luca on MaxMSP
-700 2018-04-09 #dues:james
-500 2018-04-09 #dues:christopher !months:-1:1
-700 2018-04-09 #dues:neil
-200 2018-04-09 #dues:stigo
-700 2018-04-09 #dues:julianlee
-700 2018-04-09 #dues:alex
-300 2018-04-09 #dues:brad
-70 2018-04-09 #fridge
+810  2018-04-09 #workshop of Luca on MaxMSP
+700  2018-04-09 #dues:james
+500  2018-04-09 #dues:christopher !months:-1:1
+700  2018-04-09 #dues:neil
+200  2018-04-09 #dues:stigo
+700  2018-04-09 #dues:julianlee
+700  2018-04-09 #dues:alex
+300  2018-04-09 #dues:brad
+70   2018-04-09 #fridge
 -610 2018-04-09 Paypal fees #fees:paypal
 2.55 2018-04-10 Match the amount in the cash box
-60 2018-04-10 #fridge
-300 2018-04-10 #dues:marble
-700 2018-04-10 #dues:hamish
-30 2018-04-10 #fridge
-300 2018-04-10 #dues:ente
+60   2018-04-10 #fridge
+300  2018-04-10 #dues:marble
+700  2018-04-10 #dues:hamish
+30   2018-04-10 #fridge
+300  2018-04-10 #dues:ente
 -100 2018-04-10 #fridge
 -12500 2018-04-10 #bills:rent !months:-1:1 Rent for March
-1350 2018-04-15 #donation:members from Audrey towards the power bill
+1350  2018-04-15 #donation:members from Audrey towards the power bill
 -1350 2018-04-15 #bills:electricity (was due 2018-02-28, last payment was 2017-10-25) !months:-6:5
-700 2018-04-17 #dues:audrey
+700  2018-04-17 #dues:audrey
 1400 2018-04-17 #dues:meebey !months:2
-700 2018-04-17 #dues:adam !months:-1:1
-100 2018-04-17 donations
-250 2018-04-17 #fridge
-100 2018-04-24 #fridge
-200 2018-04-24 #dues:tobias
-700 2018-04-24 #dues:manolis
-700 2018-04-24 #dues:richard !months:1:1
-700 2018-04-24 #dues:mazakazu
-100 2018-04-24 100hkd in the wall box
-700 2018-04-24 #dues:tom
+700  2018-04-17 #dues:adam !months:-1:1
+100  2018-04-17 donations
+250  2018-04-17 #fridge
+100  2018-04-24 #fridge
+200  2018-04-24 #dues:tobias
+700  2018-04-24 #dues:manolis
+700  2018-04-24 #dues:richard !months:1:1
+700  2018-04-24 #dues:mazakazu
+100  2018-04-24 100hkd in the wall box
+700  2018-04-24 #dues:tom
 -225 2018-04-24 #fridge
-225 2018-04-24 #loan FIXME - confirm this transaction
-700 2018-04-24 #dues:anthony !months:1:1
-700 2018-04-26 #dues:sunny !months:1:1
+225  2018-04-24 #loan FIXME - confirm this transaction
+700  2018-04-24 #dues:anthony !months:1:1
+700  2018-04-26 #dues:sunny !months:1:1
 1400 2018-04-26 #dues:nicolas !months:0:2
-700 2018-04-26 #dues:james !months:1:1
-700 2018-04-26 #dues:neil !months:1:1
-500 2018-04-26 #dues:christopher
+700  2018-04-26 #dues:james !months:1:1
+700  2018-04-26 #dues:neil !months:1:1
+500  2018-04-26 #dues:christopher
 -12500 2018-04-26 #bills:rent Rent for April
-40 2018-04-26 #fridge
-100 2018-04-26 #fridge
-120 2018-04-26 #fridge
-40 2018-04-27 #fridge
+40   2018-04-26 #fridge
+100  2018-04-26 #fridge
+120  2018-04-26 #fridge
+40   2018-04-27 #fridge
 #balance 520

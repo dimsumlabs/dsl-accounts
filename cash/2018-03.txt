@@ -1,38 +1,38 @@
 #balance 13302
-700 2018-03-01 #dues:nicolas
-700 2018-03-01 #dues:james
-500 2018-03-01 #dues:christopher !months:-1:1
-600 2018-03-01 #dues:neil
--2018 2018-03-01 #loan nicolas
+700  2018-03-01 #dues:nicolas
+700  2018-03-01 #dues:james
+500  2018-03-01 #dues:christopher !months:-1:1
+600  2018-03-01 #dues:neil
+-2018   2018-03-01 #loan nicolas
 -1049.9 2018-03-01 #loan nicolas
-700 2018-03-05 #dues:julianlee
-200 2018-03-05 #dues:stigo
-700 2018-03-05 #dues:alex
--70.45 2018-03-05 Paypal fees #fees:paypal
+700  2018-03-05 #dues:julianlee
+200  2018-03-05 #dues:stigo
+700  2018-03-05 #dues:alex
+-70.45   2018-03-05 Paypal fees #fees:paypal
 -1529.55 2018-03-05 #loan nicolas
-700 2018-03-06 #dues:meebey
-700 2018-03-06 #dues:anthony
-700 2018-03-06 #dues:tom
+700  2018-03-06 #dues:meebey
+700  2018-03-06 #dues:anthony
+700  2018-03-06 #dues:tom
 265.9 2018-03-06 Paypal fees #fees:paypal readjustment
-180 2018-03-06 #fridge
-700 2018-03-06 #dues:audrey
-300 2018-03-06 #dues:brad
+180  2018-03-06 #fridge
+700  2018-03-06 #dues:audrey
+300  2018-03-06 #dues:brad
 -12500 2018-03-06 #bills:rent !months:-1:1 Rent for February
-310 2018-03-20 extra cash found in cash box
+310  2018-03-20 extra cash found in cash box
 # I counted the cash box and it had 4090
 #balance 4090
-10 2018-03-20 donations
-500 2018-03-20 #dues:jerry
-300 2018-03-20 #dues:marble
-320 2018-03-20 #fridge
-700 2018-03-27 #dues:manolis
-200 2018-03-27 #dues:tobias
-700 2018-03-27 #dues:richard !months:1:1
-700 2018-03-27 #dues:mazakazu
-700 2018-03-27 #dues:sunny !months:1:1
-40 2018-03-27 #fridge
-20 2018-03-27 donations
+10   2018-03-20 donations
+500  2018-03-20 #dues:jerry
+300  2018-03-20 #dues:marble
+320  2018-03-20 #fridge
+700  2018-03-27 #dues:manolis
+200  2018-03-27 #dues:tobias
+700  2018-03-27 #dues:richard !months:1:1
+700  2018-03-27 #dues:mazakazu
+700  2018-03-27 #dues:sunny !months:1:1
+40   2018-03-27 #fridge
+20   2018-03-27 donations
 -202.55 2018-03-27 #loan nicolas
-700 2018-03-29 #dues:anthony !months:1:1
-30 2018-03-29 #fridge
+700  2018-03-29 #dues:anthony !months:1:1
+30   2018-03-29 #fridge
 #balance 8807.45

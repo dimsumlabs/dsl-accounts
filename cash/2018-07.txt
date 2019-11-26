@@ -1,45 +1,45 @@
 #balance 950 opening balance for the month
-148 2018-07-01 #donation:members
+148  2018-07-01 #donation:members
 -148 2018-07-01 #bills:upkeep Replace toilet seat
-100 2018-07-01 money from donations tin
-200 2018-07-04 #merch:tshirt
-700 2018-07-04 #dues:tom membership for july
-400 2018-07-04 #merch:tshirt two more tshirt sales
-200 2018-07-05 #dues:tobias
-700 2018-07-05 #dues:ana
-700 2018-07-05 #dues:mazakazu !months:-1:1
-700 2018-07-05 #dues:richard
-700 2018-07-05 #dues:manolis !months:-1:1
-700 2018-07-05 #dues:neil
-700 2018-07-05 #dues:james
-50 2018-07-05 #supporters fung !months:-1:1
+100  2018-07-01 money from donations tin
+200  2018-07-04 #merch:tshirt
+700  2018-07-04 #dues:tom membership for july
+400  2018-07-04 #merch:tshirt two more tshirt sales
+200  2018-07-05 #dues:tobias
+700  2018-07-05 #dues:ana
+700  2018-07-05 #dues:mazakazu !months:-1:1
+700  2018-07-05 #dues:richard
+700  2018-07-05 #dues:manolis !months:-1:1
+700  2018-07-05 #dues:neil
+700  2018-07-05 #dues:james
+50   2018-07-05 #supporters fung !months:-1:1
 -650 2018-07-05 #fees:paypal
-200 2018-07-07 #merch:tshirt
-200 2018-07-11 #merch:tshirt
-700 2018-07-11 #dues:sam
-260 2018-07-11 #fridge
-40 2018-07-13 #fridge
-700 2018-07-18 #dues:julianlee
-700 2018-07-18 #dues:cathy
+200  2018-07-07 #merch:tshirt
+200  2018-07-11 #merch:tshirt
+700  2018-07-11 #dues:sam
+260  2018-07-11 #fridge
+40   2018-07-13 #fridge
+700  2018-07-18 #dues:julianlee
+700  2018-07-18 #dues:cathy
 -398.82 2018-07-18 #fees:paypal
-700 2018-07-23 #dues:manolis
-700 2018-07-23 #dues:richard !months:1:1
-200 2018-07-23 #dues:tobias !months:-1:1
+700  2018-07-23 #dues:manolis
+700  2018-07-23 #dues:richard !months:1:1
+200  2018-07-23 #dues:tobias !months:-1:1
 -434.38 2018-07-23 #fees:paypal
-300 2018-07-23 #dues:brad
-50 2018-07-23 #workshop donation by CHIC
-700 2018-07-26 #dues:alex !months:13:1
-700 2018-07-26 #dues:anthony !months:5:1
-700 2018-07-26 #dues:audrey !months:6:1
-700 2018-07-26 #dues:meebey !months:5:1
-700 2018-07-26 #dues:nicolas !months:6:1
-433 2018-07-26 #dues:hamish !months:6:1
-0.2 2018-07-26 #donation:members
+300  2018-07-23 #dues:brad
+50   2018-07-23 #workshop donation by CHIC
+700  2018-07-26 #dues:alex !months:13:1
+700  2018-07-26 #dues:anthony !months:5:1
+700  2018-07-26 #dues:audrey !months:6:1
+700  2018-07-26 #dues:meebey !months:5:1
+700  2018-07-26 #dues:nicolas !months:6:1
+433  2018-07-26 #dues:hamish !months:6:1
+0.2  2018-07-26 #donation:members
 -14000 2018-07-26 #bills:rent !months:1:1
-700 2018-07-27 #dues:mazakazu
-700 2018-07-27 #dues:daniel !months:1:1
-400 2018-07-27 #fees:paypal
-50 2018-07-28 #fridge
-470 2018-07-28 #fridge
-10 2018-07-30 #fridge
+700  2018-07-27 #dues:mazakazu
+700  2018-07-27 #dues:daniel !months:1:1
+400  2018-07-27 #fees:paypal
+50   2018-07-28 #fridge
+470  2018-07-28 #fridge
+10   2018-07-30 #fridge
 #balance 2330

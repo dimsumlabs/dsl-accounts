@@ -1,43 +1,43 @@
 #balance 2330 opening balance for the month
 1000 2018-08-14 #dues:adam !months:-1:2
-500 2018-08-14 #dues:jerry
-148 2018-08-18 #donation:members money for temporary internet
+500  2018-08-14 #dues:jerry
+148  2018-08-18 #donation:members money for temporary internet
 -148 2018-08-18 #bills:internet SmartOne prepaid 5Gig mobile data
-300 2018-08-19 #fridge
-700 2018-08-19 #dues:tom
-100 2018-08-19 money from donations box
-20 2018-08-19 #workshop donations from the re-create workshop
-40 2018-08-19 #donation:members !months:-2:1 round June up to a positive balance
+300  2018-08-19 #fridge
+700  2018-08-19 #dues:tom
+100  2018-08-19 money from donations box
+20   2018-08-19 #workshop donations from the re-create workshop
+40   2018-08-19 #donation:members !months:-2:1 round June up to a positive balance
 # counted the cash it was $2660 - note, not the whole balance as the finances are still split at the moment
-700 2018-08-21 #dues:julianlee
-700 2018-08-21 #dues:ana
-700 2018-08-21 !id:paypal:7ED557048G200405C #dues:cathy
-700 2018-08-21 !id:paypal:96539758KS663894F #dues:manolis
-200 2018-08-21 !id:paypal:0VE05978A59584924 #dues:tobias
-50 2018-08-21 #fridge
-169.9 2018-08-21 #fees:paypal
+700  2018-08-21 #dues:julianlee
+700  2018-08-21 #dues:ana
+700  2018-08-21 !id:paypal:7ED557048G200405C #dues:cathy
+700  2018-08-21 !id:paypal:96539758KS663894F #dues:manolis
+200  2018-08-21 !id:paypal:0VE05978A59584924 #dues:tobias
+50   2018-08-21 #fridge
+169.9  2018-08-21 #fees:paypal
 -150.9 2018-08-21 #fridge fill up with some drinks
 -585 2018-08-22 #bills:electricity !months:-2:1
 -389 2018-08-22 #bills:electricity !months:-1:1
-400 2018-08-22 #workshop LED Earrings
-15 2018-08-22 #workshop Space Museum Visit
+400  2018-08-22 #workshop LED Earrings
+15   2018-08-22 #workshop Space Museum Visit
 1200 2018-08-22 #workshop Maker Faire Introduction to Arduino (6 participants) !months:-1:1
 1164 2018-08-22 #workshop Maker Faire LED Earrings (11 participants) !months:-1:1
 -300 2018-08-22 #workshop Maker Faire Registration !months:-1:1
 1925 2018-08-25 extra cash found when counting
-11 2018-08-25 #donation:members round up total
-700 2018-08-25 #dues:meebey !months:5:1
-700 2018-08-25 #dues:alex !months:13:1
-700 2018-08-25 #dues:anthony !months:5:1
-185 2018-08-25 #dues:hamish !months:5:1
-215 2018-08-25 #dues:hamish !months:6:1
+11   2018-08-25 #donation:members round up total
+700  2018-08-25 #dues:meebey !months:5:1
+700  2018-08-25 #dues:alex !months:13:1
+700  2018-08-25 #dues:anthony !months:5:1
+185  2018-08-25 #dues:hamish !months:5:1
+215  2018-08-25 #dues:hamish !months:6:1
 -14000 2018-08-25 #bills:rent !months:1:1 Rent for Sep
-700 2018-08-24 !id:paypal:11116965R1553873L #dues:mazakazu
-700 2018-08-24 !id:paypal:37M86392XP9126043 #dues:richard !months:1:1
-700 2018-08-26 !id:paypal:98G869867P5578119 #dues:sunny
+700  2018-08-24 !id:paypal:11116965R1553873L #dues:mazakazu
+700  2018-08-24 !id:paypal:37M86392XP9126043 #dues:richard !months:1:1
+700  2018-08-26 !id:paypal:98G869867P5578119 #dues:sunny
 -800 2018-08-28 #fees:paypal
-700 2018-08-29 !id:paypal:4H704245YD033634P #dues:neil
-700 2018-08-29 !id:paypal:7JF885228S688203J #dues:james
-100 2018-08-30 #workshop Hype Explainers Machine Learning
-375 2018-08-26 #workshop Introduction to Soldering (2 participants and 1 member)
+700  2018-08-29 !id:paypal:4H704245YD033634P #dues:neil
+700  2018-08-29 !id:paypal:7JF885228S688203J #dues:james
+100  2018-08-30 #workshop Hype Explainers Machine Learning
+375  2018-08-26 #workshop Introduction to Soldering (2 participants and 1 member)
 #balance 3175

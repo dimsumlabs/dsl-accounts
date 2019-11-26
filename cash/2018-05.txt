@@ -1,46 +1,46 @@
 #balance 520 opening balance for the month
-100 2018-05-01 #fridge
-130 2018-05-10 donations from the tin
-200 2018-05-10 #merch:tshirt
-700 2018-05-10 #dues:tom
-260 2018-05-10 #fridge
-700 2018-05-10 #dues:audrey
-700 2018-05-10 #dues:hamish
-100 2018-05-10 market visit donation
+100  2018-05-01 #fridge
+130  2018-05-10 donations from the tin
+200  2018-05-10 #merch:tshirt
+700  2018-05-10 #dues:tom
+260  2018-05-10 #fridge
+700  2018-05-10 #dues:audrey
+700  2018-05-10 #dues:hamish
+100  2018-05-10 market visit donation
 -140 2018-05-13 #fridge
-100 2018-05-13 #fridge
-60 2018-05-16 donations
-300 2018-05-16 #dues:brad
-500 2018-05-23 #dues:hamish !months:-13:1
-500 2018-05-23 #dues:hamish !months:-16:1
-500 2018-05-23 #dues:hamish !months:-17:1
-300 2018-05-23 #loan loan from hamish
+100  2018-05-13 #fridge
+60   2018-05-16 donations
+300  2018-05-16 #dues:brad
+500  2018-05-23 #dues:hamish !months:-13:1
+500  2018-05-23 #dues:hamish !months:-16:1
+500  2018-05-23 #dues:hamish !months:-17:1
+300  2018-05-23 #loan loan from hamish
 -12500 2018-05-24 #bills:rent Rent for May (was due in April)
 7000 2018-05-24 #loan loan from nicolas
-500 2018-05-24 #workshop introduction to Arduino by Tom
-290 2018-05-25 #fridge
-700 2018-05-25 #dues:manolis
-200 2018-05-25 #dues:tobias
-700 2018-05-25 #dues:richard !months:1:1
-700 2018-05-25 #dues:mazakazu
-100 2018-05-25 donations Hua Qiang Bei visit
+500  2018-05-24 #workshop introduction to Arduino by Tom
+290  2018-05-25 #fridge
+700  2018-05-25 #dues:manolis
+200  2018-05-25 #dues:tobias
+700  2018-05-25 #dues:richard !months:1:1
+700  2018-05-25 #dues:mazakazu
+100  2018-05-25 donations Hua Qiang Bei visit
 -100 2018-05-25 #fees:paypal
 -2300 2018-05-25 #loan loan from nicolas (4700)
-700 2018-05-28 #dues:sunny !months:1:1
-700 2018-05-28 #dues:nicolas !months:1:1
-50 2018-05-28 #supporters fung
-25 2018-05-28 donations from Ho Oi Fung
--60 2018-05-28 #fees:paypal
+700  2018-05-28 #dues:sunny !months:1:1
+700  2018-05-28 #dues:nicolas !months:1:1
+50   2018-05-28 #supporters fung
+25   2018-05-28 donations from Ho Oi Fung
+-60  2018-05-28 #fees:paypal
 -1415 2018-05-28 #loan loan from nicolas (3285)
-60 2018-05-29 #fridge
+60   2018-05-29 #fridge
 -100 2018-05-29 #fridge
-300 2018-05-29 #dues:marble
-140 2018-05-29 #fridge
-150 2018-05-30 #workshop Introduction to Git 1/1 by Hamish (from Amy)
-50 2018-05-30 donations
-300 2018-05-30 #dues:jerry
-700 2018-05-30 #dues:meebey !months:1:1
-300 2018-05-30 #loan Meebey overpaid for his dues, convert it to a loan
-40 2018-05-30 #fridge
--50 2018-05-31 #fridge
+300  2018-05-29 #dues:marble
+140  2018-05-29 #fridge
+150  2018-05-30 #workshop Introduction to Git 1/1 by Hamish (from Amy)
+50   2018-05-30 donations
+300  2018-05-30 #dues:jerry
+700  2018-05-30 #dues:meebey !months:1:1
+300  2018-05-30 #loan Meebey overpaid for his dues, convert it to a loan
+40   2018-05-30 #fridge
+-50  2018-05-31 #fridge
 #balance 2710

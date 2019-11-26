@@ -1,52 +1,52 @@
 #balance 9332 opening balance for the month
-500 2018-01-02 "Anon"
-300 2018-01-02 #dues:brad !months:-1:1
-300 2018-01-02 #dues:brad
-500 2018-01-02 "Anon"
-500 2018-01-02 #dues:stigo
-700 2018-01-02 #dues:alex !months:-1:1
-500 2018-01-02 #dues:mb
-700 2018-01-02 #dues:meebey !months:-1:1
+500  2018-01-02 "Anon"
+300  2018-01-02 #dues:brad !months:-1:1
+300  2018-01-02 #dues:brad
+500  2018-01-02 "Anon"
+500  2018-01-02 #dues:stigo
+700  2018-01-02 #dues:alex !months:-1:1
+500  2018-01-02 #dues:mb
+700  2018-01-02 #dues:meebey !months:-1:1
 2500 2018-01-02 #donation:members advance lio
-700 2018-01-04 #dues:anthony
-300 2018-01-04 #dues:harry
-180 2018-01-04 #fridge
+700  2018-01-04 #dues:anthony
+300  2018-01-04 #dues:harry
+180  2018-01-04 #fridge
 -12500 2018-01-04 #bills:rent !months:-1:1 Rent for December
 # I counted the cash box and it totalled 170 (plus change) - as per Lio's note
 -3162 2018-01-08 balance the accounts and cashbox - TODO, ask Lio to help decode his note
 # FIXME #balance 170 , but calculated 1350
 1000 2018-01-09 #dues:adam !months:2
-5 2018-01-09 Counted some of the coins in the box
--95 2018-01-09 #fridge more more beer and softdrink for the bridge
-300 2018-01-16 #donation:members adam
-700 2018-01-16 #dues:audrey
-700 2018-01-16 #dues:meebey
-500 2018-01-16 #dues:julianlee
-500 2018-01-16 #dues:lio
-200 2018-01-16 #dues:stigo
-180 2018-01-16 Coins from the box
+5    2018-01-09 Counted some of the coins in the box
+-95  2018-01-09 #fridge more more beer and softdrink for the bridge
+300  2018-01-16 #donation:members adam
+700  2018-01-16 #dues:audrey
+700  2018-01-16 #dues:meebey
+500  2018-01-16 #dues:julianlee
+500  2018-01-16 #dues:lio
+200  2018-01-16 #dues:stigo
+180  2018-01-16 Coins from the box
 -180 2018-01-16 Paypal fees #fees:paypal
-500 2018-01-23 #dues:manolis
-200 2018-01-23 #dues:tobias
-700 2018-01-23 #dues:alex
-500 2018-01-23 #dues:tom
-50  2018-01-23 Donation
-500 2018-01-23 Donation
-20  2018-01-23 Donation
-20  2018-01-23 Donation
-500 2018-01-23 #fridge
-700 2018-01-23 #dues:hamish !months:1:1
-500 2018-01-25 #dues:pierre !months:1:1
-700 2018-01-25 #dues:mazakazu
-500 2018-01-25 #dues:richard !months:1:1
-500 2018-01-25 #dues:sunny !months:1:1
-700 2018-01-25 #dues:nicolas !months:1:1
-500 2018-01-25 #dues:james !months:1:1
-500 2018-01-25 #dues:christopher
-500 2018-01-25 #dues:neil !months:1:1
+500  2018-01-23 #dues:manolis
+200  2018-01-23 #dues:tobias
+700  2018-01-23 #dues:alex
+500  2018-01-23 #dues:tom
+50   2018-01-23 Donation
+500  2018-01-23 Donation
+20   2018-01-23 Donation
+20   2018-01-23 Donation
+500  2018-01-23 #fridge
+700  2018-01-23 #dues:hamish !months:1:1
+500  2018-01-25 #dues:pierre !months:1:1
+700  2018-01-25 #dues:mazakazu
+500  2018-01-25 #dues:richard !months:1:1
+500  2018-01-25 #dues:sunny !months:1:1
+700  2018-01-25 #dues:nicolas !months:1:1
+500  2018-01-25 #dues:james !months:1:1
+500  2018-01-25 #dues:christopher
+500  2018-01-25 #dues:neil !months:1:1
 -12500 2018-01-25 #bills:rent
 -400 2018-01-25 Paypal fees #fees:paypal
 -100 2018-01-25 #fridge soft drinks (change in the blue box)
-700 2018-01-30 #dues:anthony !months:1:1
-500 2018-01-30 #dues:jonathan !months:1:1
+700  2018-01-30 #dues:anthony !months:1:1
+500  2018-01-30 #dues:jonathan !months:1:1
 #balance 1450

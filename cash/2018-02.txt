@@ -1,31 +1,31 @@
 #balance 1450 opening balance for the month
-300 2018-02-06 #dues:stigo
-500 2018-02-06 #dues:julianlee
-200 2018-02-06 #dues:stigo
-700 2018-02-06 #dues:alex
-100 2018-02-06 donations
-100 2018-02-06 #fridge
-500 2018-02-06 #dues:tom
+300  2018-02-06 #dues:stigo
+500  2018-02-06 #dues:julianlee
+200  2018-02-06 #dues:stigo
+700  2018-02-06 #dues:alex
+100  2018-02-06 donations
+100  2018-02-06 #fridge
+500  2018-02-06 #dues:tom
 -130.40 2018-02-06 #fridge (change in coins in the blue box)
-200 2018-02-08 #fridge
-700 2018-02-13 #dues:meebey
-700 2018-02-13 #dues:audrey
-300 2018-02-13 #dues:brad
-20 2018-02-13 donations
+200  2018-02-08 #fridge
+700  2018-02-13 #dues:meebey
+700  2018-02-13 #dues:audrey
+300  2018-02-13 #dues:brad
+20   2018-02-13 donations
 -130.40 2018-02-13 #fridge (change in coins in the blue box)
 -976 2018-02-13 #bills:internet !months:-2:2
 # I counted the cash box and there was 4540HKD
 6.80 2018-02-25 donations - round up the total
 #balance 4540
-200 2018-02-25 #dues:marble
-250 2018-02-25 #fridge
-700 2018-02-25 #dues:hamish !months:1:1
-700 2018-02-27 #dues:manolis
-700 2018-02-27 #dues:richard !months:1:1
-700 2018-02-27 #dues:mazakazu
-700 2018-02-27 #dues:sunny !months:1:1
-200 2018-02-27 #dues:tobias
-700 2018-02-27 #dues:jim
+200  2018-02-25 #dues:marble
+250  2018-02-25 #fridge
+700  2018-02-25 #dues:hamish !months:1:1
+700  2018-02-27 #dues:manolis
+700  2018-02-27 #dues:richard !months:1:1
+700  2018-02-27 #dues:mazakazu
+700  2018-02-27 #dues:sunny !months:1:1
+200  2018-02-27 #dues:tobias
+700  2018-02-27 #dues:jim
 -400 2018-02-27 Paypal fees #fees:paypal
 4800 2018-02-28 #loan nicholas
 -488 2018-02-28 #bills:internet

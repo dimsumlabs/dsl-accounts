@@ -11,44 +11,44 @@
 260  2018-06-04 !months:4:1 #dues:hamish remainder so that these dues match the below two expenses
 -12500 2018-06-04 #bills:rent Rent for June - was due 24th May (this is paying our back-rent owed)
 -7360 2018-06-04 !months:12 #bills:br Create a new legal entity to operate the club
-400 2018-06-05 #dues:gregg
-500 2018-06-06 #dues:christopher
-700 2018-06-06 #dues:james
-700 2018-06-06 #dues:neil
-300 2018-06-06 #workshop Into to Git x2 part 1
-700 2018-06-06 #dues:alex !months:-1:1
-100 2018-06-06 donations by Shoji
+400  2018-06-05 #dues:gregg
+500  2018-06-06 #dues:christopher
+700  2018-06-06 #dues:james
+700  2018-06-06 #dues:neil
+300  2018-06-06 #workshop Into to Git x2 part 1
+700  2018-06-06 #dues:alex !months:-1:1
+100  2018-06-06 donations by Shoji
 -400 2018-06-06 #fees:paypal
 -100 2018-06-07 #fridge
-250 2018-06-07 #fridge
-800 2018-06-09 Extra money found when counting cash box
+250  2018-06-07 #fridge
+800  2018-06-09 Extra money found when counting cash box
 #x balance 7600 I counted the cash box and good news - this the balance (800 more than expected)
 #balance 7600
-70 2018-06-09 counted the donations tin
-700 2018-06-09 #dues:tom paid for June
-750 2018-06-09 #workshop Introduction to Arduino (6 attendees, one was a member)
-450 2018-06-09 #workshop Visit JCCAC and SSP
+70   2018-06-09 counted the donations tin
+700  2018-06-09 #dues:tom paid for June
+750  2018-06-09 #workshop Introduction to Arduino (6 attendees, one was a member)
+450  2018-06-09 #workshop Visit JCCAC and SSP
 -300 2018-06-09 #loan transfer meebey's loan from last month into his prepayment
 -1170 2018-06-09 #bills:electricity !months:-3:3
-30 2018-06-09 #merch:sticker Sell some sticker to James
-200 2018-06-09 #merch:tshirt sell a yet-to-be-delivered tshirt to James (we have some money for shipping too)
-700 2018-06-25 !months:5:1 #dues:anthony
-700 2018-06-25 !months:12:1 #dues:alex
-700 2018-06-25 !months:5:1 #dues:meebey
-700 2018-06-25 !months:6:1 #dues:nicolas
+30   2018-06-09 #merch:sticker Sell some sticker to James
+200  2018-06-09 #merch:tshirt sell a yet-to-be-delivered tshirt to James (we have some money for shipping too)
+700  2018-06-25 !months:5:1 #dues:anthony
+700  2018-06-25 !months:12:1 #dues:alex
+700  2018-06-25 !months:5:1 #dues:meebey
+700  2018-06-25 !months:6:1 #dues:nicolas
 1400 2018-06-25 !months:5:2 #dues:audrey
-440 2018-06-25 !months:4:1 #dues:hamish
-700 2018-06-25 !months:5:1 #dues:hamish
-330 2018-06-25 !months:6:1 #dues:hamish
+440  2018-06-25 !months:4:1 #dues:hamish
+700  2018-06-25 !months:5:1 #dues:hamish
+330  2018-06-25 !months:6:1 #dues:hamish
 -14000 2018-06-25 !months:1:1 #bills:rent Rent for July - was due on the day before - a sunday
 1500 2018-06-26 #dues:adam !months:-1:2
 -976 2018-06-25 #bills:internet (TODO - work out which months this was actually for!) !months:-3:2
-370 2018-06-25 !months:6:1 #dues:hamish
-82 2018-06-25 !months:7:1 #dues:hamish
+370  2018-06-25 !months:6:1 #dues:hamish
+82   2018-06-25 !months:7:1 #dues:hamish
 -976 2018-06-25 #bills:internet (includes "04/06 - 03/07" - so all the internet bills are off by one month) (TODO - work out which months this was actually for!) !months:-1:2
-192 2018-06-27 #fridge
--92 2018-06-27 #fridge fill the fridge
-50 2018-06-27 money in the donations tin
-300 2018-06-27 #dues:brad
-500 2018-06-28 #workshop Advanced Arduino by Tom (3 attendees)
+192  2018-06-27 #fridge
+-92  2018-06-27 #fridge fill the fridge
+50   2018-06-27 money in the donations tin
+300  2018-06-27 #dues:brad
+500  2018-06-28 #workshop Advanced Arduino by Tom (3 attendees)
 #balance 950
