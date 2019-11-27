@@ -1,0 +1,4 @@
+# paypal automated payments
+#
+
+840 2019-10-17 #dues:gary !forecast:monthly
