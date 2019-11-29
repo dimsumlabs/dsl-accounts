@@ -33,3 +33,4 @@
 300  2019-11-26 #donation:members nicolas for long use of the laser cutter Cash on Bank
 -185 2019-11-26 #fridge
 200  2019-11-29 !id:paypal:00718377MG1081452 #dues:tania !months:1:1
+700  2019-11-29 #dues:audrey
