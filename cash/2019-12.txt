@@ -1,2 +1,3 @@
 #balance 6907 opening balance
 1000 2019-12-01 #dues:hamish
+400 2019-12-03 #fridge
