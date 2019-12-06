@@ -3,3 +3,4 @@
 400 2019-12-03 #fridge
 100 2019-12-03 #donation
 -238 2019-12-06 #bills:internet !months:-1:1
+200 2019-12-06 #fridge
