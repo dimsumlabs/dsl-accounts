@@ -4,3 +4,5 @@
 100 2019-12-03 #donation
 -238 2019-12-06 #bills:internet !months:-1:1
 200 2019-12-06 #fridge
+-414 2019-12-06 #bills:meetup !months:-2:2
+414 2019-12-07 #donation:members !months:-2:2 Audrey pays the meetup bill
