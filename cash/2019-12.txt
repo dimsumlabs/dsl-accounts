@@ -6,3 +6,7 @@
 200 2019-12-06 #fridge
 -414 2019-12-06 #bills:meetup !months:-2:2
 414 2019-12-07 #donation:members !months:-2:2 Audrey pays the meetup bill
+-447.84 2019-12-06 #bills:electricity !months:-2:1
+0.84 2019-12-06 #donation:members !months:-2:1 eradicate free decimals
+-278.16 2019-12-06 #bills:electricity !months:-1:1
+0.16 2019-12-06 #donation:members !months:-1:1 eradicate free decimals
