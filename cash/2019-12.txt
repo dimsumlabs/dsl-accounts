@@ -21,4 +21,4 @@
 1000 2019-12-16 !id:paypal:9A155444ES458514T #dues:bryan Cash on Paypal
 700  2019-12-17 #dues:nicolas Cash on Bank
 700  2019-12-17 !id:paypal:09N7248102347480L #dues:sunny Cash on Paypal
-2000 2019-12-17 #dues:meebey Cash on Bank
+2000 2019-12-17 #dues:meebey !months:0:2 Cash on Bank
