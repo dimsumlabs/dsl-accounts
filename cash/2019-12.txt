@@ -22,3 +22,6 @@
 700  2019-12-17 #dues:nicolas Cash on Bank
 700  2019-12-17 !id:paypal:09N7248102347480L #dues:sunny Cash on Paypal !months:-1:1
 2000 2019-12-17 #dues:meebey !months:0:2 Cash on Bank
+840  2019-12-17 !id:paypal:1MS08680ND8651728 #dues:gary Cash on Paypal
+700  2019-12-18 !id:paypal:59K5999279821045M #dues:manolis Cash on Paypal
+1000 2019-12-18 !id:paypal:9UN168152G590552G #dues:anthony Cash on paypal !months:1:1
