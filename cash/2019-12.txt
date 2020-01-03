@@ -25,3 +25,6 @@
 840  2019-12-17 !id:paypal:1MS08680ND8651728 #dues:gary Cash on Paypal
 700  2019-12-18 !id:paypal:59K5999279821045M #dues:manolis Cash on Paypal
 1000 2019-12-18 !id:paypal:9UN168152G590552G #dues:anthony Cash on paypal !months:1:1
+40   2019-12-28 #donation:members !months:1:1 Hamish pays the hosting
+-40  2019-12-28 #bills:hosting !months:1:1 !id:cac:12765090
+#balance 19564 closing balance
