@@ -2,3 +2,4 @@
 700 2020-01-03 #dues:audrey !months:-1:1
 -14000 2020-01-03 #bills:rent
 30 2020-01-03 #donation
+450 2020-01-03 #fridge
