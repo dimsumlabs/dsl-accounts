@@ -1,2 +1,3 @@
 #balance 19564 opening balance
 700 2020-01-03 #dues:audrey !months:-1:1
+-14000 2020-01-03 #bills:rent
