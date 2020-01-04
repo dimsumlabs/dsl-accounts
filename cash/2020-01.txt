@@ -5,3 +5,5 @@
 450 2020-01-03 #fridge
 1000 2020-01-03 #dues:hamish
 -77 2020-01-04 #fridge
+-201 2020-01-04 #bills:electricity !months:-1:1
+-238 2020-01-04 #bills:internet !months:-1:1
