@@ -1,0 +1,5 @@
+# paypal automated payments
+#
+
+# stig
+100 2020-01-07 #supporters !forecast:monthly
