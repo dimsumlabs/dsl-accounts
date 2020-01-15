@@ -18,3 +18,9 @@
 700  2020-01-06 !id:paypal:7XX78394UE897563M #dues:antonia Cash on Paypal
 180  2019-12-30 #merch:kits LED earrings
 -180 2020-01-10 #loan !months:-1:1 Pay earrings towards loan
+100  2020-01-07 !id:paypal:79L42520PM3129443 #supporters stig Cash on Paypal
+700  2020-01-08 !id:paypal:9XF16345JS428263L #dues:lawrence Cash On Paypal
+700  2020-01-10 #dues:nicolas Cash on Bank
+700  2020-01-10 !id:paypal:1FF97091628205308 #dues:alex Cash on Paypal !months:1:1
+840  2020-01-12 !id:paypal:1SY700287A254373H #dues:garry Cash on Paypal
+700  2020-01-15 #dues:felix Cash on Bank
