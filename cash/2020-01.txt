@@ -25,3 +25,5 @@
 840  2020-01-12 !id:paypal:1SY700287A254373H #dues:gary Cash on Paypal
 700  2020-01-15 #dues:felix Cash on Bank
 300  2020-01-21 #dues:georgia Cash on Bank
+40   2020-01-24 #donation:members !months:1:1 Hamish pays the hosting
+-40  2020-01-24 #bills:hosting !months:1:1 !id:cac:12766756
