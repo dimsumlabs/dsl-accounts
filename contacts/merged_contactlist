@@ -1,0 +1,81 @@
+#!/usr/bin/env perl
+use warnings;
+use strict;
+#
+# Read in the three data sources and output a list of email addresses to
+# contact members not on the mailing list
+#
+# door.csv - csv data from the door system
+# mailinglist.csv - csv data from the current subscriber list
+# members.csv - csv data from the accounts repo
+#
+# needs
+#   sudo apt install libtext-csv-perl
+#
+
+use Text::CSV qw(csv);
+
+use Data::Dumper;
+$Data::Dumper::Indent = 1;
+$Data::Dumper::Sortkeys = 1;
+$Data::Dumper::Quotekeys = 0;
+
+sub main {
+    my $input_door = $ARGV[0] || die "need door.csv filename";
+    my $input_mail = $ARGV[1] || die "need mailinglist.csv filename";
+    my $input_memb = $ARGV[2] || die "need members.csv filename";
+
+    my $door = csv(in=>$input_door, headers=>"auto");
+    my $mail = csv(in=>$input_mail, headers=>"auto");
+    my $memb = csv(in=>$input_memb, headers=>"auto", key=>"handle");
+
+    my $db = {};
+
+    # populate the members list
+    $db->{memb} = $memb;
+
+    # find matching door accounts and fill in the email
+    for my $ent (@{$door}) {
+        next if ($ent->{hashtag} ne "dues");
+        next if (!defined($db->{memb}{$ent->{tag}}));
+
+        my $memb = $db->{memb}{$ent->{tag}};
+
+        if (defined($memb->{email})) {
+            ...
+        }
+        $memb->{email} = lc $ent->{email};
+        $memb->{last_login} = $ent->{last_login};
+        $memb->{is_active} = $ent->{is_active};
+
+        # add reverse mappings
+        $db->{email}{$memb->{email}} = $ent;
+        $ent->{_memb} = $memb;
+    }
+
+    # Add the mailing list entries to the database, and mark
+    for my $ent (@{$mail}) {
+        my $email = lc $ent->{email};
+        if (!defined($db->{email}{$email})) {
+            $db->{email}{$email} = $ent;
+        }
+        $email = $db->{email}{$email};
+        $email->{mailinglist} = 1;
+
+        if (defined($email->{_memb})) {
+            $email->{_memb}{onlist} = "onlist";
+        }
+    }
+
+    # output all the memb entries that are not skipped
+    my @aoh = values(%{$db->{memb}});
+    my @fields = qw(email handle month_last_paid last_login is_active onlist);
+
+    if (scalar(@ARGV) > 3) {
+        print Dumper($db);
+    }
+
+    csv(in=>\@aoh, out=>*STDOUT, headers=>\@fields);
+}
+main();
+

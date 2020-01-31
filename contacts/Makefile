@@ -1,7 +1,7 @@
 #
 #
 
-OUTPUTS := members.csv mailinglist.csv door.csv
+OUTPUTS := members.csv mailinglist.csv door.csv merged_contactlist.csv
 
 all: $(OUTPUTS)
 
@@ -16,3 +16,6 @@ mailinglist.csv:
 
 door.csv:
 	./from_door >$@
+
+merged_contactlist.csv: door.csv mailinglist.csv members.csv
+	./merged_contactlist $^ >$@
