@@ -3,7 +3,7 @@
 # Download the door user database
 #
 
-echo "select hashtag, tag, email, username, first_name, last_name, date_joined, last_login, is_active from auth_user left join hackman_payments_paymenttag on auth_user.id == hackman_payments_paymenttag.user_id order by email;" | ssh pi@door.dimsumlabs.com -p 2222 sqlite3 -csv -header /var/www/hackman/db.sqlite3 
+echo "select hashtag, tag, email, username, first_name, last_name, date_joined, last_login, is_active from auth_user left join hackman_payments_paymenttag on auth_user.id == hackman_payments_paymenttag.user_id order by email;" | ssh door.dsl sqlite3 -csv -header /var/www/hackman/db.sqlite3
 
 # TODO uclc
 
