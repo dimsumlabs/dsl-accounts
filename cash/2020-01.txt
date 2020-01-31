@@ -36,8 +36,9 @@
 700  2020-01-26 !id:paypal:9M022415EY615013E #dues:sunny Cash on Paypal
 300  2020-01-29 !id:paypal:1WD11450A0894470W #dues:tania Cash on Paypal !months:1:1
 500  2020-01-31 !id:paypal:1M373812AH001651J #dues:sayon Cash on Paypal
-567  2020-01-31 #fees:paypal
-356  2020-01-31 #fees:paypal !months:-1:1
-510  2020-01-31 #fees:paypal !months:-2:1
+-567 2020-01-31 #fees:paypal
+-356 2020-01-31 #fees:paypal !months:-1:1
+-510 2020-01-31 #fees:paypal !months:-2:1
+-14000 2020-01-21 #bills:rent !months:1:1
 
 
