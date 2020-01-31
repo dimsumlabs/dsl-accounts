@@ -27,3 +27,14 @@
 300  2020-01-21 #dues:georgia Cash on Bank
 40   2020-01-24 #donation:members !months:1:1 Hamish pays the hosting
 -40  2020-01-24 #bills:hosting !months:1:1 !id:cac:12766756
+1000 2020-01-16 !id:paypal:832988752Y012400W #dues:bryan Cash on Paypal
+700  2020-01-18 !id:paypal:4EG397071U9422243 #dues:manolis Cash on Paypal
+1000 2020-01-18 !id:paypal:1V866464Y33019804 #dues:anthony Cash on Paypal !months:1:1
+1000 2020-01-19 !id:paypal:6YL38764MT280242H #dues:philip Cash on Paypal !months:1:1
+700  2020-01-21 !id:paypal:446840206F9828444 #dues:richard Cash on Paypal !months:1:1
+700  2020-01-24 !id:paypal:7VK45914PY339893S #dues:neilg Cash on Paypal !months:1:1
+700  2020-01-26 !id:paypal:9M022415EY615013E #dues:sunny Cash on Paypal
+300  2020-01-29 !id:paypal:1WD11450A0894470W #dues:tania Cash on Paypal !months:1:1
+500  2020-01-31 !id:paypal:1M373812AH001651J #dues:sayon Cash on Paypal
+
+
