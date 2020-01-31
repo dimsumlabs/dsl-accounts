@@ -8,23 +8,23 @@
 -201 2020-01-04 #bills:electricity !months:-1:1
 -238 2020-01-04 #bills:internet !months:-1:1
 130  2020-01-06 #fridge
-700  2020-01-06 !id:paypal:1TK2120152265082Y #dues:richard Cash on Paypal
-700  2020-01-06 !id:paypal:1EA22329018893548 #dues:neilg Cash on Paypal
-700  2020-01-06 !id:paypal:367488610P803993B #dues:sunny Cash on Paypal !months:-1:1
-300  2020-01-06 !id:paypal:76A625556W138960Y #dues:tania Cash on Paypal
-800  2020-01-06 !id:paypal:9XW48028SN978491V #dues:neil Cash on Paypal !months:1:1
-1000 2020-01-06 !id:paypal:8A584006GB732322E #dues:lio Cash on Paypal
-300  2020-01-06 !id:paypal:3L283107L9552872H #dues:max Cash on Paypal
-700  2020-01-06 !id:paypal:7XX78394UE897563M #dues:antonia Cash on Paypal
+700  2020-01-06 !id:paypal:1TK2120152265082Y #dues:richard
+700  2020-01-06 !id:paypal:1EA22329018893548 #dues:neilg
+700  2020-01-06 !id:paypal:367488610P803993B #dues:sunny !months:-1:1
+300  2020-01-06 !id:paypal:76A625556W138960Y #dues:tania
+800  2020-01-06 !id:paypal:9XW48028SN978491V #dues:neil !months:1:1
+1000 2020-01-06 !id:paypal:8A584006GB732322E #dues:lio
+300  2020-01-06 !id:paypal:3L283107L9552872H #dues:max
+700  2020-01-06 !id:paypal:7XX78394UE897563M #dues:antonia
 180  2019-12-30 #merch:kits LED earrings
 -180 2020-01-10 #loan !months:-1:1 Pay earrings towards loan
-100  2020-01-07 !id:paypal:79L42520PM3129443 #supporters stig Cash on Paypal
+100  2020-01-07 !id:paypal:79L42520PM3129443 #supporters stig
 700  2020-01-08 !id:paypal:9XF16345JS428263L #dues:lawrence Cash On Paypal
-700  2020-01-10 #dues:nicolas Cash on Bank
+700  2020-01-10 #dues:nicolas
 700  2020-01-10 !id:paypal:1FF97091628205308 #dues:alex Cash on Paypal !months:1:1
 840  2020-01-12 !id:paypal:1SY700287A254373H #dues:gary Cash on Paypal
-700  2020-01-15 #dues:felix Cash on Bank
-300  2020-01-21 #dues:georgia Cash on Bank
+700  2020-01-15 #dues:felix
+300  2020-01-21 #dues:georgia
 40   2020-01-24 #donation:members !months:1:1 Hamish pays the hosting
 -40  2020-01-24 #bills:hosting !months:1:1 !id:cac:12766756
 1000 2020-01-16 !id:paypal:832988752Y012400W #dues:bryan Cash on Paypal

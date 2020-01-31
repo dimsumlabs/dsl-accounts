@@ -11,20 +11,20 @@
 -278.16 2019-12-06 #bills:electricity !months:-1:1
 0.16 2019-12-06 #donation:members !months:-1:1 eradicate free decimals
 -220 2019-12-07 #fridge
-800  2019-12-05 !id:paypal:5TU645235H982602V #dues:neil Cash on Paypal !months:1:1
-1000 2019-12-05 !id:paypal:3D811253N7318825E #dues:lio Cash on Paypal
-700  2019-12-06 !id:paypal:4R3467010R821551D #dues:antonia Cash on Paypal
-300  2019-12-06 !id:paypal:7N170290UT818561T #dues:max Cash on Paypal
-700  2019-12-08 !id:paypal:9RX91038GM8904406 #dues:lawrence Cash on Paypal
-700  2019-12-10 !id:paypal:84E85942Y6317780B #dues:alex Cash on Paypal !months:1:1
-1000 2019-12-15 !id:paypal:0MH44870LS5126311 #dues:philip Cash on Paypal !months:1:1
-1000 2019-12-16 !id:paypal:9A155444ES458514T #dues:bryan Cash on Paypal
-700  2019-12-17 #dues:nicolas Cash on Bank
-700  2019-12-17 !id:paypal:09N7248102347480L #dues:sunny Cash on Paypal !months:-1:1
-2000 2019-12-17 #dues:meebey !months:0:2 Cash on Bank
-840  2019-12-17 !id:paypal:1MS08680ND8651728 #dues:gary Cash on Paypal
-700  2019-12-18 !id:paypal:59K5999279821045M #dues:manolis Cash on Paypal
-1000 2019-12-18 !id:paypal:9UN168152G590552G #dues:anthony Cash on paypal !months:1:1
+800  2019-12-05 !id:paypal:5TU645235H982602V #dues:neil !months:1:1
+1000 2019-12-05 !id:paypal:3D811253N7318825E #dues:lio
+700  2019-12-06 !id:paypal:4R3467010R821551D #dues:antonia
+300  2019-12-06 !id:paypal:7N170290UT818561T #dues:max
+700  2019-12-08 !id:paypal:9RX91038GM8904406 #dues:lawrence
+700  2019-12-10 !id:paypal:84E85942Y6317780B #dues:alex !months:1:1
+1000 2019-12-15 !id:paypal:0MH44870LS5126311 #dues:philip !months:1:1
+1000 2019-12-16 !id:paypal:9A155444ES458514T #dues:bryan
+700  2019-12-17 #dues:nicolas
+700  2019-12-17 !id:paypal:09N7248102347480L #dues:sunny !months:-1:1
+2000 2019-12-17 #dues:meebey !months:0:2
+840  2019-12-17 !id:paypal:1MS08680ND8651728 #dues:gary
+700  2019-12-18 !id:paypal:59K5999279821045M #dues:manolis
+1000 2019-12-18 !id:paypal:9UN168152G590552G #dues:anthony !months:1:1
 40   2019-12-28 #donation:members !months:1:1 Hamish pays the hosting
 -40  2019-12-28 #bills:hosting !months:1:1 !id:cac:12765090
 #balance 19564 closing balance

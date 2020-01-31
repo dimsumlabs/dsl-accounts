@@ -1,7 +1,7 @@
 #balance 3540 opening balance
-700  2019-11-02 !id:paypal:8BT80901K7375044T #dues:julianlee Cash on Paypal
-500  2019-11-02 !id:paypal:4DL14478R67126352 #dues:urd Cash on paypal
-800  2019-11-05 !id:paypal:6AK764192X559112D #dues:neil Cash on Paypal !months:1:1
+700  2019-11-02 !id:paypal:8BT80901K7375044T #dues:julianlee
+500  2019-11-02 !id:paypal:4DL14478R67126352 #dues:urd
+800  2019-11-05 !id:paypal:6AK764192X559112D #dues:neil !months:1:1
 1000 2019-11-05 #dues:nicolas
 40   2019-11-05 #donation
 1000 2019-11-06 #dues:hamish
@@ -9,28 +9,28 @@
 300  2019-11-07 #fridge
 -40  2019-11-05 #bills:hosting
 40   2019-11-05 #donation:members Hamish pays the hosting
-1000 2019-11-05 !id:paypal:6EB838793P6839547 #dues:lio Cash on Paypal
-700  2019-11-06 !id:paypal:3UD59433GX909072B #dues:antonia Cash on Paypal
-300  2019-11-06 !id:paypal:7U8220153U129592Y #dues:max Cash on Paypal
-700  2019-11-08 !id:paypal:9D607421SF5741305 #dues:lawrence Cash on Paypal
-700  2019-11-10 !id:paypal:2PJ9648896024063F #dues:alex CAsh on Paypal !months:1:1
-300  2019-11-15 !id:paypal:8YH73453Y5025324W #dues:oliver Cash on Paypal
-1000 2019-11-16 !id:paypal:7JA746682A2042537 #dues:philip Cash on Paypal !months:1:1
-1000 2019-11-16 !id:paypal:8EN15289DM249193U #dues:bryan Cash on Paypal
+1000 2019-11-05 !id:paypal:6EB838793P6839547 #dues:lio
+700  2019-11-06 !id:paypal:3UD59433GX909072B #dues:antonia
+300  2019-11-06 !id:paypal:7U8220153U129592Y #dues:max
+700  2019-11-08 !id:paypal:9D607421SF5741305 #dues:lawrence
+700  2019-11-10 !id:paypal:2PJ9648896024063F #dues:alex !months:1:1
+300  2019-11-15 !id:paypal:8YH73453Y5025324W #dues:oliver
+1000 2019-11-16 !id:paypal:7JA746682A2042537 #dues:philip !months:1:1
+1000 2019-11-16 !id:paypal:8EN15289DM249193U #dues:bryan
 200  2019-11-25 #merch:tshirt Sold a t-shirt to Urd
 1000 2019-11-25 #dues:meebey
 50   2019-11-25 #donation Found in donation box
 360  2019-11-25 #fridge
 40   2019-11-21 #donation:members !months:1:1 Hamish pays the hosting
 -40  2019-11-21 #bills:hosting !months:1:1 !id:cac:12761770
-1000 2019-11-25 !id:paypal:9DF760536Y604071R #dues:anthony Cash on Paypal !months:1:1
+1000 2019-11-25 !id:paypal:9DF760536Y604071R #dues:anthony !months:1:1
 -14000 2019-11-25 #bills:rent !months:1:1
-1000 2019-11-18 !id:paypal:19B83758FD746303L #dues:anthony Cash on Paypal
-700  2019-11-18 !id:paypal:0US88721WA9386259 #dues:manolis Cash on Paypal
-700  2019-11-21 !id:paypal:53L65092B07103335 #dues:richard Cash on Paypal !months:1:1
-840  2019-11-22 !id:paypal:42V24957G4795783A #dues:gary Cash on Paypal
-700  2019-11-22 !id:paypal:9BY11976V2968330R #dues:neilg Cash on Paypal !months:1:1
-300  2019-11-26 #donation:members nicolas for long use of the laser cutter Cash on Bank
+1000 2019-11-18 !id:paypal:19B83758FD746303L #dues:anthony
+700  2019-11-18 !id:paypal:0US88721WA9386259 #dues:manolis
+700  2019-11-21 !id:paypal:53L65092B07103335 #dues:richard !months:1:1
+840  2019-11-22 !id:paypal:42V24957G4795783A #dues:gary
+700  2019-11-22 !id:paypal:9BY11976V2968330R #dues:neilg !months:1:1
+300  2019-11-26 #donation:members nicolas for long use of the laser cutter
 -185 2019-11-26 #fridge
 200  2019-11-29 !id:paypal:00718377MG1081452 #dues:tania !months:1:1
 700  2019-11-29 #dues:audrey
