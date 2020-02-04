@@ -1,0 +1,2 @@
+#balance 8465 opening balance
+700  2020-02-04 #dues:nicolas Cash on Bank
