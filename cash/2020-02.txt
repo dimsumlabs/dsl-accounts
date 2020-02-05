@@ -1,3 +1,5 @@
 #balance 8465 opening balance
 700  2020-02-04 #dues:nicolas Cash on Bank
 700  2020-02-04 #dues:felix Cash on Bank
+800  2020-02-05 !id:paypal:7RJ70761HR196384F #dues:neil Cash on Paypal !months:1:1
+1000 2020-02-05 !id:paypal:176583324N009694U #dues:lio Cash on Paypal
