@@ -3,3 +3,5 @@
 700  2020-02-04 #dues:felix Cash on Bank
 800  2020-02-05 !id:paypal:7RJ70761HR196384F #dues:neil Cash on Paypal !months:1:1
 1000 2020-02-05 !id:paypal:176583324N009694U #dues:lio Cash on Paypal
+700  2020-02-06 !id:paypal:3UX15072E7663130J #dues:antonia Cash On Paypal
+300  2020-02-06 !id:paypal:8GJ83656L40303814 #dues:max Cash On Paypal
