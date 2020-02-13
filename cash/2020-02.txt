@@ -12,4 +12,4 @@
 700  2020-02-08 !id:paypal:1EP344467R940121W #dues:lawrence Cash on paypal
 700  2020-02-10 !id:paypal:3XW86086WW448111D #dues:alex Cash on paypal !months:1:1
 840  2020-02-12 !id:paypal:3C901535B1084822E #dues:gary Cash on paypal
--118.6 2020-02-13 #fees:paypal
+-118.6 2020-02-13 #fees:paypal Deducted from bank
