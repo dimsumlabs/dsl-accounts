@@ -787,25 +787,32 @@ def subp_report_cashon(args):
     - Since this is not machine readable, nor is it checked against a
       whitelist of allowed markups, it is only a guess
     - Longer term, we should work out a better way to handle this issue.
+
+    TODO:
+    - add a bangtag for transaction location
     """
 
     groups = {}
+
+    # Instantiate all valid locations (any others will cause keyerrors)
     groups['none'] = RowSet()
     groups['bank'] = RowSet()
     groups['paypal'] = RowSet()
-    groups['bankpaypal'] = RowSet()
 
     for row in args.rows:
-        where = ''
+        where = 'none'
+        matches = 0
         if row.comment is None:
             continue
         if re.search(r'cash on bank', row.comment, re.IGNORECASE):
-            where += 'bank'
+            where = 'bank'
+            matches += 1
         if re.search(r'cash on paypal', row.comment, re.IGNORECASE):
-            where += 'paypal'
+            where = 'paypal'
+            matches += 1
 
-        if not where:
-            where = 'none'
+        if matches > 1:
+            raise ValueError("Multiple matches found in " + str(row))
 
         groups[where].append(row)
 
