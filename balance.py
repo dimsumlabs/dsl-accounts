@@ -790,6 +790,8 @@ def subp_report_cashon(args):
 
     TODO:
     - add a bangtag for transaction location
+    - consolidate the bank and bank_deduct groups - this may be simpler
+      once there is a bangtag as then we can update the transactions too
     """
 
     groups = {}
@@ -797,6 +799,7 @@ def subp_report_cashon(args):
     # Instantiate all valid locations (any others will cause keyerrors)
     groups['none'] = RowSet()
     groups['bank'] = RowSet()
+    groups['bank_deduct'] = RowSet()
     groups['paypal'] = RowSet()
 
     for row in args.rows:
@@ -806,6 +809,9 @@ def subp_report_cashon(args):
             continue
         if re.search(r'cash on bank', row.comment, re.IGNORECASE):
             where = 'bank'
+            matches += 1
+        if re.search(r'deducted from bank', row.comment, re.IGNORECASE):
+            where = 'bank_deduct'
             matches += 1
         if re.search(r'cash on paypal', row.comment, re.IGNORECASE):
             where = 'paypal'
