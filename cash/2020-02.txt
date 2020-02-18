@@ -17,3 +17,5 @@
 -101.16 2020-02-18 #fees:paypal Deducted from bank
 1000 2020-02-18 #dues:meebey Cash on Bank
 500  2020-02-18 #fridge Cash on Bank
+1000 2020-02-18 !id:paypal:45F56395VH2488213 #dues:anthony Cash on paypal !months:1:1
+700  2020-02-18 !id:paypal:8R2448029T0705715 #dues:manolis Cash on paypal
