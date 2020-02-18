@@ -1,0 +1,4 @@
+# payment in cash
+#
+
+1000 2020-02-18 #dues:yeojin !forecast:monthly
