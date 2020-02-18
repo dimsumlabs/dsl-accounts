@@ -7,10 +7,11 @@
 300  2020-02-06 !id:paypal:8GJ83656L40303814 #dues:max Cash on bank
 -230 2020-02-11 #bills:electricity Deducted from bank
 -238 2020-02-11 #bills:internet Deducted from bank
-100  2020-02-07 !id:paypal:8DG803567S2310820 supporters:stig Cash on paypal
-1000 2020-02-08 !id:paypal:9LF61025YV5063503 #dues:philip Cash on paypal !months:1:1
-700  2020-02-08 !id:paypal:1EP344467R940121W #dues:lawrence Cash on paypal
-700  2020-02-10 !id:paypal:3XW86086WW448111D #dues:alex Cash on paypal !months:1:1
-840  2020-02-12 !id:paypal:3C901535B1084822E #dues:gary Cash on paypal
+100  2020-02-07 !id:paypal:8DG803567S2310820 supporters:stig Cash on bank
+1000 2020-02-08 !id:paypal:9LF61025YV5063503 #dues:philip Cash on bank !months:1:1
+700  2020-02-08 !id:paypal:1EP344467R940121W #dues:lawrence Cash on bank
+700  2020-02-10 !id:paypal:3XW86086WW448111D #dues:alex Cash on bank !months:1:1
+840  2020-02-12 !id:paypal:3C901535B1084822E #dues:gary Cash on bank
 -118.6 2020-02-13 #fees:paypal Deducted from bank
 -238 2020-02-18 #bills:internet Deducted from bank
+-101.16 2020-02-18 #fees:paypal Deducted from bank
