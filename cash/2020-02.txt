@@ -16,3 +16,4 @@
 -238 2020-02-18 #bills:internet Deducted from bank
 -101.16 2020-02-18 #fees:paypal Deducted from bank
 1000 2020-02-18 #dues:meebey Cash on Bank
+500  2020-02-18 #fridge
