@@ -773,24 +773,25 @@ def subp_check_doubletxn(args):
         db[month][tag][value] = row
 
 
-def subp_report_cashon(args):
+def subp_report_location(args):
     """
     Report on the balance of each location found in the dataset.  For best
     results, the indivdual transactions should have a "location" bangtag.
     During a transition period, a comment pattern heuristic is applied.
 
     TODO:
-    - consolidate the bank and bank_deduct groups - this may be simpler
-      once there is a bangtag as then we can update the transactions too
+    - consolidate the bank and bank_deduct groups
+    - Update the old transactions to use the location bangtag and remove
+      the heuristics
     """
 
     for row in args.rows:
         if row.comment is None:
             continue
         if re.search(r'cash on bank', row.comment, re.IGNORECASE):
-            row._set_bangtag('location', ['bank'])
+            row._set_bangtag('location', ['bank_nic'])
         if re.search(r'deducted from bank', row.comment, re.IGNORECASE):
-            row._set_bangtag('location', ['bank_deduct'])
+            row._set_bangtag('location', ['bank_nic_deduct'])
         if re.search(r'cash on paypal', row.comment, re.IGNORECASE):
             row._set_bangtag('location', ['paypal'])
 
@@ -867,9 +868,9 @@ subp_cmds = {
         'func': subp_statstsv,
         'help': 'Output finance stats report as TSV',
     },
-    'report_cashon': {
-        'func': subp_report_cashon,
-        'help': 'Read the comments and report where "cash on"',
+    'report_location': {
+        'func': subp_report_location,
+        'help': 'Show where the cash is, using the location metadata',
     },
 }
 
