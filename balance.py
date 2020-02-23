@@ -775,51 +775,26 @@ def subp_check_doubletxn(args):
 
 def subp_report_cashon(args):
     """
-    Read all the comments and try to guess where it is saying the cash is.
-    - This accounting system was always designed around one single account
-      for storing the cash.
-    - Since we want to account payment as made as soon as possible, we
-      sometimes add transactions significantly before the cash is actually
-      available - which violates the single account assumption (as there
-      is now money in multiple places)
-    - There is an emerging pattern for the humans to note where the cash
-      is using english comments.  Which this report attempts to summarise
-    - Since this is not machine readable, nor is it checked against a
-      whitelist of allowed markups, it is only a guess
-    - Longer term, we should work out a better way to handle this issue.
+    Report on the balance of each location found in the dataset.  For best
+    results, the indivdual transactions should have a "location" bangtag.
+    During a transition period, a comment pattern heuristic is applied.
 
     TODO:
     - consolidate the bank and bank_deduct groups - this may be simpler
       once there is a bangtag as then we can update the transactions too
     """
 
-    groups = {}
-
-    # Instantiate all valid locations (any others will cause keyerrors)
-    groups['none'] = RowSet()
-    groups['bank'] = RowSet()
-    groups['bank_deduct'] = RowSet()
-    groups['paypal'] = RowSet()
-
     for row in args.rows:
-        where = 'none'
-        matches = 0
         if row.comment is None:
             continue
         if re.search(r'cash on bank', row.comment, re.IGNORECASE):
-            where = 'bank'
-            matches += 1
+            row._set_bangtag('location', ['bank'])
         if re.search(r'deducted from bank', row.comment, re.IGNORECASE):
-            where = 'bank_deduct'
-            matches += 1
+            row._set_bangtag('location', ['bank_deduct'])
         if re.search(r'cash on paypal', row.comment, re.IGNORECASE):
-            where = 'paypal'
-            matches += 1
+            row._set_bangtag('location', ['paypal'])
 
-        if matches > 1:
-            raise ValueError("Multiple matches found in " + str(row))
-
-        groups[where].append(row)
+    groups = args.rows.group_by('location')
 
     s = []
     for where, rows in groups.items():
