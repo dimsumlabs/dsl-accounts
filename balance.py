@@ -785,6 +785,7 @@ def subp_report_location(args):
       the heuristics
     """
 
+    # TODO: there should be a function to do this
     split = RowSet()
     for row in args.rows:
         split.append(row._split_locn_xfer())

@@ -507,13 +507,6 @@ class TestSubp(unittest.TestCase):
             balance.subp_check_doubletxn(self)
 
     def test_subp_report_location(self):
-
-        # TODO: there should be a function for this
-        split = balance.RowSet()
-        for row in self.rows:
-            split.append(row._split_locn_xfer())
-        self.rows = split
-
         expect = [
             'test_location:',
             '500 1990-05-02 #dues:test1 !locn:test_location',
