@@ -354,6 +354,7 @@ class RowData(Row):
                 'forecast(:.*)?',
                 'id:paypal:[0-9ABCDEFGHJKLMNPRSTUVWXY]{17}',
                 'id:cac:[0-9]+',
+                'location:hamish',
                 'location:test_location',
                 'months:[-0-9]+(:[0-9]+)?',
                 'test_bangtag',
