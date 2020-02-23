@@ -22,3 +22,5 @@
 700  2020-02-18 #dues:yeojin Cash on bank !months:1:1
 500  2020-02-18 #dues:jerry Cash on bank
 0.76 2020-02-23 #donation:members !location:hamish Eradicate all fractions
+40   2020-02-23 #donation:members !location:hamish !months:1:1 For hosting
+-40  2020-02-23 #bills:hosting !location:hamish !months:1:1 !id:cac:12767701
