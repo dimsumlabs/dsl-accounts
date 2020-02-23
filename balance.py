@@ -789,11 +789,11 @@ def subp_report_location(args):
         if row.comment is None:
             continue
         if re.search(r'cash on bank', row.comment, re.IGNORECASE):
-            row._set_bangtag('location', ['bank_nic'])
+            row._set_bangtag('locn', ['bank_nic'])
         if re.search(r'deducted from bank', row.comment, re.IGNORECASE):
-            row._set_bangtag('location', ['bank_nic_deduct'])
+            row._set_bangtag('locn', ['bank_nic_deduct'])
         if re.search(r'cash on paypal', row.comment, re.IGNORECASE):
-            row._set_bangtag('location', ['paypal'])
+            row._set_bangtag('locn', ['paypal'])
 
     groups = args.rows.group_by('location')
 
