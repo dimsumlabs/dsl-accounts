@@ -232,3 +232,13 @@ class TestRowDataClass(unittest.TestCase):
     def test_location(self):
         obj = row.RowData(20, Date(1970, 10, 22), "!locn:test_location")
         self.assertEqual(obj.location, "test_location")
+
+    def test_locnxfer(self):
+        obj = row.RowData(0, Date(1970, 10, 23), "#test_hashtag !locn_xfer:test_location:test_location2:300")  # noqa
+
+        rows = obj._split_locn_xfer()
+
+        self.assertEqual(len(rows), 2)
+
+        self.assertEqual(str(rows[0]), '-300 1970-10-23 #test_hashtag !locn_xfer:test_location:test_location2:300 !locn:test_location')  # noqa
+        self.assertEqual(str(rows[1]), '300 1970-10-23 #test_hashtag !locn_xfer:test_location:test_location2:300 !locn:test_location2')  # noqa

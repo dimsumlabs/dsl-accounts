@@ -157,6 +157,10 @@ class Row(object):
     def autosplit(self, method=None):
         return [self]
 
+    def _split_locn_xfer(self):
+        # TODO: this will be removed when the autosplit is refactored
+        return [self]
+
 
 class RowComment(Row):
     """A row containing a comment"""
@@ -355,7 +359,12 @@ class RowData(Row):
                 'id:paypal:[0-9ABCDEFGHJKLMNPRSTUVWXY]{17}',
                 'id:cac:[0-9]+',
                 'locn:hamish',
+                'locn:paypal',
+                'locn:bank_nic',
+                'locn:bank_nic_deduct', # FIXME - merge with above
                 'locn:test_location',
+                'locn:test_location2',
+                'locn_xfer:.*',
                 'months:[-0-9]+(:[0-9]+)?',
                 'test_bangtag',
                 'test_bangtag2(:.*)?',
@@ -436,6 +445,8 @@ class RowData(Row):
 
             self._set_bangtag(tagname, fields)
 
+            # If this bangtag is in the original comment, ensure updates get
+            # propogated back to it when rendered
             replacement = '{bangtag,'+tagname+'}'
             self._comment = re.sub(r'!'+bangtag, replacement, self._comment)
 
@@ -494,6 +505,49 @@ class RowData(Row):
             dates.append(self._month_add(self.date, i))
 
         return dates
+
+    def _split_locn_xfer(self):
+        """split a locn_xfer into a double-entry set.  Note that this
+        /is/ a type of split, but not one that is done by autosplit.
+        Only the report_location currently does this kind of split
+        """
+        # FIXME:
+        # - DRY
+        # - the child marker system is getting strained, needs refactor
+        # - setting the location here is awkward too
+        # - the split/autosplit/nosplit distinction is more blurry
+        #   with this feature.  Fix this!
+
+        if 'locn_xfer' not in self.bangtags:
+            return [self]
+
+        if self.value != 0:
+            raise ValueError('locn_xfer unbalanced - '
+                             'value is {}'.format(self.value))
+
+        # TODO:
+        # - validate the from and to location names as being from
+        #   the list of allowed locations
+
+        source = self.bangtags['locn_xfer'][0]
+        dest = self.bangtags['locn_xfer'][1]
+        amount = decimal.Decimal(self.bangtags['locn_xfer'][2])
+
+        # FIXME: DRY
+        row_source = RowData(-amount, self.date, self._comment)
+        row_source.comment = self.comment + ' !locn:{}'.format(source)
+
+        # mutate the bangtags to show this is a child
+        row_source._set_bangtag('child', ['locn_xfer'])
+
+        # FIXME: DRY
+        row_dest = RowData(amount, self.date, self._comment)
+        row_dest.comment = self.comment + ' !locn:{}'.format(dest)
+
+        # mutate the bangtags to show this is a child
+        row_dest._set_bangtag('child', ['locn_xfer'])
+
+        return [row_source, row_dest]
 
     def _autosplit_forecast(self):
         """split forecast monthly reoccuring items into one for each month"""

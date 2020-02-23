@@ -785,6 +785,11 @@ def subp_report_location(args):
       the heuristics
     """
 
+    split = RowSet()
+    for row in args.rows:
+        split.append(row._split_locn_xfer())
+    args.rows = split
+
     for row in args.rows:
         if row.comment is None:
             continue

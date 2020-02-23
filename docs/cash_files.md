@@ -62,6 +62,7 @@ parameters.
 | `!forecast` | `monthly` | Repeats the forcast monthly (currently stopping 6 months from 'now') |
 | `!forecast` | `monthly:until:`$date | Repeats until the end date |
 | `!locn` | $location | Assigns a location for this transaction (eg, "cashbox" or "paypal" or "bank_albert" |
+| `!locn_xfer` | $from:$to:$amount | Transfers balance from one location to another (note the transaction must balance, so the row value must be zero) |
 
 ### Validating the tags
 

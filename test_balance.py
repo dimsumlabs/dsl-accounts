@@ -244,9 +244,10 @@ class TestSubp(unittest.TestCase):
 -12500 1990-04-15 #bills:rent
 -1174 1990-04-27 #bills:electricity
 -1500 1990-04-26 #fridge
-500 1990-05-02 #dues:test1
+500 1990-05-02 #dues:test1 !locn:test_location
 -488 1990-05-25 #bills:internet
 13152 1990-05-25 balance books
+0 1990-05-14 !locn_xfer:test_location:test_location2:200
 #balance 10 Closing balance
 """
 
@@ -351,7 +352,8 @@ class TestSubp(unittest.TestCase):
             '-1500,1990-04-26,#fridge\r',
             '1500,1990-04-27,#fridge\r',
             '-1174,1990-04-27,#bills:electricity\r',
-            '500,1990-05-02,#dues:test1\r',
+            '500,1990-05-02,#dues:test1 !locn:test_location\r',
+            '0,1990-05-14,!locn_xfer:test_location:test_location2:200\r',
             '-488,1990-05-25,#bills:internet\r',
             '13152,1990-05-25,balance books\r',
             '\r',
@@ -505,13 +507,20 @@ class TestSubp(unittest.TestCase):
             balance.subp_check_doubletxn(self)
 
     def test_subp_report_location(self):
-        self.rows.append(
-            balance.RowData("400", Date(1990, 5, 13), "!locn:test_location")
-        )
+
+        # TODO: there should be a function for this
+        split = balance.RowSet()
+        for row in self.rows:
+            split.append(row._split_locn_xfer())
+        self.rows = split
 
         expect = [
             'test_location:',
-            '400 1990-05-13 !locn:test_location',
+            '500 1990-05-02 #dues:test1 !locn:test_location',
+            '-200 1990-05-14 !locn_xfer:test_location:test_location2:200 !locn:test_location', # noqa
+            '',
+            'test_location2:',
+            '200 1990-05-14 !locn_xfer:test_location:test_location2:200 !locn:test_location2', # noqa
             '',
             'unknown:',
             '',
@@ -522,7 +531,6 @@ class TestSubp(unittest.TestCase):
             '-12500 1990-04-15 #bills:rent',
             '-1174 1990-04-27 #bills:electricity',
             '-1500 1990-04-26 #fridge',
-            '500 1990-05-02 #dues:test1',
             '-488 1990-05-25 #bills:internet',
             '13152 1990-05-25 balance books',
             '#balance 10 Closing balance',
@@ -532,8 +540,9 @@ class TestSubp(unittest.TestCase):
             '',
             'TOTALS',
             '',
-            'test_location 400',
-            'unknown 10',
+            'test_location 300',
+            'test_location2 200',
+            'unknown -490',
             '',
         ]
 
