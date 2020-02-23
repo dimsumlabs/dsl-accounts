@@ -61,7 +61,7 @@ parameters.
 | `!forecast` |  | Marks this line as a guess about the future - some outputs will show anything that includes forecast data with a `~` prefix |
 | `!forecast` | `monthly` | Repeats the forcast monthly (currently stopping 6 months from 'now') |
 | `!forecast` | `monthly:until:`$date | Repeats until the end date |
-| `!location` | $location | Assigns a location for this transaction (eg, "cashbox" or "paypal" or "bank_albert" |
+| `!locn` | $location | Assigns a location for this transaction (eg, "cashbox" or "paypal" or "bank_albert" |
 
 ### Validating the tags
 

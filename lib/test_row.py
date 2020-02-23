@@ -230,5 +230,5 @@ class TestRowDataClass(unittest.TestCase):
         self.assertEqual(obj.isforecast, True)
 
     def test_location(self):
-        obj = row.RowData(20, Date(1970, 10, 22), "!location:test_location")
+        obj = row.RowData(20, Date(1970, 10, 22), "!locn:test_location")
         self.assertEqual(obj.location, "test_location")

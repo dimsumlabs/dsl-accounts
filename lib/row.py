@@ -313,8 +313,8 @@ class RowData(Row):
 
     @property
     def location(self):
-        if 'location' in self.bangtags:
-            return self.bangtags['location'][0]
+        if 'locn' in self.bangtags:
+            return self.bangtags['locn'][0]
         return None
 
     def _xtag_validate(self, x, tag):
@@ -354,8 +354,8 @@ class RowData(Row):
                 'forecast(:.*)?',
                 'id:paypal:[0-9ABCDEFGHJKLMNPRSTUVWXY]{17}',
                 'id:cac:[0-9]+',
-                'location:hamish',
-                'location:test_location',
+                'locn:hamish',
+                'locn:test_location',
                 'months:[-0-9]+(:[0-9]+)?',
                 'test_bangtag',
                 'test_bangtag2(:.*)?',
