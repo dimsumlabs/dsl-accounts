@@ -882,7 +882,7 @@ subp_cmds = {
 if __name__ == '__main__':  # pragma: no cover
     argparser = argparse.ArgumentParser(
         description='Run calculations and transformations on cash data')
-    argparser.add_argument('-v','--verbose', action='count', default=0)
+    argparser.add_argument('-v', '--verbose', action='count', default=0)
     argparser.add_argument('--dir',
                            action='store',
                            type=str,
