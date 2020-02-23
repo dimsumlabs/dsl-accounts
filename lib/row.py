@@ -361,7 +361,7 @@ class RowData(Row):
                 'locn:hamish',
                 'locn:paypal',
                 'locn:bank_nic',
-                'locn:bank_nic_deduct', # FIXME - merge with above
+                'locn:bank_nic_deduct',  # FIXME - merge with above
                 'locn:test_location',
                 'locn:test_location2',
                 'locn_xfer:.*',
