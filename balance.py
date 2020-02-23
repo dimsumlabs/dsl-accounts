@@ -800,19 +800,19 @@ def subp_report_location(args):
     s = []
 
     if args.verbose > 0:
-        for where, rows in groups.items():
-            s += where
+        for locn in sorted(groups.keys()):
+            s += locn
             s += ':\n'
-            s += str(rows)
+            s += str(groups[locn])
             s += '\n'
 
         s += '\n\n'
 
     s += '\nTOTALS\n\n'
-    for where, rows in groups.items():
-        s += where
+    for locn in sorted(groups.keys()):
+        s += locn
         s += ' '
-        s += str(rows.value)
+        s += str(groups[locn].value)
         s += '\n'
 
     return ''.join(s)
