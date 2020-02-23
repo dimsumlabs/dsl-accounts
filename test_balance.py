@@ -254,6 +254,7 @@ class TestSubp(unittest.TestCase):
         f = StringIO(self.input_data)
         self.rows = balance.RowSet()
         self.rows.load_file(f)
+        self.verbose = 1
 
     def tearDown(self):
         self.rows = None
@@ -502,3 +503,39 @@ class TestSubp(unittest.TestCase):
         )
         with self.assertRaises(ValueError):
             balance.subp_check_doubletxn(self)
+
+    def test_subp_report_location(self):
+        self.rows.append(
+            balance.RowData("400", Date(1990, 5, 13), "!locn:test_location")
+        )
+
+        expect = [
+            'test_location:',
+            '400 1990-05-13 !locn:test_location',
+            '',
+            'unknown:',
+            '',
+            '#balance 0 Opening Balance',
+            '500 1990-04-03 #dues:test1',
+            '20 1990-04-03 Unknown',
+            '1500 1990-04-27 #fridge',
+            '-12500 1990-04-15 #bills:rent',
+            '-1174 1990-04-27 #bills:electricity',
+            '-1500 1990-04-26 #fridge',
+            '500 1990-05-02 #dues:test1',
+            '-488 1990-05-25 #bills:internet',
+            '13152 1990-05-25 balance books',
+            '#balance 10 Closing balance',
+            '',
+            '',
+            '',
+            '',
+            'TOTALS',
+            '',
+            'test_location 400',
+            'unknown 10',
+            '',
+        ]
+
+        got = balance.subp_report_location(self).split("\n")
+        self.assertEqual(got, expect)
