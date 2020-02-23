@@ -797,13 +797,15 @@ def subp_report_cashon(args):
     groups = args.rows.group_by('location')
 
     s = []
-    for where, rows in groups.items():
-        s += where
-        s += ':\n'
-        s += str(rows)
-        s += '\n'
 
-    s += '\n\n'
+    if args.verbose > 0:
+        for where, rows in groups.items():
+            s += where
+            s += ':\n'
+            s += str(rows)
+            s += '\n'
+
+        s += '\n\n'
 
     s += '\nTOTALS\n\n'
     for where, rows in groups.items():
@@ -879,6 +881,7 @@ subp_cmds = {
 if __name__ == '__main__':  # pragma: no cover
     argparser = argparse.ArgumentParser(
         description='Run calculations and transformations on cash data')
+    argparser.add_argument('-v','--verbose', action='count', default=0)
     argparser.add_argument('--dir',
                            action='store',
                            type=str,
