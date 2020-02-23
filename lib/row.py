@@ -55,6 +55,7 @@ class Row(object):
         self.month = None
         self.rel_months = None
         self.isforecast = False
+        self.location = None
 
     def _getvalue_simple(self, field):
         """return the field value as a simple number or string
@@ -310,6 +311,12 @@ class RowData(Row):
     def isforecast(self):
         return ('forecast' in self.bangtags)
 
+    @property
+    def location(self):
+        if 'location' in self.bangtags:
+            return self.bangtags['location'][0]
+        return None
+
     def _xtag_validate(self, x, tag):
         """Check the tag against valid tag names
         """
@@ -347,6 +354,7 @@ class RowData(Row):
                 'forecast(:.*)?',
                 'id:paypal:[0-9ABCDEFGHJKLMNPRSTUVWXY]{17}',
                 'id:cac:[0-9]+',
+                'location:test_location',
                 'months:[-0-9]+(:[0-9]+)?',
                 'test_bangtag',
                 'test_bangtag2(:.*)?',
@@ -401,6 +409,18 @@ class RowData(Row):
 
         self._comment = re.sub(r'#'+hashtag, '{hashtag}', self._comment)
 
+    def _set_bangtag(self, tagname, args):
+        """Set a bangtag property"""
+        if tagname != tagname.lower():
+            raise ValueError('bangtag {} is not lowercase'.format(tagname))
+        if tagname in self.bangtags:
+            raise ValueError('Row has multiple !{} tags'.format(tagname))
+
+        # TODO:
+        # - should args be a known case too?
+
+        self.bangtags[tagname] = args
+
     def _bangtags(self):
         """Extract any bangtags from the comment"""
 
@@ -413,10 +433,7 @@ class RowData(Row):
             fields = bangtag.split(':')
             tagname = fields.pop(0)
 
-            if tagname in self.bangtags:
-                raise ValueError('Row has multiple !{} tags'.format(tagname))
-
-            self.bangtags[tagname] = fields
+            self._set_bangtag(tagname, fields)
 
             replacement = '{bangtag,'+tagname+'}'
             self._comment = re.sub(r'!'+bangtag, replacement, self._comment)

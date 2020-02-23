@@ -789,7 +789,6 @@ def subp_report_cashon(args):
     - Longer term, we should work out a better way to handle this issue.
 
     TODO:
-    - add a bangtag for transaction location
     - consolidate the bank and bank_deduct groups - this may be simpler
       once there is a bangtag as then we can update the transactions too
     """
