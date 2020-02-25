@@ -10,7 +10,6 @@ import json
 import sys
 import csv
 import os
-import re
 from io import StringIO
 
 # TODO:
