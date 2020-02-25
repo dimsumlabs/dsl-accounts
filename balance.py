@@ -779,10 +779,6 @@ def subp_report_location(args):
     results, the indivdual transactions should have a "location" bangtag.
     During a transition period, a comment pattern heuristic is applied.
 
-    TODO:
-    - consolidate the bank and bank_deduct groups
-    - Update the old transactions to use the location bangtag and remove
-      the heuristics
     """
 
     # TODO: there should be a function to do this
@@ -790,16 +786,6 @@ def subp_report_location(args):
     for row in args.rows:
         split.append(row._split_locn_xfer())
     args.rows = split
-
-    for row in args.rows:
-        if row.comment is None:
-            continue
-        if re.search(r'cash on bank', row.comment, re.IGNORECASE):
-            row._set_bangtag('locn', ['bank_nic'])
-        if re.search(r'deducted from bank', row.comment, re.IGNORECASE):
-            row._set_bangtag('locn', ['bank_nic_deduct'])
-        if re.search(r'cash on paypal', row.comment, re.IGNORECASE):
-            row._set_bangtag('locn', ['paypal'])
 
     groups = args.rows.group_by('location')
 
