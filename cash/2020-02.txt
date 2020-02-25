@@ -1,26 +1,26 @@
 #balance 8465 opening balance
-700  2020-02-04 #dues:nicolas Cash on Bank
-700  2020-02-04 #dues:felix Cash on Bank
-800  2020-02-05 !id:paypal:7RJ70761HR196384F #dues:neil Cash on bank !months:1:1
-1000 2020-02-05 !id:paypal:176583324N009694U #dues:lio Cash on bank
-700  2020-02-06 !id:paypal:3UX15072E7663130J #dues:antonia Cash on bank
-300  2020-02-06 !id:paypal:8GJ83656L40303814 #dues:max Cash on bank
--230 2020-02-11 #bills:electricity Deducted from bank
--238 2020-02-11 #bills:internet Deducted from bank
-100  2020-02-07 !id:paypal:8DG803567S2310820 supporters:stig Cash on bank
-1000 2020-02-08 !id:paypal:9LF61025YV5063503 #dues:philip Cash on bank !months:1:1
-700  2020-02-08 !id:paypal:1EP344467R940121W #dues:lawrence Cash on bank
-700  2020-02-10 !id:paypal:3XW86086WW448111D #dues:alex Cash on bank !months:1:1
-840  2020-02-12 !id:paypal:3C901535B1084822E #dues:gary Cash on bank
--118.6 2020-02-13 #fees:paypal Deducted from bank
--238 2020-02-18 #bills:internet Deducted from bank
--101.16 2020-02-18 #fees:paypal Deducted from bank
-1000 2020-02-18 #dues:meebey Cash on Bank
-500  2020-02-18 #fridge Cash on Bank
-1000 2020-02-18 !id:paypal:45F56395VH2488213 #dues:anthony Cash on paypal !months:1:1
-700  2020-02-18 !id:paypal:8R2448029T0705715 #dues:manolis Cash on paypal
-700  2020-02-18 #dues:yeojin Cash on bank !months:1:1
-500  2020-02-18 #dues:jerry Cash on bank
+700  2020-02-04 #dues:nicolas !locn:nic
+700  2020-02-04 #dues:felix !locn:nic
+800  2020-02-05 !id:paypal:7RJ70761HR196384F #dues:neil !locn:nic !months:1:1
+1000 2020-02-05 !id:paypal:176583324N009694U #dues:lio !locn:nic
+700  2020-02-06 !id:paypal:3UX15072E7663130J #dues:antonia !locn:nic
+300  2020-02-06 !id:paypal:8GJ83656L40303814 #dues:max !locn:nic
+-230 2020-02-11 #bills:electricity !locn:nic
+-238 2020-02-11 #bills:internet !locn:nic
+100  2020-02-07 !id:paypal:8DG803567S2310820 supporters:stig !locn:nic
+1000 2020-02-08 !id:paypal:9LF61025YV5063503 #dues:philip !locn:nic !months:1:1
+700  2020-02-08 !id:paypal:1EP344467R940121W #dues:lawrence !locn:nic
+700  2020-02-10 !id:paypal:3XW86086WW448111D #dues:alex !locn:nic !months:1:1
+840  2020-02-12 !id:paypal:3C901535B1084822E #dues:gary !locn:nic
+-118.6 2020-02-13 #fees:paypal !locn:nic
+-238 2020-02-18 #bills:internet !locn:nic
+-101.16 2020-02-18 #fees:paypal !locn:nic
+1000 2020-02-18 #dues:meebey !locn:nic
+500  2020-02-18 #fridge !locn:nic
+1000 2020-02-18 !id:paypal:45F56395VH2488213 #dues:anthony !locn:paypal !months:1:1
+700  2020-02-18 !id:paypal:8R2448029T0705715 #dues:manolis !locn:paypal
+700  2020-02-18 #dues:yeojin !locn:nic !months:1:1
+500  2020-02-18 #dues:jerry !locn:nic
 0.76 2020-02-23 #donation:members !locn:hamish Eradicate all fractions
 40   2020-02-23 #donation:members !locn:hamish !months:1:1 For hosting
 -40  2020-02-23 #bills:hosting !locn:hamish !months:1:1 !id:cac:12767701
