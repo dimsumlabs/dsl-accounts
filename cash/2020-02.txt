@@ -24,3 +24,6 @@
 0.76 2020-02-23 #donation:members !locn:hamish Eradicate all fractions
 40   2020-02-23 #donation:members !locn:hamish !months:1:1 For hosting
 -40  2020-02-23 #bills:hosting !locn:hamish !months:1:1 !id:cac:12767701
+700  2020-02-21 !id:paypal:7R5769780T207711B #dues:richard !locn:paypal !months:1:1
+700  2020-02-24 !id:paypal:30E42030PN553083C #dues:neilg !locn:paypal !months:1:1
+-14000 2020-02-25 #bills:rent !locn:nic !months:1:1
