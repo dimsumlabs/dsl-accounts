@@ -29,3 +29,5 @@
 -14000 2020-02-25 #bills:rent !locn:nic !months:1:1
 0    2020-02-25 !locn_xfer:paypal:nic:1629
 -71  2020-02-25 #fees:paypal !locn:paypal
+700  2020-02-25 #dues:audrey !locn:hamish
+1000 2020-02-25 #dues:hamish !locn:hamish
