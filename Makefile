@@ -14,6 +14,7 @@ pages: pages/transactions.csv
 pages: pages/pressstart2p.ttf
 pages: pages/report.txt
 pages: pages/report.future.txt
+pages: pages/report_location.txt
 
 pages/pressstart2p.ttf: docs/pressstart2p.ttf
 	cp $< $@
@@ -44,6 +45,10 @@ pages/report.txt: ./balance.py $(cashfiles)
 pages/report.future.txt: ./balance.py $(cashfiles) $(cashfuturefiles)
 	@mkdir -p pages
 	$(MAKE) report.future >$@
+
+pages/report_location.txt: ./balance.py $(cashfiles)
+	@mkdir -p pages
+	$(MAKE) report.location >$@
 
 # Replicate the travisCI deploy pages provider.
 #
