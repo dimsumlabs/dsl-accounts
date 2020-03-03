@@ -1,0 +1,2 @@
+#balance 8639 opening balance
+1000 2020-03-03 #dues:hamish !locn:hamish

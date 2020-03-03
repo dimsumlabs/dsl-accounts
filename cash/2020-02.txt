@@ -34,3 +34,4 @@
 0    2019-09-01 #fees:paypal Due to difficult paperwork, Nic has covered the fees this month
 0    2019-10-01 #fees:paypal Due to difficult paperwork, Nic has covered the fees this month
 130  2020-02-28 #donation !locn:hamish
+#balance 8639 closing balance
