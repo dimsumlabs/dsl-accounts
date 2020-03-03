@@ -429,11 +429,11 @@ class TestSubp(unittest.TestCase):
         # this is the {rent_due} value from the template, with some of
         # the template mixed in
         # TODO - have a testable "rowset.forcastNext(category)" function
-        want = '(due on: <span class="color_neg">1990-04-23</span>) Rent:'
+        want = '(due on: <span class="color_neg">1990-04-23</span>)&nbsp;Rent:'
         self.assertTrue(want in got)
 
         # this is the ${balance_this_month} value from the template
-        want = '   <td class="bill_value color_pos">13164 HKD</td>'
+        want = '   <td class="bill_value color_pos">13164&nbsp;HKD</td>'
         self.assertTrue(want in got)
 
     def test_roundtrip(self):
