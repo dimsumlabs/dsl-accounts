@@ -358,8 +358,6 @@ class RowData(Row):
                 'forecast(:.*)?',
                 'id:paypal:[0-9ABCDEFGHJKLMNPRSTUVWXY]{17}',
                 'id:cac:[0-9]+',
-                'locn:bank_nic',
-                'locn:bank_nic_deduct',  # FIXME - merge with above
                 'locn:hamish',
                 'locn:nic',
                 'locn:paypal',
