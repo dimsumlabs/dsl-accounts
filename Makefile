@@ -84,6 +84,9 @@ report.future:
 	./balance.py --includefuture grid --filter_hack 410
 	@echo
 
+report.location: report.describe
+	./balance.py report_location
+
 docker:
 	docker build -t dsl-accounts .
 	docker run --rm dsl-accounts
