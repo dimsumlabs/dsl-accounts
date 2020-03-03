@@ -361,6 +361,7 @@ class RowData(Row):
                 'locn:hamish',
                 'locn:nic',
                 'locn:paypal',
+                'locn:philip',
                 'locn:test_location',
                 'locn:test_location2',
                 'locn_xfer:.*',
