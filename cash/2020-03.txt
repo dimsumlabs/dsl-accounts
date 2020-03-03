@@ -5,4 +5,5 @@
 -29.65  2020-02-26 #fees:paypal !locn:paypal
 700  2020-02-29 !id:paypal:9YK84655PG661343F #dues:sayon
 -29.65  2020-02-29 #fees:paypal !locn:paypal
-
+0.30  2020-02-29 #donation:members !locn:philip
+0.15  2020-03-03 #donation:members !locn:philip
