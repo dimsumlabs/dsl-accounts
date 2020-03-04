@@ -9,3 +9,4 @@
 0.15  2020-03-03 #donation:members !locn:philip
 1000 2020-03-03 #dues:felix !locn:nic
 700  2020-03-03 #dues:nicolas !locn:nic
+-257 2020-03-04 #bills:electricity !locn:hamish !months:-1:1
