@@ -18,7 +18,9 @@
 1000 2020-02-18 #dues:meebey !locn:nic
 500  2020-02-18 #fridge !locn:nic
 1000 2020-02-18 !id:paypal:45F56395VH2488213 #dues:anthony !locn:paypal !months:1:1
+-41.35 2020-02-18 #dues:anthony !locn:paypal !months:1:1
 700  2020-02-18 !id:paypal:8R2448029T0705715 #dues:manolis !locn:paypal
+-29.65 2020-02-18 #dues:manolis !locn:paypal 
 700  2020-02-18 #dues:yeojin !locn:nic !months:1:1
 500  2020-02-18 #dues:jerry !locn:nic
 0.76 2020-02-23 #donation:members !locn:hamish Eradicate all fractions
@@ -28,7 +30,6 @@
 700  2020-02-24 !id:paypal:30E42030PN553083C #dues:neilg !locn:paypal !months:1:1
 -14000 2020-02-25 #bills:rent !locn:nic !months:1:1
 0    2020-02-25 !locn_xfer:paypal:nic:1629
--71  2020-02-25 #fees:paypal !locn:paypal
 700  2020-02-25 #dues:audrey !locn:hamish
 1000 2020-02-25 #dues:hamish !locn:hamish
 0    2019-09-01 #fees:paypal Due to difficult paperwork, Nic has covered the fees this month
