@@ -12,12 +12,15 @@
 -230 2020-02-11 #bills:electricity !locn:nic !months:-1:1
 -238 2020-02-11 #bills:internet !locn:nic
 100  2020-02-07 !id:paypal:8DG803567S2310820 supporters:stig !locn:nic
+-6.75 2020-02-07 supporters:stig !locn:nic
 1000 2020-02-08 !id:paypal:9LF61025YV5063503 #dues:philip !locn:nic !months:1:1
 700  2020-02-08 !id:paypal:1EP344467R940121W #dues:lawrence !locn:nic
+-29.65 2020-02-08 #dues:lawrence !locn:nic
 700  2020-02-10 !id:paypal:3XW86086WW448111D #dues:alex !locn:nic !months:1:1
+-29.65 2020-02-10 #dues:alex !locn:nic
 840  2020-02-12 !id:paypal:3C901535B1084822E #dues:gary !locn:nic
+-35.11 2020-02-12 #dues:gary !locn:nic
 -238 2020-02-18 #bills:internet !locn:nic
--101.16 2020-02-18 #fees:paypal !locn:nic
 1000 2020-02-18 #dues:meebey !locn:nic
 500  2020-02-18 #fridge !locn:nic
 1000 2020-02-18 !id:paypal:45F56395VH2488213 #dues:anthony !locn:paypal !months:1:1
