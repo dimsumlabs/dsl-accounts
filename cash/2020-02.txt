@@ -5,7 +5,7 @@
 1000 2020-02-05 !id:paypal:176583324N009694U #dues:lio !locn:nic
 700  2020-02-06 !id:paypal:3UX15072E7663130J #dues:antonia !locn:nic
 300  2020-02-06 !id:paypal:8GJ83656L40303814 #dues:max !locn:nic
--230 2020-02-11 #bills:electricity !locn:nic
+-230 2020-02-11 #bills:electricity !locn:nic !months:-1:1
 -238 2020-02-11 #bills:internet !locn:nic
 100  2020-02-07 !id:paypal:8DG803567S2310820 supporters:stig !locn:nic
 1000 2020-02-08 !id:paypal:9LF61025YV5063503 #dues:philip !locn:nic !months:1:1
