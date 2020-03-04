@@ -3,7 +3,7 @@
 -33.15  2020-02-24 #fees:paypal !locn:paypal
 700  2020-02-26 !id:paypal:3B202237H98827910 #dues:sunny !locn:paypal
 -29.65  2020-02-26 #dues:sunny !locn:paypal
-700  2020-02-29 !id:paypal:9YK84655PG661343F #dues:sayon !months:1:1
+700  2020-02-29 !id:paypal:9YK84655PG661343F #dues:sayon !locn:paypal !months:1:1
 -29.65  2020-02-29 #dues:sayon !locn:paypal !months:1:1
 0.30  2020-02-29 #donation:members !locn:philip
 0.15  2020-03-03 #donation:members !locn:philip
@@ -12,3 +12,4 @@
 -257 2020-03-04 #bills:electricity !locn:hamish !months:-1:1
 0.5  2020-03-04 #donation:members !locn:hamish !months:-1:1
 0.5  2020-03-04 #donation:members !locn:hamish
+0    2020-02-26 !locn_xfer:paypal:nic:1337.20
