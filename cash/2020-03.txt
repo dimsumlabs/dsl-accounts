@@ -13,3 +13,7 @@
 0.5  2020-03-04 #donation:members !locn:hamish !months:-1:1
 0.5  2020-03-04 #donation:members !locn:hamish
 0    2020-02-26 !id:paypal:0F419327HJ772473R !locn_xfer:paypal:nic:1337.20
+0.66 2020-03-04 #donation:members !locn:hamish !months:-3:1
+0.09 2020-03-04 #donation:members !locn:hamish !months:-2:1
+0.55 2020-03-04 #donation:members !locn:hamish !months:-1:1
+0.70 2020-03-04 #donation:members !locn:hamish
