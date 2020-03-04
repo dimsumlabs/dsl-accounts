@@ -1,6 +1,6 @@
 #balance 8639 opening balance
 1000 2020-03-03 #dues:hamish !locn:hamish
--33.15  2020-02-24 #fees:paypal !locn:paypal
+-33.15  2020-02-24 #dues:neilg !locn:paypal !months:1:1
 700  2020-02-26 !id:paypal:3B202237H98827910 #dues:sunny !locn:paypal
 -29.65  2020-02-26 #dues:sunny !locn:paypal
 700  2020-02-29 !id:paypal:9YK84655PG661343F #dues:sayon !locn:paypal !months:1:1
