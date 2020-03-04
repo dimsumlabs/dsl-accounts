@@ -2,4 +2,4 @@
 #
 
 # stig
-100 2020-01-07 #supporters !forecast:monthly
+93 2020-02-07 #supporters !forecast:monthly !locn:paypal

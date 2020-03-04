@@ -1,4 +1,4 @@
 # paypal automated payments
 #
 
-300 2019-05-06 #dues:max !forecast:monthly
+285 2020-02-06 #dues:max !forecast:monthly !locn:paypal

@@ -1,7 +1,7 @@
 # paypal automated payments
 #
 
-700 2018-06-04 #dues:manolis !forecast:monthly
+670 2020-02-18 #dues:manolis !forecast:monthly !locn:paypal
 
 # Manolis pays the DNS registration
 10 2019-11-01 #donation:members !forecast:monthly

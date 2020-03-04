@@ -1,5 +1,0 @@
-# TODO
-# - Once all payments have their exact paypal fees included, remove this forcast
-#
-
--390 2019-09-28 #fees:paypal !forecast:monthly
