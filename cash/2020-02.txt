@@ -11,8 +11,8 @@
 -14.05 2020-02-06 #dues:max !locn:nic
 -230 2020-02-11 #bills:electricity !locn:nic !months:-1:1
 -238 2020-02-11 #bills:internet !locn:nic !months:-1:1
-100  2020-02-07 !id:paypal:8DG803567S2310820 supporters:stig !locn:nic
--6.75 2020-02-07 supporters:stig !locn:nic
+100  2020-02-07 !id:paypal:8DG803567S2310820 #supporters stig !locn:nic
+-6.75 2020-02-07 #supporters stig !locn:nic
 1000 2020-02-08 !id:paypal:9LF61025YV5063503 #dues:philip !locn:nic !months:1:1
 700  2020-02-08 !id:paypal:1EP344467R940121W #dues:lawrence !locn:nic
 -29.65 2020-02-08 #dues:lawrence !locn:nic

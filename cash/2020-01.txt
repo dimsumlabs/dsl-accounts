@@ -27,7 +27,7 @@
 180  2019-12-30 #merch:kits LED earrings
 -180 2020-01-10 #loan !months:-1:1 Pay earrings towards loan
 100  2020-01-07 !id:paypal:79L42520PM3129443 #supporters stig !locn:nic
--6.75 2020-01-07 supporters:stig !locn:nic
+-6.75 2020-01-07 #supporters stig !locn:nic
 700  2020-01-08 !id:paypal:9XF16345JS428263L #dues:lawrence !locn:nic
 -29.65 2020-01-08 #dues:lawrence !locn:nic
 700  2020-01-10 #dues:nicolas !locn:nic
