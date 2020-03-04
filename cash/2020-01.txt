@@ -9,34 +9,53 @@
 -238 2020-01-04 #bills:internet !months:-1:1
 130  2020-01-06 #fridge
 700  2020-01-06 !id:paypal:1TK2120152265082Y #dues:richard !locn:nic
+-29.66 2020-01-06 #dues:richard !locn:nic
 700  2020-01-06 !id:paypal:1EA22329018893548 #dues:neilg !locn:nic
+-33.16 2020-01-06 #dues:neilg !locn:nic
 700  2020-01-06 !id:paypal:367488610P803993B #dues:sunny !locn:nic !months:-1:1
+-29.66 2020-01-06 #dues:sunny !locn:nic !months:-1:1
 300  2020-01-06 !id:paypal:76A625556W138960Y #dues:tania !locn:nic
+-14.06 2020-01-06 #dues:tania !locn:nic
 800  2020-01-06 !id:paypal:9XW48028SN978491V #dues:neil !locn:nic !months:1:1
+-33.55 2020-01-06 #dues:neil !locn:nic !months:-1:1
 1000 2020-01-06 !id:paypal:8A584006GB732322E #dues:lio !locn:nic
+-41.35 2020-01-06 #dues:lio !locn:nic
 300  2020-01-06 !id:paypal:3L283107L9552872H #dues:max !locn:nic
+-14.05 2020-01-06 #dues:max !locn:nic
 700  2020-01-06 !id:paypal:7XX78394UE897563M #dues:antonia !locn:nic
+-29.65 2020-01-06 #dues:antonia !locn:nic
 180  2019-12-30 #merch:kits LED earrings
 -180 2020-01-10 #loan !months:-1:1 Pay earrings towards loan
 100  2020-01-07 !id:paypal:79L42520PM3129443 #supporters stig !locn:nic
+-6.75 2020-01-07 supporters:stig !locn:nic
 700  2020-01-08 !id:paypal:9XF16345JS428263L #dues:lawrence !locn:nic
+-29.65 2020-01-08 #dues:lawrence !locn:nic
 700  2020-01-10 #dues:nicolas !locn:nic
 700  2020-01-10 !id:paypal:1FF97091628205308 #dues:alex !locn:nic !months:1:1
+-29.65 2020-01-10 #dues:alex !locn:nic !months:-1:1
 840  2020-01-12 !id:paypal:1SY700287A254373H #dues:gary !locn:nic
+-35.11 2020-01-12 #dues:gary !locn:nic
 700  2020-01-15 #dues:felix !locn:nic
 300  2020-01-21 #dues:georgia !locn:nic
 40   2020-01-24 #donation:members !months:1:1 Hamish pays the hosting
 -40  2020-01-24 #bills:hosting !months:1:1 !id:cac:12766756
 1000 2020-01-16 !id:paypal:832988752Y012400W #dues:bryan !locn:nic
+-41.35 2020-01-16 #dues:bryan !locn:nic
 700  2020-01-18 !id:paypal:4EG397071U9422243 #dues:manolis !locn:nic
+-29.65 2020-01-18 #dues:manolis !locn:nic
 1000 2020-01-18 !id:paypal:1V866464Y33019804 #dues:anthony !locn:nic !months:1:1
+-41.35 2020-01-18 #dues:anthony !locn:nic !months:-1:1
 1000 2020-01-19 !id:paypal:6YL38764MT280242H #dues:philip !locn:nic !months:1:1
 700  2020-01-21 !id:paypal:446840206F9828444 #dues:richard !locn:nic !months:1:1
+-29.65 2020-01-21 #dues:richard !locn:nic !months:-1:1
 700  2020-01-24 !id:paypal:7VK45914PY339893S #dues:neilg !locn:nic !months:1:1
+-33.15 2020-01-24 #dues:neilg !locn:nic !months:-1:1
 700  2020-01-26 !id:paypal:9M022415EY615013E #dues:sunny !locn:nic
+-29.65 2020-01-26 #dues:sunny !locn:nic
 300  2020-01-29 !id:paypal:1WD11450A0894470W #dues:tania !locn:nic !months:1:1
+-14.05 2020-01-29 #dues:tania !locn:nic !months:-1:1
 500  2020-01-31 !id:paypal:1M373812AH001651J #dues:sayon !locn:nic !months:1:1
--567 2020-01-31 #fees:paypal !locn:nic
+-21.85 2020-01-31 #dues:sayon !locn:nic !months:-1:1
 -356 2020-01-31 #fees:paypal !months:-1:1 !locn:nic
 -510 2020-01-31 #fees:paypal !months:-2:1 !locn:nic
 -14000 2020-01-21 #bills:rent !months:1:1 !locn:nic
