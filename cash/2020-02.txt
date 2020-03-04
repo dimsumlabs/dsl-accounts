@@ -2,7 +2,7 @@
 700  2020-02-04 #dues:nicolas !locn:nic
 700  2020-02-04 #dues:felix !locn:nic
 800  2020-02-05 !id:paypal:7RJ70761HR196384F #dues:neil !locn:nic !months:1:1
--33.55 2020-02-05 #dues:neil !locn:nic
+-33.55 2020-02-05 #dues:neil !locn:nic !months:1:1
 1000 2020-02-05 !id:paypal:176583324N009694U #dues:lio !locn:nic
 -41.35 2020-02-05 #dues:lio !locn:nic
 700  2020-02-06 !id:paypal:3UX15072E7663130J #dues:antonia !locn:nic
@@ -17,7 +17,7 @@
 700  2020-02-08 !id:paypal:1EP344467R940121W #dues:lawrence !locn:nic
 -29.65 2020-02-08 #dues:lawrence !locn:nic
 700  2020-02-10 !id:paypal:3XW86086WW448111D #dues:alex !locn:nic !months:1:1
--29.65 2020-02-10 #dues:alex !locn:nic
+-29.65 2020-02-10 #dues:alex !locn:nic !months:1:1
 840  2020-02-12 !id:paypal:3C901535B1084822E #dues:gary !locn:nic
 -35.11 2020-02-12 #dues:gary !locn:nic
 -238 2020-02-18 #bills:internet !locn:nic
