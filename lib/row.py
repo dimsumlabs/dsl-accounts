@@ -349,6 +349,7 @@ class RowData(Row):
                 'fridge',
                 'loan',
                 'merch:[a-z][a-z0-9]*',
+                'recycling',
                 'supporters',
                 'test_hashtag',
                 'test_hashtag2(:.*)?',
