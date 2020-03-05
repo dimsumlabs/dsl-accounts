@@ -18,3 +18,4 @@
 0.55 2020-03-04 #donation:members !locn:hamish !months:-1:1
 0.70 2020-03-04 #donation:members !locn:hamish
 1000 2020-03-04 #dues:philip !locn:nic !months:1:1
+100 2020-03-05 #recycling !locn:nic
