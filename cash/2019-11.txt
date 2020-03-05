@@ -5,7 +5,7 @@
 1000 2019-11-05 #dues:nicolas !locn:nic
 40   2019-11-05 #donation
 1000 2019-11-06 #dues:hamish
--238 2019-11-06 #bills:internet !months:-1:1
+-238 2019-11-06 #bills:internet !months:-1:1 !locn:hamish
 300  2019-11-07 #fridge
 -40  2019-11-05 #bills:hosting
 40   2019-11-05 #donation:members Hamish pays the hosting
@@ -31,7 +31,7 @@
 840  2019-11-22 !id:paypal:42V24957G4795783A #dues:gary !locn:nic
 700  2019-11-22 !id:paypal:9BY11976V2968330R #dues:neilg !locn:nic !months:1:1
 300  2019-11-26 #donation:members nicolas for long use of the laser cutter !locn:nic
--185 2019-11-26 #fridge
+-185 2019-11-26 #fridge !locn:hamish
 200  2019-11-29 !id:paypal:00718377MG1081452 #dues:tania !locn:nic !months:1:1
 700  2019-11-29 #dues:audrey
 #balance 6907 closing balance

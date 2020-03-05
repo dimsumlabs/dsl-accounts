@@ -1,12 +1,12 @@
 #balance 19564 opening balance
 700 2020-01-03 #dues:audrey !months:-1:1
--14000 2020-01-03 #bills:rent
+-14000 2020-01-03 #bills:rent !locn:hamish
 30   2020-01-03 #donation
 450  2020-01-03 #fridge
 1000 2020-01-03 #dues:hamish
--77  2020-01-04 #fridge
--201 2020-01-04 #bills:electricity !months:-1:1
--238 2020-01-04 #bills:internet !months:-1:1
+-77  2020-01-04 #fridge !locn:hamish
+-201 2020-01-04 #bills:electricity !months:-1:1 !locn:hamish
+-238 2020-01-04 #bills:internet !months:-1:1 !locn:hamish
 130  2020-01-06 #fridge
 700  2020-01-06 !id:paypal:1TK2120152265082Y #dues:richard !locn:nic
 -29.66 2020-01-06 #dues:richard !locn:nic

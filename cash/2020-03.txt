@@ -21,3 +21,6 @@
 100 2020-03-05 #recycling !locn:nic
 -29.65 2020-02-21 #dues:richard !locn:paypal !months:1:1
 0    2020-03-05 !locn_xfer:paypal:nic:1340.70
+2.89 2020-03-05 The last remaining amount of money with unknown location
+-2.89 2020-03-05 !locn:hamish transfer this balance to hamish
+0    2020-03-05 !locn_xfer:nic:hamish:15645.24 Hamish had carried the overdraft, pay him back

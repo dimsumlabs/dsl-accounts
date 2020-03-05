@@ -3,14 +3,14 @@
 300 2019-10-02 !id:paypal:2XJ849397M136674U #dues:urd
 700 2019-10-02 !id:paypal:0SF793367J615710K #dues:julianlee
 318.11 2019-09-11 #donation:members !months:-1:1 Matching the electricity
--318.11 2019-09-11 #bills:electricity !months:-1:1
--624 2019-10-05 #bills:electricity !months:-1:1
+-318.11 2019-09-11 #bills:electricity !months:-1:1 !locn:hamish
+-624 2019-10-05 #bills:electricity !months:-1:1 !locn:hamish
 200 2019-10-05 #fridge
 1000 2019-10-05 #dues:meebey
 1000 2019-10-05 !id:paypal:1W876090L5167035D #dues:lio
 800 2019-10-05 !id:paypal:0R881207B72364826 #dues:neil !months:1:1
 200 2019-10-09 #fridge
--147 2019-10-09 #fridge
+-147 2019-10-09 #fridge !locn:hamish
 250 2019-10-09 #workshop Introduction to arduino (1 participant)
 300 2019-10-06 !id:paypal:7HK847642E864012N #dues:max
 700 2019-10-06 !id:paypal:92E683192T6844112 #dues:antonia
@@ -21,7 +21,7 @@
 200 2019-10-15 !id:paypal:99562646BR086694J #dues:oliver
 700 2019-10-16 !id:paypal:0F448371TX0752848 #dues:bryan
 300 2019-10-17 #fridge
--100 2019-10-18 #fridge
+-100 2019-10-18 #fridge !locn:hamish
 350 2019-10-20 #fridge
 840 2019-10-17 !id:paypal:4FC57246C8365981K #dues:gary
 1000 2019-10-18 !id:paypal:3R3218077V755861W #dues:anthony
@@ -31,11 +31,11 @@
 700 2019-10-24 !id:paypal:27N279492X0113126 #dues:neilg !months:1:1
 700 2019-10-26 !id:paypal:6B381081HH5375613 #dues:sunny
 700 2019-10-17 #dues:nicolas
--137 2019-10-22 #fridge
+-137 2019-10-22 #fridge !locn:hamish
 270 2019-10-29 #fridge
--236 2019-10-29 #fridge
+-236 2019-10-29 #fridge !locn:hamish
 700 2019-10-30 #dues:audrey
 700 2019-10-29 #donation
--700 2019-10-29 #loan Pay some of hamish's loan back
+-700 2019-10-29 #loan Pay some of hamish's loan back !locn:hamish
 -14000 2019-11-02 #bills:rent
 #balance 3540 closing balance

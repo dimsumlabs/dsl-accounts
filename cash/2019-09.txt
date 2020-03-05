@@ -26,7 +26,7 @@
 500 2019-09-11 #donation:members From Antonia towards laser cutter maintenance
 60 2019-09-11 #workshop Playing with addressable LEDs night
 -476 2019-09-17 #bills:internet !months:-1:2
--120 2019-09-17 #fridge
+-120 2019-09-17 #fridge !locn:hamish
 1000 2019-09-17 #dues:meebey
 600 2019-09-17 !id:paypal:2V303157HS947782S #dues:xro
 500 2019-09-10 !id:paypal:8GN84853053692540 #dues:alex !months:1:1
