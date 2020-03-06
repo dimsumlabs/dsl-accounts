@@ -28,3 +28,6 @@
 -33.55 2020-03-05 #dues:neil !locn:paypal !months:1:1
 1000   2020-03-05 !id:paypal:4G014454S4025405B #dues:lio !locn:paypal
 -41.35 2020-03-05 #dues:lio !locn:paypal
+18185  2020-03-06 #donation:members !locn:hamish Thanks to Yeojin for volunteering to help pay back the loans
+-14675 2020-03-06 #loan !locn:hamish completely Pay hamish's loans
+-3510  2020-03-06 #loan !locn:hamish completely Pay nic's loans
