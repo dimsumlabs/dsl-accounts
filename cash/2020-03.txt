@@ -31,3 +31,12 @@
 18185  2020-03-06 #donation:members !locn:hamish Thanks to Yeojin for volunteering to help pay back the loans
 -14675 2020-03-06 #loan !locn:hamish completely Pay hamish's loans
 -3510  2020-03-06 #loan !locn:hamish completely Pay nic's loans
+300    2020-03-06 !id:paypal:82U26808F53858338 #dues:max !locn:paypal
+-14.05 2020-03-06 #dues:max !locn:paypal
+700    2020-03-06 !id:paypal:8K120557E3510060H #dues:antonia !locn:paypal
+-29.65 2020-03-06 #dues:antonia !locn:paypal
+100    2020-03-07 !id:paypal:5C6277211R6964017 #supporters stig !locn:paypal
+-6.75  2020-03-07 #supporters stig !locn:paypal
+700    2020-03-08 !id:paypal:60421888C9074145T #dues:lawrence !locn:paypal
+-29.65 2020-03-08 #dues:lawrence !locn:paypal
+0      2020-03-09 !locn_xfer:paypal:nic:1725.10
