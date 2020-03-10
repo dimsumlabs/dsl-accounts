@@ -40,3 +40,5 @@
 700    2020-03-08 !id:paypal:60421888C9074145T #dues:lawrence !locn:paypal
 -29.65 2020-03-08 #dues:lawrence !locn:paypal
 0      2020-03-09 !locn_xfer:paypal:nic:1725.10
+700    2020-03-10 !id:paypal:5FD71638LY666945P #dues:alex !locn:paypal !months:1:1
+-29.65 2020-03-10 #dues:alex !locn:paypal !months:1:1
