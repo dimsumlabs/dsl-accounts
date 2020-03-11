@@ -43,3 +43,4 @@
 700    2020-03-10 !id:paypal:5FD71638LY666945P #dues:alex !locn:paypal !months:1:1
 -29.65 2020-03-10 #dues:alex !locn:paypal !months:1:1
 1000   2020-03-10 #dues:meebey !locn:nic
+0      2020-03-11 !locn_xfer:paypal:nic:1719.9
