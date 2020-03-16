@@ -44,3 +44,4 @@
 -29.65 2020-03-10 #dues:alex !locn:paypal !months:1:1
 1000   2020-03-10 #dues:meebey !locn:nic
 0      2020-03-11 !locn_xfer:paypal:nic:1719.9
+500    2020-03-16 #dues:jerry !locn:philip
