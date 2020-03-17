@@ -45,3 +45,5 @@
 1000   2020-03-10 #dues:meebey !locn:nic
 0      2020-03-11 !locn_xfer:paypal:nic:1719.9
 500    2020-03-16 #dues:jerry !locn:philip
+840    2020-03-12 !id:paypal:2EE74668Y6593852M #dues:gary !locn:paypal
+-35.11 2020-03-12 #dues:gary !locn:paypal
