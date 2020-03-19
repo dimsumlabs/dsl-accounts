@@ -52,3 +52,4 @@
 700    2020-03-18 !id:paypal:2N011971S30882110 #dues:manolis !locn:paypal
 -29.65 2020-03-18 #dues:manolis !locn:paypal
 0      2020-03-05 !locn_xfer:paypal:nic:1475.24
+700    2020-03-19 #fridge !locn:philip
