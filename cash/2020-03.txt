@@ -47,3 +47,8 @@
 500    2020-03-16 #dues:jerry !locn:philip
 840    2020-03-12 !id:paypal:2EE74668Y6593852M #dues:gary !locn:paypal
 -35.11 2020-03-12 #dues:gary !locn:paypal
+1000   2020-03-18 !id:paypal:6NH227840E825333A #dues:anthony !locn:paypal !months:1:1
+-41.35 2020-03-18 #dues:anthony !locn:paypal !months:1:1
+700    2020-03-18 !id:paypal:2N011971S30882110 #dues:manolis !locn:paypal
+-29.65 2020-03-18 #dues:manolis !locn:paypal
+0      2020-03-05 !locn_xfer:paypal:nic:1475.24
