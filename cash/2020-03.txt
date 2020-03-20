@@ -54,3 +54,4 @@
 0      2020-03-05 !locn_xfer:paypal:nic:1475.24
 700    2020-03-19 #fridge !locn:philip
 -238   2020-03-19 #bills:internet !locn:philip
+0      2020-03-20 !locn_xfer:paypal:nic:1629
