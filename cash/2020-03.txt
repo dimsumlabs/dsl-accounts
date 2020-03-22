@@ -55,3 +55,5 @@
 700    2020-03-19 #fridge !locn:philip
 -238   2020-03-19 #bills:internet !locn:philip
 0      2020-03-20 !locn_xfer:paypal:nic:1629
+700    2020-03-21 !id:paypal:3VF19258ST054715D #dues:richard !locn:paypal !months:1:1
+-29.65 2020-03-21 #dues:richard !locn:paypal !months:1:1
