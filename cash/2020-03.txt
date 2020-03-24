@@ -60,3 +60,5 @@
 105    2020-03-24 #donation:members From Philip for new light switches !locn:philip
 125    2020-03-24 #donation:members From Gary for new light switches !locn:philip
 -230   2020-03-24 #bills:upkeep Bought new light switches !locn:philip
+40     2020-03-24 #donation:members !locn:hamish
+-40    2020-03-24 #bills:hosting !locn:hamish !months:1:1 !id:cac:12768680
