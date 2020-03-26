@@ -62,3 +62,5 @@
 -230   2020-03-24 #bills:upkeep Bought new light switches !locn:philip
 40     2020-03-24 #donation:members !locn:hamish
 -40    2020-03-24 #bills:hosting !locn:hamish !months:1:1 !id:cac:12768680
+100    2020-03-26 #fridge !locn:gary
+-100   2020-03-26 #fridge Filled up the fridge !locn:gary
