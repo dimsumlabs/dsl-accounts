@@ -70,3 +70,5 @@
 -29.65 2020-03-26 #dues:sunny !locn:paypal
 700    2020-03-29 !id:paypal:98554051CB273210Y #dues:sayon !locn:paypal !months:1:1
 -29.65 2020-03-29 #dues:sayon !locn:paypal !months:1:1
+696    2020-03-30 #donation:members From Philip for toner cartridge !locn:philip
+-696   2020-03-30 #bills:upkeep New toner cartridge for the printer !locn:philip
