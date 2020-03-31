@@ -73,4 +73,4 @@
 696    2020-03-30 #donation:members From Philip for toner cartridge !locn:philip
 -696   2020-03-30 #bills:upkeep New toner cartridge for the printer !locn:philip
 0      2020-03-31 !locn_xfer:paypal:nic:2677.9
-
+-14000 2020-03-31 #bills:rent !locn:nic !months:1:1
