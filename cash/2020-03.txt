@@ -75,3 +75,4 @@
 0      2020-03-31 !locn_xfer:paypal:nic:2677.9
 -14000 2020-03-31 #bills:rent !locn:nic !months:1:1
 190    2020-03-31 #fridge !locn:philip
+#balance 10842.49 closing balance
