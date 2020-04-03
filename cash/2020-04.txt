@@ -1,1 +1,2 @@
 #balance 10842.49 opening balance
+500    2020-04-03 #dues:jerry !locn:philip
