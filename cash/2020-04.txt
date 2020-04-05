@@ -4,3 +4,7 @@
 1000   2020-04-03 #dues:philip !locn:philip !months:1:1
 40     2020-04-04 #donation:members From Gary for electrical tape !locn:gary
 -40    2020-04-04 #bills:upkeep Electrical tape !locn:gary
+1000   2020-04-05 !id:paypal:8TP68813RT041432D #dues:lio !locn:paypal
+-41.35 2020-04-05 #dues:lio !locn:paypal
+800    2020-04-05 !id:paypal:6LP64681XK4231046 #dues:neil !locn:paypal !months:1:1
+-33.55 2020-04-05 #dues:neil !locn:paypal !months:1:1
