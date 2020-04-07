@@ -9,3 +9,4 @@
 800    2020-04-05 !id:paypal:6LP64681XK4231046 #dues:neil !locn:paypal !months:1:1
 -33.55 2020-04-05 #dues:neil !locn:paypal !months:1:1
 0      2020-04-07 !locn_xfer:paypal:nic:1725.1
+0      2020-04-06 !locn_xfer:philip:nic:3000
