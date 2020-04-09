@@ -10,3 +10,5 @@
 -33.55 2020-04-05 #dues:neil !locn:paypal !months:1:1
 0      2020-04-07 !locn_xfer:paypal:nic:1725.1
 0      2020-04-06 !locn_xfer:philip:nic:3000
+700    2020-04-09 #dues:antonia !locn:nic
+300    2020-04-09 #dues:max !locn:nic
