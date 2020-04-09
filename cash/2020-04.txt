@@ -12,3 +12,5 @@
 0      2020-04-06 !locn_xfer:philip:nic:3000
 700    2020-04-09 #dues:antonia !locn:nic
 300    2020-04-09 #dues:max !locn:nic
+700    2020-04-08 id:paypal:34P29610N93283041 #dues:lawrence !locn:paypal
+-29.65 2020-04-08 @dues:lawrence !locn:paypal
