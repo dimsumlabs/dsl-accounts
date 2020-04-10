@@ -14,3 +14,6 @@
 300    2020-04-09 #dues:max !locn:nic
 700    2020-04-08 id:paypal:34P29610N93283041 #dues:lawrence !locn:paypal
 -29.65 2020-04-08 #dues:lawrence !locn:paypal
+700    2020-04-10 id:paypal:78H56726X9732251E #dues:alex !locn:paypal !months:1:1
+-29.65 2020-04-10 #dues:alex !locn:paypal !months:1:1
+
