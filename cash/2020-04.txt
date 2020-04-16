@@ -22,3 +22,4 @@
 -6.75  2020-04-12 supporters stig !locn:paypal
 0      2020-04-15 !locn_xfer:paypal:nic:1340.7
 -238   2020-04-16 #bills:internet !locn:philip
+200    2020-04-16 #fridge !locn:philip
