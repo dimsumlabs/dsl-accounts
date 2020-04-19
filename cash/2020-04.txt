@@ -24,3 +24,7 @@
 -238   2020-04-16 #bills:internet !locn:philip
 200    2020-04-16 #fridge !locn:philip
 700    2020-04-16 #dues:hamish !locn:nic
+1000   2020-04-18 !id:paypal:3U5397916F695732T #dues:anthony !locn:paypal !months:1:1
+-41.35 2020-04-18 #dues:anthony !locn:paypal !months:1:1
+700    2020-04-18 !id:paypal:4A5123605U373621F #dues:manolis !locn:paypal
+-29.65 2020-04-18 #dues:manolis !locn:paypal
