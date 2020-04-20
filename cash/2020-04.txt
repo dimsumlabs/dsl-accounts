@@ -29,3 +29,4 @@
 700    2020-04-18 !id:paypal:4A5123605U373621F #dues:manolis !locn:paypal
 -29.65 2020-04-18 #dues:manolis !locn:paypal
 700    2020-04-20 #dues:nicolas !locn:nic
+700    2020-04-07 #dues:yeojin !locn:nic
