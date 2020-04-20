@@ -18,8 +18,8 @@
 -29.65 2020-04-10 #dues:alex !locn:paypal !months:1:1
 100    2020-04-04 #fridge !locn:gary
 -100   2020-04-04 #fridge Filled up the fridge !locn:gary
-100    2020-04-12 !id:paypal:52A84760MA4745109 supporters stig !locn:paypal
--6.75  2020-04-12 supporters stig !locn:paypal
+100    2020-04-12 !id:paypal:52A84760MA4745109 #supporters stig !locn:paypal
+-6.75  2020-04-12 #supporters stig !locn:paypal
 0      2020-04-15 !locn_xfer:paypal:nic:1340.7
 -238   2020-04-16 #bills:internet !locn:philip
 200    2020-04-16 #fridge !locn:philip
