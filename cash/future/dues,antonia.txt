@@ -1,4 +1,4 @@
-# paypal automated payments
+# payment via bank transfer
 #
 
-670 2020-02-06 #dues:antonia !forecast:monthly !locn:paypal
+700 2020-04-09 #dues:antonia !forecast:monthly !locn:paypal
