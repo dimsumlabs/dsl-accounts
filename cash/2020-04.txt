@@ -34,4 +34,4 @@
 0.40   2020-04-20 #donation:members !locn:hamish
 0      2020-04-21 !locn_xfer:paypal:nic:1722.25
 -14000 2020-04-21 #bills:rent !locn:nic !months:1:1
-
+40     2020-04-21 #fridge !locn:philip
