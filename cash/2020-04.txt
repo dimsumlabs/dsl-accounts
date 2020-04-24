@@ -37,3 +37,5 @@
 40     2020-04-21 #fridge !locn:philip
 700    2020-04-21 id:paypal:97S67500U11623727 #dues:richard !locn:paypal !months:1:1
 -29.65 2020-04-21 #dues:richard !locn:paypal !months:1:1
+700    2020-04-24 !id:paypal:5UK63868LX959731X #dues:neilg !locn:paypal !months:1:1
+-33.15 2020-04-24 #dues:neilg !locn:paypal !months:1:1
