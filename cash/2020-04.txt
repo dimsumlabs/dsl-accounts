@@ -39,3 +39,5 @@
 -29.65 2020-04-21 #dues:richard !locn:paypal !months:1:1
 700    2020-04-24 !id:paypal:5UK63868LX959731X #dues:neilg !locn:paypal !months:1:1
 -33.15 2020-04-24 #dues:neilg !locn:paypal !months:1:1
+700    2020-04-26 !id:paypal:261949137B014424V #dues:sunny !locn:paypal
+-29.65 2020-04-26 #dues:sunny !locn:paypal
