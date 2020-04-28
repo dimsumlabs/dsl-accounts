@@ -19,7 +19,7 @@ pages: pages/report_location.txt
 pages/pressstart2p.ttf: docs/pressstart2p.ttf
 	cp $< $@
 
-pages/index.html: ./balance.py docs/template.html $(cashfiles)
+pages/index.html: ./balance.py docs/template.html.j2 $(cashfiles)
 	@mkdir -p pages
 	./balance.py --split make_balance >$@
 
