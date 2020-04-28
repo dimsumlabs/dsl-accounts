@@ -1,5 +1,6 @@
+os: linux
 dist: bionic
-language: minimal
+language: shell
 
 git:
     submodules: false
@@ -17,10 +18,10 @@ script:
 deploy:
     provider: pages
     repo: dimsumlabs/dsl-accounts-pages
-    local-dir: pages
-    target-branch: master
-    skip-cleanup: true
-    github-token: $GITHUB_TOKEN
+    local_dir: pages
+    target_branch: master
+    skip_cleanup: true
+    token: $GITHUB_TOKEN
     on:
         branch: master
         condition: $GITHUB_TOKEN
