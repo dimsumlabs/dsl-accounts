@@ -5,7 +5,7 @@ import argparse
 import calendar
 import os.path
 import decimal
-import string
+import jinja2
 import json
 import sys
 import csv
@@ -415,9 +415,12 @@ def subp_json_payments(args):
 def subp_make_balance(args):
     # Load the template file
     # TODO - use a string or an arg for the template source
-    with open(os.path.join(os.path.dirname(__file__),
-                           './docs/template.html')) as f:
-        tpl = f.read()
+    j2env = jinja2.Environment(
+        loader=jinja2.FileSystemLoader(
+            os.path.join(os.path.dirname(__file__), './docs/')
+        )
+    )
+    j2tpl = j2env.get_template('template.html.j2')
 
     # Filter out only the membership dues
     grid_rows = args.rows.filter([
@@ -489,7 +492,7 @@ def subp_make_balance(args):
         'time_now':    _iso8601_str(datetime.datetime.utcnow()),
         'loan':        _get_hashtag_value('loan')
     }
-    return string.Template(tpl).substitute(macros)
+    return j2tpl.render(macros)
 
 
 def subp_roundtrip(args):

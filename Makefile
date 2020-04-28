@@ -97,7 +97,7 @@ docker:
 	docker run --rm dsl-accounts
 
 build-dep:
-	apt-get install flake8 python3-coverage python3-mock
+	apt-get install flake8 python3-coverage python3-mock python3-jinja2
 
 # Perform all available tests
 .PHONY: test
