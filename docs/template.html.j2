@@ -71,6 +71,21 @@ body {
     background-color: #202020;
 }
 
+.tractorbar {
+    border-color: #404040;
+    background-image: url(circle.svg);
+    background-repeat: repeat-y;
+    background-position: center top;
+}
+
+.tractorleft {
+    border-style: none dotted none none;
+}
+
+.tractorright {
+    border-style: none none none dotted;
+}
+
 </style>
 </head>
 <body>
@@ -93,10 +108,17 @@ body {
   </tr>
  </table>
 
-<pre class="grid rowodd">{{ grid.header }}</pre>
-{% for row in grid.rows %}
-<pre class="grid {{ loop.cycle('','','rowodd','rowodd') }}">{{ row }}</pre>
-{% endfor %}
+ <table width=100%>
+  <tr>
+   <td class="tractorbar tractorleft">&nbsp;
+   <td>
+    <pre class="grid rowodd">{{ grid.header }}</pre>
+    {% for row in grid.rows %}
+    <pre class="grid {{ loop.cycle('','','rowodd','rowodd') }}">{{ row }}</pre>
+    {% endfor %}
+   <td class="tractorbar tractorright">&nbsp;
+  </tr>
+ </table>
 
 <br>
  <table width=100%>

@@ -12,11 +12,15 @@ cashfuturefiles := $(wildcard cash/future/*.txt)
 pages: pages/index.html pages/payments.json pages/stats.tsv
 pages: pages/transactions.csv
 pages: pages/pressstart2p.ttf
+pages: pages/circle.svg
 pages: pages/report.txt
 pages: pages/report.future.txt
 pages: pages/report_location.txt
 
 pages/pressstart2p.ttf: docs/pressstart2p.ttf
+	cp $< $@
+
+pages/circle.svg: docs/circle.svg
 	cp $< $@
 
 pages/index.html: ./balance.py docs/template.html.j2 $(cashfiles)
