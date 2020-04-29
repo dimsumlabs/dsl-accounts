@@ -243,10 +243,11 @@ def grid_render_rows(months, tags, grid, months_len, tags_len):
         if count_seen == 0:
             continue
 
-        s += grid_render_onerow(
+        rowstr = ''.join(grid_render_onerow(
             tag, tags_len,
             cells, months_len
-        )
+        ))
+        s.append(rowstr)
 
     return s
 
