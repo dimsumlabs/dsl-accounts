@@ -467,16 +467,6 @@ def subp_make_balance(args):
 
         return date
 
-    def _get_hashtag_value(tag):
-        """Return the value for a hashtag group, or a zero"""
-        # FIXME - should cache the group_by
-        hashtags = args.rows.group_by('hashtag')
-
-        if tag in hashtags:
-            return hashtags[tag].value
-        else:
-            return 0
-
     macros = {
         'db': {
             'input': args.rows,
@@ -490,7 +480,6 @@ def subp_make_balance(args):
 
         # These are hacks because they do not follow a clean data naming
         # model
-        '_hack_hashtag': _get_hashtag_value,
         '_hack_timenow': _iso8601_str(datetime.datetime.utcnow()),
         '_hack_rentdue': _get_next_rent_month,
     }

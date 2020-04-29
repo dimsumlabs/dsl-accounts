@@ -103,7 +103,7 @@ body {
   <tr>
    <td>&nbspc;&nbspc;&nbspc;</td>
    <td class="bill_desc">Members loans to DSL:</td>
-   <td class="bill_value color_neg">{{ _hack_hashtag('loan') | int }}&nbsp;HKD</td>
+   <td class="bill_value color_neg">{{ db.input.filter(['hashtag==loan']).value | int }}&nbsp;HKD</td>
   </tr>
  </table>
 
