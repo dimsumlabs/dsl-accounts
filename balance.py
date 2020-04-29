@@ -12,11 +12,6 @@ import csv
 import os
 from io import StringIO
 
-# TODO:
-# - provide a way to mark a transation as "predicted future" and render these
-#   transaction visually distinct
-
-
 # Ensure that we look for any modules in our local lib dir.  This allows simple
 # testing and development use.  It also does not break the case where the lib
 # has been installed properly on the normal sys.path
