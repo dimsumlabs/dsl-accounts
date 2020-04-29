@@ -6,6 +6,7 @@ import calendar
 import os.path
 import decimal
 import jinja2
+import pytz
 import json
 import sys
 import csv
@@ -31,43 +32,16 @@ FILES_DIR = 'cash'
 decimal.getcontext().rounding = decimal.ROUND_DOWN
 
 
-class HKT(datetime.tzinfo):
-
-    def utcoffset(self, dt):
-        return datetime.timedelta(hours=8)
-
-    def tzname(self, dt):
-        return "HKT"
-
-    def dst(self, dt):
-        return datetime.timedelta(hours=0)
-
-
 def _iso8601_str(dt):
     """Why oh why is this so hard to do?
     """
-    # now = datetime.datetime.now()
-    # now_timestamp = now.timestamp()
-    # utc_horror = datetime.datetime.utcfromtimestamp( now_timestamp ).timestamp() # noqa
-    # delta_min = (now_timestamp - utc_horror) //60
-    # sign="+"
-    # if (delta_min<0):
-    #     sign="-"
-    #     delta_min = abs(delta_min)
 
-    # delta_hr = delta_min /60.0
-    # delta_min = (int(delta_hr) - delta_hr) * 60
-    # delta_hr = int(delta_hr)
-    # delta_str = sign+"{:02d}:{:02d}".format(delta_hr, delta_min)
+    # TODO:
+    # - currently, we want to report any timestamp in HKT, but if this code is
+    #   to be reused, that needs to become flexible
+    dt = dt.astimezone(pytz.timezone("Asia/Hong_Kong"))
 
-    # Ideally, this would work, but the HKT class needs ... something ...
-    # dt = dt.replace(tzinfo=HKT())
-    # return dt.replace(microsecond=0).isoformat()
-
-    dt = dt.replace(microsecond=0)
-    dt = dt + datetime.timedelta(hours=8)
-    timezone_str = "+08:00"
-    return dt.strftime('%FT%T') + timezone_str
+    return dt.replace(microsecond=0).isoformat()
 
 
 def render_month(date):
