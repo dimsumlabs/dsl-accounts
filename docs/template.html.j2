@@ -67,6 +67,10 @@ body {
     right: 0;
 }
 
+.rowodd {
+    background-color: #202020;
+}
+
 </style>
 </head>
 <body>
@@ -89,9 +93,10 @@ body {
   </tr>
  </table>
 
-<pre class="grid">{{ grid.header }}</pre>
-<pre class="grid">{% for row in grid.rows %}{{ row }}{% endfor %}
-</pre>
+<pre class="grid rowodd">{{ grid.header }}</pre>
+{% for row in grid.rows %}
+<pre class="grid {{ loop.cycle('','','rowodd','rowodd') }}">{{ row }}</pre>
+{% endfor %}
 
 <br>
  <table width=100%>
