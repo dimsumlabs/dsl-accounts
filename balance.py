@@ -443,7 +443,7 @@ def subp_make_balance(args):
     tags_len = max([len(i) for i in tags])+1
 
     header = ''.join(grid_render_colheader(months, months_len, tags_len))
-    grid = ''.join(grid_render_rows(months, tags, grid, months_len, tags_len))
+    grid = grid_render_rows(months, tags, grid, months_len, tags_len)
 
     def _get_next_rent_month():
         last_payment = args.rows.group_by('hashtag')['bills:rent'].last()
@@ -483,9 +483,9 @@ def subp_make_balance(args):
         },
         'grid': {
             'header': header,
-            'text': grid,
+            'rows': grid,
             # TODO:
-            # - drill down in the grid data and provide rows to the template
+            # - drill down in the grid data and provide cells to the template
         },
 
         # These are hacks because they do not follow a clean data naming

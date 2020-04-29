@@ -90,7 +90,8 @@ body {
  </table>
 
 <pre class="grid">{{ grid.header }}</pre>
-<pre class="grid">{{ grid.text }}</pre>
+<pre class="grid">{% for row in grid.rows %}{{ row }}{% endfor %}
+</pre>
 
 <br>
  <table width=100%>
