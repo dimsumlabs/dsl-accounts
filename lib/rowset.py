@@ -191,9 +191,7 @@ class RowSet(object):
                     # If we have no date, then we cannot be grouped by that!
                     continue
 
-            if hasattr(row, field):
-                key = getattr(row, field)
-
+            key = getattr(row, field, 'unknown')
             if key is None:
                 key = 'unknown'
 
