@@ -31,6 +31,7 @@ def main():
             auto_data=True,
             omit=[
                 "/usr/share/pyshared/*",
+                "/usr/lib/python3/dist-packages/*",
             ],
         )
         min_percent = 0
