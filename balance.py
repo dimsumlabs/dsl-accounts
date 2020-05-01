@@ -737,10 +737,8 @@ def subp_check_doubletxn(args):
 
 def subp_report_location(args):
     """
-    Report on the balance of each location found in the dataset.  For best
-    results, the indivdual transactions should have a "location" bangtag.
-    During a transition period, a comment pattern heuristic is applied.
-
+    Report on the balance of each location "locn" bangtag found in the
+    dataset.
     """
 
     # TODO: there should be a function to do this
