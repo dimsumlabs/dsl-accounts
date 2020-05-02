@@ -367,6 +367,7 @@ class TestAutoSplit(unittest.TestCase):
 
         self.assertEqual(expected, got)
 
+
 class TestRowGrid(unittest.TestCase):
     input_data = """
 #balance 0

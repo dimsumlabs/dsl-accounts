@@ -218,6 +218,7 @@ class RowSet(object):
 
         return max(self, key=keyfn)
 
+
 class RowGrid(object):
     """Contain a grid of rows.  E.G: grouped by both category and month"""
 
