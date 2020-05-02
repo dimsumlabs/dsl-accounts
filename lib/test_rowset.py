@@ -383,7 +383,9 @@ class TestRowGrid(unittest.TestCase):
         rows = rowset.RowSet()
         rows.load_file(f)
 
-        self.grid = rows.grid_by('month', 'hashtag')
+        datarows = rows.filter(['isdata==1'])
+
+        self.grid = datarows.grid_by('month', 'hashtag')
 
     def tearDown(self):
         self.grid = None
@@ -393,12 +395,10 @@ class TestRowGrid(unittest.TestCase):
         self.assertEqual(self.grid.isforecast, False)
 
     def test_headings_x(self):
-        expected = [ '1970-01', '1970-02', '1970-03', 'unknown']
+        expected = ['1970-01', '1970-02', '1970-03']
         got = []
         for heading in self.grid.headings_x:
-            if isinstance(heading, datetime.date):
-                heading = heading.strftime('%Y-%m')
-            got.append(heading)
+            got.append(heading.strftime('%Y-%m'))
         got = sorted(got)
 
         self.assertEqual(got, expected)

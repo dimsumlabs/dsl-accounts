@@ -55,6 +55,7 @@ class Row(object):
         self.month = None
         self.rel_months = None
         self.isforecast = False
+        self.isdata = False
         self.location = None
 
     def _getvalue_simple(self, field):
@@ -245,6 +246,7 @@ class RowData(Row):
         self.value = decimal.Decimal(value)
         self.date = date
         self.comment = comment
+        self.isdata = True
 
         if 'months' in self.bangtags and 'forecast' in self.bangtags:
             raise ValueError('Cannot have both months and forecast bang tags')
