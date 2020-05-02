@@ -43,4 +43,4 @@
 -29.65 2020-04-26 #dues:sunny !locn:paypal
 2000   2020-04-27 #dues:meebey !months:0:2 !locn:philip
 0      2020-04-28 !locn_xfer:paypal:nic:1337.20
-
+#balance 11241 closing balance
