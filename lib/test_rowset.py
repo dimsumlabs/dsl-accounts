@@ -403,3 +403,9 @@ class TestRowGrid(unittest.TestCase):
         got = sorted(got)
 
         self.assertEqual(got, expected)
+
+    def test_headings_y(self):
+        expected = ['bills:rent', 'bills:water', 'unknown']
+        got = sorted(self.grid.headings_y)
+
+        self.assertEqual(got, expected)

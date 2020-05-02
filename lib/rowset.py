@@ -272,3 +272,7 @@ class RowGrid(object):
         """Return the key for each of the headings in the x direction"""
 
         return self._headings_x.keys()
+
+    @property
+    def headings_y(self):
+        return self.rows.keys()
