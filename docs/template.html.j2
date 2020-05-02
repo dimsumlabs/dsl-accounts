@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+{% set rows = db.input.filter([
+    'hashtag=~^dues:',
+    "rel_months>-5",
+    'rel_months<1',
+]) %}
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -108,13 +113,20 @@ body {
   </tr>
  </table>
 
+{% set grid = rows.grid_by('month', 'hashtag') %}
+{% set months = grid.headings_x | sort %}
+{# FIXME - hardcoded "dues:" strlen subtracted here and in the slice below #}
+{% set tagwidth = grid.headings_y_width -5 %}
+{% set colwidth = 9 %}
  <table width=100%>
   <tr>
    <td class="tractorbar tractorleft">&nbsp;
    <td>
-    <pre class="grid rowodd">{{ grid.header }}</pre>
-    {% for row in grid.rows %}
-    <pre class="grid {{ loop.cycle('','','rowodd','rowodd') }}">{{ row }}</pre>
+    <pre class="grid rowodd">   {{ ' '*tagwidth }}{{ grid.headings_x_format('strftime','%Y-%m') |sort | join('  ') }}</pre>
+    {% for tag in grid.headings_y|sort %}
+    {%   set tagstr = tag[5:].title() %}
+    {%   set row = grid.rows[tag] %}
+    <pre class="grid {{ loop.cycle('','','rowodd','rowodd') }}">{{ "%-*s"|format(tagwidth, tagstr) }} {% for month in months %}{% if month in row %}{{ "%*s"|format(colwidth, row[month].value) }}{% else %}{{ ' '*colwidth }}{% endif %}{% endfor %}</pre>
     {% endfor %}
    <td class="tractorbar tractorright">&nbsp;
   </tr>

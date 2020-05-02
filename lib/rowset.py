@@ -276,3 +276,23 @@ class RowGrid(object):
     @property
     def headings_y(self):
         return self.rows.keys()
+
+    @property
+    def headings_y_width(self):
+        """How wide do we need to make a column to fit all the y headings?
+        mostly intended as a helper for jinja templates.
+        """
+
+        return max([len(i) for i in self.headings_y])
+
+    def headings_x_format(self, method, arg):
+        """Return a list of strings generated with the given method name
+        mostly intended as a helper for jinja templates.
+        """
+
+        result = []
+        for header in self.headings_x:
+            fn = getattr(header, method)
+            result.append(fn(arg))
+
+        return result

@@ -423,11 +423,11 @@ class TestSubp(unittest.TestCase):
         got = balance.subp_make_balance(self)
 
         # this is the {grid_header} values from the template
-        want = "        1990-04  1990-05\n"
+        want = "        1990-04  1990-05</pre>\n"
         self.assertTrue(want in got)
 
         # this is the {grid} values from the template
-        want = "Test1       500      500\n"
+        want = "Test1       500      500</pre>\n"
         self.assertTrue(want in got)
 
         # this is the {rent_due} value from the template, with some of

@@ -397,10 +397,7 @@ class TestRowGrid(unittest.TestCase):
 
     def test_headings_x(self):
         expected = ['1970-01', '1970-02', '1970-03']
-        got = []
-        for heading in self.grid.headings_x:
-            got.append(heading.strftime('%Y-%m'))
-        got = sorted(got)
+        got = sorted(self.grid.headings_x_format('strftime', '%Y-%m'))
 
         self.assertEqual(got, expected)
 
@@ -409,3 +406,6 @@ class TestRowGrid(unittest.TestCase):
         got = sorted(self.grid.headings_y)
 
         self.assertEqual(got, expected)
+
+    def test_headings_y_width(self):
+        self.assertEqual(11, self.grid.headings_y_width)

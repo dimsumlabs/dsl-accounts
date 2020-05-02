@@ -392,28 +392,6 @@ def subp_make_balance(args):
     )
     j2tpl = j2env.get_template('template.html.j2')
 
-    # Filter out only the membership dues
-    grid_rows = args.rows.filter([
-        'hashtag=~^dues:',
-        'rel_months>-5',
-        'rel_months<1',
-    ])
-
-    # Make the category look pretty
-    for row in grid_rows:
-        a = row.hashtag.split(':')
-        row.hashtag = ''.join(a[1:]).title()
-
-    (months, grid, totals, running_totals) = grid_accumulate(grid_rows)
-    tags = grid_rows.group_by('hashtag').keys()
-    months = sorted(months)
-
-    months_len = render_month_len()
-    tags_len = max([len(i) for i in tags])+1
-
-    header = ''.join(grid_render_colheader(months, months_len, tags_len))
-    grid = grid_render_rows(months, tags, grid, months_len, tags_len)
-
     def _get_next_rent_month():
         last_payment = args.rows.group_by('hashtag')['bills:rent'].last()
         date = last_payment.date
@@ -439,12 +417,6 @@ def subp_make_balance(args):
     macros = {
         'db': {
             'input': args.rows,
-        },
-        'grid': {
-            'header': header,
-            'rows': grid,
-            # TODO:
-            # - drill down in the grid data and provide cells to the template
         },
 
         # These are hacks because they do not follow a clean data naming
