@@ -201,6 +201,15 @@ class RowSet(object):
             result[key].append(row)
         return result
 
+    def grid_by(self, field_x, field_y):
+        """Group the rowset into a grid by the given two fields and return
+        a grid object"""
+
+        grid = RowGrid()
+        grid.load_RowSet(field_x, field_y, self)
+
+        return grid
+
     def last(self):
         """Return the chronologically last row from the rowset
         """
@@ -208,3 +217,57 @@ class RowSet(object):
             return row.date
 
         return max(self, key=keyfn)
+
+class RowGrid(object):
+    """Contain a grid of rows.  E.G: grouped by both category and month"""
+
+    def __init__(self):
+        self.original_rows = []
+        self.field_x = None
+        self.field_y = None
+        self._headings_x = {}
+        self.rows = {}
+        self.isforecast = False
+
+    def _add_row(self, row):
+        """Add a single row entry into the grid"""
+
+        # TODO: DRY, getattr or unknown
+        value_x = getattr(row, self.field_x, 'unknown')
+        if value_x is None:
+            value_x = 'unknown'
+
+        value_y = getattr(row, self.field_y, 'unknown')
+        if value_y is None:
+            value_y = 'unknown'
+
+        if value_x not in self._headings_x:
+            self._headings_x[value_x] = RowSet()
+
+        self._headings_x[value_x].append(row)
+
+        # TODO: should there be a RowSetDict as well as the current RowSet
+        #       array?
+        if value_y not in self.rows:
+            self.rows[value_y] = {}
+        if value_x not in self.rows[value_y]:
+            self.rows[value_y][value_x] = RowSet()
+
+        self.rows[value_y][value_x].append(row)
+
+        if row.isforecast:
+            self.isforcast = True
+
+    def load_RowSet(self, field_x, field_y, rowset):
+        """Load a RowSet into the grid"""
+        self.field_x = field_x
+        self.field_y = field_y
+
+        for row in rowset:
+            self._add_row(row)
+
+    @property
+    def headings_x(self):
+        """Return the key for each of the headings in the x direction"""
+
+        return self._headings_x.keys()

@@ -366,3 +366,39 @@ class TestAutoSplit(unittest.TestCase):
 """
 
         self.assertEqual(expected, got)
+
+class TestRowGrid(unittest.TestCase):
+    input_data = """
+#balance 0
+-10 1970-02-06 comment4
+10 1970-01-05 comment1
+-10 1970-01-10 comment2 #bills:rent
+-10 1970-01-01 comment3 #bills:water
+-10 1970-03-01 comment5 #bills:rent
+-15 1970-01-11 comment6 #bills:water !months:3
+"""
+
+    def setUp(self):
+        f = StringIO(self.input_data)
+        rows = rowset.RowSet()
+        rows.load_file(f)
+
+        self.grid = rows.grid_by('month', 'hashtag')
+
+    def tearDown(self):
+        self.grid = None
+
+    def test_forecast1(self):
+        """By default, forecast should be false"""
+        self.assertEqual(self.grid.isforecast, False)
+
+    def test_headings_x(self):
+        expected = [ '1970-01', '1970-02', '1970-03', 'unknown']
+        got = []
+        for heading in self.grid.headings_x:
+            if isinstance(heading, datetime.date):
+                heading = heading.strftime('%Y-%m')
+            got.append(heading)
+        got = sorted(got)
+
+        self.assertEqual(got, expected)
