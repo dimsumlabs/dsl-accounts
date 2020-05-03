@@ -9,3 +9,6 @@ htmlcov
 
 # ignore our staging area for the generated pages
 pages
+
+# vim swap files
+.*.swp
