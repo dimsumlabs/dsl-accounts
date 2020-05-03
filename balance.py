@@ -237,37 +237,6 @@ def grid_render(months, tags, grid, totals, running_totals):
     return ''.join(s)
 
 
-def topay_render(rows, strings):
-    rows = rows.filter(['direction==outgoing'])
-    alltags = sorted(rows.group_by('hashtag').keys())
-
-    months = rows.group_by('month')
-
-    s = []
-    for month in sorted(months):
-        s.append(strings['header'].format(date=render_month(month)))
-        s.append("\n")
-        s.append(strings['table_start'])
-        s.append("\n")
-
-        monthtags = months[month].group_by('hashtag')
-        for hashtag in alltags:
-            if hashtag in monthtags:
-                price = monthtags[hashtag].value
-                date = monthtags[hashtag].last().date
-            else:
-                price = "$0"
-                date = "Not Yet"
-
-            s.append(strings['table_row'].format(hashtag=hashtag.capitalize(),
-                                                 price=price, date=date))
-            s.append("\n")
-        s.append(strings['table_end'])
-        s.append("\n")
-
-    return ''.join(s)
-
-
 #
 # This section contains the implementation of the commandline
 # sub-commands.  Ideally, they are all small and simple, implemented with
@@ -340,18 +309,8 @@ def subp_topay(args):
 
 
 def subp_topay_html(args):
-    strings = {
-        'header': '<h2>Date: <i>{date}</i></h2>',
-        'table_start':
-            "<table>\n" +
-            "<tr><th>Bills</th><th>Price</th><th>Pay Date</th></tr>",
-        'table_end': '</table>',
-        'table_row': '''
-    <tr>
-        <td>{hashtag}</td><td>{price}</td><td>{date}</td>
-    </tr>''',
-    }
-    return topay_render(args.rows, strings)
+    args.template = "topay.html.j2"
+    return subp_jinja2(args)
 
 
 def subp_party(args):

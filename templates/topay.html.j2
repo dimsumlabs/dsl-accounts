@@ -1,0 +1,24 @@
+{%   set rows = db.input.filter(['direction==outgoing'])
+%}{% set alltags = rows.group_by('hashtag') | sort
+%}{% set months = rows.group_by('month')
+%}{% for month in months | sort
+%}{%   if month in months
+%}{%     set monthtags = months[month].group_by('hashtag')
+%}{%   endif
+%}<h2>Date: <i>{{ month.strftime('%Y-%m') }}</i></h2>
+<table>
+<tr><th>Bills</th><th>Price</th><th>Pay Date</th></tr>
+{%     for tag in alltags
+%}{%     if tag in monthtags
+%}{%       set price = monthtags[tag].value
+%}{%       set date = monthtags[tag].last().date
+%}{%     else
+%}{%       set price = "$0"
+%}{%       set date = "Not Yet"
+%}{%     endif
+%}
+    <tr>
+        <td>{{ tag.capitalize() }}</td><td>{{ price }}</td><td>{{ date }}</td>
+    </tr>
+{%     endfor %}</table>
+{%   endfor %}

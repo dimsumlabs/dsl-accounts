@@ -183,39 +183,6 @@ class TestMisc(unittest.TestCase):
         self.maxDiff = None
         self.assertEqual(expected, got)
 
-    def test_topay_render(self):
-        strings = {
-            'header': 'header: {date}',
-            'table_start': 'table_start:',
-            'table_end': 'table_end:',
-            'table_row': 'table_row: {hashtag}, {price}, {date}',
-        }
-
-        expect = [
-            "header: 1970-01",
-            "table_start:",
-            "table_row: Bills:rent, -10, 1970-01-10",
-            "table_row: Bills:water, -25, 1970-01-11",
-            "table_row: Unknown, $0, Not Yet",
-            "table_end:",
-            "header: 1970-02",
-            "table_start:",
-            "table_row: Bills:rent, $0, Not Yet",
-            "table_row: Bills:water, $0, Not Yet",
-            "table_row: Unknown, -10, 1970-02-06",
-            "table_end:",
-            "header: 1970-03",
-            "table_start:",
-            "table_row: Bills:rent, -10, 1970-03-01",
-            "table_row: Bills:water, $0, Not Yet",
-            "table_row: Unknown, $0, Not Yet",
-            "table_end:",
-            "",
-        ]
-
-        got = balance.topay_render(self.rows, strings).split("\n")
-        self.assertEqual(got, expect)
-
     def test_grid_render(self):
         expect = [
             "              1970-01  1970-02  1970-03",
