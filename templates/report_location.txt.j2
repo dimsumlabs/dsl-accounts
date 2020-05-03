@@ -1,0 +1,14 @@
+{%   set rows = args.rows._split_locn_xfer()
+%}{% set groups = rows.group_by('location')
+%}{% if args.verbose
+%}{%   for locn in groups | sort
+%}{{     locn }}:
+{{       groups[locn] }}
+{%     endfor %}
+
+{%   endif %}
+TOTALS
+
+{%   for locn in groups | sort
+%}{{   locn }} {{ groups[locn].value }}
+{%   endfor %}

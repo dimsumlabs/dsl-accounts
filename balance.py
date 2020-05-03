@@ -672,30 +672,8 @@ def subp_report_location(args):
     Report on the balance of each location "locn" bangtag found in the
     dataset.
     """
-
-    args.rows = args.rows._split_locn_xfer()
-
-    groups = args.rows.group_by('location')
-
-    s = []
-
-    if args.verbose > 0:
-        for locn in sorted(groups.keys()):
-            s += locn
-            s += ':\n'
-            s += str(groups[locn])
-            s += '\n'
-
-        s += '\n\n'
-
-    s += '\nTOTALS\n\n'
-    for locn in sorted(groups.keys()):
-        s += locn
-        s += ' '
-        s += str(groups[locn].value)
-        s += '\n'
-
-    return ''.join(s)
+    args.template = "report_location.txt.j2"
+    return subp_jinja2(args)
 
 
 # A list of all the sub-commands
