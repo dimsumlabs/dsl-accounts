@@ -1,4 +1,4 @@
-{%   set rows = db.input.filter(['direction==outgoing'])
+{%   set rows = args.rows.filter(['direction==outgoing'])
 %}{% set alltags = rows.group_by('hashtag') | sort
 %}{% set months = rows.group_by('month')
 %}{% for month in months | sort

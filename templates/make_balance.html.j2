@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% set rows = db.input.filter([
+{% set rows = args.rows.filter([
     'hashtag=~^dues:',
     "rel_months>-5",
     'rel_months<1',
@@ -100,7 +100,7 @@ body {
  <table width=100%>
   <tr>
    <td colspan=2 class="bill_desc">Monthly Balance:</td>
-   <td class="bill_value color_pos">{{ db.input.filter(['rel_months==0']).value | int }}&nbsp;HKD</td>
+   <td class="bill_value color_pos">{{ args.rows.filter(['rel_months==0']).value | int }}&nbsp;HKD</td>
   </tr>
   <tr>
    <td colspan=2 class="bill_desc">(due: <span class="color_neg">{{ _hack_rentdue() }}</span>) Rent:</td>
@@ -137,7 +137,7 @@ body {
   <tr>
    <td>&nbspc;&nbspc;&nbspc;</td>
    <td class="bill_desc">Members loans to DSL:</td>
-   <td class="bill_value color_neg">{{ db.input.filter(['hashtag==loan']).value | int }}&nbsp;HKD</td>
+   <td class="bill_value color_neg">{{ args.rows.filter(['hashtag==loan']).value | int }}&nbsp;HKD</td>
   </tr>
  </table>
 

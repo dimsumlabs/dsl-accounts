@@ -281,9 +281,7 @@ def subp_jinja2(args):
     tpl = env.get_template(template)
 
     variables = {
-        'db': {
-            'input': args.rows,
-        },
+        'args': args,
 
         # These are hacks because they do not follow a clean data naming
         # model or use object methods
