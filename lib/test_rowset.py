@@ -368,6 +368,38 @@ class TestAutoSplit(unittest.TestCase):
         self.assertEqual(expected, got)
 
 
+class TestLocn(unittest.TestCase):
+    input_data = """
+#balance 0
+-10 1970-10-06 comment4 !locn:test_location
+10 1970-11-05 comment1 !locn:test_location
+0 1970-12-10 comment2 !locn_xfer:test_location:test_location2:100
+"""
+
+    def setUp(self):
+        f = StringIO(self.input_data)
+        rows = rowset.RowSet()
+        rows.load_file(f)
+
+        self.rows = rows = rows.filter(['isdata==1'])
+
+    def tearDown(self):
+        self.rows = None
+
+    def test_locn_split(self):
+        split = self.rows._split_locn_xfer()
+
+        got = str(split)
+
+        expected = """-10 1970-10-06 comment4 !locn:test_location
+10 1970-11-05 comment1 !locn:test_location
+-100 1970-12-10 comment2 !locn_xfer:test_location:test_location2:100 !locn:test_location
+100 1970-12-10 comment2 !locn_xfer:test_location:test_location2:100 !locn:test_location2
+""" # noqa stupid E501
+
+        self.assertEqual(expected, got)
+
+
 class TestRowGrid(unittest.TestCase):
     input_data = """
 #balance 0

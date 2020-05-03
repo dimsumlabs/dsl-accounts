@@ -673,11 +673,7 @@ def subp_report_location(args):
     dataset.
     """
 
-    # TODO: there should be a function to do this
-    split = RowSet()
-    for row in args.rows:
-        split.append(row._split_locn_xfer())
-    args.rows = split
+    args.rows = args.rows._split_locn_xfer()
 
     groups = args.rows.group_by('location')
 

@@ -179,6 +179,18 @@ class RowSet(object):
             result.append(row.autosplit())
         return result
 
+    def _split_locn_xfer(self):
+        """look at the locn bangtag and return the rowset all split
+        """
+        # TODO:
+        # - this could be cleaner, it is essentially breaking the promise of
+        #   "auto" in the autosplit() above
+
+        result = RowSet()
+        for row in self:
+            result.append(row._split_locn_xfer())
+        return result
+
     def group_by(self, field):
         """Group the rowset by the given row field and return groups as a dict
         """
