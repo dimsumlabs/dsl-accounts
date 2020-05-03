@@ -23,7 +23,7 @@ pages/pressstart2p.ttf: docs/pressstart2p.ttf
 pages/circle.svg: docs/circle.svg
 	cp $< $@
 
-pages/index.html: ./balance.py docs/template.html.j2 $(cashfiles)
+pages/index.html: ./balance.py templates/make_balance.html.j2 $(cashfiles)
 	@mkdir -p pages
 	./balance.py --split make_balance >$@
 

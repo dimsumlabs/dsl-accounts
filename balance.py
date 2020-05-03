@@ -276,6 +276,54 @@ def topay_render(rows, strings):
 #
 
 
+def subp_jinja2(args):
+    def _hack_rentdue():
+        last_payment = args.rows.group_by('hashtag')['bills:rent'].last()
+        date = last_payment.date
+
+        # TODO:
+        # - Add something like this function to the RowSet?
+        # - Make it more generically useful somehow?
+
+        # The landlord states that "the monthly rental payment should
+        # be settled seven (7) days in advance prior to the 1st day of
+        # each and every rental month"
+        #
+        # Implement business logic to find this date
+        #
+        # assuming the rent transactions have been placed into the
+        # month that they are paying the rent for, we can find the date
+        # that the rent is next due by clamping the day to seven days
+        # before the end of the month
+
+        # set to the due date during at the end of the month
+        date = date.replace(
+            day=calendar.monthrange(date.year, date.month)[1] - 7
+        )
+
+        return date
+
+    template = args.template
+    templatedir = os.path.join(os.path.dirname(__file__), './templates/')
+
+    env = jinja2.Environment(loader=jinja2.FileSystemLoader(templatedir))
+
+    # Load the template file
+    tpl = env.get_template(template)
+
+    variables = {
+        'db': {
+            'input': args.rows,
+        },
+
+        # These are hacks because they do not follow a clean data naming
+        # model or use object methods
+        '_hack_timenow': _iso8601_str(datetime.datetime.utcnow()),
+        '_hack_rentdue': _hack_rentdue,
+    }
+    return tpl.render(variables)
+
+
 def subp_sum(args):
     result = args.rows.value
     # Only check the result for validity here and not in the class as
@@ -287,13 +335,8 @@ def subp_sum(args):
 
 
 def subp_topay(args):
-    strings = {
-        'header': 'Date: {date}',
-        'table_start': "Bill\t\t\tPrice\tPay Date",
-        'table_end': '',
-        'table_row': "{hashtag:<23}\t{price}\t{date}",
-    }
-    return topay_render(args.rows, strings)
+    args.template = "topay.txt.j2"
+    return subp_jinja2(args)
 
 
 def subp_topay_html(args):
@@ -383,48 +426,8 @@ def subp_json_payments(args):
 
 
 def subp_make_balance(args):
-    # Load the template file
-    # TODO - use a string or an arg for the template source
-    j2env = jinja2.Environment(
-        loader=jinja2.FileSystemLoader(
-            os.path.join(os.path.dirname(__file__), './docs/')
-        )
-    )
-    j2tpl = j2env.get_template('template.html.j2')
-
-    def _get_next_rent_month():
-        last_payment = args.rows.group_by('hashtag')['bills:rent'].last()
-        date = last_payment.date
-
-        # The landlord states that "the monthly rental payment should
-        # be settled seven (7) days in advance prior to the 1st day of
-        # each and every rental month"
-        #
-        # Implement business logic to find this date
-        #
-        # assuming the rent transactions have been placed into the
-        # month that they are paying the rent for, we can find the date
-        # that the rent is next due by clamping the day to seven days
-        # before the end of the month
-
-        # set to the due date during at the end of the month
-        date = date.replace(
-            day=calendar.monthrange(date.year, date.month)[1] - 7
-        )
-
-        return date
-
-    macros = {
-        'db': {
-            'input': args.rows,
-        },
-
-        # These are hacks because they do not follow a clean data naming
-        # model
-        '_hack_timenow': _iso8601_str(datetime.datetime.utcnow()),
-        '_hack_rentdue': _get_next_rent_month,
-    }
-    return j2tpl.render(macros)
+    args.template = "make_balance.html.j2"
+    return subp_jinja2(args)
 
 
 def subp_roundtrip(args):
@@ -744,6 +747,10 @@ def subp_report_location(args):
 
 # A list of all the sub-commands
 subp_cmds = {
+    'jinja2': {
+        'func': subp_jinja2,
+        'help': 'Pass the rows to a jinja2 template to be rendered',
+    },
     'check_doubletxn': {
         'func': subp_check_doubletxn,
         'help': 'Check for identical transactions in each month',
@@ -833,6 +840,9 @@ if __name__ == '__main__':  # pragma: no cover
         value['parser'] = subp.add_parser(key, help=value['help'])
         value['parser'].set_defaults(func=value['func'])
 
+    # FIXME:
+    # - we should have a better answer than this special casing
+
     # Add an additional commandline option for the "grid" subcommand
     subp_cmds['grid']['parser'].add_argument('--separate_inout',        # noqa
         action='store_const', const=True, default=False,                # noqa
@@ -843,6 +853,14 @@ if __name__ == '__main__':  # pragma: no cover
         help='Quick hack specifying oldest entries to display - the arg is the number of days' # noqa
     )                                                                   # noqa
     subp_cmds['grid']['parser'].set_defaults(filter_hack=640)
+
+    subp_cmds['jinja2']['parser'].add_argument('template',
+                                               # F.U. E128
+                                               action='store',
+                                               type=str,
+                                               help='Template name'
+    ) # noqa F.U. E124
+
     #
     # Hello? is that flake8?  I'd like to talk to you about presentation
     # values.  I know you like to keep lines under 78 characters wide, and
