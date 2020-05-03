@@ -126,7 +126,7 @@ body {
     {% for tag in grid.headings_y|sort %}
     {%   set tagstr = tag[5:].title() %}
     {%   set row = grid.rows[tag] %}
-    <pre class="grid {{ loop.cycle('','','rowodd','rowodd') }}">{{ "%-*s"|format(tagwidth, tagstr) }} {% for month in months %}{% if month in row %}{{ "%*s"|format(colwidth, row[month].value) }}{% else %}{{ ' '*colwidth }}{% endif %}{% endfor %}</pre>
+    <pre class="grid {{ loop.cycle('','','rowodd','rowodd') }}">{{ "%-*s" % (tagwidth, tagstr) }} {% for month in months %}{% if month in row %}{{ "%*s" % (colwidth, row[month].value) }}{% else %}{{ ' '*colwidth }}{% endif %}{% endfor %}</pre>
     {% endfor %}
    <td class="tractorbar tractorright">&nbsp;
   </tr>

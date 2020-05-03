@@ -15,6 +15,6 @@ Bill                    Price   Pay Date
 %}{%       set price = "$0"
 %}{%       set date = "Not Yet"
 %}{%     endif
-%}{{ "%-24s"|format(tag.capitalize()) }}{{ "%-7s"|format(price) }} {{ date }}
+%}{{ "%-24s" % (tag.capitalize()) }}{{ "%-7s" % (price) }} {{ date }}
 {%     endfor %}
 {%   endfor %}
