@@ -175,8 +175,14 @@ class TestRowClass(unittest.TestCase):
         self.assertEqual(obj.filter('date<1970-01-02'), None)
         self.assertEqual(obj.filter('date<1970-01-05'), obj)
 
+        self.assertEqual(obj.filter('date<=1970-01-02'), None)
+        self.assertEqual(obj.filter('date<=1970-01-03'), obj)
+
         self.assertEqual(obj.filter('month>1969-12'), obj)
         self.assertEqual(obj.filter('month>1970-01'), None)
+
+        self.assertEqual(obj.filter('month>=1970-01'), obj)
+        self.assertEqual(obj.filter('month>=1970-02'), None)
 
         self.assertEqual(obj.filter('comment=~gtag'), obj)
         self.assertEqual(obj.filter('comment=~^a'), obj)

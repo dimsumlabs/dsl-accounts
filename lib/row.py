@@ -153,6 +153,16 @@ class Row(object):
                 return self
             return None
 
+        if op == '>=':
+            if value_now >= value_match:
+                return self
+            return None
+
+        if op == '<=':
+            if value_now <= value_match:
+                return self
+            return None
+
         raise ValueError('Unknown filter operation "{}"'.format(op))
 
     def autosplit(self, method=None):
