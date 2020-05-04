@@ -275,7 +275,13 @@ def subp_jinja2(args):
     template = args.template
     templatedir = os.path.join(os.path.dirname(__file__), './templates/')
 
-    env = jinja2.Environment(loader=jinja2.FileSystemLoader(templatedir))
+    env = jinja2.Environment(
+            loader=jinja2.FileSystemLoader(templatedir),
+            extensions=[
+                'jinja2.ext.do',
+                'jinja2.ext.loopcontrols',
+            ],
+    )
 
     # Load the template file
     tpl = env.get_template(template)
