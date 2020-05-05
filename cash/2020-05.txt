@@ -1,3 +1,4 @@
 #balance 11241 opening balance
 1000   2020-05-04 #dues:felix !locn:philip
 1000   2020-05-04 #dues:philip !locn:philip !months:1:1
+500    2020-05-02 #dues:nick !locn:nic
