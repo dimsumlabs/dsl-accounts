@@ -784,10 +784,6 @@ if __name__ == '__main__':  # pragma: no cover
     # - we should have a better answer than this special casing
 
     # Add an additional commandline option for the "grid" subcommand
-    subp_cmds['grid']['parser'].add_argument('--separate_inout',        # noqa
-        action='store_const', const=True, default=False,                # noqa
-        help='Show incoming and outgoing on separate lines of the grid' # noqa
-    )                                                                   # noqa
     subp_cmds['grid']['parser'].add_argument('--filter_hack',        # noqa
         type=int,                                # noqa
         help='Quick hack specifying oldest entries to display - the arg is the number of days' # noqa
