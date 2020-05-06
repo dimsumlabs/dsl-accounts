@@ -407,7 +407,7 @@ class TestRowGrid(unittest.TestCase):
 10 1970-01-05 comment1
 -10 1970-01-10 comment2 #bills:rent
 -10 1970-01-01 comment3 #bills:water
--10 1970-03-01 comment5 #bills:rent
+-10 1970-03-01 comment5 #bills:rent !forecast
 -15 1970-01-11 comment6 #bills:water !months:3
 """
 
@@ -424,8 +424,12 @@ class TestRowGrid(unittest.TestCase):
         self.grid = None
 
     def test_forecast1(self):
-        """By default, forecast should be false"""
-        self.assertEqual(self.grid.isforecast, False)
+        """By default, forecast should be false
+        so it will only be true if it is set by a row"""
+        self.assertEqual(self.grid.isforecast, True)
+        # TODO:
+        # - should create a second grid that has no forecast and check that
+        #   isforecast == False
 
     def test_headings_x(self):
         expected = ['1970-01', '1970-02', '1970-03']
@@ -441,3 +445,19 @@ class TestRowGrid(unittest.TestCase):
 
     def test_headings_y_width(self):
         self.assertEqual(11, self.grid.headings_y_width)
+
+    def test_forecast_cell(self):
+        cell = self.grid.rows['bills:rent'][Date(1970, 3, 1)]
+        self.assertEqual(cell.isforecast, True)
+
+        cell = self.grid.rows['bills:rent'][Date(1970, 1, 1)]
+        self.assertEqual(cell.isforecast, False)
+
+    def test_forecast_column(self):
+        # TODO: should there be a public accessor for this _headings_x dict?
+
+        column = self.grid._headings_x[Date(1970, 3, 1)]
+        self.assertEqual(column.isforecast, True)
+
+        column = self.grid._headings_x[Date(1970, 1, 1)]
+        self.assertEqual(column.isforecast, False)

@@ -269,7 +269,7 @@ class RowGrid(object):
         self.rows[value_y][value_x].append(row)
 
         if row.isforecast:
-            self.isforcast = True
+            self.isforecast = True
 
     def load_RowSet(self, field_x, field_y, rowset):
         """Load a RowSet into the grid"""
