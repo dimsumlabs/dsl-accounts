@@ -350,35 +350,8 @@ def subp_csv(args):
 
 
 def subp_grid(args):
-    # ensure that each category has a nice and clear prefix
-    for row in args.rows:
-        if row.hashtag is None:
-            row.hashtag = 'unknown'
-
-        # Most of the time, the in and out with either be
-        # one-way or balance each other out to zero.  So,
-        # we can avoid the extra lines to separate them.
-        #
-        # Occasionally, we might want to dig into the flow
-        # to see where some strange number comes from
-        if args.separate_inout:
-            if row.direction == 'outgoing':
-                row.hashtag = row.hashtag + ' out'
-            else:
-                row.hashtag = row.hashtag + ' in'
-
-    (months, grid, totals, running_totals) = grid_accumulate(args.rows)
-
-    # FIXME - tags contains entries that might be filtered
-    tags = args.rows.group_by('hashtag').keys()
-
-    if args.filter_hack:
-        today = datetime.date.today()
-        oldest = today - datetime.timedelta(args.filter_hack)
-
-        months = [month for month in months if month > oldest]
-
-    return grid_render(months, tags, grid, totals, running_totals)
+    args.template = "grid.txt.j2"
+    return subp_jinja2(args)
 
 
 def subp_json_payments(args):

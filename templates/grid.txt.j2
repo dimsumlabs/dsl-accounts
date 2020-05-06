@@ -1,9 +1,12 @@
 {%   set rows = args.rows.filter(['isdata==1']).filter_forecast()
-%}{% set filter_hack = 410
+%}{% set filter_hack = args.filter_hack
 %}{% set grid = rows.grid_by('month', 'hashtag')
 %}{% set months = []
 %}{% set monthsstr = []
-%}{% for i in grid.headings_x if (today - i).days < filter_hack
+%}{% for i in grid.headings_x
+%}{%   if filter_hack is not none and ((today - i).days > filter_hack)
+%}{%     continue
+%}{%   endif
 %}{%   do months.append(i)
 %}{%   do monthsstr.append(i.strftime('%Y-%m'))
 %}{% endfor

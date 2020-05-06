@@ -344,7 +344,7 @@ class TestSubp(unittest.TestCase):
             "",
             "MONTH Sub Total      -13154    13164",
             "RUNNING Balance      -13154       10",
-            "TOTAL:        10",
+            "TOTAL:     10",
         ]
 
         self.filter_hack = None
