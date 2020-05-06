@@ -219,6 +219,9 @@ class TestFilterForecast(unittest.TestCase):
 19 1970-05-11 #bills:rent !forecast
 20 1970-05-10 #bills:rent actual
 21 1970-05-09 unrelated
+22 1970-06-08 #bills:rent !forecast
+23 1970-06-07 #bills:rent !forecast
+24 1970-06-06 #bills:rent actual
 """
 
     def setUp(self):
@@ -249,12 +252,15 @@ class TestFilterForecast(unittest.TestCase):
             '18 1970-04-12 #donation:members !forecast',
             '20 1970-05-10 #bills:rent actual',
             '21 1970-05-09 unrelated',
+            '22 1970-06-08 #bills:rent !forecast',
+            '23 1970-06-07 #bills:rent !forecast',
+            '24 1970-06-06 #bills:rent actual',
         ]
         self.assertEqual(expect, got)
 
     def test_length(self):
         got = self.rows.filter_forecast()
-        self.assertEqual(10, len(got))
+        self.assertEqual(13, len(got))
 
     def test_class(self):
         got = self.rows.filter_forecast()

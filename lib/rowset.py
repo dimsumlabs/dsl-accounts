@@ -173,11 +173,14 @@ class RowSet(object):
 
     def filter_forecast(self):
         """Attempt to remove forecast lines that have a matching actual line"""
-        # We define buckets of transactions with same month and same tag
-        # If the bucket has exactly one forecast and one actual, assume the
-        # forecast has been met and remove it.
+        # We define buckets of transactions with same month and same tag.
+        # If there is exactly one forecast and one or more actual tranactions
+        # we assume the forecast hae been met and remove it.
         #
         # TODO:
+        # - These rules say that if there is multiple forecasts then we can
+        #   never automatically remove them all - this is clearly wrong, but
+        #   was useful to clearly show the dataset.  It needs fixing!
         # - The above definition does not cover all use cases
         #   E.G: multiple members donate small amounts each month, but they
         #   are all considered in the one tag
@@ -187,21 +190,25 @@ class RowSet(object):
         result = RowSet()
         for month in self.group_by('month').values():
             for tag in month.group_by('hashtag').values():
-                if len(tag) != 2:
+
+                if not tag.isforecast:
                     result.append(list(tag))
                     continue
 
-                # If there are only two items, we can try our rule
+                split = tag.group_by('isforecast')
 
-                if tag[0].isforecast == tag[1].isforecast:
-                    # They are not a matching pair of forecast/actual
+                if len(split[True]) != 1:
+                    # there is more than one forecast item, dont filter
                     result.append(list(tag))
                     continue
 
-                if not tag[0].isforecast:
-                    result.append(tag[0])
-                else:
-                    result.append(tag[1])
+                if False not in split:
+                    # There are no real items, dont filter
+                    result.append(list(tag))
+                    continue
+
+                # it looks like we have good data to replace the forecast
+                result.append(list(split[False]))
 
         return result
 
