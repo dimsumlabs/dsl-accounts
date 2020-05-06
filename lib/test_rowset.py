@@ -204,6 +204,52 @@ apple 1970-03-20 comment24
         self.assertEqual(self.rows.isforecast, True)
 
 
+class TestFilterForecast(unittest.TestCase):
+    input_data = """
+#balance 0 Opening Balance
+-10 1970-01-20 #bills:rent !forecast
+-10 1970-01-19 #bills:rent actual
+11 1970-02-18 #donation !forecast
+12 1970-02-17 #donation !forecast
+-5 1970-03-16 #bills:water
+-6 1970-03-15 #bills:water
+15 1970-04-14 #donation:members
+10 1970-04-13 #donation:members !forecast
+5 1970-04-12 #donation:members !forecast
+"""
+
+    def setUp(self):
+        f = StringIO(self.input_data)
+        self.rows = rowset.RowSet()
+        self.rows.load_file(f)
+
+    def tearDown(self):
+        self.rows = None
+
+    def test_filter_forecast(self):
+        self.maxDiff = None
+        got = sorted(str(self.rows.filter_forecast()).split("\n"))
+
+        # Note:
+        # - sorted got means a sorted expect, which makes it look strange
+
+        expect = [
+            '',
+            '',
+            '',
+            '',
+            '-10 1970-01-19 #bills:rent actual',
+            '-5 1970-03-16 #bills:water',
+            '-6 1970-03-15 #bills:water',
+            '10 1970-04-13 #donation:members !forecast',
+            '11 1970-02-18 #donation !forecast',
+            '12 1970-02-17 #donation !forecast',
+            '15 1970-04-14 #donation:members',
+            '5 1970-04-12 #donation:members !forecast',
+        ]
+        self.assertEqual(expect, got)
+
+
 class TestAutoSplit(unittest.TestCase):
 
     def test_len(self):

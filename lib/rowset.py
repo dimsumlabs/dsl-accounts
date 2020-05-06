@@ -171,6 +171,40 @@ class RowSet(object):
                 result.append(row)
         return result
 
+    def filter_forecast(self):
+        """Attempt to remove forecast lines that have a matching actual line"""
+        # We define buckets of transactions with same month and same tag
+        # If the bucket has exactly one forecast and one actual, assume the
+        # forecast has been met and remove it.
+        #
+        # TODO:
+        # - The above definition does not cover all use cases
+        #   E.G: multiple members donate small amounts each month, but they
+        #   are all considered in the one tag
+        # - Could conceivably want a different bucket definition
+        # - The original ordering of the rowset is completely destroyed
+
+        result = RowSet()
+        for month in self.group_by('month').values():
+            for tag in month.group_by('tag').values():
+                if len(tag) != 2:
+                    result.append(tag)
+                    continue
+
+                # If there are only two items, we can try our rule
+
+                if tag[0].isforecast == tag[1].isforecast:
+                    # They are not a matching pair of forecast/actual
+                    result.append(tag)
+                    continue
+
+                if not tag[0].isforecast:
+                    result.append(tag[0])
+                else:
+                    result.append(tag[1])
+
+        return result
+
     def autosplit(self):
         """look at the split bangtag and return the rowset all split
         """
