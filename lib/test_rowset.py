@@ -226,7 +226,7 @@ class TestFilterForecast(unittest.TestCase):
     def tearDown(self):
         self.rows = None
 
-    def test_filter_forecast(self):
+    def test_filtering(self):
         self.maxDiff = None
         got = sorted(str(self.rows.filter_forecast()).split("\n"))
 
@@ -234,9 +234,6 @@ class TestFilterForecast(unittest.TestCase):
         # - sorted got means a sorted expect, which makes it look strange
 
         expect = [
-            '',
-            '',
-            '',
             '',
             '-10 1970-01-19 #bills:rent actual',
             '-5 1970-03-16 #bills:water',
@@ -248,6 +245,15 @@ class TestFilterForecast(unittest.TestCase):
             '5 1970-04-12 #donation:members !forecast',
         ]
         self.assertEqual(expect, got)
+
+    def test_length(self):
+        got = self.rows.filter_forecast()
+        self.assertEqual(10, len(got))
+
+    def test_class(self):
+        got = self.rows.filter_forecast()
+        for i in got:
+            self.assertTrue(isinstance(i, row.Row))
 
 
 class TestAutoSplit(unittest.TestCase):

@@ -188,14 +188,14 @@ class RowSet(object):
         for month in self.group_by('month').values():
             for tag in month.group_by('tag').values():
                 if len(tag) != 2:
-                    result.append(tag)
+                    result.append(list(tag))
                     continue
 
                 # If there are only two items, we can try our rule
 
                 if tag[0].isforecast == tag[1].isforecast:
                     # They are not a matching pair of forecast/actual
-                    result.append(tag)
+                    result.append(list(tag))
                     continue
 
                 if not tag[0].isforecast:
