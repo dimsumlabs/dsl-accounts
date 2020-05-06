@@ -207,18 +207,18 @@ apple 1970-03-20 comment24
 class TestFilterForecast(unittest.TestCase):
     input_data = """
 #balance 0 Opening Balance
--10 1970-01-20 #bills:rent !forecast
--10 1970-01-19 #bills:rent actual
-11 1970-02-18 #donation !forecast
-12 1970-02-17 #donation !forecast
--5 1970-03-16 #bills:water
--6 1970-03-15 #bills:water
-15 1970-04-14 #donation:members
-10 1970-04-13 #donation:members !forecast
-5 1970-04-12 #donation:members !forecast
--20 1970-05-11 #bills:rent !forecast
--20 1970-05-10 #bills:rent actual
--10 1970-05-09 unrelated
+10 1970-01-20 #bills:rent !forecast
+11 1970-01-19 #bills:rent actual
+12 1970-02-18 #donation !forecast
+13 1970-02-17 #donation !forecast
+14 1970-03-16 #bills:water
+15 1970-03-15 #bills:water
+16 1970-04-14 #donation:members
+17 1970-04-13 #donation:members !forecast
+18 1970-04-12 #donation:members !forecast
+19 1970-05-11 #bills:rent !forecast
+20 1970-05-10 #bills:rent actual
+21 1970-05-09 unrelated
 """
 
     def setUp(self):
@@ -234,20 +234,21 @@ class TestFilterForecast(unittest.TestCase):
         got = sorted(str(self.rows.filter_forecast()).split("\n"))
 
         # Note:
-        # - sorted got means a sorted expect, which makes it look strange
+        # - sorted got means a sorted expect, which we counter by making
+        #   the input data sort in a useful order
 
         expect = [
             '',
-            '-10 1970-01-19 #bills:rent actual',
-            '-10 1970-05-09 unrelated',
-            '-20 1970-05-10 #bills:rent actual',
-            '-5 1970-03-16 #bills:water',
-            '-6 1970-03-15 #bills:water',
-            '10 1970-04-13 #donation:members !forecast',
-            '11 1970-02-18 #donation !forecast',
-            '12 1970-02-17 #donation !forecast',
-            '15 1970-04-14 #donation:members',
-            '5 1970-04-12 #donation:members !forecast',
+            '11 1970-01-19 #bills:rent actual',
+            '12 1970-02-18 #donation !forecast',
+            '13 1970-02-17 #donation !forecast',
+            '14 1970-03-16 #bills:water',
+            '15 1970-03-15 #bills:water',
+            '16 1970-04-14 #donation:members',
+            '17 1970-04-13 #donation:members !forecast',
+            '18 1970-04-12 #donation:members !forecast',
+            '20 1970-05-10 #bills:rent actual',
+            '21 1970-05-09 unrelated',
         ]
         self.assertEqual(expect, got)
 
