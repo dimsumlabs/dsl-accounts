@@ -1,4 +1,4 @@
-{%   set rows = args.rows.filter(['isdata==1'])
+{%   set rows = args.rows.filter(['isdata==1']).filter_forecast()
 %}{% set filter_hack = 410
 %}{% set grid = rows.grid_by('month', 'hashtag')
 %}{% set months = []
@@ -26,8 +26,11 @@
 %}{{   "%-*s" % (tagwidth, tag)
 }}{%   for month in months
 %}{%     if month in row
-%}{%       set value = row[month].value
-%}{%       set valuestr = value|string
+%}{%       if row[month].isforecast
+%}{%         set valuestr = '~' + row[month].value|string
+%}{%       else
+%}{%         set valuestr = row[month].value|string
+%}{%       endif
 %}{{       "%*s" % (colwidth, valuestr)
 }}{%     else
 %}{{       ' '*colwidth
@@ -37,15 +40,30 @@
 {%   endfor %}
 {{   "%-*s" % (tagwidth, 'MONTH Sub Total')
 }}{% for month in months
-%}{%   set value = grid._headings_x[month].value
-%}{{   "%*s" % (colwidth, value)
+%}{%   if grid._headings_x[month].isforecast
+%}{%     set valuestr = '~' + grid._headings_x[month].value|string
+%}{%   else
+%}{%     set valuestr = grid._headings_x[month].value|string
+%}{%   endif
+%}{{   "%*s" % (colwidth, valuestr)
 }}{% endfor
 %}
 {{   "%-*s" % (tagwidth, 'RUNNING Balance')
 }}{% for month in months
 %}{%   set monthstr = month.strftime('%Y-%m')
-%}{{   "%*s" % (colwidth, rows.filter(['month<='+monthstr]).value)
+%}{#   TODO: this filter has basically a horrible performance
+#}{%   set this = rows.filter(['month<='+monthstr])
+%}{%   if this.isforecast
+%}{%     set valuestr = '~' + this.value|string
+%}{%   else
+%}{%     set valuestr = this.value|string
+%}{%   endif
+%}{{   "%*s" % (colwidth, valuestr)
 }}{% endfor
 %}
-{{   "%-*s" % (colwidth, "TOTAL:")
-}}  {{ rows.value }}
+{%   if rows.isforecast
+%}{%   set valuestr = '~' + rows.value|string
+%}{% else
+%}{%   set valuestr = rows.value|string
+%}{% endif
+%}{{   "%-*s" % (colwidth, "TOTAL:") }}  {{ valuestr }}
