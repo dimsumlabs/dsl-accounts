@@ -1,0 +1,4 @@
+# payment automatically by bank transfer
+#
+
+700 2020-05-02 #dues:nick !forecast:monthly

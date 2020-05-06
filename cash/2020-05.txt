@@ -1,1 +1,9 @@
 #balance 11241 opening balance
+1000   2020-05-04 #dues:felix !locn:philip
+1000   2020-05-04 #dues:philip !locn:philip !months:1:1
+500    2020-05-02 #dues:nick !locn:nic
+700    2020-05-04 !id:paypal:5WP44117YE8585828 #dues:sayon !locn:paypal
+-29.65 2020-05-04 #dues:sayon !locn:paypal
+808    2020-05-05 #dues:neil !locn:nic
+1000   2020-05-05 !id:paypal:8L380195EA053142X #dues:lio !locn:paypal
+-41.35 2020-05-05 #dues:lio !locn:paypal
