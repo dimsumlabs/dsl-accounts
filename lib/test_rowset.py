@@ -216,6 +216,9 @@ class TestFilterForecast(unittest.TestCase):
 15 1970-04-14 #donation:members
 10 1970-04-13 #donation:members !forecast
 5 1970-04-12 #donation:members !forecast
+-20 1970-05-11 #bills:rent !forecast
+-20 1970-05-10 #bills:rent actual
+-10 1970-05-09 unrelated
 """
 
     def setUp(self):
@@ -236,6 +239,8 @@ class TestFilterForecast(unittest.TestCase):
         expect = [
             '',
             '-10 1970-01-19 #bills:rent actual',
+            '-10 1970-05-09 unrelated',
+            '-20 1970-05-10 #bills:rent actual',
             '-5 1970-03-16 #bills:water',
             '-6 1970-03-15 #bills:water',
             '10 1970-04-13 #donation:members !forecast',

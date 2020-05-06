@@ -186,7 +186,7 @@ class RowSet(object):
 
         result = RowSet()
         for month in self.group_by('month').values():
-            for tag in month.group_by('tag').values():
+            for tag in month.group_by('hashtag').values():
                 if len(tag) != 2:
                     result.append(list(tag))
                     continue
