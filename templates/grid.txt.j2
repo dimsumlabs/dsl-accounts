@@ -1,0 +1,51 @@
+{%   set rows = args.rows.filter(['isdata==1'])
+%}{% set filter_hack = 410
+%}{% set grid = rows.grid_by('month', 'hashtag')
+%}{% set months = []
+%}{% set monthsstr = []
+%}{% for i in grid.headings_x if (today - i).days < filter_hack
+%}{%   do months.append(i)
+%}{%   do monthsstr.append(i.strftime('%Y-%m'))
+%}{% endfor
+%}{% set months = months | sort
+%}{% set monthsstr = monthsstr | sort
+%}{% set tagwidth = grid.headings_y_width + 1
+%}{% set colwidth = 9
+%}  {{ ' '*tagwidth }}{{ monthsstr | join('  ') }}
+{%   for tag in grid.headings_y|sort
+%}{%   set row = grid.rows[tag]
+%}{%   set found = []
+%}{%   for month in months
+%}{%     if month in row
+%}{%       do found.append(month)
+%}{%     endif
+%}{%   endfor
+%}{%   if found|length == 0
+%}{%     continue
+%}{%   endif
+%}{{   "%-*s" % (tagwidth, tag)
+}}{%   for month in months
+%}{%     if month in row
+%}{%       set value = row[month].value
+%}{%       set valuestr = value|string
+%}{{       "%*s" % (colwidth, valuestr)
+}}{%     else
+%}{{       ' '*colwidth
+}}{%     endif
+%}{%   endfor
+%}
+{%   endfor %}
+{{   "%-*s" % (tagwidth, 'MONTH Sub Total')
+}}{% for month in months
+%}{%   set value = grid._headings_x[month].value
+%}{{   "%*s" % (colwidth, value)
+}}{% endfor
+%}
+{{   "%-*s" % (tagwidth, 'RUNNING Balance')
+}}{% for month in months
+%}{%   set monthstr = month.strftime('%Y-%m')
+%}{{   "%*s" % (colwidth, rows.filter(['month<='+monthstr]).value)
+}}{% endfor
+%}
+{{   "%-*s" % (colwidth, "TOTAL:")
+}}  {{ rows.value }}
