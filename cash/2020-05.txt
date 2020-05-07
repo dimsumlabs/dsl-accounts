@@ -7,3 +7,4 @@
 808    2020-05-05 #dues:neil !locn:nic
 1000   2020-05-05 !id:paypal:8L380195EA053142X #dues:lio !locn:paypal
 -41.35 2020-05-05 #dues:lio !locn:paypal
+-200   2020-05-07 #bills:electricity !locn:philip !months:-1:1
