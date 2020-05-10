@@ -14,3 +14,5 @@
 0      2020-05-07 !locn_xfer:paypal:nic:2299.35
 700    2020-05-08 !id:paypal:95M2462940443091L #dues:lawrence !locn:paypal
 -29.65 2020-05-08 #dues:lawrence !locn:paypal
+700    2020-05-10 !id:paypal:7MK45189YP4130504 #dues:alex !locn:paypal !months:1:1
+-29.65 2020-05-10 #dues:alex !locn:paypal !months:1:1
