@@ -19,3 +19,4 @@
 0      2020-05-12 !locn_xfer:paypal:nic:1433.95
 700    2020-05-12 #dues:antonia !locn:nic
 300    2020-05-12 #dues:max !locn:nic
+-422.5 2020-05-13 #bills:rent !locn/:nic stamp duty for the renewal of tenancy agreement
