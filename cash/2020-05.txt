@@ -22,3 +22,4 @@
 -422.5 2020-05-13 #bills:rent !locn:nic stamp duty for the renewal of tenancy agreement
 230    2020-05-13 #fridge !locn:philip
 -264.3 2020-05-13 #fridge !locn:philip
+-238   2020-05-18 #bills:internet !locn:philip
