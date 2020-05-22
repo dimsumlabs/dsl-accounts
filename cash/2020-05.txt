@@ -30,3 +30,6 @@
 700    2020-05-19 #dues:nicolas !locn:nic
 120    2020-05-19 #fridge !locn:philip
 -120   2020-05-19 #fridge !locn:philip
+0      2020-05-20 !locn_xfer:paypal:nic:1629
+700    2020-05-21 !id:paypal:6GL76341FX204044E #dues:richard !locn:paypal !months:1:1
+-29.65 2020-05-21 #dues:richard !locn:paypal !months:1:1
