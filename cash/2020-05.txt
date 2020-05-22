@@ -33,3 +33,5 @@
 0      2020-05-20 !locn_xfer:paypal:nic:1629
 700    2020-05-21 !id:paypal:6GL76341FX204044E #dues:richard !locn:paypal !months:1:1
 -29.65 2020-05-21 #dues:richard !locn:paypal !months:1:1
+0.65   2020-05-22 #donation:members !locn:hamish !months:-1:1 Eradicate fractions
+0.20   2020-05-22 #donation:members !locn:hamish Eradicate fractions
