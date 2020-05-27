@@ -36,3 +36,8 @@
 0.65   2020-05-22 #donation:members !locn:hamish !months:-1:1 Eradicate fractions
 0.20   2020-05-22 #donation:members !locn:hamish Eradicate fractions
 200    2020-05-27 #fridge !locn:philip
+700    2020-05-24 !id:paypal:54D23471UW699281W #dues:neilg !locn:paypal !months:1:1
+-33.15 2020-05-24 #dues:neilg !locn:paypal !months:1:1
+700    2020-05-26 !id:paypal:5GR895761V539553W #dues:sunny !locn:paypal
+-29.65 2020-05-26 #dues:sunny !locn:paypal
+-14000 2020-05-26 #bills:rent !locn:nic !months:1:1
