@@ -41,3 +41,4 @@
 700    2020-05-26 !id:paypal:5GR895761V539553W #dues:sunny !locn:paypal
 -29.65 2020-05-26 #dues:sunny !locn:paypal
 -14000 2020-05-26 #bills:rent !locn:nic !months:1:1
+700    2020-05-19 #dues:hamish !locn:nic
