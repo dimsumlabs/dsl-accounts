@@ -615,11 +615,11 @@ if __name__ == '__main__':  # pragma: no cover
     # - we should have a better answer than this special casing
 
     # Add an additional commandline option for the "grid" subcommand
-    subp_cmds['grid']['parser'].add_argument('--filter_hack',        # noqa
+    subp_cmds['grid']['parser'].add_argument('--display_days_prev',     # noqa
         type=int,                                # noqa
-        help='Quick hack specifying oldest entries to display - the arg is the number of days' # noqa
+        help='Specify the oldest entries to display in number of days'  # noqa
     )                                                                   # noqa
-    subp_cmds['grid']['parser'].set_defaults(filter_hack=640)
+    subp_cmds['grid']['parser'].set_defaults(display_days_prev=640)
 
     subp_cmds['jinja2']['parser'].add_argument('template',
                                                # F.U. E128

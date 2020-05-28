@@ -78,7 +78,7 @@ report.describe:
 	@echo
 
 report.grid:
-	./balance.py --split grid --filter_hack 410
+	./balance.py --split grid --display_days_prev 410
 	@echo
 
 report.stats:
@@ -90,7 +90,7 @@ report: report.describe report.grid report.stats
 report.future:
 	git describe --always --dirty
 	@echo
-	./balance.py --includefuture grid --filter_hack 410
+	./balance.py --includefuture grid --display_days_prev 410
 	@echo
 
 report.location: report.describe
