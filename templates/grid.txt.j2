@@ -1,10 +1,15 @@
 {%   set rows = args.rows.filter(['isdata==1']).filter_forecast()
 %}{% set display_days_prev = args.display_days_prev
+%}{% set display_days_post = args.display_days_post
 %}{% set grid = rows.grid_by('month', 'hashtag')
 %}{% set months = []
 %}{% set monthsstr = []
 %}{% for i in grid.headings_x
-%}{%   if display_days_prev is not none and ((today - i).days > display_days_prev)
+%}{%   set delta = (i - today).days
+%}{%   if display_days_prev is not none and (delta < -display_days_prev)
+%}{%     continue
+%}{%   endif
+%}{%   if display_days_post is not none and (delta > display_days_post)
 %}{%     continue
 %}{%   endif
 %}{%   do months.append(i)

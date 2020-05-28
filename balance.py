@@ -617,9 +617,15 @@ if __name__ == '__main__':  # pragma: no cover
     # Add an additional commandline option for the "grid" subcommand
     subp_cmds['grid']['parser'].add_argument('--display_days_prev',     # noqa
         type=int,                                # noqa
-        help='Specify the oldest entries to display in number of days'  # noqa
+        help='The oldest entries to display, number of days ago'        # noqa
     )                                                                   # noqa
     subp_cmds['grid']['parser'].set_defaults(display_days_prev=640)
+
+    subp_cmds['grid']['parser'].add_argument('--display_days_post',     # noqa
+        type=int,                                # noqa
+        help='The newest entries to display, number of days in the future'  # noqa
+    )                                                                   # noqa
+    subp_cmds['grid']['parser'].set_defaults(display_days_post=182)
 
     subp_cmds['jinja2']['parser'].add_argument('template',
                                                # F.U. E128
