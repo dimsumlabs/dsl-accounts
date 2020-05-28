@@ -182,7 +182,8 @@ class TestSubp(unittest.TestCase):
             "TOTAL:     10",
         ]
 
-        self.filter_hack = None
+        self.display_days_prev = None
+        self.display_days_post = None
         got = balance.subp_grid(self).split("\n")
         self.assertEqual(got, expect)
 
