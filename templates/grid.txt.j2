@@ -2,8 +2,8 @@
 %}{% set display_days_prev = args.display_days_prev
 %}{% set display_days_post = args.display_days_post
 %}{% set grid = rows.grid_by('month', 'hashtag')
+%}{% set thismonth = today.replace(day=1)
 %}{% set months = []
-%}{% set monthsstr = []
 %}{% for i in grid.headings_x
 %}{%   set delta = (i - today).days
 %}{%   if display_days_prev is not none and (delta < -display_days_prev)
@@ -13,13 +13,20 @@
 %}{%     continue
 %}{%   endif
 %}{%   do months.append(i)
-%}{%   do monthsstr.append(i.strftime('%Y-%m'))
 %}{% endfor
 %}{% set months = months | sort
-%}{% set monthsstr = monthsstr | sort
 %}{% set tagwidth = grid.headings_y_width + 1
 %}{% set colwidth = 9
-%}  {{ ' '*tagwidth }}{{ monthsstr | join('  ') }}
+%} {{ ' '*tagwidth
+}}{% for month in months
+%}{%   set prefix = " "
+%}{%   set postfix = " "
+%}{%   if month == thismonth
+%}{%     set prefix = "["
+%}{%     set postfix = "]"
+%}{%   endif
+%}{{   prefix }}{{ month.strftime('%Y-%m') }}{{ postfix
+}}{% endfor %}
 {%   for tag in grid.headings_y|sort
 %}{%   set row = grid.rows[tag]
 %}{%   set found = []

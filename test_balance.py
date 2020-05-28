@@ -169,7 +169,7 @@ class TestSubp(unittest.TestCase):
 
     def test_grid2(self):
         expect = [
-            "                    1990-04  1990-05",
+            "                    1990-04  1990-05 ",
             "bills:electricity     -1174         ",
             "bills:internet                  -488",
             "bills:rent           -12500         ",
