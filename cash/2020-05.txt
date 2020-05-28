@@ -42,3 +42,7 @@
 -29.65 2020-05-26 #dues:sunny !locn:paypal
 -14000 2020-05-26 #bills:rent !locn:nic !months:1:1
 700    2020-05-19 #dues:hamish !locn:nic
+40     2020-04-24 #donation:members !locn:hamish For hosting
+-40    2020-04-24 #bills:hosting !locn:hamish !months:1:1 !id:cac:12769950
+40     2020-05-22 #donation:members !locn:hamish For hosting
+-40    2020-05-22 #bills:hosting !locn:hamish !months:1:1 !id:cac:12775714
