@@ -90,7 +90,7 @@ report: report.describe report.grid report.stats
 report.future:
 	git describe --always --dirty
 	@echo
-	./balance.py --includefuture grid --display_days_prev 410
+	./balance.py --includefuture grid --display_days_prev 270 --display_days_post 150
 	@echo
 
 report.location: report.describe
