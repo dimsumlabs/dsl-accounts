@@ -46,3 +46,4 @@
 -40    2020-04-24 #bills:hosting !locn:hamish !months:1:1 !id:cac:12769950
 40     2020-05-22 #donation:members !locn:hamish For hosting
 -40    2020-05-22 #bills:hosting !locn:hamish !months:1:1 !id:cac:12775714
+#balance 9654.55 closing balance
