@@ -1,2 +1,3 @@
 #balance 9654.55 opening balance
-0.65  2020-06-01 #donation:members !locn:hamish !months:-1:1
+0.65   2020-06-01 #donation:members !locn:hamish !months:-1:1
+-211   2020-06-04 #bills:electricity !locn:philip !months:-1:1
