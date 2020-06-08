@@ -2,4 +2,10 @@
 0.65   2020-06-01 #donation:members !locn:hamish !months:-1:1
 -211   2020-06-04 #bills:electricity !locn:philip !months:-1:1
 1000   2020-06-02 #dues:felix !locn:nic
+808    2020-06-04 #dues:neil !locn:nic
+300    2020-06-04 #dues:max !locn:nic
+700    2020-06-04 #dues:antonia !locn:nic
+700    2020-06-05 #dues:yeojin !locn:nic
+1000   2020-06-06 #dues:meebey !locn:nic
+700    2020-06-07 #dues:nicolas !locn:nic
 
