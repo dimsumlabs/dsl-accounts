@@ -13,3 +13,6 @@
 1000   2020-06-05 !id:paypal:0LM350252B208811F #dues:lio !locn:paypal
 -41.35 2020-06-05 #dues:lio !locn:paypal
 1000   2020-06-08 #dues:philip !locn:philip !months:1:1
+700    2020-06-08 #dues:lawrence !locn:paypal !id:paypal:6VM61134RP8411843
+-29.65 2020-06-08 #dues:lawrence !locn:paypal
+
