@@ -8,4 +8,8 @@
 700    2020-06-05 #dues:yeojin !locn:nic
 1000   2020-06-06 #dues:meebey !locn:nic
 700    2020-06-07 #dues:nicolas !locn:nic
+700    2020-05-29 !id:paypal:11125713VW701222M #dues:sayon !locn:paypal
+-29.65 2020-05-29 #dues:sayon !locn:paypal
+1000   2020-06-05 !id:paypal:0LM350252B208811F #dues:lio !locn:paypal
+-41.35 2020-06-05 #dues:lio !locn:paypal
 
