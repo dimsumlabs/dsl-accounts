@@ -1,0 +1,5 @@
+[flake8]
+
+# It is still prefered to that lines dont go beyond 80 characters, but it
+# really is not an error ..
+max-line-length = 99
