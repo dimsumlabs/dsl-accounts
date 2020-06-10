@@ -18,3 +18,5 @@
 700    2020-06-09 #dues:hamish !locn:hamish
 200    2020-06-09 #fridge !locn:philip
 0.45   2020-06-09 #donation:members !locn:hamish
+700    2020-06-09 #dues:mikael !locn:paypal !id:paypal:54805944RG486925W
+-33.15 2020-06-09 #dues:mikael !locn:paypal
