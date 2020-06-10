@@ -74,3 +74,25 @@ TODO - the list of valid tags is hardcoded in the lib/row.py and should be
 loaded from an external file.  This document could then record where to find
 the external file so that users can understand what tags are available.
 
+# Recording expected future transactions
+
+In order to help with forecast of future financial status, there is an
+option for loading more cash files from a second directory.  If the
+`---includefuture` option is given to the balance.py command, it will
+load files from `"cash/future/*.txt"` (It also relaxes the `#balance`
+pragma checks for these files)
+
+It is expected that these files will all include transactiosn tagged
+with one of the `!forcast` bang tag variants.
+
+When recording an expected monthly transaction, the record_date used
+should normally be the date that this reoccuring transaction started
+(even if this is in the past) - if a minor change (say, to the wording
+or the "until" date) occurs, then there is no need to change the
+record_date.
+
+The record_date therefore becomes a simple proxy for the "start of
+membership" or when the "service contract start date"
+
+(For simple payments, with one transaction per month, there is logic
+to remove the forecast payment when the real payment is recorded)
