@@ -1,4 +1,4 @@
-#
+# membership paid via bank transfer
 #
 
-700 2019-07-15 #dues:nicolas !forecast:monthly
+700 2020-06-7 #dues:nicolas !forecast:monthly

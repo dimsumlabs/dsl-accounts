@@ -1,4 +1,4 @@
-# payment via bank transfer
+# membership paid via bank transfer
 #
 
-700 2020-04-09 #dues:antonia !forecast:monthly !locn:paypal
+700 2020-06-04 #dues:antonia !forecast:monthly !locn:paypal

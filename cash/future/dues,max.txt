@@ -1,4 +1,4 @@
-# payment via bank transfer
+# membership paid via bank transfer
 #
 
-300 2020-04-09 #dues:max !forecast:monthly !locn:paypal
+300 2020-06-04 #dues:max !forecast:monthly !locn:paypal

@@ -1,4 +1,4 @@
-#
+# membership paid via bank transfer
 #
 
-800 2020-02-05 #dues:neil !forecast:monthly !locn:paypal
+800 2020-06-06 #dues:neil !forecast:monthly !locn:paypal

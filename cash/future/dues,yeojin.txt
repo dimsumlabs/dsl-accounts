@@ -1,4 +1,4 @@
-# membership paid via ATM? (I guess this means via "bank transfer")
+# membership paid via bank transfer
 #
 
-700 2020-03-18 #dues:yeojin !forecast:monthly
+700 2020-06-07 #dues:yeojin !forecast:monthly

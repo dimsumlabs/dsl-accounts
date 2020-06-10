@@ -1,4 +1,4 @@
-# payment in cash
+# membership paid via bank transfer
 #
 
-1000 2019-06-05 #dues:meebey !forecast:monthly
+1000 2020-06-0 #dues:meebey !forecast:monthly
