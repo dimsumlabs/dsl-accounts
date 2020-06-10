@@ -1,6 +1,7 @@
 # Licensed under GPLv3
 import decimal
 import os
+import sys
 import glob
 
 from row import Row
@@ -109,7 +110,7 @@ class RowSet(object):
             try:
                 obj = Row.fromTxt(row)
             except Exception as e:
-                print("{}:{} Syntax error".format(filename, line_number))
+                print("{}:{} Syntax error".format(filename, line_number), file=sys.stderr)
                 last_error = e
 
             if isinstance(obj, RowPragmaBalance):
@@ -138,7 +139,7 @@ class RowSet(object):
             self.append(obj)
 
         if last_error is not None:
-            print("Error: at least one syntax error. Trace is from last")
+            print("Error: at least one syntax error. Trace is from last", file=sys.stderr)
             raise last_error
 
     def load_directory(self, dirname, skip_balance_check=False):
