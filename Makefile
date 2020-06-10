@@ -124,7 +124,12 @@ test.code.units:
 	TZ=UTC ./run_tests.py
 
 .PHONY: test.data
-test.data: test.data.doubletxn test.data.sum report.location
+test.data: test.data.future test.data.doubletxn test.data.sum report.location
+
+# Load the futures datafiles to test for syntax errors in them
+.PHONY: test.data.future
+test.data.future:
+	./balance.py --includefuture csv >/dev/null
 
 # Test to check that there are not two payments for the same tag in the same month
 .PHONY: test.data.doubletxn
