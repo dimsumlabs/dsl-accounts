@@ -22,3 +22,5 @@
 -33.15 2020-06-09 #dues:mikael !locn:paypal
 0      2020-05-28 !locn_xfer:paypal:nic:2007.55
 0      2020-06-10 !locn_xfer:paypal:nic:1629
+700    2020-06-10 #dues:alex !locn:paypal !id:paypal:7FL64931NA432200L !months:1:1
+-29.65 2020-06-10 #dues:alex !locn:paypal !months:1:1
