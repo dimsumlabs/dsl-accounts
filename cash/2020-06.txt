@@ -27,3 +27,4 @@
 0      2020-06-11 !locn_xfer:paypal:nic:1337.20
 220    2020-06-12 #fridge !locn:philip
 200    2020-06-13 #dues:noche !locn:philip
+70     2020-06-13 #fridge !locn:philip
