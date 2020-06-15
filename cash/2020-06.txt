@@ -28,3 +28,4 @@
 220    2020-06-12 #fridge !locn:philip
 200    2020-06-13 #dues:noche !locn:philip
 70     2020-06-13 #fridge !locn:philip
+-238   2020-06-15 #bills:internet !locn:philip
