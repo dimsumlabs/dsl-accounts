@@ -1,4 +1,4 @@
 # membership paid via paypal
 #
 
-670 2020-06-09 #dues:mikael !forecast:monthly !locn:paypal
+666 2020-06-09 #dues:mikael !forecast:monthly !locn:paypal
