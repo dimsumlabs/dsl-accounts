@@ -33,3 +33,8 @@
 -6.75  2020-06-12 #supporters stig !locn:paypal
 -250   2020-06-18 #bills:br !months:1:12 !locn:philip
 200    2020-06-18 #fridge !locn:philip
+1000   2020-06-18 #dues:anthony !locn:paypal !id:paypal:6E658522JY091930V !months:1:1
+-41.35 2020-06-18 #dues:anthony !locn:paypal !months:1:1
+700    2020-06-18 #dues:manolis !locn:paypal !id:paypal:8534224707709073W
+-29.65 2020-06-18 #dues:manolis !locn:paypal
+
