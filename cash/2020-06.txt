@@ -37,4 +37,4 @@
 -41.35 2020-06-18 #dues:anthony !locn:paypal !months:1:1
 700    2020-06-18 #dues:manolis !locn:paypal !id:paypal:8534224707709073W
 -29.65 2020-06-18 #dues:manolis !locn:paypal
-
+-256   2020-06-22 #fridge !locn:philip
