@@ -39,3 +39,6 @@
 -29.65 2020-06-18 #dues:manolis !locn:paypal
 -256   2020-06-22 #fridge !locn:philip
 100    2020-06-22 #dues:noche !locn:philip
+0      2020-06-21 !locn_xfer:paypal:nic:2392.6
+700    2020-06-21 #dues:richard !locn:paypal !id:paypal:4FG841091S165640U !months:1:1
+-29.65 2020-06-21 #dues:richard !locn:paypal !months:1:1
