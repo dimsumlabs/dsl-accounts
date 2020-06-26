@@ -42,3 +42,4 @@
 0      2020-06-21 !locn_xfer:paypal:nic:2392.6
 700    2020-06-21 #dues:richard !locn:paypal !id:paypal:4FG841091S165640U !months:1:1
 -29.65 2020-06-21 #dues:richard !locn:paypal !months:1:1
+240    2020-06-25 #fridge !locn:philip
