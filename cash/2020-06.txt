@@ -43,3 +43,5 @@
 700    2020-06-21 #dues:richard !locn:paypal !id:paypal:4FG841091S165640U !months:1:1
 -29.65 2020-06-21 #dues:richard !locn:paypal !months:1:1
 240    2020-06-25 #fridge !locn:philip
+40     2020-06-28 #donation:members !locn:hamish For hosting
+-40    2020-06-28 #bills:hosting !locn:hamish !months:1:1 !id:cac:12776689
