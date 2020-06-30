@@ -47,3 +47,10 @@
 -40    2020-06-28 #bills:hosting !locn:hamish !months:1:1 !id:cac:12776689
 0.55   2020-06-28 #donation:members !locn:hamish
 -14000 2020-06-30 #bills:rent !locn:nic !months:1:1
+700    2020-06-24 #dues:neilg !locn:paypal !id:paypal:1C6086670K8860428 !months:1:1
+-33.15 2020-06-24 #dues:neilg !locn:paypal !months:1:1
+700    2020-06-26 #dues:sunny !locn:paypal !id:paypal:7HY707082G2017838
+-29.65 2020-06-26 #dues:sunny !locn:paypal
+100    2020-06-27 #donation:members !locn:paypal !id:paypal:6PS979395R3263611 Donation by Žiga L.
+-6.75  2020-06-27 #donation:members !locn:paypal
+
