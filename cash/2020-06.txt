@@ -46,3 +46,4 @@
 40     2020-06-28 #donation:members !locn:hamish For hosting
 -40    2020-06-28 #bills:hosting !locn:hamish !months:1:1 !id:cac:12776689
 0.55   2020-06-28 #donation:members !locn:hamish
+-14000 2020-06-30 #bills:rent !locn:nic !months:1:1
