@@ -1,2 +1,3 @@
 #balance 11298.80 opening balance
 1000   2020-07-01 #dues:philip !locn:philip !months:1:1
+200    2020-07-01 #fridge !locn:philip
