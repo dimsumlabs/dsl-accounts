@@ -1,0 +1,17 @@
+{# 
+    Generate a list of forecasted transactions that have not matched with
+    any actual transaction.
+
+    This can be used to find old erroneous data that needs removing, or
+    to target missing transactions.
+
+Usage:
+    ./balance.py --includefuture jinja2 missing_forecasts.txt.j2
+
+#}{%   set rows = args.rows.filter(['isdata==1'])
+%}{% set rows = rows.filter_forecast()
+%}{% set rows = rows.filter(['rel_months<0'])
+%}{% set rows = rows.filter(['isforecast==1'])
+%}{% for row in rows
+%}{{   row.date }} {{ row.value }} {{ row.comment }}
+{%   endfor %}
