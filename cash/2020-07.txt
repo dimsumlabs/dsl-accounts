@@ -2,3 +2,5 @@
 1000   2020-07-01 #dues:philip !locn:philip !months:1:1
 200    2020-07-01 #fridge !locn:philip
 0.40   2020-07-01 #donation:members !locn:hamish !months:-1:1
+120    2020-07-01 #donation:members !months:-10:12 Guess how much Manolis is spending on DNS
+-120   2020-07-01 #bills:dns !months:-10:12 Manolis pays for the DNS
