@@ -4,4 +4,4 @@
 670 2020-02-18 #dues:manolis !forecast:monthly !locn:paypal
 
 # Manolis pays the DNS registration
-10 2019-11-01 #donation:members !forecast:monthly
+10 2019-11-01 #donation:members !forecast:monthly For DNS
