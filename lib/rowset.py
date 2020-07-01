@@ -195,23 +195,25 @@ class RowSet(object):
             for tag in month.group_by('hashtag').values():
 
                 if not tag.isforecast:
+                    # There are no forecast items, dont filter
                     result.append(list(tag))
                     continue
 
                 split = tag.group_by('isforecast')
-
-                if len(split[True]) != 1:
-                    # there is more than one forecast item, dont filter
-                    result.append(list(tag))
-                    continue
 
                 if False not in split:
                     # There are no real items, dont filter
                     result.append(list(tag))
                     continue
 
-                # it looks like we have good data to replace the forecast
-                result.append(list(split[False]))
+                if len(split[True]) == 1 and len(split[False]) >= 1:
+                    # Only one forecast entry:
+                    # take only the real entry(s)
+                    result.append(list(split[False]))
+                    continue
+
+                # there is more than one forecast item, dont filter
+                result.append(list(tag))
 
         return result
 
