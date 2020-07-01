@@ -4,3 +4,5 @@
 0.40   2020-07-01 #donation:members !locn:hamish !months:-1:1
 120    2020-07-01 #donation:members !months:-10:12 Guess how much Manolis is spending on DNS
 -120   2020-07-01 #bills:dns !months:-10:12 Manolis pays for the DNS
+1242   2020-07-01 #donation:members !months:-7:6 Audrey pays for meetup
+-1242  2020-07-01 #bills:meetup !months:-7:6 Audrey pays for meetup
