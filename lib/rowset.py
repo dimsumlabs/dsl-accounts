@@ -177,11 +177,11 @@ class RowSet(object):
         # We define buckets of transactions with same month and same tag.
         # If there is exactly one forecast and one or more actual tranactions
         # we assume the forecast hae been met and remove it.
+        # We then do an exhaustive search for forecast and actual items that
+        # have exactly matching values - and again the forecast is considered
+        # met and removed.
         #
         # TODO:
-        # - These rules say that if there is multiple forecasts then we can
-        #   never automatically remove them all - this is clearly wrong, but
-        #   was useful to clearly show the dataset.  It needs fixing!
         # - The above definition does not cover all use cases
         #   E.G: multiple members donate small amounts each month, but they
         #   are all considered in the one tag
@@ -189,6 +189,7 @@ class RowSet(object):
         # - The original ordering of the rowset is completely destroyed
         # - Since this destroys data, there should be a way to stop it from
         #   running twice on the same data
+        # - The exhaustive search can be quite expensive
 
         result = RowSet()
         for month in self.group_by('month').values():
@@ -206,14 +207,35 @@ class RowSet(object):
                     result.append(list(tag))
                     continue
 
-                if len(split[True]) == 1 and len(split[False]) >= 1:
+                # TODO:
+                # - could make the RowSet more list() like and avoid
+                #   the type conversion here
+                #   (needs to support del, and append(RowSet))
+                forecasts = list(split[True])
+                actuals = list(split[False])
+
+                if len(forecasts) == 1 and len(actuals) >= 1:
                     # Only one forecast entry:
                     # take only the real entry(s)
-                    result.append(list(split[False]))
+                    result.append(actuals)
                     continue
 
-                # there is more than one forecast item, dont filter
-                result.append(list(tag))
+                # There is more than one forecast item, try to match
+                # them with the real items
+                for forecast in forecasts:
+                    found = False
+                    for actualidx in range(len(actuals)):
+                        if forecast.value == actuals[actualidx].value:
+                            found = True
+                            result.append(actuals[actualidx])
+                            del actuals[actualidx]
+                            break
+                    if not found:
+                        # No matching real, take the forecast
+                        result.append(forecast)
+
+                # keep any unmatched real items
+                result.append(actuals)
 
         return result
 
