@@ -187,6 +187,8 @@ class RowSet(object):
         #   are all considered in the one tag
         # - Could conceivably want a different bucket definition
         # - The original ordering of the rowset is completely destroyed
+        # - Since this destroys data, there should be a way to stop it from
+        #   running twice on the same data
 
         result = RowSet()
         for month in self.group_by('month').values():
