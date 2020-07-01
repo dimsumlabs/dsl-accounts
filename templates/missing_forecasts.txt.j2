@@ -13,5 +13,5 @@ Usage:
 %}{% set rows = rows.filter(['rel_months<0'])
 %}{% set rows = rows.filter(['isforecast==1'])
 %}{% for row in rows
-%}{{   row.date }} {{ row.value }} {{ row.comment }}
+%}{{   row.date }} {{ "{:9.2f}".format(row.value) }} {{ row.comment }}
 {%   endfor %}
