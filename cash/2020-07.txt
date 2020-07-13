@@ -17,4 +17,8 @@
 -29.65 2020-07-08 #dues:lawrence !locn:paypal
 700    2020-07-10 #dues:alex !locn:paypal !id:paypal:4W620853R15081933 !months:1:1
 -29.65 2020-07-10 #dues:alex !locn:paypal !months:1:1
+700    2020-07-07 #dues:antonia !locn:nic
+700    2020-07-02 #dues:yeojin !locn:nic
+808    2020-07-06 #dues:neil !locn:nic !months:1:1
+300    2020-07-07 #dues:max !locn:nic
 
