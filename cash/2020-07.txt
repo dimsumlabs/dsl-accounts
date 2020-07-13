@@ -7,3 +7,14 @@
 1242   2020-07-01 #donation:members !months:-7:6 Audrey pays for meetup
 -1242  2020-07-01 #bills:meetup !months:-7:6 Audrey pays for meetup
 -236   2020-07-09 #bills:electricity !locn:philip !months:-1:1
+700    2020-07-04 #dues:sayon !locn:paypal !id:paypal:6P134488992245351
+-29.65 2020-07-04 #dues:sayon !locn:paypal
+1000   2020-07-05 #dues:lio !locn:paypal !id:paypal:4U5565243V7565325
+-41.35 2020-07-05 #dues:lio !locn:paypal
+100    2020-07-07 #supporters stig !locn:paypal !id:paypal:9KK5461610802271F
+-6.75  2020-07-07 #supporters stig !locn:paypal
+700    2020-07-08 #dues:lawrence !locn:paypal !id:paypal:1J3428925T5758622
+-29.65 2020-07-08 #dues:lawrence !locn:paypal
+700    2020-07-10 #dues:alex !locn:paypal !id:paypal:4W620853R15081933 !months:1:1
+-29.65 2020-07-10 #dues:alex !locn:paypal !months:1:1
+
