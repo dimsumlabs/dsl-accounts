@@ -23,4 +23,5 @@
 300    2020-07-07 #dues:max !locn:nic
 700    2020-07-13 #dues:nicolas !locn:nic
 0      2020-07-02 !locn_xfer:paypal:nic:2100.80
-
+80     2020-07-14 #fridge !locn:philip
+-80    2020-07-14 #fridge !locn:philip
