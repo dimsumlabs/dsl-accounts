@@ -29,3 +29,5 @@
 0      2020-07-14 !locn_xfer:paypal:nic:3062.95
 1000   2020-07-14 #dues:felix !locn:philip
 -238   2020-07-16 #bills:internet !locn:philip
+60     2020-07-21 #fridge !locn:philip
+-60    2020-07-21 #bills:upkeep !locn:philip
