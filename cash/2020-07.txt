@@ -31,3 +31,5 @@
 -238   2020-07-16 #bills:internet !locn:philip
 60     2020-07-21 #fridge !locn:philip
 -60    2020-07-21 #bills:upkeep !locn:philip
+150    2020-07-07 #fridge !locn:philip
+-150   2020-07-07 #fridge !locn:philip
