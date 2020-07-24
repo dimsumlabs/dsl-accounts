@@ -34,3 +34,5 @@
 150    2020-07-07 #fridge !locn:philip
 -150   2020-07-07 #fridge !locn:philip
 140    2020-07-07 #fridge !locn:philip
+40     2020-07-24 #donation:members !locn:hamish For hosting
+-40    2020-07-24 #bills:hosting !locn:hamish !months:1:1 !id:cac:12777832
