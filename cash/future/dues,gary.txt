@@ -1,4 +1,5 @@
-# paypal automated payments
-#
+# paypal automated payments were cancelled and he was moving to direct
+# deposit payments, but current affairs appear to have interrupted things
+# 
 
-804 2020-02-12 #dues:gary !forecast:monthly !locn:paypal
+#804 2020-02-12 #dues:gary !forecast:monthly !locn:paypal
