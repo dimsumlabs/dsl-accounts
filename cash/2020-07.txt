@@ -37,3 +37,4 @@
 40     2020-07-24 #donation:members !locn:hamish For hosting
 -40    2020-07-24 #bills:hosting !locn:hamish !months:1:1 !id:cac:12777832
 700    2020-07-24 #dues:hamish !locn:hamish
+500    2020-07-24 #dues:jerry !locn:philip
