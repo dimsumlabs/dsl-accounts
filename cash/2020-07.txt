@@ -51,4 +51,4 @@
 -29.65 2020-07-29 #dues:sayon !locn:paypal !months:1:1
 0      2020-07-30 !locn_xfer:paypal:nic:3640.05
 -14000 2020-07-30 #bills:rent !locn:nic !months:1:1
-
+#balance 10496.20 closing balance
