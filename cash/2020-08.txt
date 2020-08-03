@@ -1,3 +1,6 @@
 #balance 10496.20 opening balance
 1000   2020-08-02 #dues:philip !locn:philip !months:1:1
 0      2020-08-02 !locn_xfer:hamish:philip:1500
+700    2020-08-02 #dues:yeojin !locn:nic
+700    2020-08-03 #dues:nicolas !locn:nic
+
