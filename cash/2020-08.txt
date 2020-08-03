@@ -3,4 +3,5 @@
 0      2020-08-02 !locn_xfer:hamish:philip:1500
 700    2020-08-02 #dues:yeojin !locn:nic
 700    2020-08-03 #dues:nicolas !locn:nic
+1227   2020-08-03 #dues:meebey !locn:nic
 
