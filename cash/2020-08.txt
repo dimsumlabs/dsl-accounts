@@ -5,3 +5,4 @@
 700    2020-08-03 #dues:nicolas !locn:nic
 1227   2020-08-03 #dues:meebey !locn:nic
 0.50   2020-08-04 #donation:members !months:-1:1 !locn:hamish
+700    2020-08-04 #dues:hamish !locn:hamish
