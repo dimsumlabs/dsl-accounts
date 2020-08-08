@@ -8,3 +8,8 @@
 700    2020-08-04 #dues:hamish !locn:hamish
 808    2020-08-06 #dues:neil !locn:nic !months:1:1
 1000   2020-08-07 #dues:felix !locn:philip
+100    2020-08-07 #supporters stig !locn:paypal !id:paypal:1YW145003V3207912
+-6.75  2020-08-07 #supporters stig !locn:paypal
+700    2020-08-08 #dues:lawrence !locn:paypal !id:paypal:2SY79353PX1562350
+-29.65 2020-08-08 #dues:lawrence !locn:paypal
+
