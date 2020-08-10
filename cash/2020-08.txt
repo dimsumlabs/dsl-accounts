@@ -12,4 +12,6 @@
 -6.75  2020-08-07 #supporters stig !locn:paypal
 700    2020-08-08 #dues:lawrence !locn:paypal !id:paypal:2SY79353PX1562350
 -29.65 2020-08-08 #dues:lawrence !locn:paypal
+700    2020-08-10 #dues:alex !locn:paypal !id:paypal:2GA021635K246463R !months:1:1
+-29.65 2020-08-10 #dues:alex !locn:paypal !months:1:1
 
