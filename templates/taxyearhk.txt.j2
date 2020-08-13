@@ -1,0 +1,25 @@
+{# 
+    Generate a report usable to construct a tax report
+
+Usage:
+    ./balance.py jinja2 taxyearhk.txt.j2
+
+#}{%   set rows = args.rows.filter_forecast()
+%}{% set years = rows.group_by('taxyearhk')
+%}{% for yearstr in years.keys() | sort
+%}{%   set year = years[yearstr]
+%}
+
+Tax Year: {{ yearstr }}
+
+{%     set categories = year.group_by('category_prefix1')
+%}{%   for category in categories.keys() | sort
+%}{%     set entry = categories[category]
+%}{%     if entry.isforecast
+%}{%         set entrystr = '~' + entry.value|string
+%}{%       else
+%}{%         set entrystr = entry.value|string
+%}{%     endif
+%}{{     category }},{{ entrystr }}
+{%     endfor
+%}{% endfor %}
