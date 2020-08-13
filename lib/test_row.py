@@ -34,7 +34,7 @@ class TestRowClass(unittest.TestCase):
             "100  1970-01-01 incoming comment",
             "-100 1970-01-02 outgoing comment",
             "10   1970-01-03 a !test_bangtag",
-            "100  1970-01-04 a #test_hashtag",
+            "100  1970-04-04 a #test_hashtag",
             "100  1972-02-29 !months:-1:5",
             "100  1972-01-31 !months:4",
             "100  1970-01-05 !months:3",
@@ -69,6 +69,10 @@ class TestRowClass(unittest.TestCase):
 
     def test_month(self):
         self.assertEqual(self.rows[0].month, Date(1970, 1, 1))
+
+    def test_taxyearhk(self):
+        self.assertEqual(self.rows[0].taxyearhk, 'ye1970')
+        self.assertEqual(self.rows[3].taxyearhk, 'ye1971')
 
     def test_hashtag(self):
         self.assertEqual(self.rows[0].hashtag, None)

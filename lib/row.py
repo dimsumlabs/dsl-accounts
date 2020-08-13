@@ -57,6 +57,7 @@ class Row(object):
         self.isforecast = False
         self.isdata = False
         self.location = None
+        self.taxyearhk = None
 
     def _getvalue_simple(self, field):
         """return the field value as a simple number or string
@@ -285,6 +286,22 @@ class RowData(Row):
              (others should just use the date object)
         """
         return self.date.replace(day=1)
+
+    @property
+    def taxyearhk(self):
+        """
+            The tax year or year of assessment runs from 1 April of a year
+            to 31 March of the following year.
+
+            Return a string that clearly identifies the tax year this
+            object is part of.
+        """
+        if self.date.month < 4:
+            year = self.date.year
+        else:
+            year = self.date.year + 1
+
+        return "ye{}".format(year)
 
     @property
     def rel_months(self):
