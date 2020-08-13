@@ -303,6 +303,24 @@ class RowData(Row):
 
         return "ye{}".format(year)
 
+    def category_prefix(self, level):
+        """
+            Truncate the category ("hashtag") at the given level
+
+            This is used to summarise entire category groups:
+            Eg:
+                "bills:rent" at the level 1 prefix is "bills"
+        """
+        if level < 0:
+            raise ValueError("a negative prefix is nonsense")
+        return ':'.join(self.hashtag.split(':')[:level])
+
+    @property
+    def category_prefix1(self):
+        # TODO: this is awkward, but it is simpler than allowing
+        # parameters in the match() code
+        return self.category_prefix(1)
+
     @property
     def rel_months(self):
         now = datetime.datetime.now().date()

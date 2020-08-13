@@ -83,6 +83,18 @@ class TestRowClass(unittest.TestCase):
             row.RowData("100", Date(1970, 1, 1),
                         "#test_hashtag #test_hashtag2")
 
+    def test_category_prefix(self):
+        obj = row.RowData(10, Date(1970, 11, 1), "#test_hashtag2:level2:level3")  # noqa
+
+        self.assertEqual(obj.category_prefix(0), '')
+        self.assertEqual(obj.category_prefix1, 'test_hashtag2')
+        self.assertEqual(obj.category_prefix(2), 'test_hashtag2:level2')
+        self.assertEqual(obj.category_prefix(3), 'test_hashtag2:level2:level3')
+        self.assertEqual(obj.category_prefix(4), 'test_hashtag2:level2:level3')
+
+        with self.assertRaises(ValueError):
+            obj.category_prefix(-1)
+
     def test_bangtags(self):
         self.assertEqual(self.rows[0].bangtags, dict())
 
