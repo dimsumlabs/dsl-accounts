@@ -12,6 +12,14 @@ Usage:
 
 Tax Year: {{ yearstr }}
 
+{#     TODO: this filter has basically a horrible performance
+#}{%   set previous = rows.filter(['taxyearhk<'+yearstr])
+%}{%   if previous.isforecast
+%}{%     set valuestr = '~' + previous.value|string
+%}{%   else
+%}{%     set valuestr = previous.value|string
+%}{%   endif
+%}OPENING,{{ valuestr }}
 {%     set categories = year.group_by('category_prefix1')
 %}{%   for category in categories.keys() | sort
 %}{%     set entry = categories[category]
