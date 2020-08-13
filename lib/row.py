@@ -280,7 +280,7 @@ class RowData(Row):
 
     @property
     def month(self):
-        """a short string representation of the date as a month
+        """representation of the date as the first of the month
            - used for the filter language
              (others should just use the date object)
         """
