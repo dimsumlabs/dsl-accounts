@@ -1,5 +1,6 @@
 # TODO:
+# - the date is only the approximate start date for this plan
 # - include details about the plan name and expected end dates
-#
+# - I believe the plan is 300Mbit, symetric
 
--238 2018-09-20 #bills:internet !forecast:monthly
+-268 2020-08-17 #bills:internet !forecast:monthly
