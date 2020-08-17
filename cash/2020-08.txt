@@ -20,4 +20,5 @@
 300    2020-08-14 #dues:max !locn:nic
 -268   2020-08-17 #bills:internet !locn:philip
 -240   2020-08-17 #bills:electricity !locn:philip !months:-1:1
+200    2020-08-17 #fridge !locn:philip
 
