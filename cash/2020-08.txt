@@ -21,4 +21,8 @@
 -268   2020-08-17 #bills:internet !locn:philip
 -240   2020-08-17 #bills:electricity !locn:philip !months:-1:1
 200    2020-08-17 #fridge !locn:philip
+700    2020-08-18 #dues:manolis !locn:paypal !id:paypal:27L16536XS195551M
+-29.65 2020-08-18 #dues:manolis !locn:paypal
+1000   2020-08-18 #dues:anthony !locn:paypal !id:paypal:3FW49510GK880722N !months:1:1
+-41.35 2020-08-18 #dues:anthony !locn:paypal !months:1:1
 
