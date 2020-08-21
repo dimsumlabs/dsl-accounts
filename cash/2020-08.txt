@@ -25,4 +25,5 @@
 -29.65 2020-08-18 #dues:manolis !locn:paypal
 1000   2020-08-18 #dues:anthony !locn:paypal !id:paypal:3FW49510GK880722N !months:1:1
 -41.35 2020-08-18 #dues:anthony !locn:paypal !months:1:1
+0      2020-08-21 !locn_xfer:paypal:nic:1629
 
