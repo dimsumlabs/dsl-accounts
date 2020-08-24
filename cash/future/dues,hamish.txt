@@ -4,4 +4,4 @@
 700 2018-06-04 #dues:hamish !forecast:monthly:until:2020-07-01
 
 # For server hosting
-40 2019-11-05 #donation:members !forecast:monthly
+40 2019-11-05 #donation:members !forecast:monthly for server hosting
