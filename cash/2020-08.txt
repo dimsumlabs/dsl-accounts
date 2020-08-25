@@ -29,3 +29,4 @@
 0      2020-08-21 !locn_xfer:philip:nic:6000
 40     2020-08-24 #donation:members !locn:hamish For hosting
 -40    2020-08-24 #bills:hosting !locn:hamish !months:1:1 !id:cac:12779076
+100    2020-08-18 #donation by Sadale !locn:philip
