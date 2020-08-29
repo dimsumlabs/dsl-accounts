@@ -33,3 +33,4 @@
 500    2020-08-23 #dues:jerry !locn:philip
 -14000 2020-08-25 #bills:rent !locn:nic !months:1:1
 300    2020-08-29 #dues:khng !locn:philip !months:1:1
+300    2020-08-29 #fridge !locn:philip
