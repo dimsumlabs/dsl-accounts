@@ -1,2 +1,3 @@
 #balance 7392.35 opening balance
 1000   2020-09-01 #dues:philip !locn:philip !months:1:1
+100    2020-09-01 #donation !locn:philip
