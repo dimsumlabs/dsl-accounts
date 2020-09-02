@@ -1,3 +1,12 @@
 #balance 7392.35 opening balance
 1000   2020-09-01 #dues:philip !locn:philip !months:1:1
 100    2020-09-01 #donation !locn:philip
+700    2020-08-21 #dues:richard !locn:paypal !id:paypal:3R6878173B564474D !months:1:1
+-29.65 2020-08-21 #dues:richard !locn:paypal !months:1:1
+700    2020-08-26 #dues:sunny !locn:paypal !id:paypal:3XY06369AW302251D
+-29.65 2020-08-26 #dues:sunny !locn:paypal
+700    2020-08-29 #dues:sayon !locn:paypal !id:paypal:65P872864F809402M !months:1:1
+-29.65 2020-08-29 #dues:sayon !locn:paypal !months:1:1
+700    2020-09-02 @dues:nicolas !locn:nic
+0      2020-09-02 !locn_xfer:paypal:nic:2011.05
+
