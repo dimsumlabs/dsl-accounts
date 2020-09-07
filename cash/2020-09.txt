@@ -10,4 +10,5 @@
 700    2020-09-02 #dues:nicolas !locn:nic
 0      2020-09-02 !locn_xfer:paypal:nic:2011.05
 1337   2020-09-03 #dues:meebey !locn:nic
-
+100    2020-09-07 #supporters stig !locn:paypal !id:paypal:7S980720CW515305U
+-6.75  2020-09-07 #supporters stig !locn:paypal
