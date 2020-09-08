@@ -16,4 +16,4 @@
 1000   2020-09-08 #dues:felix !locn:philip
 -219   2020-09-08 #bills:electricity !locn:philip !months:-1:1
 300    2020-09-08 #fridge !locn:philip
-
+0.3    2020-09-08 #donation:members !locn:hamish !months:-1:1
