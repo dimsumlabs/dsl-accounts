@@ -13,4 +13,5 @@
 100    2020-09-07 #supporters stig !locn:paypal !id:paypal:7S980720CW515305U
 -6.75  2020-09-07 #supporters stig !locn:paypal
 808    2020-09-04 #dues:neil !locn:nic !months:1:1
+1000   2020-09-08 #dues:felix !locn:philip
 
