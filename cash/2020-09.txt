@@ -19,3 +19,8 @@
 0.3    2020-09-08 #donation:members !locn:hamish !months:-1:1
 700    2020-09-08 #dues:hamish !locn:hamish
 700    2020-09-09 #dues:yeojin !locn:nic
+700    2020-09-08 #dues:lawrence !locn:paypal !id:paypal:7K81914924022803F
+-29.65 2020-09-08 #dues:lawrence !locn:paypal
+700    2020-09-10 #dues:alex !locn:paypal !id:paypal:2UX95120AF189131K !months:1:1
+-29.65 2020-09-10 #dues:alex !locn:paypal !months:1:1
+0      2020-09-11 !locn_xfer:paypal:nic:1433.95
