@@ -24,3 +24,6 @@
 700    2020-09-10 #dues:alex !locn:paypal !id:paypal:2UX95120AF189131K !months:1:1
 -29.65 2020-09-10 #dues:alex !locn:paypal !months:1:1
 0      2020-09-11 !locn_xfer:paypal:nic:1433.95
+700    2020-09-10 #dues:antonia !locn:nic
+300    2020-09-10 #dues:max !locn:nic
+
