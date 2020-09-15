@@ -28,3 +28,4 @@
 300    2020-09-10 #dues:max !locn:nic
 120    2020-09-14 #donation:members !months:12 Guess how much Manolis is spending on DNS
 -120   2020-09-14 #bills:dns !months:12 Manolis pays for the DNS
+-268   2020-09-15 #bills:internet !locn:philip
