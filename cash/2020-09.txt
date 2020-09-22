@@ -29,3 +29,11 @@
 120    2020-09-14 #donation:members !months:12 Guess how much Manolis is spending on DNS
 -120   2020-09-14 #bills:dns !months:12 Manolis pays for the DNS
 -268   2020-09-15 #bills:internet !locn:philip
+1000   2020-09-18 #dues:anthony !locn:paypal !id:paypal:3FV59383GG847664A !months:1:1
+-41.35 2020-09-18 #dues:anthony !locn:paypal !months:1:1
+700    2020-09-18 #dues:manolis !locn:paypal !id:paypal:8UX64771644801527
+-29.65 2020-09-18 #dues:manolis !locn:paypal
+700    2020-09-21 #dues:richard !locn:paypal !id:paypal:66D07626LW516361V !months:1:1
+-29.65 2020-09-21 #dues:richard !locn:paypal !months:1:1
+0      2020-09-22 !locn_xfer:paypal:nic:2299.35
+
