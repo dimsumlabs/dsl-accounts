@@ -1,0 +1,4 @@
+# payment automatically by bank transfer
+#
+
+708.88 2020-10-05 #dues:nick !forecast:monthly
