@@ -38,4 +38,5 @@
 0      2020-09-22 !locn_xfer:paypal:nic:2299.35
 360    2020-09-22 #fridge !locn:philip
 0      2020-09-29 !locn_xfer:philip:nic:4000
-
+40     2020-09-29 #donation:members !locn:hamish For hosting
+-40    2020-09-29 #bills:hosting !locn:hamish !months:1:1 !id:cac:12779965
