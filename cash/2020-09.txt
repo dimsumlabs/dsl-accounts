@@ -40,3 +40,4 @@
 0      2020-09-29 !locn_xfer:philip:nic:4000
 40     2020-09-29 #donation:members !locn:hamish For hosting
 -40    2020-09-29 #bills:hosting !locn:hamish !months:1:1 !id:cac:12779965
+300    2020-09-29 #dues:khng !locn:philip !months:1:1
