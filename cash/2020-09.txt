@@ -43,3 +43,10 @@
 300    2020-09-29 #dues:khng !locn:philip !months:1:1
 90     2020-09-29 #fridge !locn:philip
 -190   2020-09-29 #fridge !locn:philip
+-14000 2020-09-29 #bills:rent !locn:nic !months:1:1
+700    2020-09-26 #dues:sunny !locn:paypal !id:paypal:2YY69638MP2530748
+-29.65 2020-09-26 #dues:sunny !locn:paypal
+700    2020-09-29 #dues:sayon !locn:paypal !id:paypal:75G73746YD0995258 !months:1:1
+-29.65 2020-09-29 #dues:sayon !locn:paypal !months:1:1
+0      2020-09-30 !locn_xfer:paypal:nic:1340.70
+300    2020-09-30 #fridge !locn:nic
