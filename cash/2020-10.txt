@@ -1,1 +1,2 @@
 #balance 8495.70 opening balance
+1000   2020-10-01 #dues:philip !locn:philip !months:1:1
