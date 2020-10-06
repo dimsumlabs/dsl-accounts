@@ -1,3 +1,8 @@
 #balance 8495.70 opening balance
 1000   2020-10-01 #dues:philip !locn:philip !months:1:1
 1000   2020-10-05 #dues:felix !locn:philip
+700    2020-10-05 #dues:antonia !locn:nic
+300    2020-10-05 #dues:max !locn:nic
+808    2020-10-05 #dues:neil !locn:nic !months:1:1 
+1337   2020-10-06 #dues:meebey !locn:nic
+707.07 2020-10-06 #dues:nicolas
