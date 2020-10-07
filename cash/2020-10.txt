@@ -7,3 +7,4 @@
 1337   2020-10-06 #dues:meebey !locn:nic
 707.07 2020-10-06 #dues:nicolas
 150    2020-10-06 #fridge !locn:nic
+-213   2020-10-07 #bills:electricity !locn:philip !months:-1:1
