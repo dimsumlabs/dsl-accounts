@@ -5,6 +5,6 @@
 300    2020-10-05 #dues:max !locn:nic
 808    2020-10-05 #dues:neil !locn:nic !months:1:1 
 1337   2020-10-06 #dues:meebey !locn:nic
-707.07 2020-10-06 #dues:nicolas
+707.07 2020-10-06 #dues:nicolas !locn:nic
 150    2020-10-06 #fridge !locn:nic
 -213   2020-10-07 #bills:electricity !locn:philip !months:-1:1
