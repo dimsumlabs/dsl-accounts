@@ -8,3 +8,11 @@
 707.07 2020-10-06 #dues:nicolas !locn:nic
 150    2020-10-06 #fridge !locn:nic
 -213   2020-10-07 #bills:electricity !locn:philip !months:-1:1
+100    2020-10-07 #supporters stig !locn:paypal !id:paypal:7R408342MX423823M
+-6.75  2020-10-07 #supporters stig !locn:paypal
+700    2020-10-08 #dues:lawrence !locn:paypal !id:paypal:50L22982SK6971621
+-29.65 2020-10-08 #dues:lawrence !locn:paypal
+700    2020-10-08 #dues:alex !locn:paypal !id:paypal:7SE072289D941154A !months:1:1
+-29.65 2020-10-08 #dues:alex !locn:paypal !months:1:1
+0      2020-10-12 !locn_xfer:paypal:nic:1433.95
+
