@@ -16,4 +16,4 @@
 -29.65 2020-10-08 #dues:alex !locn:paypal !months:1:1
 0      2020-10-12 !locn_xfer:paypal:nic:1433.95
 116.6  2020-10-14 #fridge !locn:nic
-
+700    2020-10-12 #dues:yeojin !locn:nic
