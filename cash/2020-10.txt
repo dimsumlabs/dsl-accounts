@@ -17,3 +17,5 @@
 0      2020-10-12 !locn_xfer:paypal:nic:1433.95
 116.6  2020-10-14 #fridge !locn:nic
 700    2020-10-12 #dues:yeojin !locn:nic
+8.10   2020-10-17 #fridge !locn:nic
+
