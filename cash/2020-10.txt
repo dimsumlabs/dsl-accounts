@@ -18,4 +18,5 @@
 116.6  2020-10-14 #fridge !locn:nic
 700    2020-10-12 #dues:yeojin !locn:nic
 8.10   2020-10-17 #fridge !locn:nic
+-268   2020-10-17 #bills:internet !locn:philip
 
