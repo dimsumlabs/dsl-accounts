@@ -24,3 +24,4 @@
 40     2020-10-22 #donation:members !locn:hamish For hosting
 -40    2020-10-22 #bills:hosting !locn:hamish !months:1:1 !id:cac:12780704
 700    2020-10-22 #dues:hamish !locn:hamish
+450    2020-10-27 #workshop PCB design !locn:philip
