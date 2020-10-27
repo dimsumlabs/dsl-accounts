@@ -33,4 +33,5 @@
 -29.65 2020-10-21 #dues:richard !locn:paypal !months:1:1
 700    2020-10-26 #dues:sunny !locn:paypal !id:paypal:5AH20674X1928745Y
 -29.65 2020-10-26 #dues:sunny !locn:paypal
+0      2020-10-27 !locn_xfer:paypal:nic:2969.7
 
