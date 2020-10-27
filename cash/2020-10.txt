@@ -39,4 +39,4 @@
 -14000 2020-10-27 #bills:rent !locn:nic !months:1:1
 700    2020-10-27 #dues:nick !locn:nic
 808    2020-10-27 #dues:nick !locn:nic !months:1:1
-
+200    2020-10-27 #fridge !locn:nic
