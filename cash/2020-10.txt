@@ -36,4 +36,5 @@
 0      2020-10-27 !locn_xfer:paypal:nic:2969.7
 120    2020-10-24 #fridge !locn:nic
 -115.3 2020-10-24 #fridge !locn:nic re-fill in soda
+-14000 2020-10-27 #bills:rent !locn:nic !months:1:1
 
