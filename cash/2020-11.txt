@@ -2,3 +2,4 @@
 1000   2020-11-01 #dues:philip !locn:philip !months:1:1
 300    2020-11-02 #dues:khng !locn:philip
 0.53   2020-11-02 #donation:members round up !locn:philip !months:-1:1
+30     2020-11-02 #donation !locn:philip
