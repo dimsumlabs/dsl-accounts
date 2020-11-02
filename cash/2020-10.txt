@@ -41,3 +41,4 @@
 808    2020-10-27 #dues:nick !locn:nic !months:1:1
 200    2020-10-27 #fridge !locn:nic
 0      2020-10-28 !locn_xfer:philip:nic:4000
+#balance 8407.82 closing balance
