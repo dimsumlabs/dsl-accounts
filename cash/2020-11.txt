@@ -4,4 +4,5 @@
 0.53   2020-11-02 #donation:members round up !locn:philip !months:-1:1
 30     2020-11-02 #donation !locn:philip
 700    2020-10-29 #dues:yeojin !locn:nic !months:1:1
-700    2020-11-03 #dues:nicolas !locn:nic
+707.11 2020-11-03 #dues:nicolas !locn:nic
+120    2020-11-03 #fridge !locn:nic
