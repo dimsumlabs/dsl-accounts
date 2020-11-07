@@ -6,3 +6,4 @@
 700    2020-10-29 #dues:yeojin !locn:nic !months:1:1
 707.11 2020-11-03 #dues:nicolas !locn:nic
 120    2020-11-03 #fridge !locn:nic
+1000   2020-11-07 #dues:felix !locn:philip
