@@ -11,4 +11,8 @@
 808    2020-11-04 #dues:neil !locn:nic !months:1:1
 700    2020-11-05 #dues:antonia !locn:nic
 300    2020-11-05 #dues:max !locn:nic
+100    2020-11-07 #supporters stig !locn:paypal !id:paypal:0K367471E55822532
+-6.75  2020-11-07 #supporters stig !locn:paypal
+700    2020-11-08 #dues:lawrence !locn:paypal !id:paypal:1SH94434YM184184S
+-29.65 2020-11-08 #dues:lawrence !locn:paypal
 
