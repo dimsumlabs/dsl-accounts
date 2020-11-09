@@ -7,3 +7,8 @@
 707.11 2020-11-03 #dues:nicolas !locn:nic
 120    2020-11-03 #fridge !locn:nic
 1000   2020-11-07 #dues:felix !locn:philip
+1337   2020-11-03 #dues:meebey !locn:nic
+808    2020-11-04 #dues:neil !locn:nic !months:1:1
+700    2020-11-05 #dues:antonia !locn:nic
+300    2020-11-05 #dues:max !locn:nic
+
