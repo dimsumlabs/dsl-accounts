@@ -16,4 +16,5 @@
 700    2020-11-08 #dues:lawrence !locn:paypal !id:paypal:1SH94434YM184184S
 -29.65 2020-11-08 #dues:lawrence !locn:paypal
 140    2020-11-10 #fridge !locn:nic
+-260.7 2020-11-07 #fridge !locn:philip
 
