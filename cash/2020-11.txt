@@ -18,4 +18,8 @@
 140    2020-11-10 #fridge !locn:nic
 -260.7 2020-11-07 #fridge !locn:philip
 200    2020-11-11 #fridge !locn:nic
+700    2020-11-13 #dues:sayon !locn:nic
+700    2020-11-15 #dues:alex !locn:paypal !id:paypal:7VE569860X657634K !months:1:1
+-29.65 2020-11-15 #dues:alex !locn:paypal !months:1:1
+0      2020-11-16 !locn_xfer:paypal:nic:1433.95
 
