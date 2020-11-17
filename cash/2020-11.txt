@@ -22,4 +22,5 @@
 700    2020-11-15 #dues:alex !locn:paypal !id:paypal:7VE569860X657634K !months:1:1
 -29.65 2020-11-15 #dues:alex !locn:paypal !months:1:1
 0      2020-11-16 !locn_xfer:paypal:nic:1433.95
+-268   2020-11-17 #bills:internet !locn:philip
 
