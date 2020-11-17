@@ -25,4 +25,5 @@
 -268   2020-11-17 #bills:internet !locn:philip
 150    2020-11-17 #fridge !locn:nic
 100    2020-11-17 #donation !locn:nic
+100    2020-11-17 #fridge !locn:nic
 
