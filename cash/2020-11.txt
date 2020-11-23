@@ -31,4 +31,5 @@
 1000   2020-11-18 #dues:anthony !locn:paypal !id:paypal:66D10895HJ401405L !months:1:1
 -41.35 2020-11-18 #dues:anthony !locn:paypal !months:1:1
 0      2020-11-16 !locn_xfer:paypal:nic:1000.18
-
+40     2020-11-23 #donation:members !locn:hamish For hosting
+-40    2020-11-23 #bills:hosting !locn:hamish !months:1:1 !id:cac:12781484
