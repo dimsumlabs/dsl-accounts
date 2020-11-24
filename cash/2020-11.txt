@@ -36,4 +36,5 @@
 700    2020-11-23 #dues:hamish !locn:hamish
 700    2020-11-21 #dues:richard !locn:paypal !id:paypal:4V30893868320460A !months:1:1
 -29.65 2020-11-21 #dues:richard !locn:paypal !months:1:1
+50     2020-11-24 #workshop photography hacking !locn:philip
 
