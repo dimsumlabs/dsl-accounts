@@ -34,3 +34,6 @@
 40     2020-11-23 #donation:members !locn:hamish For hosting
 -40    2020-11-23 #bills:hosting !locn:hamish !months:1:1 !id:cac:12781484
 700    2020-11-23 #dues:hamish !locn:hamish
+700    2020-11-21 #dues:richard !locn:paypal !id:paypal:4V30893868320460A !months:1:1
+-29.65 2020-11-21 #dues:richard !locn:paypal !months:1:1
+
