@@ -1,3 +1,4 @@
 #balance 21425.41 opening balance
 300    2020-12-01 #dues:khng !locn:nic
+0.94   2020-12-01 #donation:members round up !locn:philip !months:-1:1
 
