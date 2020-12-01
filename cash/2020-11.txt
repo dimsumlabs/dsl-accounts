@@ -40,4 +40,4 @@
 700    2020-11-26 #dues:sunny !locn:paypal !id:paypal:5NF33011V50653917
 -29.65 2020-11-26 #dues:sunny !locn:paypal
 0      2020-11-27 !locn_xfer:paypal:nic:1969.52
-
+#balance 21425.41 closing balance
