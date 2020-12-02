@@ -4,4 +4,5 @@
 1000   2020-12-01 #dues:philip !locn:philip !months:1:1
 -14000 2020-12-01 #bills:rent !locn:nic
 707.12 2020-12-01 #dues:nicolas !locn:nic
+1337   2020-12-01 #dues:meebey !locn:nic
 
