@@ -5,4 +5,5 @@
 -14000 2020-12-01 #bills:rent !locn:nic
 707.12 2020-12-01 #dues:nicolas !locn:nic
 1337   2020-12-01 #dues:meebey !locn:nic
+700    2020-12-02 #dues:alex !locn:nic !months:1:1
 
