@@ -13,4 +13,6 @@
 138    2020-12-08 #fridge !locn:philip
 -138   2020-12-08 #fridge !locn:philip
 3      2020-12-08 #fridge !locn:nic
+700    2020-12-08 #dues:antonia !locn:nic
+300    2020-12-08 #dues:max !locn:nic
 
