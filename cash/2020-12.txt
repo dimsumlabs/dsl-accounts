@@ -17,4 +17,4 @@
 300    2020-12-08 #dues:max !locn:nic
 700    2020-12-08 #dues:lawrence !locn:paypal !id:paypal:4WN754430D879515F
 -29.65 2020-12-08 #dues:lawrence !locn:paypal
-
+300    2020-12-08 #dues:vincentdjojo !locn:nic
