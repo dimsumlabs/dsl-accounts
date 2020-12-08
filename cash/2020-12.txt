@@ -12,4 +12,5 @@
 -392.14 2020-12-08 #bills:electricity !locn:philip !months:-1:1
 138    2020-12-08 #fridge !locn:philip
 -138   2020-12-08 #fridge !locn:philip
+3      2020-12-08 #fridge !locn:nic
 
