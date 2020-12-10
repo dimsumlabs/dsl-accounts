@@ -20,4 +20,5 @@
 300    2020-12-08 #dues:vincentdjojo !locn:nic
 120    2020-12-08 #fridge !locn:nic
 808    2020-12-04 #dues:neil !locn:nic !months:1:1
+1000   2020-12-10 #dues:felix !locn:philip
 
