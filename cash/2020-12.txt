@@ -27,4 +27,6 @@
 -29.65 2020-12-18 #dues:manolis !locn:paypal
 0      2020-12-20 !locn_xfer:paypal:nic:2392.60
 -268   2020-12-18 #bills:internet !locn:philip
+700    2020-12-21 #dues:richard !locn:paypal !id:paypal:4V776353SU3544226 !months:1:1
+-29.65 2020-12-21 #dues:richard !locn:paypal !months:1:1
 
