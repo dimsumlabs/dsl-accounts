@@ -30,4 +30,5 @@
 700    2020-12-21 #dues:richard !locn:paypal !id:paypal:4V776353SU3544226 !months:1:1
 -29.65 2020-12-21 #dues:richard !locn:paypal !months:1:1
 150    2020-12-22 #fridge !locn:nic
+0      2020-12-29 !locn_xfer:philip:nic:7000
 
