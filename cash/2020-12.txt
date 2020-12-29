@@ -32,3 +32,6 @@
 150    2020-12-22 #fridge !locn:nic
 0      2020-12-29 !locn_xfer:philip:nic:7000
 -14000 2020-12-29 #bills:rent !locn:nic !months:1:1
+35     2020-12-12 #fridge !locn:philip
+-35    2020-12-12 #bills:upkeep !locn:philip
+
