@@ -35,3 +35,4 @@
 35     2020-12-12 #fridge !locn:philip
 -35    2020-12-12 #bills:upkeep !locn:philip
 300    2020-12-29 #dues:khng !locn:nic !months:1:1
+#balance 3439.42 closing balance
