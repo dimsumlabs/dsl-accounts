@@ -5,4 +5,5 @@
 1337   2021-01-05 #dues:meebey !locn:nic
 707.01 2021-01-05 #dues:nicolas !locn:nic
 105.5  2021-01-05 #fridge !locn:nic
+1000   2021-01-05 #dues:felix !locn:nic
 
