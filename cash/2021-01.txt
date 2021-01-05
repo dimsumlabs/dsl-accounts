@@ -4,4 +4,5 @@
 808    2021-01-04 #dues:neil !locn:nic !months:1:1
 1337   2021-01-05 #dues:meebey !locn:nic
 707.01 2021-01-05 #dues:nicolas !locn:nic
+105.5  2021-01-05 #fridge !locn:nic
 
