@@ -1,3 +1,7 @@
 #balance 3439.42 opening balance
 1000   2021-01-05 #dues:philip !locn:philip !months:1:1
+700    2021-01-04 #dues:alex !locn:nic !months:1:1
+808    2021-01-04 #dues:neil !locn:nic !months:1:1
+1337   2021-01-05 #dues:meebey !locn:nic
+707.01 2021-01-05 #dues:nicolas !locn:nic
 
