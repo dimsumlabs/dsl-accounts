@@ -6,4 +6,6 @@
 707.01 2021-01-05 #dues:nicolas !locn:nic
 105.5  2021-01-05 #fridge !locn:nic
 1000   2021-01-05 #dues:felix !locn:nic
+700    2021-01-05 #dues:antonia !locn:nic
+300    2021-01-05 #dues:max !locn:nic
 
