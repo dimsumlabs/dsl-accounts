@@ -8,4 +8,5 @@
 1000   2021-01-05 #dues:felix !locn:nic
 700    2021-01-05 #dues:antonia !locn:nic
 300    2021-01-05 #dues:max !locn:nic
+-352   2021-01-12 #bills:electricity !locn:philip !months:-1:1
 
