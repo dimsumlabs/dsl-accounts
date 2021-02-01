@@ -1,4 +1,14 @@
 #balance 9476.93 opening balance
 1000   2021-02-01 #dues:philip !locn:philip !months:1:1
 0      2021-02-01 !locn_xfer:philip:nic:10000
+700    2021-02-01 #dues:nicolas !locn:nic
+100    2021-01-07 #supporters stig !locn:paypal !id:paypal:7N962953Y78724714
+-6.75  2021-01-07 #supporters stig !locn:paypal
+700    2021-01-18 #dues:manolis !locn:paypal !id:paypal:6A433301YH223024D
+-29.65 2021-01-18 #dues:manolis !locn:paypal
+1000   2021-01-18 #dues:anthony !locn:paypal !months:1:1 !id:paypal:6V5471889V273740G
+-41.35 2021-01-18 #dues:anthony !locn:paypal !months:1:1
+700    2021-01-21 #dues:richard !locn:paypal !months:1:1 !id:paypal:9G3828799S055013C
+-29.65 2021-01-21 #dues:richard !locn:paypal !months:1:1
+700    2021-01-25 #dues:khng !locn:nic
 
