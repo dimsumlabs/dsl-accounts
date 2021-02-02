@@ -11,4 +11,5 @@
 700    2021-01-21 #dues:richard !locn:paypal !months:1:1 !id:paypal:9G3828799S055013C
 -29.65 2021-01-21 #dues:richard !locn:paypal !months:1:1
 700    2021-01-25 #dues:khng !locn:nic
+1000   2021-02-02 #dues:felix !locn:philip
 
