@@ -13,3 +13,4 @@
 700    2021-01-25 #dues:khng !locn:nic
 1000   2021-02-02 #dues:felix !locn:philip
 -14000 2021-02-02 #bills:rent !locn:nic
+200    2021-02-02 #fridge !locn:philip
