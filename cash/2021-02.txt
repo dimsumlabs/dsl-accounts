@@ -16,3 +16,5 @@
 200    2021-02-02 #fridge !locn:philip
 -321.8 2021-02-02 #fridge !locn:philip
 -30.30 2021-02-02 #bills:water !months:-25:25
+1337   2021-02-03 #dues:meebey !locn:nic
+
