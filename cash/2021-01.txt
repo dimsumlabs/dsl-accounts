@@ -9,5 +9,5 @@
 700    2021-01-05 #dues:antonia !locn:nic
 300    2021-01-05 #dues:max !locn:nic
 -352   2021-01-12 #bills:electricity !locn:philip !months:-1:1
--268   2020-01-19 #bills:internet !locn:philip
+-268   2021-01-19 #bills:internet !locn:philip
 #balance 9476.93 closing balance
