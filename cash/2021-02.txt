@@ -20,3 +20,4 @@
 700    2021-02-01 #dues:alex !locn:nic !months:1:1
 -494   2021-02-10 #bills:electricity !locn:philip !months:-1:1
 -268   2021-02-16 #bills:internet !locn:philip
+250    2021-02-16 #fridge !locn:philip
