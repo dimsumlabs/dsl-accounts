@@ -21,3 +21,6 @@
 -494   2021-02-10 #bills:electricity !locn:philip !months:-1:1
 -268   2021-02-16 #bills:internet !locn:philip
 250    2021-02-16 #fridge !locn:philip
+808    2021-02-04 #dues:neil !locn:nic !months:1:1
+700    2021-02-05 #dues:antonia !locn:nic
+300    2021-02-05 #dues:max !locn:nic
