@@ -15,7 +15,7 @@
 -14000 2021-02-02 #bills:rent !locn:nic
 200    2021-02-02 #fridge !locn:philip
 -321.8 2021-02-02 #fridge !locn:philip
--30.30 2021-02-02 #bills:water !months:-25:25
+-30.30 2021-02-02 #bills:water !months:-25:25 !locn:philip
 1337   2021-02-03 #dues:meebey !locn:nic
 700    2021-02-01 #dues:alex !locn:nic !months:1:1
 -494   2021-02-10 #bills:electricity !locn:philip !months:-1:1
