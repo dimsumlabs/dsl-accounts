@@ -24,3 +24,11 @@
 808    2021-02-04 #dues:neil !locn:nic !months:1:1
 700    2021-02-05 #dues:antonia !locn:nic
 300    2021-02-05 #dues:max !locn:nic
+100    2021-02-07 #supporters stig !locn:paypal !id:paypal:0XV89967NY396983U
+-6.75  2021-02-07 #supporters stig !locn:paypal
+700    2021-02-18 #dues:manolis !locn:paypal !id:paypal:5PX27917RV2080819
+-29.65 2021-02-18 #dues:manolis !locn:paypal
+700    2021-02-21 #dues:richard !locn:paypal !months:1:1 !id:paypal:8CJ51384DT709931Y
+-29.65 2021-02-21 #dues:richard !locn:paypal !months:1:1
+0      2021-02-22 !locn_xfer:paypal:nic:4496.9
+
