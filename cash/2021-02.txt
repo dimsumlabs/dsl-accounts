@@ -31,4 +31,6 @@
 700    2021-02-21 #dues:richard !locn:paypal !months:1:1 !id:paypal:8CJ51384DT709931Y
 -29.65 2021-02-21 #dues:richard !locn:paypal !months:1:1
 0      2021-02-22 !locn_xfer:paypal:nic:4496.9
+100    2021-02-27 donation !locn:paypal !id:paypal:11X56839VT449612P
+-6.75  2021-02-27 donation !locn:paypal
 
