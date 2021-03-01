@@ -1,3 +1,4 @@
 #balance 5977.63 opening balance
 1000   2021-03-01 #dues:philip !locn:philip !months:1:1
 700    2021-03-01 #dues:khng !locn:nic
+0      2021-03-02 !locn_xfer:philip:nic:2500
