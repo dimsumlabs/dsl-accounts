@@ -33,4 +33,4 @@
 0      2021-02-22 !locn_xfer:paypal:nic:4496.9
 100    2021-02-27 donation !locn:paypal !id:paypal:11X56839VT449612P
 -6.75  2021-02-27 donation !locn:paypal
-
+#balance 5977.63 closing balance
