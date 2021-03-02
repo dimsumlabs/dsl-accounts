@@ -4,3 +4,4 @@
 0      2021-03-02 !locn_xfer:philip:nic:2500
 500    2021-03-02 #dues:kimlegend !locn:philip
 1000   2021-03-02 #dues:felix !locn:philip
+340    2021-03-02 #fridge !locn:philip
