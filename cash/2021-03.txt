@@ -9,3 +9,4 @@
 700    2021-03-02 #dues:alex !locn:nic !months:1:1
 808    2021-03-04 #dues:neil !locn:nic !months:1:1
 10000  2021-03-02 #loan !locn:philip
+-14000 2021-03-02 #bills:rent !locn:nic
