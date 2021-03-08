@@ -10,3 +10,5 @@
 808    2021-03-04 #dues:neil !locn:nic !months:1:1
 10000  2021-03-02 #loan !locn:philip
 -14000 2021-03-02 #bills:rent !locn:nic
+100    2021-03-07 #supporters stig !locn:paypal !id:paypal:7PF44769109211106
+-6.75  2021-03-07 #supporters stig !locn:paypal
