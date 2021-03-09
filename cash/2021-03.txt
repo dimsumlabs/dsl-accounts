@@ -13,3 +13,4 @@
 100    2021-03-07 #supporters stig !locn:paypal !id:paypal:7PF44769109211106
 -6.75  2021-03-07 #supporters stig !locn:paypal
 -293   2021-03-09 #bills:electricity !locn:philip !months:-1:1
+240    2021-03-09 #fridge !locn:philip
