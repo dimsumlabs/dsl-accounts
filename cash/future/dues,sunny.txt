@@ -1,4 +1,0 @@
-# paypal automated payments
-#
-
-670 2020-02-05 #dues:sunny !forecast:monthly !locn:paypal
