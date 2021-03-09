@@ -1,0 +1,4 @@
+# payment by bank transfer
+#
+
+700 2021-03-09 #dues:kerrie !forecast:monthly
