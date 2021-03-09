@@ -1,4 +1,4 @@
 # payment in cash
 #
 
-300 2020-09-27 #dues:khng !forecast:monthly
+700 2021-01-25 #dues:khng !forecast:monthly
