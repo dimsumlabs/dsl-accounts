@@ -1,0 +1,4 @@
+# payment in cash
+#
+
+500 2021-03-02 #dues:kimlegend !forecast:monthly
