@@ -16,3 +16,4 @@
 240    2021-03-09 #fridge !locn:philip
 700    2021-03-09 #dues:kerrie !locn:nic
 300    2021-03-14 donations from photography hacking #workshop !locn:philip
+40     2021-03-14 #fridge !locn:philip
