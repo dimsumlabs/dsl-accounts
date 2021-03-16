@@ -19,3 +19,4 @@
 40     2021-03-14 #fridge !locn:philip
 700    2021-03-05 #dues:antonia !locn:nic
 300    2021-03-05 #dues:max !locn:nic
+-268   2021-03-16 #bills:internet !locn:philip
