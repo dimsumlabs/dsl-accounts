@@ -20,3 +20,9 @@
 700    2021-03-05 #dues:antonia !locn:nic
 300    2021-03-05 #dues:max !locn:nic
 -268   2021-03-16 #bills:internet !locn:philip
+700    2021-03-18 #dues:manolis !locn:paypal !id:paypal:6EF4375300371635T
+-29.65 2021-03-18 #dues:manolis !locn:paypal
+700    2021-03-21 #dues:richard !locn:paypal !id:paypal:2E243145P7357024S !months:1:1
+-29.65 2021-03-21 #dues:richard !locn:paypal !months:1:1
+0      2021-03-22 !locn_xfer:paypal:nic:1527.2
+700    2021-03-22 #dues:nicolas !locn:nic
