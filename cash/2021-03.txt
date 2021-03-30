@@ -30,4 +30,4 @@
 0      2021-03-30 !locn_xfer:philip:nic:7500
 -14000 2021-03-30 #bills:rent !locn:nic !months:1:1
 -300   2021-03-30 #fridge !locn:philip
-400    2021-03-02 #fridge !locn:philip
+400    2021-03-30 #fridge !locn:philip
