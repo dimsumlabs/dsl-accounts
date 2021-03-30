@@ -26,3 +26,5 @@
 -29.65 2021-03-21 #dues:richard !locn:paypal !months:1:1
 0      2021-03-22 !locn_xfer:paypal:nic:1527.2
 700    2021-03-22 #dues:nicolas !locn:nic
+7500   2021-03-30 #loan !locn:philip
+0      2021-03-30 !locn_xfer:philip:nic:7500
