@@ -3,3 +3,4 @@
 1000   2021-04-03 #dues:felix !locn:philip
 350    2021-04-03 donations from bio hacking #workshop !locn:philip
 100    2021-04-03 #fridge !locn:philip
+700    2021-04-09 #dues:khng !locn:nic
