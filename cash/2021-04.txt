@@ -8,7 +8,7 @@
 808    2021-04-07 #dues:neil !locn:nic !months:1:1
 700    2021-04-07 #dues:antonia !locn:nic
 300    2021-04-07 #dues:max !locn:nic
-1337   2021-04-07 #dues:meybey !locn:nic
+1337   2021-04-07 #dues:meebey !locn:nic
 707.04 2021-04-11 #dues:nicolas !locn:nic
 100    2021-04-07 #supporters stig !locn:paypal !id:paypal:11B6882767408054S
 -6.75  2021-04-07 #supporters stig !locn:paypal
