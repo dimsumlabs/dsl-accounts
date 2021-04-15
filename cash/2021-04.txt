@@ -13,4 +13,5 @@
 100    2021-04-07 #supporters stig !locn:paypal !id:paypal:11B6882767408054S
 -6.75  2021-04-07 #supporters stig !locn:paypal
 300    2021-04-15 #dues:ella !locn:philip
+-126   2021-04-13 #fridge !locn:philip
 
