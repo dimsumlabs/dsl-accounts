@@ -15,4 +15,6 @@
 300    2021-04-15 #dues:ella !locn:philip
 -126   2021-04-13 #fridge !locn:philip
 430    2021-04-15 #fridge !locn:philip
+700    2021-04-18 #dues:manolis !locn:paypal !id:paypal:78F71785NG772004J
+-29.65 2021-04-18 #dues:manolis !locn:paypal
 
