@@ -18,3 +18,4 @@
 700    2021-04-18 #dues:manolis !locn:paypal !id:paypal:78F71785NG772004J
 -29.65 2021-04-18 #dues:manolis !locn:paypal
 500    2021-04-20 #dues:jerry !locn:philip
+700    2021-04-20 #dues:kerrie !locn:nic
