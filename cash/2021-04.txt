@@ -19,3 +19,5 @@
 -29.65 2021-04-18 #dues:manolis !locn:paypal
 500    2021-04-20 #dues:jerry !locn:philip
 700    2021-04-20 #dues:kerrie !locn:nic
+73     2021-04-21 #fridge !locn:nic
+
