@@ -1,1 +1,2 @@
 #balance 16439.22 opening balance
+1000   2021-05-02 #dues:philip !locn:philip !months:1:1
