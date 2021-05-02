@@ -1,3 +1,4 @@
 #balance 16439.22 opening balance
 1000   2021-05-02 #dues:philip !locn:philip !months:1:1
 700    2021-05-02 #dues:khng !locn:philip
+-268   2021-04-22 #bills:internet !locn:philip
