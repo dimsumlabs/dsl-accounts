@@ -21,3 +21,4 @@
 700    2021-04-20 #dues:kerrie !locn:nic
 73     2021-04-21 #fridge !locn:nic
 400    2021-04-30 #fridge !locn:philip
+#balance 16439.22 closing balance
