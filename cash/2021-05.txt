@@ -4,3 +4,5 @@
 -268   2021-04-22 #bills:internet !locn:philip
 700    2021-05-03 #dues:kerrie !locn:nic
 700    2021-05-03 #dues:nicolas !locn:nic
+500    2021-05-03 #loan !locn:philip
+0      2021-05-03 !locn_xfer:philip:nic:7500
