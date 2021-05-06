@@ -6,3 +6,4 @@
 700    2021-05-03 #dues:nicolas !locn:nic
 500    2021-05-03 #loan !locn:philip
 0      2021-05-03 !locn_xfer:philip:nic:7500
+330    2021-05-06 #fridge !locn:philip
