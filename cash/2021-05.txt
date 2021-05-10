@@ -7,3 +7,9 @@
 500    2021-05-03 #loan !locn:philip
 0      2021-05-03 !locn_xfer:philip:nic:7500
 330    2021-05-06 #fridge !locn:philip
+808    2021-05-04 #dues:neil !locn:nic
+1337   2021-05-04 #dues:meebey !locn:nic
+700    2021-05-05 #dues:antonia !locn:nic
+300    2021-05-05 #dues:max !locn:nic
+200    2021-05-06 #supporters felix !locn:nic
+
