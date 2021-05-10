@@ -7,9 +7,13 @@
 500    2021-05-03 #loan !locn:philip
 0      2021-05-03 !locn_xfer:philip:nic:7500
 330    2021-05-06 #fridge !locn:philip
-808    2021-05-04 #dues:neil !locn:nic
+808    2021-05-04 #dues:neil !locn:nic !months:1:1
 1337   2021-05-04 #dues:meebey !locn:nic
 700    2021-05-05 #dues:antonia !locn:nic
 300    2021-05-05 #dues:max !locn:nic
 200    2021-05-06 #supporters felix !locn:nic
+700    2021-04-21 #dues:richard !locn:paypal !id:paypal:5BB52084AT375333F !months:1:1
+-29.65 2021-04-21 #dues:richard !locn:paypal !months:1:1
+100    2021-05-07 #supporters stig !locn:paypal !id:paypal:1R2778682J235460W
+-6.75  2021-05-07 #supporters stig !locn:paypal
 
