@@ -17,3 +17,4 @@
 100    2021-05-07 #supporters stig !locn:paypal !id:paypal:1R2778682J235460W
 -6.75  2021-05-07 #supporters stig !locn:paypal
 -14000 2021-05-04 #bills:rent !locn:nic
+0      2021-05-10 !locn_xfer:paypal:nic:1527.2
