@@ -18,3 +18,4 @@
 -6.75  2021-05-07 #supporters stig !locn:paypal
 -14000 2021-05-04 #bills:rent !locn:nic
 0      2021-05-10 !locn_xfer:paypal:nic:1527.2
+300    2021-05-11 #dues:ella !locn:philip
