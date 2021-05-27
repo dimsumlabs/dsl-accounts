@@ -20,3 +20,8 @@
 0      2021-05-10 !locn_xfer:paypal:nic:1527.2
 300    2021-05-11 #dues:ella !locn:philip
 500    2021-05-17 #fridge !locn:philip
+700    2021-05-18 #dues:manolis !locn:paypal !id:paypal:6CY32401JX3723913
+-29.65 2021-05-18 #dues:manolis !locn:paypal
+700    2021-05-21 #dues:richard !locn:paypal !id:paypal:7XN286987K138730Y !months:1:1
+-29.65 2021-05-21 #dues:richard !locn:paypal !months:1:1
+0      2021-05-28 !locn_xfer:paypal:nic:1340.7
