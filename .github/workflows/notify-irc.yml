@@ -14,6 +14,7 @@ jobs:
         uses: vmiklos/notify-irc@a52a197c9507ad7a81c1a9295c9ed24786e396b3
         if: github.event_name == 'push'
         with:
+          server: "irc.libera.chat"
           channel: "#dimsumlabs"
           notice: true
           nickname: github-ci
@@ -23,6 +24,7 @@ jobs:
         uses: rectalogic/notify-irc@v1
         if: github.event_name == 'pull_request'
         with:
+          server: "irc.libera.chat"
           channel: "#dimsumlabs"
           notice: true
           nickname: github-ci
@@ -32,6 +34,7 @@ jobs:
         uses: rectalogic/notify-irc@v1
         if: github.event_name == 'create' && github.event.ref_type == 'tag'
         with:
+          server: "irc.libera.chat"
           channel: "#dimsumlabs"
           notice: true
           nickname: github-ci
@@ -41,6 +44,7 @@ jobs:
         uses: rectalogic/notify-irc@v1
         if: github.event_name == 'issues'
         with:
+          server: "irc.libera.chat"
           channel: "#dimsumlabs"
           notice: true
           nickname: github-ci
