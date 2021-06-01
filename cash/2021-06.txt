@@ -1,2 +1,3 @@
 #balance 12350.52 opening balance
 1000   2021-06-01 #dues:philip !locn:philip !months:1:1
+440    2021-06-01 #fridge !locn:philip
