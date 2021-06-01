@@ -25,3 +25,4 @@
 700    2021-05-21 #dues:richard !locn:paypal !id:paypal:7XN286987K138730Y !months:1:1
 -29.65 2021-05-21 #dues:richard !locn:paypal !months:1:1
 0      2021-05-28 !locn_xfer:paypal:nic:1340.7
+#balance 12350.52 closing balance
