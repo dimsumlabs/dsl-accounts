@@ -7,3 +7,11 @@
 5000   2021-06-02 #loan !locn:philip
 0      2021-06-02 !locn_xfer:philip:nic:7500
 -268   2021-06-08 #bills:internet !months:-1:1 !locn:philip
+700    2021-06-01 #dues:kerrie !locn:nic
+1337   2021-06-02 #dues:meebey !locn:nic
+808    2021-06-04 #dues:neil !locn:nic !months:1:1
+-14000 2021-06-04 #bills:rent !locn:nic
+300    2021-06-07 #dues:max !locn:nic
+700    2021-06-07 #dues:antonia !locn:nic
+200    2021-06-07 #supporters felix !locn:nic
+700    2021-06-08 #dues:nicolas !locn:nic
