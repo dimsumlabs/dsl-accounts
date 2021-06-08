@@ -6,3 +6,4 @@
 700    2021-06-02 #dues:khng !locn:philip
 5000   2021-06-02 #loan !locn:philip
 0      2021-06-02 !locn_xfer:philip:nic:7500
+-268   2021-06-08 #bills:internet !months:-1:1 !locn:philip
