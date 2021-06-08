@@ -4,3 +4,5 @@
 170    2021-06-01 #donation !locn:philip
 -11.30 2021-06-02 #bills:water !months:-6:5 !locn:philip
 700    2021-06-02 #dues:khng !locn:philip
+5000   2021-06-02 #loan !locn:philip
+0      2021-06-02 !locn_xfer:philip:nic:7500
