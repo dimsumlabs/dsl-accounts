@@ -1,0 +1,4 @@
+# paypal automated payments
+#
+
+670 2021-07-01 #dues:anders !forecast:monthly !locn:paypal

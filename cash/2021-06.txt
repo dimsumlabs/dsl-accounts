@@ -15,3 +15,5 @@
 700    2021-06-07 #dues:antonia !locn:nic
 200    2021-06-07 #supporters felix !locn:nic
 700    2021-06-08 #dues:nicolas !locn:nic
+500    2021-06-12 !id:paypal:942561880W9012020 #dues:anders !locn:paypal
+-21.85 2021-06-12 #dues:anders !locn:paypal
