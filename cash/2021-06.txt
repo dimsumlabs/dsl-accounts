@@ -18,3 +18,4 @@
 500    2021-06-12 !id:paypal:942561880W9012020 #dues:anders !locn:paypal
 -21.85 2021-06-12 #dues:anders !locn:paypal
 460    2021-06-15 #fridge !locn:philip
+150    2021-06-15 #donation !locn:philip
