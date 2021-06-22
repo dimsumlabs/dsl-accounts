@@ -19,3 +19,4 @@
 -21.85 2021-06-12 #dues:anders !locn:paypal
 460    2021-06-15 #fridge !locn:philip
 150    2021-06-15 #donation !locn:philip
+300    2021-06-22 #dues:ella !locn:philip
