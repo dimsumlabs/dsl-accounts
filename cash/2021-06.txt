@@ -15,9 +15,16 @@
 700    2021-06-07 #dues:antonia !locn:nic
 200    2021-06-07 #supporters felix !locn:nic
 700    2021-06-08 #dues:nicolas !locn:nic
-500    2021-06-12 !id:paypal:942561880W9012020 #dues:anders !locn:paypal
--21.85 2021-06-12 #dues:anders !locn:paypal
+500    2021-06-12 #dues:anders !locn:paypal !id:paypal:942561880W9012020
+-24.35 2021-06-12 #dues:anders !locn:paypal
 460    2021-06-15 #fridge !locn:philip
 150    2021-06-15 #donation !locn:philip
 300    2021-06-22 #dues:ella !locn:philip
 -250   2021-06-22 #bills:br !months:1:12 !locn:philip
+100    2021-06-07 #supporters stig !locn:paypal !id:paypal:5HD529884K2234017
+-6.75  2021-06-07 #supporters stig !locn:paypal
+700    2021-06-18 #dues:manolis !locn:paypal !id:paypal:8BY15399YD397103T
+-29.65 2021-06-18 #dues:manolis !locn:paypal
+700    2021-06-21 #dues:richard !locn:paypal !id:paypal:66P07359760002050 !months:1:1
+-29.65 2021-06-21 #dues:richard !locn:paypal !months:1:1
+0      2021-06-23 !locn_xfer:paypal:nic:1909.60
