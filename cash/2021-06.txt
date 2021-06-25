@@ -30,3 +30,4 @@
 0      2021-06-23 !locn_xfer:paypal:nic:1909.60
 150    2021-06-25 #fridge !locn:philip
 -445   2021-06-25 #fridge !locn:philip
+-100   2021-06-25 #fridge !locn:philip
