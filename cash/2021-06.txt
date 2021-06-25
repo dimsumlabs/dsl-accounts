@@ -29,3 +29,4 @@
 -29.65 2021-06-21 #dues:richard !locn:paypal !months:1:1
 0      2021-06-23 !locn_xfer:paypal:nic:1909.60
 150    2021-06-25 #fridge !locn:philip
+-445   2021-06-25 #fridge !locn:philip
