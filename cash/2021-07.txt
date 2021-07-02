@@ -1,1 +1,3 @@
 #balance 13492.82 opening balance
+200    2021-07-02 #supporters felix !locn:nic
+700    2021-07-02 #dues:nicolas !locn:nic
