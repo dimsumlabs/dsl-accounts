@@ -34,3 +34,4 @@
 700    2021-06-28 #dues:kerrie !locn:nic !months:1:1
 760    2021-06-29 #fridge !locn:philip
 -268   2021-06-29 #bills:internet !locn:philip
+#balance 13492.82 closing balance
