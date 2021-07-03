@@ -1,0 +1,33 @@
+
+name: Continuous Deployment
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy:
+        name: Run all checks and builds then deploy to github pages
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v2
+            - name: Install Dependencies
+              run: |
+                  sudo apt-get update
+                  sudo make build-dep
+                  sudo apt-get install -y gnuplot
+            - name: Run CI tests
+              run: make test
+
+            - name: Create report pages
+              run: |
+                  make pages
+                  make pages/stats.pdf
+
+            - name: Deploy
+              uses: JamesIves/github-pages-deploy-action@4.1.4
+              with:
+                  branch: gh-pages
+                  folder: pages
