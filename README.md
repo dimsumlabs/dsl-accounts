@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/dimsumlabs/dsl-accounts.svg?branch=master)](https://travis-ci.org/dimsumlabs/dsl-accounts)
+[![Build Status](https://github.com/dimsumlabs/dsl-accounts/actions/workflows/ci.yml/badge.svg)](https://github.com/dimsumlabs/dsl-accounts/actions)
 
 This repository keeps track of the DimSumLabs accounting.  We want to put
 as much as possible of our internal working out in the open for all to see.
