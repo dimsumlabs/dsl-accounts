@@ -4,3 +4,6 @@
 1000   2021-07-03 #dues:philip !locn:philip !months:1:1
 700    2021-07-03 #dues:cat !locn:philip
 0      2021-07-05 !locn_xfer:philip:nic:4500
+-566   2021-05-12 #bills:electricity !locn:philip !months:-1:1
+-803   2021-07-06 #bills:electricity !locn:philip !months:-2:1
+-755   2021-07-06 #bills:electricity !locn:philip !months:-1:1
