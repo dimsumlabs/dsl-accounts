@@ -7,3 +7,4 @@
 -566   2021-05-12 #bills:electricity !locn:philip !months:-1:1
 -803   2021-07-06 #bills:electricity !locn:philip !months:-2:1
 -755   2021-07-06 #bills:electricity !locn:philip !months:-1:1
+300    2021-07-06 #fridge !locn:philip
