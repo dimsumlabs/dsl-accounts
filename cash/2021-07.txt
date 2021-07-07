@@ -8,3 +8,4 @@
 -803   2021-07-06 #bills:electricity !locn:philip !months:-2:1
 -755   2021-07-06 #bills:electricity !locn:philip !months:-1:1
 300    2021-07-06 #fridge !locn:philip
+-14000 2021-07-06 #bills:rent !locn:nic
