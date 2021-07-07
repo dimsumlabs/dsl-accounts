@@ -9,3 +9,9 @@
 -755   2021-07-06 #bills:electricity !locn:philip !months:-1:1
 300    2021-07-06 #fridge !locn:philip
 -14000 2021-07-06 #bills:rent !locn:nic
+700    2021-07-02 #dues:kerrie !locn:nic !months:1:1
+808    2021-07-05 #dues:neil !locn:nic !months:1:1
+700    2021-07-05 #dues:antonia !locn:nic
+300    2021-07-05 #dues:max !locn:nic
+1337   2021-07-05 #dues:meebey !locn:nic
+400    2021-07-06 #dues:sayon !locn:nic
