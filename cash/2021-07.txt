@@ -15,3 +15,5 @@
 300    2021-07-05 #dues:max !locn:nic
 1337   2021-07-05 #dues:meebey !locn:nic
 400    2021-07-06 #dues:sayon !locn:nic
+100    2021-07-08 #supporters stig !locn:paypal !id:paypal:13M9162274259881A
+-6.75  2021-07-08 #supporters stig !locn:paypal
