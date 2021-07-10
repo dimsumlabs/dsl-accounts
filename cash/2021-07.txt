@@ -18,3 +18,4 @@
 100    2021-07-08 #supporters stig !locn:paypal !id:paypal:13M9162274259881A
 -6.75  2021-07-08 #supporters stig !locn:paypal
 700    2021-07-09 #dues:khng !locn:philip
+-130   2021-07-10 #fridge !locn:philip
