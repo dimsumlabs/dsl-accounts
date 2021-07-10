@@ -19,3 +19,4 @@
 -6.75  2021-07-08 #supporters stig !locn:paypal
 700    2021-07-09 #dues:khng !locn:philip
 -130   2021-07-10 #fridge !locn:philip
+300    2021-07-10 donations from arduino #workshop !locn:philip
