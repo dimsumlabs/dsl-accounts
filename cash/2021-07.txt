@@ -22,3 +22,4 @@
 300    2021-07-10 donations from arduino #workshop !locn:philip
 700    2021-07-12 #dues:anders !locn:paypal !id:paypal:9NX25346HE997531X
 -33.15 2021-07-12 #dues:anders !locn:paypal
+300    2021-07-20 #dues:ella !locn:philip
