@@ -24,3 +24,4 @@
 -33.15 2021-07-12 #dues:anders !locn:paypal
 300    2021-07-20 #dues:ella !locn:philip
 110    2021-07-20 #fridge !locn:philip
+730    2021-07-20 donations from drone #workshop !locn:philip
