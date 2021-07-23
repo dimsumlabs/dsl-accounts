@@ -25,3 +25,4 @@
 300    2021-07-20 #dues:ella !locn:philip
 110    2021-07-20 #fridge !locn:philip
 730    2021-07-20 donations from drone #workshop !locn:philip
+200    2021-07-22 donations from collaborative #workshop !locn:philip
