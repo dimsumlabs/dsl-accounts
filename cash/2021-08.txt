@@ -4,3 +4,4 @@
 400    2021-08-03 #dues:sayon !locn:philip
 600    2021-08-03 #fridge !locn:philip !months:-1:1
 300    2021-08-03 #dues:david !locn:philip
+700    2021-08-03 #dues:abhi !locn:philip
