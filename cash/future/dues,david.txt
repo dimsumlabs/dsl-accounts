@@ -1,0 +1,4 @@
+# payment in cash
+#
+
+300 2021-08-03 #dues:david !forecast:monthly
