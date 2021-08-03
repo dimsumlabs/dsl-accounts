@@ -2,3 +2,4 @@
 1000   2021-08-03 #dues:philip !locn:philip !months:1:1
 700    2021-08-03 #dues:cat !locn:philip
 400    2021-08-03 #dues:sayon !locn:philip
+600    2021-08-03 #fridge !locn:philip !months:-1:1
