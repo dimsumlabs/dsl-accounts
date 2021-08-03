@@ -26,3 +26,4 @@
 110    2021-07-20 #fridge !locn:philip
 730    2021-07-20 donations from drone #workshop !locn:philip
 200    2021-07-22 donations from collaborative #workshop !locn:philip
+250    2021-07-27 #fridge !locn:philip
