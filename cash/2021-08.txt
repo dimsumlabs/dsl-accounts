@@ -18,3 +18,4 @@
 300    2021-08-05 #dues:max !locn:nic
 700    2021-08-06 #dues:nicolas !locn:nic
 160    2021-08-06 #fridge !locn:philip
+120    2021-08-06 #donation !locn:philip
