@@ -10,3 +10,10 @@
 700    2021-08-21 #dues:richard !locn:paypal !id:paypal:3LJ13846J73177713
 -29.65 2021-08-21 #dues:richard !locn:paypal
 0      2021-08-06 !locn_xfer:paypal:nic:2100.8
+200    2021-08-02 #supporters felix !locn:nic
+700    2021-08-02 #dues:kerrie !locn:nic !months:1:1
+1337   2021-08-03 #dues:meebey !locn:nic
+808    2021-08-04 #dues:neil !locn:nic !months:1:1
+700    2021-08-05 #dues:antonia !locn:nic
+300    2021-08-05 #dues:max !locn:nic
+700    2021-08-06 #dues:nicolas !locn:nic
