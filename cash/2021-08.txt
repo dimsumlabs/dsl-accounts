@@ -20,3 +20,4 @@
 160    2021-08-06 #fridge !locn:philip
 120    2021-08-06 #donation !locn:philip
 1000   2021-08-06 #dues:jerry !locn:philip !months:0:2
+700    2021-08-10 #dues:khng !locn:nic
