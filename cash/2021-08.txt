@@ -24,3 +24,5 @@
 -14000 2021-08-10 #bills:rent !locn:nic
 700    2021-08-12 #dues:anders !locn:paypal !id:paypal:5R162340T91713300
 -33.15 2021-08-12 #dues:anders !locn:paypal
+0      2021-08-09 !locn_xfer:philip:nic:5000
+1000   2021-08-09 #loan !locn:philip
