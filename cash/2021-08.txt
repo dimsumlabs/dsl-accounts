@@ -29,3 +29,4 @@
 140    2021-08-10 #fridge !locn:philip
 700    2021-08-18 #dues:manolis !locn:paypal !id:paypal:7F437135396352343
 -29.65 2021-08-18 #dues:manolis !locn:paypal
+0      2021-08-19 !locn_xfer:paypal:nic:1337
