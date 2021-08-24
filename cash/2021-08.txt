@@ -32,3 +32,4 @@
 0      2021-08-19 !locn_xfer:paypal:nic:1337
 700    2021-08-21 #dues:richard !locn:paypal !id:paypal:60P39367M9592023J !months:1:1
 -29.65 2021-08-21 #dues:richard	!locn:paypal !months:1:1
+300    2021-08-24 #dues:ella !locn:nic
