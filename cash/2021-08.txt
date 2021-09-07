@@ -34,4 +34,4 @@
 -29.65 2021-08-21 #dues:richard	!locn:paypal !months:1:1
 300    2021-08-24 #dues:ella !locn:nic
 300    2021-08-24 #fridge !locn:nic
-700    2021-08-27 #dues:kerrie !locn:nic !months:1:2
+700    2021-08-27 #dues:kerrie !locn:nic !months:2:1
