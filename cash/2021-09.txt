@@ -2,3 +2,4 @@
 1000   2021-09-07 #dues:philip !locn:philip !months:1:1
 700    2021-09-07 #dues:cat !locn:philip
 700    2021-09-06 #dues:khng !locn:philip
+250    2021-09-02 donations from soldering #workshop !locn:philip
