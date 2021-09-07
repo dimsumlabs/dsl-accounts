@@ -5,3 +5,5 @@
 250    2021-09-02 donations from soldering #workshop !locn:philip
 300    2021-09-02 #fridge !locn:philip
 300    2021-09-04 #fridge !locn:philip
+-268   2021-07-20 #bills:internet !locn:philip
+-268   2021-09-03 #bills:internet !months:-1:1 !locn:philip
