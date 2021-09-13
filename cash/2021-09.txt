@@ -7,3 +7,9 @@
 300    2021-09-04 #fridge !locn:philip
 -268   2021-07-20 #bills:internet !locn:philip
 -268   2021-09-03 #bills:internet !months:-1:1 !locn:philip
+200    2021-09-01 #supporters felix !locn:nic
+1337   2021-09-02 #dues:meebey !locn:nic
+808    2021-09-06 #dues:neil !locn:nic !months:1:1
+700    2021-09-06 #dues:antonia !locn:nic
+300    2021-09-06 #dues:max !locn:nic
+700    2021-09-13 #dues:nicolas !locn:nic
