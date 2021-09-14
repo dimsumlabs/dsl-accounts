@@ -15,3 +15,4 @@
 700    2021-09-13 #dues:nicolas !locn:nic
 0      2021-09-11 !locn_xfer:philip:nic:10000
 700    2021-09-07 #dues:abhi !locn:philip
+500    2021-09-14 #fridge !locn:philip
