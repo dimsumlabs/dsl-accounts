@@ -16,3 +16,8 @@
 0      2021-09-11 !locn_xfer:philip:nic:10000
 700    2021-09-07 #dues:abhi !locn:philip
 500    2021-09-14 #fridge !locn:philip
+700    2021-09-12 #dues:anders !locn:paypal !id:paypal:2LM76463L6772782K
+-33.15 2021-09-12 #dues:anders !locn:paypal
+700    2021-09-18 #dues:manolis !locn:paypal !id:paypal:5N739875BV6374606
+-29.65 2021-09-18 #dues:manolis !locn:paypal
+0      2021-09-20 !locn_xfer:paypal:nic:2007.75
