@@ -22,3 +22,4 @@
 -29.65 2021-09-18 #dues:manolis !locn:paypal
 0      2021-09-20 !locn_xfer:paypal:nic:2007.75
 -14000 2021-09-18 #bills:rent !locn:nic
+20     2021-09-18 donations from autumnfestival #workshop !locn:nic
