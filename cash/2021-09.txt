@@ -24,3 +24,4 @@
 -14000 2021-09-18 #bills:rent !locn:nic
 20     2021-09-18 donations from autumnfestival #workshop !locn:nic
 500    2021-09-28 #donation from Gabriel
+450    2021-09-28 #fridge !locn:philip
