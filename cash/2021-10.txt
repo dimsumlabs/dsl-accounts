@@ -1,3 +1,4 @@
 #balance 6583.37 opening balance
 1000   2021-10-05 #dues:philip !locn:philip !months:1:1
 700    2021-10-05 #dues:cat !locn:philip
+300    2021-10-05 #dues:ella !locn:philip
