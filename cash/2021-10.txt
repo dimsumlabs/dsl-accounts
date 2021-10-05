@@ -3,3 +3,4 @@
 700    2021-10-05 #dues:cat !locn:philip
 300    2021-10-05 #dues:ella !locn:philip
 500    2021-10-05 #donation:members from Antonia
+700    2021-10-05 #dues:abhi !locn:philip
