@@ -27,4 +27,4 @@
 450    2021-09-28 #fridge !locn:philip
 120    2021-09-28 donations from Dersim the week before !locn:nic
 50     2021-09-28 donations from Dersim !locn:nic
-
+#balance 6583.37 closing balance
