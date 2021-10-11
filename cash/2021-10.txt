@@ -5,3 +5,8 @@
 500    2021-10-05 #donation:members from Antonia
 700    2021-10-05 #dues:abhi !locn:philip
 300    2021-10-05 #dues:briann !locn:nic
+200    2021-10-02 #supporters felix !locn:nic
+808    2021-10-04 #dues:neil !locn:nic !months:1:1
+700    2021-10-05 #dues:antonia !locn:nic
+300    2021-10-05 #dues:max !locn:nic
+700    2021-10-11 #dues:nicolas !locn:nic
