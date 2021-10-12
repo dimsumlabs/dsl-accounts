@@ -11,4 +11,6 @@
 300    2021-10-05 #dues:max !locn:nic
 700    2021-10-11 #dues:nicolas !locn:nic
 700    2021-09-21 #dues:richard !locn:paypal !id:paypal:9RC75675NA6217032 !months:1:1
--29.65 2021-09-21 @dues:richard !locn:paypal !months:1:1
+-29.65 2021-09-21 #dues:richard !locn:paypal !months:1:1
+700    2021-10-12 #dues:anders !locn:paypal !id:paypal:0TN225942M879143T
+-33.15 2021-10-12 #dues:anders !locn:paypal
