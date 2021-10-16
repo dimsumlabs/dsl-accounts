@@ -15,3 +15,4 @@
 700    2021-10-12 #dues:anders !locn:paypal !id:paypal:0TN225942M879143T
 -33.15 2021-10-12 #dues:anders !locn:paypal
 -14000 2021-10-15 #bills:rent !locn:nic
+500   2021-10-16 #dues:jerry !locn:philip
