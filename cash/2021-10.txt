@@ -2,7 +2,7 @@
 1000   2021-10-05 #dues:philip !locn:philip !months:1:1
 700    2021-10-05 #dues:cat !locn:philip
 300    2021-10-05 #dues:ella !locn:philip
-500    2021-10-05 #donation:members from Antonia
+500    2021-10-05 #donation:members from Antonia !locn:philip
 700    2021-10-05 #dues:abhi !locn:philip
 300    2021-10-05 #dues:briann !locn:nic
 200    2021-10-02 #supporters felix !locn:nic
