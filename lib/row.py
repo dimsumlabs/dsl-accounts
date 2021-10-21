@@ -407,6 +407,7 @@ class RowData(Row):
                 'id:paypal:[0-9ABCDEFGHJKLMNPRSTUVWXY]{17}',
                 'id:cac:[0-9]+',
                 'locn:gary',
+                'locn:github',
                 'locn:hamish',
                 'locn:nic',
                 'locn:paypal',
