@@ -17,3 +17,4 @@
 -14000 2021-10-15 #bills:rent !locn:nic
 500   2021-10-16 #dues:jerry !locn:philip
 500   2021-10-18 #donation from Gabriel !locn:philip
+40    2021-10-20 #fridge !locn:philip
