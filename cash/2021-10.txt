@@ -19,3 +19,4 @@
 500   2021-10-18 #donation from Gabriel !locn:philip
 40    2021-10-20 #fridge !locn:philip
 1000  2021-10-20 #donation private GitHub sponsor !locn:github
+125   2021-10-07 #donation:members from Nico !locn:github
