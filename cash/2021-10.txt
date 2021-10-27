@@ -23,4 +23,5 @@
 78.5   2021-10-21 #donation private GitHub sponsor !locn:github
 700    2021-10-21 #dues:richard !locn:paypal !id:paypal:78X599906Y096912E !months:1:1
 -29.65 2021-10-21 #dues:richard !locn:paypal !months:1:1
+0      2021-10-27 !locn_xfer:paypal:nic:2007.55
 
