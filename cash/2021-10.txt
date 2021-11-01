@@ -24,4 +24,4 @@
 700    2021-10-21 #dues:richard !locn:paypal !id:paypal:78X599906Y096912E !months:1:1
 -29.65 2021-10-21 #dues:richard !locn:paypal !months:1:1
 0      2021-10-27 !locn_xfer:paypal:nic:2007.55
-
+340    2021-10-31 #fridge !locn:philip
