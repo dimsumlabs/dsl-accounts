@@ -6,4 +6,4 @@
 1337   2021-11-03 #dues:meebey !locn:nic !months:-1:1
 1337   2021-11-03 #dues:meebey !locn:nic
 700    2021-11-01 #dues:kerry !locn:nic
-
+-14000 2021-11-04 #bills:rent !locn:nic
