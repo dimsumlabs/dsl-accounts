@@ -8,3 +8,5 @@
 700    2021-11-01 #dues:kerrie !locn:nic
 -14000 2021-11-04 #bills:rent !locn:nic
 0      2021-11-04 !locn_xfer:hamish:philip:3000
+5000   2021-11-04 #loan !locn:philip
+0      2021-11-04 !locn_xfer:philip:nic:10000
