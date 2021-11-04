@@ -18,3 +18,47 @@ jobs:
                   sudo make build-dep
             - name: Run CI tests
               run: make test
+
+  deploy:
+    name: Deploy to github pages
+    needs: check
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo make build-dep
+          sudo apt-get install -y gnuplot
+
+      - name: Create report pages
+        run: |
+          make pages
+          make pages/stats.pdf
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: pages
+          single-commit: true
+
+  notify:
+    name: Notify on failure
+    needs: check
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: irc push
+        uses: vmiklos/notify-irc
+        if: ${{ failure() }}
+        with:
+          server: "irc.libera.chat"
+          channel: "#dimsumlabs"
+          notice: true
+          nickname: github-ci
+          message: |
+            CI Failed - ${{ github.repository }} ${{ github.event.ref }}
