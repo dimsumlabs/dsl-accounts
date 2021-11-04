@@ -2,3 +2,8 @@
 1000   2021-11-01 #dues:philip !locn:philip !months:1:1
 700    2021-11-01 #dues:cat !locn:philip
 200    2021-10-24 #supporters felix !locn:github
+700    2021-11-04 #dues:nicolas !locn:nic
+1337   2021-11-03 #dues:meebey !locn:nic !months:-1:1
+1337   2021-11-03 #dues:meebey !locn:nic
+700    2021-11-01 #dues:kerry !locn:nic
+
