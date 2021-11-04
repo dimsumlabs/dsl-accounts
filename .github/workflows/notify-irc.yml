@@ -1,8 +1,6 @@
 name: Notify IRC
 on:
   push:
-    branches:
-      - 'dsl-accounts/master'
   pull_request:
   create:
   issues:
