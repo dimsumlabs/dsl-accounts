@@ -13,3 +13,4 @@
 500    2021-11-06 #dues:vincent !locn:paypal !id:paypal:2AK727441Y573644D
 -24.35 2021-11-06 #dues:vincent !locn:paypal
 700    2021-11-08 #dues:abhi !locn:philip
+500    2021-11-08 #fridge !locn:philip
