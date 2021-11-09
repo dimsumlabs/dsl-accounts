@@ -14,3 +14,5 @@
 -24.35 2021-11-06 #dues:vincent !locn:paypal
 700    2021-11-08 #dues:abhi !locn:philip
 500    2021-11-08 #fridge !locn:philip
+300    2021-11-09 #donation:members from Nico for fridge !locn:philip
+1000   2021-11-09 #donation:members from Neil for fridge !locn:philip
