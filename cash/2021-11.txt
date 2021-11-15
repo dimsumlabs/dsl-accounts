@@ -21,4 +21,7 @@
 -33.15 2021-11-12 #dues:anders !locn:paypal
 25     2021-11-13 #fridge !locn:paypal !id:paypal:72042662YA6599449
 -3.45  2021-11-13 #fridge !locn:paypal
-
+808    2021-11-04 #dues:neil !locn:nic !months:1:1
+700    2021-11-05 #dues:antonia !locn:nic
+300    2021-11-05 #dues:max !locn:nic
+700    2021-11-15 #dues:nicolas !locn:nic !months:1:1
