@@ -17,3 +17,8 @@
 300    2021-11-09 #donation:members from Nico for fridge !locn:philip
 1000   2021-11-09 #donation:members from Neil for fridge !locn:philip
 2840   2021-11-09 #donation:members from meebey for fridge !locn:philip
+700    2021-11-12 #dues:anders !locn:paypal !id:paypal:2S81366504293383C
+-33.15 2021-11-12 #dues:anders !locn:paypal
+25     2021-11-13 #fridge !locn:paypal !id:paypal:72042662YA6599449
+-3.45  2021-11-13 #fridge !locn:paypal
+
