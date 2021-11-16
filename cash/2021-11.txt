@@ -25,3 +25,4 @@
 700    2021-11-05 #dues:antonia !locn:nic
 300    2021-11-05 #dues:max !locn:nic
 700    2021-11-15 #dues:nicolas !locn:nic !months:1:1
+300    2021-11-16 #dues:ella !locn:philip
