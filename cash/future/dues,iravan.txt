@@ -1,0 +1,4 @@
+# github automated payments
+#
+
+700 2021-12-23 #dues:iravan !forecast:monthly !locn:github

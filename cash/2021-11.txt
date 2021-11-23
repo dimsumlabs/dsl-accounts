@@ -27,3 +27,4 @@
 700    2021-11-15 #dues:nicolas !locn:nic !months:1:1
 300    2021-11-16 #dues:ella !locn:philip
 500    2021-11-16 #donation:members from Antonia for fridge !locn:philip
+700    2021-11-23 #dues:iravan !locn:github
