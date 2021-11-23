@@ -28,3 +28,4 @@
 300    2021-11-16 #dues:ella !locn:philip
 500    2021-11-16 #donation:members from Antonia for fridge !locn:philip
 700    2021-11-23 #dues:iravan !locn:github !months:1:1
+850    2021-11-23 #fridge !locn:philip
