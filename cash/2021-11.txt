@@ -29,3 +29,5 @@
 500    2021-11-16 #donation:members from Antonia for fridge !locn:philip
 700    2021-11-23 #dues:iravan !locn:github !months:1:1
 850    2021-11-23 #fridge !locn:philip
+700    2021-11-21 #dues:richard !locn:paypal !id:paypal:0WB82292RT724351E !months:1:1
+-29.65 2021-11-21 #dues:richard !locn:paypal !months:1:1
