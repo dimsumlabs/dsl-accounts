@@ -1,2 +1,7 @@
 #balance 12588.82 opening balance
+500    2021-11-30 #dues:jerry !locn:nic
+500    2021-11-30 #dues:jerry !locn:nic !months:1:1
+700    2021-12-01 #dues:nicolas !locn:nic !months:1:1
+-14000 2021-11-30 #bills:rent !locn:nic
+1337   2021-12-03 #dues:meebey !locn:nic
 
