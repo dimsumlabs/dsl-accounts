@@ -4,4 +4,5 @@
 700    2021-12-01 #dues:nicolas !locn:nic !months:1:1
 -14000 2021-11-30 #bills:rent !locn:nic
 1337   2021-12-03 #dues:meebey !locn:nic
-
+700    2021-12-06 #dues:vincent !locn:paypal !id:paypal:2N528881P4441280L
+-33.15 2021-12-06 #dues:vincent !locn:paypal
