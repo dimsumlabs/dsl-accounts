@@ -9,3 +9,7 @@
 808    2021-12-06 #dues:neil !locn:nic !months:1:1
 700    2021-12-06 #dues:antonia !locn:nic
 300    2021-12-06 #dues:max !locn:nic
+700    2021-12-12 #dues:anders !locn:paypal !id:paypal:3P7493766B282605X
+-33.15 2021-12-12 #dues:anders !locn:paypal
+0      2021-12-13 !locn_xfer:paypal:nic:1000.13
+
