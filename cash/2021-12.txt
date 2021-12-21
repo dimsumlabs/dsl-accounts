@@ -14,3 +14,5 @@
 0      2021-12-13 !locn_xfer:paypal:nic:1000.13
 1000   2021-12-01 #dues:philip !locn:philip !months:1:1
 700    2021-12-01 #dues:cat !locn:philip
+400    2021-12-04 #fridge !locn:philip
+280    2021-12-21 #fridge !locn:philip
