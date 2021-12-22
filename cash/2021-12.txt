@@ -16,3 +16,5 @@
 700    2021-12-01 #dues:cat !locn:philip
 400    2021-12-04 #fridge !locn:philip
 280    2021-12-21 #fridge !locn:philip
+700    2021-12-21 #dues:richard !locn:paypal !id:paypal:17L87415EF8135702 !months:1:1
+-29.65 2021-12-21 #dues:richard !locn:paypal !months:1:1
