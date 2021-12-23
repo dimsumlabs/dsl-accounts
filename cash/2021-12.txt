@@ -19,4 +19,5 @@
 700    2021-12-21 #dues:richard !locn:paypal !id:paypal:17L87415EF8135702 !months:1:1
 -29.65 2021-12-21 #dues:richard !locn:paypal !months:1:1
 0      2021-12-22 !locn_xfer:paypal:nic:1003.92
-1400   2021-12-22 #dues:benny !locn:nic !months:1:2
+700    2021-12-22 #dues:benny !locn:nic !months:1:1
+700    2021-12-22 #dues:james !locn:nic !months:1:1
