@@ -21,3 +21,5 @@
 0      2021-12-22 !locn_xfer:paypal:nic:1003.92
 700    2021-12-22 #dues:benny !locn:nic !months:1:1
 700    2021-12-22 #dues:james !locn:nic !months:1:1
+500    2021-12-24 #dues:fung !locn:paypal !id:paypal:89316608K2702330Y !months:1:1
+-21.85 2021-12-24 #dues:fung !locn:paypal !months:1:1
