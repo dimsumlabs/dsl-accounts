@@ -1,2 +1,4 @@
 #balance 9703.02 opening balance
-
+707    2022-01-04 #dues:nicolas !locn:nic !months:1:1
+1337   2022-01-04 #dues:meebey !locn:nic
+0      2022-01-04 !locn_xfer:philip:nic:15000
