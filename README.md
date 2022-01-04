@@ -30,3 +30,14 @@ You can also see a simple report from the system:
 ```
 make report
 ```
+
+In order to run the above commands, you will need to have installed pip on your device and then install the following librairies as follow:
+```
+pip install flake8
+```
+```
+pip install coverage
+```
+```
+pip install jinja2
+```
