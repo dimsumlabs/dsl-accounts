@@ -15,3 +15,5 @@
 700    2022-01-08 #dues:antonia !locn:nic
 300    2022-01-08 #dues:max !locn:nic
 300    2022-01-11 #dues:ella !locn:nic
+-14000 2022-01-11 #bills:rent !locn:nic
+
