@@ -20,3 +20,4 @@
 -33.15 2022-01-06 #dues:vincent !locn:paypal
 700    2022-01-12 #dues:anders !locn:paypal !id:paypal:3SN74029RM9266322
 -33.15 2022-01-12 #dues:anders !locn:paypal
+0      2022-01-04 !locn_xfer:paypal:nic:1000.14
