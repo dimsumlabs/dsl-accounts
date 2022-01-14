@@ -16,4 +16,7 @@
 300    2022-01-08 #dues:max !locn:nic
 300    2022-01-11 #dues:ella !locn:nic
 -14000 2022-01-11 #bills:rent !locn:nic
-
+700    2022-01-06 #dues:vincent !locn:paypal !id:paypal:7UK86686G8480531L
+-33.15 2022-01-06 #dues:vincent !locn:paypal
+700    2022-01-12 #dues:anders !locn:paypal !id:paypal:3SN74029RM9266322
+-33.15 2022-01-12 #dues:anders !locn:paypal
