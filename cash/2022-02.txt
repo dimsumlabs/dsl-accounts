@@ -4,4 +4,5 @@
 -33.15 2022-02-06 #dues:vincent !locn:paypal
 1337   2022-02-07 #dues:meebey !locn:nic
 701    2022-02-08 #dues:nicolas !locn:nic
+100    2022-01-23 #fridge !locn:philip
 
