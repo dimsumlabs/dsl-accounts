@@ -21,3 +21,6 @@
 700    2022-01-12 #dues:anders !locn:paypal !id:paypal:3SN74029RM9266322
 -33.15 2022-01-12 #dues:anders !locn:paypal
 0      2022-01-04 !locn_xfer:paypal:nic:1000.14
+700    2022-01-21 #dues:richard !locn:paypal !id:paypal:0JS77239JM637245R !months:1:1
+-29.65 2022-01-21 #dues:richard !locn:paypal !months:1:1
+#balance 6708.07 closing balance
