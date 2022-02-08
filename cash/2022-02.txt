@@ -3,7 +3,7 @@
 700    2022-02-06 #dues:vincent !locn:paypal !id:paypal:5HJ8522364745240T
 -33.15 2022-02-06 #dues:vincent !locn:paypal
 1337   2022-02-07 #dues:meebey !locn:nic
-701    2022-02-08 #dues:nicolas !locn:nic months:1:1
+701    2022-02-08 #dues:nicolas !locn:nic !months:1:1
 100    2022-01-23 #fridge !locn:philip
 -307.69 2022-01-23 #bills:electricity !locn:philip !months:-1:1
 -531.38 2022-01-23 #bills:electricity !locn:philip !months:-2:1
