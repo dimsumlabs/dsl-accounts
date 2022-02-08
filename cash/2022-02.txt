@@ -1,0 +1,7 @@
+#balance 6708.07 opening balance
+808    2022-02-04 #dues:neil !locn:nic
+700    2022-02-06 #dues:vincent !locn:paypal !id:paypal:5HJ8522364745240T
+-33.15 2022-02-06 #dues:vincent !locn:paypal
+1337   2022-02-07 #dues:meebey !locn:nic
+701    2022-02-08 #dues:nicolas !locn:nic
+
