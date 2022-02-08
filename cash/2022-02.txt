@@ -7,3 +7,4 @@
 100    2022-01-23 #fridge !locn:philip
 -307.69 2022-01-23 #bills:electricity !locn:philip !months:-1:1
 -531.38 2022-01-23 #bills:electricity !locn:philip !months:-2:1
+0      2022-01-21 !locn_xfer:github:philip:5421.15
