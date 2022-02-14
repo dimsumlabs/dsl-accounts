@@ -18,3 +18,9 @@
 1000   2022-02-07 #dues:philip !locn:philip !months:1:1
 700    2022-02-07 #dues:cat !locn:philip
 500    2022-02-08 #dues:jerry !locn:nic
+-14000 2022-02-08 #bills:rent !locn:nic
+25     2022-02-08 #fridge !locn:paypal !id:paypal:1WB45788V2892962X
+-3.45  2022-02-08 #fridge !locn:paypal
+700    2022-02-12 #dues:anders !locn:paypal !id:paypal:71P93248V0535390D
+-33.15 2022-02-12 #dues:anders !locn:paypal
+0      2022-02-14 !locn_xfer:paypal:nic:2837.31
