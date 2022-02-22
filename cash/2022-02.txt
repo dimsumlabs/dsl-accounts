@@ -24,3 +24,5 @@
 700    2022-02-12 #dues:anders !locn:paypal !id:paypal:71P93248V0535390D
 -33.15 2022-02-12 #dues:anders !locn:paypal
 0      2022-02-14 !locn_xfer:paypal:nic:2837.31
+700    2022-02-21 #dues:richard !locn:paypal !id:paypal:000055767W8544901 !months:1:1
+-29.65 2022-02-21 #dues:richard !locn:paypal !months:1:1
