@@ -2,3 +2,5 @@
 1000   2022-03-06 #dues:philip !locn:philip !months:1:1
 700    2022-03-06 #dues:cat !locn:philip
 500    2022-03-06 #dues:gabriel !locn:philip
+1337   2022-03-02 #dues:meebey !locn:nic
+808    2022-03-04 #dues:neil !locn:nic
