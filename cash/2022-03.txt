@@ -3,7 +3,7 @@
 700    2022-03-06 #dues:cat !locn:philip
 500    2022-03-06 #dues:gabriel !locn:philip
 1337   2022-03-02 #dues:meebey !locn:nic
-808    2022-03-04 #dues:neil !locn:nic
+1337   2022-03-04 #dues:neil !locn:nic
 700    2022-03-06 #dues:vincent !locn:paypal !id:paypal:7LA83416D1737774G
 -33.15 2022-03-06 #dues:vincent !locn:paypal
 0      2022-03-10 !locn_xfer:paypal:nic:1337.2
