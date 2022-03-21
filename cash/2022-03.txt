@@ -11,3 +11,5 @@
 -33.15 2022-03-12 #dues:anders !locn:paypal
 700    2022-03-07 #dues:antonia !locn:nic
 300    2022-03-07 #dues:max !locn:nic
+700    2022-03-21 #dues:richard !locn:paypal !id:paypal:36F59486FP0882256 !months:1:1
+-29.65 2022-03-21 #dues:richard !locn:paypal !months:1:1
