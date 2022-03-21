@@ -13,3 +13,5 @@
 300    2022-03-07 #dues:max !locn:nic
 700    2022-03-21 #dues:richard !locn:paypal !id:paypal:36F59486FP0882256 !months:1:1
 -29.65 2022-03-21 #dues:richard !locn:paypal !months:1:1
+0      2022-03-22 !locn_xfer:paypal:nic:1337.2
+
