@@ -1,2 +1,5 @@
 #balance 9097.15 opening balance
-
+1337   2022-04-03 #dues:meebey !locn:nic
+1337   2022-04-03 #dues:neil !locn:nic
+808    2022-04-03 #dues:neil !locn:nic !months:1:1
+700    2022-04-05 #dues:nicolas !locn:nic
