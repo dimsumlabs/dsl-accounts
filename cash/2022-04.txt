@@ -7,3 +7,4 @@
 -33.15 2022-04-06 #dues:vincent !locn:paypal
 1000   2022-04-09 #dues:philip !locn:philip !months:1:1
 700    2022-04-09 #dues:cat !locn:philip
+500    2022-04-09 #dues:jerry !locn:philip
