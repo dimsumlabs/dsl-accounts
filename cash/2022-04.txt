@@ -5,3 +5,5 @@
 700    2022-04-05 #dues:nicolas !locn:nic
 700    2022-04-06 #dues:vincent !locn:paypal !id:paypal:65284674HU955335W
 -33.15 2022-04-06 #dues:vincent !locn:paypal
+1000   2022-04-09 #dues:philip !locn:philip !months:1:1
+700    2022-04-09 #dues:cat !locn:philip
