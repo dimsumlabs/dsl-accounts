@@ -14,3 +14,4 @@
 100    2022-04-09 #fridge !locn:philip
 700    2022-04-06 #dues:antonia !locn:nic
 300    2022-04-06 #dues:max !locn:nic
+0      2022-04-11 !locn_xfer:philip:nic:7500
