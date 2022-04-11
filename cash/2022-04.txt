@@ -12,3 +12,5 @@
 -14000 2021-03-17 #bills:rent !locn:philip !months:-1:1
 110    2022-04-09 #fridge !locn:philip !months:-1:1
 100    2022-04-09 #fridge !locn:philip
+700    2022-04-06 #dues:antonia !locn:nic
+300    2022-04-06 #dues:max !locn:nic
