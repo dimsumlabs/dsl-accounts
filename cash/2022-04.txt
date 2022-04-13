@@ -18,3 +18,4 @@
 -14000 2022-04-13 #bills:rent !locn:nic
 700    2022-04-12 #dues:anders !locn:paypal !id:paypal:0JJ36806VB556784S
 -33.15 2022-04-12 #dues:anders !locn:paypal
+0      2022-04-13 !locn_xfer:paypal:nic:1333
