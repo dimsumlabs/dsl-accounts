@@ -22,3 +22,21 @@
 1000   2022-04-19 #dues:gabriel !locn:philip !months:1:2
 700    2022-04-21 #dues:richard !locn:paypal !id:paypal:6TK8747834207630K !months:1:1
 -29.65 2022-04-21 #dues:richard !locn:paypal !months:1:1
+1000   2022-02-20 #donation private GitHub sponsor !locn:github
+1000   2022-03-20 #donation private GitHub sponsor !locn:github
+1000   2022-04-20 #donation private GitHub sponsor !locn:github
+78.5   2022-02-21 #donation private GitHub sponsor !locn:github
+78.5   2022-03-21 #donation private GitHub sponsor !locn:github
+78.5   2022-04-21 #donation private GitHub sponsor !locn:github
+200    2022-02-21 #supporters hamish !locn:github
+200    2022-03-21 #supporters hamish !locn:github
+200    2022-04-21 #supporters hamish !locn:github
+700    2022-02-23 #dues:iravan !locn:github !months:1:1
+700    2022-03-23 #dues:iravan !locn:github !months:1:1
+700    2022-04-23 #dues:iravan !locn:github !months:1:1
+200    2022-02-24 #supporters felix !locn:github
+200    2022-03-24 #supporters felix !locn:github
+200    2022-04-24 #supporters felix !locn:github
+0      2022-02-21 !locn_xfer:github:philip:2164.53
+0      2022-03-21 !locn_xfer:github:philip:2169.19
+0      2022-04-21 !locn_xfer:github:philip:2147.68
