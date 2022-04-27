@@ -49,3 +49,5 @@
 -268   2022-01-15 #bills:internet !months:-1:1 !locn:philip
 -268   2022-02-15 #bills:internet !months:-1:1 !locn:philip
 -268   2022-03-15 #bills:internet !months:-1:1 !locn:philip
+-493   2022-02-28 #bills:electricity !locn:philip !months:1:1
+-244   2022-03-31 #bills:electricity !locn:philip !months:1:1
