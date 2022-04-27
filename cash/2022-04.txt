@@ -43,3 +43,9 @@
 -700   2021-01-23 #dues:iravan !locn:github !months:1:1
 700    2022-01-23 #dues:iravan !locn:github !months:1:1
 130    2022-04-26 #fridge !locn:philip
+-268   2021-10-15 #bills:internet !months:-1:1 !locn:philip
+-268   2021-11-15 #bills:internet !months:-1:1 !locn:philip
+-268   2021-12-15 #bills:internet !months:-1:1 !locn:philip
+-268   2022-01-15 #bills:internet !months:-1:1 !locn:philip
+-268   2022-02-15 #bills:internet !months:-1:1 !locn:philip
+-268   2022-03-15 #bills:internet !months:-1:1 !locn:philip
