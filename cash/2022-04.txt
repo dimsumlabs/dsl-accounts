@@ -42,3 +42,4 @@
 0      2022-04-21 !locn_xfer:github:philip:2147.68
 -700   2021-01-23 #dues:iravan !locn:github !months:1:1
 700    2022-01-23 #dues:iravan !locn:github !months:1:1
+130    2022-04-26 #fridge !locn:philip
