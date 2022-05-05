@@ -56,3 +56,4 @@
 2888   2022-04-27 #dues:philip !locn:philip !months:-1:1
 2888   2022-04-27 #dues:philip !locn:philip
 2888   2022-04-27 #dues:philip !locn:philip !months:1:1
+#balance 11353.7 closing balance
