@@ -6,4 +6,4 @@
 33     2022-05-06 #fridge !locn:nic
 700    2022-05-06 #dues:vincent !locn:paypal !id:paypal:2LL21242D33894906
 -33.15 2022-05-06 #dues:vincent !locn:paypal
-
+0      2022-05-13 !locn_xfer:paypal:nic:1337.61
