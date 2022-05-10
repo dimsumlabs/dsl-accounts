@@ -10,3 +10,5 @@
 3888   2022-05-08 #dues:philip !locn:philip !months:1:1
 700    2022-05-08 #dues:cat !locn:philip
 500    2022-05-08 #dues:jerry !locn:philip
+700    2022-05-05 #dues:antonia !locn:nic
+300    2022-05-05 #dues:max !locn:nic
