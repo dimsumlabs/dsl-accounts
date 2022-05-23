@@ -14,3 +14,5 @@
 300    2022-05-05 #dues:max !locn:nic
 700    2022-05-12 #dues:anders !locn:paypal !id:paypal:7CF04588H53249126
 -33.15 2022-05-12 #dues:anders !locn:paypal
+700    2022-05-21 #dues:richard !locn:paypal !id:paypal:9XV1573358429502J !months:1:1
+-29.65 2022-05-21 #dues:richard !locn:paypal !months:1:1
