@@ -24,3 +24,5 @@
 -14000 2022-03-17 #bills:rent !locn:philip
 14000  2022-04-13 #bills:rent !locn:nic !months:-1:1
 -14000 2022-04-13 #bills:rent !locn:nic
+-14000 2022-05-24 #bills:rent !locn:nic
+-416.5 2022-05-24 #bills:rent !locn:nic stamp duty
