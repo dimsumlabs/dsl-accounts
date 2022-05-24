@@ -20,3 +20,7 @@
 0      2022-05-24 !locn_xfer:philip:nic:5000
 12     2022-05-24 #fridge !locn:nic
 400    2022-05-24 #fridge !locn:philip
+14000  2021-03-17 #bills:rent !locn:philip !months:-1:1
+-14000 2022-03-17 #bills:rent !locn:philip
+14000  2022-04-13 #bills:rent !locn:nic !months:-1:1
+-14000 2022-04-13 #bills:rent !locn:nic
