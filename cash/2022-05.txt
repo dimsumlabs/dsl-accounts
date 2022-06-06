@@ -27,3 +27,4 @@
 -14000 2022-05-24 #bills:rent !locn:nic
 -416.5 2022-05-24 #bills:rent !locn:nic stamp duty
 -191.9 2022-05-24 #fridge !locn:philip
+#balance 9464.35 closing balance
