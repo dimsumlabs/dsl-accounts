@@ -1,1 +1,3 @@
 #balance 9464.35 opening balance
+1337   2022-06-02 #dues:meebey !locn:nic
+700    2022-06-06 #dues:nicolas !locn:nic
