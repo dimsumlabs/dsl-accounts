@@ -5,3 +5,6 @@
 700    2022-06-08 #dues:cat !locn:philip
 700    2022-06-06 #dues:vincent !locn:paypal !id:paypal:47A64807FU223852B
 -33.15 2022-06-06 #dues:vincent !locn:paypal
+2145   2022-06-06 #dues:neil !locn:nic
+700    2022-06-06 #dues:antonia !locn:nic
+300    2022-06-06 #dues:max !locn:nic
