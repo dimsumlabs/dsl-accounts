@@ -10,3 +10,4 @@
 300    2022-06-06 #dues:max !locn:nic
 500    2022-06-13 #dues:jerry !locn:philip
 700    2022-06-13 #dues:adam !locn:philip
+-14000 2022-06-18 #bills:rent !locn:nic
