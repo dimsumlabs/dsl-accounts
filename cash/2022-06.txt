@@ -13,3 +13,4 @@
 -14000 2022-06-18 #bills:rent !locn:nic
 300    2022-06-19 #dues:ella !locn:philip
 300    2022-06-14 #fridge !locn:philip
+-120   2022-06-21 #bills:rent !locn:nic
