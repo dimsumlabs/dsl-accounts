@@ -14,3 +14,8 @@
 300    2022-06-19 #dues:ella !locn:philip
 300    2022-06-14 #fridge !locn:philip
 -120   2022-06-21 #bills:rent !locn:nic
+700    2022-06-12 #dues:anders !locn:paypal !id:paypal:9LK20961U3128570W
+-33.15 2022-06-12 #dues:abder !locn:paypal
+700    2022-06-21 #dues:richard !locn:paypal !id:paypal:4BF39522V8030915K !months:1:1
+-29.65 2022-06-21 #dues:richard !locn:paypal !months:1:1
+
