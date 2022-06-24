@@ -18,4 +18,4 @@
 -33.15 2022-06-12 #dues:abder !locn:paypal
 700    2022-06-21 #dues:richard !locn:paypal !id:paypal:4BF39522V8030915K !months:1:1
 -29.65 2022-06-21 #dues:richard !locn:paypal !months:1:1
-
+0      2022-06-24 !locn_xfer:paypal:nic:2004.54
