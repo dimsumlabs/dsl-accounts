@@ -2,3 +2,4 @@
 700    2022-07-04 #dues:nicolas !locn:nic
 3888   2022-07-04 #dues:philip !locn:philip !months:1:1
 700    2022-07-04 #dues:cat !locn:philip
+0      2022-07-04 !locn_xfer:philip:nic:10000
