@@ -20,3 +20,4 @@
 -29.65 2022-06-21 #dues:richard !locn:paypal !months:1:1
 0      2022-06-24 !locn_xfer:paypal:nic:2004.54
 -150   2022-06-28 #bills:br !months:1:12 !locn:philip
+#balance 8768.40 closing balance
