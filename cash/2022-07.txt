@@ -1,2 +1,2 @@
 #balance 8768.40 opening balance
-
+700    2022-07-04 #dues:nicolas !locn:nic
