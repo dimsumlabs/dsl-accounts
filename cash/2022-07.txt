@@ -16,3 +16,4 @@
 700    2022-06-23 #dues:iravan !locn:github !months:1:1
 200    2022-06-24 #supporters felix !locn:github
 700    2022-07-05 #dues:gabriel !locn:nic
+500    2022-07-08 #dues:jerry !locn:philip
