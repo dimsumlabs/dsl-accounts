@@ -18,3 +18,5 @@
 700    2022-07-05 #dues:gabriel !locn:nic
 500    2022-07-06 #dues:jerry !locn:philip
 200    2022-07-06 #fridge !locn:philip
+700    2022-07-06 #dues:vincent !locn:paypal !id:paypal:06M033851E516551T
+-33.15 2022-07-06 #dues:vincent !locn:paypal
