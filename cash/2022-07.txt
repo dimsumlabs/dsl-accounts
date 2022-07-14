@@ -25,3 +25,5 @@
 300    2022-07-05 #dues:max !locn:nic
 2145   2022-07-04 #dues:neil !locn:nic
 0      2022-07-12 !locn_xfer:nic:philip:13.37
+700    2022-07-12 #dues:anders !locn:paypal !id:paypal:2XM39683PC303392V
+-33.15 2022-07-12 #dues:anders !locn:paypal
