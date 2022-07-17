@@ -28,3 +28,4 @@
 700    2022-07-12 #dues:anders !locn:paypal !id:paypal:2XM39683PC303392V
 -33.15 2022-07-12 #dues:anders !locn:paypal
 0      2022-07-15 !locn_xfer:paypal:nic:1333.7
+370    2022-07-16 #donation sadale !locn:philip
