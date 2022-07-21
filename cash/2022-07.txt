@@ -29,3 +29,4 @@
 -33.15 2022-07-12 #dues:anders !locn:paypal
 0      2022-07-15 !locn_xfer:paypal:nic:1333.7
 370    2022-07-16 #donation sadale !locn:philip
+-14000 2022-07-19 #bills:rent !locn:nic
