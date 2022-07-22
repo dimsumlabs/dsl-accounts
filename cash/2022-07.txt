@@ -30,3 +30,5 @@
 0      2022-07-15 !locn_xfer:paypal:nic:1333.7
 370    2022-07-16 #donation sadale !locn:philip
 -14000 2022-07-19 #bills:rent !locn:nic
+700    2022-07-21 #dues:richard !locn:paypal !id:paypal:0VD72755RA283643S !months:1:1
+-29.65 2022-07-21 #dues:richard !locn:paypal !months:1:1
