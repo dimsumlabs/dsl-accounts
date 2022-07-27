@@ -1,0 +1,4 @@
+# payment in cash
+#
+
+700 2022-07-26 #dues:gabriel !forecast:monthly

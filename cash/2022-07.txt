@@ -32,3 +32,4 @@
 -14000 2022-07-19 #bills:rent !locn:nic
 700    2022-07-21 #dues:richard !locn:paypal !id:paypal:0VD72755RA283643S !months:1:1
 -29.65 2022-07-21 #dues:richard !locn:paypal !months:1:1
+700    2022-07-26 #dues:gabriel !locn:philip !months:1:1
