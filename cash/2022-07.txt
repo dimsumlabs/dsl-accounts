@@ -40,3 +40,4 @@
 200    2022-07-24 #supporters felix !locn:github
 700    2022-07-26 #dues:gabriel !locn:philip !months:1:1
 130    2022-07-26 #fridge !locn:philip
+#balance 15677.95 closing balance
