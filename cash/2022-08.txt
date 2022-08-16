@@ -10,3 +10,4 @@
 700    2022-08-05 #dues:antonia !locn:nic
 300    2022-08-05 #dues:max !locn:nic
 -13600 2022-08-08 #bills:rent !locn:philip
+700    2022-08-16 #dues:miranda !locn:philip

@@ -1,0 +1,4 @@
+# payment in cash
+#
+
+700 2022-08-16 #dues:miranda !forecast:monthly
