@@ -25,3 +25,4 @@
 700    2022-08-23 #dues:iravan !locn:github !months:1:1
 700    2022-08-23 #dues:adam !locn:philip
 140    2022-08-23 #fridge !locn:philip
+-336   2022-08-23 #fridge !locn:philip
