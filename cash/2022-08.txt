@@ -27,3 +27,4 @@
 140    2022-08-23 #fridge !locn:philip
 -336   2022-08-23 #fridge !locn:philip
 200    2022-08-23 #fridge !locn:philip
+700    2022-08-23 #dues:gabriel !locn:philip !months:1:1
