@@ -23,3 +23,4 @@
 78.5   2022-08-21 #donation private GitHub sponsor !locn:github
 200    2022-08-21 #supporters hamish !locn:github
 700    2022-08-23 #dues:iravan !locn:github !months:1:1
+700    2022-08-23 #dues:adam !locn:philip
