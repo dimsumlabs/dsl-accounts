@@ -15,5 +15,6 @@
 700    2022-08-12 #dues:anders !locn:paypal !id:paypal:9ND82624C6141101E
 -33.15 2022-08-12 #dues:anders !locn:paypal
 0      2022-08-13 !locn_xfer:paypal:nic:1337.2
+1000   2022-08-18 #dues:felix !locn:github
 700    2022-08-21 #dues:richard !locn:paypal !id:paypal:6D051943KR6323748 !months:1:1
 -29.65 2022-08-21 #dues:richard !locn:paypal !months:1:1
