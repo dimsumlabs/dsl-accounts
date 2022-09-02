@@ -29,3 +29,4 @@
 200    2022-08-23 #fridge !locn:philip
 700    2022-08-23 #dues:gabriel !locn:philip !months:1:1
 500    2022-08-29 #fridge !locn:philip
+#balance 20434.50 closing balance
