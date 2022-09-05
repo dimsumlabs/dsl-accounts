@@ -4,3 +4,4 @@
 300    2022-09-04 #dues:ella !locn:philip
 -1000  2022-08-18 #dues:felix !locn:github
 1000   2022-08-18 #dues:felix !locn:github !months:1:1
+700    2022-09-05 #dues:maki !locn:philip
