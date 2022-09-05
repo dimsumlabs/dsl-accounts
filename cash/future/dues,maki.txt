@@ -1,0 +1,4 @@
+# payment in cash
+#
+
+700 2022-09-05 #dues:maki !forecast:monthly
