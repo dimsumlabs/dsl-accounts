@@ -7,3 +7,4 @@
 700    2022-09-05 #dues:maki !locn:philip
 -13800 2022-09-06 #bills:rent !locn:philip
 300    2022-09-06 #fridge !locn:philip
+300    2022-09-13 #dues:andy !locn:github
