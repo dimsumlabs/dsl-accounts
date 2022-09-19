@@ -8,3 +8,9 @@
 -13800 2022-09-06 #bills:rent !locn:philip
 300    2022-09-06 #fridge !locn:philip
 300    2022-09-13 #dues:andy !locn:github
+700    2022-09-06 #dues:vincent !locn:paypal !id:paypal:8T162412SE0505701
+-33.15 2022-09-06 #dues:vincent !locn:paypal
+700    2022-09-12 #dues:anders !locn:paypal !id:paypal:2US44536VY613144G
+-33.15 2022-09-12 #dues:anders !locn:paypal
+500    2022-09-18 #dues:jenny !locn:paypal !id:paypal:62U93478D26590509
+-33.15 2022-09-18 #dues:jenny !locn:paypal
