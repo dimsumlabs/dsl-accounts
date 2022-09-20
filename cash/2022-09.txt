@@ -14,3 +14,4 @@
 -33.15 2022-09-12 #dues:anders !locn:paypal
 500    2022-09-18 #dues:jenny !locn:paypal !id:paypal:62U93478D26590509
 -33.15 2022-09-18 #dues:jenny !locn:paypal
+500    2022-09-20 #dues:jerry !locn:philip
