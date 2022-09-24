@@ -13,10 +13,12 @@
 700    2022-09-12 #dues:anders !locn:paypal !id:paypal:2US44536VY613144G
 -33.15 2022-09-12 #dues:anders !locn:paypal
 500    2022-09-18 #dues:jenny !locn:paypal !id:paypal:62U93478D26590509
--33.15 2022-09-18 #dues:jenny !locn:paypal
+-24.35 2022-09-18 #dues:jenny !locn:paypal
 500    2022-09-20 #dues:jerry !locn:philip
 700    2022-09-05 #dues:antonia !locn:nic
 300    2022-09-05 #dues:max !locn:nic
 700    2022-09-20 #dues:jay !locn:github
 1337   2022-09-02 #dues:meebey !locn:nic
 2145   2022-09-05 #dues:neil !locn:nic
+700    2022-09-21 #dues:richard !locn:paypal !id:paypal:1J1949387T552952F !months:1:1
+-29.65 2022-09-21 #dues:richard !locn:paypal !months:1:1
