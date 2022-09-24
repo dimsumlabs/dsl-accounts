@@ -18,3 +18,5 @@
 700    2022-09-05 #dues:antonia !locn:nic
 300    2022-09-05 #dues:max !locn:nic
 700    2022-09-20 #dues:jay !locn:github
+1337   2022-09-02 #dues:meebey !locn:nic
+2145   2022-09-05 #dues:neil !locn:nic
