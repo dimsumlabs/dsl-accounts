@@ -30,3 +30,4 @@
 78.5   2022-09-21 #donation private GitHub sponsor !locn:github
 200    2022-09-21 #supporters hamish !locn:github
 700    2022-09-23 #dues:iravan !locn:github !months:1:1
+500    2022-09-27 #fridge !locn:philip
