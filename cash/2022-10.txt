@@ -5,3 +5,6 @@
 -700   2022-09-20 #dues:jay !locn:github
 700    2022-09-20 #dues:jay !locn:github !months:1:1
 0      2022-10-03 !locn_xfer:nic:philip:3816.90
+1337   2022-10-05 #dues:meebey !locn:nic
+0      2022-10-05 !locn_xfer:nic:philip:1337
+
