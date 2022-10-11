@@ -9,3 +9,4 @@
 0      2022-10-05 !locn_xfer:nic:philip:1337
 300    2022-10-11 #dues:ella !locn:philip
 500    2022-10-11 #dues:jerry !locn:philip
+200    2022-10-11 #fridge !locn:philip
