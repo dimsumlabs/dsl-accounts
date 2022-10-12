@@ -16,4 +16,5 @@
 2145   2022-10-05 #dues:neil !locn:nic
 700    2022-10-05 #dues:antonia !locn:nic
 300    2022-10-05 #dues:max !locn:nic
+0      2022-10-12 !locn_xfer:nic:philip:3145
 
