@@ -6,10 +6,14 @@
 700    2022-09-20 #dues:jay !locn:github !months:1:1
 0      2022-10-03 !locn_xfer:nic:philip:3816.90
 1337   2022-10-05 #dues:meebey !locn:nic
-0      2022-10-05 !locn_xfer:nic:philip:1337
+0      2022-10-06 !locn_xfer:nic:philip:1337
 300    2022-10-11 #dues:ella !locn:philip
 500    2022-10-11 #dues:jerry !locn:philip
 200    2022-10-11 #fridge !locn:philip
 700    2022-10-11 #dues:maki !locn:philip
 700    2022-10-06 #dues:vincent !locn:paypal !id:paypal:2S5921271J543161E
 -33.15 2022-10-06 #dues:vincent !locn:paypal
+2145   2022-10-05 #dues:neil !locn:nic
+700    2022-10-05 #dues:antonia !locn:nic
+300    2022-10-05 #dues:max !locn:nic
+
