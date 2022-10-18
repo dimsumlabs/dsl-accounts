@@ -17,4 +17,6 @@
 700    2022-10-05 #dues:antonia !locn:nic
 300    2022-10-05 #dues:max !locn:nic
 0      2022-10-12 !locn_xfer:nic:philip:3145
+700    2022-10-18 #dues:jenny !locn:paypal !id:paypal:49Y95443H6725084R
+-33.15 2022-10-18 #dues:jenny !locn:paypal
 
