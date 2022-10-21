@@ -1,0 +1,4 @@
+# payment by FPS
+#
+
+700 2022-10-21 #dues:michael !forecast:monthly
