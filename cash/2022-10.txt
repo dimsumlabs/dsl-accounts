@@ -21,3 +21,4 @@
 -33.15 2022-10-18 #dues:jenny !locn:paypal
 0      2022-10-19 !locn_xfer:paypal:nic:1333
 700    2022-10-21 #dues:michael !locn:philip
+0      2022-10-24 !locn_xfer:nic:philip:1333
