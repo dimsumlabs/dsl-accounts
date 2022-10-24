@@ -22,3 +22,5 @@
 0      2022-10-19 !locn_xfer:paypal:nic:1333
 700    2022-10-21 #dues:michael !locn:philip
 0      2022-10-24 !locn_xfer:nic:philip:1333
+700    2022-10-21 #dues:richard !locn:paypal !id:paypal:4C5108296F298904U !months:1:1
+-29.65 2022-10-21 #dues:richard !locn:paypal !months:1:1
