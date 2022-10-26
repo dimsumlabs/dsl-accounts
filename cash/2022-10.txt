@@ -24,3 +24,11 @@
 0      2022-10-24 !locn_xfer:nic:philip:1333
 700    2022-10-21 #dues:richard !locn:paypal !id:paypal:4C5108296F298904U !months:1:1
 -29.65 2022-10-21 #dues:richard !locn:paypal !months:1:1
+300    2022-10-13 #dues:andy !locn:github
+1000   2022-10-18 #dues:felix !locn:github !months:1:1
+1000   2022-10-20 #donation private GitHub sponsor !locn:github
+700    2022-10-20 #dues:jay !locn:github
+78.5   2022-10-21 #donation private GitHub sponsor !locn:github
+200    2022-10-21 #supporters hamish !locn:github
+0      2022-10-21 !locn_xfer:github:philip:4717.53
+700    2022-10-23 #dues:iravan !locn:github !months:1:1
