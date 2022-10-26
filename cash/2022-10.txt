@@ -27,7 +27,7 @@
 300    2022-10-13 #dues:andy !locn:github
 1000   2022-10-18 #dues:felix !locn:github !months:1:1
 1000   2022-10-20 #donation private GitHub sponsor !locn:github
-700    2022-10-20 #dues:jay !locn:github
+700    2022-10-20 #dues:jay !locn:github !months:1:1
 78.5   2022-10-21 #donation private GitHub sponsor !locn:github
 200    2022-10-21 #supporters hamish !locn:github
 0      2022-10-21 !locn_xfer:github:philip:4717.53
