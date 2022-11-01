@@ -33,3 +33,4 @@
 0      2022-10-21 !locn_xfer:github:philip:4717.53
 700    2022-10-23 #dues:iravan !locn:github !months:1:1
 -13800 2022-10-06 #bills:rent !locn:philip
+#balance 28815.25 closing balance
