@@ -1,3 +1,6 @@
 #balance 28815.25 opening balance
 3888   2022-11-03 #dues:philip !locn:philip !months:1:1
 700    2022-11-03 #dues:cat !locn:philip
+1337   2022-11-03 #dues:meebey !locn:nic
+500    2022-11-04 #dues:nicolas !locn:nic
+0      2022-11-04 !locn_xfer:nic:philip:1837
