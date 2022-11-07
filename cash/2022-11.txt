@@ -6,3 +6,5 @@
 0      2022-11-04 !locn_xfer:nic:philip:1837
 2145   2022-11-04 #dues:neil !locn:nic
 0      2022-11-07 !locn_xfer:nic:philip:2145
+700    2022-11-06 #dues:vincent !locn:paypal !id:paypal:6R030123CM1486542
+-33.15 2022-11-06 #dues:vincent !locn:nic
