@@ -11,3 +11,4 @@
 0      2022-11-07 !locn_xfer:paypal:nic:1337.9
 700    2022-11-07 #dues:antonia !locn:nic
 300    2022-11-07 #dues:max !locn:nic
+0      2022-11-08 !locn_xfer:nic:philip:1000
