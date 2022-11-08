@@ -12,3 +12,4 @@
 700    2022-11-07 #dues:antonia !locn:nic
 300    2022-11-07 #dues:max !locn:nic
 0      2022-11-08 !locn_xfer:nic:philip:1000
+-13800 2022-11-08 #bills:rent !locn:philip
