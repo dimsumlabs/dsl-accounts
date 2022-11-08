@@ -9,3 +9,5 @@
 700    2022-11-06 #dues:vincent !locn:paypal !id:paypal:6R030123CM1486542
 -33.15 2022-11-06 #dues:vincent !locn:paypal
 0      2022-11-07 !locn_xfer:paypal:nic:1337.9
+700    2022-11-07 #dues:antonia !locn:nic
+300    2022-11-07 #dues:max !locn:nic
