@@ -15,3 +15,4 @@
 -13800 2022-11-08 #bills:rent !locn:philip
 700    2022-11-08 #dues:maki !locn:philip
 500    2022-11-08 #dues:jerry !locn:philip
+700    2022-11-15 #dues:michael !locn:philip
