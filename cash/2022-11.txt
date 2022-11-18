@@ -18,3 +18,4 @@
 700    2022-11-15 #dues:michael !locn:philip
 700    2022-11-18 #dues:jenny !locn:paypal !id:paypal:5HA738808H490493X
 -33.15 2022-11-18 #dues:jenny !locn:paypal
+0      2022-11-18 !locn_xfer:nic:philip:1337.90
