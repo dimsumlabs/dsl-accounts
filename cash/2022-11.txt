@@ -16,3 +16,5 @@
 700    2022-11-08 #dues:maki !locn:philip
 500    2022-11-08 #dues:jerry !locn:philip
 700    2022-11-15 #dues:michael !locn:philip
+700    2022-11-18 #dues:jenny !locn:paypal !id:paypal:5HA738808H490493X
+-33.15 2022-11-18 #dues:jenny !locn:paypal
