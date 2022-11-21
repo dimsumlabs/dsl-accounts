@@ -19,3 +19,11 @@
 700    2022-11-18 #dues:jenny !locn:paypal !id:paypal:5HA738808H490493X
 -33.15 2022-11-18 #dues:jenny !locn:paypal
 0      2022-11-18 !locn_xfer:nic:philip:1337.90
+700    2022-11-03 #dues:gabriel !locn:github
+300    2022-11-13 #dues:andy !locn:github
+1000   2022-11-18 #dues:felix !locn:github !months:1:1
+1000   2022-11-20 #donation private GitHub sponsor !locn:github
+700    2022-11-20 #dues:jay !locn:github !months:1:1
+78.5   2022-11-21 #donation private GitHub sponsor !locn:github
+200    2022-11-21 #supporters hamish !locn:github
+0      2022-11-21 !locn_xfer:github:philip:4717.07
