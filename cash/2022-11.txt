@@ -27,3 +27,5 @@
 78.5   2022-11-21 #donation private GitHub sponsor !locn:github
 200    2022-11-21 #supporters hamish !locn:github
 0      2022-11-21 !locn_xfer:github:philip:4717.07
+700    2022-11-21 #dues:richard !locn:paypal !id:paypal:7HD87268413288444 !months:1:1
+-29.65 2022-11-21 #dues:richard !locn:paypal !months:1:1
