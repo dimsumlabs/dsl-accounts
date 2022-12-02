@@ -1,0 +1,2 @@
+#balance 32567.80 opening balance
+1337   2022-12-02 #dues:meebey !locn:nic
