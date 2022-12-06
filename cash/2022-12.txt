@@ -5,3 +5,4 @@
 700    2022-12-05 #dues:antonia !locn:nic
 300    2022-12-05 #dues:max !locn:nic
 500    2022-12-05 #dues:nicolas !locn:nic
+0      2022-12-06 !locn_xfer:nic:philip:3645
