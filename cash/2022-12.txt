@@ -1,3 +1,7 @@
 #balance 32567.80 opening balance
 1337   2022-12-02 #dues:meebey !locn:nic
 0      2022-12-02 !locn_xfer:nic:philip:2673.21
+2145   2022-12-05 #dues:neil !locn:nic
+700    2022-12-05 #dues:antonia !locn:nic
+300    2022-12-05 #dues:max !locn:nic
+500    2022-12-05 #dues:nicolas !locn:nic
