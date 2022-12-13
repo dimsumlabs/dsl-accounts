@@ -9,4 +9,7 @@
 700    2022-12-06 #dues:vincent !locn:paypal !id:paypal:3WG63063C2298494X
 -33.15 2022-12-06 #dues:vincent !locn:paypal
 500    2022-12-13 #dues:jerry !locn:philip
+125    2022-11-23 #supporters iravan !locn:github
 60     2022-12-13 #donation !locn:philip
+700    2022-12-03 #dues:gabriel !locn:github
+300    2022-12-13 #dues:andy !locn:github
