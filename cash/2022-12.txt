@@ -9,3 +9,4 @@
 700    2022-12-06 #dues:vincent !locn:paypal !id:paypal:3WG63063C2298494X
 -33.15 2022-12-06 #dues:vincent !locn:paypal
 500    2022-12-13 #dues:jerry !locn:philip
+60     2022-12-13 #donation !locn:philip
