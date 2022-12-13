@@ -13,3 +13,5 @@
 60     2022-12-13 #donation !locn:philip
 700    2022-12-03 #dues:gabriel !locn:github
 300    2022-12-13 #dues:andy !locn:github
+3888   2022-12-13 #dues:philip !locn:philip !months:1:1
+700    2022-12-13 #dues:cat !locn:philip
