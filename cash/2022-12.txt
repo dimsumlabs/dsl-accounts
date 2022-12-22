@@ -19,3 +19,9 @@
 -13800 2022-12-13 #bills:rent !locn:philip
 -10000 2022-12-13 #loan !locn:philip
 700    2022-12-16 #dues:michael !locn:philip
+1000   2022-12-18 #dues:felix !locn:github !months:1:1
+1000   2022-12-20 #donation private GitHub sponsor !locn:github
+700    2022-12-20 #dues:jay !locn:github !months:1:1
+78.5   2022-12-21 #donation private GitHub sponsor !locn:github
+200    2022-12-21 #supporters hamish !locn:github
+0      2022-12-21 !locn_xfer:github:philip:4693.35
