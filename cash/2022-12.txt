@@ -18,3 +18,4 @@
 700    2022-12-08 #dues:maki !locn:philip
 -13800 2022-12-13 #bills:rent !locn:philip
 -10000 2022-12-13 #loan !locn:philip
+700    2022-12-16 #dues:michael !locn:philip
