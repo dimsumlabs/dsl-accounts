@@ -25,3 +25,4 @@
 78.5   2022-12-21 #donation private GitHub sponsor !locn:github
 200    2022-12-21 #supporters hamish !locn:github
 0      2022-12-21 !locn_xfer:github:philip:4693.35
+#balance 25068.15 closing balance
