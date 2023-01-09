@@ -2,3 +2,7 @@
 3888   2023-01-04 #dues:philip !locn:philip !months:1:1
 700    2023-01-04 #dues:cat !locn:philip
 40     2023-01-04 #fridge !locn:philip
+2145   2023-01-04 #dues:neil !locn:nic
+1337   2023-01-04 #dues:meebey !locn:nic
+700    2023-01-05 #dues:antonia !locn:nic
+300    2023-01-05 #dues:max !locn:nic
