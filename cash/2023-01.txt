@@ -6,3 +6,7 @@
 1337   2023-01-04 #dues:meebey !locn:nic
 700    2023-01-05 #dues:antonia !locn:nic
 300    2023-01-05 #dues:max !locn:nic
+700    2022-12-21 #dues:richard !locn:paypal !id:paypal:0LM2044184817383E !months:1:1
+-29.65 2022-12-21 #dues:richard !locn:paypal !months:1:1
+700    2023-01-06 #dues:vincent !locn:paypal !id:paypal:53E47928CX702861U
+-33.15 2023-01-06 #dues:vincent !locn:paypal
