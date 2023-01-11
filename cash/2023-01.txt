@@ -14,3 +14,4 @@
 500    2023-01-10 #dues:jerry !locn:philip
 700    2023-01-03 #dues:gabriel !locn:github
 0      2023-01-11 !locn_xfer:nic:philip:6487.04
+700    2023-01-10 #dues:maki !locn:philip
