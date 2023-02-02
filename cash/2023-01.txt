@@ -23,3 +23,4 @@
 200    2023-01-21 #supporters hamish !locn:github
 0      2023-01-20 !locn_xfer:github:philip:3671.36
 -13800 2023-01-25 #bills:rent !locn:philip
+#balance 27293.85 closing balance
