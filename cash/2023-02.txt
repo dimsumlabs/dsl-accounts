@@ -3,3 +3,4 @@
 700    2023-02-02 #dues:cat !locn:philip
 700    2023-02-06 #dues:antonia !locn:philip
 300    2023-02-06 #dues:max !locn:philip
+700    2023-02-03 #dues:gabriel !locn:github
