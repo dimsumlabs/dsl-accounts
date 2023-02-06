@@ -1,3 +1,5 @@
 #balance 27293.85 opening balance
 3888   2023-02-02 #dues:philip !locn:philip !months:1:1
 700    2023-02-02 #dues:cat !locn:philip
+700    2023-02-06 #dues:antonia !locn:philip
+300    2023-02-06 #dues:max !locn:philip
