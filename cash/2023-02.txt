@@ -7,3 +7,4 @@
 -391.90   2023-02-07 #bills:electricity !months:-2:1
 -403.10   2023-02-07 #bills:electricity !months:-1:1
 795    2023-02-07 #donation electricity neil
+200    2023-02-07 #fridge !locn:philip
