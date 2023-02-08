@@ -10,4 +10,5 @@
 200    2023-02-07 #fridge !locn:philip
 1337   2023-02-02 #dues:meebey !locn:nic
 300    2023-02-08 #dues:nicolas !locn:nic
+0      2023-02-08 !locn_xfer:nic:philip:1637
 
