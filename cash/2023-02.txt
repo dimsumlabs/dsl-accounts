@@ -8,3 +8,6 @@
 -403.10   2023-02-07 #bills:electricity !months:-1:1
 795    2023-02-07 #donation electricity neil
 200    2023-02-07 #fridge !locn:philip
+1337   2023-02-02 #dues:meebey !locn:nic
+300    2023-02-08 #dues:nicolas !locn:nic
+
