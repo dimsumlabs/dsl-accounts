@@ -12,3 +12,8 @@
 300    2023-02-08 #dues:nicolas !locn:nic
 0      2023-02-08 !locn_xfer:nic:philip:1637
 -13800 2023-02-20 #bills:rent !locn:philip
+1000   2023-02-18 #dues:felix !locn:github !months:1:1
+1000   2023-02-20 #donation private GitHub sponsor !locn:github
+700    2023-02-20 #dues:jay !locn:github !months:1:1
+78.5   2023-02-21 #donation private GitHub sponsor !locn:github
+200    2023-02-21 #supporters hamish !locn:github
