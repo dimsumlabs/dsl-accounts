@@ -11,4 +11,4 @@
 1337   2023-02-02 #dues:meebey !locn:nic
 300    2023-02-08 #dues:nicolas !locn:nic
 0      2023-02-08 !locn_xfer:nic:philip:1637
-
+-13800 2023-02-20 #bills:rent !locn:philip
