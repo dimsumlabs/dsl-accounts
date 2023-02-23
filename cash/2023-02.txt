@@ -18,3 +18,7 @@
 78.5   2023-02-21 #donation private GitHub sponsor !locn:github
 200    2023-02-21 #supporters hamish !locn:github
 300    2023-02-21 #dues:ella !locn:philip
+700    2023-01-21 #dues:richard !locn:paypal !id:paypal:9BG325458L068882F !months:1:1
+-29.65 2023-01-21 #dues:richard !locn:paypal !months:1:1
+700    2023-02-21 #dues:richard !locn:paypal !id:paypal:18B75309NB297941J !months:1:1
+-29.65 2023-02-21 #dues:richard !locn:paypal !months:1:1
