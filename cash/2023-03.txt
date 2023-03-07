@@ -2,3 +2,4 @@
 3888   2023-03-08 #dues:philip !locn:philip !months:1:1
 700    2023-03-08 #dues:cat !locn:philip
 700    2023-03-03 #dues:gabriel !locn:github
+700    2023-03-08 #dues:diana !locn:github
