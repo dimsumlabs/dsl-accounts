@@ -3,3 +3,4 @@
 700    2023-03-08 #dues:cat !locn:philip
 700    2023-03-03 #dues:gabriel !locn:github
 700    2023-03-08 #dues:diana !locn:github
+1000   2023-03-02 #dues:neil !locn:github
