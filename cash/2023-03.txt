@@ -5,3 +5,4 @@
 700    2023-03-08 #dues:diana !locn:github
 1000   2023-03-02 #dues:neil !locn:github
 500    2023-03-14 #dues:jerry !locn:philip
+240    2023-03-14 #fridge !locn:philip
