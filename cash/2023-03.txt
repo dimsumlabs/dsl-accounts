@@ -13,3 +13,8 @@
 300    2023-03-06 #dues:max !locn:philip
 300    2023-03-20 #dues:ella !locn:philip
 700    2023-03-20 #donation from Antonia for Jami !locn:philip
+2000   2023-03-18 #dues:felix !locn:github !months:1:1
+1000   2023-03-20 #donation private GitHub sponsor !locn:github
+700    2023-03-20 #dues:jay !locn:github !months:1:1
+200    2023-03-21 #supporters hamish !locn:github
+700    2023-03-20 #dues:philipp !locn:github
