@@ -24,3 +24,4 @@
 0      2023-03-27 !locn_xfer:paypal:nic:2011.05
 1337   2023-03-02 #dues:meebey !locn:nic
 663    2023-03-27 #dues:nicolas !locn:nic
+0      2023-03-27 !locn_xfer:nic:philip:2000
