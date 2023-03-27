@@ -21,3 +21,4 @@
 -13800 2023-03-20 #bills:rent !locn:philip
 700    2023-03-21 #dues:richard !locn:paypal !id:paypal:19A70824WJ9381027 !months:1:1
 -29.65 2023-03-21 #dues:richard !locn:paypal !months:1:1
+0      2023-03-27 !locn_xfer:paypal:nic:2011.05
