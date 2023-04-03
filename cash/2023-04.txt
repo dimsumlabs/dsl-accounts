@@ -1,1 +1,3 @@
 #balance 30836.40 opening balance
+3888   2023-04-03 #dues:philip !locn:philip !months:1:1
+700    2023-04-03 #dues:cat !locn:philip
