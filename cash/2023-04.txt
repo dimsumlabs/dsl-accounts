@@ -1,3 +1,6 @@
 #balance 30836.40 opening balance
 3888   2023-04-03 #dues:philip !locn:philip !months:1:1
 700    2023-04-03 #dues:cat !locn:philip
+700    2023-04-03 #dues:gabriel !locn:github
+1000   2023-04-03 #dues:neil !locn:github
+300    2023-04-03 #dues:arachnia !locn:github
