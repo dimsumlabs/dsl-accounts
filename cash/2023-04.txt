@@ -6,3 +6,4 @@
 300    2023-04-03 #dues:arachnia !locn:github
 700    2023-04-04 #dues:michael !locn:philip !months:-1:1
 700    2023-04-04 #dues:michael !locn:philip
+-13800 2023-04-04 #bills:rent !locn:philip
