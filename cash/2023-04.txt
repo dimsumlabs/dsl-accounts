@@ -8,3 +8,4 @@
 700    2023-04-04 #dues:michael !locn:philip
 -13800 2023-04-04 #bills:rent !locn:philip
 1337   2023-04-04 #dues:meebey !locn:nic
+0      2023-04-06 !locn_xfer:nic:philip:1337
