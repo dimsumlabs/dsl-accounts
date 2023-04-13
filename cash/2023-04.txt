@@ -12,3 +12,5 @@
 0      2023-04-06 !locn_xfer:nic:philip:2011.05
 500    2023-04-07 #dues:jerry !locn:philip
 160    2023-04-07 #fridge !locn:philip
+700    2023-04-11 #dues:antonia !locn:philip
+300    2023-04-11 #dues:max !locn:philip
