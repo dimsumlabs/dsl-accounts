@@ -18,4 +18,4 @@
 -29.65 2023-04-21 #dues:richard !locn:paypal !months:1:1
 500    2023-04-26 #dues:theerapol !locn:paypal !id:paypal:63J42923S7299310U
 -21.85 2023-04-26 #dues:theerapol !locn:paypal
-
+0      2023-04-28 !locn_xfer:paypal:nic:1000.28
