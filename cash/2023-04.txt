@@ -16,3 +16,6 @@
 300    2023-04-11 #dues:max !locn:philip
 700    2023-04-21 #dues:richard !locn:paypal !id:paypal:77H27437BG603373Y !months:1:1
 -29.65 2023-04-21 #dues:richard !locn:paypal !months:1:1
+500    2023-04-26 #dues:theerapol !locn:paypal !id:paypal:63J42923S7299310U
+-21.85 2023-04-26 #dues:theerapol !locn:paypal
+
