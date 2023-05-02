@@ -28,3 +28,4 @@
 700    2023-04-21 #dues:philipp !locn:github
 200    2023-04-06 #supporters nic !locn:github
 300    2023-04-28 #dues:arachnia !locn:github !months:1:1
+-13800 2023-04-21 #bills:rent !locn:philip !months:1:1
