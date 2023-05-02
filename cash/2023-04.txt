@@ -19,3 +19,12 @@
 500    2023-04-26 #dues:theerapol !locn:paypal !id:paypal:63J42923S7299310U
 -21.85 2023-04-26 #dues:theerapol !locn:paypal
 0      2023-04-28 !locn_xfer:paypal:nic:1000.28
+0      2023-04-06 !locn_xfer:github:philip:9443.60
+0      2023-04-21 !locn_xfer:github:philip:3320.53
+700    2023-04-08 #dues:diana !locn:github
+2000   2023-04-15 #dues:felix !locn:github !months:1:1
+700    2023-04-20 #dues:jay !locn:github !months:1:1
+200    2023-04-21 #supporters hamish !locn:github
+700    2023-04-21 #dues:philipp !locn:github
+200    2023-04-06 #supporters nic !locn:github
+300    2023-04-28 #dues:arachnia !locn:github !months:1:1
