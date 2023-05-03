@@ -3,3 +3,7 @@
 700    2023-05-03 #dues:cat !locn:philip
 700    2023-05-03 #dues:gabriel !locn:github
 1000   2023-05-03 #dues:neil !locn:github
+700    2023-05-02 #dues:antonia !locn:philip
+300    2023-05-02 #dues:max !locn:philip
+300    2023-05-02 #dues:ella !locn:philip
+700    2023-05-02 #donation from Antonia for Jami !locn:philip
