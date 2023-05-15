@@ -8,3 +8,4 @@
 300    2023-05-02 #dues:ella !locn:philip
 700    2023-05-02 #donation from Antonia for Jami !locn:philip
 500    2023-05-09 #dues:jerry !locn:philip
+500    2023-05-15 #fridge !locn:philip
