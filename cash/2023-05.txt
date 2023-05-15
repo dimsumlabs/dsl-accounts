@@ -9,3 +9,6 @@
 700    2023-05-02 #donation from Antonia for Jami !locn:philip
 500    2023-05-09 #dues:jerry !locn:philip
 500    2023-05-15 #fridge !locn:philip
+700    2023-05-08 #dues:diana !locn:github
+2000   2023-05-15 #dues:felix !locn:github !months:1:1
+200    2023-05-06 #supporters nic !locn:github
