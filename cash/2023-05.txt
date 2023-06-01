@@ -15,3 +15,4 @@
 700    2023-05-20 #dues:jay !locn:github !months:1:1
 200    2023-05-21 #supporters hamish !locn:github
 300    2023-05-28 #dues:arachnia !locn:github !months:1:1
+1337   2023-05-04 #dues:meebey !locn:nic
