@@ -16,3 +16,4 @@
 200    2023-05-21 #supporters hamish !locn:github
 300    2023-05-28 #dues:arachnia !locn:github !months:1:1
 1337   2023-05-04 #dues:meebey !locn:nic
+700    2023-05-21 #dues:richard !locn:paypal !id:paypal:2P80862399919174H !months:1:1
