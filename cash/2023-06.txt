@@ -1,3 +1,6 @@
 #balance 21794.90 opening balance
 3888   2023-06-01 #dues:philip !locn:philip !months:1:1
 700    2023-06-01 #dues:cat !locn:philip
+1337   2023-06-02 #dues:meebey !locn:philip
+1000   2023-06-02 #dues:neil !locn:github
+700    2023-06-02 #dues:gabriel !locn:github
