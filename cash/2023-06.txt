@@ -4,3 +4,6 @@
 1337   2023-06-02 #dues:meebey !locn:philip
 1000   2023-06-02 #dues:neil !locn:github
 700    2023-06-02 #dues:gabriel !locn:github
+700    2023-06-05 #dues:antonia !locn:philip
+300    2023-06-05 #dues:max !locn:philip
+300    2023-06-05 #dues:ella !locn:philip
