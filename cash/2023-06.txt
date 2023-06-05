@@ -8,3 +8,4 @@
 300    2023-06-05 #dues:max !locn:philip
 300    2023-06-05 #dues:ella !locn:philip
 500    2023-06-05 #dues:jerry !locn:philip
+360    2023-06-05 #fridge !locn:philip
