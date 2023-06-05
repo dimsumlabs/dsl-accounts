@@ -7,3 +7,4 @@
 700    2023-06-05 #dues:antonia !locn:philip
 300    2023-06-05 #dues:max !locn:philip
 300    2023-06-05 #dues:ella !locn:philip
+500    2023-06-05 #dues:jerry !locn:philip
