@@ -18,3 +18,4 @@
 200    2023-06-21 #supporters hamish !locn:github
 0      2023-06-21 !locn_xfer:github:philip:5826.84
 300    2023-06-28 #dues:arachnia !locn:github !months:1:1
+-13800 2023-06-21 #bills:rent !locn:philip !months:1:1
