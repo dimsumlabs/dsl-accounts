@@ -13,3 +13,8 @@
 700    2023-06-08 #dues:diana !locn:github
 300    2023-06-13 #fridge !locn:philip
 100    2023-06-14 #fridge !locn:philip
+2000   2023-06-15 #dues:felix !locn:github !months:1:1
+700    2023-06-20 #dues:jay !locn:github !months:1:1
+200    2023-06-21 #supporters hamish !locn:github
+0      2023-06-21 !locn_xfer:github:philip:5826.84
+300    2023-06-28 #dues:arachnia !locn:github !months:1:1
