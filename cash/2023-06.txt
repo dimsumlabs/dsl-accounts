@@ -19,3 +19,6 @@
 0      2023-06-21 !locn_xfer:github:philip:5826.84
 300    2023-06-28 #dues:arachnia !locn:github !months:1:1
 -13800 2023-06-21 #bills:rent !locn:philip !months:1:1
+700    2023-06-21 #dues:richard !locn:paypal !id:paypal:8WA34123PS073093H !months:1:1
+-29.65 2023-05-21 #dues:richard !locn:paypal !months:1:1
+-29.65 2023-06-21 #dues:richard !locn:paypal !months:1:1
