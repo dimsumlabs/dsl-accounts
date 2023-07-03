@@ -22,3 +22,4 @@
 700    2023-06-21 #dues:richard !locn:paypal !id:paypal:8WA34123PS073093H !months:1:1
 -29.65 2023-05-21 #dues:richard !locn:paypal !months:1:1
 -29.65 2023-06-21 #dues:richard !locn:paypal !months:1:1
+#balance 22920.60 closing balance
