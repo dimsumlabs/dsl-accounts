@@ -8,3 +8,4 @@
 1337   2023-07-03 #dues:meebey !locn:philip
 700    2023-07-03 #dues:alex !locn:philip
 200    2023-07-03 #dues:cedric !locn:philip
+450    2023-07-04 #fridge !locn:philip
