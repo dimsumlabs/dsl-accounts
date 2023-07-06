@@ -13,3 +13,4 @@
 300    2023-07-06 #dues:max !locn:philip
 300    2023-07-06 #dues:ella !locn:philip
 200    2023-07-06 #supporters nic !locn:github
+370    2023-07-04 #donation sadale !locn:philip
