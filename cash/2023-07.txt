@@ -14,3 +14,10 @@
 300    2023-07-06 #dues:ella !locn:philip
 200    2023-07-06 #supporters nic !locn:github
 370    2023-07-04 #donation sadale !locn:philip
+700    2023-07-08 #dues:diana !locn:github
+2000   2023-07-15 #dues:felix !locn:github !months:1:1
+700    2023-07-20 #dues:jay !locn:github !months:1:1
+200    2023-07-21 #supporters hamish !locn:github
+0      2023-07-21 !locn_xfer:github:philip:5825.90
+700    2023-07-21 #dues:richard !locn:paypal !id:paypal:1J398973KU252654P !months:1:1
+-29.65 2023-07-21 #dues:richard !locn:paypal !months:1:1
