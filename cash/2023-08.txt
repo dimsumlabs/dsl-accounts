@@ -4,4 +4,5 @@
 700    2023-08-01 #dues:sammy !locn:paypal !id:paypal:3BJ357629Y7396359
 -29.65 2023-08-01 #dues:sammy !locn:paypal
 700    2023-08-02 #dues:gabriel !locn:github
+1000   2023-08-02 #dues:neil !locn:github
 1337   2023-08-03 #dues:meebey !locn:philip
