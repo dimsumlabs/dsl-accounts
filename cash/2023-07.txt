@@ -23,3 +23,4 @@
 -29.65 2023-07-21 #dues:richard !locn:paypal !months:1:1
 -13800 2023-07-21 #bills:rent !locn:philip !months:1:1
 300    2023-07-28 #dues:arachnia !locn:github !months:1:1
+#balance 25014.10 closing balance
