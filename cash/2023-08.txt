@@ -6,3 +6,7 @@
 700    2023-08-02 #dues:gabriel !locn:github
 1000   2023-08-02 #dues:neil !locn:github
 1337   2023-08-03 #dues:meebey !locn:philip
+700    2023-08-05 #dues:alex !locn:philip
+700    2023-08-06 #dues:antonia !locn:philip
+300    2023-08-06 #dues:max !locn:philip
+300    2023-08-06 #dues:ella !locn:philip
