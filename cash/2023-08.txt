@@ -18,3 +18,5 @@
 0      2023-08-21 !locn_xfer:github:philip:5810.46
 -13800 2023-08-21 #bills:rent !locn:philip !months:1:1
 500    2023-08-21 #dues:jerry !locn:philip
+700    2023-08-21 #dues:richard !locn:paypal !id:paypal:2TW57377SN036262S !months:1:1
+-29.65 2023-08-21 #dues:richard !locn:paypal !months:1:1
