@@ -5,3 +5,7 @@
 -29.65 2023-09-01 #dues:sammy !locn:paypal
 700    2023-09-02 #dues:gabriel !locn:github
 1000   2023-09-02 #dues:neil !locn:github
+-1000   2023-08-23 #dues:david !locn:github
+1000   2023-08-23 #dues:david !locn:github !months:1:1
+-300    2023-08-23 #dues:vincent !locn:github
+300    2023-08-23 #dues:vincent !locn:github !months:1:1
