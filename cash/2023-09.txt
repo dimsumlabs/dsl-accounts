@@ -9,3 +9,6 @@
 1000   2023-08-23 #dues:david !locn:github !months:1:1
 -300    2023-08-23 #dues:vincent !locn:github
 300    2023-08-23 #dues:vincent !locn:github !months:1:1
+1337   2023-09-04 #dues:meebey !locn:philip
+700    2023-09-04 #dues:alex !locn:philip
+200    2023-09-06 #supporters nic !locn:github
