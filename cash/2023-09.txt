@@ -12,3 +12,8 @@
 1337   2023-09-04 #dues:meebey !locn:philip
 700    2023-09-04 #dues:alex !locn:philip
 200    2023-09-06 #supporters nic !locn:github
+700    2023-09-08 #dues:diana !locn:github
+500    2023-09-10 #dues:jerry !locn:philip
+700    2023-09-10 #dues:antonia !locn:philip
+300    2023-09-10 #dues:max !locn:philip
+300    2023-09-10 #dues:ella !locn:philip
