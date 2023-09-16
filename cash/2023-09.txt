@@ -18,3 +18,4 @@
 300    2023-09-10 #dues:max !locn:philip
 300    2023-09-10 #dues:ella !locn:philip
 700    2023-09-15 #dues:alun !locn:philip
+2000   2023-09-15 #dues:felix !locn:github !months:1:1
