@@ -20,3 +20,5 @@
 700    2023-09-15 #dues:alun !locn:philip
 2000   2023-09-15 #dues:felix !locn:github !months:1:1
 -13800 2023-09-21 #bills:rent !locn:philip !months:1:1
+700    2023-09-21 #dues:richard !locn:paypal !id:paypal:7LT576361D1470934 !months:1:1
+-29.65 2023-09-21 #dues:richard !locn:paypal !months:1:1
