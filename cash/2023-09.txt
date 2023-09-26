@@ -27,3 +27,4 @@
 0      2023-09-21 !locn_xfer:github:philip:7150.60
 300    2023-09-26 #fridge !locn:philip
 800    2023-09-26 #donation !locn:philip
+-1302  2023-09-26 #bills:electricity !locn:philip !months:-1:1
