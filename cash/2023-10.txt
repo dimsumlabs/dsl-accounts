@@ -1,0 +1,2 @@
+#balance 30043.50 opening balance
+
