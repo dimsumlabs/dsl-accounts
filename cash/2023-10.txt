@@ -1,2 +1,10 @@
 #balance 30043.50 opening balance
-
+3888   2023-10-01 #dues:philip !locn:philip !months:1:1
+700    2023-10-01 #dues:cat !locn:philip
+700    2023-10-01 #dues:sammy !locn:paypal !id:paypal:4GV08125J1953633E
+-29.65 2023-10-01 #dues:sammy !locn:paypal
+700    2023-10-02 #dues:gabriel !locn:github
+1000   2023-10-02 #dues:neil !locn:github
+300    2023-09-23 #dues:vincent !locn:github !months:1:1
+1000   2023-09-23 #dues:david !locn:github !months:1:1
+300    2023-09-28 #dues:arachnia !locn:github !months:1:1
