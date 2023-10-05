@@ -12,3 +12,4 @@
 700    2023-10-03 #dues:alex !locn:philip
 1337   2023-10-03 #dues:meebey !locn:philip
 500    2023-10-05 #dues:jerry !locn:philip
+160    2023-10-05 #fridge !locn:philip
