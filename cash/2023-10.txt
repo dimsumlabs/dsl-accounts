@@ -13,3 +13,5 @@
 1337   2023-10-03 #dues:meebey !locn:philip
 500    2023-10-05 #dues:jerry !locn:philip
 160    2023-10-05 #fridge !locn:philip
+200    2023-10-06 #supporters nic !locn:github
+700    2023-10-08 #dues:diana !locn:github
