@@ -15,3 +15,4 @@
 160    2023-10-05 #fridge !locn:philip
 200    2023-10-06 #supporters nic !locn:github
 700    2023-10-08 #dues:diana !locn:github
+2000   2023-10-15 #dues:felix !locn:github !months:1:1
