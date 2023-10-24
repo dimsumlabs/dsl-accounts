@@ -16,3 +16,9 @@
 200    2023-10-06 #supporters nic !locn:github
 700    2023-10-08 #dues:diana !locn:github
 2000   2023-10-15 #dues:felix !locn:github !months:1:1
+700    2023-10-24 #dues:antonia !locn:philip
+300    2023-10-24 #dues:max !locn:philip
+300    2023-10-24 #dues:ella !locn:philip
+700    2023-10-24 #dues:antonia !locn:philip !months:1:1
+300    2023-10-24 #dues:max !locn:philip !months:1:1
+300    2023-10-24 #dues:ella !locn:philip !months:1:1
