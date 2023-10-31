@@ -32,3 +32,4 @@
 340    2023-10-31 #donation !locn:philip
 120    2023-10-31 #fridge !locn:philip
 700    2023-10-31 #dues:nigel !locn:github !months:1:1
+300    2023-10-31 #dues:portia !locn:philip !months:1:1
