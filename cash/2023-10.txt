@@ -22,3 +22,5 @@
 700    2023-10-24 #dues:antonia !locn:philip !months:1:1
 300    2023-10-24 #dues:max !locn:philip !months:1:1
 300    2023-10-24 #dues:ella !locn:philip !months:1:1
+340    2023-10-31 #donation !locn:philip
+120    2023-10-31 #fridge !locn:philip
