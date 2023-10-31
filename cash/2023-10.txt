@@ -16,11 +16,18 @@
 200    2023-10-06 #supporters nic !locn:github
 700    2023-10-08 #dues:diana !locn:github
 2000   2023-10-15 #dues:felix !locn:github !months:1:1
+700    2023-10-20 #dues:jay !locn:github !months:1:1
+0      2023-10-20 !locn_xfer:github:philip:7136.16
+200    2023-10-21 #supporters hamish !locn:github
+300    2023-10-23 #dues:vincent !locn:github !months:1:1
+1000   2023-10-23 #dues:david !locn:github !months:1:1
 700    2023-10-24 #dues:antonia !locn:philip
 300    2023-10-24 #dues:max !locn:philip
 300    2023-10-24 #dues:ella !locn:philip
 700    2023-10-24 #dues:antonia !locn:philip !months:1:1
 300    2023-10-24 #dues:max !locn:philip !months:1:1
 300    2023-10-24 #dues:ella !locn:philip !months:1:1
+300    2023-10-28 #dues:arachnia !locn:github !months:1:1
 340    2023-10-31 #donation !locn:philip
 120    2023-10-31 #fridge !locn:philip
+700    2023-10-31 #dues:nigel !locn:github !months:1:1
