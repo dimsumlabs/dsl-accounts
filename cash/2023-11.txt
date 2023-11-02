@@ -1,2 +1,7 @@
 #balance 35765.85 opening balance
-
+3888   2023-11-01 #dues:philip !locn:philip !months:1:1
+700    2023-11-01 #dues:cat !locn:philip
+700    2023-11-01 #dues:sammy !locn:paypal !id:paypal:39A09577R6931984S
+-29.65 2023-11-01 #dues:sammy !locn:paypal
+700    2023-11-02 #dues:gabriel !locn:github
+1000   2023-11-02 #dues:neil !locn:github
