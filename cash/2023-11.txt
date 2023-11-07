@@ -5,3 +5,4 @@
 -29.65 2023-11-01 #dues:sammy !locn:paypal
 700    2023-11-02 #dues:gabriel !locn:github
 1000   2023-11-02 #dues:neil !locn:github
+180    2023-11-07 #fridge !locn:philip
