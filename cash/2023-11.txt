@@ -13,3 +13,4 @@
 140    2023-11-14 #fridge !locn:philip
 750    2023-11-14 #dues:alun !locn:philip
 100    2023-11-14 #donation !locn:philip
+700    2023-11-08 #dues:diana !locn:github
