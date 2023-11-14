@@ -11,3 +11,5 @@
 200    2023-11-06 #supporters nic !locn:github
 500    2023-11-07 #dues:jerry !locn:philip
 140    2023-11-14 #fridge !locn:philip
+750    2023-11-14 #dues:alun !locn:philip
+100    2023-11-14 #donation !locn:philip
