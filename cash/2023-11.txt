@@ -19,3 +19,4 @@
 700    2023-11-20 #dues:jay !locn:github !months:1:1
 200    2023-11-21 #supporters hamish !locn:github
 0      2023-11-21 !locn_xfer:github:philip:6524.31
+-13800 2023-11-20 #bills:rent !locn:philip !months:1:1
