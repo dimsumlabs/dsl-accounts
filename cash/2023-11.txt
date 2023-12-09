@@ -23,3 +23,4 @@
 300    2023-11-23 #dues:vincent !locn:github !months:1:1
 1000   2023-11-23 #dues:david !locn:github !months:1:1
 300    2023-11-28 #dues:arachnia !locn:github !months:1:1
+#balance 38131.20 closing balance
