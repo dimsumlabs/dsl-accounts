@@ -15,3 +15,11 @@
 700    2023-12-12 #dues:antonia !locn:philip
 300    2023-12-12 #dues:max !locn:philip
 300    2023-12-12 #dues:ella !locn:philip
+-1613  2023-12-12 #bills:electricity !locn:philip !months:-1:1
+2000   2023-12-15 #dues:felix !locn:github !months:1:1
+700    2023-12-20 #dues:jay !locn:github !months:1:1
+200    2023-12-21 #supporters hamish !locn:github
+0      2023-12-21 !locn_xfer:github:philip:7506.26
+-13800 2023-12-20 #bills:rent !locn:philip !months:1:1
+300    2023-12-23 #dues:vincent !locn:github !months:1:1
+1000   2023-12-23 #dues:david !locn:github !months:1:1
