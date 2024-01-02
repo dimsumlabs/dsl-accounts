@@ -1,1 +1,9 @@
 #balance 39613.55 opening balance
+3888   2024-01-01 #dues:philip !locn:philip !months:1:1
+700    2024-01-01 #dues:cat !locn:philip
+300    2024-01-01 #dues:portia !locn:philip
+700    2024-01-01 #dues:sammy !locn:paypal !id:paypal:45F692599T717764M
+-29.65 2024-01-01 #dues:sammy !locn:paypal
+700    2024-01-01 #dues:nigel !locn:github
+700    2024-01-02 #dues:gabriel !locn:github
+1000   2024-01-02 #dues:neil !locn:github
