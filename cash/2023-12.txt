@@ -23,3 +23,4 @@
 -13800 2023-12-20 #bills:rent !locn:philip !months:1:1
 300    2023-12-23 #dues:vincent !locn:github !months:1:1
 1000   2023-12-23 #dues:david !locn:github !months:1:1
+#balance 39613.55 closing balance
