@@ -14,3 +14,11 @@
 700    2024-01-10 #dues:antonia !locn:philip
 300    2024-01-10 #dues:max !locn:philip
 300    2024-01-10 #dues:ella !locn:philip
+2000   2024-01-15 #dues:felix !locn:github !months:1:1
+200    2024-01-20 #supporters jay !locn:github
+200    2024-01-21 #supporters hamish !locn:github
+0      2024-01-21 !locn_xfer:github:philip:6515.12
+-13800 2024-01-22 #bills:rent !locn:philip !months:1:1
+300    2024-01-23 #dues:vincent !locn:github !months:1:1
+-447   2024-01-23 #bills:electricity !locn:philip !months:-1:1
+#balance 40261.90 closing balance
