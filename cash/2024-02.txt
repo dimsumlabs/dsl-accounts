@@ -7,3 +7,4 @@
 700    2024-02-02 #dues:alex !locn:philip
 1337   2024-02-02 #dues:meebey !locn:philip
 700    2024-02-05 #dues:philipp !locn:github
+200    2024-02-06 #fridge !locn:philip
