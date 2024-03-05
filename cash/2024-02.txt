@@ -19,3 +19,4 @@
 0      2024-02-21 !locn_xfer:github:philip:6966.58
 300    2024-02-23 #dues:vincent !locn:github !months:1:1
 -13800 2024-02-29 #bills:rent !locn:philip !months:1:1
+#balance 41286.90 closing balance
