@@ -11,3 +11,4 @@
 300    2024-03-05 #dues:max !locn:philip
 300    2024-03-05 #dues:ella !locn:philip
 210    2024-03-05 #fridge !locn:philip
+130    2024-03-12 #fridge !locn:philip
