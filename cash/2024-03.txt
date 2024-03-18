@@ -13,3 +13,6 @@
 210    2024-03-05 #fridge !locn:philip
 130    2024-03-12 #fridge !locn:philip
 200    2024-03-06 #supporters nic !locn:github
+700    2024-03-08 #dues:diana !locn:github
+2000   2024-03-15 #dues:felix !locn:github !months:1:1
+700    2024-03-18 #dues:iulian !locn:github
