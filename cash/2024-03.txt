@@ -24,3 +24,4 @@
 500    2024-03-27 #dues:jerry !locn:philip
 180    2024-03-27 #donation !locn:philip
 400    2024-03-27 #donation !locn:philip
+#balance 44231.90 closing balance
