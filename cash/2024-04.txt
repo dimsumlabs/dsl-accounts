@@ -4,3 +4,5 @@
 700    2024-04-02 #dues:gabriel !locn:github
 1000   2024-04-02 #dues:neil !locn:github
 1337   2024-04-02 #dues:meebey !locn:philip
+500    2024-04-09 #donation !locn:philip
+270    2024-04-09 #fridge !locn:philip
