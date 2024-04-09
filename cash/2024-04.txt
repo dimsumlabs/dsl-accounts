@@ -6,3 +6,4 @@
 1337   2024-04-02 #dues:meebey !locn:philip
 500    2024-04-09 #donation !locn:philip
 270    2024-04-09 #fridge !locn:philip
+0      2024-04-03 !locn_xfer:paypal:nic:8000.22
