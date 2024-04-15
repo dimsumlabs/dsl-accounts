@@ -11,3 +11,4 @@
 700    2024-04-08 #dues:diana !locn:github
 -434   2024-04-09 #bills:electricity !locn:philip !months:-1:1
 -298   2024-04-09 #bills:internet !locn:philip !months:-1:1
+0      2024-04-10 !locn_xfer:nic:github:7862.4
