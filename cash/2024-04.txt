@@ -21,3 +21,4 @@
 300    2024-04-18 #dues:max !locn:philip
 300    2024-04-18 #dues:ella !locn:philip
 700    2024-04-18 #dues:iulian !locn:github !months:1:1
+700    2024-04-19 #dues:alex2 !locn:github
