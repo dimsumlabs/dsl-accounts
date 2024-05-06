@@ -22,3 +22,9 @@
 300    2024-04-18 #dues:ella !locn:philip
 700    2024-04-18 #dues:iulian !locn:github !months:1:1
 700    2024-04-19 #dues:alex2 !locn:github
+-13800 2024-04-20 #bills:rent !locn:philip !months:1:1
+0      2024-04-20 !locn_xfer:github:philip:5821.25
+200    2024-04-20 #supporters jay !locn:github
+200    2024-04-21 #supporters hamish !locn:github
+300    2024-04-23 #dues:vincent !locn:github !months:1:1
+500    2024-04-27 #dues:jerry !locn:philip
