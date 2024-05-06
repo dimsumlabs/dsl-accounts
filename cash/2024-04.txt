@@ -28,3 +28,4 @@
 200    2024-04-21 #supporters hamish !locn:github
 300    2024-04-23 #dues:vincent !locn:github !months:1:1
 500    2024-04-27 #dues:jerry !locn:philip
+#balance 46794.90 closing balance
