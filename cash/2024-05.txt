@@ -1,0 +1,11 @@
+#balance 46794.90 opening balance
+3888   2024-05-01 #dues:philip !locn:philip !months:1:1
+700    2024-05-01 #dues:cat !locn:philip
+700    2024-05-02 #dues:gabriel !locn:github
+1000   2024-05-02 #dues:neil !locn:github
+1337   2024-05-02 #dues:meebey !locn:philip
+700    2024-05-02 #dues:alex !locn:philip
+700    2024-05-05 #dues:antonia !locn:philip
+300    2024-05-05 #dues:max !locn:philip
+300    2024-05-05 #dues:ella !locn:philip
+700    2024-05-05 #dues:philipp !locn:github
