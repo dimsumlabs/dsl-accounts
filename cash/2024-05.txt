@@ -9,3 +9,8 @@
 300    2024-05-05 #dues:max !locn:philip
 300    2024-05-05 #dues:ella !locn:philip
 700    2024-05-05 #dues:philipp !locn:github
+0      2024-05-07 !locn_xfer:github:philip:13233.64
+700    2024-05-08 #dues:diana !locn:github
+-298   2024-05-09 #bills:internet !locn:philip !months:-1:1
+700    2024-05-10 #dues:darkangel !locn:philip
+780    2024-05-09 #supporters myriadhero !locn:github
