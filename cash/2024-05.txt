@@ -14,3 +14,6 @@
 -298   2024-05-09 #bills:internet !locn:philip !months:-1:1
 700    2024-05-10 #dues:darkangel !locn:philip
 780    2024-05-09 #supporters myriadhero !locn:github
+500    2024-05-14 #dues:jerry !locn:philip
+2000   2024-05-15 #dues:felix !locn:github !months:1:1
+700    2024-05-15 #dues:nigel !locn:github
