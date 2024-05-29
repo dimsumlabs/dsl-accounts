@@ -25,3 +25,6 @@
 300    2024-05-23 #dues:vincent !locn:github !months:1:1
 1024   2024-05-29 #dues:mrhill !locn:github
 0      2024-05-07 !locn_xfer:github:philip:4596.99
+-1200  2024-05-20 #bills:rent deposit top-up !locn:philip
+-434.5 2024-05-20 #bills:rent stamp duty !locn:philip
+-13800 2024-05-20 #bills:rent !locn:philip !months:1:1
