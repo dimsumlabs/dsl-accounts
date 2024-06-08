@@ -28,3 +28,9 @@
 -1200  2024-05-20 #bills:rent deposit top-up !locn:philip
 -434.5 2024-05-20 #bills:rent stamp duty !locn:philip
 -13800 2024-05-20 #bills:rent !locn:philip !months:1:1
+200    2024-05-20 #supporters jay !locn:github
+200    2024-05-21 #supporters hamish !locn:github
+75     2024-05-28 #supporters alex !locn:github
+480    2024-05-28 #fridge !locn:philip
+220    2024-05-28 #donation !locn:philip
+#balance 51216.40 closing balance
