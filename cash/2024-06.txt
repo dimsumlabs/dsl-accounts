@@ -17,3 +17,4 @@
 1024   2024-05-29 #dues:mrhill !locn:github !months:1:1
 -1333  2024-06-10 #bills:electricity !months:-1:1 !locn:philip
 80     2024-06-10 #fridge !locn:philip
+2000   2024-06-11 #dues:jerry !locn:philip
