@@ -18,3 +18,4 @@
 -1333  2024-06-10 #bills:electricity !months:-1:1 !locn:philip
 80     2024-06-10 #fridge !locn:philip
 2000   2024-06-11 #dues:jerry !locn:philip
+190    2024-06-12 #fridge !locn:philip
