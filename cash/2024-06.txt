@@ -24,3 +24,4 @@
 700    2024-06-18 #dues:iulian !locn:github !months:1:1
 240    2024-06-20 #fridge !locn:philip
 360    2024-06-20 HKOSCon #workshop !locn:philip
+190    2024-06-25 #fridge !locn:philip
