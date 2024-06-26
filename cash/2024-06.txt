@@ -14,7 +14,7 @@
 700    2024-06-05 #dues:philipp !locn:github
 700    2024-06-08 #dues:rhys !locn:github
 -1024   2024-05-29 #dues:mrhill !locn:github
-1024   2024-05-29 #dues:mrhill !locn:github !months:1:1
+1024   2024-05-29 #dues:mrhill !locn:philip !months:1:1
 -1333  2024-06-10 #bills:electricity !months:-1:1 !locn:philip
 80     2024-06-10 #fridge !locn:philip
 2000   2024-06-11 #dues:jerry !locn:philip
@@ -25,3 +25,9 @@
 240    2024-06-20 #fridge !locn:philip
 360    2024-06-20 HKOSCon #workshop !locn:philip
 190    2024-06-25 #fridge !locn:philip
+700    2024-06-19 #dues:alex2 !locn:github
+-200   2024-05-20 #supporters jay !locn:github
+-200   2024-05-21 #supporters hamish !locn:github
+200    2024-06-20 #supporters jay !locn:github
+200    2024-06-21 #supporters hamish !locn:github
+300    2024-06-23 #dues:vincent !locn:github !months:1:1
