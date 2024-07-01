@@ -33,3 +33,5 @@
 300    2024-06-23 #dues:vincent !locn:github !months:1:1
 300    2024-06-30 #dues:boyun !locn:philip !months:1:1
 80     2024-06-30 #fridge !locn:philip
+0      2024-06-21 !locn_xfer:github:philip:8132.77
+#balance 70814.40 closing balance
