@@ -1,4 +1,11 @@
 #balance 70814.40 opening balance
 3888   2024-07-01 #dues:philip !locn:philip !months:1:1
 700    2024-07-01 #dues:cat !locn:philip
+700    2024-07-01 #dues:portia !locn:philip
 -14400 2024-07-02 #bills:rent !locn:philip
+700    2024-07-02 #dues:gabriel !locn:github
+1000   2024-07-02 #dues:neil !locn:github
+1337   2024-07-02 #dues:meebey !locn:philip
+700    2024-07-02 #dues:alex !locn:philip
+666    2024-07-02 #dues:darkangel !locn:philip
+700    2024-07-05 #dues:philipp !locn:github
