@@ -12,3 +12,8 @@
 -700    2024-04-19 #dues:alex2 !locn:github
 700    2024-04-19 #dues:alex2 !locn:github !months:3:1
 1024   2024-07-06 #dues:mrhill !locn:github
+700    2024-07-08 #dues:rhys !locn:github
+2000   2024-07-09 #dues:jerry !locn:philip
+1400    2024-07-11 #dues:antonia !locn:philip !months:0:2
+600    2024-07-11 #dues:max !locn:philip !months:0:2
+600    2024-07-11 #dues:ella !locn:philip !months:0:2
