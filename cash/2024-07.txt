@@ -25,3 +25,4 @@
 200    2024-07-21 #supporters hamish !locn:github
 0      2024-07-22 !locn_xfer:github:philip:7918.29
 300    2024-07-23 #dues:vincent !locn:github !months:1:1
+370    2024-07-31 #donation sadale !locn:philip
