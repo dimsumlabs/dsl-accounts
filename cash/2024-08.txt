@@ -11,3 +11,5 @@
 5000   2024-08-02 #donation meebey !locn:philip
 700    2024-08-08 #dues:rhys !locn:github
 500    2024-08-11 #dues:jerry !locn:philip
+-2150  2023-07-12 #bills:br !months:0:12 !locn:philip
+-2200  2024-08-12 #bills:br !months:-1:12 !locn:philip
