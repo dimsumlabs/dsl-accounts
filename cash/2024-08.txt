@@ -10,3 +10,4 @@
 700    2024-08-05 #dues:philipp !locn:github
 5000   2024-08-02 #donation meebey !locn:philip
 700    2024-08-08 #dues:rhys !locn:github
+500    2024-08-11 #dues:jerry !locn:philip
