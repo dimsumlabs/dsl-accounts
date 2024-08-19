@@ -16,3 +16,4 @@
 2000   2024-08-15 #dues:felix !locn:github !months:1:1
 700    2024-08-15 #dues:nigel !locn:github
 700    2024-08-18 #dues:iulian !locn:github !months:1:1
+-19000 2024-08-19 #loan !locn:philip
