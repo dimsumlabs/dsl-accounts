@@ -17,3 +17,4 @@
 700    2024-08-15 #dues:nigel !locn:github
 700    2024-08-18 #dues:iulian !locn:github !months:1:1
 -19000 2024-08-19 #loan !locn:philip
+-1885  2024-08-19 #bills:electricity !months:-1:1 !locn:philip
