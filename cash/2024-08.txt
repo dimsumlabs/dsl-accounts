@@ -21,3 +21,8 @@
 700    2024-08-16 #dues:mrhill !locn:philip
 700    2024-08-19 #dues:alex2 !locn:github !months:1:1
 200    2024-08-20 #supporters jay !locn:github
+-14400 2024-08-20 #bills:rent !locn:philip !months:1:1
+200    2024-08-21 #supporters hamish !locn:github
+0      2024-08-22 !locn_xfer:github:philip:8618.19
+300    2024-08-23 #dues:vincent !locn:github !months:1:1
+#balance 48090.40 closing balance
