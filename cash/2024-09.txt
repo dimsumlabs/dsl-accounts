@@ -13,3 +13,4 @@
 500    2024-09-10 #dues:jerry !locn:philip
 700    2024-09-10 #dues:antonia !locn:philip
 300    2024-09-10 #dues:max !locn:philip
+260    2024-09-13 #fridge !locn:philip
