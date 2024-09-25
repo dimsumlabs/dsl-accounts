@@ -14,3 +14,4 @@
 700    2024-09-10 #dues:antonia !locn:philip
 300    2024-09-10 #dues:max !locn:philip
 260    2024-09-13 #fridge !locn:philip
+-14400 2024-09-25 #bills:rent !locn:philip !months:1:1
