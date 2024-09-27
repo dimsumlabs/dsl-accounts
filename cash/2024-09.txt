@@ -24,3 +24,4 @@
 200    2024-09-21 #supporters hamish !locn:github
 300    2024-09-23 #dues:vincent !locn:github !months:1:1
 200    2024-09-12 #supporters calvin !locn:github
+-1140  2024-09-27 #bills:electricity !months:-1:1 !locn:philip
