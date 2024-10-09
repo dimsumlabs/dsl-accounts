@@ -1,1 +1,11 @@
 #balance 53136.40 opening balance
+3072   2024-10-01 #dues:philip !locn:philip !months:1:1
+700    2024-10-01 #dues:cat !locn:philip
+700    2024-10-01 #dues:portia !locn:philip
+700    2024-10-02 #dues:gabriel !locn:github
+1000   2024-10-02 #dues:neil !locn:github
+3072   2024-10-02 #dues:meebey !locn:philip
+700    2024-10-02 #dues:alex !locn:philip
+666    2024-10-02 #dues:darkangel !locn:philip
+700    2024-10-05 #dues:philipp !locn:github
+700    2024-10-08 #dues:rhys !locn:github
