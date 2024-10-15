@@ -12,3 +12,4 @@
 360    2024-10-09 LLM #workshop !locn:philip
 250    2024-10-09 #fridge !locn:philip
 220    2024-10-15 #fridge !locn:philip
+700    2024-10-13 #dues:blake !locn:github
