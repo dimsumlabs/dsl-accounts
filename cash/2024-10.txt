@@ -27,3 +27,4 @@
 300    2024-10-23 #dues:vincent !locn:github !months:1:1
 -14400 2024-10-25 #bills:rent !locn:philip !months:1:1
 100    2024-10-29 #fridge !locn:philip
+#balance 58676.40 closing balance
