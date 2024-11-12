@@ -11,3 +11,4 @@
 700    2024-11-08 #dues:rhys !locn:github
 -1140  2024-11-11 #bills:electricity !months:-2:2 !locn:philip
 -398   2024-11-11 #bills:internet !months:-1:1 !locn:philip
+500    2024-11-12 #dues:jerry !locn:philip
