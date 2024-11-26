@@ -12,3 +12,18 @@
 -1140  2024-11-11 #bills:electricity !months:-2:2 !locn:philip
 -398   2024-11-11 #bills:internet !months:-1:1 !locn:philip
 500    2024-11-12 #dues:jerry !locn:philip
+700    2024-11-12 #dues:antonia !locn:philip
+300    2024-11-12 #dues:max !locn:philip
+300    2024-11-12 #dues:ella !locn:philip
+200    2024-11-12 #supporters calvin !locn:github
+700    2024-11-13 #dues:blake !locn:github
+2000   2024-11-15 #dues:felix !locn:github !months:1:1
+700    2024-11-15 #dues:nigel !locn:github
+700    2024-11-18 #dues:iulian !locn:github !months:1:1
+700    2024-11-19 #dues:alex2 !locn:github !months:1:1
+200    2024-11-20 #supporters jay !locn:github
+200    2024-11-21 #supporters hamish !locn:github
+0      2024-11-22 !locn_xfer:github:philip:9377.10
+300    2024-11-23 #dues:vincent !locn:github !months:1:1
+740    2024-11-24 PCB #workshop !locn:github
+-14400 2024-11-25 #bills:rent !locn:philip !months:1:1
