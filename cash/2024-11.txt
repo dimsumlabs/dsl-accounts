@@ -27,3 +27,4 @@
 300    2024-11-23 #dues:vincent !locn:github !months:1:1
 740    2024-11-24 PCB #workshop !locn:github
 -14400 2024-11-25 #bills:rent !locn:philip !months:1:1
+#balance 61253.40 closing balance
