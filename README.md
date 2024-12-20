@@ -31,7 +31,12 @@ You can also see a simple report from the system:
 make report
 ```
 
-In order to run the above commands, you will need to have installed pip on your device and then install the following librairies as follow:
+In order to run the above commands, you will need to have installed pip on your device and then install the following librairies (flake8, coverage, jinja2) as follow:
+ 
+```
+pip install -r requirements.txt
+```
+
 ```
 pip install flake8
 ```
