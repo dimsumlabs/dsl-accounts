@@ -12,3 +12,4 @@
 300    2025-01-02 #dues:max !locn:philip
 300    2025-01-02 #dues:shabnam !locn:philip
 700    2025-01-05 #dues:philipp !locn:github
+500    2025-01-07 #dues:jerry !locn:philip !months:-1:1
