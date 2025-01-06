@@ -1,0 +1,14 @@
+#balance 63406.40 opening balance
+2048   2025-01-01 #dues:philip !locn:philip !months:1:1
+700    2025-01-01 #dues:cat !locn:philip
+700    2025-01-02 #dues:portia !locn:philip
+700    2025-01-02 #dues:gabriel !locn:github
+1000   2025-01-02 #dues:neil !locn:github
+1337   2025-01-02 #dues:meebey !locn:philip
+700    2025-01-02 #dues:alex !locn:philip
+666    2025-01-02 #dues:darkangel !locn:philip
+700    2025-01-02 #dues:david !locn:philip
+700    2025-01-02 #dues:antonia !locn:philip
+300    2025-01-02 #dues:max !locn:philip
+300    2025-01-02 #dues:shabnam !locn:philip
+700    2025-01-05 #dues:philipp !locn:github
