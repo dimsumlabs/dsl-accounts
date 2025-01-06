@@ -1,0 +1,17 @@
+make[1]: Entering directory '/home/runner/work/dsl-accounts/dsl-accounts'
+git describe --always --dirty
+9f18843
+
+./balance.py report_location
+
+TOTALS
+
+gary 0
+github 10032.15
+hamish -295.39
+nic 2475.10
+paypal 0
+philip 62245.54
+unknown 0
+
+make[1]: Leaving directory '/home/runner/work/dsl-accounts/dsl-accounts'
