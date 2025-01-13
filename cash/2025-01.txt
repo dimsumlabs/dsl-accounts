@@ -13,3 +13,5 @@
 300    2025-01-02 #dues:shabnam !locn:philip
 700    2025-01-05 #dues:philipp !locn:github
 500    2025-01-07 #dues:jerry !locn:philip !months:-1:1
+-781   2025-01-13 #bills:electricity !months:-2:2 !locn:philip
+-15.10 2025-01-13 #bills:water !months:-4:4 !locn:philip
