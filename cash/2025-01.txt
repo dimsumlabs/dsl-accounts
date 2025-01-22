@@ -25,3 +25,4 @@
 700    2025-01-19 #dues:alex2 !locn:github !months:1:1
 200    2025-01-20 #supporters jay !locn:github
 200    2025-01-21 #supporters hamish !locn:github
+-1365  2025-01-22 #bills:meetup (USD174.99/year) !months:-3:12 !locn:philip
