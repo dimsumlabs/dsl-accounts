@@ -26,3 +26,9 @@
 200    2025-01-20 #supporters jay !locn:github
 200    2025-01-21 #supporters hamish !locn:github
 -1365  2025-01-22 #bills:meetup (USD174.99/year) !months:-3:12 !locn:philip
+300    2025-01-23 #dues:vincent !locn:github !months:1:1
+0      2025-01-23 !locn_xfer:github:philip:8676.13
+-398   2025-01-25 #bills:internet !months:-1:1 !locn:philip
+-327.3 2025-01-25 #bills:meetup (USD41.96/6 months) !months:-27:6 !locn:philip
+-467.5 2025-01-25 #bills:meetup (USD59.94/6 months) !months:-21:6 !locn:philip
+-1029  2025-01-25 #bills:meetup (USD131.99/year) !months:-15:12 !locn:philip
