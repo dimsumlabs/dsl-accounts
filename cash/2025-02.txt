@@ -10,4 +10,4 @@
 700    2025-02-03 #dues:alex !locn:philip
 350    2025-02-03 #dues:adam !locn:philip
 200    2025-02-03 playing with cable #workshop !locn:philip
-
+120    2025-02-03 #fridge !locn:philip
