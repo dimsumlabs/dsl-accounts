@@ -32,3 +32,6 @@
 -327.3 2025-01-25 #bills:meetup (USD41.96/6 months) !months:-27:6 !locn:philip
 -467.5 2025-01-25 #bills:meetup (USD59.94/6 months) !months:-21:6 !locn:philip
 -1029  2025-01-25 #bills:meetup (USD131.99/year) !months:-15:12 !locn:philip
+-14400 2025-01-26 #bills:rent !locn:philip !months:1:1
+-398   2025-01-30 #bills:internet !months:-1:1 !locn:philip
+#balance 62176.50 closing balance
