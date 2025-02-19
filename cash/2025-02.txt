@@ -11,6 +11,14 @@
 350    2025-02-03 #dues:adam !locn:philip
 200    2025-02-03 playing with cable #workshop !locn:philip
 120    2025-02-03 #fridge !locn:philip
+700    2025-02-05 #dues:philipp !locn:github
 700    2025-02-08 #dues:antonia !locn:philip
 300    2025-02-08 #dues:max !locn:philip
 300    2025-02-08 #dues:ella !locn:philip
+700    2025-02-08 #dues:rhys !locn:github
+200    2025-02-12 #supporters calvin !locn:github
+700    2025-02-13 #dues:blake !locn:github
+2000   2025-02-15 #dues:felix !locn:github !months:1:1
+700    2025-02-15 #dues:nigel !locn:github
+700    2025-02-18 #dues:iulian !locn:github !months:1:1
+700    2025-02-19 #dues:alex2 !locn:github !months:1:1
