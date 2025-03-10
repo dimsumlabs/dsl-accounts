@@ -11,3 +11,6 @@
 350    2025-03-03 #fridge !locn:philip
 700    2025-03-05 #dues:philipp !locn:github
 1337   2025-03-06 #dues:meebey !locn:philip
+700    2025-03-10 #dues:antonia !locn:philip
+300    2025-03-10 #dues:max !locn:philip
+300    2025-03-10 #dues:ella !locn:philip
