@@ -27,3 +27,4 @@
 300    2025-03-21 #dues:shabnam !locn:philip
 300    2025-03-23 #dues:vincent !locn:github !months:1:1
 0      2025-03-24 !locn_xfer:github:philip:8489.16
+700    2025-03-24 #dues:archer !locn:github !months:1:1
