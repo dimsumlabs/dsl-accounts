@@ -31,3 +31,4 @@
 -14400 2025-03-27 #bills:rent !locn:philip !months:1:1
 -398   2025-03-27 #bills:internet !months:-2:1 !locn:philip
 -398   2025-03-27 #bills:internet !months:-1:1 !locn:philip
+-294   2025-03-27 #bills:electricity !months:-1:1 !locn:philip
