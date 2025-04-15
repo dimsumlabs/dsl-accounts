@@ -12,4 +12,4 @@
 300    2025-04-09 #dues:max !locn:philip
 300    2025-04-09 #dues:ella !locn:philip
 700    2025-04-09 #dues:shabnam !locn:philip
-250    2025-04-14 #dues:hkpug !locn:philip
+250    2025-04-21 #dues:hkpug !locn:philip
