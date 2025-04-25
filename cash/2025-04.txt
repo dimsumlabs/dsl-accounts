@@ -19,3 +19,4 @@
 1000   2025-04-15 #dues:felix !locn:github !months:1:1
 700    2025-04-15 #dues:nigel !locn:github
 250    2025-04-16 #dues:hkpug !locn:iulian !months:1:1
+-14400 2025-04-25 #bills:rent !locn:philip !months:1:1
