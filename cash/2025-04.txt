@@ -20,3 +20,11 @@
 700    2025-04-15 #dues:nigel !locn:github
 250    2025-04-16 #dues:hkpug !locn:iulian !months:1:1
 -14400 2025-04-25 #bills:rent !locn:philip !months:1:1
+0      2025-04-25 !locn_xfer:github:philip:7362.46
+700    2025-04-18 #dues:iulian !locn:github !months:1:1
+90     2025-04-19 #supporters alex2 !locn:github !months:1:1
+200    2025-04-20 #supporters jay !locn:github
+200    2025-04-21 #supporters hamish !locn:github
+300    2025-04-23 #dues:vincent !locn:github !months:1:1
+700    2025-04-24 #dues:archer !locn:github !months:1:1
+#balance 69211.50 closing balance
