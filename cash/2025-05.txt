@@ -5,3 +5,15 @@
 700    2025-05-01 #dues:alex !locn:philip
 700    2025-05-02 #dues:gabriel !locn:github
 1000   2025-05-02 #dues:neil !locn:github
+0      2025-05-04 !locn_xfer:iulian:philip:250
+-451   2025-05-04 #bills:electricity !months:-1:1 !locn:philip
+840    2025-05-04 #donation !locn:philip
+80     2025-05-04 #fridge !locn:philip
+666    2025-05-03 #dues:darkangel !locn:philip
+1000   2025-05-04 #dues:jerry !locn:philip !months:-1:1
+1000   2025-05-04 #dues:jerry !locn:philip
+700    2025-05-04 #dues:antonia !locn:philip
+300    2025-05-04 #dues:max !locn:philip
+300    2025-05-04 #dues:ella !locn:philip
+700    2025-05-04 #dues:shabnam !locn:philip
+700    2025-05-05 #dues:philipp !locn:github
