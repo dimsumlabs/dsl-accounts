@@ -18,3 +18,6 @@
 700    2025-05-04 #dues:shabnam !locn:philip
 700    2025-05-05 #dues:philipp !locn:github
 1337   2025-05-06 #dues:meebey !locn:philip
+700    2025-05-08 #dues:rhys !locn:github
+700    2025-05-09 #dues:jimze !locn:github
+700    2025-05-10 #dues:david !locn:philip
