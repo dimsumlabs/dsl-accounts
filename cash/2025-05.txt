@@ -21,3 +21,9 @@
 700    2025-05-08 #dues:rhys !locn:github
 700    2025-05-09 #dues:jimze !locn:github
 700    2025-05-10 #dues:david !locn:philip
+-5648  2025-05-10 #bills:upkeep new air conditioner !locn:philip
+1000   2025-05-10 #donation ac antonia !locn:philip
+560    2025-05-10 #donation ac nigel !locn:philip
+1000   2025-05-11 #donation ac meebey !locn:philip
+585    2025-05-11 #donation ac felix !locn:github
+800    2025-05-11 #donation ac neil !locn:philip
