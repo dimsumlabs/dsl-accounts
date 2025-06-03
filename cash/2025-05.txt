@@ -37,3 +37,4 @@
 0      2025-05-22 !locn_xfer:github:philip:8350.66
 700    2025-05-24 #dues:archer !locn:github !months:1:1
 -14400 2025-05-27 #bills:rent !locn:philip !months:1:1
+#balance 70994.50 closing balance
