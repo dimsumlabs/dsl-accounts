@@ -5,3 +5,13 @@
 700    2025-06-02 #dues:gabriel !locn:github
 1000   2025-06-02 #dues:neil !locn:github
 666    2025-06-03 #dues:darkangel !locn:philip
+1337   2025-06-06 #dues:meebey !locn:philip
+195    2025-06-05 #supporters philipp !locn:github
+700    2025-06-11 #dues:antonia !locn:philip
+300    2025-06-11 #dues:max !locn:philip
+300    2025-06-11 #dues:ella !locn:philip
+200    2025-06-12 #supporters calvin !locn:github
+1000   2025-06-13 #dues:jerry !locn:philip
+-954   2025-06-13 #bills:electricity !months:-2:2 !locn:philip
+-398   2025-06-13 #bills:internet !months:-2:1 !locn:philip
+-398   2025-06-13 #bills:internet !months:-1:1 !locn:philip
