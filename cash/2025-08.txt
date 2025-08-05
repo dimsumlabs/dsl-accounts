@@ -6,3 +6,6 @@
 1000   2025-08-02 #dues:neil !locn:github
 666    2025-08-03 #dues:darkangel !locn:philip
 195    2025-08-05 #supporters philipp !locn:github
+1000   2025-08-05 #dues:jerry !months:-1:1 !locn:philip
+1000   2025-08-05 #dues:jerry !locn:philip
+226.40 2025-08-04 #fridge !locn:philip
