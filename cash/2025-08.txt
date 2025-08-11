@@ -9,3 +9,8 @@
 1000   2025-08-05 #dues:jerry !months:-1:1 !locn:philip
 1000   2025-08-05 #dues:jerry !locn:philip
 226.40 2025-08-04 #fridge !locn:philip
+1337   2025-08-06 #dues:meebey !locn:philip
+700    2025-08-09 #dues:antonia !locn:philip
+300    2025-08-09 #dues:max !locn:philip
+300    2025-08-09 #dues:ella !locn:philip
+-2200  2025-08-11 #bills:br !months:-1:12 !locn:philip
