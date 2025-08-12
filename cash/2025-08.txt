@@ -14,3 +14,6 @@
 300    2025-08-09 #dues:max !locn:philip
 300    2025-08-09 #dues:ella !locn:philip
 -2200  2025-08-11 #bills:br !months:-1:12 !locn:philip
+700    2025-06-08 #dues:rhys !locn:github
+700    2025-07-08 #dues:rhys !locn:github
+700    2025-08-08 #dues:rhys !locn:github
