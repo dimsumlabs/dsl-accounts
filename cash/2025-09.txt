@@ -1,0 +1,11 @@
+#balance 62410.90 opening balance
+1024   2025-09-01 #dues:philip !locn:philip !months:1:1
+700    2025-09-01 #dues:portia !locn:philip
+700    2025-09-01 #dues:alex !locn:philip
+700    2025-09-02 #dues:gabriel !locn:github
+1000   2025-09-02 #dues:neil !locn:github
+666    2025-09-03 #dues:darkangel !locn:philip
+195    2025-09-05 #supporters philipp !locn:github
+1337   2025-09-06 #dues:meebey !locn:philip
+700    2025-09-09 #dues:antonia !locn:philip
+300    2025-09-09 #dues:ella !locn:philip
