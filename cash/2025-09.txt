@@ -25,3 +25,4 @@
 0      2025-09-23 !locn_xfer:github:philip:5385.34
 -14400 2024-09-27 #bills:rent !locn:philip !months:1:1
 700    2025-09-29 #dues:hans !locn:philip !months:1:1
+#balance 63622.90 closing balance
