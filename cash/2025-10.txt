@@ -1,0 +1,3 @@
+#balance 63622.90 opening balance
+1024   2025-10-01 #dues:philip !locn:philip !months:1:1
+1024   2025-10-01 #dues:jay !locn:philip
