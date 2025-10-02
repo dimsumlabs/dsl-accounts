@@ -1,3 +1,7 @@
 #balance 63622.90 opening balance
 1024   2025-10-01 #dues:philip !locn:philip !months:1:1
 1024   2025-10-01 #dues:jay !locn:philip
+700    2025-10-01 #dues:portia !locn:philip
+700    2025-10-01 #dues:alex !locn:philip
+700    2025-10-02 #dues:gabriel !locn:github
+1000   2025-10-02 #dues:neil !locn:github
