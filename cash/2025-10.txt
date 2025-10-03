@@ -5,3 +5,5 @@
 700    2025-10-01 #dues:alex !locn:philip
 700    2025-10-02 #dues:gabriel !locn:github
 1000   2025-10-02 #dues:neil !locn:github
+666    2025-10-03 #dues:darkangel !locn:philip
+300    2025-10-03 #supporters yahoo !locn:philip
