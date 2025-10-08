@@ -9,3 +9,4 @@
 300    2025-10-03 #supporters yahoo !locn:philip
 195    2025-10-05 #supporters philipp !locn:github
 1337   2025-10-06 #dues:meebey !locn:philip
+300    2025-10-08 #dues:jane !locn:philip
