@@ -10,3 +10,6 @@
 195    2025-10-05 #supporters philipp !locn:github
 1337   2025-10-06 #dues:meebey !locn:philip
 300    2025-10-08 #dues:jane !locn:philip
+-398   2025-10-08 #bills:internet !months:-1:1 !locn:philip
+-398   2025-10-08 #bills:internet !months:-2:1 !locn:philip
+-398   2025-10-08 #bills:internet !months:-7:1 !locn:philip
