@@ -13,3 +13,8 @@
 -398   2025-10-08 #bills:internet !months:-1:1 !locn:philip
 -398   2025-10-08 #bills:internet !months:-2:1 !locn:philip
 -398   2025-10-08 #bills:internet !months:-7:1 !locn:philip
+700    2025-10-08 #dues:rhys !locn:github
+700    2025-10-10 #dues:antonia !locn:philip
+300    2025-10-10 #dues:ella !locn:philip
+-647   2025-10-10 #bills:electricity !months:-4:1 !locn:philip
+-584   2025-10-10 #bills:electricity !months:-3:1 !locn:philip
