@@ -21,3 +21,4 @@
 2000   2025-10-14 #dues:jerry !locn:philip
 440    2025-10-14 #donation !locn:philip
 300    2025-10-14 #fridge !locn:philip
+-1235  2025-10-14 #bills:electricity !months:-2:2 !locn:philip
