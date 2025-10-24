@@ -18,7 +18,14 @@
 300    2025-10-10 #dues:ella !locn:philip
 -647   2025-10-10 #bills:electricity !months:-4:1 !locn:philip
 -584   2025-10-10 #bills:electricity !months:-3:1 !locn:philip
+200    2025-10-12 #supporters calvin !locn:github
 2000   2025-10-14 #dues:jerry !locn:philip
 440    2025-10-14 #donation !locn:philip
 300    2025-10-14 #fridge !locn:philip
 -1235  2025-10-14 #bills:electricity !months:-2:2 !locn:philip
+1000   2025-10-15 #dues:felix !locn:github !months:1:1
+700    2025-10-18 #dues:iulian !locn:github !months:1:1
+700    2025-10-15 #dues:nigel !locn:github
+90     2025-10-19 #supporters alex2 !locn:github !months:1:1
+200    2025-10-21 #supporters hamish !locn:github
+0      2025-10-23 !locn_xfer:github:philip:6990.16
