@@ -33,3 +33,6 @@
 -14400 2025-08-27 #bills:rent !locn:philip !months:1:1
 14400  2024-09-27 #bills:rent !locn:philip !months:1:1
 -14400 2025-09-27 #bills:rent !locn:philip !months:1:1
+-14400 2025-10-27 #bills:rent !locn:philip !months:1:1
+-398   2025-10-27 #bills:internet !locn:philip
+#balance 60440.90 closing balance
