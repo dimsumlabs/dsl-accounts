@@ -8,3 +8,5 @@
 666    2025-11-03 #dues:darkangel !locn:philip
 195    2025-11-05 #supporters philipp !locn:github
 -897   2025-11-07 #bills:electricity !locn:philip !months:-1:1
+200    2025-11-07 #fridge !locn:philip
+90     2025-11-07 #donation hackjam !locn:philip
