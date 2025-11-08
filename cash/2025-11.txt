@@ -10,3 +10,7 @@
 -897   2025-11-07 #bills:electricity !locn:philip !months:-1:1
 200    2025-11-07 #fridge !locn:philip
 90     2025-11-07 #donation hackjam !locn:philip
+1337   2025-11-08 #dues:meebey !locn:philip
+700    2025-11-08 #dues:antonia !locn:philip
+300    2025-11-08 #dues:ella !locn:philip
+700    2025-11-08 #dues:rhys !locn:github
