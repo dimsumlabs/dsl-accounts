@@ -15,3 +15,5 @@
 300    2025-11-08 #dues:ella !locn:philip
 700    2025-11-08 #dues:rhys !locn:github
 1000   2025-11-15 #dues:mrhill !locn:philip
+200    2025-11-12 #supporters calvin !locn:github
+1000   2025-11-15 #dues:felix !locn:github !months:1:1
