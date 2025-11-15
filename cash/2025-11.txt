@@ -14,3 +14,4 @@
 700    2025-11-08 #dues:antonia !locn:philip
 300    2025-11-08 #dues:ella !locn:philip
 700    2025-11-08 #dues:rhys !locn:github
+1000   2025-11-15 #dues:mrhill !locn:philip
