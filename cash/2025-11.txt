@@ -17,3 +17,7 @@
 1000   2025-11-15 #dues:mrhill !locn:philip
 200    2025-11-12 #supporters calvin !locn:github
 1000   2025-11-15 #dues:felix !locn:github !months:1:1
+2000   2025-11-18 #dues:jerry !locn:philip
+100    2025-11-18 #donation hans !locn:philip
+700    2025-11-18 #dues:iulian !locn:github !months:1:1
+700    2025-11-15 #dues:nigel !locn:github
