@@ -21,3 +21,7 @@
 100    2025-11-18 #donation hans !locn:philip
 700    2025-11-18 #dues:iulian !locn:github !months:1:1
 700    2025-11-15 #dues:nigel !locn:github
+90     2025-11-19 #supporters alex2 !locn:github !months:1:1
+200    2025-11-21 #supporters hamish !locn:github
+0      2025-11-23 !locn_xfer:github:philip:4057.60
+-398   2025-11-25 #bills:internet !locn:philip
