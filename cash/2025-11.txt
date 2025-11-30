@@ -25,3 +25,6 @@
 200    2025-11-21 #supporters hamish !locn:github
 0      2025-11-23 !locn_xfer:github:philip:4057.60
 -398   2025-11-25 #bills:internet !locn:philip
+-14400 2025-11-27 #bills:rent !locn:philip !months:1:1
+1024   2025-11-30 #dues:jay !locn:philip !months:1:1
+#balance 61095.90 closing balance
