@@ -5,3 +5,5 @@
 700    2025-12-02 #dues:gabriel !locn:github
 1000   2025-12-02 #dues:neil !locn:github
 666    2025-12-03 #dues:darkangel !locn:philip
+195    2025-12-05 #supporters philipp !locn:github
+1337   2025-12-08 #dues:meebey !locn:philip
