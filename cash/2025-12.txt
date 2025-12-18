@@ -13,3 +13,4 @@
 700    2025-12-13 #dues:nigel !locn:github
 -656   2025-12-18 #bills:electricity !locn:philip !months:-1:1
 200    2025-12-18 #fridge !locn:philip
+2000   2025-12-18 #dues:jerry !locn:philip
