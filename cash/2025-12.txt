@@ -11,7 +11,15 @@
 700    2025-12-12 #dues:antonia !locn:philip
 300    2025-12-12 #dues:ella !locn:philip
 700    2025-12-13 #dues:nigel !locn:github
+1000   2025-12-15 #dues:felix !locn:github !months:1:1
+700    2025-12-18 #dues:iulian !locn:github !months:1:1
 -656   2025-12-18 #bills:electricity !locn:philip !months:-1:1
 200    2025-12-18 #fridge !locn:philip
 2000   2025-12-18 #dues:jerry !locn:philip
 630    2025-12-18 #donation event 2025-12-18 !locn:philip
+90     2025-12-19 #supporters alex2 !locn:github !months:1:1
+200    2025-12-21 #supporters hamish !locn:github
+90     2025-12-21 #supporters lio !locn:github
+0      2025-12-23 !locn_xfer:github:philip:4764.04
+-398   2025-12-29 #bills:internet !locn:philip
+-14400 2025-12-29 #bills:rent !locn:philip !months:1:1
