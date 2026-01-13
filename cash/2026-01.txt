@@ -7,3 +7,9 @@
 666    2026-01-03 #dues:darkangel !locn:philip
 700    2026-01-06 #dues:rhys !locn:github
 195    2026-01-08 #supporters philipp !locn:github
+1024   2026-01-12 #dues:jay !locn:philip
+2000   2026-01-13 #dues:jerry !locn:philip
+-360   2026-01-13 #bills:electricity !locn:philip !months:-1:1
+-15    2026-01-13 #bills:water !locn:philip !months:-4:4
+700    2026-01-13 #dues:antonia !locn:philip
+300    2026-01-13 #dues:ella !locn:philip
