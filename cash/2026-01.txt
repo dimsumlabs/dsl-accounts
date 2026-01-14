@@ -13,3 +13,5 @@
 -15    2026-01-13 #bills:water !locn:philip !months:-4:4
 700    2026-01-13 #dues:antonia !locn:philip
 300    2026-01-13 #dues:ella !locn:philip
+700    2026-01-13 #dues:nigel !locn:github
+1000   2026-01-14 #dues:mrhill !locn:philip
