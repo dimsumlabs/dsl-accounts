@@ -7,6 +7,7 @@
 666    2026-01-03 #dues:darkangel !locn:philip
 700    2026-01-06 #dues:rhys !locn:github
 195    2026-01-08 #supporters philipp !locn:github
+200    2026-01-12 #supporters calvin !locn:github
 1024   2026-01-12 #dues:jay !locn:philip
 2000   2026-01-13 #dues:jerry !locn:philip
 -360   2026-01-13 #bills:electricity !locn:philip !months:-1:1
@@ -15,3 +16,9 @@
 300    2026-01-13 #dues:ella !locn:philip
 700    2026-01-13 #dues:nigel !locn:github
 1000   2026-01-14 #dues:mrhill !locn:philip
+1000   2026-01-15 #dues:felix !locn:github !months:1:1
+700    2026-01-18 #dues:iulian !locn:github !months:1:1
+90     2026-01-21 #supporters lio !locn:github
+200    2026-01-21 #supporters hamish !locn:github
+1337   2026-01-22 #dues:meebey !locn:philip
+0      2026-01-22 !locn_xfer:github:philip:7298.84
