@@ -22,3 +22,5 @@
 200    2026-01-21 #supporters hamish !locn:github
 1337   2026-01-22 #dues:meebey !locn:philip
 0      2026-01-22 !locn_xfer:github:philip:7298.84
+-14400 2026-01-27 #bills:rent !locn:philip !months:1:1
+#balance 59734.90 closing balance
