@@ -10,3 +10,8 @@
 700    2026-02-06 #dues:rhys !locn:github
 195    2026-02-08 #supporters philipp !locn:github
 200    2026-02-12 #supporters calvin !locn:github
+700    2026-02-16 #dues:antonia !locn:philip
+300    2026-02-16 #dues:ella !locn:philip
+1000   2026-02-14 #dues:mrhill !locn:philip
+1000   2026-02-15 #dues:felix !locn:github !months:1:1
+700    2026-02-18 #dues:iulian !locn:github !months:1:1
