@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>dsl balance</title>
+<style>
+@font-face {
+  font-family: 'ps2p';
+  src: url('pressstart2p.ttf');
+}
+
+html {
+	background-color:#000;
+	font-family: ps2p,monospace;
+}
+
+body {
+    width:95%;
+    text-align:center;
+}
+
+.bill_desc {
+    font-size:30px;
+    color:#eee;
+    text-align:right;
+}
+
+.bill_value {
+    font-size:42px;
+    text-align:right;
+}
+
+.color_neg {
+    /* negative numbers are bad */
+    color:red;
+}
+
+.color_pos {
+    /* positive numbers are good */
+    color:#00E100;
+}
+
+.membership_fees {
+    font-size:20px;
+    color:#fff;
+    text-align:center;
+}
+
+.grid {
+    font-size:17px;
+    color:#00E100;
+    text-align:left;
+    margin:0;
+    font-family: ps2p,monospace;
+}
+
+.donate {
+    font-size:25px;
+    color:pink;
+    text-align:center;
+}
+
+.lastupdate {
+    color:white;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.rowodd {
+    background-color: #202020;
+}
+
+.tractorbar {
+    border-color: #404040;
+    background-image: url(circle.svg);
+    background-repeat: repeat-y;
+    background-position: center top;
+}
+
+.tractorleft {
+    border-style: none dotted none none;
+}
+
+.tractorright {
+    border-style: none none none dotted;
+}
+
+#overlay_dim {
+  position: fixed; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+#overlay_text{
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  font-size: 50px;
+  color: red;
+  transform: rotate(-45deg) translate(-50%,-50%);
+}
+
+
+</style>
+</head>
+<body>
+
+ <div class="membership_fees">Membership fee <span class="color_pos">700&nbsp;HKD</span> per month, <span class="color_pos">300&nbsp;HKD</span> for students.</div>
+
+ <table width=100%>
+  <tr>
+   <td colspan=2 class="bill_desc">Monthly Balance:</td>
+   <td class="bill_value color_pos">-2637&nbsp;HKD</td>
+  </tr>
+  <tr>
+   <td colspan=2 class="bill_desc">(due: <span class="color_neg">2026-02-21</span>) Rent:</td>
+   <td class="bill_value color_neg">14000&nbsp;HKD</td>
+  </tr>
+  <tr>
+   <td class="donate">Donate if you can!</td>
+   <td class="bill_desc">Bills:</td>
+   <td class="bill_value color_neg">~2000&nbsp;HKD</td>
+  </tr>
+ </table>
+
+
+
+
+
+
+ <table width=100%>
+  <tr>
+   <td class="tractorbar tractorleft">&nbsp;
+   <td>
+    <pre class="grid rowodd">            2025-10  2025-11  2025-12  2026-01  2026-02</pre>
+    
+    
+    
+    <pre class="grid ">Alex            700      700      700      700      700</pre>
+    
+    
+    
+    <pre class="grid ">Antonia         700      700      700      700      700</pre>
+    
+    
+    
+    <pre class="grid rowodd">Darkangel       666      666      666      666      666</pre>
+    
+    
+    
+    <pre class="grid rowodd">Ella            300      300      300      300      300</pre>
+    
+    
+    
+    <pre class="grid ">Felix          1000     1000     1000     1000     1000</pre>
+    
+    
+    
+    <pre class="grid ">Gabriel         700      700      700      700      700</pre>
+    
+    
+    
+    <pre class="grid rowodd">Hans            700                                    </pre>
+    
+    
+    
+    <pre class="grid rowodd">Iulian          700      700      700      700      700</pre>
+    
+    
+    
+    <pre class="grid ">Jane            300                                    </pre>
+    
+    
+    
+    <pre class="grid ">Jay            1024     1024     1024     1024     1024</pre>
+    
+    
+    
+    <pre class="grid rowodd">Jerry          2000     2000     2000     2000         </pre>
+    
+    
+    
+    <pre class="grid rowodd">Meebey         1337     1337     1337     1337     1337</pre>
+    
+    
+    
+    <pre class="grid ">Mrhill                  1000     1000     1000     1000</pre>
+    
+    
+    
+    <pre class="grid ">Neil           1000     1000     1000     1000     1000</pre>
+    
+    
+    
+    <pre class="grid rowodd">Nigel           700      700      700      700         </pre>
+    
+    
+    
+    <pre class="grid rowodd">Philip         1024     1024     1024     1024     1024</pre>
+    
+    
+    
+    <pre class="grid ">Portia          700      700      700      700      700</pre>
+    
+    
+    
+    <pre class="grid ">Rhys            700      700               700      700</pre>
+    
+   <td class="tractorbar tractorright">&nbsp;
+  </tr>
+ </table>
+
+<br>
+ <table width=100%>
+  <tr>
+   <td>&nbspc;&nbspc;&nbspc;</td>
+   <td class="bill_desc">Members loans to DSL:</td>
+   <td class="bill_value color_neg">0&nbsp;HKD</td>
+  </tr>
+ </table>
+
+<div class="lastupdate">
+  Data last updated 2026-02-18T11:32:10+08:00
+  <a href="https://github.com/dimsumlabs/dsl-accounts/actions">
+    <img src="https://github.com/dimsumlabs/dsl-accounts/actions/workflows/ci.yml/badge.svg">
+  </a>
+</div>
+<!-- If needed, this can be uncommented
+<div id="overlay_dim"><div id="overlay_text">BROKEN!</div></div>
+
+TODO:
+- use javascript and fetch https://api.github.com/repos/dimsumlabs/dsl-accounts/actions/runs?per_page=3
+- add a big visible overlay if two of the last three jobs were .conclusion=="failure"
+
+-->
+</body>
+</html>
