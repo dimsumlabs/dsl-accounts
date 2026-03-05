@@ -1,3 +1,10 @@
 #balance 58670.90 opening balance
 1024   2026-03-01 #dues:philip !locn:philip !months:1:1
 -304   2026-03-01 #bills:electricity !locn:philip !months:-2:1
+700    2026-03-01 #dues:alex !locn:philip
+700    2026-03-02 #dues:portia !locn:philip
+700    2026-03-02 #dues:gabriel !locn:github
+1000   2026-03-02 #dues:neil !locn:github
+1337   2026-03-02 #dues:meebey !locn:philip
+666    2026-03-03 #dues:darkangel !locn:philip
+150    2026-03-05 #supporters JackIsGoofingOff !locn:github
