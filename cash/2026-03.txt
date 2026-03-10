@@ -8,3 +8,7 @@
 1337   2026-03-02 #dues:meebey !locn:philip
 666    2026-03-03 #dues:darkangel !locn:philip
 150    2026-03-05 #supporters JackIsGoofingOff !locn:github
+2000   2026-03-10 #dues:jerry !locn:philip !months:-1:1
+2000   2026-03-10 #dues:jerry !locn:philip
+120    2026-03-10 #fridge !locn:philip
+200    2026-03-10 #donation !locn:philip
