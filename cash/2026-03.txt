@@ -12,3 +12,4 @@
 2000   2026-03-10 #dues:jerry !locn:philip
 120    2026-03-10 #fridge !locn:philip
 200    2026-03-10 #donation !locn:philip
+-252   2026-03-10 #bills:electricity !locn:philip !months:-1:1
