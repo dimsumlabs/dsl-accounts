@@ -1,0 +1,22 @@
+#balance 60301.90 opening balance
+700    2026-04-01 #dues:philip !locn:philip !months:1:1
+700    2026-04-01 #dues:alex !locn:philip
+700    2026-04-02 #dues:portia !locn:philip
+700    2026-04-02 #dues:gabriel !locn:github
+1000   2026-04-02 #dues:neil !locn:github
+1337   2026-04-02 #dues:meebey !locn:philip
+666    2026-04-03 #dues:darkangel !locn:philip
+700    2026-04-06 #dues:rhys !locn:github
+90     2026-04-12 #supporters calvin !locn:github
+90     2026-04-12 #supporters fuchenshi !locn:github
+700    2026-04-12 #dues:antonia !locn:philip
+300    2026-04-12 #dues:ella !locn:philip
+700    2026-04-13 #dues:nigel !locn:github
+1000   2026-04-14 #dues:mrhill !locn:philip
+1000   2026-04-15 #dues:felix !locn:github !months:1:1
+700    2026-04-16 #dues:hans !locn:philip
+700    2026-04-16 #dues:adam !locn:philip
+2000   2026-04-16 #dues:jerry !locn:philip
+377    2026-04-16 #donation !locn:philip
+200    2026-04-10 #fridge !locn:philip
+700    2026-04-18 #dues:iulian !locn:github !months:1:1
