@@ -21,3 +21,4 @@
 200    2026-04-10 #fridge !locn:philip
 2048   2026-04-13 #dues:jay !locn:philip !months:-1:2
 700    2026-04-18 #dues:iulian !locn:github !months:1:1
+-14400 2026-04-27 #bills:rent !locn:philip !months:1:1
