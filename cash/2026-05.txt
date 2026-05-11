@@ -1,0 +1,10 @@
+#balance 63499.90 opening balance
+700    2026-05-01 #dues:philip !locn:philip !months:1:1
+700    2026-05-01 #dues:alex !locn:philip
+700    2026-05-02 #dues:portia !locn:philip
+700    2026-05-02 #dues:gabriel !locn:github
+1000   2026-05-02 #dues:neil !locn:github
+1337   2026-05-02 #dues:meebey !locn:philip
+666    2026-05-03 #dues:darkangel !locn:philip
+700    2026-05-06 #dues:rhys !locn:github
+2000   2026-05-08 #dues:jerry !locn:philip
