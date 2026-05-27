@@ -8,3 +8,12 @@
 666    2026-05-03 #dues:darkangel !locn:philip
 700    2026-05-06 #dues:rhys !locn:github
 2000   2026-05-08 #dues:jerry !locn:philip
+700    2026-05-13 #dues:nigel !locn:github
+1000   2026-05-14 #dues:mrhill !locn:philip
+1000   2026-05-15 #dues:felix !locn:github !months:1:1
+200    2026-05-21 #supporters hamish !locn:github
+90     2026-05-21 #supporters lio !locn:github
+0      2026-05-22 !locn_xfer:github:philip:12308.81
+700    2026-05-27 #dues:antonia !locn:philip
+300    2026-05-27 #dues:ella !locn:philip
+-14400 2026-05-27 #bills:rent !locn:philip !months:1:1
