@@ -410,6 +410,7 @@ class RowData(Row):
                 'locn:github',
                 'locn:hamish',
                 'locn:iulian',
+                'locn:jay',
                 'locn:nic',
                 'locn:paypal',
                 'locn:philip',
