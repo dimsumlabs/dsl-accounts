@@ -24,3 +24,4 @@
 300    2026-05-27 #dues:ella !locn:philip
 -14400 2026-05-27 #bills:rent !locn:philip !months:1:1
 90     2026-05-28 #supporters alex2 !locn:github
+#balance 65596.90 closing balance
