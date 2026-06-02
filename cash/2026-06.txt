@@ -6,5 +6,5 @@
 300    2026-06-02  #dues:ella !locn:jay
 1337   2026-06-02  #dues:meebey !locn:jay
 666    2026-06-02  #dues:darkangel !locn:jay
-700    2026-06-02  #dues:philip !locn:jay !months:1:1
 700    2026-06-02  #dues:alex !locn:jay
+700    2026-06-02  #dues:philip !locn:jay !months:1:1
