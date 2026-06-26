@@ -15,7 +15,13 @@
 506    2026-06-04  #fridge !locn:jay
 700    2026-06-04  #dues:arroy1337 !locn:github
 700    2026-06-06  #dues:rhys !locn:github
+90     2026-06-12  #supporters calvin !locn:github
 700    2026-06-13  #dues:nigel !locn:github
 1000   2026-06-16  #dues:mrhill !locn:jay
 300    2026-06-16  #fridge !locn:jay
 -199   2026-06-17  #fridge restock !locn:jay
+0      2026-06-18  !locn_xfer:github:jay:5712.31
+700    2026-06-18  #dues:iulian !locn:github
+700    2026-06-23  #dues:benj !locn:github
+300    2026-06-23  #dues:memphislaw !locn:github
+700    2026-06-24  #dues:feklee !locn:github
