@@ -366,6 +366,8 @@ class RowData(Row):
     def location(self):
         if 'locn' in self.bangtags:
             return self.bangtags['locn'][0]
+        if self.date >= datetime.date(2025, 1, 1):
+            raise ValueError("row without location tag (!locn): {}".format(self))
         return None
 
     def _xtag_validate(self, x, tag):
