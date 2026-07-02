@@ -1,0 +1,26 @@
+# member dues
+
+# cash
+2000    2026-07-01   !forecast:monthly !locn:jay #dues:jerry
+
+# bank xfer
+700     2026-07-01   !forecast:monthly !locn:jay #dues:antonia
+666     2026-07-01   !forecast:monthly !locn:jay #dues:darkangel
+300     2026-07-01   !forecast:monthly !locn:jay #dues:ella
+1024    2026-07-01   !forecast:monthly !locn:jay #dues:jay
+1337    2026-07-01   !forecast:monthly !locn:jay #dues:meebey
+1000    2026-07-01   !forecast:monthly !locn:jay #dues:mrhill
+700     2026-07-01   !forecast:monthly !locn:jay #dues:philip
+700     2026-07-01   !forecast:monthly !locn:jay #dues:portia
+
+# Github
+700     2026-07-01   !forecast:monthly !locn:github #dues:neil
+700     2026-07-03   !forecast:monthly !locn:github #dues:gabriel
+700     2026-07-03   !forecast:monthly !locn:github #dues:henrylaw
+700     2026-07-04   !forecast:monthly !locn:github #dues:arroy1337
+700     2026-07-06   !forecast:monthly !locn:github #dues:rhys
+700     2026-07-13   !forecast:monthly !locn:github #dues:nigel
+700     2026-07-18   !forecast:monthly !locn:github #dues:iulian
+700     2026-07-23   !forecast:monthly !locn:github #dues:benj
+300     2026-07-23   !forecast:monthly !locn:github #dues:memphislaw
+700     2026-07-24   !forecast:monthly !locn:github #dues:felix

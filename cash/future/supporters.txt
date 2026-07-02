@@ -1,5 +1,6 @@
-# paypal automated payments
+# Github monthly sponsors
 #
 
-# stig
-93 2020-02-07 #supporters !forecast:monthly !locn:paypal
+90 2026-07-12 #supporters !forecast:monthly !locn:github calvin
+90 2026-07-21 #supporters !forecast:monthly !locn:github lio
+90 2026-07-28 #supporters !forecast:monthly !locn:github alex2
