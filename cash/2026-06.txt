@@ -24,5 +24,5 @@
 700    2026-06-18  #dues:iulian !locn:github
 700    2026-06-23  #dues:benj !locn:github
 300    2026-06-23  #dues:memphislaw !locn:github
-700    2026-06-24  #dues:feklee !locn:github
+700    2026-06-24  #dues:felix !locn:github !months:1:1
 #balance 82070.90 closing balance
