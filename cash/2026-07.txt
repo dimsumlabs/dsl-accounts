@@ -1,0 +1,9 @@
+#balance 82070.90 opening balance
+700     2026-07-01   #dues:neil !locn:github
+1024    2026-07-02   #dues:jay !locn:jay
+1337    2026-07-02   #dues:meebey !locn:jay
+666     2026-07-02   #dues:darkangel !locn:jay
+700     2026-07-02   #dues:philip !locn:jay !months:1:1
+700     2026-07-02   #dues:antonia !locn:jay
+300     2026-07-02   #dues:ella !locn:jay
+-14700  2026-07-02   #bills:rent !locn:jay
