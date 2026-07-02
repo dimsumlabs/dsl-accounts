@@ -18,7 +18,7 @@ whitespace separated columns in the "cash" subdirectory.
 After any changes are committed, the Continuous Integration system will
 run checks and tests to be sure that everything looks ok.
 
-You can run the same tests localally, so you can be sure that your changes
+You can run the same tests locally, so you can be sure that your changes
 will pass:
 
 ```
@@ -31,13 +31,25 @@ You can also see a simple report from the system:
 make report
 ```
 
-In order to run the above commands, you will need to have installed pip on your device and then install the following librairies as follow:
+In order to run the above commands, you will need to have installed pip on your
+device and then install the following libraries:
 ```
-pip install flake8
+pip install flake8 coverage jinja2 pytz
 ```
-```
-pip install coverage
-```
-```
-pip install jinja2
-```
+
+
+## Checklist for transactions
+
+* Add your transaction(s) in the appropriate `cash/YYYY-MM.txt`. Please maintain
+  the existing *cash accounting basis*, i.e. the transaction date should be the
+  date the cash was received/sent. *Do not* enter transactions in accrual basis;
+  if the transaction is for another month, use the `!months:<start>:count>` tag.
+
+* Run `make test`, which will apply several checks and print a summary.
+    * Also check that the displayed account balances are consistent with reality.
+
+* After large edits, consider running `make report.future` and see if there are any
+  inconsistencies between past, current and forecast entries.
+  The forecasts are loaded from `cash/future`.
+
+* Commit and upload.
