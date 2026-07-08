@@ -8,23 +8,12 @@ import decimal
 import jinja2
 import pytz
 import json
-import sys
 import csv
 import os
 from io import StringIO
 
-# Ensure that we look for any modules in our local lib dir.  This allows simple
-# testing and development use.  It also does not break the case where the lib
-# has been installed properly on the normal sys.path
-sys.path.insert(0,
-                os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                             'lib'))
-# I would use site.addsitedir, but it does an append, not insert
-
-# Stupid pyflake, neither of these imports can be before the sys.path
-from row import Row # noqa
-from row import RowData # noqa
-from rowset import RowSet # noqa
+from lib.row import Row, RowData
+from lib.rowset import RowSet
 
 FILES_DIR = 'cash'
 
@@ -627,30 +616,12 @@ if __name__ == '__main__':  # pragma: no cover
     )                                                                   # noqa
     subp_cmds['grid']['parser'].set_defaults(display_days_post=182)
 
-    subp_cmds['jinja2']['parser'].add_argument('template',
-                                               # F.U. E128
-                                               action='store',
-                                               type=str,
-                                               help='Template name'
-    ) # noqa F.U. E124
-
-    #
-    # Hello? is that flake8?  I'd like to talk to you about presentation
-    # values.  I know you like to keep lines under 78 characters wide, and
-    # I support you in this goal, as it mostly makes sense.  I also know that
-    # you like the idea of indenting options to the same depth as the opening
-    # parenthesis, which sometimes makes sense too.
-    # However, if that opening parenthesis is 45 chars deep, and one of the
-    # parameters is a verbose help text line, you are just full of shit and
-    # should be shot if you think the results look sane.
-    #
-    # So I shot you.
-    #
-    # Everybody is sad.  You are sad because I'm not meeting your ugly style
-    # guide, I am sad because all my nicely readable lines now have this ugly
-    # comment at the end of them.
-    #
-    # Now get off my lawn
+    subp_cmds['jinja2']['parser'].add_argument(
+        'template',
+        action='store',
+        type=str,
+        help='Template name'
+    )
 
     args = argparser.parse_args()
 

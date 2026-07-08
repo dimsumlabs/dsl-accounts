@@ -4,9 +4,9 @@ import os
 import sys
 import glob
 
-from row import Row
-from row import RowPragmaBalance
-from row import RowData
+from lib.row import Row
+from lib.row import RowPragmaBalance
+from lib.row import RowData
 
 
 class RowSet(object):

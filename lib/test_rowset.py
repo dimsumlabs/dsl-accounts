@@ -3,8 +3,6 @@
 """
 
 import unittest
-import sys
-import os
 import decimal
 import datetime
 
@@ -12,16 +10,7 @@ from datetime import date as Date
 from io import StringIO
 from unittest import mock
 
-# Ensure that we look for any modules in our local lib dir.  This allows simple
-# testing and development use.  It also does not break the case where the lib
-# has been installed properly on the normal sys.path
-sys.path.insert(0,
-                os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lib')
-                )
-# I would use site.addsitedir, but it does an append, not insert
-
-import rowset # noqa
-import row # noqa
+from lib import row, rowset
 
 
 class fakedatetime(datetime.datetime):
