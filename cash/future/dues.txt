@@ -22,5 +22,4 @@
 700     2026-07-13   !forecast:monthly !locn:github #dues:nigel
 700     2026-07-18   !forecast:monthly !locn:github #dues:iulian
 700     2026-07-23   !forecast:monthly !locn:github #dues:benj
-300     2026-07-23   !forecast:monthly !locn:github #dues:memphislaw
 700     2026-07-24   !forecast:monthly !locn:github #dues:felix
