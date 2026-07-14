@@ -133,15 +133,21 @@ def subp_jinja2(args):
     # Load the template file
     tpl = env.get_template(template)
 
+    if args.asof:
+        today = args.asof
+        hack_now = datetime.datetime.combine(today, datetime.time(), datetime.UTC)
+    else:
+        today = datetime.datetime.now().date()
+        hack_now = datetime.datetime.utcnow()
     variables = {
         # A convenience
-        'today': datetime.datetime.now().date(),
+        'today': today,
 
         'args': args,
 
         # These are hacks because they do not follow a clean data naming
         # model or use object methods
-        '_hack_timenow': _iso8601_str(datetime.datetime.utcnow()),
+        '_hack_timenow': _iso8601_str(hack_now),
         '_hack_rentdue': _hack_rentdue,
     }
     return tpl.render(variables)
@@ -315,13 +321,14 @@ def subp_statstsv(args):
         column_nr += 1
         s += "\n"
 
+    today = args.asof or datetime.datetime.now().date()
     for month in months:
         if isinstance(month, str):
             # its one of our rollup fake months
             if month == 'MonthTD':
                 # Use the path via datetime now() so that we can use the
                 # existing mock in the test suite
-                thismonth = datetime.datetime.now().date().replace(day=1)
+                thismonth = today.replace(day=1)
                 s += thismonth.strftime('%s')
             else:
                 s += "# x"
@@ -580,6 +587,7 @@ if __name__ == '__main__':  # pragma: no cover
                            default=os.path.join(os.path.join(
                                os.path.dirname(__file__), FILES_DIR)),
                            help='Input directory')
+    argparser.add_argument('--asof', help='include transactions up to this date only')
     argparser.add_argument('--includefuture',
                            action='store_true',
                            help='Include predicted future transactions from '
@@ -628,6 +636,9 @@ if __name__ == '__main__':  # pragma: no cover
     if not os.path.exists(args.dir):
         raise RuntimeError('Directory "{}" does not exist'.format(args.dir))
 
+    if args.asof:
+        args.asof = datetime.datetime.strptime(args.asof, '%Y-%m-%d').date()
+
     # first, load the main data
     args.rows = RowSet()
     args.rows.load_directory(args.dir)
@@ -645,6 +656,8 @@ if __name__ == '__main__':  # pragma: no cover
         args.rows = args.rows.autosplit()
 
     # apply any filters requested
+    if args.asof:
+        args.rows = args.rows.filter_asof(args.asof)
     args.rows = args.rows.filter(args.filter)
 
     result = args.func(args)

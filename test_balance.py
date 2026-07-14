@@ -58,6 +58,7 @@ class TestSubp(unittest.TestCase):
         self.rows = balance.RowSet()
         self.rows.load_file(f)
         self.verbose = 1
+        self.asof = None
 
     def tearDown(self):
         self.rows = None

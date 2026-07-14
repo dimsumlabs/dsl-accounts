@@ -172,6 +172,15 @@ class RowSet(object):
                 result.append(row)
         return result
 
+    def filter_asof(self, asof_date):
+        """Filter out all rows after the asof_date
+        """
+        result = RowSet()
+        for row in self.rows:
+            if not row.isdata or row.date <= asof_date:
+                result.append(row)
+        return result
+
     def filter_forecast(self):
         """Attempt to remove forecast lines that have a matching actual line"""
         # We define buckets of transactions with same month and same tag.

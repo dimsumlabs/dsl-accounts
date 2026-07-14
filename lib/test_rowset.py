@@ -155,6 +155,21 @@ apple 1970-03-20 comment24
             rows
         )
 
+    def test_filter_asof(self):
+        rows = [row for row in self.rows.rows
+                if row.date is None or row.date <= Date(1970, 2, 6)]
+
+        rows_filt = self.rows.filter_asof(Date(1970, 2, 6))
+        self.assertEqual(
+            # FIXME - looking inside the object
+            rows_filt.rows,
+            rows
+        )
+
+        rows_filt.load_file(
+            StringIO('#balance -35')
+        )
+
     def test_group_by(self):
         # TODO - should construct the expected dict and all its rows and
         # compare to that

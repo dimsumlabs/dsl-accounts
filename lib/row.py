@@ -98,7 +98,7 @@ class Row(object):
         value_match = m.group(3)
         value_now = self._getvalue_simple(field)
 
-        if field == 'month':
+        if field == 'month' and value_now is not None:
             # HACK - months are datetime objects, but to compare with the
             # user supplied string, we need to strip off the date
             # - there is no similar hack in the match() method, should there?
