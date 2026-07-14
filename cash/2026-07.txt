@@ -13,3 +13,5 @@
 700     2026-07-03   !locn:github #dues:henrylaw
 700     2026-07-04   !locn:github #dues:arroy1337
 700     2026-07-06   !locn:github #dues:rhys
+700     2026-07-13   !locn:github #dues:nigel
+-796    2026-07-14   #bills:internet !locn:jay !months:-1:2
