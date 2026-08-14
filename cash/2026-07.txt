@@ -15,3 +15,11 @@
 700     2026-07-06   !locn:github #dues:rhys
 700     2026-07-13   !locn:github #dues:nigel
 -796    2026-07-14   #bills:internet !locn:jay !months:-1:2
+1000    2026-07-16   !locn:jay #dues:mrhill
+700     2026-07-18   !locn:github #dues:iulian
+0       2026-07-21   !locn_xfer:github:jay:6822.16
+95      2026-07-21   !locn:github #supporters lio
+700     2026-07-23   !locn:github #dues:benj
+-14700  2026-07-23   #bills:rent !locn:jay
+700     2026-07-24   !locn:github #dues:felix !months:1:1
+#balance 66696.90 closing balance
