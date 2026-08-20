@@ -1,0 +1,18 @@
+#balance 66696.90 opening balance
+700     2026-08-01   !locn:github #dues:neil
+700     2026-08-03   !locn:jay #dues:antonia
+700     2026-08-03   !locn:jay #dues:alex
+666     2026-08-03   !locn:jay #dues:darkangel
+300     2026-08-03   !locn:jay #dues:ella
+1024    2026-08-03   !locn:jay #dues:jay
+1337    2026-08-03   !locn:jay #dues:meebey
+700     2026-08-03   !locn:jay #dues:philip !months:1:1
+700     2026-08-03   !locn:jay #dues:portia
+700     2026-08-03   !locn:github #dues:gabriel
+700     2026-08-03   !locn:github #dues:henrylaw
+2000    2026-08-04   !locn:jay #dues:jerry
+700     2026-08-04   !locn:github #dues:arroy1337
+300     2026-08-11   !locn:github #dues:memphislaw
+95      2026-08-12   !locn:github #supporters calvin
+700     2026-08-13   !locn:github #dues:nigel
+1000    2026-08-17   !locn:jay #dues:mrhill
