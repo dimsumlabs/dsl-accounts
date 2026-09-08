@@ -13,6 +13,7 @@
 700     2026-07-03   !locn:github #dues:henrylaw
 700     2026-07-04   !locn:github #dues:arroy1337
 700     2026-07-06   !locn:github #dues:rhys
+95      2026-07-12   !locn:github #supporters calvin
 700     2026-07-13   !locn:github #dues:nigel
 -796    2026-07-14   #bills:internet !locn:jay !months:-1:2
 1000    2026-07-16   !locn:jay #dues:mrhill
@@ -20,6 +21,7 @@
 0       2026-07-21   !locn_xfer:github:jay:6822.16
 95      2026-07-21   !locn:github #supporters lio
 700     2026-07-23   !locn:github #dues:benj
--14700  2026-07-23   #bills:rent !locn:jay
+-14700  2026-07-23   #bills:rent !locn:jay !months:1:1
 700     2026-07-24   !locn:github #dues:felix !months:1:1
-#balance 66696.90 closing balance
+95      2026-07-28   !locn:github #supporters alex2
+#balance 66886.90 closing balance
