@@ -1,0 +1,18 @@
+#balance 67071.90 opening balance
+2000    2026-10-01   !locn:jay #dues:jerry
+700     2026-10-01   !locn:github #dues:neil
+700     2026-10-02   !locn:jay #dues:antonia
+300     2026-10-02   !locn:jay #dues:ella
+700     2026-10-02   !locn:jay #dues:portia
+666     2026-10-02   !locn:jay #dues:darkangel
+1337    2026-10-02   !locn:jay #dues:meebey
+700     2026-10-02   !locn:jay #dues:philip !months:1:1
+700     2026-10-03   !locn:github #dues:gabriel
+700     2026-10-03   !locn:github #dues:henrylaw
+700     2026-10-04   !locn:github #dues:arroy1337
+700     2026-10-05   !locn:jay #dues:alex
+700     2026-10-13   !locn:github #dues:nigel
+90      2026-10-12   #supporters !locn:github calvin
+700     2026-10-13   !locn:jay #dues:hans
+1024    2026-10-15   !locn:jay #dues:jay !months:-1:1
+1024    2026-10-15   !locn:jay #dues:jay
